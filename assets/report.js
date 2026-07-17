@@ -1,14 +1,107 @@
-/* VULCAN 보고서 — 각주 모달 + 자동 번호 매김
-   사용법:  <span class="fn" data-t="제목" data-c="설명 HTML">  ← 번호는 자동 부여
+/* VULCAN 보고서 — 상단 내비게이션 + 각주 모달
+   nav : 모든 페이지에 자동 주입 (현재 페이지 자동 활성화)
+   각주: <span class="fn" data-t="제목" data-c="설명 HTML">  ← 번호 자동 부여
 */
 (function () {
   'use strict';
 
-  function build() {
-    var marks = document.querySelectorAll('.fn');
-    if (!marks.length) return;
+  var PAGES = [
+    { f: 'index.html',        n: '',   s: '표지',    t: '표지 및 목차' },
+    { f: '01-cs.html',        n: '01', s: 'CS',      t: '고객 문의 접수 분석' },
+    { f: '02-analytics.html', n: '02', s: '계측',    t: '데이터 계측 요청서' },
+    { f: '03-users.html',     n: '03', s: '유저',    t: '유저 반응 심층 분석' },
+    { f: '04-balance.html',   n: '04', s: '밸런스',  t: '밸런스 실측 및 교차 검증' },
+    { f: '05-data.html',      n: '05', s: '데이터',  t: '데이터 룸' },
+    { f: '06-cost.html',      n: '06', s: '비용',    t: '비용 구조 분석' },
+    { f: '07-benchmark.html', n: '07', s: '업계',    t: '업계 비교' },
+    { f: '08-ui.html',        n: '08', s: 'UI',      t: 'UI 개선안' },
+    { f: '09-proposal.html',  n: '09', s: '제안',    t: '개선 제안' },
+    { f: '10-notes.html',     n: '10', s: '방법론',  t: '방법론 및 한계' }
+  ];
 
-    // 각주 자동 번호
+  function currentFile() {
+    var p = location.pathname.split('/').pop();
+    return (!p || p === '') ? 'index.html' : p;
+  }
+
+  /* ───────── 상단 내비게이션 ───────── */
+  function buildNav() {
+    var bar = document.querySelector('.topbar .wrap');
+    if (!bar) return;
+
+    var cur = currentFile();
+    var crumb = bar.querySelector('.crumb');
+    var pg = bar.querySelector('.pg');
+    if (crumb) crumb.remove();   // 내비가 대체
+    if (pg) pg.remove();
+
+    // 데스크톱 내비
+    var nav = document.createElement('nav');
+    nav.className = 'tnav';
+    PAGES.forEach(function (p) {
+      var a = document.createElement('a');
+      a.href = p.f;
+      a.title = p.t;
+      a.className = (p.f === cur) ? 'on' : '';
+      a.innerHTML = (p.n ? '<b>' + p.n + '</b>' : '') + p.s;
+      nav.appendChild(a);
+    });
+    bar.appendChild(nav);
+
+    // 햄버거
+    var burger = document.createElement('button');
+    burger.className = 'burger';
+    burger.setAttribute('aria-label', '메뉴 열기');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.innerHTML = '<span></span><span></span><span></span>';
+    bar.appendChild(burger);
+
+    // 모바일 드로어
+    var drawer = document.createElement('div');
+    drawer.className = 'drawer';
+    var inner = document.createElement('div');
+    inner.className = 'dwrap';
+    var head = document.createElement('div');
+    head.className = 'dhead';
+    head.textContent = '목차';
+    inner.appendChild(head);
+    PAGES.forEach(function (p) {
+      var a = document.createElement('a');
+      a.href = p.f;
+      a.className = (p.f === cur) ? 'on' : '';
+      a.innerHTML = '<span class="dn">' + (p.n || '—') + '</span><span class="dt">' + p.t + '</span>';
+      inner.appendChild(a);
+    });
+    drawer.appendChild(inner);
+    document.body.appendChild(drawer);
+
+    function setDrawer(open) {
+      drawer.classList.toggle('on', open);
+      burger.classList.toggle('x', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    burger.addEventListener('click', function () {
+      setDrawer(!drawer.classList.contains('on'));
+    });
+    drawer.addEventListener('click', function (e) {
+      if (e.target === drawer) setDrawer(false);
+    });
+    window.__closeDrawer = function () { setDrawer(false); };
+
+    // 현재 항목을 데스크톱 내비에서 보이게 스크롤
+    var act = nav.querySelector('a.on');
+    if (act && nav.scrollWidth > nav.clientWidth) {
+      nav.scrollLeft = act.offsetLeft - nav.clientWidth / 2 + act.offsetWidth / 2;
+    }
+  }
+
+  /* ───────── 각주 모달 ───────── */
+  function buildFootnotes() {
+    var marks = document.querySelectorAll('.fn');
+    if (!marks.length) return null;
+
     marks.forEach(function (m, i) {
       if (!m.textContent.trim()) m.textContent = i + 1;
       m.setAttribute('role', 'button');
@@ -16,7 +109,6 @@
       m.setAttribute('aria-label', '각주 ' + (i + 1) + ' 열기');
     });
 
-    // 모달 1개만 생성해 재사용
     var mask = document.createElement('div');
     mask.className = 'fnmask';
     mask.innerHTML =
@@ -33,8 +125,7 @@
 
     function open(el) {
       last = el;
-      var n = el.textContent.trim();
-      ttl.textContent = '[' + n + '] ' + (el.dataset.t || '주석');
+      ttl.textContent = '[' + el.textContent.trim() + '] ' + (el.dataset.t || '주석');
       bdy.innerHTML = el.dataset.c || '';
       mask.classList.add('on');
       document.body.style.overflow = 'hidden';
@@ -52,27 +143,43 @@
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(m); }
       });
     });
-
     mask.addEventListener('click', function (e) { if (e.target === mask) close(); });
     mask.querySelector('.fx').addEventListener('click', close);
     box.addEventListener('click', function (e) { e.stopPropagation(); });
 
-    // ESC 닫기 — 캡처 단계에서 처리해 다른 핸들러보다 먼저 잡는다
+    return { isOpen: function () { return mask.classList.contains('on'); }, close: close };
+  }
+
+  /* ───────── KPI 광택 레이어 ───────── */
+  function buildShine() {
+    document.querySelectorAll('.kpi').forEach(function (k) {
+      if (k.querySelector('.shine')) return;
+      var s = document.createElement('span');
+      s.className = 'shine';
+      k.appendChild(s);
+    });
+  }
+
+  /* ───────── 초기화 ───────── */
+  function init() {
+    buildNav();
+    buildShine();
+    var fn = buildFootnotes();
+
+    // ESC — 캡처 단계에서 한 번만 처리 (모달 우선, 그다음 드로어)
     function onEsc(e) {
-      if (!mask.classList.contains('on')) return;
-      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
-        e.preventDefault();
-        e.stopPropagation();
-        close();
-      }
+      if (e.key !== 'Escape' && e.key !== 'Esc' && e.keyCode !== 27) return;
+      if (fn && fn.isOpen()) { e.preventDefault(); e.stopPropagation(); fn.close(); return; }
+      var d = document.querySelector('.drawer.on');
+      if (d && window.__closeDrawer) { e.preventDefault(); window.__closeDrawer(); }
     }
     document.addEventListener('keydown', onEsc, true);
     window.addEventListener('keydown', onEsc, true);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', build);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    build();
+    init();
   }
 })();
