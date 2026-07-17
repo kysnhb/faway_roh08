@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>콘텐츠 및 UI 개선 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 11</b> · 콘텐츠 및 UI 개선</span>
+    <span class="pg">11 / 14</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 11 · Content &amp; UI — Code-Verified</div>
+    <h1>콘텐츠 및 UI 개선</h1>
+    <p class="sub">이 페이지의 모든 항목은 <b>게임 코드를 직접 확인한 결과</b>에 근거합니다. 「무엇을 새로 만들자」가 아니라 <b>「이미 있는 자산으로 무엇이 가능한가」</b>를 다룹니다. 신규 콘텐츠 로드맵은 <a href="12-roadmap.html">「향후 업데이트」</a>에 있습니다.</p>
+    <div class="kpis" style="margin-top:32px">
+      <div class="kpi"><div class="n">8<small>종</small></div><div class="l">전투 콘텐츠 모드<br><span class="mut">전부 빌드에 포함 확인</span></div></div>
+      <div class="kpi g"><div class="n">437<small>개</small></div><div class="l">확인한 게임 로직 스크립트<br><span class="mut">C# 전수 목록 기준</span></div></div>
+      <div class="kpi b"><div class="n">3<small>가지</small></div><div class="l">빌드 없이 서버에서<br>가능한 운영 수단</div></div>
+      <div class="kpi ok"><div class="n">5<small>곳</small></div><div class="l">저공수 확장 포인트<br><span class="mut">기존 구조 재활용</span></div></div>
+    </div>
+  </div>
+</div>
+
+<section id="method">
+  <div class="wrap">
+    <div class="shead"><span class="snum">11-1</span><h2><i class="e">🔍</i>확인 방법과 이 페이지의 성격</h2></div>
+    <p class="slead">씬 구성, 빌드 설정, 콘텐츠 매니저, 서버 통신 계층을 파일 단위로 확인하였습니다. 백엔드는 <b>BACKND(뒤끝) BaaS</b>로, 결제 검증·랭킹·채팅·우편·공지·유저 데이터가 모두 서버 권위로 처리되고 있음을 확인했습니다.<span class="fn" data-t="확인 범위" data-c="확인 대상: 빌드 설정(EditorBuildSettings), 씬 파일 전체, 게임 로직 스크립트 437개, 서버 데이터 관리 계층(B_Data_Mng), 차트 다운로드 계층(Chart_Mng), 결제 계층(IAP_Mng), UI 로딩 구조(Base_Canvas). 유저 진행 데이터가 서버에 저장되는 테이블 26종도 함께 확인하였습니다."></span></p>
+
+    <div class="call info">
+      <div class="ct"><i class="e sm">🤝</i>먼저 말씀드릴 것 — 기반이 견고합니다</div>
+      <p>확인 과정에서 분명해진 사실이 있습니다. <b class="hl">서버 권위 저장, 서버 시간 기반 리셋, 안티치트, 영수증 서버 검증, 뒤로가기 스택 통일</b> 등 운영 게임의 기본기가 갖춰져 있습니다. 아래의 개선 항목들은 이 기반이 있기 때문에 가능한 것들이며, <b>기존 구현에 대한 지적이 아니라 그 위에 얹을 수 있는 것들의 목록</b>입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+    <div class="shead"><span class="snum">11-2</span><h2><i class="e float">🗺️</i>시스템 지도 — 있는 것과 없는 것</h2></div>
+    <p class="slead">개선 논의의 출발점은 정확한 재고 조사입니다. <b>있는 것은 재활용하고, 없는 것만 새로 만들기 위함</b>입니다.</p>
+
+    <h3>전투 콘텐츠 — 8종 전부 가동 중</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>콘텐츠</th><th>상태</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><b>필드 사냥 (메인 루프)</b></td><td><span class="b ok">가동</span></td><td>선형 스테이지가 아니라 <b>몬스터 5티어 × 난이도 X1~X10</b> 구조</td></tr>
+          <tr><td>보스 토벌</td><td><span class="b ok">가동</span></td><td>보스 8종 로스터 · <a href="04-balance.html#s2">이용률 문제는 04-3</a></td></tr>
+          <tr><td>골드 던전</td><td><span class="b ok">가동</span></td><td>던전 타입이 현재 <b>골드 1종만 정의</b>되어 있음 — 타입 확장 여지<span class="fn" data-t="확인 내용" data-c="던전 종류를 정의하는 목록에 현재 Gold 하나만 등록되어 있습니다. 즉 「던전 타입을 추가하는 자리」는 마련되어 있으나 아직 한 종류만 사용 중입니다. 경험치 던전·재료 던전 등을 같은 틀로 추가할 수 있는 구조입니다."></span></td></tr>
+          <tr><td>요일 던전</td><td><span class="b ok">가동</span></td><td>요일별 보상 7종 · 난이도 2단계 · 입장 횟수 서버 관리</td></tr>
+          <tr><td>PVP + 약탈(PK)</td><td><span class="b ok">가동</span></td><td>일일 랭킹 · 서버(1S/2S/3S)별 분리</td></tr>
+          <tr><td>길드 아레나 · 길드 보스</td><td><span class="b ok">가동</span></td><td>길드 랭킹 연동</td></tr>
+          <tr><td>시련의 탑</td><td><span class="b ok">가동</span></td><td><b>탑 전용 상점 보유</b> — 시즌제 개편의 발판 (<a href="12-roadmap.html">로드맵</a>)</td></tr>
+          <tr><td>월드보스</td><td><span class="b ok">가동</span></td><td>기록 서버 저장</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="call">
+      <div class="ct">빌드 확인 결과</div>
+      <p>빌드 설정을 확인한 결과 <b class="hlo">위 콘텐츠의 씬 10개가 모두 빌드에 포함되어 있습니다.</b> 과거 지적되었던 빌드 누락(요일던전·길드아레나·길드보스·시련의탑·월드보스 5개 씬)은 <b>수정 완료 상태</b>임을 재확인했습니다. 숨겨진 미출시 콘텐츠 씬은 없습니다.</p>
+    </div>
+
+    <h3>지원 시스템 — 생각보다 많이 갖춰져 있습니다</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>시스템</th><th>상태</th><th>시스템</th><th>상태</th></tr></thead>
+        <tbody>
+          <tr><td>가챠 (일반 + 이벤트 가챠 별도)</td><td><span class="b ok">있음</span></td><td>출석부 (서버 시간 기반)</td><td><span class="b ok">있음</span></td></tr>
+          <tr><td>상점 9탭 (추천·재료·충전·버프·캐시·골드·아이템·길드·코스튬)</td><td><span class="b ok">있음</span></td><td>일일 미션 (서버 저장)</td><td><span class="b ok">있음</span></td></tr>
+          <tr><td>우편함</td><td><span class="b ok">있음</span></td><td>길잡이(튜토리얼) 퀘스트 + 화살표 가이드</td><td><span class="b ok">있음</span></td></tr>
+          <tr><td>채팅 (전체/길드 채널)</td><td><span class="b ok">있음</span></td><td><b>멘토(사수) 시스템</b></td><td><span class="b ok">있음</span></td></tr>
+          <tr><td>길드 (가입·공지·랭킹)</td><td><span class="b ok">있음</span></td><td>칭호 (기능 게이팅에도 사용)</td><td><span class="b ok">있음</span></td></tr>
+          <tr><td>코스튬 + <b>시즌 스킨 자산 5종+</b></td><td><span class="b ok">있음</span></td><td>푸시 알림 · 서버 콘솔 공지</td><td><span class="b ok">있음</span></td></tr>
+          <tr class="rowcrit"><td><b class="hlr">배틀패스 / 시즌패스 / 정기 구독</b></td><td><span class="b p0">코드 없음</span></td><td><b class="hlr">친구 시스템</b></td><td><span class="b p0">코드 없음</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call gold">
+      <div class="ct"><i class="e sm glow">💡</i>이 표에서 읽어야 할 두 가지</div>
+      <p><b>1. 패스·정기 상품은 「개선」이 아니라 「신규 개발」입니다.</b> 전역 검색 결과 관련 코드가 존재하지 않습니다. 업계 표준(<a href="07-benchmark.html#s17">상위 40개 게임 중 배틀패스 31개</a>)과의 격차가 가장 큰 지점이며, 상품 설계는 <a href="14-monetize.html">「유료 상품 제안」</a>에 정리했습니다.</p>
+      <p style="margin-top:10px"><b>2. 멘토 시스템·탑 전용 상점·이벤트 가챠 등 이미 있는 자산이 활용되지 않고 있을 가능성이 있습니다.</b> 이용 현황은 계측이 없어 확인 불가하며, 정확히 이런 질문을 위해 <a href="02-analytics.html">「데이터 계측」</a>이 필요합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="server">
+  <div class="wrap">
+    <div class="shead"><span class="snum">11-3</span><h2><i class="e pulse">📡</i>운영 인프라의 발견 — 빌드 없이 서버에서 가능한 것</h2></div>
+    <p class="slead">이번 확인에서 가장 중요한 발견입니다. <b>「무언가 바꾸려면 앱 업데이트가 필요하다」는 전제가 절반만 사실</b>이었습니다.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:26%">수단</th><th>빌드 없이 가능한 것</th></tr></thead>
+        <tbody>
+          <tr class="rowgold">
+            <td><b class="hlg">① 서버 차트 (CDN)</b></td>
+            <td>몬스터·영웅·장비·재료·던전 몬스터의 <b>능력치, 드랍, 확률 수치를 서버에서 내려받아 갱신</b>하는 구조가 이미 가동 중입니다. 즉 <b class="hlg">밸런스 핫픽스·드랍률 이벤트(2배 드랍 등)·성장 곡선 조정은 앱 업데이트 없이 가능</b>합니다.<span class="fn" data-t="확인 내용" data-c="부팅 시 서버 CDN에서 차트 테이블을 내려받아 스탯·몬스터·영웅·재료·장비·기타 아이템·던전 몬스터 수치를 덮어쓰는 구조를 확인했습니다. 어디까지 덮어쓸 수 있는지의 정확한 범위(예: 가챠 확률표 포함 여부)는 개발 담당자와 함께 확인이 필요합니다."></span></td>
+          </tr>
+          <tr>
+            <td><b>② 원격 기능 스위치</b></td>
+            <td>공용 계정의 설정값을 모든 클라이언트가 읽어 <b>기능을 켜고 끄는 원격 토글 패턴이 이미 존재</b>합니다. 현재는 쿠폰 버튼 노출, 루비 이벤트 등 <b>2개 플래그만 사용 중</b>이며, 같은 패턴으로 <b class="hl">이벤트 ON/OFF·배너 노출·상품 노출 제어로 확장할 수 있는 발판</b>입니다.</td>
+          </tr>
+          <tr>
+            <td><b>③ 서버 콘솔 공지</b></td>
+            <td>공지 등록·변경이 서버 콘솔에서 가능하며 부팅 시 자동 표시됩니다. <b>운영 메시지는 이미 빌드가 필요 없습니다.</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call">
+      <div class="ct"><span class="sup">보강</span> 「밸런스 실측 04-8」에 대한 정정 겸 보충</div>
+      <p><a href="04-balance.html#s7">04-8</a>은 <i>"서버 측에서 이벤트를 원격 제어하는 별도 경로가 있는지는 추가 확인이 필요"</i>라고 남겨두었습니다. 이번 확인의 결론은 다음과 같습니다:</p>
+      <p style="margin-top:8px">· <b class="hlo">수치(스탯·드랍·확률)는 원격 갱신 가능</b> — 위 ①<br>
+      · <b class="hlr">이벤트 상품·이벤트 재화의 구성은 여전히 클라이언트에 내장</b> — 새 이벤트 상품을 추가하려면 빌드가 필요하다는 04-8의 결론은 유효합니다.</p>
+      <p style="margin-top:10px">→ 따라서 개선 방향은 명확합니다. <b class="hlg">이벤트 「구성」도 ①과 같은 차트 방식으로 옮기면, 이벤트 운영 전체가 빌드에서 해방됩니다.</b> 이것이 <a href="13-events.html">「이벤트 제안」</a>의 선행 조건 1번입니다.</p>
+    </div>
+
+    <div class="bigline">
+      <div class="bl">Key Finding</div>
+      <p>이벤트를 못 하는 게임이 아니라, <b class="hlg">이벤트 「수치」는 오늘도 바꿀 수 있는데 「틀」이 하드코딩된 게임</b>입니다. 틀을 데이터로 옮기는 작업 하나가 운영의 자유도를 바꿉니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="lowcost">
+  <div class="wrap">
+    <div class="shead"><span class="snum">11-4</span><h2><i class="e tick">🧰</i>저공수 확장 포인트 5가지</h2></div>
+    <p class="slead">코드 구조상 <b>기존 틀을 그대로 재활용</b>할 수 있어, 상대적으로 적은 공수로 콘텐츠를 넓힐 수 있는 지점입니다. 공수 판단은 구조 기준의 추정이며, 최종 판단은 개발 담당의 몫입니다.</p>
+
+    <div class="prio">
+      <div class="pn">1</div>
+      <div>
+        <div class="pt">POPUP FRAMEWORK</div>
+        <div class="ph">신규 화면 추가가 구조적으로 저렴합니다</div>
+        <p>팝업 화면은 <b>「프리팹 1개 + 버튼 연결 1곳」</b>으로 추가되는 공용 로딩 구조를 사용합니다. 최상위 모달 7종이 모두 이 방식이며, 신규 팝업은 <b>뒤로가기 스택에도 자동 편입</b>됩니다. 공용 토스트·화살표 가이드 시스템도 있어 <b class="hl">신규 기능의 안내 비용도 낮습니다</b>.</p>
+        <p style="color:var(--smoke);font-size:12.5px">→ 배틀패스 화면, 이벤트 허브, 도감 등 <b>신규 UI의 진입 장벽이 낮다</b>는 뜻입니다. (기존 화면 7종의 이름은 시스템 제약상 변경 불가 — 신규는 자유)</p>
+      </div>
+    </div>
+
+    <div class="prio">
+      <div class="pn">2</div>
+      <div>
+        <div class="pt">LEVEL CAP</div>
+        <div class="ph">레벨 상한 40 — 확장은 표 한 줄 추가입니다</div>
+        <p>레벨별 요구 경험치가 <b>40칸짜리 표</b>로 관리되며, 41레벨 이후는 마지막 값을 반환하도록 되어 있습니다. <b class="hlg">상한 확장은 표에 값을 추가하는 것으로 충분한 구조</b>입니다.</p>
+        <p style="color:var(--smoke);font-size:12.5px">→ 단, <a href="04-balance.html#s5">26레벨 8.24배 점프</a>가 확인된 만큼, 확장 시 <b>곡선 재설계와 함께</b> 진행하는 편이 안전합니다. 레벨업이 새 콘텐츠 해금과 맞물릴 때 가장 효과적입니다.</p>
+      </div>
+    </div>
+
+    <div class="prio">
+      <div class="pn">3</div>
+      <div>
+        <div class="pt">DIFFICULTY / DUNGEON TYPE</div>
+        <div class="ph">난이도 X10 상한 · 던전 타입 1종 — 둘 다 「자리」는 이미 있습니다</div>
+        <p>필드 난이도는 X1~X10 배수제이고, 던전 타입 목록에는 골드 1종만 등록되어 있습니다. <b>난이도 상한 상향(X11~), 던전 타입 추가(경험치·재료·조각 던전)는 기존 틀의 연장</b>입니다.</p>
+        <p style="color:var(--smoke);font-size:12.5px">→ 유저 요청 <i>"던전 및 탑등반등 겜할거리를 부탁드려요"</i> [73], 설문 4위 「방치 획득」(59표)과 직결됩니다. 상세는 <a href="12-roadmap.html">로드맵</a>.</p>
+      </div>
+    </div>
+
+    <div class="prio">
+      <div class="pn">4</div>
+      <div>
+        <div class="pt">WEEKDAY DUNGEON TABLE</div>
+        <div class="ph">요일던전 보상이 코드에 고정 — 표로 빼면 이벤트 무기가 됩니다</div>
+        <p>요일별 보상(월 영웅소환서 · 화 곡식 · 수 망치 · 목 나무묶음 · 금 주사위 · 토 전설망치 · 일 골드던전 입장권)과 난이도 2단계가 <b>코드에 직접 기재</b>되어 있습니다. 이를 <b>서버 차트로 이전</b>하면 「이번 주말은 보상 2배」「금요일은 주사위 대신 조각」 같은 <b class="hlg">요일던전 이벤트를 빌드 없이 운영</b>할 수 있습니다.</p>
+        <p style="color:var(--smoke);font-size:12.5px">→ <i>"하루 한번인데 괜히 낭비되지 않게요"</i> [118] — 요일던전은 유저가 아끼는 콘텐츠입니다. <a href="13-events.html">이벤트 제안</a>과 연동됩니다.</p>
+      </div>
+    </div>
+
+    <div class="prio">
+      <div class="pn">5</div>
+      <div>
+        <div class="pt">SEASONAL SKIN ASSETS</div>
+        <div class="ph">시즌 스킨 자산이 이미 5종 이상 존재합니다</div>
+        <p>캐릭터 리소스에서 <b>산타 VC-01 · 크리스마스 아스나 · 할로윈 벨라 · 해골 네오 · 구미호 제로</b> 등 시즌 코스튬 자산을 확인했습니다. 코스튬 시스템과 상점 코스튬 탭도 가동 중입니다. <b class="hlg">시즌 이벤트 × 코스튬 판매의 재료가 이미 창고에 있습니다.</b></p>
+        <p style="color:var(--smoke);font-size:12.5px">→ <a href="13-events.html">이벤트 제안</a>의 연간 캘린더는 이 자산의 재활용을 전제로 설계했습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cleanup">
+  <div class="wrap">
+    <div class="shead"><span class="snum">11-5</span><h2><i class="e">🧹</i>다듬을 곳 — 미완성 · 비활성 항목</h2></div>
+    <p class="slead">기능 추가가 아니라 <b>정리 판단이 필요한</b> 항목입니다. 각각 「살릴 것인지, 걷어낼 것인지」의 의사결정 대상입니다.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:26%">항목</th><th>상태</th><th style="width:22%">판단할 것</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>원스토어 결제</b></td>
+            <td>결제 모듈이 들어와 있으나 <b>상품 지급·로그인 로직이 미완성(작업 예정 주석 상태)</b>이며 호출부도 꺼져 있습니다. 현재 결제는 구글·애플만 가동.</td>
+            <td>원스토어 진출 여부 결정<span class="fn" data-t="참고" data-c="원스토어는 수수료율이 구글·애플보다 낮아(기본 20%, 자체 결제 시 5%) 국내 매출 비중이 높은 게임에서 마진 개선 수단으로 쓰입니다. 다만 입점·운영 공수와 스토어별 심사 대응이 추가되므로 매출 규모와 함께 판단할 사안입니다."></span></td>
+          </tr>
+          <tr class="rowgold">
+            <td><b class="hlg">이벤트 푸시 배너</b></td>
+            <td>이벤트 안내 배너를 띄우는 경로 하나가 <b>주석 처리로 꺼져 있습니다.</b> 이벤트 고지 수단이 하나 잠들어 있는 상태입니다.</td>
+            <td>이벤트 운영 재개 시 <b>복구 1순위</b></td>
+          </tr>
+          <tr>
+            <td>잔여 씬·복구 폴더</td>
+            <td>빈 씬 1개(빌드 제외 상태), 복구·격리 폴더 잔재. 동작에는 영향 없음.</td>
+            <td>정리 시점만 결정</td>
+          </tr>
+          <tr>
+            <td>PVP 임시 계산 주석</td>
+            <td>PVP 스탯 계산부에 「임시」 표기가 남아 있습니다. <a href="03-users.html#f6">캐릭터 밸런스 지적</a>과 관련될 수 있으나 <b>영향 범위는 미확인(추정)</b>입니다.</td>
+            <td>개발 담당 확인 요청</td>
+          </tr>
+          <tr class="rowcrit">
+            <td><b class="hlr">위험 항목 (재확인)</b></td>
+            <td>강화 테이블 초기화 기능의 값 불일치 등 <b>즉시 조치 대상은 별도 정리되어 있습니다.</b></td>
+            <td>→ <a href="09-proposal.html#p0">개선 제안 Phase 0</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="ui">
+  <div class="wrap">
+    <div class="shead"><span class="snum">11-6</span><h2><i class="e pulse">🖥️</i>UI 개선 — 목업과 코드 조건의 결합</h2></div>
+    <p class="slead">화면 목업 4종은 <a href="08-ui.html">「UI 개선안」</a>에 있습니다. 여기서는 <b>코드 조건이 그 목업들을 지지하는지</b>만 확인합니다.</p>
+
+    <div class="g2">
+      <div class="card">
+        <h5><i class="e sm">📊</i>성장 정보 표기 <span class="b ok">코드 조건 유리</span></h5>
+        <p>필요한 수치(초월 6,000 / 각성 12,500 등)는 <b>존재하나 로직 상수 형태</b>입니다. 데이터 분리 작업이 선행되면 표시는 어렵지 않습니다. → <a href="08-ui.html#s1">목업</a></p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">🎲</i>확률 표기 <span class="b p1">선행 작업 필요</span></h5>
+        <p>강화 확률표는 정상이므로 <b>표시부터 가능</b>합니다. 가챠는 기록값과 실동작 불일치로 <b>정규화 재구현이 먼저</b>입니다. → <a href="08-ui.html#s2">목업</a> · <a href="04-balance.html#s4">04-5</a></p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">⏰</i>던전 스케줄러 <span class="b ok">코드 조건 유리</span></h5>
+        <p>전투 콘텐츠 8종의 진입 로직이 매니저 단위로 정리되어 있어 <b>순차 실행 큐를 얹는 구조</b>가 성립합니다. → <a href="08-ui.html#s3">목업</a></p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">🏭</i>길드 작업장 <span class="b p1">신규 개발</span></h5>
+        <p>길드·제작·상점 길드탭이 모두 가동 중이라 <b>연결점은 존재</b>하나, 작업장 자체는 신규 시스템입니다. → <a href="08-ui.html#s4">목업</a> · <a href="12-roadmap.html">로드맵</a></p>
+      </div>
+    </div>
+
+    <h3>코드에서 추가로 확인된 UI 개선 거리</h3>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:28%">항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>해상도 기준 분리 (재확인)</b></td>
+            <td>메인 계열은 1080×1920, <b>전투 씬은 800×600</b> 기준이 유지되고 있습니다. <i>"글자가 너무 작음"</i> [105], <i>"아이패드 미니는 UI가 불편해요"</i> [94]의 구조적 원인입니다. 일괄 축소 부작용이 있어 <b>씬 단위 점진 전환</b>을 권합니다.</td>
+          </tr>
+          <tr>
+            <td><b>색·팔레트 중앙화 완료</b></td>
+            <td>UI 색상이 단일 파일로 중앙화되어 있어 <b>전역 리스타일·시즌 테마 적용에 유리한 조건</b>입니다. 상점 리워크에서 확립된 이미지 교체 파이프라인도 재사용 가능합니다.</td>
+          </tr>
+          <tr>
+            <td><b>상점 「특정 탭 직행」 패턴</b></td>
+            <td>상점을 캐시탭·골드탭으로 <b>바로 여는 진입 변형이 이미 2종</b> 있습니다. 같은 패턴으로 <b class="hl">「이벤트 → 관련 상품 탭 직행」 동선</b>을 만들 수 있습니다 — <a href="14-monetize.html">트리거형 상품</a>의 기술적 발판입니다.</td>
+          </tr>
+          <tr>
+            <td><b>모든 콘텐츠에 설명 부족</b></td>
+            <td><i>"모든컨텐츠에 설명이 너무 없습니다"</i> [88]. 공용 팝업·토스트 구조가 있으므로 <b>콘텐츠별 「?」 도움말 팝업을 공용 프레임 하나로 일괄 추가</b>하는 방식이 공수 대비 효과가 큽니다.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <div class="shead"><span class="snum">11-7</span><h2><i class="e tick">🎯</i>공수 × 효과 정리</h2></div>
+
+    <div class="fig">
+      <div class="cap">// 이 페이지 항목들의 공수 대비 효과 (구조 기준 추정 — 최종 공수 판단은 개발 담당)</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <line x1="80" y1="20" x2="80" y2="370" stroke="#2b3342" stroke-width="2"/>
+        <line x1="80" y1="370" x2="870" y2="370" stroke="#2b3342" stroke-width="2"/>
+        <text x="20" y="30" font-size="11" fill="#8a93a6">효과 ↑</text>
+        <text x="800" y="395" font-size="11" fill="#8a93a6">공수 →</text>
+        <line x1="80" y1="195" x2="870" y2="195" stroke="#2b3342" stroke-dasharray="3 4"/>
+        <line x1="475" y1="20" x2="475" y2="370" stroke="#2b3342" stroke-dasharray="3 4"/>
+
+        <text x="120" y="48" font-size="11.5" fill="#4ecb8d" font-family="JetBrains Mono">낮은 공수 · 높은 효과 — 우선</text>
+        <g>
+          <circle cx="150" cy="90" r="7" fill="#ffd24a"/><text x="164" y="94" font-size="12.5" fill="#f2f5fa" font-weight="700">이벤트 푸시 배너 복구</text>
+          <circle cx="170" cy="130" r="7" fill="#ffd24a"/><text x="184" y="134" font-size="12.5" fill="#f2f5fa" font-weight="700">요일던전 보상 차트화</text>
+          <circle cx="230" cy="72" r="7" fill="#ff5b3a"/><text x="244" y="76" font-size="12.5" fill="#f2f5fa" font-weight="700">성장 정보 표기 (데이터 분리 포함)</text>
+          <circle cx="300" cy="110" r="7" fill="#ff5b3a"/><text x="314" y="114" font-size="12.5" fill="#f2f5fa" font-weight="700">콘텐츠 도움말 공용 팝업</text>
+        </g>
+
+        <text x="500" y="48" font-size="11.5" fill="#ffb347" font-family="JetBrains Mono">중간 공수 · 높은 효과 — 계획 편성</text>
+        <g>
+          <circle cx="540" cy="90" r="7" fill="#ff5b3a"/><text x="554" y="94" font-size="12.5" fill="#f2f5fa" font-weight="700">이벤트 구성 차트화 (틀의 데이터화)</text>
+          <circle cx="580" cy="130" r="7" fill="#5ab3ff"/><text x="594" y="134" font-size="12.5" fill="#f2f5fa" font-weight="700">던전 스케줄러</text>
+          <circle cx="620" cy="165" r="7" fill="#5ab3ff"/><text x="634" y="169" font-size="12.5" fill="#f2f5fa" font-weight="700">던전 타입·난이도 확장</text>
+        </g>
+
+        <text x="120" y="225" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">낮은 공수 · 판단 필요</text>
+        <g>
+          <circle cx="160" cy="265" r="7" fill="#8a93a6"/><text x="174" y="269" font-size="12.5" fill="#c4ccd8">잔여 씬·폴더 정리</text>
+          <circle cx="200" cy="300" r="7" fill="#8a93a6"/><text x="214" y="304" font-size="12.5" fill="#c4ccd8">레벨 상한 확장 (곡선 재설계와 병행)</text>
+        </g>
+
+        <text x="500" y="225" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">높은 공수 — 별도 트랙</text>
+        <g>
+          <circle cx="560" cy="265" r="7" fill="#e9c96a"/><text x="574" y="269" font-size="12.5" fill="#c4ccd8">배틀패스 시스템 신규 개발 → <tspan fill="#e9c96a">유료 상품 제안</tspan></text>
+          <circle cx="600" cy="300" r="7" fill="#e9c96a"/><text x="614" y="304" font-size="12.5" fill="#c4ccd8">길드 작업장 → <tspan fill="#e9c96a">로드맵</tspan></text>
+          <circle cx="640" cy="335" r="7" fill="#e9c96a"/><text x="654" y="339" font-size="12.5" fill="#c4ccd8">원스토어 결제 완성 (진출 결정 시)</text>
+        </g>
+
+        <g font-size="10.5" fill="#5f6b7d" font-family="JetBrains Mono">
+          <text x="90" y="415">● 빨강 = 매출 직결 · 노랑(금) = 운영 자유도 · 파랑 = 편의/리텐션 · 회색 = 정리</text>
+        </g>
+      </svg>
+      </div>
+    </div>
+
+    <div class="bigline">
+      <div class="bl">Bottom Line</div>
+      <p>새 것을 만들기 전에 <b class="hlg">꺼져 있는 것을 켜고(푸시 배너), 굳어 있는 것을 데이터로 풀고(요일던전·이벤트 틀), 숨어 있는 수치를 보여주는 것(성장 정보)</b>만으로도 체감 변화를 만들 수 있습니다. 전부 <b>이미 있는 자산</b>입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="10-notes.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 10 · 방법론 및 한계</span></a>
+      <a href="12-roadmap.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 12 · 향후 업데이트 로드맵</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 11 · 콘텐츠 및 UI 개선<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용<br><br>
+      본 페이지의 코드 관련 서술은 리포지토리를 직접 확인한 결과이며,<br>
+      공수 표현은 구조 기준의 추정입니다. 최종 공수 판단은 개발 담당자의 몫입니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

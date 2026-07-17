@@ -16,7 +16,11 @@
     { f: '07-benchmark.html', n: '07', s: '업계',    t: '업계 비교' },
     { f: '08-ui.html',        n: '08', s: 'UI',      t: 'UI 개선안' },
     { f: '09-proposal.html',  n: '09', s: '제안',    t: '개선 제안' },
-    { f: '10-notes.html',     n: '10', s: '방법론',  t: '방법론 및 한계' }
+    { f: '10-notes.html',     n: '10', s: '방법론',  t: '방법론 및 한계' },
+    { f: '11-content.html',   n: '11', s: '콘텐츠',  t: '콘텐츠 및 UI 개선' },
+    { f: '12-roadmap.html',   n: '12', s: '업데이트', t: '향후 업데이트 로드맵' },
+    { f: '13-events.html',    n: '13', s: '이벤트',  t: '이벤트 제안' },
+    { f: '14-monetize.html',  n: '14', s: '유료상품', t: '유료 상품 제안' }
   ];
 
   function currentFile() {

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이벤트 제안 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 13</b> · 이벤트 제안</span>
+    <span class="pg">13 / 14</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 13 · Live-Ops Event Plan</div>
+    <h1>이벤트 제안</h1>
+    <p class="sub">본 게임에서 <b>이벤트가 결제를 만들어낸 사례는 이미 확인되어 있습니다.</b> 문제는 이벤트를 할 수 있는 「틀」과 「달력」이 없다는 것입니다. 이 페이지는 <b>선행 조건 2가지, 연간 캘린더 1장, 이벤트 규격 8종</b>을 제안합니다.</p>
+    <div class="kpis" style="margin-top:32px">
+      <div class="kpi"><div class="n">22<small>건</small></div><div class="l">이벤트 관련 유저 요청<br><span class="mut">자유의견·제안 중</span></div></div>
+      <div class="kpi g"><div class="n">8<small>종</small></div><div class="l">제안 이벤트 규격<br><span class="mut">전부 재원·측정 포함</span></div></div>
+      <div class="kpi b"><div class="n">2<small>가지</small></div><div class="l">선행 조건<br><span class="mut">틀의 데이터화 · 고지 경로</span></div></div>
+      <div class="kpi ok"><div class="n">5<small>종+</small></div><div class="l">이미 보유한 시즌 스킨<br><span class="mut">코드에서 확인</span></div></div>
+    </div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="shead"><span class="snum">13-1</span><h2><i class="e pulse">🧾</i>출발점 — 유저가 남긴 네 개의 문장</h2></div>
+
+    <div class="g2">
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">① 이벤트가 첫 결제를 만들었습니다</h5>
+        <div class="q" style="margin:8px 0"><div class="qt"><em>이벤트는 잘하시는것같아요. 루비 방금 샀습니다. 현질은 모바일게임하고선 처음인데</em> 서비스 좀 주셔요ㅋ</div><div class="qm">— 자유의견 [41]</div></div>
+        <p>「이벤트가 좋다 → 샀다 → 그것도 인생 첫 결제」. <b class="hlg">이벤트의 결제 전환력이 실증된 문장</b>입니다.</p>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">② 유저가 이벤트 기획안을 냈습니다</h5>
+        <div class="q" style="margin:8px 0"><div class="qt"><em>12만 결제시 자신이 원하는 캐릭 영웅 조각 1800개 덤으로 주는 이벤트</em> 어떨지 문의 드려요. … <em>영자님에게도 매출에 도움될듯</em>하여</div><div class="qm">— 기타 게임제안 [9]</div></div>
+        <p>수요가 이 정도로 명시적인 경우는 드뭅니다. → <b>E2에서 그대로 검토</b>합니다.</p>
+      </div>
+      <div class="card">
+        <h5>③ 이벤트 일정을 먼저 물어봅니다</h5>
+        <div class="q" style="margin:8px 0"><div class="qt">혹시 곧 <em>추석도 다가오는데 루비구매시 50% 추가 증정 이벤트는 언제쯤으로 계획하고 계신지</em> 궁금합니다.</div><div class="qm">— 기타 게임제안 [15]</div></div>
+        <p>구매 의사가 있는 유저가 <b>이벤트를 기다리며 결제를 보류</b>하고 있습니다. → E3·캘린더 공지 원칙과 연결됩니다.</p>
+      </div>
+      <div class="card">
+        <h5>④ 기준점은 이미 생겼습니다</h5>
+        <div class="q" style="margin:8px 0"><div class="qt"><em>이번 이벤트는 추석이벤트에 비해 너무 아쉬웠습니다</em> 화이팅</div><div class="qm">— 자유의견 [68]</div></div>
+        <p>추석 이벤트가 품질 기준이 되었습니다. <b>기준 이하의 이벤트는 안 하느니만 못한 인상</b>을 남깁니다 — 규격화가 필요한 이유입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prereq">
+  <div class="wrap">
+    <div class="shead"><span class="snum">13-2</span><h2><i class="e tick">🔑</i>선행 조건 — 이것 없이는 달력이 무의미합니다</h2></div>
+
+    <div class="prio">
+      <div class="pn">1</div>
+      <div>
+        <div class="pt">EVENT FRAMEWORK</div>
+        <div class="ph">이벤트 「틀」의 데이터화 — 신규 이벤트 1회 = 앱 업데이트 1회 구조의 해체</div>
+        <p>현재 이벤트 재화·상품 구성이 클라이언트에 내장되어 있어 <b>이벤트마다 빌드와 스토어 심사가 필요</b>합니다(<a href="04-balance.html#s7">04-8 실측</a>). 반면 <b class="hlg">몬스터·드랍·확률 수치는 이미 서버에서 원격 갱신이 가능</b>합니다(<a href="11-content.html#server">11-3 확인</a>).</p>
+        <p style="margin-top:8px">→ 이벤트 구성(재화 종류·교환비·상품 목록)을 <b>같은 차트 방식으로 이전</b>하면, 아래 캘린더 전체가 <b>빌드 없이 운영 가능한 영역</b>으로 들어옵니다. 이것이 본 보고서 전체에서 공수 대비 효과가 가장 큰 단일 개발 항목이라고 판단합니다.</p>
+      </div>
+    </div>
+
+    <div class="prio p2c">
+      <div class="pn">2</div>
+      <div>
+        <div class="pt">ANNOUNCEMENT PATH</div>
+        <div class="ph">고지 경로 복구 — 꺼져 있는 배너와 잠든 푸시</div>
+        <p>이벤트 안내 배너 경로 하나가 <b>주석 처리로 꺼져 있음</b>을 확인했습니다(<a href="11-content.html#cleanup">11-5</a>). 푸시 알림·서버 콘솔 공지는 가동 중입니다. 이벤트를 만들어도 <b>알리는 관이 막혀 있으면 효과가 반감</b>됩니다 — 복구를 이벤트 운영 재개의 1순위 작업으로 제안합니다.</p>
+        <p style="margin-top:8px">함께, <b>분기 이벤트 캘린더의 사전 공지</b>를 원칙으로 제안합니다. [15]처럼 이벤트를 기다리는 유저에게 예측 가능성을 주는 것 자체가 리텐션 장치입니다.<span class="fn" data-t="주의 — 공개 약속의 무게" data-c="사전 공지는 지킬 수 있는 범위에서만 해야 합니다. <b>공개 약속은 계약과 같으며</b>, 약속 파기가 사태로 번진 사례는 <a href='07-benchmark.html#s16'>업계 비교 07-12</a>에 정리되어 있습니다. 일정만 공지하고 보상 수치는 임박 공지로 이원화하면 리스크를 줄일 수 있습니다."></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calendar">
+  <div class="wrap">
+    <div class="shead"><span class="snum">13-3</span><h2><i class="e float">🗓️</i>연간 이벤트 캘린더 (제안)</h2></div>
+    <p class="slead">대형 캠페인 6개 + 상시 미니 로테이션으로 구성했습니다. <b>보유 스킨 자산(산타 VC-01 · 크리스마스 아스나 · 할로윈 벨라 · 해골 네오 · 구미호 제로)</b>이 있는 자리에 배지를 달았습니다.</p>
+
+    <div class="fig">
+      <div class="cap">// 연간 캘린더 — 상단: 대형 캠페인 / 하단: 상시 회전. 👘 = 보유 스킨 자산 활용 가능</div>
+      <div class="scroll">
+      <svg viewBox="0 0 940 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <g font-size="11" font-family="JetBrains Mono" fill="#8a93a6">
+          <text x="40" y="20">1월</text><text x="115" y="20">2월</text><text x="190" y="20">3월</text><text x="265" y="20">4월</text>
+          <text x="340" y="20">5월</text><text x="415" y="20">6월</text><text x="490" y="20">7월</text><text x="565" y="20">8월</text>
+          <text x="640" y="20">9월</text><text x="715" y="20">10월</text><text x="790" y="20">11월</text><text x="865" y="20">12월</text>
+        </g>
+        <line x1="30" y1="28" x2="30" y2="240" stroke="#2b3342"/>
+        <g stroke="#2b3342" stroke-dasharray="2 5">
+          <line x1="105" y1="28" x2="105" y2="240"/><line x1="180" y1="28" x2="180" y2="240"/><line x1="255" y1="28" x2="255" y2="240"/>
+          <line x1="330" y1="28" x2="330" y2="240"/><line x1="405" y1="28" x2="405" y2="240"/><line x1="480" y1="28" x2="480" y2="240"/>
+          <line x1="555" y1="28" x2="555" y2="240"/><line x1="630" y1="28" x2="630" y2="240"/><line x1="705" y1="28" x2="705" y2="240"/>
+          <line x1="780" y1="28" x2="780" y2="240"/><line x1="855" y1="28" x2="855" y2="240"/><line x1="930" y1="28" x2="930" y2="240"/>
+        </g>
+
+        <rect x="34" y="40" width="112" height="40" rx="7" fill="#ff5b3a" opacity=".2" stroke="#ff5b3a"/>
+        <text x="46" y="58" font-size="12" fill="#f2f5fa" font-weight="700">설날 캠페인 👘</text>
+        <text x="46" y="73" font-size="10.5" fill="#c4ccd8">수집→제작 · 구미호 제로</text>
+
+        <rect x="259" y="40" width="100" height="40" rx="7" fill="#4ecb8d" opacity=".16" stroke="#4ecb8d"/>
+        <text x="271" y="58" font-size="12" fill="#f2f5fa" font-weight="700">봄 성장 축제</text>
+        <text x="271" y="73" font-size="10.5" fill="#c4ccd8">신규·복귀 부스트</text>
+
+        <rect x="484" y="40" width="140" height="40" rx="7" fill="#5ab3ff" opacity=".16" stroke="#5ab3ff"/>
+        <text x="496" y="58" font-size="12" fill="#f2f5fa" font-weight="700">여름 바캉스 캠페인</text>
+        <text x="496" y="73" font-size="10.5" fill="#c4ccd8">우산형 · 방치 2배 주간</text>
+
+        <rect x="634" y="40" width="120" height="40" rx="7" fill="#e9c96a" opacity=".2" stroke="#e9c96a"/>
+        <text x="646" y="58" font-size="12" fill="#f2f5fa" font-weight="700">추석 캠페인 ★</text>
+        <text x="646" y="73" font-size="10.5" fill="#c4ccd8">품질 기준점 · 코인 재활용</text>
+
+        <rect x="709" y="90" width="100" height="40" rx="7" fill="#a86bd6" opacity=".18" stroke="#a86bd6"/>
+        <text x="721" y="108" font-size="12" fill="#f2f5fa" font-weight="700">할로윈 👘</text>
+        <text x="721" y="123" font-size="10.5" fill="#c4ccd8">벨라 · 해골 네오</text>
+
+        <rect x="820" y="40" width="112" height="40" rx="7" fill="#ff5b3a" opacity=".2" stroke="#ff5b3a"/>
+        <text x="832" y="58" font-size="12" fill="#f2f5fa" font-weight="700">성탄·연말 👘</text>
+        <text x="832" y="73" font-size="10.5" fill="#c4ccd8">산타 VC-01 · 아스나</text>
+
+        <rect x="34" y="90" width="150" height="40" rx="7" fill="#e9c96a" opacity=".14" stroke="#e9c96a" stroke-dasharray="4 3"/>
+        <text x="46" y="108" font-size="12" fill="#f2f5fa" font-weight="700">주년 캠페인</text>
+        <text x="46" y="123" font-size="10.5" fill="#c4ccd8">시점은 서비스 기념일로</text>
+
+        <rect x="34" y="160" width="898" height="34" rx="7" fill="#2b3342" opacity=".7"/>
+        <text x="46" y="182" font-size="11.5" fill="#c4ccd8"><tspan fill="#4ecb8d" font-weight="700">상시 회전:</tspan> 2일 미니 이벤트 (드랍 2배 · 방치 2배 · 강화 비용 할인 · 요일던전 보상 2배 …) — 차트 수치 변경만으로 운영 (E5)</text>
+
+        <rect x="34" y="204" width="898" height="34" rx="7" fill="#2b3342" opacity=".45"/>
+        <text x="46" y="226" font-size="11.5" fill="#c4ccd8"><tspan fill="#5ab3ff" font-weight="700">상시 가동:</tspan> 출석 마일스톤 (E1) · 누적 결제 (E2) · 복귀 유저 (E6) — 캠페인과 독립적으로 항상 켜져 있는 층</text>
+
+        <text x="34" y="266" font-size="10.5" fill="#5f6b7d" font-family="JetBrains Mono">👘 = 보유 스킨 자산 활용 · ★ = 유저가 기준점으로 인식하는 이벤트 · 배치는 제안이며 일정 확정치가 아님</text>
+      </svg>
+      </div>
+    </div>
+
+    <div class="call info">
+      <div class="ct"><i class="e sm">📎</i>캘린더의 구조 — 「우산형」과 「3층 구조」</div>
+      <p>국내 표준은 단일 이벤트가 아니라 <b>우산형 캠페인</b>(하나의 테마 아래 5~7종 동시 운영)입니다(<a href="07-benchmark.html#s5">07-7</a>). 위 캘린더는 <b>① 상시 가동층(출석·누적·복귀) ② 상시 회전층(2일 미니) ③ 대형 캠페인층(연 6회)</b>의 3층 구조이며, 버섯커 키우기의 <b>2일 회전</b>(<a href="07-benchmark.html#s-idle">07-14</a>)을 회전층에 반영했습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="specs">
+  <div class="wrap">
+    <div class="shead"><span class="snum">13-4</span><h2><i class="e">🎪</i>이벤트 규격 8종</h2></div>
+    <p class="slead">각 규격에 <b>목적 · 구성 · 필요 개발 · 측정 · 위험</b>을 붙였습니다. 보상 수치는 비워두었습니다 — <b>재화 가치표(<a href="06-cost.html">비용 구조</a>) 기준으로 별도 산정</b>이 필요하며, 여기서 정하는 것은 구조입니다.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:20%">규격</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>E1 · 출석 리부트</b><br><span class="b info">상시</span></td>
+            <td>
+              <b>목적:</b> 접속 습관의 뼈대. <b>구성:</b> 연속이 아닌 <b>누적 스탬프 60일 마일스톤형</b>(끊겨도 리셋되지 않음) + 특정 일차에 <b>영구 소량 스탯</b>(세나 키우기 「컬렉션 등록」형) 배치. 기존 출석부가 서버 시간 기반으로 가동 중이므로 <b>개편이지 신규가 아닙니다.</b><br>
+              <b>측정:</b> 출석 수령률(계측 B 영역). <b>위험:</b> 낮음.
+            </td>
+          </tr>
+          <tr class="rowgold">
+            <td><b class="hlg">E2 · 누적 결제 이벤트</b><br><span class="b info">상시</span></td>
+            <td>
+              <b>목적:</b> 결제 금액대별 목표 제공. <b>구성:</b> 기간 내 누적 결제액 구간(예: 1·3·6·12만원)마다 보상 — <b>12만원 구간에 「원하는 영웅 조각 1,800개」를 배치하는 안은 유저 [9]의 기획안을 그대로 검토하는 것</b>입니다. 조각 1,800개는 현행 조각 팩 시세로 약 16만원 상당이므로<span class="fn" data-t="가치 계산" data-c="600조각 팩 = 3,400루비 기준 1,800조각 = 10,200루비 ≈ 160,242원(최저 단가 15.71원/루비). 즉 12만원 결제에 16만원 상당 덤이면 실질 약 57% 보너스입니다. 마진 관점에서 부담스럽다면 조각 수를 낮추는 것이 아니라 <b>구간을 나누어(1·3·6·12만원) 총 가치를 분산</b>하는 편이 유저 체감을 지킵니다."></span> 구간 분할로 가치를 조정합니다.<br>
+              <b>측정:</b> 구간별 도달률·ARPPU 변화(계측 D 영역). <b>위험:</b> 중 — 상시화하면 「이벤트 없을 때 결제 안 함」 학습. <b>분기 1회 기간제</b>를 권합니다.
+            </td>
+          </tr>
+          <tr>
+            <td><b>E3 · 루비 충전 보너스</b><br><span class="b p1">분기 1회</span></td>
+            <td>
+              <b>목적:</b> [15]가 직접 물어본 그 이벤트. <b>구성:</b> 기간 한정 충전 보너스(예: +50%)를 <b>명절 캠페인에만 결합</b>해 희소성 유지. 첫 충전 보너스 리셋(전 상품 1회 한정 2배)과 병행 — 상위 40개 게임 중 17개가 첫 결제 혜택을 운영합니다(<a href="07-benchmark.html#s17">07-13</a>).<br>
+              <b>측정:</b> 충전 상품별 판매량. <b>위험:</b> 중 — 상시화 금지(단가 인하와 동일해짐). 7,500루비 단가 역전(<a href="06-cost.html">06-1</a>) 수정이 선행되어야 보너스 계산이 왜곡되지 않습니다.
+            </td>
+          </tr>
+          <tr>
+            <td><b>E4 · 우산형 명절 캠페인</b><br><span class="b p1">연 6회</span></td>
+            <td>
+              <b>목적:</b> 추석 수준의 「기준점 이벤트」를 정례화. <b>구성:</b> 테마 재화 수집(사냥·던전 드랍) → <b>제작/강화로 교환</b>(국내 우세 패턴) + 테마 가챠(이벤트 가챠 시스템 기존 보유) + 시즌 코스튬 판매(보유 스킨 5종+) + 미션 연동. <b>추석코인 구조의 재활용이 가능하므로 첫 회는 추석이 가장 저렴합니다.</b><br>
+              <b>측정:</b> 캠페인 참여율·재화 소진율. <b>위험:</b> 낮음 — 단, 선행 조건 1(틀의 데이터화) 없이는 매회 빌드가 필요합니다.
+            </td>
+          </tr>
+          <tr class="rowgold">
+            <td><b class="hlg">E5 · 2일 미니 로테이션</b><br><span class="b ok">상시 회전</span></td>
+            <td>
+              <b>목적:</b> 접속 리듬 생성 — 버섯커식 회전의 저위험 변형. <b>구성:</b> <b>드랍 2배 · 방치 보상 2배 · 강화 골드 할인 · 요일던전 보상 2배</b> 등을 2~3일 단위로 회전. <b class="hlg">전부 「수치」 이벤트이므로 서버 차트 갱신만으로 운영 가능</b> — 선행 조건 1 없이도 시작할 수 있는 유일한 규격입니다(<a href="11-content.html#server">11-3</a>).<br>
+              <b>측정:</b> 이벤트 요일별 DAU·재화 흐름(계측 E 영역). <b>위험:</b> 낮음 — 단 골드 2배류는 <a href="04-balance.html#s6">골드던전 상한 문제</a>와 상호작용하므로 상한 도입 후 운영.
+            </td>
+          </tr>
+          <tr>
+            <td><b>E6 · 복귀 유저 이벤트</b><br><span class="b info">상시</span></td>
+            <td>
+              <b>목적:</b> 축소 시장에서는 이탈 방어·복귀가 신규보다 쌉니다. <b>구성:</b> <b>날짜 구간형 판정</b>(고정 N일은 잠수 어뷰징에 취약) + <b>7일 만료 대여 장비</b>(강함 체험 후 전환 압력) + 이력 비례 차등 지급. 상세 근거는 <a href="07-benchmark.html#s5">07-7</a>.<br>
+              <b>측정:</b> 복귀 후 7일 잔존율. <b>위험:</b> 낮음.
+            </td>
+          </tr>
+          <tr>
+            <td><b>E7 · 랭킹 경쟁 이벤트</b><br><span class="b p1">캠페인 결합</span></td>
+            <td>
+              <b>목적:</b> 상위권 유저의 목표 제공. <b>구성:</b> 기간 한정 <b>시련의 탑 스프린트</b>(기간 내 등반 층수) 또는 골드던전 스코어런. 일일 랭킹 인프라가 가동 중이므로 재활용합니다. <b>보상은 능력치가 아닌 칭호·코스튬 중심</b> — 길드 격차(발견 5)를 악화시키지 않기 위함입니다.<br>
+              <b>측정:</b> 참여율·상위 집중도. <b>위험:</b> 중 — 능력치 보상을 걸면 격차 확대.
+            </td>
+          </tr>
+          <tr>
+            <td><b>E8 · 교차 프로모션</b><br><span class="b p2">탐색</span></td>
+            <td>
+              <b>목적:</b> 마케팅 예산 없이 신규 유입 경로 확보. <b>구성:</b> 변신 키우기 × 블레이드 키우기처럼 <b>비슷한 체급의 방치형·키우기 게임과 상호 쿠폰/보상 교환</b>(<a href="07-benchmark.html#s-idle">07-14</a>). 쿠폰 시스템이 이미 있어 기술 비용은 낮습니다.<br>
+              <b>측정:</b> 쿠폰 유입 신규 수. <b>위험:</b> 낮음 — 단 제휴처 발굴이 관건이며, 성사 가능성은 <b>자료 없음</b>(시도해 봐야 아는 영역).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="shead"><span class="snum">13-5</span><h2><i class="e tick">🧭</i>이벤트 운영 원칙 4가지</h2></div>
+
+    <div class="g2">
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">1. 일정은 약속, 수치는 임박 공지</h5>
+        <p>캘린더는 미리 공지하되, <b>보상 수치는 확정 후에만</b> 공개합니다. 공언 후 철회가 사태로 번진 사례가 반복되어 있습니다(<a href="07-benchmark.html#s16">07-12</a>).</p>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">2. 이벤트 뽑기도 확률 표시 대상입니다</h5>
+        <p>유료 재화가 간접적으로라도 쓰이는 이벤트 가챠·룰렛은 <b>확률 표시 의무 대상</b>입니다. 서비스 종료 전 유료 룰렛으로 전액 환불까지 간 사례(뮤 오리진)가 있습니다. <a href="04-balance.html#s4">확률 정규화</a>가 선행되어야 하는 또 하나의 이유입니다.</p>
+      </div>
+      <div class="card">
+        <h5>3. 매출 목표를 약속하지 않습니다</h5>
+        <p>이벤트로 순위 상승은 재현 가능하나 <b>매출 지속성의 정량 근거는 공개 자료에 없습니다</b>(<a href="07-benchmark.html#s5">07-7 정량 판단</a>). 내부 목표는 참여율·잔존율로 설정하기를 권합니다.</p>
+      </div>
+      <div class="card">
+        <h5>4. 무료 이벤트에 유료 우회로를 함께 설계합니다</h5>
+        <p>업계 일관 패턴 — 출석에 보충권, 수집에 완주 부스터. <b>무료로 완주 가능하되 시간을 돈으로 살 수 있게.</b> 상품 측 설계는 <a href="14-monetize.html">「유료 상품 제안」</a>과 한 몸입니다.</p>
+      </div>
+    </div>
+
+    <div class="bigline">
+      <div class="bl">Event Thesis</div>
+      <p>이벤트의 목적은 매출 그 자체가 아니라 <b class="hlg">「접속할 이유의 정기 공급」</b>입니다. 결제는 그 위에서 자연히 발생한다는 것을 <b>자유의견 [41]이 이미 증명</b>했습니다 — 필요한 것은 틀(선행 조건 1)과 달력(13-3)입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="12-roadmap.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 12 · 향후 업데이트 로드맵</span></a>
+      <a href="14-monetize.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 14 · 유료 상품 제안</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 13 · 이벤트 제안<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용<br><br>
+      캘린더와 규격은 제안이며, 보상 수치는 재화 가치표 기준의 별도 산정이 필요합니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>
