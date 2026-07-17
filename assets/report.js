@@ -7,8 +7,8 @@
 
   var PAGES = [
     { f: 'index.html',        n: '',   s: '표지',    t: '표지 및 목차' },
-    { f: '01-cs.html',        n: '01', s: 'CS',      t: '고객 문의 접수 분석' },
-    { f: '02-analytics.html', n: '02', s: '계측',    t: '데이터 계측 요청서' },
+    { f: '01-cs.html',        n: '01', s: 'CS',      t: 'CS 접수 해부 리포트' },
+    { f: '02-analytics.html', n: '02', s: '계측',    t: 'Firebase 계측 요청서' },
     { f: '03-users.html',     n: '03', s: '유저',    t: '유저 반응 심층 분석' },
     { f: '04-balance.html',   n: '04', s: '밸런스',  t: '밸런스 실측 및 교차 검증' },
     { f: '05-data.html',      n: '05', s: '데이터',  t: '데이터 룸' },

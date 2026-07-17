@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>데이터 계측 요청서 · VULCAN 개선 제안</title>
+<title>Firebase 이벤트 로그 / 퍼널 분석 작업 요청서 · VULCAN 개선 제안</title>
 <link rel="stylesheet" href="assets/report.css">
 </head>
 <body>
@@ -18,155 +18,674 @@
 
 <div class="phead">
   <div class="wrap">
-    <div class="eyebrow">PAGE 02 · 기존 자료 · Analytics</div>
-    <h1>데이터 계측 요청서</h1>
-    <p class="sub">2026.07.16 작성된 계측 설계안입니다. 문서의 축은 <b>「어떤 이벤트를 남겨서, 그걸로 무엇을 어떻게 볼 것인가」</b>입니다. 본 보고서의 여러 <b>가설을 검증하는 수단</b>이기도 합니다.</p>
+    <div class="eyebrow">PAGE 02 · 기존 자료 · Firebase Event Log &amp; Funnel Design</div>
+    <h1>Firebase 이벤트 로그 / 퍼널 분석<br>작업 요청서</h1>
+    <p class="sub">작성일 2026.07.16 · 수신: 클라이언트 개발 담당 · 근거: 현 리포지토리 코드 직접 확인.<br>
+    문서의 축은 <b>"어떤 이벤트를 남겨서, 그걸로 무엇을 어떻게 볼 것인가"</b>입니다. 구현 방법보다 <b>판단 근거</b>가 우선입니다. 각 영역마다 <code>알고 싶은 것 → 남길 이벤트 → 나오는 리포트 → 판단 기준</code> 순으로 씁니다.</p>
+    <div class="kpis" style="margin-top:30px">
+      <div class="kpi"><div class="n">11<small>개</small></div><div class="l">분석 영역 (A ~ K)</div></div>
+      <div class="kpi g"><div class="n">30<small>종+</small></div><div class="l">신규 이벤트 설계</div></div>
+      <div class="kpi"><div class="n">6<small>건</small></div><div class="l">선행 수정 (P1~P7)</div></div>
+      <div class="kpi b"><div class="n">7<small>건</small></div><div class="l">Firebase 콘솔 작업 (C1~C7)</div></div>
+    </div>
   </div>
 </div>
 
 <section>
   <div class="wrap">
-    <div class="call gold">
-      <div class="ct">본 보고서와의 관계</div>
-      <p><a href="10-notes.html#limits">「방법론 및 한계」</a>에서 밝힌 한계의 상당 부분이 <b class="hlg">계측 하나로 해소됩니다.</b></p>
-      <p style="margin-top:10px">현재는 유저가 <b>어디에서 이탈하는지, 무엇을 이용하지 않는지, 왜 결제하지 않는지</b>를 데이터로 확인할 수 없습니다. 특히 <b class="hl">「26레벨 정체 구간이 결제 전환을 저해한다」는 가설</b>은 계측 없이는 검증이 불가능합니다.</p>
-    </div>
-
-    <div class="shead"><span class="snum">02-1</span><h2><i class="e pulse">📡</i>현재 상태</h2></div>
-    <p class="slead">Firebase Analytics는 도입되어 있으나, 계측 범위가 제한적입니다.</p>
-
-    <div class="tw">
-      <table>
-        <thead><tr><th style="width:26%">항목</th><th>내용</th><th style="width:12%">상태</th></tr></thead>
-        <tbody>
-          <tr class="rowok"><td><b>SDK 도입</b></td><td>Firebase Unity SDK <b>12.10.1</b> (Analytics + Messaging), Android/iOS 플러그인 포함</td><td><span class="b ok">완료</span></td></tr>
-          <tr class="rowok"><td><b>사용자 식별</b></td><td>UUID 기반 <code>user_id</code> 설정 + 닉네임 사용자 속성</td><td><span class="b ok">완료</span></td></tr>
-          <tr><td><b>구현된 이벤트</b></td><td>앱 실행 · 로그인 · 튜토리얼 완료 · 멘토 완료 · 결제 · 아이템 구매 — <b>6종</b></td><td><span class="b p1">제한적</span></td></tr>
-          <tr class="rowcrit"><td><b class="hlr">결제 이벤트</b></td><td><b class="hlr">전송 코드가 주석 처리되어 있어 실제 결제가 집계되지 않습니다.</b></td><td><span class="b p0">미작동</span></td></tr>
-          <tr class="rowcrit"><td><b class="hlr">결제 이벤트 규격</b></td><td>GA4 표준 규격(<code>currency</code>/<code>value</code>/<code>transaction_id</code>)을 따르지 않아, <b>주석을 해제하여도 금액이 집계되지 않습니다.</b></td><td><span class="b p0">규격 불일치</span></td></tr>
-          <tr class="rowcrit"><td><b class="hlr">퍼널 이벤트</b></td><td>화면 진입/이탈, 상점 탭, 던전 입장, 전투 결과, 가챠, 광고 시청 — <b>계측된 항목 없음</b></td><td><span class="b p0">부재</span></td></tr>
-          <tr><td>닉네임 파라미터</td><td>모든 이벤트에 첨부되어 있습니다 — 개인정보 정책 검토 대상이며, 사용자 속성으로 이미 설정되어 있어 중복입니다.</td><td><span class="b p1">정리 필요</span></td></tr>
-          <tr><td>초기화 경합</td><td>초기화 완료 보장 없이 이벤트 전송이 가능한 구조로, 기동 직후 이벤트 유실 가능성이 있습니다.</td><td><span class="b p1">확인 필요</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="call">
-      <div class="ct"><i class="e glow sm">🔥</i>가장 시급한 사항</div>
-      <p style="font-size:15px;color:var(--white)"><b class="hlr">현재 매출 데이터가 집계되지 않고 있습니다.</b> 결제 이벤트 전송 코드가 주석 처리되어 있으며, 주석을 해제하더라도 규격이 표준과 달라 금액이 잡히지 않습니다. <b>두 가지를 함께 수정하여야 합니다.</b></p>
+    <div class="call info">
+      <div class="ct"><i class="e sm">📌</i>이 페이지의 성격</div>
+      <p>2026.07.16 개발 담당에게 전달하기 위해 작성된 <b>계측 요청서 원문 전문</b>입니다. 이후 확인된 사실은 <span class="sup">보강</span> 표기로만 덧붙였습니다. 예시로 제시된 리포트 표에는 <span class="b info">예시 수치</span> 배지를 달았습니다 — <b>실측이 아니라 "이런 형태의 표가 나온다"는 설명용 가상 수치</b>입니다.</p>
+      <p style="margin-top:10px"><span class="sup">보강</span> 이 요청서는 본 보고서의 여러 가설을 검증하는 수단이기도 합니다. 특히 <a href="04-balance.html#s5">「26레벨 정체 구간이 결제 전환을 저해한다」는 가설</a>은 A 영역 계측 없이는 검증이 불가능합니다.</p>
     </div>
   </div>
 </section>
 
-<section>
+<!-- ══════ 1. 전체 그림 ══════ -->
+<section id="s1">
   <div class="wrap">
-    <div class="shead"><span class="snum">02-2</span><h2><i class="e">🗺️</i>분석 영역 11개</h2></div>
-    <p class="slead">각 영역은 <b>「알고 싶은 것 → 남길 이벤트 → 나오는 리포트 → 판단 기준」</b> 순으로 설계되었습니다.</p>
+    <div class="shead"><span class="snum">02-1</span><h2><i class="e float">🗺️</i>전체 그림 — 11개 분석 영역</h2></div>
 
     <div class="tw">
       <table class="wide">
-        <thead><tr><th style="width:36px">#</th><th style="width:22%">영역</th><th>확인하고자 하는 것</th><th style="width:10%">현재</th><th style="width:8%">우선</th></tr></thead>
+        <thead><tr><th style="width:36px">#</th><th style="width:20%">영역</th><th>알고 싶은 것 (한 줄)</th><th style="width:15%">대표 지표</th><th style="width:11%">현재 계측</th><th style="width:8%">우선</th></tr></thead>
         <tbody>
-          <tr class="rowcrit"><td><b>A</b></td><td><b>길잡이 퀘스트 (초기 이탈)</b></td><td>신규 유저가 <b>몇 번 퀘스트에서 이탈하는가</b></td><td><span class="b p1">완료만</span></td><td><span class="b p0">P0</span></td></tr>
-          <tr class="rowcrit"><td><b>B</b></td><td><b>일일 미션</b></td><td>어떤 미션이 <b>수행되지 않는가</b>, 보상은 수령되는가</td><td><span class="b na">없음</span></td><td><span class="b p0">P0</span></td></tr>
-          <tr class="rowcrit"><td><b>C</b></td><td><b>던전 이용 현황</b></td><td>7종 중 <b>이용되지 않는 콘텐츠</b>, 입장 장벽</td><td><span class="b na">없음</span></td><td><span class="b p0">P0</span></td></tr>
-          <tr class="rowcrit"><td><b>D</b></td><td>상점 / 결제</td><td>결제가 <b>어느 단계에서 이탈하는가</b>, 어느 탭이 기여하는가</td><td><span class="b p0">매출 0</span></td><td><span class="b p0">P0</span></td></tr>
-          <tr><td><b>E</b></td><td>재화 흐름</td><td>재화가 <b>어디에서 유입되어 어디로 소비되는가</b></td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
-          <tr><td><b>F</b></td><td>성장 (강화 · 제작)</td><td>성장 루프가 <b>어디에서 막히는가</b></td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
-          <tr><td><b>G</b></td><td>가챠</td><td>이용률과 결과 만족도</td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
-          <tr><td><b>H</b></td><td>광고 시청</td><td>보상형 광고 <b>완료율</b></td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
-          <tr><td><b>I</b></td><td>출석 / 복귀</td><td>재방문 주기</td><td><span class="b na">없음</span></td><td><span class="b p2">P2</span></td></tr>
-          <tr><td><b>J</b></td><td>엔드 콘텐츠</td><td>고레벨 유저의 <b>콘텐츠 도달률</b></td><td><span class="b na">없음</span></td><td><span class="b p2">P2</span></td></tr>
-          <tr class="rowok"><td><b>K</b></td><td>세션 / 리텐션</td><td>D1/D7/D30</td><td><span class="b ok">자동수집</span></td><td><span class="b p2">P2</span></td></tr>
+          <tr class="rowcrit"><td><b>A</b></td><td><b>길잡이 퀘스트 (초기 이탈)</b></td><td>신규가 <b>몇 번 퀘스트에서</b> 나가는가</td><td>퀘스트별 완료율</td><td><span class="b p1">전체완료만</span></td><td><span class="b p0">P0</span></td></tr>
+          <tr class="rowcrit"><td><b>B</b></td><td><b>일일 미션</b></td><td>어떤 미션이 <b>안 지켜지는가</b>, 보상은 받아가는가</td><td>미션별 달성률·수령률</td><td><span class="b na">없음</span></td><td><span class="b p0">P0</span></td></tr>
+          <tr class="rowcrit"><td><b>C</b></td><td><b>던전 이용 현황</b></td><td>7종 중 <b>안 쓰이는 콘텐츠</b>, 입장 장벽</td><td>콘텐츠별 진입률·승률</td><td><span class="b na">없음</span></td><td><span class="b p0">P0</span></td></tr>
+          <tr class="rowcrit"><td><b>D</b></td><td>상점 / 결제</td><td>결제가 어디서 새는가, 어느 탭·상품이 버는가</td><td>결제 전환율·실패율</td><td><span class="b p0">매출 0</span></td><td><span class="b p0">P0</span></td></tr>
+          <tr><td><b>E</b></td><td>재화 흐름 (골드/루비/토큰)</td><td>재화가 <b>어디서 들어와 어디로 나가는가</b></td><td>획득/소비 균형</td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
+          <tr><td><b>F</b></td><td>성장 (강화·제작)</td><td>성장 루프가 <b>어디서 막히는가</b></td><td>강화 시도·실패율</td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
+          <tr><td><b>G</b></td><td>가챠</td><td>뽑기를 <b>쓰는가</b>, 결과에 만족하는가</td><td>가챠 실행률·이탈</td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
+          <tr><td><b>H</b></td><td>광고 시청</td><td>보상형 광고를 <b>끝까지 보는가</b></td><td>시청 완료율</td><td><span class="b na">없음</span></td><td><span class="b p1">P1</span></td></tr>
+          <tr><td><b>I</b></td><td>출석 / 복귀</td><td>매일 돌아오는가</td><td>출석률·연속일</td><td><span class="b na">없음</span></td><td><span class="b p2">P2</span></td></tr>
+          <tr><td><b>J</b></td><td>엔드 콘텐츠 (PVP/길드/월보/시련탑)</td><td>고레벨이 <b>할 게 있는가</b></td><td>콘텐츠 도달률</td><td><span class="b na">없음</span></td><td><span class="b p2">P2</span></td></tr>
+          <tr class="rowok"><td><b>K</b></td><td>세션 / 리텐션</td><td>얼마나 자주·오래 하는가</td><td>D1/D7, 세션길이</td><td><span class="b ok">자동수집</span></td><td><span class="b p2">P2</span></td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="call gold">
-      <div class="ct">A · B · C가 최우선인 이유</div>
-      <p>세 영역 모두 <b class="hlg">현재 완전히 확인이 불가능한 영역</b>이며, 본 보고서의 핵심 발견과 직결됩니다.</p>
-      <ul style="margin-top:10px">
-        <li><b>A(길잡이 퀘스트)</b> — 퀘스트 시작·개별 완료 함수가 <b>이미 존재하나 계측이 없습니다.</b> 현재는 <b>전체 완료</b>만 집계되어, <b class="hlr">완주하지 못한 유저가 어디에서 멈췄는지 확인할 수 없습니다.</b> → <a href="04-balance.html#s5">26레벨 가설 검증의 전제</a></li>
-        <li><b>B(일일 미션)</b> — 미션 타입이 <b>11종</b>이며 자정 리셋·새로고침·보상 버튼이 분리되어 있습니다. <b class="hl">달성과 보상 수령을 분리 계측</b>하면, 「달성률은 높으나 수령률이 낮은」 항목을 찾아낼 수 있습니다 — 이는 밸런스가 아니라 <b>화면 문제</b>이므로 즉시 개선이 가능합니다.</li>
-        <li><b>C(던전)</b> — <a href="04-balance.html#s2">보스 콘텐츠 문제</a>와 <a href="05-data.html#reward">요일던전 입장 제한</a>을 <b>정량으로 확인</b>할 수 있습니다. 특히 <b class="hl">「입장하려 했으나 횟수 부족으로 거절된 유저 수」</b>는 이탈 지표인 동시에 <a href="07-benchmark.html#s7">상품 설계의 근거</a>가 됩니다.</li>
-      </ul>
+      <div class="ct"><i class="e glow sm">🔥</i>A · B · C가 P0인 이유</div>
+      <p>경영진이 직접 지목한 3개 영역이자, 지금 <b class="hlg">완전히 깜깜한</b> 영역입니다. D(결제)는 코드가 망가져 있어 P0입니다 (<a href="#s5">§02-5 참조</a>).</p>
     </div>
   </div>
 </section>
 
-<section>
+<!-- ══════ 2. 영역별 상세 ══════ -->
+<section id="s2">
   <div class="wrap">
-    <div class="shead"><span class="snum">02-3</span><h2><i class="e">📐</i>설계 원칙</h2></div>
+    <div class="shead"><span class="snum">02-2</span><h2><i class="e pulse">🔬</i>영역별 상세 — 무엇을 남겨서 어떻게 볼 것인가</h2></div>
 
-    <div class="g2">
-      <div class="card">
-        <h5>명명 및 제약</h5>
-        <p>· <code>snake_case</code>, 「영역_동작」 형식</p>
-        <p>· 이벤트명 40자 / 파라미터 값 100자 / 이벤트당 파라미터 25개</p>
-        <p>· <b class="hl">열거형은 문자열로 전송</b> — 숫자로 보내면 리포트에서 의미를 읽을 수 없습니다</p>
-      </div>
-      <div class="card" style="border-color:var(--ember-dim)">
-        <h5 style="color:var(--ember)">고빈도 발화 금지</h5>
-        <p><b class="hlr">진행도를 매번 전송하는 설계는 배제합니다.</b> 몬스터 1마리마다 전송하면 이벤트가 폭증하여 한도·비용 문제가 발생합니다.</p>
-        <p style="margin-top:8px"><b>상태 변화 시점만</b> 기록하고, 총량은 요약 이벤트로 처리합니다.</p>
-      </div>
-      <div class="card">
-        <h5>개인정보</h5>
-        <p><b class="hl">닉네임 파라미터는 전 이벤트에서 제거</b>합니다. 사용자 식별은 <code>user_id</code>(UUID)로 통일합니다.</p>
-        <p style="margin-top:8px">개인정보 전송 정책 리스크 + 측정기준 슬롯 낭비 + 이미 사용자 속성으로 설정되어 중복입니다.</p>
-      </div>
-      <div class="card">
-        <h5>구현 위치</h5>
-        <p>신규 이벤트는 <b>기존 래퍼에 집중</b>시키고 호출부에 SDK를 직접 노출하지 않습니다.</p>
-        <p style="margin-top:8px"><b class="hl">화면 배선에 로깅 함수를 추가하지 않습니다</b> — 중복 발화·순서 문제가 발생합니다. 기존 로직 <b>내부</b>에서 호출합니다.</p>
+    <!-- ── A ── -->
+    <h3 id="a"><i class="e sm">🚪</i>A. 길잡이 퀘스트 — 초기 이탈 유저 확인 <span class="b p0">P0</span></h3>
+
+    <h4>알고 싶은 것</h4>
+    <div class="q"><div class="qt">신규 유저가 길잡이(메인) 퀘스트 <em>몇 번에서 나가는가?</em> 어느 퀘스트가 너무 어렵거나 이해가 안 되는가?</div></div>
+
+    <h4>현재 문제</h4>
+    <p><code>Main_Quest.cs</code>에 퀘스트 <b>시작</b>(<code>Set_Quest(number)</code>)과 <b>개별 완료</b>(<code>Complete_Quest()</code>)가 이미 함수로 있는데 <b>계측이 없습니다.</b> 지금 찍히는 건 맨 마지막 <b>전체 완료</b>(<code>Complete_AllQuest</code> → <code>tutorial_complete</code>, <code>Main_Quest.cs:116</code>) 하나뿐입니다.</p>
+    <p>→ <b class="hlr">"전체 완료한 사람 수"만 알고, 못한 사람이 어디서 멈췄는지는 전혀 모릅니다.</b> 이게 초기 이탈 분석이 안 되는 직접적 원인입니다.</p>
+
+    <h4>남길 이벤트</h4>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>이벤트</th><th>파라미터</th><th>발화 지점</th></tr></thead>
+        <tbody>
+          <tr class="rowgold"><td><b><code>guide_quest_start</code></b></td><td><code>quest_no</code> (퀘스트 번호), <code>quest_type</code> (Monster/Hero/Equip/Create/PVP/Boss…), <code>player_level</code></td><td><code>Main_Quest.Set_Quest()</code> — 퀘스트 세팅 직후</td></tr>
+          <tr class="rowgold"><td><b><code>guide_quest_complete</code></b></td><td><code>quest_no</code>, <code>quest_type</code>, <code>duration_sec</code> (시작→완료 소요), <code>reward_type</code></td><td><code>Main_Quest.Complete_Quest()</code> — 보상 지급 시점</td></tr>
+          <tr><td><code>guide_speech_view</code></td><td><code>guide_no</code>, <code>speech_index</code></td><td><code>Guide_system.Next_Speech()</code> — 대사 진행</td></tr>
+          <tr><td><code>guide_speech_skip</code></td><td><code>guide_no</code>, <code>speech_index</code></td><td>대사 스킵 시</td></tr>
+          <tr><td><code>tutorial_complete</code></td><td><code>duration_sec</code> (<s>nickname</s> 제거)</td><td><code>Main_Quest.cs:116</code> (기존 — 파라미터만 정리)</td></tr>
+          <tr><td><code>mentor_complete</code></td><td>(<s>nickname</s> 제거)</td><td><code>Mentor_System.cs:61</code> (기존)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:13px"><code>quest_no</code>는 <code>Quest_Scriptabale.number</code>, <code>quest_type</code>은 <code>Quest_Type</code> enum을 <b>문자열로</b> 보냅니다 (숫자로 보내면 리포트에서 못 읽음).</p>
+
+    <h4>어떻게 볼 것인가</h4>
+    <p><b>리포트</b>: GA4 <b>퍼널 탐색 분석</b> — 단계를 <code>guide_quest_start(quest_no=1) → complete(1) → start(2) → complete(2) → …</code>로 세움. 나오는 결과 (예시 형태):</p>
+
+    <div class="fig">
+      <div class="cap">// 퀘스트 퍼널 — 완료율이 급락하는 지점이 이탈 원인 <span class="b info">예시 수치</span></div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <g font-size="12.5" fill="#c4ccd8">
+          <text x="0" y="26">Q1 · Monster</text><text x="0" y="76">Q2 · Hero</text><text x="0" y="126">Q3 · Equip</text><text x="0" y="176">Q4 · Create</text>
+        </g>
+        <g>
+          <rect x="130" y="10" width="620" height="24" rx="4" fill="#4ecb8d" opacity=".7"/>
+          <text x="760" y="27" font-size="12" fill="#4ecb8d" font-family="JetBrains Mono" font-weight="700">1,000 → 920 (92%)</text>
+          <rect x="130" y="60" width="570" height="24" rx="4" fill="#4ecb8d" opacity=".6"/>
+          <text x="712" y="77" font-size="12" fill="#4ecb8d" font-family="JetBrains Mono" font-weight="700">920 → 880 (96%)</text>
+          <rect x="130" y="110" width="545" height="24" rx="4" fill="#2b3342"/>
+          <rect x="130" y="110" width="310" height="24" rx="4" fill="#ff5b3a"/>
+          <text x="452" y="127" font-size="12" fill="#ff5b3a" font-family="JetBrains Mono" font-weight="700">880 → 500 (57%) ← 병목 · 380명 증발</text>
+          <rect x="130" y="160" width="310" height="24" rx="4" fill="#4ecb8d" opacity=".5"/>
+          <text x="452" y="177" font-size="12" fill="#4ecb8d" font-family="JetBrains Mono" font-weight="700">500 → 470 (94%)</text>
+        </g>
+        <text x="0" y="222" font-size="12.5" fill="#ffd24a">→ Q3(장비 강화)에서 380명이 증발했다면: 강화 UI를 이해 못 했거나 재료가 부족한 것</text>
+        <text x="0" y="242" font-size="11.5" fill="#8a93a6">※ 위 수치는 리포트 형태를 설명하기 위한 가상의 예시입니다. 실측은 계측 후에 나옵니다.</text>
+      </svg>
       </div>
     </div>
-
-    <div class="call info">
-      <div class="ct">콘솔 설정 — 자주 누락되는 두 가지</div>
-      <ol>
-        <li style="margin-bottom:8px"><b class="hlr">커스텀 측정기준 등록.</b> 신규 파라미터를 콘솔에 등록하지 않으면 <b>리포트에 아예 표시되지 않습니다.</b> 가장 흔한 누락 사항입니다.</li>
-        <li><b class="hlr">데이터 보관 기간 2개월 → 14개월 변경.</b> GA4 기본값이 <b>2개월</b>이므로 그대로 두면 <b>장기 리텐션 분석이 불가능</b>합니다. <b>지금 변경하여야 데이터가 축적됩니다.</b></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="shead"><span class="snum">02-4</span><h2><i class="e">🚦</i>진행 순서</h2></div>
 
     <div class="tw">
       <table>
-        <thead><tr><th style="width:14%">단계</th><th style="width:36%">내용</th><th>확인 가능해지는 것</th></tr></thead>
+        <thead><tr><th>퀘스트</th><th>타입</th><th class="num">시작</th><th class="num">완료</th><th class="num">완료율</th><th class="num">이탈</th></tr></thead>
         <tbody>
-          <tr class="rowcrit"><td><b>Phase 0</b></td><td>결제 이벤트 복구 + 규격 수정 + 초기화 경합 해소<br>+ 커스텀 측정기준 등록 + 보관 기간 변경</td><td><b class="hlr">매출 데이터 복구</b></td></tr>
-          <tr class="rowgold"><td><b>Phase 1</b></td><td>결제 퍼널 + 재화 획득/소비 표준 이벤트 전환</td><td>결제 이탈 지점 · 재화 경제 균형</td></tr>
-          <tr><td><b>Phase 2</b></td><td>길잡이 퀘스트 단계별 계측 + 닉네임 정리</td><td><b class="hl">신규 이탈 지점</b> · <a href="04-balance.html#s5">26레벨 가설 검증</a></td></tr>
-          <tr><td><b>Phase 3</b></td><td>던전 · 전투 + 화면 진입</td><td><b class="hl">콘텐츠 이용률</b> · 입장 장벽</td></tr>
-          <tr><td><b>Phase 4</b></td><td>가챠 · 광고 · 출석 · 엔드 콘텐츠</td><td>심층 분석</td></tr>
+          <tr><td>Q1</td><td>Monster</td><td class="num">1,000명</td><td class="num">920</td><td class="num">92%</td><td class="num">80</td></tr>
+          <tr><td>Q2</td><td>Hero</td><td class="num">920</td><td class="num">880</td><td class="num">96%</td><td class="num">40</td></tr>
+          <tr class="rowcrit"><td><b>Q3</b></td><td><b>Equip</b></td><td class="num">880</td><td class="num"><b>500</b></td><td class="num"><b class="hlr">57%</b> ← 병목</td><td class="num"><b>380</b></td></tr>
+          <tr><td>Q4</td><td>Create</td><td class="num">500</td><td class="num">470</td><td class="num">94%</td><td class="num">30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:12.5px"><span class="b info">예시 수치</span> — 리포트 형태 설명용 가상 데이터</p>
+
+    <h4>판단 기준</h4>
+    <ul>
+      <li><b>완료율이 급락하는 퀘스트 = 이탈 원인.</b> 위 예시라면 Q3(장비 강화)에서 380명이 증발 → 강화 UI를 이해 못 했거나 재료가 부족한 것</li>
+      <li><code>duration_sec</code> <b>중앙값이 유독 긴</b> 퀘스트 = 헤매는 구간 (UI 동선 문제)</li>
+      <li><code>guide_speech_skip</code> 비율이 높은데 그 다음 퀘스트 완료율이 낮다 → <b>설명을 안 읽어서</b> 막히는 것 → 대사가 아니라 UI로 안내해야 함</li>
+      <li><b>조치로 연결</b>: 병목 퀘스트의 난이도/보상/안내를 수정 → 다음 주 같은 리포트로 완료율 개선 확인</li>
+    </ul>
+    <div class="call">
+      <div class="ct"><i class="e sm">🔗</i>보강 <span class="sup">보강</span></div>
+      <p>이후 유저 반응 분석에서 <b>신규(24시간 미만)의 재화 이해도 부정 응답이 정착층의 약 7배(18.2%)</b>임이 확인되었습니다 — A 영역이 잡아낼 초기 이탈의 정량 방증입니다. 또한 실측된 <a href="05-data.html#growth">퀘스트 실제 개수는 8개</a>(기획상 17개 아님)이며, 퀘스트 2(장비 제작 1회)의 보상이 3,000만 골드로 확인되어 <b>보상 스케일 검토도 함께 필요</b>합니다.</p>
+    </div>
+
+    <!-- ── B ── -->
+    <h3 id="b"><i class="e sm">📋</i>B. 일일 미션 — 달성 현황 <span class="b p0">P0</span></h3>
+
+    <h4>알고 싶은 것</h4>
+    <div class="q"><div class="qt"><em>어떤 미션이 안 지켜지는가?</em> 달성하고도 <em>보상을 안 받아가는</em> 유저는 없는가? 미션이 일일 접속 동기가 되고 있는가?</div></div>
+
+    <h4>현재 구조 (코드 확인)</h4>
+    <p><code>Mission_Mng.cs</code> — 미션 타입 <b>11종</b> (<code>Enum_Holder.cs:39</code> <code>Quest_Type</code>):<br>
+    <code>Monster</code>(몬스터 처치) · <code>Hero</code>(영웅 획득) · <code>Hero_Upgrade</code>(영웅 강화) · <code>Equip</code>(장착) · <code>Item</code>(아이템) · <code>Item_Upgrade</code>(아이템 강화) · <code>Create</code>(제작) · <code>PVP</code> · <code>Boss</code> · <code>Addup</code>(누적) · <code>Login</code></p>
+    <p>자정 리셋(<code>StartDailyResetTimer</code>), 새로고침 버튼(<code>refreshButton</code>), 보상 버튼(<code>rewardButton</code>)과 완료 표시(<code>completeButton</code>)가 <b>분리</b>돼 있음. → <b>계측 전무.</b></p>
+
+    <h4>남길 이벤트</h4>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>이벤트</th><th>파라미터</th><th>발화 지점</th><th>왜</th></tr></thead>
+        <tbody>
+          <tr><td><code>mission_open</code></td><td><code>entry_point</code></td><td>미션 패널 열기</td><td>미션함 자체를 보는가</td></tr>
+          <tr class="rowgold"><td><b><code>mission_complete</code></b></td><td><code>mission_type</code> (11종), <code>target_value</code>, <code>elapsed_from_reset_min</code></td><td>목표 달성 순간</td><td><b>달성</b></td></tr>
+          <tr class="rowgold"><td><b><code>mission_reward_claim</code></b></td><td><code>mission_type</code>, <code>reward_type</code>, <code>reward_amount</code></td><td><code>rewardButton</code> 클릭</td><td><b>수령</b> ← 달성과 반드시 분리!</td></tr>
+          <tr><td><code>mission_refresh</code></td><td><code>mission_type</code></td><td><code>refreshButton</code></td><td>미션을 갈아치우는가 = 하기 싫은 미션</td></tr>
+          <tr class="rowgold"><td><b><code>mission_daily_summary</code></b></td><td><code>completed_count</code> (0~N), <code>claimed_count</code>, <code>total_count</code></td><td>자정 리셋 직전 또는 다음 로그인 시 1회</td><td>하루 전체 소화율</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="call">
+      <div class="ct"><i class="e pulse sm">⚠️</i>고빈도 발화 금지</div>
+      <p><b class="hlr"><code>mission_progress</code>(진행도 매번)는 넣지 마세요.</b> 몬스터 1마리마다 발화하면 이벤트 폭증으로 GA4 한도·비용 문제가 생깁니다. <b>완료 시점만</b> 찍고 진행도는 <code>mission_daily_summary</code>로 집계합니다.</p>
+    </div>
+
+    <h4>어떻게 볼 것인가</h4>
+    <p><b>리포트 1 — 미션 타입별 달성/수령</b> (자유 형식 탐색: 행=<code>mission_type</code>, 값=이벤트 수)</p>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>미션 타입</th><th class="num">노출 유저</th><th class="num">달성</th><th class="num">달성률</th><th class="num">보상수령</th><th class="num">수령률</th><th class="num">새로고침</th></tr></thead>
+        <tbody>
+          <tr><td>Login</td><td class="num">1,000</td><td class="num">1,000</td><td class="num">100%</td><td class="num">980</td><td class="num">98%</td><td class="num">0</td></tr>
+          <tr><td>Monster</td><td class="num">1,000</td><td class="num">850</td><td class="num">85%</td><td class="num">840</td><td class="num">99%</td><td class="num">20</td></tr>
+          <tr class="rowcrit"><td><b>PVP</b></td><td class="num">1,000</td><td class="num"><b>210</b></td><td class="num"><b class="hlr">21%</b> ← 안 함</td><td class="num">205</td><td class="num">98%</td><td class="num"><b class="hlr">310</b> ← 갈아치움</td></tr>
+          <tr class="rowcrit"><td><b>Item_Upgrade</b></td><td class="num">1,000</td><td class="num">700</td><td class="num">70%</td><td class="num"><b>420</b></td><td class="num"><b class="hlr">60%</b> ← 문제</td><td class="num">15</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:12.5px"><span class="b info">예시 수치</span> — 리포트 형태 설명용 가상 데이터</p>
+
+    <h4>판단 기준</h4>
+    <ul>
+      <li><b>달성률 낮음 + 새로고침 많음</b> (위 PVP) → 유저가 <b>하기 싫어함</b>. 난이도 조정 또는 미션 풀에서 제외</li>
+      <li><b>달성률 높은데 수령률 낮음</b> (위 Item_Upgrade 60%) → 🚨 <b>UI 문제</b>. 다 해놓고 보상 버튼을 못 찾는 것 → 뱃지/알림 추가로 해결 가능한 <b>즉효성 개선 지점</b></li>
+      <li><b><code>mission_daily_summary.completed_count</code> 분포</b> → "하루에 몇 개나 하는가". 0개인 유저 비중 = 미션 시스템이 작동 안 하는 유저층</li>
+      <li><b><code>elapsed_from_reset_min</code></b> → 리셋 후 몇 분 만에 다 끝내는지. 너무 짧으면 미션이 너무 쉬움(동기 부족), 너무 길면 부담</li>
+      <li><b>교차 분석</b>: 미션 3개 이상 달성 유저 vs 0개 유저의 <b>D7 리텐션 비교</b> → 미션이 실제로 리텐션에 기여하는지 증명</li>
+    </ul>
+    <div class="call">
+      <div class="ct"><i class="e sm">🔗</i>보강 <span class="sup">보강</span></div>
+      <p>이후 실측에서 <b>미션 보상 자체의 역전</b>이 확인되었습니다 — 몬스터 5,000마리 보상(망치 10 ≈ 1,500만 골드)이 3,000마리 보상(영웅소환서 35 ≈ 5,250만 골드)보다 낮고, <b>PVP 미션은 보상이 비어 있습니다.</b> 계측과 별개로 보상표 정비가 필요합니다. → <a href="05-data.html#reward">데이터 룸 · 보상 테이블</a></p>
+    </div>
+
+    <!-- ── C ── -->
+    <h3 id="c"><i class="e sm">⚔️</i>C. 던전 이용 현황 <span class="b p0">P0</span></h3>
+
+    <h4>알고 싶은 것</h4>
+    <div class="q"><div class="qt">던전 <em>7종 중 뭐가 안 쓰이는가?</em> (개발 리소스 배분 결정) 입장을 <em>시도했는데 막히는</em> 유저는 얼마나 되는가?</div></div>
+
+    <h4>현재 구조</h4>
+    <p>하단바 던전 팝업(<code>dungeon_meun</code>) 아이콘 <b>7개</b>: <code>요일던전(DailyDungeon)</code> · <code>보스(Boss)</code> · <code>골드던전(Dungeon)</code> · <code>약탈(PK)</code> · <code>월드보스(WorldBoss)</code> · <code>시련의탑(TrialTower)</code> · <code>이벤트(EVENT)</code></p>
+    <p>전투 씬 8종. 요일던전은 <b>입장 횟수 제한</b>(<code>UI_DailyDungeon.Check_True()</code> — <code>Count == 0</code>이면 "입장 횟수가 부족합니다") → <b>계측 전무.</b></p>
+
+    <h4>남길 이벤트</h4>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>이벤트</th><th>파라미터</th><th>발화 지점</th></tr></thead>
+        <tbody>
+          <tr><td><code>dungeon_menu_open</code></td><td><code>player_level</code></td><td>던전 팝업 열기</td></tr>
+          <tr class="rowgold"><td><b><code>content_select</code></b></td><td><code>content_id</code> (7종), <code>player_level</code></td><td>팝업 아이콘 7개 각각</td></tr>
+          <tr><td><code>entry_attempt</code></td><td><code>content_id</code>, <code>level</code> (요일던전 1~3 등), <code>player_level</code></td><td>입장 확인창 "예"</td></tr>
+          <tr class="rowgold"><td><b><code>entry_fail</code></b></td><td><code>content_id</code>, <code>reason</code> (<code>no_count</code>/<code>level_low</code>/<code>cost_lack</code>), <code>player_level</code></td><td>입장 거절 분기 (예: <code>UI_DailyDungeon.Check_True()</code>의 <code>Count==0</code>)</td></tr>
+          <tr class="rowgold"><td><b><code>battle_start</code></b></td><td><code>content_id</code>, <code>level</code>, <code>player_level</code></td><td>전투 씬 8종 진입</td></tr>
+          <tr class="rowgold"><td><b><code>battle_end</code></b></td><td><code>content_id</code>, <code>level</code>, <code>result</code> (<code>win</code>/<code>lose</code>/<code>exit</code>), <code>duration_sec</code>, <code>player_level</code></td><td>전투 종료·나가기</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>어떻게 볼 것인가</h4>
+    <p><b>리포트 1 — 콘텐츠별 이용 현황</b> (행=<code>content_id</code>)</p>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>콘텐츠</th><th class="num">팝업노출</th><th class="num">선택</th><th class="num">선택률</th><th class="num">입장성공</th><th class="num">전투완료</th><th class="num">승률</th><th class="num">평균시간</th></tr></thead>
+        <tbody>
+          <tr><td>요일던전</td><td class="num">1,000</td><td class="num">620</td><td class="num">62%</td><td class="num"><b>380</b> ← 240명 막힘</td><td class="num">370</td><td class="num">88%</td><td class="num">3분</td></tr>
+          <tr><td>보스</td><td class="num">1,000</td><td class="num">540</td><td class="num">54%</td><td class="num">540</td><td class="num">500</td><td class="num">62%</td><td class="num">5분</td></tr>
+          <tr><td>골드던전</td><td class="num">1,000</td><td class="num">480</td><td class="num">48%</td><td class="num">480</td><td class="num">470</td><td class="num">91%</td><td class="num">2분</td></tr>
+          <tr class="rowcrit"><td><b>시련의탑</b></td><td class="num">1,000</td><td class="num"><b>45</b></td><td class="num"><b class="hlr">4.5%</b> ← 사실상 미사용</td><td class="num">45</td><td class="num">30</td><td class="num">33%</td><td class="num">8분</td></tr>
+          <tr class="rowcrit"><td><b>이벤트</b></td><td class="num">1,000</td><td class="num"><b>12</b></td><td class="num"><b class="hlr">1.2%</b> ← 미사용</td><td class="num">12</td><td class="num">10</td><td class="num mut">—</td><td class="num mut">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>리포트 2 — 입장 실패 사유</b> (행=<code>entry_fail.reason</code>)</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>콘텐츠</th><th>실패 사유</th><th class="num">건수</th><th>해석</th></tr></thead>
+        <tbody>
+          <tr class="rowgold"><td>요일던전</td><td><code>no_count</code></td><td class="num">240</td><td><b>횟수 부족.</b> 하고 싶은데 못 함 → <b>루비로 횟수 구매</b> 유도 지점 (= 매출 기회)</td></tr>
+          <tr><td>시련의탑</td><td><code>level_low</code></td><td class="num">30</td><td>레벨 제한에 막힘</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:12.5px"><span class="b info">예시 수치</span> — 리포트 형태 설명용 가상 데이터</p>
+
+    <h4>판단 기준</h4>
+    <ul>
+      <li><b>선택률 5% 미만 콘텐츠 = 사실상 죽은 콘텐츠.</b> 위 예시의 시련의탑·이벤트 → ① 노출 위치를 바꾸든 ② 보상을 올리든 ③ <b>더 개발하지 않든</b> 결정</li>
+      <li><b>선택 대비 입장성공률이 낮으면 = 장벽.</b> 요일던전 620명 선택 → 380명 입장(<code>no_count</code> 240명) → 하고 싶은 수요가 240명분 있다는 뜻. <b>횟수 추가 상품</b>의 직접 근거</li>
+      <li><b>승률 33%(시련의탑) = 너무 어려움</b> → 이탈 유발. 승률 90%+ = 너무 쉬움(재미 없음). <b>적정 60~75%</b> 기준으로 밸런싱</li>
+      <li><b><code>battle_end.result=exit</code> 비율</b> = 전투 중 도망. 높으면 전투가 지루하거나 이길 수 없다고 판단한 것</li>
+      <li><b>교차</b>: <code>player_level</code> 구간별로 쪼개면 <b>"몇 레벨부터 이 콘텐츠를 하는가"</b> → 레벨 커브와 콘텐츠 해금 설계 검증</li>
+    </ul>
+    <div class="call">
+      <div class="ct"><i class="e sm">🔗</i>보강 <span class="sup">보강</span></div>
+      <p>이후 유저 진술로 <b>보스 콘텐츠가 사실상 이용되지 않음</b>이 확인되었고(<i>"정수를 보스 잡아서 획득하는 유저는 1도 없습니다"</i>), 실측에서 그 구조적 원인(각인 실효 드랍률 0.006%, 보스 경험치·골드 각 1)까지 특정되었습니다. C 영역 계측은 이 현상을 <b>정량으로 상시 감시</b>하는 장치가 됩니다. → <a href="04-balance.html#s2">밸런스 실측 · 보스</a> · 요일던전 횟수 상품 설계는 <a href="07-benchmark.html#s7">트리거 오퍼</a></p>
+    </div>
+
+    <!-- ── D ── -->
+    <h3 id="d"><i class="e sm">💳</i>D. 상점 / 결제 <span class="b p0">P0</span></h3>
+
+    <h4>알고 싶은 것</h4>
+    <div class="q"><div class="qt">결제가 <em>어디서 새는가?</em> 어느 탭·상품이 버는가? 최근 상점 개편이 효과 있었나?</div></div>
+
+    <h4>남길 이벤트</h4>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>이벤트</th><th>파라미터</th><th>발화 지점</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><code>shop_open</code></td><td><code>entry_point</code> (<code>bottom_bar</code>/<code>popup</code>), <code>player_level</code></td><td><code>Get_UI("#Shop")</code></td><td class="mut">—</td></tr>
+          <tr class="rowgold"><td><b><code>shop_tab_view</code></b></td><td><code>tab_id</code> (9종: <code>recommend</code>/<code>buff</code>/<code>hero</code>/<code>etc</code>/<code>costume</code>/<code>gold</code>/<code>item</code>/<code>ruby</code>/<code>guild</code>)</td><td><code>UI_Shop.*_On()</code> 9개</td><td class="mut">—</td></tr>
+          <tr><td><code>purchase_click</code></td><td><code>product_id</code>, <code>price</code>, <code>tab_id</code></td><td>상품 구매 버튼</td><td class="mut">—</td></tr>
+          <tr class="rowcrit"><td><b><code>purchase</code></b></td><td><code>transaction_id</code>, <code>currency</code>, <code>value</code>, <code>items[]</code></td><td><code>IAP_Mng.cs:219</code> · <code>:251</code> <b>주석 해제 + 규격 교체</b></td><td>★ <code>value</code>/<code>currency</code>는 <b>하드코딩 금지</b> — <code>e.purchasedProduct.metadata.localizedPrice</code>/<code>.isoCurrencyCode</code> 사용</td></tr>
+          <tr class="rowgold"><td><b><code>purchase_fail</code></b></td><td><code>product_id</code>, <code>reason</code> (<code>user_cancel</code>/<code>receipt_invalid</code>/<code>network</code>/<code>already_used</code>)</td><td><code>IAP_Mng</code> 실패 분기</td><td class="mut">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:13px">루비 상품 8종: <code>ruby_300/650/2800/7500/600/1300/5600/15000</code></p>
+
+    <h4>어떻게 볼 것인가</h4>
+    <p><b>리포트 1 — 결제 퍼널</b></p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>단계</th><th class="num">유저</th><th class="num">전환율</th></tr></thead>
+        <tbody>
+          <tr><td>상점 진입</td><td class="num">1,000</td><td class="num mut">—</td></tr>
+          <tr><td>상품 클릭</td><td class="num">120</td><td class="num">12%</td></tr>
+          <tr class="rowcrit"><td>결제 성공</td><td class="num"><b>72</b></td><td class="num"><b class="hlr">60%</b> ← 40%가 실패/취소</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:12.5px"><span class="b info">예시 수치</span></p>
+    <p><b>리포트 2 — 실패 사유별</b>: <code>user_cancel</code> 30건(가격 저항) vs <code>receipt_invalid</code> 18건(🚨 <b>버그</b>)<br>
+    <b>리포트 3 — 탭별 매출 기여</b>: 어느 탭에서 클릭이 나오는가</p>
+
+    <h4>판단 기준</h4>
+    <ul>
+      <li><b>클릭→성공 60% = 40%가 증발.</b> 그중 <code>receipt_invalid</code> 같은 <b>기술적 실패는 즉시 수정 대상</b> (돈이 그냥 날아가는 중)</li>
+      <li>탭 조회는 많은데 클릭이 없는 탭 = <b>상품 구성 문제</b></li>
+      <li>⏰ <b>시급</b>: 상점은 이미 개편됐고 개편 전 데이터가 없어 "개편 효과 검증"은 <b>불가능</b>합니다. 다만 <b>다음 개편(정보구조 v3) 전에 심으면</b> 그때는 전후 비교가 됩니다 → <b>v3 착수 전 완료 목표</b></li>
+    </ul>
+
+    <!-- ── E ── -->
+    <h3 id="e"><i class="e spin sm">🪙</i>E. 재화 흐름 (Sink &amp; Faucet) <span class="b p1">P1</span></h3>
+
+    <h4>알고 싶은 것</h4>
+    <div class="q"><div class="qt">골드/루비/길드토큰이 <em>어디서 들어와서 어디로 나가는가?</em> 인플레이션이 오고 있는가?</div></div>
+
+    <h4>남길 이벤트 (GA4 표준 추천 이벤트 사용)</h4>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>이벤트</th><th>파라미터</th><th>발화 지점</th></tr></thead>
+        <tbody>
+          <tr class="rowgold"><td><b><code>earn_virtual_currency</code></b></td><td><code>virtual_currency_name</code> (<code>gold</code>/<code>ruby</code>/<code>guild_token</code>), <code>value</code>, <code>source</code> (<code>battle</code>/<code>quest</code>/<code>mission</code>/<code>reward_ad</code>/<code>attendance</code>/<code>iap</code>)</td><td>재화 획득 전 지점</td></tr>
+          <tr class="rowgold"><td><b><code>spend_virtual_currency</code></b></td><td><code>virtual_currency_name</code>, <code>value</code>, <code>item_name</code>, <code>sink</code> (<code>shop</code>/<code>upgrade</code>/<code>gacha</code>/<code>entry</code>)</td><td><code>TBC_Mng.cs:115/137/154/163</code> 등 — 기존 <code>item_purchase</code> <b>대체</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>어떻게 볼 것인가</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>재화</th><th class="num">일일 획득(faucet)</th><th class="num">일일 소비(sink)</th><th>균형</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit"><td>골드</td><td class="num">12억</td><td class="num">8억</td><td><b class="hlr">+4억/일 → 인플레</b> 🚨</td></tr>
+          <tr><td>루비</td><td class="num">5,000</td><td class="num">4,800</td><td>균형</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:12.5px"><span class="b info">예시 수치</span></p>
+
+    <h4>판단 기준</h4>
+    <ul>
+      <li><b>획득 &gt; 소비가 지속 = 재화 인플레이션</b> → 골드가 의미를 잃고 경제가 붕괴. <b>골드 소비처(sink) 추가</b>가 필요하다는 근거</li>
+      <li><code>source</code>별 비중 → 어디서 재화가 쏟아지는지 (예: 특정 던전이 골드를 과다 배출)</li>
+      <li><code>sink</code>별 비중 → 유저가 재화를 어디에 쓰고 싶어하는지</li>
+    </ul>
+    <div class="call">
+      <div class="ct"><i class="e sm">🔗</i>보강 <span class="sup">보강</span></div>
+      <p>이후 업계 조사에서 확인된 두 가지를 함께 참고해 주세요 — ① <b>「faucet/sink 목표 비율」의 권위 있는 업계 표준은 존재하지 않으며</b>(검색되는 수치는 전부 근거 불명), ② 로스트아크는 인플레를 <b>싱크 확대가 아니라 faucet(생산) 차단</b>으로 대응했습니다. → <a href="07-benchmark.html#s13">업계 비교 · 재화 경제</a></p>
+    </div>
+
+    <!-- ── F ── -->
+    <h3 id="f"><i class="e tick sm">🔨</i>F. 성장 (강화 / 제작) <span class="b p1">P1</span></h3>
+
+    <h4>알고 싶은 것</h4>
+    <div class="q"><div class="qt">성장 루프가 <em>어디서 막히는가?</em> 강화 실패로 이탈하는가? (일일 미션에도 <code>Hero_Upgrade</code>/<code>Item_Upgrade</code>/<code>Create</code>가 있어 연결됨)</div></div>
+
+    <h4>남길 이벤트</h4>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>이벤트</th><th>파라미터</th><th>발화 지점</th></tr></thead>
+        <tbody>
+          <tr><td><code>upgrade_attempt</code></td><td><code>target_type</code> (<code>hero</code>/<code>item</code>), <code>target_id</code>, <code>level_from</code>, <code>level_to</code>, <code>cost_currency</code>, <code>cost_value</code></td><td>강화 버튼</td></tr>
+          <tr><td><code>upgrade_result</code></td><td><code>target_type</code>, <code>level_from</code>, <code>result</code> (<code>success</code>/<code>fail</code>), <code>player_level</code></td><td>강화 결과</td></tr>
+          <tr><td><code>create_attempt</code> / <code>create_result</code></td><td><code>item_id</code>, <code>result</code></td><td><code>#Create</code> 제작</td></tr>
+          <tr><td><code>equip_change</code></td><td><code>slot</code>, <code>item_id</code>, <code>rarity</code></td><td>장착 변경</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>어떻게 볼 것인가</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>강화 단계</th><th class="num">시도</th><th class="num">성공</th><th class="num">성공률</th><th class="num">다음 단계 시도</th></tr></thead>
+        <tbody>
+          <tr><td>+5→+6</td><td class="num">800</td><td class="num">720</td><td class="num">90%</td><td class="num">700</td></tr>
+          <tr class="rowcrit"><td><b>+9→+10</b></td><td class="num">300</td><td class="num"><b>90</b></td><td class="num"><b class="hlr">30%</b></td><td class="num"><b>60</b> ← 20%만 재도전</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:12.5px"><span class="b info">예시 수치</span></p>
+
+    <h4>판단 기준</h4>
+    <ul>
+      <li><b>성공률 급락 지점 이후 재도전율이 낮으면 = 좌절 구간.</b> 위 +9→+10에서 실패한 210명 중 재도전이 20%뿐 → 여기서 <b>성장이 멈추고 이탈로 이어짐</b></li>
+      <li>강화 실패 직후 <b>세션 종료율</b>을 보면 "빡쳐서 끈" 비율을 알 수 있음 → 보호권/할인 상품 설계 근거</li>
+      <li><code>cost_value</code> 누적 → 강화가 재화의 주요 sink인지 검증 (E 영역과 연결)</li>
+    </ul>
+    <div class="call">
+      <div class="ct"><i class="e sm">🔗</i>보강 <span class="sup">보강</span></div>
+      <p>이후 실측에서 <b>실제 강화 확률표가 확정</b>되었습니다 — +6부터 80/80/60/60/35%이며, <b>보호 아이템 없이는 실패 시 아이템이 소멸</b>합니다. 국내 3대 타이틀 대비 가장 이른 페널티 시점입니다. 따라서 F 영역의 「좌절 구간」은 예시가 아니라 <b>+6부터 상시 존재</b>할 가능성이 높습니다. → <a href="04-balance.html#s3">밸런스 실측 · 강화 페널티</a></p>
+    </div>
+
+    <!-- ── G ── -->
+    <h3 id="g"><i class="e spin sm">🎰</i>G. 가챠 <span class="b p1">P1</span></h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>이벤트</th><th>파라미터</th></tr></thead>
+        <tbody>
+          <tr><td><code>gacha_open</code></td><td><code>gacha_type</code></td></tr>
+          <tr><td><code>gacha_attempt</code></td><td><code>gacha_type</code>, <code>pull_count</code> (1/10), <code>currency</code>, <code>cost</code></td></tr>
+          <tr><td><code>gacha_result</code></td><td><code>gacha_type</code>, <code>rarity</code>, <code>item_id</code>, <code>is_new</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>어떻게 볼 것인가</b>: 가챠 화면 진입 대비 <b>실행률</b>(안 하면 = 재화 부족 or 가치 못 느낌) · 1회 vs 10회 비중 · <b>고레어 획득 직후 결제율</b>(뽑기 성공이 과금으로 이어지는가) · 연속 꽝 이후 이탈률</p>
+    <div class="call">
+      <div class="ct"><i class="e sm">🔗</i>보강 <span class="sup">보강</span></div>
+      <p><code>gacha_result</code>의 <code>rarity</code> 집계는 <b>확률 표시 의무 대응의 실측 검증 데이터</b>로도 쓸 수 있습니다. 이후 확인 결과 현 가챠는 기록값과 실제 분포가 달라(<a href="04-balance.html#s4">밸런스 실측 · 확률</a>) 정규화 재구현이 선행되어야 하며, 재구현 후 <b>이 이벤트로 표시 확률 = 실제 확률을 상시 검증</b>하는 체계를 권합니다 (넥슨은 일 단위 자동 검증 운영).</p>
+    </div>
+
+    <!-- ── H ── -->
+    <h3 id="h"><i class="e sm">📺</i>H. 광고 시청 <span class="b p1">P1</span></h3>
+    <p class="mut">GoogleMobileAds 도입됨. 상점에 광고 보상(<code>UI_Reward</code>) · 광고 잠금 카드(<code>UI_ADS</code>) 존재.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>이벤트</th><th>파라미터</th></tr></thead>
+        <tbody>
+          <tr><td><code>ad_reward_click</code></td><td><code>placement</code> (<code>shop_reward</code>/<code>shop_unlock</code>/<code>dungeon_extra</code>)</td></tr>
+          <tr><td><code>ad_show</code></td><td><code>placement</code></td></tr>
+          <tr><td><code>ad_complete</code></td><td><code>placement</code>, <code>reward_type</code>, <code>reward_amount</code></td></tr>
+          <tr><td><code>ad_fail</code></td><td><code>placement</code>, <code>reason</code> (<code>no_fill</code>/<code>load_fail</code>/<code>user_skip</code>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>어떻게 볼 것인가</b>: <b>클릭→완료율</b>. <code>no_fill</code>(광고 재고 없음)이 많으면 <b>광고 수익을 놓치는 중</b> → 미디에이션 검토 근거. 광고 시청 유저 vs 미시청 유저의 <b>결제율 비교</b> → 광고가 과금을 잡아먹는지 vs 보완하는지 판단</p>
+
+    <!-- ── I ── -->
+    <h3 id="i"><i class="e sm">📅</i>I. 출석 / 복귀 <span class="b p2">P2</span></h3>
+    <p class="mut"><code>Attendance check/Attendancecheck_MNG.cs</code>, <code>Coupon_System.cs</code>, <code>Post</code>(우편) 존재</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>이벤트</th><th>파라미터</th></tr></thead>
+        <tbody>
+          <tr><td><code>attendance_open</code> / <code>attendance_claim</code></td><td><code>day_no</code>, <code>streak_days</code>, <code>reward_type</code></td></tr>
+          <tr><td><code>post_claim</code></td><td><code>post_type</code>, <code>reward_type</code></td></tr>
+          <tr><td><code>coupon_use</code></td><td><code>coupon_type</code>, <code>result</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>어떻게 볼 것인가</b>: 출석 <b>연속일수 분포</b>(3일차·7일차에서 끊기는지 = 보상 설계 검증) · 출석 보상 수령 유저의 D7 리텐션 · 우편 미수령 누적(= 보상을 안 챙김 → 알림 필요)</p>
+
+    <!-- ── J ── -->
+    <h3 id="j"><i class="e sm">🏰</i>J. 엔드 콘텐츠 <span class="b p2">P2</span></h3>
+    <p class="mut">PVP/투기장, 길드(Arena/Boss), 월드보스, 시련의탑 — C의 <code>battle_start</code>/<code>battle_end</code>에 <code>content_id</code>로 <b>통합</b> (별도 이벤트 만들지 말 것)</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>추가 이벤트</th><th>파라미터</th></tr></thead>
+        <tbody>
+          <tr><td><code>trial_tower_floor</code></td><td><code>floor_no</code>, <code>result</code></td></tr>
+          <tr><td><code>guild_join</code> / <code>guild_leave</code></td><td><code>guild_id</code></td></tr>
+          <tr><td><code>rank_view</code></td><td><code>rank_type</code>, <code>my_rank</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>어떻게 볼 것인가</b>: <b>레벨 구간별 콘텐츠 도달률</b> → "만렙이 할 게 없어서 나가는가" 판단 · 시련의탑 <b>층별 이탈 분포</b>(어느 층이 벽인가) · 길드 가입 유저 vs 미가입 유저의 리텐션 차이(= 길드 유도가 리텐션에 효과 있는지)</p>
+    <div class="call">
+      <div class="ct"><i class="e sm">🔗</i>보강 <span class="sup">보강</span></div>
+      <p><code>trial_tower_floor</code>의 층별 이탈 분포는 이후 실측된 <b>107층 하드 캡 구조</b>(HP·방어는 상한 고정, 공격력만 무한 증가)와 대조하면 「설계상 벽」과 「체감상 벽」의 일치 여부를 확인할 수 있습니다. → <a href="05-data.html#tower">데이터 룸 · 시련의 탑</a></p>
+    </div>
+
+    <!-- ── K ── -->
+    <h3 id="k"><i class="e sm">🔄</i>K. 세션 / 리텐션 <span class="b p2">P2</span></h3>
+    <p class="mut"><code>first_open</code>, <code>session_start</code>, <code>user_engagement</code>는 <b>Firebase 자동 수집</b> — 추가 구현 불필요</p>
+    <p><b>어떻게 볼 것인가</b>: D1/D7/D30 리텐션을 <b>위 모든 영역과 교차</b>. 이게 사실상 최종 성적표입니다.<br>
+    예: <i>"길잡이 퀘스트 완료 유저의 D7 = 45% vs 미완료 = 8%"</i> → <b>A 영역 개선이 곧 리텐션 개선</b>이라는 증명</p>
+  </div>
+</section>
+
+<!-- ══════ 3. 공통 규칙 ══════ -->
+<section id="s3">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02-3</span><h2><i class="e">📐</i>공통 규칙</h2></div>
+
+    <ul>
+      <li><b>명명</b>: <code>snake_case</code>, <code>영역_동작</code> (<code>guide_quest_start</code>, <code>mission_reward_claim</code>). 영문 소문자/숫자/<code>_</code>, 숫자로 시작 불가</li>
+      <li><b>금지 접두사</b>: <code>firebase_</code>, <code>google_</code>, <code>ga_</code></li>
+      <li><b>제약</b>: 이벤트명 40자 / 파라미터명 40자 / <b>파라미터 값 100자</b> / 이벤트당 파라미터 25개 / 앱당 커스텀 이벤트 500종</li>
+      <li><b>enum은 문자열로</b>: <code>quest_type</code>, <code>content_id</code>, <code>mission_type</code>은 <b>숫자 대신 문자열</b>로 전송 (숫자면 리포트에서 의미를 못 읽음)</li>
+      <li><b>고빈도 발화 금지</b>: 진행도·프레임 단위 이벤트 금지. <b>상태 변화 시점만</b> 기록 (§02-2 B 참조)</li>
+      <li><b><code>nickname</code> 파라미터 전면 제거</b> — 사용자 식별은 <code>user_id</code>(뒤끝 UUID)로 통일. 개인정보 전송 정책 리스크 + 커스텀 측정기준 슬롯 낭비 + 이미 user_property로 중복 설정됨</li>
+      <li><b>구현 위치</b>: 신규 이벤트는 <code>FirebaseInit.cs</code>에 <b>래퍼 메서드로 집중</b> (현 구조 유지). 호출부에 SDK 직접 노출 금지</li>
+      <li><b>onClick에 로깅 배선 추가 금지</b>: 기존 메서드 <b>내부</b>에서 호출할 것 (배선 추가 시 중복 발화·순서 문제)</li>
+    </ul>
+
+    <h3><i class="e sm">👤</i>사용자 속성 (세그먼트용, 최대 25개)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>속성</th><th>값</th><th>목적</th></tr></thead>
+        <tbody>
+          <tr><td><code>player_level</code></td><td>구간화 (<code>1-10</code>/<code>11-30</code>/…)</td><td>레벨대별 퍼널 비교</td></tr>
+          <tr><td><code>is_payer</code></td><td><code>true</code>/<code>false</code></td><td>과금/무과금 행동 차이</td></tr>
+          <tr><td><code>total_spend_tier</code></td><td><code>none</code>/<code>low</code>/<code>mid</code>/<code>whale</code></td><td>고래 분석</td></tr>
+          <tr><td><code>tutorial_status</code></td><td><code>in_progress</code>/<code>complete</code></td><td><b>A 영역 세그먼트</b></td></tr>
+          <tr><td><code>guild_joined</code></td><td><code>true</code>/<code>false</code></td><td>길드 효과</td></tr>
+          <tr><td><code>nickname</code></td><td>기존</td><td><b>정책 검토 대상</b> (§02-8 D3)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 4. 이벤트 요약표 ══════ -->
+<section id="s4">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02-4</span><h2><i class="e sm">✅</i>이벤트 요약표 (구현 체크리스트)</h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:14%">영역</th><th>이벤트</th><th style="width:8%">우선</th></tr></thead>
+        <tbody>
+          <tr><td><b>A 길잡이</b></td><td><code>guide_quest_start</code>, <code>guide_quest_complete</code>, <code>guide_speech_view</code>, <code>guide_speech_skip</code></td><td><span class="b p0">🔴</span></td></tr>
+          <tr><td><b>B 미션</b></td><td><code>mission_open</code>, <code>mission_complete</code>, <code>mission_reward_claim</code>, <code>mission_refresh</code>, <code>mission_daily_summary</code></td><td><span class="b p0">🔴</span></td></tr>
+          <tr><td><b>C 던전</b></td><td><code>dungeon_menu_open</code>, <code>content_select</code>, <code>entry_attempt</code>, <code>entry_fail</code>, <code>battle_start</code>, <code>battle_end</code></td><td><span class="b p0">🔴</span></td></tr>
+          <tr><td><b>D 결제</b></td><td><code>shop_open</code>, <code>shop_tab_view</code>, <code>purchase_click</code>, <code>purchase</code>(수정), <code>purchase_fail</code></td><td><span class="b p0">🔴</span></td></tr>
+          <tr><td>E 재화</td><td><code>earn_virtual_currency</code>, <code>spend_virtual_currency</code></td><td><span class="b p1">🟠</span></td></tr>
+          <tr><td>F 성장</td><td><code>upgrade_attempt</code>, <code>upgrade_result</code>, <code>create_attempt</code>, <code>create_result</code>, <code>equip_change</code></td><td><span class="b p1">🟠</span></td></tr>
+          <tr><td>G 가챠</td><td><code>gacha_open</code>, <code>gacha_attempt</code>, <code>gacha_result</code></td><td><span class="b p1">🟠</span></td></tr>
+          <tr><td>H 광고</td><td><code>ad_reward_click</code>, <code>ad_show</code>, <code>ad_complete</code>, <code>ad_fail</code></td><td><span class="b p1">🟠</span></td></tr>
+          <tr><td>I 출석</td><td><code>attendance_open</code>, <code>attendance_claim</code>, <code>post_claim</code>, <code>coupon_use</code></td><td><span class="b p2">🟡</span></td></tr>
+          <tr><td>J 엔드</td><td><code>trial_tower_floor</code>, <code>guild_join</code>, <code>guild_leave</code>, <code>rank_view</code></td><td><span class="b p2">🟡</span></td></tr>
+          <tr><td>공통</td><td><code>screen_view</code> (모달 7종 — Unity는 자동 화면추적 무의미, <b>수동 전송</b> 필요)</td><td><span class="b p1">🟠</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>신규 약 30종 + 기존 6종 정리.</b> GA4 커스텀 이벤트 한도(500)에 여유 충분.</p>
+  </div>
+</section>
+
+<!-- ══════ 5. 코드 상태 ══════ -->
+<section id="s5">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02-5</span><h2><i class="e glow">🚧</i>현재 코드 상태 — 선행 수정 필요</h2></div>
+    <p class="slead">이벤트 설계가 본론이지만, <b>아래 항목은 고치지 않으면 계측을 추가해도 데이터가 안 나옵니다.</b></p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:6%">#</th><th style="width:34%">문제</th><th style="width:20%">위치</th><th>영향</th><th style="width:8%">등급</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit"><td><b>P1</b></td><td><b>IAP 결제 이벤트가 주석 처리됨</b> → 현금 결제가 Firebase로 <b>전혀 전송 안 됨</b></td><td><code>IAP_Mng.cs:219</code>, <code>:251</code></td><td><b class="hlr">매출 데이터 0</b></td><td><span class="b p0">🔴</span></td></tr>
+          <tr class="rowcrit"><td><b>P2</b></td><td><code>purchase</code>가 GA4 표준 규격 미준수 (<code>currency</code>/<code>value</code>/<code>transaction_id</code> 없이 <code>ruby</code>, <code>nickname</code>만)</td><td><code>FirebaseInit.cs:83-91</code></td><td>주석을 풀어도 <b>금액이 안 잡힘</b></td><td><span class="b p0">🔴</span></td></tr>
+          <tr><td><b>P3</b></td><td><code>nickname</code>을 전 이벤트에 첨부</td><td><code>FirebaseInit.cs</code> 전역</td><td>정책 리스크 + 슬롯 낭비 + 중복</td><td><span class="b p1">🟠</span></td></tr>
+          <tr><td><b>P5</b></td><td>초기화 완료 보장 없이 <code>LogEvent</code> 호출 가능 (<code>Awake</code> 비동기 체크 ↔ <code>Login_Mng</code> 호출 경합)</td><td><code>FirebaseInit.cs:25-55</code></td><td>기동 직후 이벤트 유실</td><td><span class="b p1">🟠</span></td></tr>
+          <tr><td><b>P6</b></td><td><code>google-services.json</code>이 gitignore됨 (<code>VULCAN_new/.gitignore:110-111</code>). iOS plist는 리포에 존재</td><td class="mut">—</td><td><b>정상 설정.</b> 빌드 머신 최신본 존재만 확인</td><td><span class="b p2">🟡</span></td></tr>
+          <tr><td><b>P7</b></td><td><code>app_open</code> 수동 전송 — Firebase 자동수집 이벤트</td><td><code>FirebaseInit.cs:35</code></td><td>중복 계측 가능성, DebugView로 확인</td><td><span class="b p2">🟡</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:13px">※ P4는 검토 과정에서 제외되어 원문 번호를 그대로 유지합니다.</p>
+
+    <div class="call ok">
+      <div class="ct"><i class="e sm">✅</i>되어 있는 것</div>
+      <p>Firebase Unity SDK <b>12.10.1</b> (Analytics + Messaging), <code>SetUserId(UUID)</code>, <code>SetUserProperty("nickname")</code>, 이벤트 6종(<code>app_open</code> / <code>login</code> / <code>tutorial_complete</code> / <code>mentor_complete</code> / <code>purchase</code>(미사용) / <code>item_purchase</code>)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 6. 콘솔 작업 ══════ -->
+<section id="s6">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02-6</span><h2><i class="e sm">🖥️</i>Firebase 콘솔 작업</h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:6%">#</th><th style="width:34%">작업</th><th>왜 필요한가</th><th style="width:10%">등급</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit"><td><b>C1</b></td><td><b>커스텀 측정기준(dimension) 등록</b> — <code>quest_no</code>, <code>mission_type</code>, <code>content_id</code>, <code>reason</code>, <code>tab_id</code> 등 신규 파라미터 <b>전부</b></td><td>⚠️ <b class="hlr">등록 안 하면 리포트에 파라미터가 아예 안 보입니다.</b> 가장 흔한 실수</td><td><span class="b p0">🔴</span></td></tr>
+          <tr class="rowcrit"><td><b>C2</b></td><td><b>데이터 보관 기간 2개월 → 14개월</b></td><td>⚠️ GA4 기본값이 <b>2개월</b>. 그대로 두면 장기 리텐션 분석 불가. <b>지금 바꿔야 데이터가 쌓임</b></td><td><span class="b p0">🔴</span></td></tr>
+          <tr><td><b>C3</b></td><td>전환(주요 이벤트) 표시 — <code>purchase</code>, <code>tutorial_complete</code>, <code>guide_quest_complete</code></td><td>전환 리포트·광고 최적화</td><td><span class="b p1">🟠</span></td></tr>
+          <tr><td><b>C4</b></td><td>DebugView QA</td><td>§02-7 검수</td><td><span class="b p0">🔴</span></td></tr>
+          <tr><td><b>C5</b></td><td><b>BigQuery 연동</b> (일일 export)</td><td>콘솔 퍼널은 단계·조건 제한적. §02-2의 교차분석(리텐션×미션 등)은 사실상 BigQuery 필요</td><td><span class="b p1">🟠 (§02-8 D2)</span></td></tr>
+          <tr><td><b>C6</b></td><td>잠재고객(Audience) — 이탈 위험군/과금 유저</td><td>푸시 타게팅 (Messaging 도입됨)</td><td><span class="b p2">🟡</span></td></tr>
+          <tr><td><b>C7</b></td><td><code>google-services.json</code> 빌드 환경 존재 확인 (P6)</td><td>Android 계측 전제</td><td><span class="b p2">🟡</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 7. 검수 기준 ══════ -->
+<section id="s7">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02-7</span><h2><i class="e sm">🧪</i>검수 기준 (완료 판정)</h2></div>
+    <p class="slead">작업 완료 보고 시 <b>아래를 캡처/로그로 첨부</b>해 주세요.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:6%">#</th><th>검수 항목</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><b>DebugView 캡처</b> — 각 신규 이벤트가 <b>파라미터 값과 함께</b> 찍히는 화면</td></tr>
+          <tr><td class="num">2</td><td><b>A 재현</b> — 길잡이 퀘스트 1→2→3번 진행 시 <code>guide_quest_start/complete</code>가 <b><code>quest_no</code>와 함께 순서대로</b> 찍힘</td></tr>
+          <tr><td class="num">3</td><td><b>B 재현</b> — 미션 1건 달성 → <code>mission_complete</code>, 보상 수령 → <code>mission_reward_claim</code>이 <b>각각 별개로</b> 찍힘</td></tr>
+          <tr><td class="num">4</td><td><b>C 재현</b> — 요일던전 <b>횟수 0 상태</b>에서 입장 시도 → <code>entry_fail(reason=no_count)</code> 확인</td></tr>
+          <tr><td class="num">5</td><td><b>D E2E</b> — 테스트 결제 1건이 <code>purchase</code>로 <b>금액·통화와 함께</b> 집계 (P1/P2 해소 증명) + 취소 시 <code>purchase_fail</code></td></tr>
+          <tr><td class="num">6</td><td><b>중복 없음</b> — <code>app_open</code> 중복(P7) 및 이벤트 2회 발화 없음</td></tr>
+          <tr><td class="num">7</td><td><b>제약 준수</b> — 파라미터 값 100자 이내, 이벤트당 25개 이하, enum은 문자열</td></tr>
+          <tr><td class="num">8</td><td><b><code>nickname</code> 제거 확인</b> — 이벤트 파라미터에서 제거, <code>user_id</code>는 정상</td></tr>
+          <tr><td class="num">9</td><td><b>고빈도 발화 없음</b> — 전투 1회에 이벤트 수십 건 발생하지 않는지</td></tr>
+          <tr><td class="num">10</td><td><b>릴리즈 빌드</b> 기준 확인 (에디터/디버그 빌드만으로 판정 금지)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 8. 진행 순서 ══════ -->
+<section id="s8">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02-8</span><h2><i class="e tick">🚦</i>진행 순서 및 결정 항목</h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:14%">단계</th><th style="width:42%">내용</th><th>이것으로 답하는 질문</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit"><td><b>Phase 0</b></td><td>P1 · P2 · P5 수정 + C1 · C2 · C7</td><td>(기반 — <b>매출 데이터 복구</b>)</td></tr>
+          <tr class="rowgold"><td><b>Phase 1</b></td><td><b>A 길잡이 + B 미션 + C 던전</b></td><td><b>초기 이탈 / 미션 달성 / 던전 이용</b> ← 경영진 지목 3종</td></tr>
+          <tr><td><b>Phase 2</b></td><td>D 결제 + E 재화</td><td>매출 누수 / 경제 균형</td></tr>
+          <tr><td><b>Phase 3</b></td><td>F 성장 + G 가챠 + H 광고 + <code>screen_view</code></td><td>성장 병목 / 부가 수익</td></tr>
+          <tr><td><b>Phase 4</b></td><td>I 출석 + J 엔드 + C5 BigQuery</td><td>리텐션 심층</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="call gold">
+      <div class="ct"><i class="e sm">⏰</i>일정 목표</div>
+      <p><b>Phase 0~2는 상점 정보구조 v3 착수 전 완료</b> 목표 (§02-2 D 사유 — 개편 전 기준선이 없으면 전후 비교가 영영 불가능합니다).</p>
+    </div>
+
+    <h3><i class="e float sm">❓</i>결정 필요</h3>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:7%">#</th><th style="width:22%">항목</th><th style="width:28%">선택지</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><b>D1</b></td><td>Phase 1 우선순위</td><td>A / B / C 중 먼저</td><td>본 문서는 <b>A·B·C 동시</b>로 초안 (묶어야 교차분석 가능)</td></tr>
+          <tr><td><b>D2</b></td><td>BigQuery 연동</td><td>연동 / 콘솔만</td><td>무료 export 가능하나 <b>쿼리 비용 발생</b>. §02-2의 교차분석엔 사실상 필수</td></tr>
+          <tr><td><b>D3</b></td><td><code>nickname</code> 처리</td><td>완전 제거 / 사용자 속성만 유지</td><td>UUID로 조인 가능 → <b>제거 권장</b></td></tr>
+          <tr><td><b>D4</b></td><td>데이터 보관</td><td>14개월 / 2개월(기본)</td><td><b>14개월 권장</b></td></tr>
+          <tr><td><b>D5</b></td><td>기존 <code>item_purchase</code></td><td>즉시 대체 / 병행 후 폐기</td><td>과거 데이터 연속성 필요 시 병행</td></tr>
+          <tr><td><b>D6</b></td><td>리포트 주기·형태</td><td>주간 대시보드 / 월간 리포트</td><td><b>누가 보고 누가 판단할지</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 9. 코드 위치 ══════ -->
+<section id="s9">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02-9</span><h2><i class="e sm">📍</i>코드 위치 요약</h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:30%">대상</th><th>경로</th></tr></thead>
+        <tbody>
+          <tr><td><b>길잡이 퀘스트</b> (A)</td><td><code>Assets/@@Scripts/Quest/Main_Quest.cs</code> — <code>Set_Quest()</code>(시작) / <code>Complete_Quest()</code>(완료) / <code>Complete_AllQuest():116</code>(전체)</td></tr>
+          <tr><td>길잡이 대사</td><td><code>Assets/@@Scripts/Guide/Guide_system.cs</code> — <code>Next_Speech()</code></td></tr>
+          <tr><td>멘토</td><td><code>Assets/@@Scripts/Quest/Mentor_System.cs:61</code></td></tr>
+          <tr><td><b>일일 미션</b> (B)</td><td><code>Assets/@@Scripts/Mng/Mission_Mng.cs</code> — <code>missionItems[]</code>, <code>rewardButton</code>, <code>refreshButton</code></td></tr>
+          <tr><td>미션 타입 enum (11종)</td><td><code>Assets/@@Scripts/Enum_Holder.cs:39</code> — <code>Quest_Type</code></td></tr>
+          <tr><td><b>요일던전 입장</b> (C)</td><td><code>Assets/@@Scripts/DailyDungeon/UI_DailyDungeon.cs</code> — <code>Check_True()</code> (횟수 부족 분기)</td></tr>
+          <tr><td>던전 팝업 7버튼</td><td><code>Assets/@@Prefabs/HUD/Main_##Base_Canvas.prefab</code> — <code>dungeon_meun</code></td></tr>
+          <tr><td><b>IAP 결제</b> (D, P1)</td><td><code>Assets/@@Scripts/Mng/Shop/IAP_Mng.cs:219</code>(Google), <code>:251</code>(Apple)</td></tr>
+          <tr><td>인게임 재화 소비 (E)</td><td><code>Assets/@@Scripts/Mng/Shop/TBC_Mng.cs:115</code>, <code>:137</code>, <code>:154</code>, <code>:163</code></td></tr>
+          <tr><td>Analytics 래퍼</td><td><code>Assets/@@Scripts/Firebase/FirebaseInit.cs</code></td></tr>
+          <tr><td>로그인/유저 식별</td><td><code>Assets/@@Scripts/Backend/Login_Mng.cs:347</code></td></tr>
+          <tr><td>상점 구조 (9탭)</td><td><code>VULCAN_SHOP_STRUCTURE.md</code></td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="call">
-      <div class="ct">검수 기준</div>
-      <p>완료 보고 시 다음을 확인합니다.</p>
-      <ul>
-        <li>DebugView에서 각 신규 이벤트가 <b>파라미터 값과 함께</b> 기록되는지</li>
-        <li>테스트 결제 1건이 <b>금액·통화와 함께</b> 집계되는지 (매출 복구 확인), 취소 시 실패 이벤트가 기록되는지</li>
-        <li>길잡이 퀘스트 진행 시 <b>퀘스트 번호와 함께</b> 순서대로 기록되는지</li>
-        <li>미션 달성과 보상 수령이 <b>각각 별개로</b> 기록되는지</li>
-        <li>요일던전 <b>횟수 0 상태</b>에서 입장 시도 시 거절 사유가 기록되는지</li>
-        <li>중복 발화 없음 · 파라미터 제약 준수 · 고빈도 발화 없음</li>
-        <li><b>릴리즈 빌드 기준</b> 확인 (에디터·디버그 빌드만으로 판정하지 않음)</li>
-      </ul>
+      <div class="ct"><i class="e pulse sm">⚠️</i>불변 규칙</div>
+      <p>계측 추가 시 <code>Get_UI</code> 문자열 인자, 프리팹명, 상품 오브젝트 이름(<code>name==id</code> 매칭), onClick 대상·인자를 <b class="hlr">변경하지 마세요.</b></p>
     </div>
 
-    <div class="call info">
-      <div class="ct"><i class="e sm">📎</i>참고 — 튜토리얼 완료율에 관하여</div>
-      <p><b class="hlr">모바일 게임 튜토리얼 완료율의 업계 벤치마크는 존재하지 않습니다.</b> 널리 인용되는 「30% 완료」는 GameAnalytics 블로그의 <b>가상 예시</b>가 벤치마크로 재유통된 것임을 원문에서 확인하였습니다. 튜토리얼 정의가 게임마다 달라 업계 표준이 성립하지 않습니다.</p>
-      <p style="margin-top:8px"><b class="hl">→ 따라서 자체 퍼널을 기준선으로 삼는 것이 유일한 방법이며, 이것이 A 영역 계측이 필요한 또 하나의 이유입니다.</b> → <a href="10-notes.html#excluded">배제한 수치</a></p>
+    <div class="call info" style="margin-top:26px">
+      <div class="ct"><i class="e sm">🔗</i>본 보고서와의 연결 <span class="sup">보강</span></div>
+      <p>이 요청서가 완료되면 다음이 검증 가능해집니다 — ① <a href="04-balance.html#s5">26레벨 정체 구간 가설</a>(A + K 교차), ② <a href="04-balance.html#s2">보스 콘텐츠 사장 현상의 정량 확인</a>(C), ③ <a href="07-benchmark.html#s7">요일던전 횟수 상품의 수요 규모</a>(C의 <code>entry_fail</code>), ④ <a href="09-proposal.html#p2">배틀패스 도입 전 고래 ARPPU 측정</a>(D + 사용자 속성). <b>본 보고서의 「한계」 대부분이 이 문서 하나로 해소됩니다.</b> → <a href="10-notes.html#limits">방법론 및 한계</a></p>
     </div>
   </div>
 </section>
@@ -174,7 +693,7 @@
 <section>
   <div class="wrap">
     <div class="pager">
-      <a href="01-cs.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 01 · 고객 문의 접수 분석</span></a>
+      <a href="01-cs.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 01 · CS 접수 해부 리포트</span></a>
       <a href="03-users.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 03 · 유저 반응 심층 분석</span></a>
     </div>
   </div>
@@ -183,9 +702,10 @@
 <footer>
   <div class="wrap">
     <p class="fin">
-      PAGE 02 · 데이터 계측 요청서 (기존 자료)<br>
-      VULCAN 개선 제안 · 원 작성일 2026.07.16 · 내부 검토용<br><br>
-      상세 이벤트 스펙은 별도 문서 <code>VULCAN_FIREBASE_ANALYTICS_REQUEST.md</code>에 있습니다.
+      PAGE 02 · Firebase 이벤트 로그 / 퍼널 분석 작업 요청서 (원문: 2026.07.16)<br>
+      VULCAN 개선 제안 · 내부 검토용<br><br>
+      원문 요청서를 전문 그대로 옮겼으며, 이후 확인된 사실은 [보강] 표기로 덧붙였습니다.<br>
+      예시 리포트 표의 수치는 형태 설명용 가상 데이터입니다.
     </p>
   </div>
 </footer>

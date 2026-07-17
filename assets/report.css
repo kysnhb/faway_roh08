@@ -475,6 +475,60 @@ th{background:linear-gradient(180deg,#242b38,var(--slate))}
 .hlg{text-shadow:0 0 18px rgba(233,201,106,.18)}
 .hlr{text-shadow:0 0 18px rgba(255,91,58,.16)}
 
+/* ══════════ 사고 타임라인 ══════════ */
+.tl{position:relative;margin:26px 0;padding-left:30px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;border-radius:2px;
+  background:linear-gradient(180deg,var(--ember),var(--molten) 45%,var(--steel))}
+.tl .ev{position:relative;padding:0 0 26px}
+.tl .ev:last-child{padding-bottom:0}
+.tl .ev::before{content:"";position:absolute;left:-27px;top:5px;width:11px;height:11px;border-radius:50%;
+  background:var(--ash);border:2.5px solid var(--ember);box-shadow:0 0 12px rgba(255,91,58,.55);
+  animation:e-pulse 3s ease-in-out infinite}
+.tl .ev:nth-child(2)::before{animation-delay:.9s}
+.tl .ev:nth-child(3)::before{animation-delay:1.8s}
+.tl .ed{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ember);letter-spacing:.05em}
+.tl .et{color:var(--white);font-weight:600;font-size:15.5px;margin:3px 0 2px;font-family:'Oswald',sans-serif;letter-spacing:.3px}
+.tl .eb{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--molten);margin-bottom:4px}
+.tl .ev p{font-size:13.8px;color:var(--fog);margin:6px 0 0}
+
+/* ══════════ 우선순위 카드 ══════════ */
+.prio{display:flex;gap:18px;background:linear-gradient(158deg,#1a1f29,var(--iron) 62%);
+  border:1px solid var(--steel);border-radius:10px;padding:20px 22px;margin:14px 0;position:relative;overflow:hidden;transition:.18s}
+.prio::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--ember),var(--molten) 55%,transparent);
+  background-size:220% 100%;animation:g-flow 8s linear infinite}
+.prio:hover{border-color:#3a4457;transform:translateY(-1px)}
+.prio .pn{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;line-height:1;min-width:54px;
+  background:linear-gradient(174deg,var(--ember),var(--ember-dim));-webkit-background-clip:text;background-clip:text;color:transparent}
+.prio.p2c .pn{background:linear-gradient(174deg,var(--molten),#a8894a);-webkit-background-clip:text;background-clip:text}
+.prio.p3c .pn{background:linear-gradient(174deg,var(--spark),#8f7a2f);-webkit-background-clip:text;background-clip:text}
+.prio .pt{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--smoke);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.prio .ph{color:var(--white);font-weight:700;font-size:16px;margin-bottom:8px}
+.prio p{font-size:13.8px;margin:6px 0}
+.prio ul{margin:10px 0 0 2px;list-style:none}
+.prio li{font-size:12.8px;color:var(--smoke);margin:4px 0;padding-left:16px;position:relative}
+.prio li::before{content:"›";position:absolute;left:2px;color:var(--ember)}
+
+/* ══════════ 핵심 한 줄 ══════════ */
+.bigline{margin:34px 0 8px;padding:26px 28px;border-radius:10px;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,rgba(255,91,58,.12),rgba(233,201,106,.06) 60%,transparent);
+  border:1px solid rgba(255,91,58,.25)}
+.bigline::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(90% 120% at 0% 0%,rgba(255,255,255,.04),transparent 55%)}
+.bigline .bl{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:var(--ember);text-transform:uppercase;margin-bottom:10px}
+.bigline p{font-size:17px;line-height:1.9;color:var(--white);margin:0;font-weight:500}
+
+/* [보강] 배지 */
+.sup{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;
+  padding:2px 7px;border-radius:3px;letter-spacing:.06em;vertical-align:middle;
+  background:rgba(78,203,141,.15);color:var(--ok);border:1px solid rgba(78,203,141,.4)}
+
+@media(max-width:520px){
+  .prio{flex-direction:column;gap:8px}
+  .bigline p{font-size:15px}
+  .bigline{padding:20px}
+}
+
 /* ── RESPONSIVE ── */
 /* 좁은 데스크톱 — 메뉴 라벨 압축 */
 @media(max-width:1180px){
