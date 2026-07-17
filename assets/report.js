@@ -55,10 +55,19 @@
 
     mask.addEventListener('click', function (e) { if (e.target === mask) close(); });
     mask.querySelector('.fx').addEventListener('click', close);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && mask.classList.contains('on')) close();
-    });
     box.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    // ESC 닫기 — 캡처 단계에서 처리해 다른 핸들러보다 먼저 잡는다
+    function onEsc(e) {
+      if (!mask.classList.contains('on')) return;
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        e.preventDefault();
+        e.stopPropagation();
+        close();
+      }
+    }
+    document.addEventListener('keydown', onEsc, true);
+    window.addEventListener('keydown', onEsc, true);
   }
 
   if (document.readyState === 'loading') {
