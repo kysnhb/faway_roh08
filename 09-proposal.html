@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개선 제안 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 09</b> · 개선 제안</span>
+    <span class="pg">09 / 10</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 09 · Proposal</div>
+    <h1>개선 제안</h1>
+    <p class="sub">모든 제안은 <b>① 유저 근거 ② 자체 데이터 근거 ③ 업계 근거</b>가 함께 확보된 항목만 수록하였습니다. 추정에 근거한 항목은 포함하지 않았습니다.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="call gold">
+      <div class="ct">우선순위 판단 기준</div>
+      <p><b>Phase 0</b>은 <b class="hlg">현재 손실이 발생하고 있거나 법적 리스크가 있는 항목</b>입니다.<br>
+      <b>Phase 1</b>은 <b class="hlg">밸런스 수치를 거의 조정하지 않고 개선 가능한 항목</b>입니다.<br>
+      <b>Phase 2</b>는 신규 매출원, <b>Phase 3</b>은 콘텐츠 확충입니다.</p>
+      <p style="margin-top:12px">콘텐츠 추가는 효과가 크나 <b>비용이 가장 크고 효과 발현이 가장 늦습니다.</b> 따라서 <b class="hl">현재 손실이 발생하는 지점을 우선 차단하는 순서</b>로 구성하였습니다.</p>
+    </div>
+
+    <div class="fig">
+      <div class="cap">// 단계별 구성 개요</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="0" y="20" width="210" height="150" rx="8" fill="#c9421f" opacity=".16" stroke="#ff5b3a"/>
+        <text x="20" y="46" font-size="14" fill="#ff5b3a" font-weight="700">Phase 0</text>
+        <text x="20" y="66" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">즉시</text>
+        <text x="20" y="94" font-size="12" fill="#f2f5fa">손실·리스크 차단</text>
+        <text x="20" y="116" font-size="11" fill="#c4ccd8">· 드랍 경로 복구</text>
+        <text x="20" y="134" font-size="11" fill="#c4ccd8">· 확률 시스템 정규화</text>
+        <text x="20" y="152" font-size="11" fill="#c4ccd8">· 골드던전 주간 상한</text>
+
+        <rect x="230" y="20" width="210" height="150" rx="8" fill="#e9c96a" opacity=".14" stroke="#e9c96a"/>
+        <text x="250" y="46" font-size="14" fill="#e9c96a" font-weight="700">Phase 1</text>
+        <text x="250" y="66" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">1~2개월</text>
+        <text x="250" y="94" font-size="12" fill="#f2f5fa">수치 조정 없이 개선</text>
+        <text x="250" y="116" font-size="11" fill="#c4ccd8">· 성장 정보 표기</text>
+        <text x="250" y="134" font-size="11" fill="#c4ccd8">· 이벤트 시스템 일반화</text>
+        <text x="250" y="152" font-size="11" fill="#c4ccd8">· 던전 스케줄러</text>
+
+        <rect x="460" y="20" width="210" height="150" rx="8" fill="#5ab3ff" opacity=".14" stroke="#5ab3ff"/>
+        <text x="480" y="46" font-size="14" fill="#5ab3ff" font-weight="700">Phase 2</text>
+        <text x="480" y="66" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">2~4개월</text>
+        <text x="480" y="94" font-size="12" fill="#f2f5fa">신규 매출원</text>
+        <text x="480" y="116" font-size="11" fill="#c4ccd8">· 루비 정기권</text>
+        <text x="480" y="134" font-size="11" fill="#c4ccd8">· 누적 구매 보상</text>
+        <text x="480" y="152" font-size="11" fill="#c4ccd8">· 트리거 오퍼</text>
+
+        <rect x="690" y="20" width="210" height="150" rx="8" fill="#4ecb8d" opacity=".12" stroke="#4ecb8d"/>
+        <text x="710" y="46" font-size="14" fill="#4ecb8d" font-weight="700">Phase 3</text>
+        <text x="710" y="66" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">4개월+</text>
+        <text x="710" y="94" font-size="12" fill="#f2f5fa">콘텐츠</text>
+        <text x="710" y="116" font-size="11" fill="#c4ccd8">· 길드 작업장</text>
+        <text x="710" y="134" font-size="11" fill="#c4ccd8">· 제작품 NPC 납품</text>
+        <text x="710" y="152" font-size="11" fill="#c4ccd8">· 보스 재설계</text>
+
+        <text x="0" y="198" font-size="12" fill="#8a93a6">비용은 오른쪽으로 갈수록 커지고, 효과 발현 시점도 늦어집니다.</text>
+      </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="p0">
+  <div class="wrap">
+    <div class="shead"><span class="snum">Phase 0</span><h2><i class="e glow">🛑</i>손실 및 리스크 차단 <span class="b p0">즉시</span></h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:24%">항목</th><th>사유</th><th style="width:11%">비용</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit">
+            <td><b class="hlr">성수 · 최상급 마법서 · 시련의 증표 드랍 경로 복구</b></td>
+            <td>유저가 <b>존재하지 않는 드랍을 장기간 파밍</b>하였고 해당 문의에 답변이 이루어지지 않았습니다. 현재 성수는 <b>14,139원짜리 유료 전용 필수재</b> 상태입니다. <b>드랍 몬스터 지정만으로 해결됩니다.</b> → <a href="04-balance.html#s1">04-2</a></td>
+            <td><span class="b ok">매우 낮음</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><b class="hlr">강화 테이블 초기화 기능 정리</b></td>
+            <td>해당 기능의 값이 <b>현재 운영값과 전면 불일치</b>합니다. <b>실행될 경우 라이브 강화 밸런스가 변경됩니다.</b> 삭제하거나 현재 값과 동기화가 필요합니다. → <a href="04-balance.html#s8">04-9</a></td>
+            <td><span class="b ok">매우 낮음</span></td>
+          </tr>
+          <tr>
+            <td><b>영웅 상의 E등급 +10 수치 확인</b></td>
+            <td>5,000만 골드를 지불하고 35% 확률을 통과하였을 때 <b>성능이 하락</b>합니다(HP 1,200→1,000). 유저가 인지할 경우 신뢰에 영향이 있습니다.</td>
+            <td><span class="b ok">매우 낮음</span></td>
+          </tr>
+          <tr>
+            <td><b>강화 하락 하한 보정</b></td>
+            <td>하락 폭에 하한이 없어 <b>강화 레벨이 음수가 될 수 있습니다.</b></td>
+            <td><span class="b ok">매우 낮음</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><b class="hlr">확률 시스템 정규화</b></td>
+            <td><b>공개할 수 있는 확률값이 존재하지 않는 상태</b>입니다. 캐릭터 가챠는 기록값 33.3이나 실제는 8.33%이고, 아이템 가챠는 합계가 656.6%입니다. <b>공개에 앞서 정규화된 가중 테이블로 재구현이 선행</b>되어야 합니다. → <a href="04-balance.html#s4">04-5</a></td>
+            <td><span class="b p1">중</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><b class="hlr">확률 공개 + 변경 이력 감사 로그</b></td>
+            <td>표시 의무는 <b>2024-03-22부터 시행 중</b>이며 강화형이 포함됩니다. <b>2025-08-01부터 입증책임이 게임사에 있으므로</b>, 설계값과 실제 구현의 일치를 <b>상시 입증 가능한 형태로 보관</b>하여야 합니다. 이는 문서가 아니라 <b>개발 프로세스 요구사항</b>입니다. → <a href="07-benchmark.html#s-law">07-4</a></td>
+            <td><span class="b p1">중</span></td>
+          </tr>
+          <tr>
+            <td>정수 제작 재료 확인</td>
+            <td>워리어·어쌔신·메이지의 정수가 모두 <b>「헌터 각인」</b>을 요구합니다. 팔라딘만 해당 직업 각인을 사용합니다.</td>
+            <td><span class="b ok">매우 낮음</span></td>
+          </tr>
+          <tr class="rowgold">
+            <td><b class="hlg">골드던전 주간 획득 상한</b></td>
+            <td><b class="hlg">도입 시점이 중요한 항목입니다.</b> 이미 지급되던 보상을 회수하면 반발이 발생하므로, 도입한다면 이른 시점이 유리합니다. 로스트아크는 <b>원정대당 주 6캐릭 제한</b>을 적용합니다. 본 게임 골드던전은 <b>효율이 255배 악화되는 구조</b>입니다. → <a href="04-balance.html#s6">04-7</a></td>
+            <td><span class="b ok">매우 낮음</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="p1">
+  <div class="wrap">
+    <div class="shead"><span class="snum">Phase 1</span><h2><i class="e tick">🔧</i>수치 조정 없이 개선 가능한 항목 <span class="b p1">1~2개월</span></h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:20%">항목</th><th>3중 근거</th><th style="width:11%">비용</th></tr></thead>
+        <tbody>
+          <tr class="rowgold">
+            <td><b class="hlg">성장 정보 UI 표기</b><br><span style="font-size:11px;color:var(--smoke)">강화 요구량 · 벨트 최대수치 · 다음 레벨 효과 · 초월/각성 총량</span></td>
+            <td>
+              <b>유저:</b> <i>"알아야 투자를 할 것 같습니다"</i> [제안 20] · <i>"최대수치를 모르는 상태에서 계속 제작하는 건 정답이 아닌 것 같네요"</i> [제안 15]<br>
+              <b>데이터:</b> 초월 6,000 / 각성 12,500 — <b>수치는 존재하나 화면에 표시할 데이터 형태가 아님</b><br>
+              <b>업계:</b> 리니지M은 확률을 <b>「즉시 확인」</b> 가능하도록 UI 개편<br>
+              → <a href="08-ui.html#s1">목업</a>
+            </td>
+            <td><span class="b ok">낮음</span></td>
+          </tr>
+          <tr class="rowgold">
+            <td><b class="hlg">이벤트 시스템 일반화</b><br><span style="font-size:11px;color:var(--smoke)">단일 재화 고정 → 테이블 기반</span></td>
+            <td>
+              <b>유저:</b> <i>"이벤트는 잘하시는것같아요. <b>루비 방금 샀습니다. 현질은 모바일게임하고선 처음인데</b>"</i> [41] · 이벤트 요청 <b>22건</b><br>
+              <b>데이터:</b> 이벤트 재화가 단일 항목으로 고정 → <b>신규 이벤트마다 앱 업데이트 필요</b><br>
+              <b>업계:</b> 매출 상위 100개 iOS 게임의 <b>90% 이상</b>이 시즌 이벤트 운영. CoC는 월 중반 일매출 <b>300% 이상 급등</b> 사례<br>
+              → <a href="04-balance.html#s7">04-8</a>
+            </td>
+            <td><span class="b p1">중</span></td>
+          </tr>
+          <tr class="rowgold">
+            <td><b class="hlg">던전 스케줄러</b></td>
+            <td>
+              <b>유저:</b> 설문 4위(59표) · <i>"겜할거리를 부탁드려요"</i> [73]<br>
+              <b>데이터:</b> 던전 7종 + 출석 + 제작 + 미션으로 일일 루틴 분산. 접수층 <b>30~40대 86.2%</b><br>
+              <b>업계:</b> 나이트크로우 스케줄러 — <b>일일 퀘스트·던전까지 순차 자동 실행</b><br>
+              → <a href="08-ui.html#s3">목업</a>
+            </td>
+            <td><span class="b ok">낮음</span><br><span style="font-size:10.5px;color:var(--smoke)">기존 진입에 큐 추가</span></td>
+          </tr>
+          <tr>
+            <td><b>강화 천장 도입</b></td>
+            <td>
+              <b>유저:</b> <i>"첫 시도부터 터지니 앞이 막막합니다"</i> [42]<br>
+              <b>데이터:</b> 대조한 3개 타이틀 중 <b>본 게임만 천장 보정이 없음</b><br>
+              <b>업계:</b> 던파 <b>실패 시 +5%p 누적</b> / 로스트아크 <b>장인의 기운 100% 확정</b> — <b class="hl">강화 천장은 표준화 추세</b><br>
+              → <a href="07-benchmark.html#s3">07-3</a>
+            </td>
+            <td><span class="b ok">낮음</span></td>
+          </tr>
+          <tr>
+            <td><b>신규 구간 강화 보호</b><br><span style="font-size:11px;color:var(--smoke)">초기 N회 소멸 방지</span></td>
+            <td>
+              <b>유저:</b> 신규(24시간 미만) 부정 응답 <b>18.2%</b> — 정착층의 약 7배<br>
+              <b>데이터:</b> 본 게임은 <b>+6부터 소멸</b><br>
+              <b>업계:</b> <b class="hl">던파는 +10까지 페널티 없음</b> · 메이플은 14성까지 없음<br>
+              → <a href="04-balance.html#s3">04-4</a>
+            </td>
+            <td><span class="b ok">낮음</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="p2">
+  <div class="wrap">
+    <div class="shead"><span class="snum">Phase 2</span><h2><i class="e pulse">💳</i>신규 매출원 <span class="b info">2~4개월</span></h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:18%">상품</th><th>규격 (업계 검증된 구성을 준용)</th><th style="width:14%">적용 위치</th></tr></thead>
+        <tbody>
+          <tr class="rowgold">
+            <td><b class="hlg">루비 정기권</b></td>
+            <td><b class="hl">즉시 루비 300 + 매일 90 × 30일 · 로그인 필수</b><br><span style="font-size:11.5px;color:var(--smoke)">Genshin · Honkai: Star Rail · Diablo Immortal <b>3사가 동일한 골격</b>을 사용하는 사실상의 업계 규격입니다. 로그인하지 않으면 그날 분량이 소멸하므로 <b>리텐션 장치가 상품 내부에 내장</b>됩니다.</span> → <a href="07-benchmark.html#s4">07-5</a></td>
+            <td>루비 IAP 8종 옆<br><b>출석 UI 공유</b></td>
+          </tr>
+          <tr>
+            <td><b>누적 구매 보상</b></td>
+            <td><b class="hl">7일 사이클 + 주간 리셋</b>, 현금 4티어<br><span style="font-size:11.5px;color:var(--smoke)">리니지M: 3,300 / 5,500 / 11,000 / 33,000원. <b>현행 월간한정 상품은 월 1회로 습관 형성이 어렵습니다.</b></span></td>
+            <td>기존 월간한정<br>상품 대체</td>
+          </tr>
+          <tr>
+            <td><b>요일던전 트리거 오퍼</b></td>
+            <td>① <b class="hl">클리어 직후(성취 시점) 재료 오퍼</b> — Diablo Immortal형, 시간 제한 없음<br>② <b class="hl">월 상한이 있는 열쇠 패키지</b> — 로스트아크형 (무제한 추가권은 배제)<br>③ <b>광고 시청 추가권</b> — 저니형 무과금 라인<br>④ <b>놓친 요일에 대한 5배 가치 번들</b> — Golf Clash형<br><span style="font-size:11.5px;color:var(--smoke)">좌절 시점 판매는 반발을 유발하나 성취 시점 판매는 보상으로 인식됩니다.</span> → <a href="07-benchmark.html#s7">07-6</a></td>
+            <td>요일던전 / 광고보상<br>/ 월간한정</td>
+          </tr>
+          <tr>
+            <td><b>3일 플래시 세일</b></td>
+            <td>오딘형 <b>33% 할인 · 3일 한정</b><br><span style="font-size:11.5px;color:var(--ember)">⚠️ <b>상시 세일은 배제.</b> 「세일 때만 구매」를 학습시켜 구매 패턴을 훼손합니다. <b>품목 로테이션이 필요합니다.</b></span></td>
+            <td>상점 슬롯</td>
+          </tr>
+          <tr>
+            <td><b>사냥 축복</b></td>
+            <td>아인하사드 구조 준용<br><span style="font-size:11.5px;color:var(--ember)">⚠️ <b class="hlr">하한 100% 보장이 필수입니다.</b> 「축복 0이면 재료도 획득 불가」 형태는 <b>배제</b>하여야 합니다 — 2021년 판매 중단 및 현금 환불 사태의 직접 원인이었습니다.</span></td>
+            <td>버프 탭</td>
+          </tr>
+          <tr>
+            <td><b>복귀 유저 이벤트</b></td>
+            <td>① <b class="hl">날짜 구간형 판정</b> — 고정 N일은 「이벤트 전 잠수」 어뷰징에 취약<br>② <b class="hl">7일 만료 대여 장비</b> — 강함을 체험시키고 만료 전 전환 압력<br>③ <b>이력 연동 차등 지급</b> — 고액 결제 이탈자 정밀 타겟<br><span style="font-size:11.5px;color:var(--smoke)">복귀 전용 <b>유료</b> 패키지는 검증된 사례가 없습니다. 무료 제공 후 전환 유도가 표준입니다.</span> → <a href="07-benchmark.html#s5">07-7</a></td>
+            <td><b>우편 지급 시<br>신규 화면 불필요</b></td>
+          </tr>
+          <tr>
+            <td>테마별 패스 병렬</td>
+            <td>나이트크로우형 (4주 25단계 = 무료 약 절반 / 2주 15단계 = 무료 0)<br><span style="font-size:11.5px;color:var(--ember)">⚠️ <b class="hlr">고액 결제 유저의 ARPPU를 먼저 측정한 후 도입을 권합니다.</b> Clash Royale은 패스 도입 후 월매출이 하락하였고 CoC는 상승하였습니다 — 경제의 소비 깊이가 흡수력을 결정합니다.</span></td>
+            <td>상점 9탭</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="p3">
+  <div class="wrap">
+    <div class="shead"><span class="snum">Phase 3</span><h2><i class="e float">🧩</i>콘텐츠 <span class="b p2">4개월 이상</span></h2></div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:22%">항목</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="rowgold">
+            <td><b class="hlg">길드 작업장</b><br><span style="font-size:11px;color:var(--smoke)">길드 + 방치 + 제작 결합</span></td>
+            <td><b class="hlg">유저 요청 2위(68표) · 4위(59표) · 6위(45표)를 단일 시스템으로 동시 대응합니다.</b> 검은사막 일꾼(오프라인 재료 수집) + RoK 2화폐(기부에 즉시 개인 보상) + AFK Arena 12시간 cap을 결합한 구성입니다. <b>기부 소재는 기존 제작 재료를 재활용하므로 신규 아이템이 불필요합니다.</b> → <a href="08-ui.html#s4">목업</a></td>
+          </tr>
+          <tr class="rowgold">
+            <td><b class="hlg">제작품 NPC 납품</b></td>
+            <td><b class="hlr">본 게임에는 유저 거래소가 없습니다.</b> 따라서 제작품은 자가소비 외 용도가 없으며, 이것이 제작 콘텐츠가 활성화되지 않는 구조적 원인입니다. 검은사막 <b>황실 납품</b>형 NPC가 <b class="hl">상한이 있는 고정 수요로서 제작 수익의 하한을 보장</b>합니다. 1일 상한을 길드 기여도·칭호에 비례시키면 인플레이션도 통제됩니다. → <b>제작 활성화의 전제 조건</b></td>
+          </tr>
+          <tr>
+            <td><b>전투력 상한 리그</b></td>
+            <td><a href="03-users.html#f5">발견 5</a> <i>"4위 길드부터 게임의 매력도가 확 떨어진다"</i>에 대한 <b class="hl">직접 대응 수단</b>입니다. 검은사막M이 <b>능력치 상한 거점</b>으로 과금 격차를 무력화한 별도 리그를 운영합니다. 무제한 리그(고액 결제층)와 병행합니다.</td>
+          </tr>
+          <tr>
+            <td><b>보스 재설계</b></td>
+            <td>각인 실효 드랍률 <b>0.006%</b>(정수 1개 = <b>83,333마리</b>) + 보스 경험치 1 · 골드 1. <b class="hlr">보스는 「이용하지 않는」 것이 아니라 「이용해도 성과가 나오지 않는」 상태</b>입니다. 드랍률 상향 + 보스 고유 보상으로 합성 경로와 차별화가 필요합니다. → <a href="04-balance.html#s2">04-3</a></td>
+          </tr>
+          <tr>
+            <td><b>월드보스 관문화 + 데미지 영속</b></td>
+            <td>로스트아크 <b>관문 저장</b>: 장시간 콘텐츠를 <b class="hl">40분 × 4회로 분할하면 직장인 유저의 참여가 가능</b>해집니다. CoC <b>데미지 영속</b>: 「내가 60% 진행했으니 마무리해달라」 = <b>비동기 협동이 커뮤니케이션을 자연 발생</b>시킵니다. <b>신규 보스가 불필요합니다.</b></td>
+          </tr>
+          <tr>
+            <td><b>시련의 탑 시즌제</b></td>
+            <td>3개월 시즌 + 시즌 전용 재화. <a href="05-data.html#tower">107층 진행 한계 문제</a>가 함께 해소됩니다. AFK Journey형으로 <b>영구 성장(강화·제작)은 유지</b>하여 반발을 최소화합니다.</td>
+          </tr>
+          <tr>
+            <td><b>중복 조각 교환처</b></td>
+            <td><a href="03-users.html#findings">유저 [113]</a> 요청 + DoF: <i>"중복을 <b>단순 분해 재화로 처리하면 후회와 이탈을 유발</b>한다"</i> — 업계에 이미 알려진 실패 패턴입니다.</td>
+          </tr>
+          <tr>
+            <td><b>캐릭터 밸런스</b></td>
+            <td>네오 치명타 · VC-01 · <b>어쌔신 = 헌터 직업 계수 분리</b>. 판정은 <b class="hl">비-미러 승률</b>로 수행하여야 합니다 — 픽률이 높으면 미러 매치가 승률을 50%로 수렴시켜 문제를 은폐합니다. → <a href="07-benchmark.html#s14">07-11</a></td>
+          </tr>
+          <tr>
+            <td><b>26레벨 정체 구간 재검토</b></td>
+            <td>8.24배 점프 + 40레벨 누적 <b>21억 경험치</b>(Lv4 몬스터 5,251만 마리). <b class="hl">업계 실측상 고액 결제 유저의 첫 결제는 평균 18일차</b>이므로, 정체 구간이 그 이전에 위치할 경우 결제 전환 이전 이탈 가능성이 있습니다. <span class="mut">단 본 게임의 도달 시점은 계측이 없어 확인 불가 — 가설입니다.</span></td>
+          </tr>
+          <tr>
+            <td>필드 다양화</td>
+            <td><b>설문 1위(75표)</b> + <i>"지하감옥 하나로 너무 우려먹는것같아요. 지겨워요"</i> [41]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="principles">
+  <div class="wrap">
+    <div class="shead"><span class="snum">09-X</span><h2><i class="e tick">🧭</i>실행 원칙</h2></div>
+    <p class="slead">어떤 항목을 진행하든 아래 6가지는 함께 지켜져야 합니다. 근거는 <a href="07-benchmark.html#s16">「업계 비교 · 한국 시장의 반발 사례」</a>입니다.</p>
+
+    <div class="g2">
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">1. 공개 약속은 계약과 같습니다</h5>
+        <p>지킬 수 없다면 <b>공개 약속을 하지 않는 편이 안전합니다.</b> 아이온2는 확률형도 아닌 유료 패키지였음에도 <b>PD가 공언한 선을 넘어 출시 당일 상품을 철회</b>하였습니다.</p>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">2. 사고 시 보상은 현금 단위로</h5>
+        <p>게임 내 재화 보상은 사태를 <b class="hlr">장기화</b>시킵니다(리니지M 문양 = 수개월). 현금·전액 환불은 <b class="hlo">종결</b>시킵니다(아인하사드, 메이플 키우기 = 신고 취하).</p>
+      </div>
+      <div class="card">
+        <h5>3. 영구 수직 파워보다 기간제 파워</h5>
+        <p><b class="hl">"일회성 영구 파워 판매보다 기간제 파워의 반복 구매가 더 지속가능하다"</b> (Naavik). 본 게임의 유료 항목은 현재 <b>영구 수직 성장과 손실 방지에 집중</b>되어 있습니다. → <a href="06-cost.html#s3">06-3</a></p>
+      </div>
+      <div class="card">
+        <h5>4. 확률은 「표시했는가」가 아니라 「표시대로 동작하는가」</h5>
+        <p>메이플 키우기 사안의 본질은 미표시가 아니라 <b class="hlr">표시와 실제의 불일치</b>였습니다. <b>2025-08-01부터 입증책임이 게임사에 있습니다.</b></p>
+      </div>
+      <div class="card">
+        <h5>5. 성장 정체 구간을 초반에 배치하지 않습니다</h5>
+        <p><b class="hl">고액 결제 유저의 첫 결제는 평균 18일차</b>입니다. 초반 정체 구간은 결제 전환 이전에 이탈을 유발할 수 있습니다.</p>
+      </div>
+      <div class="card">
+        <h5>6. 비-P2W가 정답인 것도 아닙니다</h5>
+        <p>다크앤다커 모바일은 비-P2W BM으로 <b>매출 효율 부족</b>에 따라 서비스를 종료하였고, Diablo Immortal은 최악의 여론 속에 <b>5.25억 달러</b>를 기록하였습니다. <b class="hl">문제는 오디언스·장르와의 정합성입니다.</b></p>
+      </div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct"><i class="e sm">🙏</i>마지막으로</div>
+      <p style="font-size:15.5px;color:var(--white);line-height:1.95">
+        본 검토에서 확인된 가장 일관된 사실은 <b class="hlg">유저의 지적이 대부분 정확했다는 점</b>입니다. 교차 검증한 12건 중 반박되는 항목은 없었으며, 일부는 유저가 인지한 것보다 실제 상황이 더 좋지 않았습니다.<br><br>
+        또한 <b class="hlg">구매 의사를 명시적으로 표현한 유저들이 정보 부족으로 구매를 보류하고 있습니다.</b> <i>"알아야 투자를 할 것 같습니다"</i>, <i>"루비 방금 샀습니다, 현질은 처음인데"</i>, <i>"12만 결제 이벤트는 어떨지 문의드립니다"</i> 등의 진술이 이를 뒷받침합니다.<br><br>
+        <b>자유의견 121건은 이번에 처음 집계되었습니다.</b> 데이터는 이미 확보되어 있었습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="08-ui.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 08 · UI 개선안</span></a>
+      <a href="10-notes.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 10 · 방법론 및 한계</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 09 · 개선 제안<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용<br><br>
+      모든 제안은 유저 근거 · 자체 데이터 근거 · 업계 근거가 함께 확보된 항목만 수록하였습니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

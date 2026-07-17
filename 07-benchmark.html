@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>업계 비교 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 07</b> · 업계 비교</span>
+    <span class="pg">07 / 10</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 07 · Industry Benchmark</div>
+    <h1>업계 비교</h1>
+    <p class="sub">국내외 20개 이상 타이틀의 <b>공개 자료</b>와 대조하였습니다. 각 항목에 원문 링크를 첨부하였으므로 실제 자료를 직접 확인하실 수 있습니다. <b>출처가 확인되지 않은 수치는 배제</b>하였으며, 배제 목록은 <a href="10-notes.html#excluded">「방법론 및 한계」</a>에 있습니다.</p>
+  </div>
+</div>
+
+<section id="s1">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-1</span><h2><i class="e float">🐋</i>결제 시점 — 가장 중요한 업계 데이터</h2></div>
+
+    <div class="call gold">
+      <div class="ct">GameAnalytics 실측</div>
+      <p style="font-size:16px;color:var(--white);line-height:1.9">
+        <b class="hlg">첫 결제까지 걸리는 기간 — 소액 지출자 약 8일 / 고액 결제 유저 약 18일</b><br>
+        <span style="font-size:14px;color:var(--smoke)">즉 고액 결제 유저는 <b>더 늦게</b> 결제합니다. 충분히 오래 잔류해야 고액 결제 유저가 됩니다.</span>
+      </p>
+      <p style="margin-top:12px">또한 <b>매출의 86.6%를 고액 결제 유저가 차지</b>하나, 동 자료는 <i>"소수 고액 지출자에 과도하게 의존하는 수익 모델은 더 위험하다"</i>고 지적합니다. 그리고 진짜 지표는 <b class="hl">2차 구매 전환율</b>이라고 정리합니다.</p>
+      <div class="src" style="border-top-color:rgba(233,201,106,.3)">출처: <a href="https://www.gameanalytics.com/blog/what-good-game-monetization-looks-like" target="_blank">GameAnalytics — What Good Game Monetization Looks Like</a></div>
+    </div>
+
+    <div class="fig">
+      <div class="cap">// 본 게임의 성장 정체 구간과 겹쳐 볼 지점</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <line x1="60" y1="120" x2="860" y2="120" stroke="#2b3342" stroke-width="2"/>
+        <g font-size="11" fill="#8a93a6" font-family="JetBrains Mono">
+          <text x="56" y="142">0일</text><text x="238" y="142">8일</text><text x="470" y="142">18일</text><text x="820" y="142">30일</text>
+        </g>
+        <circle cx="60" cy="120" r="5" fill="#8a93a6"/>
+        <circle cx="250" cy="120" r="7" fill="#5ab3ff"/>
+        <text x="250" y="104" font-size="12" fill="#5ab3ff" text-anchor="middle" font-weight="700">소액 지출자 첫 결제</text>
+        <circle cx="480" cy="120" r="9" fill="#e9c96a"/>
+        <text x="480" y="104" font-size="12.5" fill="#e9c96a" text-anchor="middle" font-weight="700">고액 결제 유저 첫 결제</text>
+        <text x="480" y="88" font-size="11" fill="#8a93a6" text-anchor="middle">매출의 86.6%를 차지하는 층</text>
+        <rect x="330" y="150" width="200" height="32" rx="5" fill="#c9421f" opacity=".25" stroke="#ff5b3a"/>
+        <text x="430" y="171" font-size="12.5" fill="#ff5b3a" text-anchor="middle" font-weight="700">26레벨 정체 구간 (8.24배)</text>
+        <line x1="430" y1="150" x2="430" y2="128" stroke="#ff5b3a" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <path d="M 430 126 l -4 6 l 8 0 z" fill="#ff5b3a"/>
+        <text x="60" y="40" font-size="13.5" fill="#f2f5fa" font-weight="700">정체 구간이 결제 시점보다 앞에 위치할 경우, 결제 전환 이전에 이탈이 발생할 수 있습니다</text>
+        <text x="60" y="62" font-size="12" fill="#8a93a6">※ 본 게임의 26레벨 도달 시점은 계측이 없어 확인할 수 없습니다 — 이 그림은 가설입니다</text>
+      </svg>
+      </div>
+      <div class="src">⚠️ 본 게임 유저의 26레벨 도달 시점은 <b>현재 계측이 없어 확인할 수 없습니다.</b> 검증에는 이벤트 로그가 필요합니다 → <a href="02-analytics.html">「데이터 계측」</a></div>
+    </div>
+
+    <div class="call">
+      <div class="ct">Naavik 수익화 프레임워크</div>
+      <p style="font-size:15px;color:var(--white)"><i>"일회성 영구 파워 판매보다 <b class="hlg">기간제 파워의 반복 구매</b>가 더 지속가능하다."</i></p>
+      <div class="tw" style="margin:14px 0">
+        <table>
+          <thead><tr><th style="width:90px">리스크</th><th>방식</th><th style="width:24%">본 게임 현황</th></tr></thead>
+          <tbody>
+            <tr><td><span class="b ok">저위험</span></td><td><b>사이드그레이드</b> — 업그레이드가 아니라 다른 선택지를 판매</td><td class="mut">해당 없음</td></tr>
+            <tr><td><span class="b ok">저위험</span></td><td><b>기간제 · 소모성 파워</b> — 영구 축적 차단, 낮은 단가로 반복 구매</td><td>버프 3종</td></tr>
+            <tr class="rowcrit"><td><span class="b p0">고위험</span></td><td><b>영구 수직 파워</b> (Categorical Superiority)</td><td><b class="hlr">조각 · 강화가 대부분</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><i>"모든 설계 결정에는 장단이 있으므로 <b>본질적으로 나쁜 선택은 없다</b>"</i> — <b class="hl">P2W 자체가 문제가 아니라 오디언스·장르와의 정합성이 문제</b>라는 것이 동 자료의 결론입니다. 상세 대조는 <a href="06-cost.html#s3">「비용 구조 · 구조적 해석」</a>에 있습니다.</p>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://naavik.co/deep-dives/power-tools-monetizing-competitive-advantage/" target="_blank">Naavik — Power Tools: Monetizing Competitive Advantage</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-2</span><h2><i class="e float">😴</i>방치 — 검토가 필요한 사례</h2></div>
+
+    <div class="fig">
+      <div class="cap">// 저니 오브 모나크 — 「경쟁 요소가 없어 과금 부담이 낮다」를 내세운 게임의 경과</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <line x1="70" y1="30" x2="70" y2="190" stroke="#2b3342"/>
+        <line x1="70" y1="190" x2="860" y2="190" stroke="#2b3342"/>
+        <g font-size="10.5" fill="#8a93a6" font-family="JetBrains Mono">
+          <text x="26" y="36">1위</text><text x="26" y="80">10위</text><text x="26" y="130">30위</text><text x="26" y="180">50위</text>
+        </g>
+        <polyline points="120,32 320,62 560,112 800,178" fill="none" stroke="#ff5b3a" stroke-width="3"/>
+        <circle cx="120" cy="32" r="6" fill="#4ecb8d"/>
+        <circle cx="320" cy="62" r="6" fill="#ffb347"/>
+        <circle cx="560" cy="112" r="6" fill="#ff5b3a"/>
+        <circle cx="800" cy="178" r="7" fill="#c9421f"/>
+        <g font-size="11" fill="#8a93a6" font-family="JetBrains Mono">
+          <text x="120" y="210" text-anchor="middle">출시일</text><text x="320" y="210" text-anchor="middle">+11일</text>
+          <text x="560" y="210" text-anchor="middle">+1개월</text><text x="800" y="210" text-anchor="middle">+2개월</text>
+        </g>
+        <text x="120" y="22" font-size="12" fill="#4ecb8d" text-anchor="middle" font-weight="700">인기 1위</text>
+        <text x="320" y="52" font-size="12" fill="#ffb347" text-anchor="middle" font-weight="700">매출 5위</text>
+        <text x="560" y="102" font-size="12" fill="#ff5b3a" text-anchor="middle" font-weight="700">매출 18위</text>
+        <text x="800" y="166" font-size="13" fill="#ff5b3a" text-anchor="middle" font-weight="700">매출 약 50위</text>
+        <text x="70" y="238" font-size="12" fill="#ffd24a">갤럭시 사용자 5,830 → 약 2,700. 초기 획득에는 성공하였으나 2개월 만에 순위가 하락하였습니다.</text>
+      </svg>
+      </div>
+      <div class="src">출처: <a href="https://www.gameinsight.co.kr/news/articleView.html?idxno=33945" target="_blank">게임인사이트</a> · <a href="https://www.thelec.kr/news/articleView.html?idxno=31832" target="_blank">디일렉</a> · <a href="https://www.sisaweek.com/news/articleView.html?idxno=220558" target="_blank">시사위크</a> (검색 인덱스 기준)</div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">이 사례가 시사하는 것</div>
+      <p style="font-size:15.5px;color:var(--white)"><b class="hlg">「경쟁 제거 + 방치」는 리텐션 장치가 아니라 온보딩 장치로 보는 것이 타당합니다.</b></p>
+      <p style="margin-top:12px">본 게임과 같이 <b>하드코어 경쟁 축이 이미 구축된 게임은 경쟁을 제거하는 방향이 적절하지 않습니다.</b> 대신 <b class="hl">경쟁 참여 비용을 방치로 낮추는</b> 방향이 정합적입니다.</p>
+      <p style="margin-top:10px">AFK Arena에 대한 분석도 같은 결론을 제시합니다 — <b class="hl">과금이 「능력치」가 아니라 「시간」을 구매합니다.</b></p>
+      <p style="margin-top:10px;color:var(--molten)"><b>국내 업계가 관측한 실패 지점:</b> <i>"방치형 이용자는 성장 속도·보상 체계·과금 구조에 민감하며, <b class="hlr">MMORPG식 고비용 설계를 그대로 이식하면 피로도가 급상승</b>한다"</i> — <a href="03-users.html#f3">유저 [42]의 「4일 모아 한 번에 소멸」</a>이 이 패턴에 해당합니다.</p>
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <h5>방치형의 인게이지먼트 (실측)</h5>
+        <p>· 스티키니스(DAU/MAU) <b class="hl">18%</b> <span class="mut">(하이퍼캐주얼 10.5%)</span></p>
+        <p>· 일일 세션 <b class="hl">5.3회</b> <span class="mut">(4.6회)</span></p>
+        <p>· ARPDAU <b class="hl">9배</b></p>
+        <p>· D1 리텐션 상위 10% <b class="hl">45.55%</b></p>
+        <div class="src" style="margin-top:10px"><a href="https://gameworldobserver.com/2020/12/22/gameanalytics-names-benchmark-engagement-metrics-idle-games" target="_blank">GameAnalytics (2020-12)</a></div>
+      </div>
+      <div class="card" style="border-color:var(--ok)">
+        <h5 style="color:var(--ok)">본 게임에 유리한 조합</h5>
+        <p>Naavik 진단: 방치형의 구조적 약점은 <b>「메타 시스템이 얕아 장기 매출이 약하다」</b>는 점입니다.</p>
+        <p style="margin-top:10px;color:var(--white)"><b class="hl">하드코어 MMORPG는 메타 깊이가 이미 강점입니다.</b></p>
+        <p>→ <b>방치형의 리텐션 + MMORPG의 장기 매출</b> 결합이 논리적으로 유리한 위치입니다.</p>
+        <div class="src" style="margin-top:10px"><a href="https://naavik.co/digest/ygg-idle-games/" target="_blank">Naavik — What Happened to Idle Games?</a></div>
+      </div>
+    </div>
+
+    <div class="call">
+      <div class="ct">인구 구성의 일치</div>
+      <p><b class="hlg">방치형의 핵심 과금 집단이 30~40대</b>이며, 이는 <a href="03-users.html#profile">본 게임 접수층의 86.2%</a>와 일치합니다.</p>
+      <p style="margin-top:10px"><b>세븐나이츠 키우기 실적:</b> 출시 약 45일 <b>$40M</b>, 국가별 지출 <b>한국 76.7%</b>, 넷마블 한국 모바일 매출 <b>약 77% 증가</b>(퍼블리셔 순위 5위 → 2위). 국내 매출 상위 5개 중 <b>유일한 비(非)MMORPG</b>였습니다.</p>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://sensortower.com/ko/blog/Seven-Knights-Idle-Adventure-achieved-40M-securing-the-second-spot-in-revenue" target="_blank">Sensor Tower Korea</a> · <a href="https://www.digitaltoday.co.kr/news/articleView.html?idxno=635418" target="_blank">디지털투데이</a></div>
+    </div>
+
+    <h3>방치 상한(cap)의 설계와 수익화</h3>
+    <div class="call info">
+      <div class="ct">먼저 「없는 것」부터</div>
+      <p><b class="hlr">「오프라인 보상은 액티브의 몇 %」라는 업계 표준은 공개된 바 없습니다.</b> 강한 출처 어디에도 존재하지 않습니다. 통용되는 「60/40 규칙」은 1차 출처가 없는 블로그의 자체 주장입니다.</p>
+      <p style="margin-top:8px"><b class="hl">실제로 공개·검증된 통제 수단은 비율이 아니라 시간 상한(cap)입니다.</b></p>
+    </div>
+    <div class="fig">
+      <div class="cap">// 실측된 cap 관행과 그 수익화</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 290" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <text x="0" y="18" font-size="13" fill="#f2f5fa" font-weight="700">AFK Arena — 12시간 cap</text>
+        <rect x="0" y="30" width="420" height="24" rx="4" fill="#4ecb8d" opacity=".5"/>
+        <text x="14" y="47" font-size="11.5" fill="#0d0f14" font-weight="700">보상 축적 (12시간)</text>
+        <rect x="420" y="30" width="200" height="24" rx="4" fill="#2b3342"/>
+        <text x="434" y="47" font-size="11.5" fill="#8a93a6">축적 정지 — 수령해야 재개</text>
+        <text x="636" y="47" font-size="12" fill="#ffd24a" font-weight="700">→ 하루 2회 접속을 유도</text>
+
+        <text x="0" y="92" font-size="13" fill="#f2f5fa" font-weight="700">Frozen City — 2시간 cap을 상품화</text>
+        <rect x="0" y="104" width="70" height="24" rx="4" fill="#8a93a6"/>
+        <text x="14" y="121" font-size="11.5" fill="#0d0f14" font-weight="700">2시간</text>
+        <text x="86" y="121" font-size="12" fill="#8a93a6">기본</text>
+        <rect x="0" y="140" width="140" height="24" rx="4" fill="#ffb347"/>
+        <text x="14" y="157" font-size="11.5" fill="#0d0f14" font-weight="700">4시간</text>
+        <text x="156" y="157" font-size="12" fill="#ffb347" font-weight="700">Main City+ 구독 $14.99/월</text>
+        <rect x="0" y="176" width="210" height="24" rx="4" fill="#ff5b3a"/>
+        <text x="14" y="193" font-size="11.5" fill="#fff" font-weight="700">6시간</text>
+        <text x="226" y="193" font-size="12" fill="#ff5b3a" font-weight="700">이벤트 부스트 $14.99 (3배)</text>
+
+        <line x1="0" y1="220" x2="900" y2="220" stroke="#2b3342"/>
+        <text x="0" y="244" font-size="12.5" fill="#e9c96a" font-weight="700">판매 지점 — 복귀하여 오프라인 수익을 수령하는 순간에 구독 프롬프트를 노출합니다</text>
+        <text x="0" y="268" font-size="12" fill="#8a93a6">업계 관행: 동 시점에 「광고 시청 → 오프라인 수익 배수」를 병행. 방치형 광고 매출은 총매출의 30~40%.</text>
+        <text x="0" y="288" font-size="12" fill="#ff5b3a" font-weight="700">→ cap은 밸런스 장치가 아니라 1차 수익화 지점입니다.</text>
+      </svg>
+      </div>
+      <div class="src">출처: <a href="https://www.gamedeveloper.com/design/flexible-time-session-design-in-afk-arena" target="_blank">Game Developer — AFK Arena 세션 설계</a> (2020-06-11) · <a href="https://naavik.co/deep-dives/frozen-city-deconstruction/" target="_blank">Naavik — Frozen City Deconstruction</a> (2023-03-17)</div>
+    </div>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-3</span><h2><i class="e tick">🔨</i>강화 설계</h2></div>
+    <p class="slead">국내 3개 타이틀의 <b>공식 공개 수치</b>입니다. 본 게임과의 대조표는 <a href="04-balance.html#s3">「밸런스 실측 · 강화 페널티」</a>에 있습니다.</p>
+
+    <h3>던전앤파이터 — 공식 강화 확률표</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="num">단계</th><th class="num">성공률</th><th class="num">단계</th><th class="num">성공률</th></tr></thead>
+        <tbody>
+          <tr class="rowok"><td class="num">+0 → +4</td><td class="num"><b class="hlo">100%</b></td><td class="num">+8 → +9</td><td class="num">40%</td></tr>
+          <tr><td class="num">+4 → +5</td><td class="num">80%</td><td class="num">+9 → +10</td><td class="num">30%</td></tr>
+          <tr><td class="num">+5 → +6</td><td class="num">70%</td><td class="num rowcrit"><b>+10 → +11</b></td><td class="num rowcrit"><b class="hlr">8%</b></td></tr>
+          <tr><td class="num">+6 → +7</td><td class="num">60%</td><td class="num">+11 → +12</td><td class="num">3%</td></tr>
+          <tr><td class="num">+7 → +8</td><td class="num">50%</td><td class="num mut">—</td><td class="num mut">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="g2">
+      <div class="card" style="border-color:var(--ok)">
+        <h5 style="color:var(--ok)">실패 누적 보너스 (강화 천장)</h5>
+        <p>+4~10 구간 <b class="hlo">+5%p</b> / +10→11 <b>+2%p</b> / +11→12 <b>+1%p</b></p>
+        <p style="margin-top:8px;color:var(--white)"><b>실패할수록 확률이 상승합니다.</b></p>
+      </div>
+      <div class="card">
+        <h5>페널티 3단 분기</h5>
+        <p>· +0~10: <b class="hlo">페널티 없음</b></p>
+        <p>· +10→11, +11→12 실패: <b>3단계 하락</b></p>
+        <p>· +12→13 이상 실패: <b>파괴</b></p>
+        <p style="margin-top:8px">보호권 사용 시 파괴 대신 <b>+0으로 리셋</b></p>
+      </div>
+    </div>
+    <div class="src" style="border:none;padding-left:2px">출처: <a href="https://df.nexon.com/guide?no=710" target="_blank">넥슨 던전앤파이터 공식 강화 가이드</a> (문서 갱신 2026-03-19)</div>
+
+    <h3>메이플스토리 스타포스 — 공식 공지</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="num">단계</th><th class="num">성공</th><th class="num">유지</th><th class="num">파괴</th></tr></thead>
+        <tbody>
+          <tr><td class="num">15성</td><td class="num"><b>30%</b></td><td class="num">67.9%</td><td class="num">2.1%</td></tr>
+          <tr class="rowcrit"><td class="num">22성</td><td class="num"><b class="hlr">3%</b></td><td class="num">77.6%</td><td class="num"><b class="hlr">19.4%</b> ← 파괴가 성공을 역전</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><b>2025년 개편</b>: <b class="hl">실패 시 하락 폐지 → 파괴로 일원화.</b> 시도 횟수를 「절반 이하」로 줄이는 것이 목표. 논거는 <i>"반복적인 등급 등락이 핵심 경험에서 멀어지게 한다"</i></li>
+      <li><b>파괴방지</b>: 15~17성 구간, <b class="hl">추가 메소 소모</b> — <b>현금 판매 아님</b></li>
+      <li><b>스타캐치</b>: <b class="hl">무료 미니게임</b> 성공 시 확률 ×1.05 (30% → 31.5%)</li>
+      <li><b>확률 검증 체계</b>: 유료 확률형 아이템 실제 결과값 <b>일 단위 자동 검증 + 이상탐지</b>, 판매 첫날은 30분 단위 집계</li>
+    </ul>
+    <div class="src" style="border:none;padding-left:2px">출처: <a href="https://maplestory.nexon.com/News/Notice/Notice/133192" target="_blank">메이플 공식 확률 공지</a> (2021-02-19) · <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=39528" target="_blank">게임뷰 — 30성 개편</a> (2025-03-19)</div>
+
+    <h3>로스트아크 재련 — 공식 가이드</h3>
+    <div class="call ok">
+      <div class="ct">공식 원문</div>
+      <p><i>"재련에 실패하더라도 <b class="hlo">장비 경험치 및 단계가 하락하거나 파괴되지 않습니다</b>"</i> / <i>"사용된 재화와 재료는 돌려받을 수 없습니다"</i></p>
+      <p style="margin-top:10px"><b class="hl">장인의 기운</b>: 실패 시 성공률에 비례하여 누적되며, 최대치 도달 시 해당 단계 <b class="hlo">100% 확정 성공</b>. 성공하면 누적이 초기화됩니다.</p>
+      <p style="margin-top:8px" class="mut">단계별 기본 성공률 수치는 <b>공개하지 않고 있습니다.</b></p>
+      <div class="src" style="border-top-color:rgba(78,203,141,.3)">출처: <a href="https://m-lostark.game.onstove.com/GameGuide/Pages/%EC%9E%AC%EB%A0%A8" target="_blank">로스트아크 공식 재련 가이드</a></div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">정리 — 업계 관행 6가지</div>
+      <ol>
+        <li><b>곡선 형태</b>: 저단계 100% 안전구간 → 계단식 감쇠 → 특정 지점 급락. <b>구간별 계단</b>이 실제 관행입니다.</li>
+        <li><b class="hlg">하락(downgrade) 페널티는 축소 방향</b>입니다 (메이플 2025년 폐지).</li>
+        <li><b class="hlg">가장 보수적인 기본형은 「실패 시 재화만 소모」</b>입니다 (로스트아크).</li>
+        <li><b class="hlg">강화 천장이 표준화되고 있습니다</b> — 던파 누적 +5%p / 로아 100% 확정.</li>
+        <li><b class="hlg">보호 수단은 현금 직판이 아니라 게임 내 재화 소모</b>가 관행입니다 (메이플 메소).</li>
+        <li><b>무료 액션으로 확률을 소폭 보정</b>하는 장치가 존재합니다 (스타캐치 ×1.05).</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="s-law">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-4</span><h2><i class="e pulse">⚖️</i>확률 표시 의무</h2></div>
+    <p class="slead">상세 내용과 본 게임에의 적용 검토는 <a href="04-balance.html#s4">「밸런스 실측 · 확률 표시」</a>에 있습니다. 이 절은 법규 사실만 정리합니다.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td><b>시행일</b></td><td><b class="hlr">2024년 3월 22일 — 이미 시행 중</b></td></tr>
+          <tr><td><b>근거</b></td><td>게임산업진흥에 관한 법률 <b>제33조 제2항</b> / 시행령 <b>제19조의2 및 별표 3의2</b> (2024-01-09 신설)</td></tr>
+          <tr class="rowcrit"><td><b>유형 분류</b></td><td><b class="hlr">캡슐형 / 강화형 / 합성형</b> + 기타(수량·기간한정형, 확률변동형, 천장형). <b>강화형은 성공·실패·파괴 확률 전부</b>가 표시 대상입니다.</td></tr>
+          <tr class="rowcrit"><td><b>유상성 요건</b></td><td>문체부 해설서: <i>"무상으로 얻을 수 있는 재화(예: 골드)를 통해 구매할 수 있다 하더라도 이 재화가 <b>직간접적으로 유료 구매할 수 있다면</b> 온전한 무상 범위에 포함되지 않는다"</i></td></tr>
+          <tr><td><b>표시 장소</b></td><td>게임물 내 + 인터넷 홈페이지 + 광고·선전물 — <b>세 곳 모두</b></td></tr>
+          <tr><td><b>표시 형식</b></td><td>원칙 <b>백분율</b>. <b>검색 가능한 형태</b>로 제공. 변동 확률·천장이 있으면 <b>시도 횟수별 확률을 모두 공개</b></td></tr>
+          <tr class="rowcrit"><td><b>2025.08.01 개정</b></td><td>① <b class="hlr">징벌적 손해배상 — 손해액의 최대 3배</b> (고의 위반)<br>② <b class="hlr">입증책임 전환 — 게임사가 고의·과실 없음을 스스로 입증하여야 면책</b><br>③ 게임물관리위원회 피해구제센터 신설</td></tr>
+          <tr><td><b>제재</b></td><td>게임위 시정요청 → 문체부 시정권고 → 시정명령 → <b>불이행 시 2년 이하 징역 또는 2천만원 이하 벌금</b>. 문체부 <b>24명 규모 모니터링단</b> 운영</td></tr>
+          <tr><td><b>중소기업 면제</b></td><td>제작·배급·제공자가 <b>모두</b> 3년 평균 매출 <b>1억원 이하</b>인 경우에 한합니다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src" style="border:none;padding-left:2px">
+      출처: <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148924297" target="_blank">정책브리핑(문체부)</a> ·
+      <a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=2858&ccfNo=1&cciNo=2&cnpClsNo=2" target="_blank">법제처 생활법령정보</a> ·
+      <a href="https://mcst.go.kr/kor/s_notice/notice/noticeView.jsp?pSeq=17856" target="_blank">문체부 해설서</a> ·
+      <a href="https://www.yulchon.com/ko/resources/publications/newsletter-view/41159/page.do" target="_blank">율촌</a> ·
+      <a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=210245" target="_blank">화우</a>
+    </div>
+
+    <div class="call info">
+      <div class="ct">참고 — 컴플리트 가챠 및 예정 법안</div>
+      <ul>
+        <li><b>컴플리트 가챠는 한국에서 금지가 아닙니다.</b> 표시 대상 유형에 포함될 뿐이며, 전면 금지법은 <b>심사 대기 중</b>입니다. (일본은 2012년 금지, 중국은 소요 횟수 표기 의무)</li>
+        <li><b>「매출액 3% 과징금」은 2025-12-23 발의된 법안이며 미통과</b>입니다. 현행은 시정명령 선행 구조입니다.</li>
+      </ul>
+    </div>
+
+    <h3>참고 사례 — 넥슨 큐브</h3>
+    <div class="call">
+      <div class="ct">경과</div>
+      <ul>
+        <li>2010-05 도입 시 옵션 확률 <b>균등</b> → <b class="hlr">2010-09 인기 옵션에 가중치 부여, 미고지</b></li>
+        <li><b class="hlr">2011~2021년 선호도 높은 중복 옵션이 아예 출현하지 않도록 변경, 미고지</b></li>
+        <li>큐브 누적 매출 약 <b>5,500억원</b> (메이플 전체 매출의 약 30%)</li>
+        <li>2024-01-03 공정거래위원회 <b>과징금 116억 4,200만원</b> (⚠️ <b>전자상거래법</b> 위반, 표시광고법 아님). 전자상거래법 위반 제재 <b>역대 최고액</b></li>
+        <li>이후 큐브 <b>판매 중단</b></li>
+      </ul>
+      <p style="margin-top:12px;color:var(--molten)"><b>⚠️ 인용 시 주의:</b> 해당 과징금은 <b class="hlr">1심 미확정</b>입니다. 취소소송이 진행 중이며 <b>2026년 7월 22일 선고 예정</b>입니다.<span class="fn" data-t="소송 경과 상세" data-c="· 2024년 넥슨 취소소송 제기<br>· 2025-12-17 최초 선고기일 → 하루 앞두고 연기<br>· 2026-01-28 재지정 선고기일 → 변론 재개<br>· 2026-04-29 최종 변론 (서울고법 행정6-3부)<br>· <b>2026-07-22 선고 예정</b><br><br><b>쟁점</b>: ① 확률 변경 미고지가 소비자 기망에 해당하는가 ② 확률 공개 의무가 없던 시기(2024-03 이전)의 행위에 대한 제재가 사실상 소급 적용인가<br><br>출처: <a href='https://www.thelec.kr/news/articleView.html?idxno=55895' target='_blank'>디일렉</a>"></span> <b>「넥슨이 116억을 납부하였다」는 표현은 사실과 다릅니다.</b></p>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156609048" target="_blank">공정위 보도자료</a> · <a href="https://www.etnews.com/20240103000151" target="_blank">전자신문</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-5</span><h2><i class="e">🎫</i>구독 — 업계 표준 규격</h2></div>
+
+    <div class="fig">
+      <div class="cap">// Genshin Impact · Honkai: Star Rail · Diablo Immortal — 3사가 동일한 골격을 사용합니다</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="0" y="0" width="900" height="76" rx="8" fill="#e9c96a" opacity=".12" stroke="#e9c96a"/>
+        <text x="22" y="32" font-size="14" fill="#e9c96a" font-weight="700">표준 공식</text>
+        <text x="130" y="32" font-size="14" fill="#f2f5fa" font-weight="700" font-family="JetBrains Mono">즉시 300 + 매일 90 × 30일 · $4.99 ~ $9.99</text>
+        <text x="22" y="58" font-size="12" fill="#8a93a6">로그인하지 않으면 그날 분량이 소멸 —</text>
+        <text x="278" y="58" font-size="12" fill="#ffd24a" font-weight="700">리텐션 장치가 상품 내부에 내장되어 있습니다</text>
+        <g font-size="12">
+          <text x="0" y="110" fill="#c4ccd8">Genshin Impact</text>
+          <text x="190" y="110" fill="#8a93a6" font-family="JetBrains Mono">$4.99</text>
+          <text x="275" y="110" fill="#f2f5fa" font-family="JetBrains Mono">창세결정 300</text>
+          <text x="440" y="110" fill="#ffb347" font-family="JetBrains Mono">+ 원석 90/일 × 30일</text>
+          <text x="0" y="146" fill="#c4ccd8">Honkai: Star Rail</text>
+          <text x="190" y="146" fill="#8a93a6" font-family="JetBrains Mono">$4.99</text>
+          <text x="275" y="146" fill="#f2f5fa" font-family="JetBrains Mono">Oneiric Shard 300</text>
+          <text x="440" y="146" fill="#ffb347" font-family="JetBrains Mono">+ Stellar Jade 90/일 × 30일</text>
+          <text x="0" y="182" fill="#c4ccd8">Diablo Immortal</text>
+          <text x="190" y="182" fill="#8a93a6" font-family="JetBrains Mono">$9.99</text>
+          <text x="275" y="182" fill="#f2f5fa" font-family="JetBrains Mono">Eternal Orbs 300</text>
+          <text x="440" y="182" fill="#ffb347" font-family="JetBrains Mono">+ gem 매일 · 5일마다 Legendary Crest</text>
+        </g>
+        <line x1="0" y1="200" x2="900" y2="200" stroke="#2b3342"/>
+        <text x="0" y="222" font-size="12" fill="#4ecb8d" font-weight="700">→ 적용안: 루비 IAP 8종 옆에 「루비 정기권」 1종 신설. 기존 출석 시스템과 UI 공유가 가능합니다.</text>
+      </svg>
+      </div>
+      <div class="src">출처: <a href="https://www.xbox.com/en-US/games/store/genshin-impact-blessing-of-the-welkin-moon/9NXJN7JXV445" target="_blank">Xbox 공식 스토어 — Blessing of the Welkin Moon</a> · <a href="https://blizzardwatch.com/2022/06/14/diablo-immortal-cash-shop/" target="_blank">Blizzard Watch — D:I Cash Shop</a></div>
+    </div>
+
+    <h3>배틀패스 — 나이트크로우 (패스 6종 동시 병렬 판매)</h3>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th>패스</th><th class="num">가격</th><th class="num">기간</th><th class="num">단계</th><th>유료 / 무료 분할</th></tr></thead>
+        <tbody>
+          <tr><td>정예 밤까마귀 단원 패스 I</td><td class="num">33,000원</td><td class="num">4주</td><td class="num">25</td><td>유료 12 / <b class="hl">무료 13</b></td></tr>
+          <tr><td>정예 밤까마귀 단원 패스 II</td><td class="num">33,000원</td><td class="num">4주</td><td class="num">25</td><td>유료 12 / <b class="hl">무료 13</b> (다이아 2,400 환급)</td></tr>
+          <tr><td>황혼의 찬란한 탈것 패스</td><td class="num">2,800 다이아</td><td class="num">4주</td><td class="num">25</td><td>유료 13 / 무료 12</td></tr>
+          <tr><td>클레멘스의 탈것 패스</td><td class="num">22,000원</td><td class="num">4주</td><td class="num">25</td><td>유료 16 / 무료 9</td></tr>
+          <tr class="rowcrit"><td><b>길드 주화 패스</b></td><td class="num">22,000원</td><td class="num"><b>2주</b></td><td class="num"><b>15</b></td><td><b class="hlr">전량 유료 (무료 0)</b></td></tr>
+          <tr class="rowcrit"><td><b>골드 주화 패스</b></td><td class="num">22,000원</td><td class="num"><b>2주</b></td><td class="num"><b>15</b></td><td><b class="hlr">전량 유료 (무료 0)</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src" style="border:none;padding-left:2px">출처: <a href="https://www.nightcrows.co.kr/news/notice/626222" target="_blank">나이트크로우 공식 공지</a></div>
+
+    <div class="call">
+      <div class="ct">일관된 규칙이 관찰됩니다</div>
+      <p><b class="hl">4주 패스(25단계) = 무료 트랙 약 절반 / 2주 재화 패스(15단계) = 무료 트랙 0.</b> 6종 전부에서 이 규칙이 지켜집니다. 패스만으로 월 지출 상한이 <b>12만원 이상</b>입니다.</p>
+      <p style="margin-top:12px"><b>Deconstructor of Fun의 결론이 이 실물과 일치합니다:</b></p>
+      <ul>
+        <li>가격 <b>$5~$15</b> / 모바일 시즌 <b>1개월 표준</b> / <b class="hl">「짧은 패스가 낫다」</b> (만료 임박 효과)</li>
+        <li>가치 배율 <b>x10~x20</b>. 시간 게이팅이 타 상품 잠식을 방지</li>
+        <li><b class="hl">「매출 대부분은 선구매에서 발생한다」</b> — 티어스킵 업셀의 기여는 미미</li>
+        <li>→ <b class="hl">업셀로 추가 수익을 노리기보다 재구매·판매 수·상위 가격대로 접근</b></li>
+      </ul>
+      <p style="margin-top:12px;color:var(--ember)"><b>⚠️ 주의:</b> Clash Royale은 배틀패스 도입 시점과 <b>월매출 하락</b>에 강한 시계열 상관을 보였고, Clash of Clans는 반대로 <b>+58%</b> 상승하였습니다. <b class="hlr">경제의 「소비 깊이」가 흡수력을 결정</b>합니다. → <b>고액 결제 유저의 ARPPU를 먼저 측정한 후 도입하는 것이 안전합니다.</b></p>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://www.deconstructoroffun.com/blog/2022/6/4/battle-passes-analysis" target="_blank">DoF — Battle Passes Analysis</a> · <a href="https://sensortower.com/blog/battle-pass-success-stories-2021" target="_blank">Sensor Tower</a></div>
+    </div>
+
+    <h3>시간 한정 상품</h3>
+    <div class="g2">
+      <div class="card">
+        <h5>리니지M — 누적 구매 보상</h5>
+        <p><b class="hl">현금 4티어 × 7일 사이클, 매주 수요일 05시 리셋</b></p>
+        <p>초급 <b>3,300</b> / 중급 <b>5,500</b> / 고급 <b>11,000</b> / 프리미엄 <b>33,000원</b></p>
+        <p style="color:var(--molten);margin-top:10px">→ <b>결제 = 현금 싱크</b> 구조</p>
+        <div class="src" style="margin-top:8px"><a href="https://lounge.plaync.com/feed/68518" target="_blank">리니지M 공식 라운지</a></div>
+      </div>
+      <div class="card">
+        <h5>오딘 — 다이아 누적 소모</h5>
+        <p><b class="hl">10단계 (900 ~ 100,000 다이아)</b> → 수집 대체 등록 열쇠</p>
+        <p>이미 충전한 다이아의 <b>소진을 가속</b>하여 재충전을 유발합니다.</p>
+        <p style="color:var(--molten);margin-top:10px">→ <b>소모 = 재화 싱크</b> 구조 (정반대 접근)</p>
+        <div class="src" style="margin-top:8px"><a href="https://www.inven.co.kr/webzine/news/?news=273521" target="_blank">인벤 — 오딘 1주년</a></div>
+      </div>
+    </div>
+    <div class="call">
+      <div class="ct">기타 확인된 관행</div>
+      <ul>
+        <li><b>오딘 플래시 세일</b>: 11연 소환권 <b>33% 할인, 3일 한정</b> (2,100 → 1,400 다이아)</li>
+        <li><b>Limited Time Offer는 매출 상위 200 게임 거의 전부</b>에 존재합니다</li>
+        <li>첫 구매 전환율 일반 <b>2~5%</b>, 최적화 상위 <b>5~8%</b> <span class="mut">(⚠️ 2차 출처)</span> / 스타터팩 표준 <b>$0.99~$9.99</b></li>
+        <li>한국 매출 상위 40개 중 <b>First Purchase Benefits 17개</b> 채택</li>
+      </ul>
+      <p style="margin-top:12px;color:var(--ember)"><b>⚠️ 금지 사항 (DoF):</b> <b class="hlr">상시 세일은 피해야 합니다</b> — 「세일 때만 구매」를 학습시켜 구매 패턴을 훼손합니다. <b>품목 로테이션이 필요합니다.</b></p>
+      <p style="margin-top:10px" class="mut"><b>⚠️ 실패 사례 — Monster Strike:</b> $5 팩에 $50~80 상당을 구성하였다가 <b>기존 유저가 악용</b>, 신규 전환은 상승하였으나 <b>전체 매출이 감소</b>하였습니다.</p>
+      <p style="margin-top:8px" class="mut"><b>❌ 복귀 유저 전용 「유료」 패키지: 검증된 사례 0건</b>입니다. 복귀 보상은 무료로 제공하고 전환을 유도하는 것이 업계 표준입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-6</span><h2><i class="e pulse">🎯</i>트리거형 오퍼 — 요일던전 문제의 대응안</h2></div>
+    <p class="slead"><a href="03-users.html#findings">유저 [118]</a>: <i>"요일던전 2단계 테스트를 해볼 수 있으면 좋겠네요. <b>하루 한번인데 괜히 낭비되지 않게요.</b>"</i></p>
+
+    <div class="fig">
+      <div class="cap">// 판매 시점에 따른 차이</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="0" y="0" width="430" height="110" rx="8" fill="#c9421f" opacity=".14" stroke="#ff5b3a"/>
+        <text x="20" y="30" font-size="13.5" fill="#ff5b3a" font-weight="700">✕ 좌절 시점 판매</text>
+        <text x="20" y="56" font-size="12" fill="#c4ccd8">"횟수가 없습니다 → 추가권을 구매하시겠습니까?"</text>
+        <text x="20" y="80" font-size="12" fill="#8a93a6">유저가 인식하는 것: <tspan fill="#ff5b3a" font-weight="700">장벽 · 강매</tspan></text>
+        <text x="20" y="100" font-size="11.5" fill="#8a93a6">→ 반발을 유발합니다</text>
+
+        <rect x="470" y="0" width="430" height="110" rx="8" fill="#4ecb8d" opacity=".14" stroke="#4ecb8d"/>
+        <text x="490" y="30" font-size="13.5" fill="#4ecb8d" font-weight="700">✓ 성취 시점 판매 — Diablo Immortal</text>
+        <text x="490" y="56" font-size="12" fill="#c4ccd8">던전 클리어 직후 · 귀중 재료 독점 오퍼</text>
+        <text x="490" y="80" font-size="12" fill="#8a93a6">유저가 인식하는 것: <tspan fill="#4ecb8d" font-weight="700">보상 · 기회</tspan></text>
+        <text x="490" y="100" font-size="11.5" fill="#8a93a6">→ <tspan fill="#ffd24a" font-weight="700">시간 제한도 두지 않습니다</tspan></text>
+
+        <line x1="0" y1="132" x2="900" y2="132" stroke="#2b3342"/>
+        <text x="0" y="156" font-size="13" fill="#e9c96a" font-weight="700">적용안 4단 구성 — 전부 기존 시스템에 부착 가능합니다</text>
+
+        <rect x="0" y="170" width="215" height="76" rx="6" fill="#161a22" stroke="#2b3342"/>
+        <text x="12" y="190" font-size="11.5" fill="#4ecb8d" font-weight="700">① 성취 시점 오퍼</text>
+        <text x="12" y="210" font-size="11" fill="#8a93a6">요일던전 클리어 직후</text>
+        <text x="12" y="228" font-size="11" fill="#8a93a6">재료 독점 오퍼</text>
+
+        <rect x="228" y="170" width="215" height="76" rx="6" fill="#161a22" stroke="#2b3342"/>
+        <text x="240" y="190" font-size="11.5" fill="#ffb347" font-weight="700">② 월 상한 열쇠</text>
+        <text x="240" y="210" font-size="11" fill="#8a93a6">로스트아크형 패키지</text>
+        <text x="240" y="228" font-size="11" fill="#8a93a6">무제한 추가권은 배제</text>
+
+        <rect x="456" y="170" width="215" height="76" rx="6" fill="#161a22" stroke="#2b3342"/>
+        <text x="468" y="190" font-size="11.5" fill="#5ab3ff" font-weight="700">③ 광고 추가권</text>
+        <text x="468" y="210" font-size="11" fill="#8a93a6">저니형 무과금 라인</text>
+        <text x="468" y="228" font-size="11" fill="#8a93a6">광고 보상이 이미 존재</text>
+
+        <rect x="684" y="170" width="216" height="76" rx="6" fill="#161a22" stroke="#2b3342"/>
+        <text x="696" y="190" font-size="11.5" fill="#e9c96a" font-weight="700">④ 놓친 요일 번들</text>
+        <text x="696" y="210" font-size="11" fill="#8a93a6">Golf Clash형 5배 가치</text>
+        <text x="696" y="228" font-size="11" fill="#8a93a6">요일던전 구조와 정합</text>
+      </svg>
+      </div>
+      <div class="src">출처: <a href="https://www.gamerefinery.com/best-practice-and-strategies-for-targeted-iap-offers-in-mobile-games/" target="_blank">GameRefinery — Targeted IAP Offers</a> · <a href="https://lostark.game.onstove.com/News/Notice/Views/13439" target="_blank">로스트아크 월간 패키지 공지</a> · <a href="https://www.inven.co.kr/webzine/news/?news=301567&site=journey" target="_blank">인벤 — 저니 오브 모나크</a><br>⚠️ <b>트리거 오퍼의 전환율 수치는 자료 없음</b> — 검색되는 「15~30%」는 자사 영업 블로그이므로 채택하지 않았습니다.</div>
+    </div>
+
+    <div class="call">
+      <div class="ct">핵심 원리</div>
+      <p><b class="hl">좌절 시점의 판매는 반발을 유발하나, 성취 시점의 판매는 보상으로 인식됩니다.</b></p>
+      <p style="margin-top:8px"><b>무제한 추가권은 피해야 합니다</b> — 던전의 경제 통제를 훼손합니다. 로스트아크는 열쇠를 <b>월간 패키지 구성품</b>으로 판매하되 <b class="hl">원정대당 월 2회 상한</b>을 적용합니다. 상한이 안전장치입니다.</p>
+      <p style="margin-top:8px" class="mut">참고 — 던전앤파이터: 캐릭터당 피로도 <b>156</b>, 프리미엄 PC방 <b>+78</b>. 상급 던전 입장권은 <b>경매장에서 거래</b>됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-7</span><h2><i class="e">🎪</i>이벤트 설계</h2></div>
+
+    <div class="call gold">
+      <div class="ct">관통하는 발견 3가지</div>
+      <ol>
+        <li><b class="hlg">단일 시즌 이벤트는 사실상 소멸하였습니다.</b> 현재 표준은 <b>우산형 캠페인</b>입니다 (나이트크로우 「크로우 바캉스」 7종, 오딘 1주년 13종).</li>
+        <li><b class="hlg">명절 이벤트는 「수집 → 제작/강화」 형태가 우세</b>합니다. 국내 특유의 강화 선호를 활용한 것으로 보입니다.</li>
+        <li><b class="hlg">무료 이벤트에 유료 우회로를 배치하는 것이 일관된 패턴</b>입니다 — 60일 출석에 <b>유료 보충출석(300 M캐시)</b>, 누적 보상에 <b>일일 구매 상자</b>, 미션에 <b>「소환 100회」</b>.</li>
+      </ol>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">사례</th><th>구조</th></tr></thead>
+        <tbody>
+          <tr><td><b>마비노기 모바일 출석</b></td><td><b>60일 마일스톤형.</b> <b class="hl">연속이 아니라 누적 스탬프</b> 방식. 유료 보충출석 300 M캐시. 60일차 ★10 전설 엠블럼 룬 상자</td></tr>
+          <tr><td><b>나이트크로우 참여일지</b></td><td>14일 출석 → <b class="hl">컬렉션 영구 등록</b> (7일차 치명타 +3, 14일차 치명타피해 +2 = <b>영구 스탯</b>)</td></tr>
+          <tr><td><b>미르4</b></td><td><b>14일 + 7일 출석 병렬 운영</b> (장·단기 2트랙 동시)</td></tr>
+          <tr><td><b>아키에이지 워</b></td><td><b>7일 × 일별 다중 임무, 요구치 체증</b> (1일차 몬스터 1만 → 7일차 7만). 계정당 1회</td></tr>
+          <tr class="rowcrit"><td><b>뮤 오리진 (반면교사)</b></td><td>유료 다이아 룰렛이 <b class="hlr">서비스 종료 발표 6일 후</b> 공지되어 논란 → 전액 환불로 확대</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>복귀 유저 설계</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>게임</th><th class="num">휴면 판정</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>검은사막 모바일</td><td class="num">14일</td><td class="mut">고정 일수</td></tr>
+          <tr><td>리니지2M</td><td class="num">28일</td><td class="mut">고정 일수</td></tr>
+          <tr><td>마비노기 영웅전</td><td class="num">30일</td><td class="mut">고정 일수</td></tr>
+          <tr class="rowok"><td><b>마비노기 · 오딘</b></td><td class="num"><b class="hlo">날짜 구간 지정형</b></td><td><b class="hlo">어뷰징 원천 차단</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="call">
+      <div class="ct">고정 일수 방식의 취약점</div>
+      <p><b class="hlr">「이벤트 전에 30일 미접속 → 복귀 보상 수령」</b> 형태의 어뷰징에 취약합니다. <b class="hl">마비노기·오딘의 날짜 구간 방식이 이를 원천 차단</b>합니다.</p>
+      <p style="margin-top:14px"><b>보상 설계 3가지:</b></p>
+      <ol>
+        <li><b class="hl">대여형 보상</b> — 마비노기 영웅전: <b>+12강 레어 장비</b>를 지급하되 <b>유효기간 7일 + 귀속</b>. 「강함을 체험 → 만료 전에 직접 확보」 = <b class="hlg">전환 압력을 설계에 내장</b></li>
+        <li><b class="hl">이력 연동 차등 지급</b> — 리니지W 「미라클 주화」: 전원 동일이 아니라 <b>과거 플레이 이력에 비례</b> → <b class="hlg">고액 결제 이탈자를 정밀 타겟</b></li>
+        <li><b class="hl">신규 + 복귀 통합 퍼널</b> — 확인된 5개 중 4개가 <b>동일 퍼널 + 진입 조건만 2개</b> → 개발 비용 절감</li>
+      </ol>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://heroes.nexon.com/Promotion/guide/return" target="_blank">마비노기 영웅전 공식</a> · <a href="https://www.gametoc.co.kr/news/articleView.html?idxno=72805" target="_blank">게임톡 — 리니지W</a> · <a href="https://forum.blackdesertm.com/Board/Detail?boardNo=44&contentNo=462835" target="_blank">검은사막M 공식 포럼</a></div>
+    </div>
+
+    <h3>이벤트 효과 — 출처가 확인된 수치만</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>게임</th><th>배틀패스 도입</th><th class="num">매출 변화</th></tr></thead>
+        <tbody>
+          <tr><td>Lords Mobile</td><td>2021-01</td><td class="num"><b class="hl">$45M → $90.3M (약 2배)</b></td></tr>
+          <tr><td>Hay Day</td><td>2020-12</td><td class="num"><b>+62% M/M</b></td></tr>
+          <tr><td>Clash of Clans</td><td>2019-04</td><td class="num"><b>+58% M/M</b></td></tr>
+          <tr><td>Township</td><td>2019-11</td><td class="num">+22% M/M</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:13px">⚠️ 위 사례는 <b>전부 캐주얼/전략 장르이며 MMORPG가 아닙니다.</b> 또한 2019~2021년 자료이므로 보수적으로 해석하여야 합니다.</p>
+    <ul>
+      <li><b>매출 상위 100개 iOS 게임의 90% 이상</b>이 시즌 이벤트를 운영합니다. <b>Clash of Clans는 월 중반 일매출이 300% 이상 급등</b>한 사례가 있습니다.</li>
+      <li><b>오딘 5주년</b>: 6/24 업데이트 → <b>6/25 앱스토어 1위</b>(1일 만에). 신규 전직 + PvP + 신규 서버 + 프로모션 <b>동시 투입</b></li>
+      <li>❌ <b>라이브옵스 이벤트의 LTV·ARPDAU 정량 상승률, 배틀패스의 매출 기여 비중은 자료 없음</b>입니다.</li>
+    </ul>
+    <div class="call info">
+      <div class="ct">정량 판단</div>
+      <p>이벤트로 <b>순위 상승은 재현 가능</b>합니다. 그러나 <b class="hl">매출 금액의 지속성에 관한 근거는 공개 자료에 존재하지 않습니다.</b> 따라서 이벤트를 「매출 N% 상승」으로 약속하는 기획은 근거가 부족합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-8</span><h2><i class="e">🏰</i>길드</h2></div>
+    <p class="slead"><a href="03-users.html#f5">발견 5(길드 보상 격차)</a>의 대응 사례입니다. <b>본 게임에는 길드는 존재하나 길드 경제가 없습니다.</b></p>
+
+    <div class="fig">
+      <div class="cap">// Rise of Kingdoms — 2화폐 분리 구조</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="330" y="14" width="240" height="44" rx="8" fill="#2b3342" stroke="#8a93a6"/>
+        <text x="450" y="42" font-size="13.5" fill="#f2f5fa" text-anchor="middle" font-weight="700">유저가 기부합니다</text>
+        <path d="M 400 60 L 240 94" stroke="#5ab3ff" stroke-width="2" fill="none"/>
+        <path d="M 240 94 l 8 -6 l -1 8 z" fill="#5ab3ff"/>
+        <path d="M 500 60 L 660 94" stroke="#e9c96a" stroke-width="2" fill="none"/>
+        <path d="M 660 94 l -8 -6 l 1 8 z" fill="#e9c96a"/>
+        <rect x="60" y="98" width="330" height="86" rx="8" fill="#5ab3ff" opacity=".12" stroke="#5ab3ff"/>
+        <text x="80" y="124" font-size="13" fill="#5ab3ff" font-weight="700">① Alliance Credits (공용)</text>
+        <text x="80" y="148" font-size="12" fill="#c4ccd8">연맹 건물 · 기술 연구에 사용</text>
+        <text x="80" y="170" font-size="12" fill="#8a93a6">맹주/장교만 집행 → <tspan fill="#4ecb8d" font-weight="700">길드가 강해집니다</tspan></text>
+        <rect x="510" y="98" width="330" height="86" rx="8" fill="#e9c96a" opacity=".12" stroke="#e9c96a"/>
+        <text x="530" y="124" font-size="13" fill="#e9c96a" font-weight="700">② Individual Credits (개인)</text>
+        <text x="530" y="148" font-size="12" fill="#c4ccd8">연맹 상점에서 가속권 · 자원팩 구매</text>
+        <text x="530" y="170" font-size="12" fill="#8a93a6">→ <tspan fill="#ffd24a" font-weight="700">개인 구매력이 생깁니다</tspan></text>
+        <line x1="0" y1="204" x2="900" y2="204" stroke="#2b3342"/>
+        <text x="0" y="226" font-size="13" fill="#4ecb8d" font-weight="700">→ 이타적 행동에 즉시 개인 보상이 따라옵니다. 이것이 기부율을 만듭니다.</text>
+        <text x="0" y="244" font-size="11.5" fill="#8a93a6">기부는 1일 20회 상한 · 30분마다 1회 회복 → 재방문 유도 장치로도 기능합니다</text>
+      </svg>
+      </div>
+      <div class="src">출처: <a href="https://www.bluestacks.com/blog/game-guides/rise-of-kingdoms/rok-ultimate-alliance-guide-en.html" target="_blank">Rise of Kingdoms Alliance Guide</a> · <a href="https://riseofkingdoms.fandom.com/wiki/Contribution" target="_blank">RoK Wiki</a></div>
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <h5>Clash of Clans — 데미지 영속</h5>
+        <p>주말 레이드, 최대 50명. <b class="hl">내 공격이 남긴 파괴 상태가 다음 길드원 공격에 유지됩니다.</b></p>
+        <p style="color:var(--white);margin-top:10px"><b>「내가 60% 진행했으니 마무리해달라」</b> — 비동기 협동이 <b class="hl">커뮤니케이션을 자연 발생</b>시킵니다.</p>
+        <p style="color:var(--molten);margin-top:10px">→ 적용안: <b>월드보스에 적용.</b> 길드 누적 딜량으로 주간 격파. <b>신규 보스 불필요.</b></p>
+        <div class="src" style="margin-top:8px"><a href="https://supercell.com/en/games/clashofclans/blog/game-updates/clan-capital-raids/" target="_blank">Supercell 공식</a></div>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">검은사막M — 전투력 상한 거점</h5>
+        <p>20분 성채 쟁탈전. <b class="hlg">공격·방어 능력치에 상한을 적용한 별도 리그를 운영합니다.</b></p>
+        <p style="color:var(--white);margin-top:10px"><b class="hlg">과금 격차를 무력화한 리그</b> → 중·저과금 길드도 참여 가능합니다.</p>
+        <p style="color:var(--molten);margin-top:10px">→ <b>발견 5의 「4위 길드부터 매력도 하락」에 대한 직접 대응 수단</b>입니다.</p>
+        <div class="src" style="margin-top:8px"><a href="https://forum.blackdesertm.com/Board/Detail?boardNo=7&contentNo=600678" target="_blank">검은사막M 공식 패치노트</a></div>
+      </div>
+      <div class="card">
+        <h5>오딘 — 공성전 4단계 + 용병</h5>
+        <p>참가권 <b>경매(입찰)</b> → 예선 → 준비기간 → 본 공성.</p>
+        <p>보상: <b class="hl">승리 길드가 거래소 세율을 설정하고 세금을 징수</b>합니다 → 승리가 <b>경제 지배력</b>으로 환산됩니다.</p>
+        <p style="color:var(--white);margin-top:10px"><b class="hl">용병 시스템</b> — 참여 불가 유저를 용병으로 영입. 엔드 PvP의 최대 과제인 <b>「참가하지 못하는 다수」</b>를 참가자로 전환합니다.</p>
+        <div class="src" style="margin-top:8px"><a href="https://www.gameple.co.kr/news/articleView.html?idxno=204422" target="_blank">게임플 — 오딘 공성전</a></div>
+      </div>
+      <div class="card">
+        <h5>저니 오브 모나크 — 광고 기부</h5>
+        <p><b class="hl">광고 시청 기부 3회</b> + 아데나 기부 3회</p>
+        <p style="color:var(--white);margin-top:10px"><b>무과금 유저도 매일 기여할 수 있어 길드 내 지위가 유지됩니다.</b></p>
+        <p style="color:var(--molten);margin-top:10px">→ 유저 [제안 22]의 <b>「상위길드에서 다 추방하고 쌘분들만 남겨야될 판」</b>에 대한 대응입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-9</span><h2><i class="e">⚒️</i>제작 · 엔드 콘텐츠</h2></div>
+
+    <div class="call gold">
+      <div class="ct">⚠️ 본 게임에는 유저 거래소가 없습니다 — 이 항목이 전제 조건이 됩니다</div>
+      <p><b>검은사막의 「황실 납품」</b>: 요리·연금 등의 결과물을 전용 NPC에 납품하면 은화와 인장을 지급합니다. <b class="hlg">1일 개인 공헌도의 절반만큼만</b> 납품 가능합니다.</p>
+      <p style="margin-top:12px"><b>이 구조가 필요한 이유:</b> 유저 거래소가 있으면 제작품 가격이 시장에서 하락하는데, <b class="hl">NPC가 상한이 있는 고정 수요로서 제작 수익의 하한을 보장</b>합니다.</p>
+      <p style="margin-top:10px;color:var(--white);font-size:15px"><b class="hlr">본 게임은 거래소 자체가 없으므로 제작품은 자가소비 외 용도가 없습니다.</b> → <b class="hlg">기존 상점에 「제작품 납품」 탭을 추가하는 것이 제작 콘텐츠 활성화의 전제 조건입니다.</b> 1일 상한을 길드 기여도나 칭호 등급에 비례시키면 인플레이션도 통제됩니다.</p>
+      <div class="src" style="border-top-color:rgba(233,201,106,.3)">출처: <a href="https://www.inven.co.kr/board/black/3584/44773" target="_blank">인벤 — 검은사막 황실납품</a></div>
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <h5>검은사막 — 일꾼</h5>
+        <p><b class="hl">재료 전량을 일꾼 노드로 수급 가능</b>합니다. 공헌도로 집을 대여해 창고·제작소를 운영합니다.</p>
+        <p style="color:var(--white);margin-top:10px"><b>일꾼 = 오프라인 재료 수집 → 제작이 방치와 결합됩니다.</b></p>
+      </div>
+      <div class="card">
+        <h5>로스트아크 — 달빛 채광</h5>
+        <p>생활 6종 스킬. <b class="hl">「달빛 채광」 — 보상 2배 대신 자원 2배 소모</b></p>
+        <p style="color:var(--white);margin-top:10px"><b>「효율 대 총량」 선택지</b>가 반복 작업에 의사결정을 부여합니다.</p>
+        <p style="color:var(--molten);margin-top:8px">→ 적용안: <b>던전 입장 옵션에 「2배 보상 / 2배 소모」 토글</b></p>
+      </div>
+      <div class="card">
+        <h5>EVE Online — ME/TE 연구</h5>
+        <p><b class="hl">ME = 레벨당 재료 −1%, TE = 레벨당 시간 −2%</b>, 10단계 비선형 (레벨1 1분45초 → <b>레벨10 3일</b>)</p>
+        <p style="color:var(--white);margin-top:10px"><b>연구가 제작보다 오래 걸립니다 = 제작자가 「설비」를 키우는 별도 성장 축.</b></p>
+        <p style="color:var(--molten);margin-top:8px">→ 30~40대 정착층의 <b>비전투 성취 축</b>과 정합적입니다.</p>
+        <div class="src" style="margin-top:8px"><a href="https://www.eveonline.com/news/view/eve-industry-all-you-want-to-know" target="_blank">EVE 공식</a></div>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <h5 style="color:var(--gold)">세 가지를 결합하면 — 길드 작업장</h5>
+        <p>길드에 작업장을 두어 <b class="hlg">오프라인 재료가 축적</b>되게 하면:</p>
+        <p style="color:var(--white);margin-top:10px"><b class="hlg">길드(2위) + 방치(4위) + 제작(6위)</b> = 유저 요청 3개를 <b>단일 시스템으로 동시 대응</b>할 수 있습니다.</p>
+        <p style="color:var(--molten);margin-top:10px">기부 소재는 <b>기존 제작 재료를 재활용 = 신규 아이템 불필요</b>합니다. → <a href="08-ui.html#s4">UI 목업</a></p>
+      </div>
+    </div>
+
+    <h3>엔드 콘텐츠</h3>
+    <div class="call">
+      <div class="ct">로스트아크 — 골드 획득 주간 상한</div>
+      <p><b class="hl">원정대 단위 주간 6캐릭 제한.</b> 골드 보상은 원정대당 주 6캐릭까지만 지급되며, 골드를 획득한 캐릭터는 <b>귀속</b>됩니다. 6슬롯 소진 시 나머지 캐릭터는 골드를 획득할 수 없습니다. 매주 수요일 06시 초기화됩니다.</p>
+      <p style="margin-top:12px;font-size:15px;color:var(--white)"><b class="hlr">본 게임 골드던전에도 주간 상한 도입을 검토할 필요가 있으며, 시점이 중요합니다.</b> 이미 지급되던 보상을 회수하면 반발이 발생하므로, 도입한다면 이른 시점이 유리합니다.</p>
+      <p style="margin-top:8px">본 게임 골드던전은 <a href="04-balance.html#s6">효율이 255배 악화되는 구조</a>이므로 검토 시점으로 적절합니다.</p>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://m-lostark.game.onstove.com/GameGuide/Pages/%EC%BD%98%ED%85%90%EC%B8%A0%20%ED%98%84%ED%99%A9%20%ED%99%95%EC%9D%B8" target="_blank">로스트아크 공식</a></div>
+    </div>
+    <div class="g2">
+      <div class="card">
+        <h5>로스트아크 — 관문(Gate) 구조</h5>
+        <p>레이드를 관문으로 분할하고 <b class="hl">관문마다 별도 보상</b>. <b>관문 저장</b> — 투표로 중단·재개, 클리어한 관문은 주간 초기화까지 유지됩니다.</p>
+        <p style="color:var(--molten);margin-top:10px">→ 적용안: <b>월드보스를 관문화.</b> 장시간 콘텐츠를 <b class="hl">40분 × 4회로 분할하면 직장인 유저의 참여가 가능</b>해집니다. 신규 보스 불필요.</p>
+      </div>
+      <div class="card">
+        <h5>시즌 리셋 — PoE / AFK Journey</h5>
+        <p>PoE: <b>3~4개월</b> 리그, <b>경제 완전 리셋</b>. AFK Journey: <b>4개월</b>, 시즌 성장은 리셋하되 <b class="hl">영웅 수집은 영구 보존</b>.</p>
+        <p style="color:var(--molten);margin-top:10px">→ 적용안: <b>시련의 탑 3개월 시즌제.</b> <a href="05-data.html#tower">107층 진행 한계 문제</a>도 함께 해소됩니다. 영구 성장(강화·제작)은 유지하여 반발을 최소화합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s13">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-10</span><h2><i class="e spin">🪙</i>재화 경제</h2></div>
+
+    <div class="call info">
+      <div class="ct">⚠️ 먼저 「없는 것」</div>
+      <p><b class="hlr">「faucet/sink 목표 비율」의 권위 있는 출처는 존재하지 않습니다.</b> 검색 시 「Faucets = 1.1~1.3x Sinks」 같은 수치가 다수 나오나 전부 SEO/AI 생성 블로그입니다. <b>이러한 수치를 기획서에 인용하면 근거 없는 수치를 인용하는 것이 됩니다.</b></p>
+    </div>
+
+    <div class="call">
+      <div class="ct">「거래세 = 표준 골드 싱크」라는 통념을 학술 연구가 부정하였습니다</div>
+      <p>Old School RuneScape의 거래소 1% 세금과 아이템 싱크를 실증 분석한 NYU 연구 결과:</p>
+      <ul>
+        <li><b class="hlr">거래세는 과세 경계선 아이템의 거래량에 유의미한 영향을 주지 못하였습니다.</b></li>
+        <li><b class="hlr">아이템 싱크는 거래량을 줄이지 않으면서 사치재 가격 인플레이션에 오히려 기여하였습니다.</b></li>
+        <li>불법 골드 거래에도 사실상 영향이 없었습니다.</li>
+      </ul>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://arxiv.org/abs/2210.07970" target="_blank">Hogan-Hennessy, Xenopoulos, Silva (NYU) — Market Interventions in a Large-Scale Virtual Economy</a> (2022-10)</div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">로스트아크 2025 경제 정상화 — 본 게임에 가장 직접 적용 가능한 국내 사례</div>
+      <div class="tw" style="margin:10px 0">
+        <table>
+          <thead><tr><th>조치</th><th class="num">수치</th><th>설계 의도</th></tr></thead>
+          <tbody>
+            <tr><td><b class="hl">신뢰도 시스템</b></td><td class="num">골드 <b>소모 1당 신뢰도 1</b><br>귀속 골드는 <b>0.1</b></td><td><b>골드를 성장에 사용한 유저만</b> 거래 자격 확보</td></tr>
+            <tr><td>신뢰도 적립 대상</td><td class="num">장비 강화·품질·초월<br>·엘릭서·전승·제작</td><td><b class="hl">성장 소비만 인정</b></td></tr>
+            <tr><td>골드 송금</td><td class="num">신뢰도 1:1 차감<br>부족 시 <b>25% 수수료</b></td><td>현금거래·작업장 차단</td></tr>
+            <tr><td>입찰 상한</td><td class="num">7일 평균 낙찰가의 <b>500%</b></td><td>송금 위장 차단</td></tr>
+            <tr class="rowgold"><td><b class="hlg">보석 드랍</b></td><td class="num"><b class="hlg">1/2로 감축</b></td><td><b class="hlg">faucet을 직접 차단</b></td></tr>
+            <tr class="rowgold"><td><b class="hlg">디렉터 공식 발언</b></td><td colspan="2"><i>"캐릭터 6개 초과 확장은 권장하지 않는다"</i> — <b class="hlg">다계정·다캐릭터 골드 생산이 인플레이션의 구조적 원인임을 개발사가 공식 인정</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:15px;color:var(--white)"><b class="hlg">핵심: 로스트아크는 인플레이션을 싱크 확대가 아니라 faucet(생산) 차단으로 해결하려 하였습니다.</b> 통상적인 「골드 사용처를 늘리자」와 반대 방향입니다.</p>
+      <div class="src" style="border-top-color:rgba(233,201,106,.3)">출처: <a href="https://www.inven.co.kr/webzine/news/?news=307744&site=lostark" target="_blank">인벤 (2025-07-23)</a> · <a href="https://www.gamemeca.com/view.php?gid=1762819" target="_blank">게임메카 (2025-06-22)</a></div>
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <h5>「현금 수도꼭지보다 장비 수도꼭지」</h5>
+        <p>인플레이션의 실질 원인은 골드 과잉이 아니라 <b class="hl">아이템 포화</b>라는 지적입니다.</p>
+        <p style="color:var(--molten);margin-top:10px">→ <a href="04-balance.html#s2">합성으로 정수가 공급되어 보스 경로가 사장된 현상</a>이 이 진단과 일치합니다.</p>
+        <div class="src" style="margin-top:8px"><a href="https://www.gamedeveloper.com/design/the-f-words-of-mmos-faucets" target="_blank">Game Developer</a></div>
+      </div>
+      <div class="card">
+        <h5>중복 조각 처리</h5>
+        <p>DoF: <i>"중복을 <b class="hl">업그레이드 재화로 소비</b>시키는 것이 필수. <b class="hlr">단순 분해 재화로 처리하면 후회와 이탈을 유발</b>한다."</i></p>
+        <p style="color:var(--molten);margin-top:10px">→ <a href="03-users.html#findings">유저 [113] 「20강 50각 이후 중복조각 사용처」</a>는 업계에 이미 알려진 실패 패턴입니다.</p>
+        <div class="src" style="margin-top:8px"><a href="https://www.deconstructoroffun.com/blog/2017/8/31/designing-a-strong-gacha" target="_blank">DoF — Designing a Strong Gacha</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s14">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-11</span><h2><i class="e">⚖️</i>밸런스 판정 방법론</h2></div>
+    <p class="slead"><a href="03-users.html#f6">발견 6(파밍 캐릭터 고정)</a>을 판정하기 위한 기준입니다.</p>
+
+    <div class="call">
+      <div class="ct">Riot — 수치 밴드를 공개한 유일한 사례</div>
+      <div class="tw" style="margin:10px 0">
+        <table>
+          <thead><tr><th>그룹</th><th>너프 기준</th><th class="num">버프 기준</th></tr></thead>
+          <tbody>
+            <tr><td><b>Average</b></td><td>승률 <b>54.5%</b>(밴율 평균 이하) → <b>52.5%</b>(밴율 5배) — <b class="hl">밴율 연동 슬라이딩</b></td><td class="num"><b>49%</b> 미만</td></tr>
+            <tr><td><b>Skilled</b> <span class="mut">(상위 10%)</span></td><td>54% → 52%</td><td class="num">49% 미만</td></tr>
+            <tr><td><b>Elite</b></td><td>승률 아님 — <b>밴율 45% 상한 / 존재감 5% 하한</b></td><td class="num mut">—</td></tr>
+            <tr><td><b>Pro</b></td><td>승률 아님 — <b>존재감 90%</b>(현 패치) 또는 80%(연속) 초과</td><td class="num">5% 미만</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><b class="hl">판정 로직: 4개 그룹 중 어느 하나라도 초과 시 너프. 전부 미달 시 버프.</b></p>
+      <p style="margin-top:10px">또한 <b>메타 다양성을 별도 지표로 관리</b>합니다 (패치 10.12 기준 챔피언 다양성 Average 81% / Skilled 87% / 솔로큐 합산 93%). 버프 편향 방지 장치로 <b>후속 패치 변경 중 절반 초과가 버프면 고존재감 챔피언 너프를 검토</b>합니다.</p>
+      <p style="margin-top:12px;color:var(--ember)"><b>⚠️ Riot이 스스로 인정한 한계:</b> 승률 52~53%인데 픽/밴이 훨씬 높은 챔피언 문제를 인지하면서도 <b>밴드를 더 조이지 않기로</b> 결정하였고, 대신 <b>「메타 다양성 목표」와 시스템적 접근</b>이 낫다고 판단하였습니다.</p>
+      <p style="color:var(--white)"><b class="hlr">→ 승률 단독으로는 밸런스를 판정할 수 없다는 것이 공개된 개발사의 결론입니다.</b></p>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://nexus.leagueoflegends.com/en-us/2019/05/dev-champion-balance-framework/" target="_blank">Riot — Champion Balance Framework</a> · <a href="https://www.leagueoflegends.com/en-us/news/dev/dev-balance-framework-update/" target="_blank">2020 Update</a></div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">본 게임에 필요한 기법 — 비-미러 승률</div>
+      <p>VALORANT는 <b>양 팀이 동일 캐릭터를 선택한 매치를 제외</b>하고 승률을 계산합니다.</p>
+      <p style="margin-top:8px"><b class="hlg">픽률이 높은 캐릭터일수록 미러 매치가 승률을 50%로 수렴시켜 문제를 은폐하기 때문입니다.</b></p>
+      <p style="margin-top:12px;color:var(--white)">→ <b>벨라·네오가 파밍을 지배하는 상황에서 단순 승률로는 문제가 드러나지 않습니다. 비-미러 보정이 필요합니다.</b></p>
+      <p style="margin-top:10px" class="mut">참고 — Blizzard는 Overwatch 영웅 목표 승률을 <b>45~55%</b>로 공개하였고, 실제 딜러 대부분은 <b>47~53%</b> 밴드에 있습니다. 픽률은 <b>총 플레이타임 점유율</b>로 정의합니다. <b>국내 개발사가 승률 목표 밴드를 수치로 공개한 1차 자료는 확인되지 않았습니다.</b></p>
+      <div class="src" style="border-top-color:rgba(233,201,106,.3)">출처: <a href="https://playvalorant.com/en-us/news/dev/trust-the-balance-process-data-and-insights/" target="_blank">Riot — Trust the Balance Process</a> · <a href="https://overwatch.blizzard.com/en-us/news/24214498/weekly-recall-the-balancing-act/" target="_blank">Blizzard — The Balancing Act</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="s16">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-12</span><h2><i class="e float">🚚</i>한국 시장의 반발 사례</h2></div>
+    <p class="slead">본 절은 <a href="09-proposal.html#principles">「개선 제안 · 실행 원칙」</a>의 근거가 됩니다.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:17%">사례</th><th>방아쇠</th><th>결과</th></tr></thead>
+        <tbody>
+          <tr><td><b>리니지M 문양</b><br><span class="b na">2021-01</span></td><td>과금 완화 개편을 <b>최상위 과금층 반발로 4일 만에 롤백</b> + <b class="hlr">게임 내 재화로 보상</b></td><td>트럭 시위. <b>사과문·간담회 없음</b> → <b class="hlr">「개선 미흡」 평가로 장기화</b></td></tr>
+          <tr><td><b>메이플 확률</b><br><span class="b na">2021-02</span></td><td><b class="hlr">「균일하다고 표기돼 온」 확률이 실제로는 균일하지 않음</b>이 패치노트로 드러남</td><td>8시간 간담회 + 전 확률 공개 + 매달 검증 결과 게시 → 최종 공정위 과징금 116억</td></tr>
+          <tr class="rowok"><td><b>아인하사드</b><br><span class="b na">2021-09</span></td><td>「게임 진행에 <b>필수적으로 돈을 쓰도록</b> 만든 시스템」으로 지목</td><td><b class="hlo">판매 중단 + 현금 환불</b>로 종결. 리니지W는 <b>「서비스 종료 시점까지 유사 시스템을 내놓지 않겠다」</b> 약속</td></tr>
+          <tr class="rowcrit"><td><b>아이온2 「영혼의 서」</b><br><span class="b na">2025-11</span></td><td>PD가 <b class="hlr">「큐나로 판매하지 않는다」</b> 공언 → 출시 후 8.6만원 상자에 포함 판매</td><td><b class="hlr">출시 당일 16:30 임시점검으로 상품 제거</b> + 보상 지급</td></tr>
+          <tr class="rowok"><td><b>메이플 키우기</b><br><span class="b na">2026-01</span></td><td>① 전투력 표시가 실제 성능과 상이 ② <b class="hlr">어빌리티 최대 수치가 나오지 않도록 설정</b>하고 「균등 확률로 표시」</td><td><b class="hlo">출시일~1/28 전 결제 전액 환불</b> → 협회 신고 취하. 공동대표 사과</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">구조적 특징 3가지 — 본 게임이 지켜야 할 원칙</div>
+      <p><b class="hlg">1. P2W 자체보다 「공개 약속과 다른 행동」이 방아쇠가 됩니다.</b><br>
+      아이온2는 확률형도 아닌 유료 패키지였음에도 <b>출시 당일 철회</b>에 이르렀습니다. 가격이 아니라 <b class="hl">PD가 공개적으로 약속한 선을 넘었다는 점</b>이 원인이었습니다. 메이플 2021의 방아쇠도 확률 수치 자체가 아니라 <b class="hl">「균일하다고 표기된 것이 사실과 달랐다」</b>는 점이었습니다.</p>
+      <p style="margin-top:14px"><b class="hlg">2. 보상의 통화가 2차 방아쇠가 됩니다.</b><br>
+      리니지M 문양은 개편 자체보다 <b class="hlr">게임 내 재화로 보상한 점</b>이 사태를 장기화시켰습니다. 반면 아인하사드는 <b class="hlo">현금 환불</b>, 메이플 키우기는 <b class="hlo">전액 환불</b>로 종결되었습니다(신고 취하 포함).</p>
+      <p style="margin-top:14px"><b class="hlg">3. 대응 속도와 형식이 결과를 좌우합니다.</b><br>
+      동일한 트럭 시위를 겪고도 넷마블·넥슨(간담회 + 상시 소통)은 <b class="hl">이용자가 역으로 커피 트럭을 전달하는 상황</b>까지 도달하였고, 엔씨(사과문·간담회 없음)는 「개선 미흡」 평가로 남았습니다.</p>
+      <p style="margin-top:14px;color:var(--white);font-size:15px">→ <b class="hlr"><a href="03-users.html#f8">유저 [109]의 「6개월간 게임해왔는데 같은 문의에 답변을 너무 안해주니 흥미가 떨어지네요」</a>가 정확히 이 지점에 해당합니다.</b></p>
+    </div>
+
+    <h3>글로벌 사례 — 상반된 결과</h3>
+    <div class="g2">
+      <div class="card" style="border-color:var(--ember-dim)">
+        <h5 style="color:var(--ember)">Diablo Immortal</h5>
+        <p>Metacritic PC 유저 점수 <b class="hlr">사상 최저</b> (약 2,500건 중 2,475건 부정), <b>벨기에·네덜란드 서비스 불가</b></p>
+        <p style="color:var(--white);margin-top:10px"><b class="hl">그러나 첫 1년 매출 5억 2,500만 달러.</b> 5억 달러 돌파 <b>15번째 최속</b>.</p>
+      </div>
+      <div class="card" style="border-color:var(--info)">
+        <h5 style="color:var(--info)">다크앤다커 모바일</h5>
+        <p>배틀패스 + <b>비전투 영향 확률형 아이템</b> 중심의 <b class="hl">비-P2W BM</b> 채택.</p>
+        <p style="color:var(--white);margin-top:10px"><b class="hlr">「매출 효율은 낮았」고 2025-11 서비스 종료.</b></p>
+      </div>
+    </div>
+    <div class="call gold">
+      <div class="ct">두 사례의 시사점</div>
+      <p style="font-size:15px;color:var(--white)"><b class="hlg">「P2W = 매출 실패」라는 명제는 성립하지 않습니다.</b> 실제 비용은 매출이 아니라 ① <b>규제 관할 상실</b> ② IP 브랜드 훼손 ③ 신뢰의 영구 손상입니다. <b class="hlg">P2W의 리스크는 손익계산서가 아니라 대차대조표에 반영됩니다.</b></p>
+      <p style="margin-top:10px"><b>그리고 비-P2W가 정답인 것도 아닙니다.</b> 문제는 P2W의 유무가 아니라 <b class="hl">오디언스·장르·공개 약속과의 정합성</b>입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s17">
+  <div class="wrap">
+    <div class="shead"><span class="snum">07-13</span><h2><i class="e spin">🌏</i>시장 현황</h2></div>
+
+    <div class="fig">
+      <div class="cap">// Google Play 한국 매출 상위 40개 게임의 수익화 전략 채택 현황 (게임당 2~4시간 직접 플레이 분석)</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <g font-size="12" fill="#c4ccd8">
+          <text x="0" y="20">Daily Login</text><text x="0" y="48">Loot Box</text><text x="0" y="76">Battle Pass</text>
+          <text x="0" y="104">Progress Boosters</text><text x="0" y="132">Social Dynamics</text><text x="0" y="160">Conflict-Driven Design</text>
+          <text x="0" y="188">First Purchase Benefits</text><text x="0" y="216">Time-Gated Progression</text><text x="0" y="244">Complete Gacha</text>
+        </g>
+        <g>
+          <rect x="200" y="8"   width="646" height="16" rx="3" fill="#4ecb8d"/><text x="856" y="21" font-size="11.5" fill="#4ecb8d" font-family="JetBrains Mono" font-weight="700">38</text>
+          <rect x="200" y="36"  width="629" height="16" rx="3" fill="#4ecb8d"/><text x="839" y="49" font-size="11.5" fill="#4ecb8d" font-family="JetBrains Mono" font-weight="700">37</text>
+          <rect x="200" y="64"  width="527" height="16" rx="3" fill="#ffb347"/><text x="737" y="77" font-size="11.5" fill="#ffb347" font-family="JetBrains Mono" font-weight="700">31</text>
+          <rect x="200" y="92"  width="459" height="16" rx="3" fill="#ffb347"/><text x="669" y="105" font-size="11.5" fill="#ffb347" font-family="JetBrains Mono" font-weight="700">27</text>
+          <rect x="200" y="120" width="442" height="16" rx="3" fill="#ffb347"/><text x="652" y="133" font-size="11.5" fill="#ffb347" font-family="JetBrains Mono" font-weight="700">26</text>
+          <rect x="200" y="148" width="425" height="16" rx="3" fill="#e9c96a"/><text x="635" y="161" font-size="11.5" fill="#e9c96a" font-family="JetBrains Mono" font-weight="700">25</text>
+          <rect x="200" y="176" width="289" height="16" rx="3" fill="#5ab3ff"/><text x="499" y="189" font-size="11.5" fill="#5ab3ff" font-family="JetBrains Mono" font-weight="700">17</text>
+          <rect x="200" y="204" width="153" height="16" rx="3" fill="#8a93a6"/><text x="363" y="217" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono" font-weight="700">9</text>
+          <rect x="200" y="232" width="51" height="16" rx="3" fill="#2b3342"/><text x="261" y="245" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono" font-weight="700">3</text>
+        </g>
+      </svg>
+      </div>
+      <div class="src">출처: <a href="https://arxiv.org/html/2504.10714v1" target="_blank">arXiv 2504.10714 — 한국 상위 40개 게임 수익화 전략 실측</a></div>
+    </div>
+    <div class="call">
+      <div class="ct">해석</div>
+      <p><b>Daily Login 95% / Loot Box 92.5%</b>는 사실상 필수 요소이며, <b>Battle Pass 31개</b>도 이미 표준입니다. 반면 <b>Complete Gacha는 3개</b>에 그칩니다.</p>
+      <p style="margin-top:10px"><i>"리텐션 전략(일일 로그인 등)이 플레이어를 지속 참여시켜 <b class="hl">수익화 메커니즘에 대한 노출을 증가</b>시킨다"</i> — <b class="hlg">리텐션과 과금은 별개 전략이 아니라 연동된 피드백 루프입니다.</b></p>
+    </div>
+
+    <div class="call info">
+      <div class="ct">시장 맥락</div>
+      <div class="tw" style="margin:10px 0">
+        <table>
+          <tbody>
+            <tr><td><b>한국 모바일 게임 매출 중 RPG 비중</b></td><td class="num"><b class="hl">48%</b> (2025 Q1–Q3), 미드코어 79%</td></tr>
+            <tr><td>한국 모바일 게임 IAP</td><td class="num">53억 달러 (2025), Google Play 75%</td></tr>
+            <tr class="rowcrit"><td><b class="hlr">글로벌 RPG 매출</b></td><td class="num">$13.7B(2024) → <b class="hlr">$11.6B(2025) = −15.4%</b></td></tr>
+            <tr class="rowcrit"><td>한국 RPG 내 MMORPG 비중</td><td class="num"><b class="hlr">78.8%(2020) → 56.2%(2024)</b> · Idle RPG는 1.7% → <b class="hl">16%</b></td></tr>
+            <tr><td>리니지M 2025 Q3</td><td class="num">1,053억원, <b class="hlr">YoY −33.7%</b></td></tr>
+            <tr><td>Lineage W 한국 RPD</td><td class="num"><b>$475</b> (리니지 3종 전부 3자리 RPD)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><b class="hl">한국은 RPG가 매출의 절반을 차지하는 시장이나, RPG 시장 자체는 축소 국면입니다.</b> 시장이 축소되는 국면에서는 <b class="hlg">기존 유저 이탈 방어의 가치가 신규 획득보다 큽니다.</b></p>
+      <div class="src" style="border:none;padding-left:2px">출처: <a href="https://sensortower.com/ko/blog/state-of-gaming-in-korea-2025-report-KR" target="_blank">Sensor Tower 한국 리포트 (2025-11)</a> · <a href="https://gamedevreports.substack.com/p/appmagic-mobile-games-monetization" target="_blank">AppMagic Report 2025</a> · <a href="https://naavik.co/deep-dives/rpg-genre-report/" target="_blank">Naavik RPG Genre Report</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="06-cost.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 06 · 비용 구조 분석</span></a>
+      <a href="08-ui.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 08 · UI 개선안</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 07 · 업계 비교<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용<br><br>
+      모든 수치에 원문 출처를 첨부하였습니다. 출처가 확인되지 않은 수치는 배제하였으며,<br>
+      배제 목록은 <a href="10-notes.html#excluded">「방법론 및 한계」</a>에 있습니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>표지 및 목차</b></span>
+    <span class="pg">2026.07.17</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">내부 검토 자료 · Confidential</div>
+    <h1>VULCAN 개선 제안</h1>
+    <p class="sub">고객 문의 접수 원본, 게임 내 밸런스 데이터, 국내외 공개 자료를 대조하여 작성한 내부 보고서입니다. 모든 수치에는 출처를 명시하였으며, 확인되지 않은 사항은 「자료 없음」으로 남겨두었습니다.</p>
+    <div class="kpis" style="margin-top:32px">
+      <div class="kpi"><div class="n">333<small>건</small></div><div class="l">분석한 고객 문의 접수<br><span class="mut">2025.06.29 ~ 2026.07.09</span></div></div>
+      <div class="kpi g"><div class="n">651<small>개</small></div><div class="l">대조한 밸런스 데이터<br><span class="mut">성장·강화·가챠·상품·보상</span></div></div>
+      <div class="kpi b"><div class="n">37<small>개</small></div><div class="l">UI 구조 검수 화면<br><span class="mut">위험도 판정 완료</span></div></div>
+      <div class="kpi ok"><div class="n">20<small>+</small></div><div class="l">비교 대조한 타이틀<br><span class="mut">국내외 공개 자료 기준</span></div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">개요</span><h2><i class="e pulse">🎯</i>보고 목적</h2></div>
+    <p class="slead">본 보고서는 세 가지 질문에 답하기 위해 작성되었습니다.</p>
+
+    <div class="g2">
+      <div class="card">
+        <h5><i class="e sm">🩺</i>1. 지금 무엇이 문제인가</h5>
+        <p>유저가 지적한 밸런스 문제가 <b>실제 데이터로 확인되는지</b> 하나씩 대조하였습니다.</p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">📊</i>2. 업계 기준으로 우리는 어디쯤인가</h5>
+        <p>국내외 주요 타이틀의 <b>공개 수치</b>와 나란히 놓고 비교하였습니다.</p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">🚦</i>3. 무엇부터 해야 하는가</h5>
+        <p>비용과 효과를 기준으로 <b>실행 순서를 제안</b>하였습니다.</p>
+      </div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct"><i class="e sm">📋</i>요약</div>
+      <p style="font-size:15.5px;color:var(--white);line-height:1.95">
+        유저가 문의로 남긴 밸런스 지적 <b>12건을 실제 데이터와 대조한 결과, 반박되는 항목은 없었습니다.</b> 일부 항목은 유저가 인지한 것보다 실제 상황이 더 좋지 않았습니다.<span class="fn" data-t="교차 검증 12건의 목록" data-c="검증 대상 12건은 성수 드랍, 보스 콘텐츠, 강화 확률 체감, 강화 실패 페널티, 상위 장비 보상, 파밍 캐릭터 고정, VC-01 밸런스, 성장 정보 부재, 중복 조각 사용처, 확률 신뢰, 길드 격차, 요일던전 횟수입니다. 상세 대조표는 <b>「밸런스 실측」</b> 페이지 상단에 있습니다."></span><br><br>
+        또한 <b>과금 의사가 있는 유저가 정보 부족으로 구매를 보류하고 있다는 진술</b>이 다수 확인되었습니다. 이 부분은 밸런스 수치를 조정하지 않고 <b>정보 표기만으로도 상당 부분 개선이 가능합니다.</b>
+      </p>
+    </div>
+
+    <h3><i class="e float">🔍</i>핵심 발견 5가지</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:36px">#</th><th style="width:30%">발견</th><th>요지</th><th style="width:110px">상세</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>1</b></td>
+            <td><b>정보 부족이 구매를 가로막고 있습니다</b></td>
+            <td>강화에 필요한 총량을 알 수 없어 유저가 투자 판단을 내리지 못합니다. <b>밸런스 수치 변경 없이 표기만으로 개선 가능한 영역</b>입니다.</td>
+            <td><a href="03-users.html#f1">유저 반응 ▸</a></td>
+          </tr>
+          <tr>
+            <td><b>2</b></td>
+            <td><b>성수는 드랍 경로가 지정되어 있지 않습니다</b></td>
+            <td>유저가 드랍률 하향을 의심했으나, 확인 결과 <b>드랍 몬스터 자체가 지정되지 않은 상태</b>입니다. 현재 유일한 획득 경로는 유료 구매입니다.</td>
+            <td><a href="04-balance.html#s1">밸런스 실측 ▸</a></td>
+          </tr>
+          <tr>
+            <td><b>3</b></td>
+            <td><b>강화 페널티가 국내 주요 타이틀 중 가장 이릅니다</b></td>
+            <td>던전앤파이터는 +10까지 페널티가 없으나, 본 게임은 <b>+6부터 아이템이 소멸</b>합니다. 또한 <b>천장 보정이 없는 유일한 사례</b>입니다.</td>
+            <td><a href="04-balance.html#s3">밸런스 실측 ▸</a></td>
+          </tr>
+          <tr>
+            <td><b>4</b></td>
+            <td><b>이벤트 운영에 구조적 제약이 있습니다</b></td>
+            <td>이벤트가 결제를 유발한다는 점이 유저 진술로 확인되었으나, 이벤트 재화가 단일 항목으로 고정되어 <b>신규 이벤트마다 앱 업데이트가 필요한 구조</b>입니다.</td>
+            <td><a href="04-balance.html#s7">밸런스 실측 ▸</a></td>
+          </tr>
+          <tr>
+            <td><b>5</b></td>
+            <td><b>초반 성장 정체 구간의 위치를 재검토할 필요가 있습니다</b></td>
+            <td>업계 실측상 고액 결제 유저의 첫 결제 시점은 평균 18일차입니다. 본 게임은 <b>26레벨에 경험치 8.24배 구간</b>이 있습니다.<span class="fn" data-t="이 항목은 가설입니다" data-c="본 게임 유저가 며칠에 26레벨에 도달하는지는 <b>현재 계측이 없어 확인할 수 없습니다.</b> 따라서 이 항목은 상관에 근거한 <b>가설</b>이며 인과가 증명된 것이 아닙니다. 검증에는 이벤트 로그 계측이 필요하며, 설계안은 <a href='02-analytics.html'>「데이터 계측」</a> 페이지에 정리되어 있습니다."></span></td>
+            <td><a href="07-benchmark.html#s1">업계 비교 ▸</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">목차</span><h2><i class="e">🗂️</i>보고서 구성</h2></div>
+    <p class="slead">각 항목을 클릭하시면 해당 페이지로 이동합니다. 페이지 간 관련 내용은 본문에서 상호 연결되어 있습니다.</p>
+
+    <h3><i class="e no">📁</i> 기존 보고 자료</h3>
+    <div class="navgrid">
+      <a href="01-cs.html" class="navcard keep">
+        <div class="nn">PAGE 01 · 기존 자료</div>
+        <div class="nt">고객 문의 접수 분석</div>
+        <div class="nd">접수 333건을 원인 단위로 분해한 기존 분석입니다. 문의의 78%가 버그 계열이며, 접수량은 패치 품질을 따라 움직입니다.</div>
+        <div class="nm">333건 · 3대 사고 · 헤비 유저 관리</div>
+      </a>
+      <a href="02-analytics.html" class="navcard keep">
+        <div class="nn">PAGE 02 · 기존 자료</div>
+        <div class="nt">데이터 계측 요청서</div>
+        <div class="nd">「어떤 이벤트를 남겨서 무엇을 어떻게 볼 것인가」를 정리한 계측 설계안입니다. 본 보고서의 여러 가설을 검증하는 수단입니다.</div>
+        <div class="nm">분석 영역 11개 · 신규 이벤트 약 30종</div>
+      </a>
+    </div>
+
+    <h3><i class="e no">📌</i> 본 보고서 (2026.07.17)</h3>
+    <div class="navgrid">
+      <a href="03-users.html" class="navcard">
+        <div class="nn">PAGE 03</div>
+        <div class="nt">유저 반응 심층 분석</div>
+        <div class="nd">기존 분석에서 다루지 않은 <b>자유의견 121건과 제안 25건</b>을 전수 분석하였습니다. 본 보고서의 핵심 근거가 이곳에서 나옵니다.</div>
+        <div class="nm">자유의견 121건 · 제안 25건 · 설문 교차분석</div>
+      </a>
+      <a href="04-balance.html" class="navcard">
+        <div class="nn">PAGE 04</div>
+        <div class="nt">밸런스 실측 및 교차 검증</div>
+        <div class="nd">유저 지적을 <b>실제 데이터와 하나씩 대조</b>하였습니다. 강화·확률·성장 곡선·보스·이벤트 구조를 다룹니다.</div>
+        <div class="nm">교차검증 12건 · 점검 항목 13건</div>
+      </a>
+      <a href="05-data.html" class="navcard">
+        <div class="nn">PAGE 05</div>
+        <div class="nt">데이터 룸</div>
+        <div class="nd">성장 곡선 40레벨 전체, 강화 확률 전 등급, 가챠 구성, 상품 가격표, 보상 테이블, 시련의 탑, 몬스터·던전 <b>수치 원본</b>입니다.</div>
+        <div class="nm">본 보고서의 모든 수치가 여기서 나옵니다</div>
+      </a>
+      <a href="06-cost.html" class="navcard">
+        <div class="nn">PAGE 06</div>
+        <div class="nt">비용 구조 분석</div>
+        <div class="nd">루비 원화 가격을 확보하여 <b>유저가 실제로 지불하는 금액</b>으로 환산하였습니다.</div>
+        <div class="nm">캐릭터 1기 육성 · 강화 1회 · 필수재 단가</div>
+      </a>
+      <a href="07-benchmark.html" class="navcard">
+        <div class="nn">PAGE 07</div>
+        <div class="nt">업계 비교</div>
+        <div class="nd">국내외 20개 이상 타이틀의 공개 자료와 대조하였습니다. 강화·구독·이벤트·길드·방치·제작·엔드 콘텐츠를 다룹니다.</div>
+        <div class="nm">공식 출처 링크 포함 · 근거 불명 수치 배제</div>
+      </a>
+      <a href="08-ui.html" class="navcard">
+        <div class="nn">PAGE 08</div>
+        <div class="nt">UI 개선안</div>
+        <div class="nd">정보 부족 문제는 화면 개선만으로 상당 부분 해소됩니다. <b>목업 4종</b>을 포함하였습니다.</div>
+        <div class="nm">강화 정보 · 확률 표기 · 스케줄러 · 길드 작업장</div>
+      </a>
+      <a href="09-proposal.html" class="navcard">
+        <div class="nn">PAGE 09</div>
+        <div class="nt">개선 제안</div>
+        <div class="nd">유저 근거·데이터 근거·업계 근거가 <b>모두 확보된 항목만</b> 올렸습니다. 단계별 실행 순서를 제안합니다.</div>
+        <div class="nm">Phase 0 ~ 3 · 실행 원칙 6가지</div>
+      </a>
+      <a href="10-notes.html" class="navcard">
+        <div class="nn">PAGE 10</div>
+        <div class="nt">방법론 및 한계</div>
+        <div class="nd">검토 범위, 확인이 필요한 사항, <b>배제한 근거 불명 수치</b>, 본 보고서의 한계를 명시하였습니다.</div>
+        <div class="nm">표본 편향 · 인용 시 주의사항</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">참고</span><h2><i class="e tick">🧭</i>이 보고서를 읽는 방법</h2></div>
+
+    <div class="g2">
+      <div class="card">
+        <h5><i class="e sm">⏱️</i>시간이 부족하실 경우</h5>
+        <p>위 <b>「핵심 발견 5가지」</b>와 <a href="09-proposal.html">「개선 제안」</a> 두 곳만 보셔도 전체 결론이 파악됩니다.</p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">🔬</i>근거를 확인하고 싶으실 경우</h5>
+        <p>모든 수치는 <a href="05-data.html">「데이터 룸」</a>에 원본이 있고, 업계 자료는 <a href="07-benchmark.html">「업계 비교」</a>에 원문 링크가 있습니다.</p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">💬</i>각주 표시</h5>
+        <p>본문의 <span class="fn" data-t="각주 예시" data-c="이와 같이 <b>파란색 번호를 클릭</b>하시면 보충 설명이 표시됩니다. 본문 흐름을 끊지 않으면서 근거·전제·주의사항을 확인하실 수 있도록 하였습니다.<br><br>닫으실 때는 바깥 영역을 클릭하시거나 ESC 키를 누르시면 됩니다."></span> 표시를 클릭하시면 보충 설명이 나타납니다.</p>
+      </div>
+      <div class="card">
+        <h5><i class="e sm">✏️</i>표기 원칙</h5>
+        <p>확인된 사실과 <b>가설</b>을 구분하여 표기하였습니다. 근거가 불충분한 항목은 <b>「자료 없음」</b>으로 명시하였습니다.</p>
+      </div>
+    </div>
+
+    <div class="call info">
+      <div class="ct"><i class="e sm">⚖️</i>표본에 관한 전제</div>
+      <p>본 보고서의 유저 데이터는 <b>문의를 접수한 유저</b>의 것입니다. 접수 없이 이탈한 유저는 표본에 포함되지 않습니다. 따라서 불만 지표는 과소, 만족 지표는 과대 평가되었을 가능성이 있습니다.<span class="fn" data-t="표본 편향의 근거" data-c="자유의견 [45]에 다음과 같은 진술이 있습니다.<br><br><i>“저는 문의라도 남겨보지만 <b>대부분의 다른사람들은 이런 사고나면 조용히 떠납니다.</b> 개선이 필요해요”</i><br><br>이 진술은 표본 편향을 유저 스스로 지적한 사례로 볼 수 있습니다."></span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      VULCAN 개선 제안<br>
+      2026.07.17 · 내부 검토용<br><br>
+      본 문서의 모든 수치는 고객 문의 접수 원본, 게임 내 데이터, 공개 출처를 직접 대조한 값입니다.<br>
+      확인되지 않은 사항은 「자료 없음」으로 명시하였습니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

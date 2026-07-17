@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유저 반응 심층 분석 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 03</b> · 유저 반응 심층 분석</span>
+    <span class="pg">03 / 10</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 03 · User Voice</div>
+    <h1>유저 반응 심층 분석</h1>
+    <p class="sub">기존 <a href="01-cs.html">「고객 문의 접수 분석」</a>이 다루지 않은 <b>자유의견 121건과 기타 제안 25건</b>을 전수 분석하였습니다. 본 보고서의 핵심 근거가 이 페이지에서 나옵니다.</p>
+  </div>
+</div>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="shead"><span class="snum">03-1</span><h2><i class="e">👥</i>접수자 구성</h2></div>
+    <p class="slead">접수층은 <b>30~40대 남성</b>이며 <b>정착층</b>입니다. 즉 이탈 시 손실이 가장 큰 집단이 남긴 기록입니다.</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n">86.2<small>%</small></div><div class="l"><b>30~40대</b><br><span class="mut">30대 46.7% + 40대 39.5%</span></div></div>
+      <div class="kpi"><div class="n">94.1<small>%</small></div><div class="l"><b>남성</b> <span class="mut">(285 / 303명)</span></div></div>
+      <div class="kpi"><div class="n">70.2<small>%</small></div><div class="l"><b>정착층</b> <span class="mut">(3개월 이상)</span></div></div>
+      <div class="kpi"><div class="n">78.1<small>%</small></div><div class="l">문의 중 <b>버그 계열</b> <span class="mut">(260건)</span></div></div>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>연령대</th><th class="num">명</th><th class="num">비중</th><th>플레이 기간</th><th class="num">명</th><th class="num">비중</th></tr></thead>
+        <tbody>
+          <tr><td>30대</td><td class="num">136</td><td class="num">46.7%</td><td>6개월 미만</td><td class="num">120</td><td class="num">41.5%</td></tr>
+          <tr><td>40대</td><td class="num">115</td><td class="num">39.5%</td><td>3개월 미만</td><td class="num">83</td><td class="num">28.7%</td></tr>
+          <tr><td>50대 이상</td><td class="num">19</td><td class="num">6.5%</td><td>1개월 미만</td><td class="num">27</td><td class="num">9.3%</td></tr>
+          <tr><td>20대 중후반</td><td class="num">17</td><td class="num">5.8%</td><td>24시간 미만</td><td class="num">22</td><td class="num">7.6%</td></tr>
+          <tr><td>20대 초중반</td><td class="num">4</td><td class="num">1.4%</td><td>2주 미만</td><td class="num">18</td><td class="num">6.2%</td></tr>
+          <tr><td class="mut">응답 291명</td><td class="num mut">—</td><td class="num mut">—</td><td>7일 / 3일 미만</td><td class="num">16</td><td class="num">5.6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">이 인구 구성이 전략에 주는 시사점</div>
+      <p><b>30~40대 남성이 86.2%</b>입니다. 구매력은 있으나 가용 시간이 제한적인 층입니다. 그리고 업계 조사에 따르면 <b class="hlg">방치형 장르의 핵심 과금 집단이 정확히 30~40대</b>이며, 리니지2M의 30~40대 비중도 약 73%로 보고되어 있습니다.</p>
+      <p style="margin-top:10px">→ 이 층에 판매해야 할 것은 <b class="hl">능력치보다 시간</b>이며, 이들이 잔류하는 이유는 가격보다 <b class="hl">「자신의 투자가 서버 내에서 의미를 갖는가」</b>입니다. 상세는 <a href="07-benchmark.html#s2">「업계 비교 · 방치」</a>를 참조해 주십시오.</p>
+    </div>
+  </div>
+</section>
+
+<section id="f-survey">
+  <div class="wrap">
+    <div class="shead"><span class="snum">03-2</span><h2><i class="e">📊</i>설문 결과</h2></div>
+
+    <h3>개선 요청 콘텐츠 (283명 · 509표 · 중복선택)</h3>
+    <div class="fig">
+      <div class="cap">// 응답자 대비 비율</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <g font-size="12" fill="#c4ccd8">
+          <text x="0" y="18">기본필드 플레이</text><text x="0" y="46">길드컨텐츠</text><text x="0" y="74">기타</text>
+          <text x="0" y="102">방치시 획득 골드/아이템</text><text x="0" y="130">마을 컨텐츠</text><text x="0" y="158">제작시스템</text>
+          <text x="0" y="186">상점 아이템패키지</text><text x="0" y="214">영웅 그래픽/스킬</text><text x="0" y="242">게임UI</text>
+          <text x="0" y="270">튜토리얼</text><text x="0" y="298">스테이지 난이도</text>
+        </g>
+        <g>
+          <rect x="190" y="6"   width="520" height="16" rx="3" fill="#ff5b3a"/>
+          <rect x="190" y="34"  width="472" height="16" rx="3" fill="#ff7a4a"/>
+          <rect x="190" y="62"  width="452" height="16" rx="3" fill="#8a93a6"/>
+          <rect x="190" y="90"  width="409" height="16" rx="3" fill="#ffb347"/>
+          <rect x="190" y="118" width="340" height="16" rx="3" fill="#c9421f"/>
+          <rect x="190" y="146" width="312" height="16" rx="3" fill="#ffb347"/>
+          <rect x="190" y="174" width="284" height="16" rx="3" fill="#e9c96a"/>
+          <rect x="190" y="202" width="236" height="16" rx="3" fill="#2b3342"/>
+          <rect x="190" y="230" width="194" height="16" rx="3" fill="#2b3342"/>
+          <rect x="190" y="258" width="160" height="16" rx="3" fill="#2b3342"/>
+          <rect x="190" y="286" width="153" height="16" rx="3" fill="#2b3342"/>
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="11" fill="#f2f5fa" font-weight="700">
+          <text x="720" y="19">75표 · 26.5%</text><text x="672" y="47">68표 · 24.0%</text><text x="652" y="75">65표 · 23.0%</text>
+          <text x="609" y="103">59표 · 20.8%</text><text x="540" y="131">49표 · 17.3%</text><text x="512" y="159">45표 · 15.9%</text>
+          <text x="484" y="187">41표 · 14.5%</text><text x="436" y="215" fill="#8a93a6">34표</text><text x="394" y="243" fill="#8a93a6">28표</text>
+          <text x="360" y="271" fill="#8a93a6">23표</text><text x="353" y="299" fill="#8a93a6">22표</text>
+        </g>
+      </svg>
+      </div>
+      <div class="src">고객 문의 접수 원본 · 추가설문 6번 전수 집계</div>
+    </div>
+
+    <div class="call">
+      <div class="ct">기존 분석에서 정정이 필요한 두 가지</div>
+      <p><b>1. 1위는 길드가 아니라 「기본필드 플레이」(75표)입니다.</b> 기존 분석은 <i>"길드·방치·제작이 상위"</i>로 기술하였으나, <b>필드 플레이가 최다 지목</b>이라는 사실이 누락되어 있었습니다.</p>
+      <div class="q" style="margin:10px 0"><div class="qt">몬스터에 따라 사냥터도 바꿔주세요. <em>지하감옥 하나로 너무 우려먹는것같아요. 지겨워요.</em> 최소 일반, 희귀, 영웅, 레전더리만이라도 새로 개발해서 배경 바꿔주세요.</div><div class="qm">— 자유의견 [41]</div></div>
+      <p style="margin-top:14px"><b>2. 「기타」가 65표(3위)로 나온 것은 신호입니다.</b> 보기 항목이 유저가 전달하고자 한 내용을 <b>담지 못했다</b>는 의미이며, 실제 신호는 아래 자유의견에 있습니다.</p>
+    </div>
+
+    <h3>성장·재화 이해도 — 해석에 주의가 필요합니다</h3>
+    <div class="g2">
+      <div class="card">
+        <h5>설문 4·5번 결과</h5>
+        <p>· 캐릭터/장비 획득 방법: <b class="hl">긍정 73.0%</b> <span class="mut">(296명)</span></p>
+        <p>· 성장 재화 획득 방법: <b class="hl">긍정 70.2%</b> <span class="mut">(333명)</span></p>
+        <p style="margin-top:12px" class="mut">이 수치만 보면 「밸런스에 문제가 없다」로 읽힙니다.</p>
+      </div>
+      <div class="card" style="border-color:var(--ember-dim)">
+        <h5 style="color:var(--ember)">그러나 문항이 묻는 것은</h5>
+        <p>문항은 <b class="hlr">「알기 쉬웠나」(이해도)</b>를 물었을 뿐 <b>「보상이 충분한가」(만족도)</b>를 묻지 않았습니다.</p>
+        <p style="margin-top:12px;color:var(--white)">즉 <b class="hlr">「획득 경로는 알겠으나 획득해도 소멸한다」</b>는 상태가 이 설문에서는 <b>「만족」</b>으로 집계됩니다.</p>
+        <p style="margin-top:12px;color:var(--molten);font-size:12.5px">→ 차기 설문에 <b>「보상량이 충분한가」</b>, <b>「성장 속도가 적절한가」</b> 문항 추가를 제안합니다.</p>
+      </div>
+    </div>
+
+    <h4>플레이 기간 × 재화 이해도 교차분석</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>플레이 기간</th><th class="num">n</th><th class="num">매우 만족</th><th class="num">부정 응답</th><th>해석</th></tr></thead>
+        <tbody>
+          <tr class="rowok"><td>6개월 미만</td><td class="num">120</td><td class="num"><b class="hlo">48.3%</b></td><td class="num">2.5%</td><td class="mut">—</td></tr>
+          <tr><td>3개월 미만</td><td class="num">83</td><td class="num">45.8%</td><td class="num">6.0%</td><td class="mut">—</td></tr>
+          <tr><td>1개월 미만</td><td class="num">27</td><td class="num">44.4%</td><td class="num">3.7%</td><td class="mut">—</td></tr>
+          <tr class="rowcrit"><td><b>24시간 미만</b></td><td class="num">22</td><td class="num"><b class="hlr">31.8% ↓</b></td><td class="num"><b class="hlr">18.2% ↑</b></td><td><b>신규층의 부정 응답이 약 7배</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="call">
+      <div class="ct">두 가지 해석이 가능합니다</div>
+      <p><b>1. 초기 학습 곡선이 가파릅니다.</b> 재화 이해도는 플레이 기간이 길수록 상승합니다.</p>
+      <p style="margin-top:8px"><b>2. 생존 편향이 존재합니다.</b> 이해하지 못한 유저는 애초에 6개월까지 도달하지 못합니다. 즉 정착층의 높은 만족도는 <b>살아남은 사람들의 수치</b>입니다.</p>
+      <p style="margin-top:10px">이 정량 결과는 <a href="#f3">발견 3(강화 실패)</a>의 신규 유저 진술과 정합적입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="findings">
+  <div class="wrap">
+    <div class="shead"><span class="snum">03-3</span><h2><i class="e float">💬</i>자유의견 분석</h2></div>
+    <p class="slead">121건 전문을 검토하여 밸런스 관련 진술을 추출하였습니다. 아래는 원문 그대로입니다.</p>
+
+    <h3>테마별 언급 빈도 (본문 + 자유의견 333건 기준, 복수 집계)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>테마</th><th class="num">건수</th><th class="num">비중</th><th>테마</th><th class="num">건수</th><th class="num">비중</th></tr></thead>
+        <tbody>
+          <tr><td>제작 / 합성</td><td class="num">96</td><td class="num">28.8%</td><td>운영 응답</td><td class="num">25</td><td class="num">7.5%</td></tr>
+          <tr><td>재화 소실 / 증발</td><td class="num">91</td><td class="num">27.3%</td><td>정보 부족</td><td class="num">22</td><td class="num">6.6%</td></tr>
+          <tr><td>미지급 / 보상 누락</td><td class="num">61</td><td class="num">18.3%</td><td>이벤트 요청</td><td class="num">22</td><td class="num">6.6%</td></tr>
+          <tr><td>결제 / 루비</td><td class="num">39</td><td class="num">11.7%</td><td>던전 횟수</td><td class="num">20</td><td class="num">6.0%</td></tr>
+          <tr><td>길드 격차 / 점령지</td><td class="num">38</td><td class="num">11.4%</td><td>캐릭터 밸런스</td><td class="num">19</td><td class="num">5.7%</td></tr>
+          <tr><td>팅김 / 접속</td><td class="num">27</td><td class="num">8.1%</td><td>드랍률 / 확률</td><td class="num">18</td><td class="num">5.4%</td></tr>
+          <tr><td>강화 실패 / 소멸</td><td class="num">27</td><td class="num">8.1%</td><td>벨트 / 주사위</td><td class="num">13</td><td class="num">3.9%</td></tr>
+          <tr><td>채굴 / 채광</td><td class="num">26</td><td class="num">7.8%</td><td>보스 콘텐츠</td><td class="num">10</td><td class="num">3.0%</td></tr>
+          <tr><td>골드</td><td class="num">26</td><td class="num">7.8%</td><td class="mut">—</td><td class="num mut">—</td><td class="num mut">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call gold" id="f1">
+      <div class="ct"><i class="e pulse sm">💸</i>발견 1 · 정보 부족이 구매를 가로막고 있습니다</div>
+      <div class="q"><div class="qt">영웅 등급 레전더리(벨라)입니다. 영웅 강화(조각300개씩) 1레벨인데 <em>20레벨까지 필요한 조각 갯수가 안나와서 엄두가 안납니다. 알아야 투자를 할 것 같습니다.</em></div><div class="qm">— 기타 게임제안 [20]</div></div>
+      <div class="q"><div class="qt">현재 새로 만드신 벨트 수치에 대한 정확한 정보가 없어 제작을 망설이고 있습니다. … <em>저와같은 경우의 유저들은 과금을 통해 레전더리벨트 높은수치를 얻으려고 목표할텐데 최대수치를 모르는 상태에서 계속해서 제작하는거 정답이 아닌거 같네요.</em> 결론을 말씀드리면 벨트등급별 옵션 최대수치 공개 부탁드립니다.<br><br>두번째로 혹시 곧 <em>추석도 다가오는데 루비구매시 50% 추가 증정 이벤트는 언제쯤으로 계획하고 계신지 궁금합니다.</em></div><div class="qm">— 기타 게임제안 [15] · 구서버 정착 유저</div></div>
+      <div class="q"><div class="qt">다 좋은데 <em>모든컨텐츠에 설명이 너무 없습니다.</em>(레전드 영웅 획득후, 영웅강화 과정시 들어가는 조각갯수 및 다음레벨 효과 이런게 없네요) <em>유저들이 성의가 없다고 오해할 수 있습니다.</em></div><div class="qm">— 자유의견 [88]</div></div>
+      <p style="margin-top:16px"><b class="hlg">[제안 15]는 한 문장 안에서 「정보가 없어 제작을 망설인다」와 「루비 증정 이벤트는 언제 하느냐」를 함께 말하고 있습니다.</b> 구매 의사가 확정된 유저가 <b>비용을 예측할 수 없어 구매를 보류</b>하고 있는 상태입니다.</p>
+      <p style="margin-top:10px"><b>투자 판단에는 총비용 예측이 전제됩니다.</b> 「20레벨까지 조각 몇 개」를 알 수 없으면 유저는 시작 자체를 하지 않습니다.</p>
+      <p style="margin-top:10px;color:var(--white)">→ <b class="hlg">이 항목은 밸런스 수치를 조정하지 않고 화면 표기만으로 개선이 가능합니다.</b> 필요한 수치(초월 6,000 / 각성 12,500)는 <b>이미 존재</b>합니다. <a href="04-balance.html#cross">밸런스 실측</a> · <a href="08-ui.html#s1">UI 개선안</a></p>
+    </div>
+
+    <div class="call" id="f2">
+      <div class="ct"><i class="e sm">🐉</i>발견 2 · 보스 콘텐츠가 이용되지 않고 있습니다</div>
+      <div class="q"><div class="qt">현제 보스라는 컨텐츠가 존재하는데 킹킬톤과 브라하만 잡고 <em>그후로는 아무도 안잡습니다.</em> 이유는 보스가 쌘것도 있지만 구지 안잡아도 <em>재료 합성으로 잘나오기때문입니다.</em> … 합성은 하루 2번은 꾸준히 가능해서 정수가 가치도 떨어지고 <em>보스 컨텐츠가 존재이유가 없습니다</em> 현제..</div><div class="qm">— 자유의견 [66]</div></div>
+      <div class="q"><div class="qt">보스 컨텐트 개선... <em>정수를 보스 잡아서 획득하는 유저는 1도 없습니다.</em> 전부 영웅등급 몬스터를 잡아 합성해서 수급후 제작합니다. 신규유저나 일반유저들 진입벽을 낮추는 방법이라 이의는 없으나 <em>보스 컨텐츠가 너무 죽어 있어</em> 신규 장비나 보스를 잡아 소량에 능력치 외형이 획득이나 먼가 대책이 있으면 좋겠습니다.</div><div class="qm">— 자유의견 [93]</div></div>
+      <div class="q"><div class="qt"><em>보스잡는 텀이 너무 긴거 같습니다 효율이 너무 안좋아서 손이 안갑니다.</em></div><div class="qm">— 자유의견 [34]</div></div>
+      <p style="margin-top:16px">유저는 이를 <b>「합성이 더 효율적이라 보스를 이용하지 않는다」</b>로 인식하고 있습니다. 그러나 <b class="hlr">실측 결과 상황은 이보다 좋지 않았습니다.</b> → <a href="04-balance.html#s2">밸런스 실측 · 보스 콘텐츠</a></p>
+    </div>
+
+    <div class="call" id="f3">
+      <div class="ct"><i class="e tick sm">🔨</i>발견 3 · 강화 실패가 신규 유저의 진입을 막고 있습니다</div>
+      <div class="q"><div class="qt">초보자 입장에서 느낀건 무자본은 정말 엄청난 시간을 쏟아야 합니다. <em>4일을 한개도 빠짐없이 광고 보고 폰을 켜두고 얻은 재료가 6시간의 기다림 속에 터져버리니</em> 너무 어렵기도 하다 생각했습니다. 처음에는 쿠폰을 통하여 열쇠를 얻을 수 있다면 <em>첫 시도부터 터지니 앞이 막막합니다.</em></div><div class="qm">— 자유의견 [42] · <b>플레이 7일 미만</b></div></div>
+      <div class="q"><div class="qt"><em>1. 80프로 확률인데 실패가 너무 자주떠요.</em></div><div class="qm">— 자유의견 [41]</div></div>
+      <div class="q"><div class="qt">재료 돌려주세요. 그리고 <em>라바쉴드 2번째 실패중입니다;;</em></div><div class="qm">— 자유의견 [32]</div></div>
+      <p style="margin-top:16px"><b>4일간의 광고 시청과 방치로 확보한 재료가 1회 시도로 소멸</b>하는 구조입니다. 이는 위 <a href="#f-survey">설문 교차분석</a>의 <b>신규층 부정 응답 18.2%</b>와 정합적입니다.</p>
+      <p style="margin-top:10px">그리고 <b class="hl">이 진술은 감정적 표현이 아니라 설계상 예상 가능한 결과</b>임이 실측으로 확인되었습니다. → <a href="04-balance.html#s3">밸런스 실측 · 강화 페널티</a> · <a href="06-cost.html#s2">비용 구조</a></p>
+    </div>
+
+    <div class="call" id="f4">
+      <div class="ct"><i class="e spin sm">🎲</i>발견 4 · 확률에 대한 신뢰가 형성되지 않았습니다</div>
+      <div class="q"><div class="qt"><em>확률 조작이 아니라면 해명 부탁드립니다.</em></div><div class="qm">— 자유의견 [10]</div></div>
+      <div class="q"><div class="qt"><em>성수 드랍율 잠수패치로 줄였나요? 패치후 나올 생각을 안하네요.</em></div><div class="qm">— 기타 게임제안 [8]</div></div>
+      <div class="q"><div class="qt">드랍확율이 너무 저조합니다.. <em>드랍확율도 알고싶습니다.</em></div><div class="qm">— 자유의견 [18]</div></div>
+      <p style="margin-top:16px">드랍률·확률 관련 언급은 <b>18건</b>입니다. 유저는 <b>확률 공개를 직접 요청</b>하고 있습니다.</p>
+      <p style="margin-top:10px"><b class="hlr">이 의심 중 일부는 실측에서 사실로 확인되었습니다.</b> 그리고 이는 신뢰 문제인 동시에 법규 사항이기도 합니다. → <a href="04-balance.html#s4">밸런스 실측 · 확률 표시</a></p>
+    </div>
+
+    <div class="call" id="f5">
+      <div class="ct"><i class="e sm">🏰</i>발견 5 · 길드 보상 격차가 다수의 참여 의욕을 저해하고 있습니다</div>
+      <div class="q"><div class="qt">골드가 매우 중요한데 어느 길드에 들어가냐에 따라 확 달라지니 <em>상위길드에 못들어가면 의욕이 많이 감퇴됨.</em> 길드간 골드 획득 차별이 조금 줄일 필요 있습니다.</div><div class="qm">— 자유의견 [44]</div></div>
+      <div class="q"><div class="qt">길드 점령지 컨텐츠로 인해 <em>3위길드까지 혜택이 너무커서 4위길드부터는 게임의 매력도가 확 떨어진다.</em></div><div class="qm">— 자유의견 [114]</div></div>
+      <div class="q"><div class="qt">점령지 문제점 ... 1인길드 또는 길드원 3명만 있는 쪽은 100퍼센트 공격도 방어도 3명이 유지되고 길드원 많은 쪽은 랜덤 방어도 공격도 너무 불리합니다. <em>결국 약한분들은 참여 불가능하내요.</em> 패치 안해주시면 진짜 <em>상위길드에서 다 추방하고 쌘분들만 남겨야될 판입니다.</em></div><div class="qm">— 기타 게임제안 [22]</div></div>
+      <p style="margin-top:16px"><b>4위 이하 길드는 구조적으로 불리한 위치에 놓입니다.</b> 그리고 [제안 22]는 더 심각한 문제를 시사합니다 — <b class="hlr">상위 길드가 전력이 낮은 길드원을 추방할 유인이 발생</b>합니다.</p>
+      <p style="margin-top:10px">길드는 통상 리텐션 장치로 기능하나, 현 구조에서는 <b>반대로 작용할 가능성</b>이 있습니다. 해법 사례는 <a href="07-benchmark.html#s8">「업계 비교 · 길드」</a>를 참조해 주십시오.</p>
+    </div>
+
+    <div class="call" id="f6">
+      <div class="ct"><i class="e sm">⚔️</i>발견 6 · 파밍 캐릭터가 2종으로 고정되었습니다</div>
+      <div class="q"><div class="qt">이번 채굴 컨텐츠 관련하여 네오와 벨라 차이가 너무 심해 밸런스 조정이 필요한것 같습니다. <em>현재 파밍 캐릭이 벨라 아니면 네오로 고정되어있는 상황</em>에…</div><div class="qm">— 기타 게임제안 [5]</div></div>
+      <div class="q"><div class="qt">같은 조건에서 비교를 했는데, <em>벨라 채굴속도만 압도적으로 높습니다.</em> … <em>캐릭터를 다양하게 키울수있도록</em> 개발 부탁드립니다.</div><div class="qm">— 기타 게임제안 [2]</div></div>
+      <div class="q"><div class="qt">네오 기본 평타스킬이 2번 나가는데, 그중에 한 번이 크뎀증가 반영이 안되고 있습니다. … <em>어렵게 키운 캐릭인데.. 뭔가 상대적으로 캐릭의 효율성이 많이 떨어진다고 생각하니.. 뭔가 다시 키울 엄두도 안나고.. 힘이 좀 빠지네요ㅠ</em></div><div class="qm">— 기타 게임제안 [14]</div></div>
+      <div class="q"><div class="qt">밸런스 문의입니다. 신규영웅 <em>VC-01이 나왔는데 문제는 이 영웅때문에 밸런스 파괴현상이 생기고 있습니다.</em> … <em>전무 엔드 셋팅했을때 옵머스드론을 잡을수 있는 딜을가진 영웅이 없습니다.</em></div><div class="qm">— 기타 게임제안 [21]</div></div>
+      <p style="margin-top:16px"><b class="hlr">[제안 14]의 「다시 키울 엄두도 안나고」는 재투자 포기를 의미합니다.</b> 파밍 캐릭터가 2종으로 고정되면 나머지 영웅의 수집 가치가 하락하고, <b>영웅 뽑기·강화 상품의 가치도 함께 하락</b>합니다.</p>
+      <p style="margin-top:10px">실측 결과 <b>직업 계수 중복</b>과 <b>VC-01의 설계 이상</b>이 확인되었습니다. → <a href="05-data.html#growth">데이터 룸 · 캐릭터</a></p>
+    </div>
+
+    <div class="call gold" id="f7">
+      <div class="ct"><i class="e float sm">🎁</i>발견 7 · 유저가 상품과 이벤트를 먼저 요청하고 있습니다</div>
+      <div class="q"><div class="qt">창찬드리고 싶은거는 <em>이벤트는 잘하시는것같아요. 루비 방금 샀습니다. 현질은 모바일게임하고선 처음인데</em> 서비스 좀 주셔요ㅋ</div><div class="qm">— 자유의견 [41]</div></div>
+      <p style="margin-top:6px"><b class="hlg">「이벤트가 좋다 → 루비를 구매했다 → 이것이 모바일 게임 첫 결제다」</b>가 한 문장에 담겨 있습니다. 이벤트가 결제를 유발한 사례로 볼 수 있습니다.</p>
+      <div class="q"><div class="qt">뉴비분들도 유입이 생겼고 <em>12만 결제시 자신이 원하는 캐릭 영웅 조각 1800개 덤으로 주는 이벤트</em> 어떨지 문의 드려요. 뉴비분들과 소과금 고과금 모든분들이 <em>소비 욕구도 생기고</em> 민생 회복 쿠폰처럼 <em>영자님에게도 매출에 도움될듯</em>하여 이야기 남깁니다 :) 검토 부탁드려요~</div><div class="qm">— 기타 게임제안 [9]</div></div>
+      <p style="margin-top:6px"><b>유저가 구체적 상품 기획안을 제시하며 「매출에 도움이 될 것」이라고 언급</b>하고 있습니다. 수요가 명시적으로 표현된 사례입니다.</p>
+      <div class="q"><div class="qt"><em>이번 이벤트는 추석이벤트에 비해 너무 아쉬웠습니다</em> 화이팅</div><div class="qm">— 자유의견 [68]</div></div>
+      <p style="margin-top:6px">추석 이벤트가 기준점이 되었고 이후 이벤트가 그에 미치지 못한다고 인식되고 있습니다. 이벤트 관련 요청은 총 <b>22건</b>입니다.</p>
+      <p style="margin-top:14px;color:var(--white)"><b>→ 다만 이벤트를 자주 운영하기 어려운 구조적 제약이 확인되었습니다.</b> → <a href="04-balance.html#s7">밸런스 실측 · 이벤트 운영 구조</a></p>
+    </div>
+
+    <div class="call" id="f8">
+      <div class="ct"><i class="e sm">📮</i>발견 8 · 운영 응답 부재가 정착 유저의 이탈로 이어지고 있습니다 (25건, 7.5%)</div>
+      <div class="q"><div class="qt"><em>6개월간 게임해왔는데 같은문의에 답변을 너무 안해주니 게임에 대한 흥미가 떨어지네요.</em></div><div class="qm">— 자유의견 [109]</div></div>
+      <div class="q"><div class="qt">일주일에 한번쯤은 요일과 시간을 정해서 <em>영자님이 게임에 오셔서 건의사항 및 버그 제보 받아주셨으면</em> 합니다. <em>다 좋은데 소통이 안됩니다.</em></div><div class="qm">— 자유의견 [115]</div></div>
+      <p style="margin-top:16px"><b>6개월 정착 유저는 LTV 상위층</b>입니다. 이들이 응답 부재를 이유로 흥미를 잃고 있습니다.</p>
+      <p style="margin-top:10px">국내 주요 사례를 보면 <b class="hl">대응의 속도와 형식이 사태의 결과를 좌우</b>하였습니다. → <a href="07-benchmark.html#s16">「업계 비교 · 한국 사례」</a></p>
+    </div>
+
+    <h3>기타 지적 사항</h3>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:32%">유저 진술</th><th>시사점</th></tr></thead>
+        <tbody>
+          <tr><td><i>"20강 50각 이후 <b>중복조각 사용처 좀 늘려주세요.</b> 교환을 할 수 있게 해주시든가.."</i> <span class="b na">[113]</span></td><td>최상위 유저의 재화에 사용처가 없어 성장 목표와 과금 동기가 함께 소멸합니다. 업계에서 알려진 실패 패턴입니다. → <a href="07-benchmark.html#s13">업계 비교</a></td></tr>
+          <tr><td><i>"라바무기 10강과 <b>정화장비 10강의 치명타 데미지 수치는 동일합니다.</b>"</i> <span class="b na">[제안 3]</span></td><td>상위 콘텐츠의 보상이 하위와 동일한 상태입니다. 실측에서 <b>더 큰 역전</b>이 확인되었습니다. → <a href="04-balance.html#s8">밸런스 실측</a></td></tr>
+          <tr><td><i>"<b>구섭 비해 신섭 돈 너무 안벌어집니다.</b>"</i> <span class="b na">[87]</span></td><td>서버 간 경제 격차. 서버 인구가 적을수록 영향이 큽니다.</td></tr>
+          <tr><td><i>"요일던전 2단계 테스트를 해볼 수 있으면 좋겠네요. <b>하루 한번인데 괜히 낭비되지 않게요.</b>"</i> <span class="b na">[118]</span></td><td>입장 횟수 제한과 실패 리스크가 결합되어 <b>시도 자체를 주저</b>하게 만듭니다. 이 지점의 상품 설계는 → <a href="07-benchmark.html#s7">업계 비교 · 트리거 오퍼</a></td></tr>
+          <tr><td><i>"채광 드랍테이블에 있는 <b>라바스톤 제거 요청.</b> 채광까지 들어선 유저에게는 필요가 없습니다."</i> <span class="b na">[제안 1]</span></td><td>후반 유저에게 의미 없는 드랍이 <b>보상을 희석</b>합니다.</td></tr>
+          <tr><td><i>"게임 속 <b>글자가 너무 작음.</b> 처음에 할 때는 너무 불편했다."</i> <span class="b na">[105]</span><br><i>"아이패드 미니5는 UI가 많이 불편해요"</i> <span class="b na">[94]</span></td><td><b>30~40대가 86.2%인 게임에서 가독성은 접근성 문제</b>입니다. 해상도 기준 분열과 관련이 있습니다. → <a href="08-ui.html">UI 개선안</a></td></tr>
+          <tr class="rowgold"><td><i>"<b>너무 방치형 컨텐츠좀 늘려주세요</b>"</i> <span class="b na">[40]</span><br>↔ <i>"<b>너무 방치형이라 금방 지쳐요</b>"</i> <span class="b na">[71]</span><br><i>"<b>던전 및 탑등반등 겜할거리를 부탁드려요</b>"</i> <span class="b na">[73]</span></td><td><b class="hlg">모순이 아니라 하나의 요구입니다</b> — <b>「방치 보상은 늘리되, 능동적으로 할 거리도 필요하다」</b>. 방치는 효율이 낮아 불만이고, 접속 시에는 할 것이 없어 불만입니다. 두 진술 모두 성립합니다. → <a href="07-benchmark.html#s2">업계 비교 · 방치</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call info">
+      <div class="ct">표본에 관한 전제 (재확인)</div>
+      <div class="q" style="margin:8px 0"><div class="qt">설명이 너무 부족합니다. … 저는 문의라도 남겨보지만 <em>대부분의 다른사람들은 이런 사고나면 조용히 떠납니다.</em> 개선이 필요해요</div><div class="qm">— 자유의견 [45]</div></div>
+      <p style="margin-top:12px">본 페이지의 데이터는 <b>문의를 접수한 유저</b>의 것입니다. 접수 없이 이탈한 유저는 표본에 포함되지 않습니다. <b class="hl">따라서 불만 지표는 과소, 만족 지표는 과대 평가되었을 가능성이 있습니다.</b></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="02-analytics.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 02 · 데이터 계측 요청서</span></a>
+      <a href="04-balance.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 04 · 밸런스 실측 및 교차 검증</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 03 · 유저 반응 심층 분석<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용<br><br>
+      인용된 진술은 고객 문의 접수 원본의 자유의견 및 기타 제안 항목 원문입니다.<br>
+      개인 식별 정보는 포함하지 않았으며, 접수 번호로만 표기하였습니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

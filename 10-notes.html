@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방법론 및 한계 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 10</b> · 방법론 및 한계</span>
+    <span class="pg">10 / 10</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 10 · Methodology &amp; Limitations</div>
+    <h1>방법론 및 한계</h1>
+    <p class="sub">본 보고서가 어디에 근거하는지, 무엇을 확인하지 못하였는지, 어떤 수치를 배제하였는지를 명시합니다. 판단의 신뢰도를 가늠하시는 데 필요한 정보입니다.</p>
+  </div>
+</div>
+
+<section id="scope">
+  <div class="wrap">
+    <div class="shead"><span class="snum">10-1</span><h2><i class="e">📚</i>검토 범위</h2></div>
+
+    <div class="g2">
+      <div class="card">
+        <h5>① 유저 데이터</h5>
+        <p><b class="hl">고객 문의 접수 원본 333건 전수</b> (2025.06.29 ~ 2026.07.09)</p>
+        <p>· 자유의견 <b>121건</b> 전문<br>· 기타 제안 <b>25건</b> 전문<br>· 설문 응답 및 교차분석</p>
+        <p style="color:var(--molten);font-size:12px;margin-top:10px">기존 분석이 다루지 않은 <b>자유의견·제안 서술</b>을 이번에 전수 분석하였습니다.</p>
+      </div>
+      <div class="card">
+        <h5>② 게임 데이터</h5>
+        <p><b class="hl">밸런스 데이터 651개</b> + 로직 상수 전수</p>
+        <p>· 성장 곡선 / 강화 확률 360행<br>· 가챠 / 상품 가격 / 보상 테이블<br>· 시련의 탑 / 몬스터 / 던전</p>
+        <p style="color:var(--molten);font-size:12px;margin-top:10px">추정치가 아닌 <b>실측값</b>입니다. 계산으로 도출한 값은 「계산」으로 표기하였습니다.</p>
+      </div>
+      <div class="card">
+        <h5>③ 구조 자료</h5>
+        <p><b class="hl">UI 구조 검수 37개 화면</b></p>
+        <p>· 상점 9탭 구조도<br>· 던전 7종 · 전투 8씬<br>· 화면별 위험도 판정</p>
+        <p style="color:var(--molten);font-size:12px;margin-top:10px">제안이 <b>어느 화면에 부착되는지</b>를 특정하기 위해 사용하였습니다.</p>
+      </div>
+      <div class="card">
+        <h5>④ 업계 자료</h5>
+        <p><b class="hl">국내외 공개 자료 · 대조 타이틀 20+</b></p>
+        <p>던파 · 메이플 · 로스트아크 · 리니지M · 오딘 · 나이트크로우 · 검은사막M · 저니 오브 모나크 · Genshin · AFK Journey/Arena · CoC · RoK · EVE · PoE · Diablo Immortal · VALORANT · LoL · Overwatch · OSRS · Frozen City</p>
+        <p style="color:var(--molten);font-size:12px;margin-top:10px">공식 가이드 · 정부 자료 · 업계 리포트를 우선하였습니다.</p>
+      </div>
+    </div>
+
+    <div class="call info">
+      <div class="ct">데이터 구분 — 확정값과 빌드 기본값</div>
+      <div class="tw" style="margin:10px 0">
+        <table>
+          <tbody>
+            <tr class="rowok"><td style="width:120px"><span class="b ok">확정 운영값</span></td><td><b>강화 테이블 · 가챠 · 상점 · 보상 · 시련의 탑 · 초월 · 퀘스트</b> — 본 보고서의 핵심 주장은 전부 이 영역에 있습니다.</td></tr>
+            <tr><td><span class="b na">빌드 기본값</span></td><td>스탯 · 몬스터 · 보스 · 캐릭터 · 아이템 · 던전 몬스터 — <b>서버에서 런타임에 덮어써지므로 실운영값 확인이 필요</b>하며, 본 보고서는 이 영역을 단정하지 않았습니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="wrap">
+    <div class="shead"><span class="snum">10-2</span><h2><i class="e pulse">⚠️</i>본 보고서의 한계</h2></div>
+
+    <div class="call">
+      <div class="ct">다섯 가지를 명시합니다</div>
+      <ol>
+        <li style="margin-bottom:12px"><b class="hl">표본 편향.</b> 유저 데이터는 <b>문의를 접수한 유저</b>의 것입니다. 접수 없이 이탈한 유저는 표본에 포함되지 않습니다. <b>따라서 불만 지표는 과소, 만족 지표는 과대 평가되었을 가능성이 있습니다.</b><span class="fn" data-t="유저 스스로가 지적한 표본 편향" data-c="자유의견 [45]:<br><br><i>“설명이 너무 부족합니다. … 저는 문의라도 남겨보지만 <b>대부분의 다른사람들은 이런 사고나면 조용히 떠납니다.</b> 개선이 필요해요”</i><br><br>이 진술은 표본 편향을 유저가 직접 지적한 사례로 볼 수 있습니다."></span></li>
+        <li style="margin-bottom:12px"><b class="hl">설문 문항의 한계.</b> 설문은 <b>「알기 쉬웠나」(이해도)</b>를 물었을 뿐 <b>「보상이 충분한가」(만족도)</b>를 묻지 않았습니다. 따라서 「획득 경로는 알지만 획득해도 소멸한다」는 상태가 「만족」으로 집계됩니다. <b>차기 설문에 문항 추가를 제안합니다.</b></li>
+        <li style="margin-bottom:12px"><b class="hl">인과가 아니라 상관.</b> <b>「26레벨 정체 구간이 결제 전환을 저해한다」는 가설입니다.</b> 본 게임 유저가 며칠에 26레벨에 도달하는지는 <b class="hlr">현재 계측이 없어 확인할 수 없습니다.</b></li>
+        <li style="margin-bottom:12px"><b class="hl">서버 차트 미확인.</b> 스탯·몬스터 수치는 런타임에 덮어써질 수 있어 단정하지 않았습니다.</li>
+        <li><b class="hl">업계 벤치마크의 구조적 한계.</b> <b>RPG 장르 전용 + 한국 특정 + 최신 수치</b>가 동시에 충족되는 공개 자료는 거의 존재하지 않습니다. 대부분의 리포트는 장르 세부 데이터를 유료 영역에 두고 있습니다.</li>
+      </ol>
+      <p style="margin-top:16px;color:var(--white);font-size:15px"><b class="hlg">→ 위 한계의 상당 부분은 한 가지로 해소됩니다: 이벤트 로그 계측.</b> 현재는 유저가 <b>어디에서 이탈하는지, 무엇을 이용하지 않는지, 왜 결제하지 않는지</b>를 데이터로 확인할 수 없습니다. 설계안은 <a href="02-analytics.html">「데이터 계측」</a>에 정리되어 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="check">
+  <div class="wrap">
+    <div class="shead"><span class="snum">10-3</span><h2><i class="e float">❓</i>확인이 필요한 사항</h2></div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">항목</th><th>사유</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit"><td><b>게임 내 · 홈페이지 확률 고지 현황</b></td><td>게임 내 확률 표시 화면은 확인되지 않았으나, <b>홈페이지·카페 고지 여부는 별도 확인이 필요</b>합니다. <b class="hlr">법무 검토를 권합니다.</b> 본 보고서는 법률 자문이 아닙니다.</td></tr>
+          <tr><td><b>연 매출 규모</b></td><td>확률 공개 의무의 <b>중소기업 면제</b>(제작·배급·제공자가 <b>모두</b> 3년 평균 1억원 이하) 해당 여부 판정에 필요합니다. 실무상 요건이 좁습니다.</td></tr>
+          <tr><td><b>서버 차트 실운영값</b></td><td>스탯·몬스터·아이템은 서버에서 덮어써집니다. 본 보고서의 해당 수치는 「빌드 기본값」이므로 실운영값 확인이 필요합니다. <b>강화·가챠·상점·보상은 확정값이므로 영향이 없습니다.</b></td></tr>
+          <tr><td><b>고액 결제 유저 ARPPU</b></td><td>배틀패스 도입 전 필수 측정 항목입니다. Clash Royale은 패스 도입 후 <b>월매출이 하락</b>하였고 CoC는 상승하였습니다 — <b>경제의 소비 깊이가 흡수력을 결정</b>합니다.</td></tr>
+          <tr><td><b>7,500 루비 상품 단가 역전</b></td><td>최고가 상품이 2,800 상품보다 <b>루비당 1.0% 비쌉니다.</b> 의도 여부 확인이 필요합니다. → <a href="06-cost.html#s1">06-1</a></td></tr>
+          <tr><td>한정 판매 루비 4종 가격</td><td><code>ruby_600 / 1300 / 5600 / 15000</code>은 상점 화면에 <b>원화 표기가 없어 확인하지 못하였습니다.</b></td></tr>
+          <tr><td>이벤트 원격 제어 경로</td><td>서버 측에서 이벤트를 원격 제어하는 별도 경로의 존재 여부는 <b>추가 확인이 필요</b>합니다. 확인된 범위에서는 발견되지 않았습니다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="excluded">
+  <div class="wrap">
+    <div class="shead"><span class="snum">10-4</span><h2><i class="e">🚫</i>배제한 수치</h2></div>
+    <p class="slead">조사 과정에서 <b>그럴듯하나 근거가 확인되지 않은 수치를 다수 확인</b>하였습니다. 이러한 수치를 인용하였다가 반박될 경우 보고서 전체의 신뢰가 훼손되므로, <b>확인되지 않은 것은 확인되지 않았다고 기술</b>하였습니다.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:34%">널리 인용되는 수치</th><th>실제 확인 결과</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit"><td><b>재화 sink/faucet 목표 비율</b><br><span class="mut">"Faucets = 1.1~1.3x Sinks" 등</span></td><td><b class="hlr">권위 있는 출처가 존재하지 않습니다.</b> 검색 결과는 전부 SEO 또는 AI 생성 블로그이며, GDC·학술·개발사 공식 자료 어디에도 없습니다. → <b>기획서 인용 시 근거 없는 수치를 인용하는 것이 됩니다.</b></td></tr>
+          <tr class="rowcrit"><td><b>모바일 게임 튜토리얼 완료율 30%</b></td><td><b class="hlr">벤치마크가 아닙니다.</b> GameAnalytics 블로그의 <b>가상 예시</b>가 벤치마크로 재유통되고 있음을 원문에서 확인하였습니다. 튜토리얼 정의가 게임마다 달라 업계 표준이 성립하지 않습니다. → <b class="hl">자체 퍼널을 기준선으로 삼는 것이 유일한 방법입니다.</b></td></tr>
+          <tr class="rowcrit"><td><b>방치형 오프라인 보상 = 액티브의 60%</b></td><td><b class="hlr">업계 표준이 존재하지 않습니다.</b> 「60/40 규칙」은 1차 출처가 없는 블로그의 자체 주장입니다. 실제로 공개·검증된 통제 수단은 비율이 아니라 <b>시간 상한</b>이며, 표준값은 <b>12시간</b>입니다.</td></tr>
+          <tr class="rowcrit"><td><b>배틀패스가 IAP 매출의 22%</b><br><span class="mut">"$28.6B / 15%" 등</span></td><td><b class="hlr">전부 콘텐츠 팜입니다.</b> 배틀패스의 매출 기여 비중에 관한 공개 자료는 존재하지 않습니다.</td></tr>
+          <tr class="rowcrit"><td><b>트리거 오퍼 전환율 15~30%</b></td><td><b class="hlr">자사 영업 블로그에만 존재</b>합니다. GameRefinery의 실사례 문서에는 <b>전환율 수치가 일절 없습니다.</b></td></tr>
+          <tr class="rowcrit"><td><b>복귀 유저 30% 재활성화</b><br><span class="mut">"재활성화 비용 = 신규획득의 1/5" 등</span></td><td><b class="hlr">1차 출처 불명</b>입니다.</td></tr>
+          <tr><td>한국 모바일 RPG 현재 ARPU / ARPPU / 결제전환율</td><td><b>공개 자료가 없습니다.</b> Sensor Tower 한국 리포트는 다운로드·매출만 제공하고 유저당 지표를 싣지 않음을 원문에서 확인하였습니다. 필요 시 한국콘텐츠진흥원 실태조사 또는 유료 구독이 필요합니다.</td></tr>
+          <tr><td>RPG 장르 상위 25% 리텐션</td><td><b>공개 자료가 없습니다.</b> GameAnalytics는 사분위를 제공하나 장르 세부가 없고, AppsFlyer는 장르 세부를 제공하나 사분위가 없습니다 — 교집합이 공개되어 있지 않습니다.</td></tr>
+          <tr><td>복귀 유저 전용 <b>유료</b> 패키지 사례</td><td><b>검증된 사례 0건</b>입니다. 복귀 보상은 무료로 제공하고 전환을 유도하는 것이 업계 표준입니다.</td></tr>
+          <tr><td>라이브옵스 이벤트의 LTV / ARPDAU 정량 상승률</td><td><b>공개 자료가 없습니다.</b> 순위 상승은 재현 가능하나(오딘 5주년 = 1일 만에 1위), <b>매출 금액의 지속성 근거는 공개 자료에 존재하지 않습니다.</b></td></tr>
+          <tr><td>국내 개발사의 클래스 승률 목표 밴드</td><td><b>수치로 공개한 1차 자료가 확인되지 않았습니다.</b> 공개된 것은 Riot(2019)과 Blizzard(45~55%)뿐입니다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call info">
+      <div class="ct">조사 과정에서 확인된 오류 5건</div>
+      <div class="tw" style="margin:10px 0">
+        <table>
+          <thead><tr><th style="width:44%">검색 결과의 서술</th><th>실제</th></tr></thead>
+          <tbody>
+            <tr><td>"아인하사드의 가호 30일 = 50,000원"을 <b>리니지M 상품</b>으로 반복 요약</td><td><b class="hlr">PC 리니지 리마스터 상품</b>입니다. 리니지M 월정액 가격은 1차 출처를 확인하지 못하였습니다.</td></tr>
+            <tr><td>리니지M 월 매출 "3,930억"</td><td><b class="hlr">373억원</b>입니다. 연매출을 초과하는 값이라 즉시 확인되었습니다.</td></tr>
+            <tr><td>GameAnalytics D1 리텐션 26~27%를 <b>"평균"</b>으로 인용</td><td><b class="hlr">상위 25% 분위</b> 수치입니다.</td></tr>
+            <tr><td>배틀패스 "top-grossing의 60%"</td><td><b class="hlr">"매출 상위 20% 게임의 60%"</b>이며 2022년 자료입니다.</td></tr>
+            <tr><td>"2026년부터 매출 3% 과징금 부과"</td><td><b class="hlr">2025-12-23 발의된 법안이며 미통과</b>입니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="caution">
+  <div class="wrap">
+    <div class="shead"><span class="snum">10-5</span><h2><i class="e">📢</i>인용 시 주의사항</h2></div>
+    <p class="slead">대외 자료나 기획서에 인용하실 때 다음 사항을 확인해 주십시오.</p>
+
+    <div class="call">
+      <div class="ct">사실과 다른 표현 5가지</div>
+      <ul>
+        <li style="margin-bottom:10px"><b class="hlr">"넥슨이 과징금 116억을 납부하였다" — 사실과 다릅니다.</b> 정확한 표현은 <b>"부과되었으며 취소소송이 계속 중, 2026년 7월 22일 선고 예정"</b>입니다.</li>
+        <li style="margin-bottom:10px"><b class="hlr">"2026년부터 매출 3% 과징금" — 사실과 다릅니다.</b> 2025-12-23 <b>발의된 법안이며 미통과</b>입니다. 현행은 시정명령 선행 구조입니다.</li>
+        <li style="margin-bottom:10px"><b class="hlr">"컴플리트 가챠는 한국에서 금지" — 사실과 다릅니다.</b> 금지가 아니라 <b>표시 대상 유형에 포함</b>될 뿐이며, 전면 금지법은 심사 대기 중입니다.</li>
+        <li style="margin-bottom:10px"><b>"아인하사드의 가호 5만원"은 PC 리니지 상품</b>입니다. 리니지M 월정액 가격은 본 조사에서 <b>1차 출처를 확인하지 못하였습니다.</b></li>
+        <li><b>Diablo Immortal "만렙 풀업 10만 달러"</b>는 원 필자 본인이 <b>"dubious"라고 유보</b>한 계산입니다. 인용 시 유보 표기가 필요합니다.</li>
+      </ul>
+    </div>
+
+    <div class="call info">
+      <div class="ct">본 보고서의 성격</div>
+      <p>본 보고서는 <b>내부 검토용 자료</b>이며 <b class="hl">법률 자문이 아닙니다.</b> 확률 표시 의무 관련 사항은 법제처·문체부·정책브리핑 및 법무법인 공개 자료에 근거하였으나, <b>최종 판단은 법무 검토가 필요</b>합니다.</p>
+      <p style="margin-top:10px">또한 인용된 유저 진술은 접수 원본의 원문이며, <b>개인 식별 정보는 포함하지 않고 접수 번호로만 표기</b>하였습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <div class="shead"><span class="snum">10-6</span><h2><i class="e">🔗</i>근거 자료</h2></div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">자료</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td><b>고객 문의 접수 원본</b></td><td>333건 (2025.06.29 ~ 2026.07.09) · 자유의견 121건 · 기타 제안 25건 — 전수 집계</td></tr>
+          <tr><td><b>밸런스 데이터 651개</b></td><td>성장 곡선 · 강화 확률 360행 · 가챠 · 상품 가격 · 보상 · 시련의 탑 · 몬스터 · 던전 → <a href="05-data.html">데이터 룸</a></td></tr>
+          <tr><td><b>UI 구조 검수</b></td><td>37개 화면 위험도 판정 · 폰트/해상도/색상 진단</td></tr>
+          <tr><td><b>상점 구조도</b></td><td>9탭 구성 및 상품 배치</td></tr>
+          <tr><td><b>데이터 계측 설계안</b></td><td>분석 영역 11개 · 신규 이벤트 약 30종 → <a href="02-analytics.html">PAGE 02</a></td></tr>
+          <tr>
+            <td><b>정부 · 법령 자료</b></td>
+            <td><a href="https://www.korea.kr/news/policyNewsView.do?newsId=148924297" target="_blank">정책브리핑(문체부)</a> · <a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=2858&ccfNo=1&cciNo=2&cnpClsNo=2" target="_blank">법제처 생활법령정보</a> · <a href="https://mcst.go.kr/kor/s_notice/notice/noticeView.jsp?pSeq=17856" target="_blank">문체부 해설서</a> · <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156609048" target="_blank">공정위 보도자료</a> · 율촌 · 화우 · Kim &amp; Chang 뉴스레터</td>
+          </tr>
+          <tr>
+            <td><b>게임사 공식 자료</b></td>
+            <td><a href="https://df.nexon.com/guide?no=710" target="_blank">던파 강화 가이드</a> · <a href="https://maplestory.nexon.com/News/Notice/Notice/133192" target="_blank">메이플 확률 공지</a> · <a href="https://m-lostark.game.onstove.com/GameGuide/Pages/%EC%9E%AC%EB%A0%A8" target="_blank">로스트아크 재련 가이드</a> · <a href="https://www.nightcrows.co.kr/news/notice/626222" target="_blank">나이트크로우 패스 공지</a> · <a href="https://supercell.com/en/games/clashofclans/blog/game-updates/clan-capital-raids/" target="_blank">Supercell</a> · <a href="https://nexus.leagueoflegends.com/en-us/2019/05/dev-champion-balance-framework/" target="_blank">Riot</a> · <a href="https://overwatch.blizzard.com/en-us/news/24214498/weekly-recall-the-balancing-act/" target="_blank">Blizzard</a> · <a href="https://www.eveonline.com/news/view/eve-industry-all-you-want-to-know" target="_blank">CCP</a></td>
+          </tr>
+          <tr>
+            <td><b>업계 리포트 · 학술</b></td>
+            <td><a href="https://sensortower.com/ko/blog/state-of-gaming-in-korea-2025-report-KR" target="_blank">Sensor Tower</a> · <a href="https://www.gameanalytics.com/blog/what-good-game-monetization-looks-like" target="_blank">GameAnalytics</a> · <a href="https://gamedevreports.substack.com/p/appmagic-mobile-games-monetization" target="_blank">AppMagic</a> · <a href="https://naavik.co/deep-dives/power-tools-monetizing-competitive-advantage/" target="_blank">Naavik</a> · <a href="https://www.deconstructoroffun.com/blog/2022/6/4/battle-passes-analysis" target="_blank">Deconstructor of Fun</a> · <a href="https://www.gamerefinery.com/best-practice-and-strategies-for-targeted-iap-offers-in-mobile-games/" target="_blank">GameRefinery</a> · <a href="https://arxiv.org/abs/2210.07970" target="_blank">arXiv 2210.07970 (NYU)</a> · <a href="https://arxiv.org/html/2504.10714v1" target="_blank">arXiv 2504.10714</a></td>
+          </tr>
+          <tr>
+            <td><b>국내 매체</b></td>
+            <td>인벤 · 게임메카 · 디일렉 · 전자신문 · 게임뷰 · 게임플 · 게임톡 · 디지털투데이 · 게임인사이트 · 시사위크 · 경향신문 · 한국경제</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="09-proposal.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 09 · 개선 제안</span></a>
+      <a href="index.html" class="next"><span class="pl">처음으로 ▸</span><span class="pt">표지 및 목차</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 10 · 방법론 및 한계<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용<br><br>
+      본 문서의 모든 수치는 고객 문의 접수 원본, 게임 내 데이터, 공개 출처를 직접 대조한 값입니다.<br>
+      확인되지 않은 사항은 「자료 없음」으로 명시하였으며, 본 보고서는 법률 자문이 아닙니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

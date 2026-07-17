@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고객 문의 접수 분석 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 01</b> · 고객 문의 접수 분석</span>
+    <span class="pg">01 / 10</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 01 · 기존 자료 · CS Analysis</div>
+    <h1>고객 문의 접수 분석</h1>
+    <p class="sub">2026.07.16 작성된 기존 분석입니다. 접수 333건을 원인 단위로 분해하였습니다. <b>결론: 접수의 다수는 문의가 아니라 결함 신고이며, 접수량은 유저 만족도가 아니라 패치 품질을 따라 움직입니다.</b></p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">01-1</span><h2><i class="e pulse">🩺</i>한눈에 보는 진단</h2></div>
+    <p class="slead">문의의 78%가 버그 계열이며, 접수의 34%가 단 3일(8/12 · 8/13 · 9/11)에 집중되었습니다.</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n">78<small>%</small></div><div class="l">게임플레이/버그 문의 비중<br><span class="mut">260건</span></div></div>
+      <div class="kpi"><div class="n">92<small>건</small></div><div class="l">최다 발생 월<br><span class="mut">2025년 8월</span></div></div>
+      <div class="kpi"><div class="n">42<small>건</small></div><div class="l">단일 최다일<br><span class="mut">8/13 재료 버그</span></div></div>
+      <div class="kpi"><div class="n">32<small>%</small></div><div class="l">스크린샷 첨부율<br><span class="mut">107 / 333</span></div></div>
+    </div>
+
+    <div class="call">
+      <div class="ct">월별 추이의 성격</div>
+      <p>평상시 월 <b>15~30건</b>이 기저선입니다. 2025년 8월의 급증은 <b>특정 패치가 발생시킨 버그 스파이크</b>이며 유입 증가가 아닙니다. 스파이크 이후 기저선으로 복귀하는 패턴이 반복됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">01-2</span><h2><i class="e tick">🐛</i>버그 문의의 원인별 분해</h2></div>
+    <p class="slead">버그 문의 260건을 세부 원인으로 태깅하였습니다. 상위 4개가 전체의 대부분을 차지하며, <b>모두 서버·로직 결함이며 유저 실수가 아닙니다.</b></p>
+
+    <div class="fig">
+      <div class="cap">// 키워드 태깅 · 한 문의가 복수 태그를 가질 수 있습니다</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <g font-size="12" fill="#c4ccd8">
+          <text x="0" y="20">재료 소실 / 음수 표기</text><text x="0" y="52">강화 · 제작 복구</text><text x="0" y="84">던전 · 레이드 팅김</text>
+          <text x="0" y="116">정수 착용 시 소멸</text><text x="0" y="148">접속 · 계정</text><text x="0" y="180">루비 · 보상 미지급</text>
+          <text x="0" y="212">골드 소실</text>
+        </g>
+        <g>
+          <rect x="200" y="6"   width="500" height="18" rx="3" fill="#ff5b3a"/><text x="712" y="20" font-size="12" fill="#ff5b3a" font-family="JetBrains Mono" font-weight="700">44</text>
+          <rect x="200" y="38"  width="477" height="18" rx="3" fill="#ff7a4a"/><text x="689" y="52" font-size="12" fill="#ff7a4a" font-family="JetBrains Mono" font-weight="700">42</text>
+          <rect x="200" y="70"  width="284" height="18" rx="3" fill="#ffb347"/><text x="496" y="84" font-size="12" fill="#ffb347" font-family="JetBrains Mono" font-weight="700">25</text>
+          <rect x="200" y="102" width="284" height="18" rx="3" fill="#ffb347"/><text x="496" y="116" font-size="12" fill="#ffb347" font-family="JetBrains Mono" font-weight="700">25</text>
+          <rect x="200" y="134" width="250" height="18" rx="3" fill="#e9c96a"/><text x="462" y="148" font-size="12" fill="#e9c96a" font-family="JetBrains Mono" font-weight="700">22</text>
+          <rect x="200" y="166" width="239" height="18" rx="3" fill="#e9c96a"/><text x="451" y="180" font-size="12" fill="#e9c96a" font-family="JetBrains Mono" font-weight="700">21</text>
+          <rect x="200" y="198" width="80" height="18" rx="3" fill="#8a93a6"/><text x="292" y="212" font-size="12" fill="#8a93a6" font-family="JetBrains Mono" font-weight="700">7</text>
+        </g>
+        <text x="0" y="242" font-size="11.5" fill="#8a93a6">재료 소실은 제작·합성 시 2배 소모 및 인벤토리 음수 표기, 정수 소멸은 착용 순간 증발 사례입니다.</text>
+      </svg>
+      </div>
+      <div class="src">고객 문의 접수 원본 · 버그 문의 260건 키워드 태깅</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">01-3</span><h2><i class="e glow">🚨</i>세 차례의 대형 사고</h2></div>
+    <p class="slead">접수를 급증시킨 것은 세 개의 명확한 결함입니다. 각각 원인이 특정되므로 <b>재발 방지가 곧 접수량 감축</b>입니다.</p>
+
+    <div class="g2">
+      <div class="card" style="border-color:var(--ember-dim)">
+        <h5 style="color:var(--ember)">2025.08.12–16 · 재료 2배 소모</h5>
+        <p style="color:var(--ember);font-family:'JetBrains Mono',monospace;font-size:12px">▲ 약 71건 / 주간</p>
+        <p style="margin-top:10px">확정합성·장비제작 시 재료가 <b>두 배로 소모</b>되며 인벤토리 수량이 <b>음수로 표기</b>되었습니다. 모루·스틱·녹수정·라바스톤 전 재료에서 동일하게 발생하였습니다. <b>단일 버그가 8월 접수의 대부분을 발생</b>시켰습니다.</p>
+      </div>
+      <div class="card" style="border-color:var(--ember-dim)">
+        <h5 style="color:var(--ember)">2025.09.11 · 골드 · 던전 초기화</h5>
+        <p style="color:var(--ember);font-family:'JetBrains Mono',monospace;font-size:12px">▲ 16건 / 당일</p>
+        <p style="margin-top:10px">서버 이상 후 재접속 시 <b>골드가 0으로 초기화</b>(10억·5억 증발 신고 다수). 동시에 길드레이드·요일던전이 <b>「0회인데 이미 플레이」</b>로 막혔습니다. 롤백·동기화 이슈로 추정됩니다.</p>
+      </div>
+      <div class="card" style="border-color:var(--ember-dim)">
+        <h5 style="color:var(--ember)">2025.10.06–07 · 정수 착용 소멸</h5>
+        <p style="color:var(--ember);font-family:'JetBrains Mono',monospace;font-size:12px">▲ 약 25건 / 이틀</p>
+        <p style="margin-top:10px">회복·흡수·헌터 정수를 제작 후 <b>장착하는 순간 아이템이 소멸</b>하였습니다. 제작에 오랜 시간이 소요되는 아이템이므로 <b>유저 상실감과 이탈 리스크가 특히 큰 사안</b>입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">01-4</span><h2><i class="e float">🔁</i>만성 이슈와 반복 접수 유저</h2></div>
+
+    <h3>패치와 무관하게 반복되는 결함</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:36%">증상</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><b>재접속 시 획득 아이템 소량 증발</b></td><td>성수·라바스톤·차원석 등 · 서버-클라이언트 동기화 이슈로 추정</td></tr>
+          <tr><td><b>길드보스 중 던전 이동 → 판정 누락</b></td><td>횟수 차감 · 눈물 미지급 · <b>UX 결함(이동 버튼)</b></td></tr>
+          <tr><td><b>강화 시 망치 소모만 되고 미적용</b></td><td>유저 실수와 시스템 오작동이 혼재 · <b>로그 구분 필요</b></td></tr>
+          <tr><td><b>네오 평타 2타 중 1타 치명타 미적용</b></td><td>벨라 대비 파밍 열세 · 밸런스 반복 지적 → <a href="03-users.html#f6">유저 반응 발견 6</a> · <a href="04-balance.html#cross">밸런스 실측</a></td></tr>
+          <tr><td>재접속 시 채팅내역 소실 / 음소거 미저장</td><td>QoL · 우선순위 낮음</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call">
+      <div class="ct">반복 접수 유저</div>
+      <p>동일 유저가 <b>6~10회</b> 반복 접수하는 사례가 확인됩니다. 주요 반복 사유는 <b>재료·강화 버그</b>, <b>정화·팅김</b>, <b>길드레이드 팅김·차감</b>입니다.</p>
+      <p style="margin-top:10px">이들은 <b class="hlr">「여러 차례 문의하였으나 조치가 없다」</b>는 취지의 진술을 반복하고 있으며, <b>고액 결제층·장기 이용층에 해당</b>합니다. <b class="hl">LTV 상위층에서 발생하는 이탈 신호</b>로 볼 수 있습니다.</p>
+      <p style="margin-top:10px">→ 관련 진술은 <a href="03-users.html#f8">「유저 반응 · 발견 8」</a>에, 대응 원칙은 <a href="07-benchmark.html#s16">「업계 비교 · 한국 시장의 반발 사례」</a>에 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">01-5</span><h2><i class="e">👥</i>접수자 프로필</h2></div>
+    <p class="slead">접수층은 <b>30~40대 남성 중심의 정착층</b>입니다. 상세 분석은 <a href="03-users.html#profile">「유저 반응 심층 분석」</a>에 있습니다.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>연령대</th><th class="num">명</th><th>플레이 기간</th><th class="num">명</th></tr></thead>
+        <tbody>
+          <tr><td>30대</td><td class="num">136</td><td>6개월 미만</td><td class="num">120</td></tr>
+          <tr><td>40대</td><td class="num">115</td><td>3개월 미만</td><td class="num">83</td></tr>
+          <tr><td>50대 이상</td><td class="num">19</td><td>1개월 미만</td><td class="num">27</td></tr>
+          <tr><td>20대 중후반</td><td class="num">17</td><td>24시간 미만</td><td class="num">22</td></tr>
+          <tr><td>20대 초중반</td><td class="num">4</td><td>2주 미만</td><td class="num">18</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut" style="font-size:13.5px">개선 요청 콘텐츠 분포는 <a href="03-users.html#f-survey">「유저 반응 · 설문 결과」</a>를 참조해 주십시오. <b>본 페이지 작성 당시 「길드·방치·제작이 상위」로 기술하였으나, 재집계 결과 1위는 「기본필드 플레이」(75표)였습니다.</b></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="snum">01-6</span><h2><i class="e">📝</i>기존 제안</h2></div>
+    <p class="slead">응대 인력 확충보다 <b>접수를 발생시키는 원인 차단</b>이 선행되어야 한다는 것이 기존 분석의 결론입니다.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:12%">우선</th><th style="width:26%">항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit">
+            <td><span class="b p0">Priority 1</span></td>
+            <td><b>재화 소실 3대 버그 핫픽스</b></td>
+            <td>「재료 2배 소모/음수 표기」, 「정수 착용 소멸」, 「골드·던전 초기화」는 <b>원인이 명확한 로직 결함</b>입니다. QA·패치 릴리즈 프로세스 개선으로 재발을 막으면 <b>접수량 자체가 절반 이하로 감소</b>할 것으로 판단됩니다.<br><span class="mut">· 패치 전 재화 트랜잭션 회귀 테스트 의무화 · 착용/제작 로직 단위 테스트 · 서버 롤백 시 재화 정합성 체크</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><span class="b p0">Priority 1</span></td>
+            <td><b>로그 기반 일괄 보상 체계</b></td>
+            <td>동일 버그로 다수 유저가 개별 접수 중입니다. 개별 응대로 감당할 규모가 아닙니다. <b>서버 로그를 근거로 영향받은 유저를 자동 식별하여 우편으로 일괄 보상</b>하면 CS 부하와 불만을 동시에 해소할 수 있습니다.</td>
+          </tr>
+          <tr>
+            <td><span class="b p1">Priority 2</span></td>
+            <td><b>헤비·고액 결제 유저 SLA 별도 관리</b></td>
+            <td>반복 접수 상위 유저 다수가 고액 결제층·장기 이용층이며 「조치가 없다」는 불만을 남기고 있습니다. <b>응답 SLA와 처리 완료 회신을 별도 트랙으로 관리</b>하여 이탈을 방지합니다.<br><span class="mut">· 반복 3회 이상 유저 플래그 · 24시간 내 1차 회신 목표 · 처리 완료 개별 통지</span></td>
+          </tr>
+          <tr>
+            <td><span class="b p1">Priority 2</span></td>
+            <td><b>UX·정보 부족으로 발생하는 문의 감축</b></td>
+            <td>「길드보스 중 던전 이동으로 판정 누락」, 「정화 100% 착각 후 강화 실패」, 「벨트 최대수치 미공개로 제작 판단 불가」 등은 <b>UI/정보 설계로 예방 가능한 접수</b>입니다.<br><span class="mut">· 강화 시 보호 미체크 경고 · 보스 진행 중 이동 잠금 · 장비 옵션 최대수치 표기</span><br>→ <b class="hl">이 항목은 <a href="08-ui.html#s1">「UI 개선안」</a>에서 구체화하였습니다.</b></td>
+          </tr>
+          <tr>
+            <td><span class="b p2">Priority 3</span></td>
+            <td><b>밸런스 · QoL</b></td>
+            <td>네오 평타 치명타 미적용으로 벨라 대비 파밍 열세라는 지적, 길드 순위별 골드 획득 격차가 만족도에 영향을 주고 있습니다. 즉시 매출 이슈는 아니나 방치 시 콘텐츠 이탈로 이어질 수 있습니다.<br>→ <b class="hl">본 보고서 <a href="04-balance.html">「밸런스 실측」</a>에서 데이터로 검증하였습니다.</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">기존 분석의 결론</div>
+      <p style="font-size:15px;color:var(--white)">본 게임의 CS는 <b class="hlg">인력으로 대응할 문제가 아니라 패치 품질과 자동 보상 파이프라인으로 대응할 문제</b>입니다. 원인을 차단하면 접수는 자연히 감소하며, 남는 여력을 고액 결제 유저 방어에 사용할 수 있습니다.</p>
+    </div>
+
+    <div class="call info">
+      <div class="ct">본 보고서와의 연결</div>
+      <p>기존 분석은 <b>「무엇이 접수를 발생시키는가」</b>에 집중하였습니다. 본 보고서(PAGE 03~10)는 그 다음 질문 — <b class="hl">「접수하지 않고 떠난 유저는 왜 떠났는가」</b>와 <b class="hl">「구매 의사가 있는 유저는 왜 구매하지 않는가」</b> — 를 다룹니다.</p>
+      <p style="margin-top:10px">특히 기존 분석에서 다루지 않은 <b>자유의견 121건과 기타 제안 25건</b>을 이번에 전수 분석하였으며, 그 결과가 <a href="03-users.html">「유저 반응 심층 분석」</a>입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="index.html"><span class="pl">◂ 이전</span><span class="pt">표지 및 목차</span></a>
+      <a href="02-analytics.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 02 · 데이터 계측 요청서</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 01 · 고객 문의 접수 분석 (기존 자료)<br>
+      VULCAN 개선 제안 · 원 작성일 2026.07.16 · 내부 검토용<br><br>
+      본 페이지의 모든 수치는 접수 원본 스프레드시트를 직접 집계한 값입니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI 개선안 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 08</b> · UI 개선안</span>
+    <span class="pg">08 / 10</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 08 · UI Proposal</div>
+    <h1>UI 개선안</h1>
+    <p class="sub"><a href="03-users.html#f1">발견 1(정보 부족이 구매를 가로막고 있음)</a>은 <b>밸런스 수치를 조정하지 않고 화면 개선만으로 상당 부분 해소됩니다.</b> 아래는 그 목업입니다.</p>
+  </div>
+</div>
+
+<section id="condition">
+  <div class="wrap">
+    <div class="shead"><span class="snum">08-1</span><h2><i class="e">🖥️</i>현재 UI 조건</h2></div>
+    <p class="slead">기존 <b>UI 구조 검수(37개 화면)</b> 결과를 요약합니다.</p>
+
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr class="rowok"><td style="width:80px"><span class="b ok">유리</span></td><td>텍스트 시스템이 <b>TextMeshPro 100%</b>, 주 폰트가 <b>92% 단일화</b> → <b class="hlo">전역 리스타일에 매우 유리한 조건</b>입니다.</td></tr>
+          <tr class="rowok"><td><span class="b ok">유리</span></td><td>검수한 37개 화면 중 <b class="hlo">「변경 불가」로 판정된 화면이 0개</b>입니다.</td></tr>
+          <tr><td><span class="b p1">제약</span></td><td><b>해상도 기준이 분리되어 있습니다.</b> 로딩·메인은 1080×1920이나 <b>전투 씬은 전부 800×600</b>이며, 길드 아레나·PVP는 <b>반응형이 아닙니다.</b></td></tr>
+          <tr><td><span class="b p1">제약</span></td><td>색상 <b>35곳 이상이 로직에 고정</b>되어 있어, 화면 데이터만 수정해서는 리스타일이 완결되지 않습니다.</td></tr>
+          <tr><td><span class="b p1">제약</span></td><td>전투 HUD가 <b>8개 씬에 각각 복제</b>되어 있어, HUD 변경 1건이 씬 5~8개 수정으로 이어집니다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call">
+      <div class="ct">유저 진술과의 연결</div>
+      <div class="q" style="margin:8px 0"><div class="qt">게임 속 <em>글자가 너무 작음.</em> 처음에 할때는 너무 불편했다.</div><div class="qm">— 자유의견 [105]</div></div>
+      <div class="q" style="margin:8px 0"><div class="qt"><em>아이패드 미니5는 UI가 많이 불편해요</em> ㅠㅠ</div><div class="qm">— 자유의견 [94]</div></div>
+      <p style="margin-top:12px">두 진술 모두 <b>해상도 기준 분리</b>와 관련이 있습니다. <b class="hl">접수층의 86.2%가 30~40대인 게임에서 가독성은 선호의 문제가 아니라 접근성의 문제</b>입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s1">
+  <div class="wrap">
+    <div class="shead"><span class="snum">08-2</span><h2><i class="e pulse">📊</i>강화 화면 — 성장 정보 표기</h2></div>
+    <div class="q"><div class="qt">영웅 등급 레전더리(벨라)입니다. 영웅 강화(조각300개씩) 1레벨인데 <em>20레벨까지 필요한 조각 갯수가 안나와서 엄두가 안납니다. 알아야 투자를 할 것 같습니다.</em></div><div class="qm">— 기타 게임제안 [20]</div></div>
+
+    <div class="fig">
+      <div class="cap">// 목업 · 좌: 현재 (총비용 확인 불가) / 우: 제안 (투자 판단 가능)</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="0" y="0" width="420" height="420" rx="10" fill="#12161d" stroke="#2b3342"/>
+        <text x="16" y="26" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">BEFORE — 현재</text>
+        <rect x="16" y="40" width="388" height="52" rx="6" fill="#1e2430"/>
+        <text x="32" y="72" font-size="14.5" fill="#f2f5fa" font-weight="700">영웅 강화 — 벨라</text>
+        <text x="330" y="72" font-size="13.5" fill="#e9c96a" font-family="JetBrains Mono">Lv.1</text>
+        <rect x="16" y="104" width="388" height="120" rx="6" fill="#1e2430"/>
+        <text x="32" y="132" font-size="12.5" fill="#c4ccd8">필요 조각</text>
+        <text x="330" y="132" font-size="13.5" fill="#f2f5fa" font-family="JetBrains Mono" font-weight="700">300</text>
+        <text x="32" y="162" font-size="12.5" fill="#c4ccd8">보유 조각</text>
+        <text x="336" y="162" font-size="13.5" fill="#8a93a6" font-family="JetBrains Mono">45</text>
+        <line x1="32" y1="180" x2="388" y2="180" stroke="#2b3342" stroke-dasharray="2 3"/>
+        <text x="32" y="206" font-size="12.5" fill="#8a93a6">다음 레벨 효과</text>
+        <text x="356" y="206" font-size="13.5" fill="#8a93a6">?</text>
+        <rect x="16" y="240" width="388" height="46" rx="6" fill="#8a2f1d"/>
+        <text x="210" y="269" font-size="13.5" fill="#fff" text-anchor="middle" font-weight="700">강화</text>
+        <rect x="16" y="304" width="388" height="100" rx="6" fill="#c9421f" opacity=".12" stroke="#ff5b3a" stroke-dasharray="4 3"/>
+        <text x="32" y="330" font-size="12" fill="#ff5b3a" font-weight="700">유저가 확인할 수 없는 정보</text>
+        <text x="32" y="354" font-size="11.5" fill="#c4ccd8">· 20레벨까지 조각이 총 몇 개 필요한가</text>
+        <text x="32" y="374" font-size="11.5" fill="#c4ccd8">· 각 레벨이 능력치를 얼마나 올려주는가</text>
+        <text x="32" y="394" font-size="11.5" fill="#c4ccd8">· 따라서 <tspan fill="#ff5b3a" font-weight="700">투자할 가치가 있는가</tspan></text>
+
+        <rect x="480" y="0" width="420" height="420" rx="10" fill="#12161d" stroke="#4ecb8d"/>
+        <text x="496" y="26" font-size="11.5" fill="#4ecb8d" font-family="JetBrains Mono">AFTER — 제안</text>
+        <rect x="496" y="40" width="388" height="52" rx="6" fill="#1e2430"/>
+        <text x="512" y="72" font-size="14.5" fill="#f2f5fa" font-weight="700">영웅 강화 — 벨라</text>
+        <text x="810" y="72" font-size="13.5" fill="#e9c96a" font-family="JetBrains Mono">Lv.1</text>
+        <rect x="496" y="104" width="388" height="120" rx="6" fill="#1e2430"/>
+        <text x="512" y="132" font-size="12.5" fill="#c4ccd8">필요 조각</text>
+        <text x="810" y="132" font-size="13.5" fill="#f2f5fa" font-family="JetBrains Mono" font-weight="700">300</text>
+        <text x="512" y="162" font-size="12.5" fill="#c4ccd8">보유 조각</text>
+        <text x="816" y="162" font-size="13.5" fill="#8a93a6" font-family="JetBrains Mono">45</text>
+        <line x1="512" y1="180" x2="868" y2="180" stroke="#2b3342" stroke-dasharray="2 3"/>
+        <text x="512" y="206" font-size="12.5" fill="#c4ccd8">다음 레벨 효과</text>
+        <text x="726" y="206" font-size="12.5" fill="#4ecb8d" font-family="JetBrains Mono" font-weight="700">HP +2% · 공격 +3.5%</text>
+        <rect x="496" y="236" width="388" height="106" rx="6" fill="#e9c96a" opacity=".10" stroke="#e9c96a"/>
+        <text x="512" y="260" font-size="12" fill="#e9c96a" font-weight="700">성장 로드맵</text>
+        <text x="512" y="284" font-size="11.5" fill="#c4ccd8">Lv.20까지 필요한 조각</text>
+        <text x="798" y="284" font-size="12.5" fill="#ffd24a" font-family="JetBrains Mono" font-weight="700">6,000</text>
+        <text x="512" y="306" font-size="11.5" fill="#c4ccd8">Lv.20 도달 시 총 효과</text>
+        <text x="742" y="306" font-size="12" fill="#ffd24a" font-family="JetBrains Mono" font-weight="700">공격 +50%</text>
+        <text x="512" y="328" font-size="11.5" fill="#8a93a6">현재 진행도</text>
+        <rect x="620" y="318" width="200" height="10" rx="5" fill="#2b3342"/>
+        <rect x="620" y="318" width="12" height="10" rx="5" fill="#e9c96a"/>
+        <text x="832" y="328" font-size="11" fill="#8a93a6" font-family="JetBrains Mono">5%</text>
+        <rect x="496" y="354" width="388" height="46" rx="6" fill="#8a2f1d"/>
+        <text x="690" y="383" font-size="13.5" fill="#fff" text-anchor="middle" font-weight="700">강화</text>
+      </svg>
+      </div>
+      <div class="src">필요한 수치는 <b>이미 존재합니다</b> (초월 300×20=6,000 / 각성 250×50=12,500 / 각성 효과 HP+2%·공격+3.5%·방어+1% per Lv → <a href="05-data.html#growth">데이터 룸</a>). <b>다만 현재는 로직 상수로만 존재하여 화면에 표시할 수 없으므로, 데이터로 분리하는 작업이 선행됩니다.</b></div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">이 화면 하나가 여는 것</div>
+      <p><b class="hlg">밸런스 수치를 전혀 변경하지 않았습니다.</b> 요구 조각도 6,000 그대로이고 효과도 그대로입니다. <b>표시만 추가하였습니다.</b></p>
+      <p style="margin-top:10px">그러나 이제 유저는 <b>「6,000조각이면 약 53,000원이니 투자할 것인가」</b>를 판단할 수 있습니다. <b class="hlg">투자 판단에는 총비용 예측이 전제됩니다.</b> 현재는 그것이 불가능하여 시작 자체를 하지 않는 상태입니다.</p>
+      <p style="margin-top:10px">동일한 논리가 <b>벨트 옵션 최대수치</b>에도 적용됩니다 — <a href="03-users.html#f1">유저 [제안 15]</a>가 직접 요청한 사항입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="wrap">
+    <div class="shead"><span class="snum">08-3</span><h2><i class="e spin">🎲</i>확률 표기</h2></div>
+    <p class="slead">법정 표시 의무 이행과 유저 신뢰 회복을 동시에 충족하는 화면입니다. 근거는 <a href="04-balance.html#s4">「밸런스 실측 · 확률 표시」</a>를 참조해 주십시오.</p>
+
+    <div class="fig">
+      <div class="cap">// 목업 · 강화 화면 내 확률 표시 + 전체 확률표</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="0" y="0" width="440" height="300" rx="10" fill="#12161d" stroke="#2b3342"/>
+        <text x="16" y="26" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">장비 강화 · +9 → +10</text>
+        <rect x="16" y="40" width="408" height="86" rx="6" fill="#1e2430"/>
+        <text x="32" y="66" font-size="12.5" fill="#c4ccd8">성공 확률</text>
+        <rect x="150" y="54" width="180" height="14" rx="7" fill="#2b3342"/>
+        <rect x="150" y="54" width="63" height="14" rx="7" fill="#4ecb8d"/>
+        <text x="344" y="66" font-size="13.5" fill="#4ecb8d" font-family="JetBrains Mono" font-weight="700">35.0%</text>
+        <text x="32" y="94" font-size="12.5" fill="#c4ccd8">실패 시 하락</text>
+        <rect x="150" y="82" width="180" height="14" rx="7" fill="#2b3342"/>
+        <rect x="150" y="82" width="117" height="14" rx="7" fill="#ffb347"/>
+        <text x="344" y="94" font-size="13.5" fill="#ffb347" font-family="JetBrains Mono" font-weight="700">65.0%</text>
+        <text x="32" y="118" font-size="11" fill="#8a93a6">※ 하락 폭 0~3단계</text>
+        <rect x="16" y="140" width="408" height="72" rx="6" fill="#c9421f" opacity=".12" stroke="#ff5b3a"/>
+        <text x="32" y="166" font-size="12" fill="#ff5b3a" font-weight="700">보호 아이템 미사용 시</text>
+        <text x="32" y="190" font-size="12.5" fill="#f2f5fa">실패하면 <tspan fill="#ff5b3a" font-weight="700">아이템이 사라집니다</tspan></text>
+        <text x="32" y="206" font-size="11" fill="#8a93a6">망치는 파괴만 방지하며 확률은 올리지 않습니다</text>
+        <rect x="16" y="226" width="196" height="42" rx="6" fill="#2b3342"/>
+        <text x="114" y="252" font-size="12" fill="#c4ccd8" text-anchor="middle">망치 사용 (보유 12)</text>
+        <rect x="228" y="226" width="196" height="42" rx="6" fill="#8a2f1d"/>
+        <text x="326" y="252" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">강화하기</text>
+        <text x="16" y="288" font-size="11" fill="#5ab3ff">전체 확률표 보기 ▸</text>
+
+        <rect x="480" y="0" width="420" height="300" rx="10" fill="#12161d" stroke="#5ab3ff"/>
+        <text x="496" y="26" font-size="11.5" fill="#5ab3ff" font-family="JetBrains Mono">전체 확률표 (게임 내 + 홈페이지 게시)</text>
+        <g font-size="11.5" font-family="JetBrains Mono">
+          <text x="500" y="52" fill="#8a93a6">단계</text><text x="600" y="52" fill="#8a93a6">성공</text><text x="700" y="52" fill="#8a93a6">하락</text><text x="800" y="52" fill="#8a93a6">소멸</text>
+          <line x1="496" y1="60" x2="884" y2="60" stroke="#2b3342"/>
+          <text x="500" y="80" fill="#c4ccd8">+1 ~ +5</text><text x="600" y="80" fill="#4ecb8d">100%</text><text x="700" y="80" fill="#8a93a6">—</text><text x="800" y="80" fill="#8a93a6">—</text>
+          <text x="500" y="104" fill="#c4ccd8">+6</text><text x="600" y="104" fill="#4ecb8d">80%</text><text x="700" y="104" fill="#ffb347">20%</text><text x="800" y="104" fill="#ff5b3a">보호 시 0%</text>
+          <text x="500" y="128" fill="#c4ccd8">+7</text><text x="600" y="128" fill="#4ecb8d">80%</text><text x="700" y="128" fill="#ffb347">20%</text><text x="800" y="128" fill="#ff5b3a">보호 시 0%</text>
+          <text x="500" y="152" fill="#c4ccd8">+8</text><text x="600" y="152" fill="#ffb347">60%</text><text x="700" y="152" fill="#ffb347">40%</text><text x="800" y="152" fill="#ff5b3a">보호 시 0%</text>
+          <text x="500" y="176" fill="#c4ccd8">+9</text><text x="600" y="176" fill="#ffb347">60%</text><text x="700" y="176" fill="#ffb347">40%</text><text x="800" y="176" fill="#ff5b3a">보호 시 0%</text>
+          <text x="500" y="200" fill="#c4ccd8">+10</text><text x="600" y="200" fill="#ff5b3a">35%</text><text x="700" y="200" fill="#ffb347">65%</text><text x="800" y="200" fill="#ff5b3a">보호 시 0%</text>
+        </g>
+        <rect x="496" y="216" width="388" height="70" rx="6" fill="#4ecb8d" opacity=".10" stroke="#4ecb8d"/>
+        <text x="512" y="240" font-size="12" fill="#4ecb8d" font-weight="700">이 화면이 동시에 해결하는 세 가지</text>
+        <text x="512" y="260" font-size="11" fill="#c4ccd8">① 법정 표시 의무 (게임 내 · 홈페이지 · 광고물)</text>
+        <text x="512" y="278" font-size="11" fill="#c4ccd8">② 확률 신뢰 문제 해소   ③ 투자 판단 가능</text>
+      </svg>
+      </div>
+      <div class="src">⚠️ <b>선행 과제:</b> 가챠는 현재 기록값과 실제 동작이 달라(<a href="04-balance.html#s4">04-5</a>) <b>공개 이전에 확률 시스템을 정규화된 가중 테이블로 재구현하는 작업이 필요</b>합니다. <b>강화 확률은 테이블이 이미 정상이므로 표시부터 가능합니다.</b></div>
+    </div>
+
+    <div class="call info">
+      <div class="ct">참고 — 국내 관행</div>
+      <p>리니지M은 확률 공개 의무화 대응으로 <b>게임 내에서 확률을 「즉시 확인」할 수 있도록 UI를 개편</b>하였습니다. 상점 뽑기팩, 합성 시도, 카드 개봉 시 구성 목록과 확률을 사전 확인할 수 있습니다.</p>
+      <p style="margin-top:8px">넥슨은 유료 확률형 아이템의 <b>실제 결과값을 일 단위로 자동 검증하고 이상탐지</b>하며, 판매 첫날은 30분 단위로 집계합니다. <b class="hl">2025-08-01부터 입증책임이 게임사에 있으므로, 이러한 검증 체계는 법무 리스크 관리 항목이 되었습니다.</b></p>
+    </div>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="wrap">
+    <div class="shead"><span class="snum">08-4</span><h2><i class="e tick">⏰</i>던전 스케줄러</h2></div>
+    <p class="slead">설문 4위(59표) + 30~40대 86.2%의 시간 제약에 대한 대응입니다. 사례는 <a href="07-benchmark.html#s2">나이트크로우 스케줄러</a>입니다.</p>
+
+    <div class="fig">
+      <div class="cap">// 목업 · 던전 7종에 순차 자동 실행 적용</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="0" y="0" width="330" height="400" rx="10" fill="#12161d" stroke="#2b3342"/>
+        <text x="16" y="26" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">BEFORE — 매일 수동 반복</text>
+        <g font-size="12">
+          <rect x="16" y="40" width="298" height="38" rx="6" fill="#1e2430"/><text x="32" y="64" fill="#c4ccd8">① 던전 열기 → 요일던전 → 확인 → 전투</text>
+          <rect x="16" y="86" width="298" height="38" rx="6" fill="#1e2430"/><text x="32" y="110" fill="#c4ccd8">② 나가기 → 던전 열기 → 보스 → 전투</text>
+          <rect x="16" y="132" width="298" height="38" rx="6" fill="#1e2430"/><text x="32" y="156" fill="#c4ccd8">③ 나가기 → 던전 열기 → 골드던전 …</text>
+          <rect x="16" y="178" width="298" height="38" rx="6" fill="#1e2430"/><text x="32" y="202" fill="#c4ccd8">④ 약탈 → ⑤ 월드보스 → ⑥ 시련의탑</text>
+          <rect x="16" y="224" width="298" height="38" rx="6" fill="#1e2430"/><text x="32" y="248" fill="#c4ccd8">⑦ 출석 → ⑧ 미션 수령 → ⑨ 제작 등록</text>
+        </g>
+        <rect x="16" y="278" width="298" height="106" rx="6" fill="#c9421f" opacity=".12" stroke="#ff5b3a" stroke-dasharray="4 3"/>
+        <text x="32" y="304" font-size="12" fill="#ff5b3a" font-weight="700">30~40대 직장인 유저에게는</text>
+        <text x="32" y="330" font-size="11.5" fill="#c4ccd8">매일 반복되는 9단계 수동 작업</text>
+        <text x="32" y="352" font-size="11.5" fill="#c4ccd8">하루 미접속 시 그날 보상 전부 소멸</text>
+        <text x="32" y="374" font-size="11.5" fill="#ff5b3a" font-weight="700">→ 이탈 사유로 작용할 수 있습니다</text>
+
+        <rect x="360" y="0" width="540" height="400" rx="10" fill="#12161d" stroke="#4ecb8d"/>
+        <text x="376" y="26" font-size="11.5" fill="#4ecb8d" font-family="JetBrains Mono">AFTER — 스케줄러</text>
+        <rect x="376" y="40" width="508" height="44" rx="6" fill="#1e2430"/>
+        <text x="392" y="68" font-size="13.5" fill="#f2f5fa" font-weight="700">일일 스케줄</text>
+        <rect x="742" y="52" width="126" height="22" rx="11" fill="#4ecb8d"/>
+        <text x="805" y="68" font-size="11.5" fill="#0d0f14" text-anchor="middle" font-weight="700">실행 중 · 3/7</text>
+        <g font-size="12">
+          <rect x="376" y="96" width="508" height="34" rx="5" fill="#1e2430"/>
+          <circle cx="396" cy="113" r="7" fill="#4ecb8d"/><text x="393" y="117" font-size="9" fill="#0d0f14" font-weight="700">✓</text>
+          <text x="416" y="118" fill="#8a93a6">요일던전 · 2단계</text><text x="800" y="118" fill="#4ecb8d" font-family="JetBrains Mono">완료</text>
+          <rect x="376" y="136" width="508" height="34" rx="5" fill="#1e2430"/>
+          <circle cx="396" cy="153" r="7" fill="#4ecb8d"/><text x="393" y="157" font-size="9" fill="#0d0f14" font-weight="700">✓</text>
+          <text x="416" y="158" fill="#8a93a6">보스 · 킹가디언</text><text x="800" y="158" fill="#4ecb8d" font-family="JetBrains Mono">완료</text>
+          <rect x="376" y="176" width="508" height="34" rx="5" fill="#2b3342" stroke="#4ecb8d"/>
+          <circle cx="396" cy="193" r="7" fill="none" stroke="#4ecb8d" stroke-width="2"/>
+          <text x="416" y="198" fill="#f2f5fa" font-weight="700">골드던전 · 5단계</text><text x="770" y="198" fill="#ffd24a" font-family="JetBrains Mono">진행 중 02:14</text>
+          <rect x="376" y="216" width="508" height="34" rx="5" fill="#1e2430"/>
+          <circle cx="396" cy="233" r="7" fill="none" stroke="#8a93a6"/>
+          <text x="416" y="238" fill="#c4ccd8">약탈</text><text x="812" y="238" fill="#8a93a6" font-family="JetBrains Mono">대기</text>
+          <rect x="376" y="256" width="508" height="34" rx="5" fill="#1e2430"/>
+          <circle cx="396" cy="273" r="7" fill="none" stroke="#8a93a6"/>
+          <text x="416" y="278" fill="#c4ccd8">월드보스 · 22:00 예약</text><text x="812" y="278" fill="#8a93a6" font-family="JetBrains Mono">예약</text>
+          <rect x="376" y="296" width="508" height="34" rx="5" fill="#1e2430"/>
+          <circle cx="396" cy="313" r="7" fill="none" stroke="#8a93a6"/>
+          <text x="416" y="318" fill="#c4ccd8">시련의 탑 · 이어서</text><text x="812" y="318" fill="#8a93a6" font-family="JetBrains Mono">대기</text>
+        </g>
+        <rect x="376" y="342" width="248" height="42" rx="6" fill="#2b3342"/>
+        <text x="500" y="368" font-size="12" fill="#c4ccd8" text-anchor="middle">순서 편집</text>
+        <rect x="636" y="342" width="248" height="42" rx="6" fill="#8a2f1d"/>
+        <text x="760" y="368" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">스케줄 시작</text>
+      </svg>
+      </div>
+      <div class="src">기존 던전 7종 진입 로직에 <b>큐 레이어를 추가하는 구조</b>입니다 — 신규 던전·신규 콘텐츠가 필요하지 않습니다. 원본 사례: <a href="https://www.inven.co.kr/webzine/news/?news=285927" target="_blank">나이트크로우 스케줄러 (인벤)</a></div>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">이 항목을 우선 검토하는 이유</div>
+      <p>본 게임은 이미 <b>던전 7종 + 출석 + 제작 + 미션</b>으로 일일 루틴이 분산되어 있습니다. 유저는 이를 매일 수동으로 반복하여야 합니다.</p>
+      <p style="margin-top:10px"><b class="hl">「던전 7종을 순서·시간을 지정해 순차 자동 실행」</b> = <b class="hlg">신규 콘텐츠 없이 체감 개선이 가장 큰 항목</b>입니다.</p>
+      <p style="margin-top:10px;color:var(--white)">그리고 이는 <b>30~40대가 86.2%인 접수층의 시간 제약을 화면 설계로 직접 해소</b>합니다. <a href="07-benchmark.html#s2">저니 오브 모나크 사례</a>가 시사하듯, 경쟁을 제거하는 대신 <b class="hl">경쟁 참여 비용을 낮추는</b> 방향에 해당합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="wrap">
+    <div class="shead"><span class="snum">08-5</span><h2><i class="e float">🏭</i>길드 작업장</h2></div>
+    <p class="slead">유저 요청 <b>길드(2위, 68표) · 방치(4위, 59표) · 제작(6위, 45표)</b>을 단일 시스템으로 대응하는 구성입니다.</p>
+
+    <div class="fig">
+      <div class="cap">// 목업 · 검은사막 일꾼 + RoK 2화폐 + AFK Arena 12시간 cap 결합</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <rect x="0" y="0" width="900" height="340" rx="10" fill="#12161d" stroke="#e9c96a"/>
+        <text x="20" y="30" font-size="14.5" fill="#e9c96a" font-weight="700">길드 작업장</text>
+        <text x="740" y="30" font-size="12" fill="#8a93a6" font-family="JetBrains Mono">길드 Lv.4</text>
+
+        <rect x="20" y="46" width="270" height="150" rx="8" fill="#1e2430"/>
+        <text x="36" y="70" font-size="12.5" fill="#5ab3ff" font-weight="700">오프라인 재료 수집</text>
+        <text x="36" y="96" font-size="11.5" fill="#c4ccd8">채집 슬롯</text><text x="240" y="96" font-size="11.5" fill="#f2f5fa" font-family="JetBrains Mono">3 / 5</text>
+        <rect x="36" y="108" width="238" height="8" rx="4" fill="#2b3342"/><rect x="36" y="108" width="143" height="8" rx="4" fill="#5ab3ff"/>
+        <text x="36" y="140" font-size="11.5" fill="#c4ccd8">누적 대기</text><text x="212" y="140" font-size="11.5" fill="#ffd24a" font-family="JetBrains Mono">08:12 / 12:00</text>
+        <rect x="36" y="152" width="238" height="8" rx="4" fill="#2b3342"/><rect x="36" y="152" width="163" height="8" rx="4" fill="#ffd24a"/>
+        <text x="36" y="182" font-size="11" fill="#8a93a6">12시간 도달 시 정지 — 하루 2회 접속 유도</text>
+
+        <rect x="306" y="46" width="270" height="150" rx="8" fill="#1e2430"/>
+        <text x="322" y="70" font-size="12.5" fill="#4ecb8d" font-weight="700">기부 (오늘 7 / 20회)</text>
+        <text x="322" y="96" font-size="11.5" fill="#c4ccd8">30분마다 1회 회복 · 12:40 후</text>
+        <rect x="322" y="112" width="238" height="34" rx="5" fill="#2b3342"/>
+        <text x="336" y="134" font-size="11.5" fill="#c4ccd8">제작 재료 기부</text>
+        <text x="500" y="134" font-size="11" fill="#4ecb8d" font-family="JetBrains Mono">+길드 40 / +내 12</text>
+        <rect x="322" y="152" width="238" height="34" rx="5" fill="#8a2f1d"/>
+        <text x="336" y="174" font-size="11.5" fill="#fff">광고 시청 기부</text>
+        <text x="500" y="174" font-size="11" fill="#ffd24a" font-family="JetBrains Mono">무과금 라인 · 3회</text>
+
+        <rect x="592" y="46" width="288" height="150" rx="8" fill="#1e2430"/>
+        <text x="608" y="70" font-size="12.5" fill="#e9c96a" font-weight="700">내 크레딧</text>
+        <rect x="608" y="82" width="256" height="46" rx="6" fill="#5ab3ff" opacity=".14" stroke="#5ab3ff"/>
+        <text x="622" y="102" font-size="11" fill="#5ab3ff">길드 기여도 (공용)</text>
+        <text x="622" y="120" font-size="11" fill="#8a93a6">길드 연구 · 작업장 확장에 사용</text>
+        <text x="800" y="112" font-size="14" fill="#5ab3ff" font-family="JetBrains Mono" font-weight="700">1,240</text>
+        <rect x="608" y="136" width="256" height="46" rx="6" fill="#e9c96a" opacity=".14" stroke="#e9c96a"/>
+        <text x="622" y="156" font-size="11" fill="#e9c96a">길드 코인 (개인)</text>
+        <text x="622" y="174" font-size="11" fill="#8a93a6">상점 「길드」 탭에서 사용</text>
+        <text x="820" y="166" font-size="14" fill="#e9c96a" font-family="JetBrains Mono" font-weight="700">380</text>
+
+        <line x1="20" y1="212" x2="880" y2="212" stroke="#2b3342"/>
+        <text x="20" y="238" font-size="13" fill="#f2f5fa" font-weight="700">이 화면 하나가 대응하는 유저 요청</text>
+        <rect x="20" y="252" width="278" height="70" rx="6" fill="#ff5b3a" opacity=".10" stroke="#ff5b3a"/>
+        <text x="36" y="276" font-size="12" fill="#ff5b3a" font-weight="700">길드 (설문 2위 · 68표)</text>
+        <text x="36" y="298" font-size="11" fill="#c4ccd8">기부에 즉시 개인 보상 → 무과금도</text>
+        <text x="36" y="314" font-size="11" fill="#c4ccd8">매일 기여 가능 = 추방 압력 해소</text>
+
+        <rect x="312" y="252" width="278" height="70" rx="6" fill="#ffb347" opacity=".10" stroke="#ffb347"/>
+        <text x="328" y="276" font-size="12" fill="#ffb347" font-weight="700">방치 (설문 4위 · 59표)</text>
+        <text x="328" y="298" font-size="11" fill="#c4ccd8">오프라인 재료 수집 + 12시간 cap</text>
+        <text x="328" y="314" font-size="11" fill="#c4ccd8">→ cap 확장이 상품이 됩니다</text>
+
+        <rect x="604" y="252" width="276" height="70" rx="6" fill="#e9c96a" opacity=".10" stroke="#e9c96a"/>
+        <text x="620" y="276" font-size="12" fill="#e9c96a" font-weight="700">제작 (설문 6위 · 45표)</text>
+        <text x="620" y="298" font-size="11" fill="#c4ccd8">재료가 자동 축적 → 제작이</text>
+        <text x="620" y="314" font-size="11" fill="#c4ccd8">방치와 결합됩니다</text>
+      </svg>
+      </div>
+      <div class="src">기부 소재는 <b>기존 제작 재료를 재활용 = 신규 아이템 불필요</b>합니다. 길드 코인은 <b>기존 상점 9탭의 「길드」 탭</b>에 부착됩니다. 참조: <a href="https://www.bluestacks.com/blog/game-guides/rise-of-kingdoms/rok-ultimate-alliance-guide-en.html" target="_blank">RoK 2화폐</a> · <a href="https://www.inven.co.kr/board/black/3584/44773" target="_blank">검은사막 일꾼</a> · <a href="https://www.gamedeveloper.com/design/flexible-time-session-design-in-afk-arena" target="_blank">AFK Arena 12시간 cap</a></div>
+    </div>
+
+    <div class="call info">
+      <div class="ct">함께 검토할 항목</div>
+      <p><b>본 게임에는 유저 거래소가 없으므로</b>, 제작 콘텐츠 활성화를 위해서는 <b class="hl">기존 상점에 「제작품 납품」 탭</b>(검은사막 황실 납품형)이 함께 필요합니다. 1일 상한을 길드 기여도에 비례시키면 인플레이션도 통제됩니다. → <a href="07-benchmark.html#s9">업계 비교 · 제작</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="07-benchmark.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 07 · 업계 비교</span></a>
+      <a href="09-proposal.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 09 · 개선 제안</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 08 · UI 개선안<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용<br><br>
+      본 페이지의 목업은 제안을 설명하기 위한 개념도이며 최종 디자인이 아닙니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>

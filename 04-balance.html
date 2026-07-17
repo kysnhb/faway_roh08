@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>밸런스 실측 및 교차 검증 · VULCAN 개선 제안</title>
+<link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="home">VULCAN REPORT</a>
+    <span class="crumb"><b>PAGE 04</b> · 밸런스 실측 및 교차 검증</span>
+    <span class="pg">04 / 10</span>
+  </div>
+</div>
+
+<div class="phead">
+  <div class="wrap">
+    <div class="eyebrow">PAGE 04 · Balance Verification</div>
+    <h1>밸런스 실측 및 교차 검증</h1>
+    <p class="sub"><a href="03-users.html">「유저 반응」</a>에서 확인된 지적 사항을 실제 데이터와 하나씩 대조하였습니다. 수치의 원본은 <a href="05-data.html">「데이터 룸」</a>에 있습니다.</p>
+  </div>
+</div>
+
+<section id="cross">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-1</span><h2><i class="e pulse">🔬</i>교차 검증 결과</h2></div>
+
+    <div class="call gold">
+      <div class="ct">요약</div>
+      <p style="font-size:15.5px;color:var(--white)">유저 지적 <b>12건을 실측과 대조한 결과, 반박되는 항목은 없었습니다.</b> 일부 항목은 유저가 인지한 것보다 실제 상황이 더 좋지 않았습니다.</p>
+    </div>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:30%">유저 지적</th><th>실측 결과</th><th style="width:110px">판정</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit">
+            <td><i>"성수 드랍율 <b>잠수패치로 줄였나요?</b> 패치후 나올 생각을 안하네요"</i></td>
+            <td><b class="hlr">성수는 드랍 몬스터가 지정되어 있지 않습니다.</b> 드랍 확률값은 존재하나 이를 굴려줄 몬스터가 없습니다. 최상급 마법서·시련의 증표도 동일합니다. → <a href="#s1">04-2</a></td>
+            <td><span class="b p0">지적 이상의<br>사항 확인</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><i>"<b>정수를 보스 잡아서 획득하는 유저는 1도 없습니다</b>"</i></td>
+            <td>각인 <b>실효 드랍률 0.006%</b> = 16,667마리당 1개. 정수 1개에 각인 5개이므로 <b class="hlr">83,333마리</b>에 해당합니다. 보스는 경험치 1·골드 1입니다. → <a href="#s2">04-3</a></td>
+            <td><span class="b p0">지적 이상의<br>사항 확인</span></td>
+          </tr>
+          <tr>
+            <td><i>"<b>80프로 확률인데</b> 실패가 너무 자주떠요"</i></td>
+            <td>+6·+7의 성공 확률이 <b>정확히 80%</b>입니다.</td>
+            <td><span class="b ok">정확한 관찰</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><i>"4일 모아 얻은 재료가 <b>터져버리니</b>… 첫 시도부터 터지니 앞이 막막"</i></td>
+            <td>보호 아이템 없이 실패하면 <b class="hlr">아이템이 소멸</b>합니다. 던전앤파이터는 <b>+10까지 페널티가 없습니다.</b> → <a href="#s3">04-4</a></td>
+            <td><span class="b p0">확인됨</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><i>"라바무기 10강과 <b>정화장비 10강 치명타 수치가 동일</b>"</i></td>
+            <td>E등급 무기가 RD등급보다 <b class="hlr">골드 5배·확률 절반</b>입니다. 정수는 <b class="hlr">E등급이 C·R보다 낮습니다.</b> → <a href="#s8">04-9</a></td>
+            <td><span class="b p0">지적 이상의<br>사항 확인</span></td>
+          </tr>
+          <tr>
+            <td><i>"<b>파밍 캐릭이 벨라 아니면 네오로 고정</b>"</i></td>
+            <td><b>어쌔신과 헌터의 직업 계수가 완전히 동일</b>합니다. <b>아라=제로</b>, <b>에드릭=알베도</b>도 기본 스탯이 동일합니다. → <a href="05-data.html#growth">데이터 룸</a></td>
+            <td><span class="b p0">확인됨</span></td>
+          </tr>
+          <tr>
+            <td><i>"<b>VC-01 때문에 밸런스 파괴현상</b>"</i></td>
+            <td>VC-01은 팔라딘 계수이나 <b>기본 스탯은 워리어(네오)와 동일</b>하며 <b class="hlr">사거리가 5.5</b>입니다. 다른 팔라딘은 1입니다.</td>
+            <td><span class="b p0">확인됨</span></td>
+          </tr>
+          <tr>
+            <td><i>"20레벨까지 필요한 <b>조각 갯수가 안나와서 엄두가 안납니다</b>"</i></td>
+            <td>초월 6,000 / 각성 12,500으로 <b>수치는 존재하나 로직 상수로만 있어 화면에 표시할 데이터 형태가 아닙니다.</b> → <a href="08-ui.html#s1">UI 개선안</a></td>
+            <td><span class="b p0">구조적 원인<br>확인</span></td>
+          </tr>
+          <tr>
+            <td><i>"20강 50각 이후 <b>중복조각 사용처</b>"</i></td>
+            <td>캐릭터 1기 풀육성이 <b>20,950조각</b>이며, 그 이후 조각의 <b>사용처가 없습니다.</b></td>
+            <td><span class="b p0">확인됨</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><i>"<b>확률 조작이 아니라면 해명 부탁</b>"</i></td>
+            <td><b class="hlr">기록된 확률값과 실제 동작이 다릅니다.</b> → <a href="#s4">04-5</a></td>
+            <td><span class="b p0">확인됨</span></td>
+          </tr>
+          <tr>
+            <td><i>"<b>상위길드에 못들어가면 의욕이 많이 감퇴됨</b>"</i></td>
+            <td>골드 획득이 길드 순위에 연동되는 구조가 확인됩니다. 정량 검증에는 계측이 필요합니다. → <a href="07-benchmark.html#s8">업계 비교 · 길드</a></td>
+            <td><span class="b p1">구조 확인<br>정량 미검증</span></td>
+          </tr>
+          <tr>
+            <td><i>"요일던전 <b>하루 한번인데 괜히 낭비되지 않게요</b>"</i></td>
+            <td>입장 횟수 제한이 존재하며, 소진 시 입장이 거절됩니다. → <a href="07-benchmark.html#s7">업계 비교 · 트리거 오퍼</a></td>
+            <td><span class="b ok">정확한 관찰</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="s1">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-2</span><h2><i class="e float">💧</i>성수 드랍 경로</h2></div>
+
+    <div class="call">
+      <div class="ct">확인 결과</div>
+      <p>유저는 <b>드랍률 하향을 의심</b>하였습니다. 확인 결과, 성수는 <b>드랍 확률값이 설정되어 있으나 이를 굴려줄 몬스터가 지정되어 있지 않은 상태</b>입니다.</p>
+      <p style="margin-top:10px">따라서 <b class="hlr">현재 성수를 사냥으로 획득할 방법은 없습니다.</b> 유일한 경로는 유료 구매(900루비 = <b>14,139원</b>) 또는 시련의 탑 증표입니다.<span class="fn" data-t="시련의 탑 경로의 실질 난이도" data-c="시련의 증표는 시련의 탑 상점에서 <b>5개당 1,000 코인</b>에 판매됩니다. 코인 획득량은 <b>클리어한 층수와 동일</b>합니다.<br><br>즉 증표 5개 = <b>누적 1,000층</b>입니다. 시련의 정수 1개 제작에 증표 20개가 필요하므로 <b>누적 4,000층</b>에 해당합니다.<br><br>참고로 시련의 탑은 약 <b>107층에서 HP 상한</b>에 도달해 실질적인 진행 한계가 발생합니다. 상세는 <a href='05-data.html#tower'>데이터 룸 · 시련의 탑</a>을 참조해 주십시오."></span></p>
+      <p style="margin-top:10px"><b>최상급 마법서</b>와 <b>시련의 증표</b>도 동일하게 드랍 몬스터가 지정되어 있지 않습니다.</p>
+    </div>
+
+    <div class="q"><div class="qt">성수 드랍율 <em>잠수패치로 줄였나요? 패치후 나올 생각을 안하네요</em></div><div class="qm">— 기타 게임제안 [8] · 2025.07.19</div></div>
+
+    <div class="call gold">
+      <div class="ct">이 사안이 갖는 의미</div>
+      <p>정화 장비 제작에는 성수가 필요합니다. 그리고 유저 [제안 3]은 <b>성수 수급의 어려움을 근거로 정화 장비의 옵션 상향을 건의</b>하였습니다.</p>
+      <div class="q" style="margin:10px 0"><div class="qt">정화아이템의 옵션 상향을 건의합니다..! … 정화에 드는 재화인 <em>성수의 습득체감이 힘든 점</em>, 그 성수를 얻기위한 곡괭이 까지의 도달이 힘든 점을 감안하셔…</div><div class="qm">— 기타 게임제안 [3]</div></div>
+      <p style="margin-top:12px">유저는 <b>「습득이 어렵다」</b>고 표현하였으나 실제로는 <b class="hlg">사냥으로는 습득이 불가능한 상태</b>였습니다. 해당 문의에 답변이 이루어지지 않은 것으로 보입니다.</p>
+      <p style="margin-top:10px"><b>조치 난이도는 낮습니다.</b> 드랍 몬스터를 지정하는 작업으로 해결됩니다. → <a href="09-proposal.html#p0">개선 제안 Phase 0</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-3</span><h2><i class="e">🐉</i>보스 콘텐츠</h2></div>
+    <p class="slead">유저는 <b>「합성이 더 효율적이라 보스를 이용하지 않는다」</b>고 지적하였습니다. 확인 결과, 실제 상황은 지적보다 좋지 않았습니다.</p>
+
+    <div class="fig">
+      <div class="cap">// 각인 1개 획득에 필요한 보스 처치 수 (실효 확률 기준)</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <text x="0" y="20" font-size="13" fill="#c4ccd8">보스 처치 시 상자 드랍 확률</text>
+        <rect x="0" y="30" width="170" height="24" rx="4" fill="#2b3342"/>
+        <text x="12" y="47" font-size="12.5" fill="#f2f5fa" font-family="JetBrains Mono">20%</text>
+        <text x="186" y="47" font-size="12" fill="#8a93a6">트로거 기준</text>
+
+        <text x="0" y="88" font-size="13" fill="#c4ccd8">상자에서 각인이 나올 확률</text>
+        <rect x="0" y="98" width="170" height="24" rx="4" fill="#c9421f"/>
+        <text x="12" y="115" font-size="12.5" fill="#f2f5fa" font-family="JetBrains Mono">0.03%</text>
+        <text x="186" y="115" font-size="12" fill="#8a93a6">헌터 각인 기준</text>
+
+        <line x1="0" y1="140" x2="900" y2="140" stroke="#2b3342"/>
+        <text x="0" y="166" font-size="13.5" fill="#ff5b3a" font-weight="700">실효 확률 0.006%</text>
+        <text x="200" y="166" font-size="13.5" fill="#f2f5fa" font-weight="700">= 각인 1개당 보스 16,667마리</text>
+        <text x="0" y="194" font-size="13.5" fill="#ffd24a" font-weight="700">정수 1개 = 각인 5개</text>
+        <text x="200" y="194" font-size="13.5" fill="#f2f5fa" font-weight="700">= 보스 83,333마리</text>
+      </svg>
+      </div>
+      <div class="src">몬스터 드랍 테이블 실측 · 상세는 <a href="05-data.html#monster">데이터 룸 · 몬스터</a></div>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>항목</th><th>수치</th></tr></thead>
+        <tbody>
+          <tr><td>보스 경험치 · 골드</td><td>전 종 <b class="hlr">각 1</b> — 보스로는 레벨업이 불가능합니다</td></tr>
+          <tr><td>케르베르 · 이그니토</td><td>골드 <b class="hlr">0</b> · 경험치 <b class="hlr">0</b> · 드랍 <b class="hlr">0</b></td></tr>
+          <tr class="rowcrit"><td><b>직업별 각인 격차</b></td><td>어쌔신 각인 실효 <b>0.25%</b> vs 헌터 각인 실효 <b>0.006%</b> — <b class="hlr">약 41배 차이</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call">
+      <div class="ct">해석</div>
+      <p>보스는 <b>「이용하지 않는」 콘텐츠가 아니라 「이용해도 성과가 나오지 않는」 콘텐츠</b>에 가깝습니다. 난이도 조정만으로는 해결되지 않으며, 획득 경로 설계 자체의 재검토가 필요합니다.</p>
+      <p style="margin-top:10px">이 현상은 업계에서 알려진 패턴과 일치합니다 — <i>"인플레이션의 실질 원인은 골드 과잉이 아니라 <b>아이템 포화</b>"</i>. 합성으로 정수가 공급되면서 보스 경로의 가치가 소멸한 구조입니다. → <a href="07-benchmark.html#s13">업계 비교 · 재화 경제</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-4</span><h2><i class="e tick">🔨</i>강화 페널티</h2></div>
+    <p class="slead">본 게임의 강화 설계를 국내 주요 타이틀의 <b>공개 수치</b>와 대조하였습니다.</p>
+
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th></th><th style="background:rgba(255,91,58,.22);color:#fff">VULCAN</th><th>던전앤파이터</th><th>메이플스토리</th><th>로스트아크</th></tr></thead>
+        <tbody>
+          <tr><td><b>안전 구간 (100%)</b></td><td>+1 ~ +5</td><td>+0 ~ +4</td><td>1~14성 파괴 없음</td><td class="mut">—</td></tr>
+          <tr class="rowcrit">
+            <td><b>실패 페널티 시작</b></td>
+            <td><b class="hlr">+6부터 아이템 소멸</b></td>
+            <td><b class="hlo">+10까지 페널티 없음</b></td>
+            <td><b class="hlo">14성까지 페널티 없음</b></td>
+            <td><b class="hlo">없음 (재화만 소모)</b></td>
+          </tr>
+          <tr><td><b>페널티 내용</b></td><td><b class="hlr">아이템 소멸</b></td><td>3단계 하락 (+10~12)<br>→ 파괴 (+12~)</td><td>파괴 (15성~)<br><b>하락은 2025년 폐지</b></td><td><b>없음</b></td></tr>
+          <tr class="rowcrit">
+            <td><b>천장 / 누적 보정</b></td>
+            <td><b class="hlr">없음</b></td>
+            <td><b class="hlo">실패 시 +5%p 누적</b></td>
+            <td class="mut">—</td>
+            <td><b class="hlo">장인의 기운 → 100% 확정</b></td>
+          </tr>
+          <tr><td><b>보호 아이템</b></td><td>망치(<b class="hlr">확률 미상승</b>)<br>+ 눈물 10개</td><td>보호권<br>(파괴 → +0 리셋)</td><td>파괴방지<br>(<b>게임 내 메소</b> 소모)</td><td class="mut">불필요</td></tr>
+          <tr><td><b>무료 확률 보정</b></td><td class="mut">없음</td><td class="mut">—</td><td><b>스타캐치</b> 미니게임 ×1.05</td><td class="mut">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src" style="border:none;padding-left:2px;margin-bottom:20px">
+      출처: <a href="https://df.nexon.com/guide?no=710" target="_blank">던파 공식 강화 가이드</a> (2026-03-19 갱신) ·
+      <a href="https://maplestory.nexon.com/News/Notice/Notice/133192" target="_blank">메이플 공식 확률 공지</a> (2021-02-19) ·
+      <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=39528" target="_blank">게임뷰 — 스타포스 30성 개편</a> (2025-03-19) ·
+      <a href="https://m-lostark.game.onstove.com/GameGuide/Pages/%EC%9E%AC%EB%A0%A8" target="_blank">로스트아크 공식 재련 가이드</a>
+    </div>
+
+    <div class="fig">
+      <div class="cap">// 실패 시 결과 — 단계별 비교</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 290" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <defs>
+          <linearGradient id="sf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4ecb8d" stop-opacity=".8"/><stop offset="1" stop-color="#4ecb8d" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="wn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb347" stop-opacity=".8"/><stop offset="1" stop-color="#ffb347" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="dd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff5b3a" stop-opacity=".9"/><stop offset="1" stop-color="#c9421f" stop-opacity=".7"/></linearGradient>
+        </defs>
+        <g font-size="11" fill="#8a93a6" font-family="JetBrains Mono">
+          <text x="148" y="14">+1</text><text x="288" y="14">+5</text><text x="358" y="14">+6</text><text x="498" y="14">+10</text><text x="568" y="14">+11</text><text x="708" y="14">+13</text>
+        </g>
+        <text x="0" y="44" font-size="13" fill="#ff5b3a" font-weight="700">VULCAN</text>
+        <rect x="145" y="30" width="210" height="24" rx="3" fill="url(#sf)"/>
+        <text x="212" y="47" font-size="11.5" fill="#0d0f14" font-weight="700">안전 100%</text>
+        <rect x="355" y="30" width="420" height="24" rx="3" fill="url(#dd)"/>
+        <text x="416" y="47" font-size="11.5" fill="#fff" font-weight="700">실패 시 아이템 소멸 · 천장 없음</text>
+
+        <text x="0" y="94" font-size="13" fill="#c4ccd8">던전앤파이터</text>
+        <rect x="145" y="80" width="280" height="24" rx="3" fill="url(#sf)"/>
+        <text x="228" y="97" font-size="11.5" fill="#0d0f14" font-weight="700">안전 100% (+0~+4)</text>
+        <rect x="425" y="80" width="140" height="24" rx="3" fill="#4ecb8d" opacity=".32"/>
+        <text x="436" y="97" font-size="11.5" fill="#f2f5fa" font-weight="700">실패해도 페널티 없음</text>
+        <rect x="565" y="80" width="140" height="24" rx="3" fill="url(#wn)"/>
+        <text x="586" y="97" font-size="11.5" fill="#0d0f14" font-weight="700">3단계 하락</text>
+        <rect x="705" y="80" width="70" height="24" rx="3" fill="url(#dd)"/>
+        <text x="722" y="97" font-size="11.5" fill="#fff" font-weight="700">파괴</text>
+
+        <text x="0" y="144" font-size="13" fill="#c4ccd8">메이플스토리</text>
+        <rect x="145" y="130" width="420" height="24" rx="3" fill="url(#sf)"/>
+        <text x="248" y="147" font-size="11.5" fill="#0d0f14" font-weight="700">1~14성 파괴 없음 · 하락 없음</text>
+        <rect x="565" y="130" width="210" height="24" rx="3" fill="url(#dd)"/>
+        <text x="586" y="147" font-size="11.5" fill="#fff" font-weight="700">15성~ 파괴 (하락 폐지)</text>
+
+        <text x="0" y="194" font-size="13" fill="#c4ccd8">로스트아크</text>
+        <rect x="145" y="180" width="630" height="24" rx="3" fill="#4ecb8d" opacity=".42"/>
+        <text x="272" y="197" font-size="11.5" fill="#f2f5fa" font-weight="700">전 구간 파괴·하락 없음 — 실패 시 재화만 소모, 장인의 기운으로 확정 성공 보장</text>
+
+        <line x1="0" y1="226" x2="900" y2="226" stroke="#2b3342"/>
+        <text x="0" y="250" font-size="13" fill="#ffd24a" font-weight="700">천장 (누적 보정)</text>
+        <rect x="145" y="236" width="200" height="22" rx="3" fill="#c9421f"/>
+        <text x="192" y="252" font-size="11.5" fill="#fff" font-weight="700">VULCAN — 없음</text>
+        <rect x="355" y="236" width="200" height="22" rx="3" fill="#4ecb8d" opacity=".55"/>
+        <text x="368" y="252" font-size="11.5" fill="#0d0f14" font-weight="700">던파 — 실패 시 +5%p 누적</text>
+        <rect x="565" y="236" width="210" height="22" rx="3" fill="#4ecb8d" opacity=".55"/>
+        <text x="580" y="252" font-size="11.5" fill="#0d0f14" font-weight="700">로아 — 100% 확정 보장</text>
+        <text x="0" y="282" font-size="12" fill="#8a93a6">본 게임은 실패 페널티 시작 지점이 4단계 이르며, 대조한 3개 타이틀 중 유일하게 천장 보정이 없습니다.</text>
+      </svg>
+      </div>
+      <div class="src">VULCAN 수치는 강화 테이블 360행 실측 (<a href="05-data.html#upgrade">데이터 룸</a>) · 타사는 위 공식 출처</div>
+    </div>
+
+    <div class="call">
+      <div class="ct">망치의 성격</div>
+      <p>성공 판정은 <b>확률값 단독</b>으로 이루어지며, 보호 아이템 여부는 <b>실패 분기에서만</b> 작동합니다. 즉 <b class="hlr">망치는 파괴를 방지할 뿐 성공 확률을 올리지 않습니다.</b></p>
+      <p style="margin-top:10px">결과적으로 보호 없이는 강화 시도가 성립하기 어려워, 실질적으로 <b>보호 아이템 소비가 전제된 구조</b>입니다. 비용 환산은 <a href="06-cost.html#s2">「비용 구조」</a>를 참조해 주십시오.</p>
+      <p style="margin-top:10px">참고로 <b>메이플의 파괴방지는 게임 내 메소로 지불</b>하며, <b>스타캐치는 무료 미니게임으로 확률을 ×1.05 보정</b>합니다. 대조한 국내 타이틀 중 보호 수단을 현금 상품으로 직접 판매하는 사례는 확인되지 않았습니다.</p>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">신규 유저 진술과의 정합성</div>
+      <div class="q" style="margin:8px 0"><div class="qt">초보자 입장에서 느낀건 무자본은 정말 엄청난 시간을 쏟아야 합니다. <em>4일을 한개도 빠짐없이 광고 보고 폰을 켜두고 얻은 재료가 6시간의 기다림 속에 터져버리니</em> 너무 어렵기도 하다 생각했습니다. … <em>첫 시도부터 터지니 앞이 막막합니다.</em></div><div class="qm">— 자유의견 [42] · 플레이 7일 미만</div></div>
+      <p style="margin-top:12px">해당 진술은 <b>설계상 예상 가능한 결과</b>와 일치합니다. 또한 <a href="03-users.html#f-survey">설문 교차분석</a>에서 확인된 <b>신규(24시간 미만)의 부정 응답 18.2%</b>(정착층의 약 7배)와도 정합적입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-5</span><h2><i class="e spin">🎲</i>확률 표시</h2></div>
+
+    <div class="call">
+      <div class="ct">핵심 사항</div>
+      <p style="font-size:15.5px;color:var(--white)">현재 문제는 <b>「공개하지 않았다」가 아니라 「공개할 수 있는 확률값이 데이터에 존재하지 않는다」</b>는 점입니다.</p>
+    </div>
+
+    <div class="g2">
+      <div class="card" style="border-color:var(--ember-dim)">
+        <h5 style="color:var(--ember)">캐릭터 가챠</h5>
+        <p>모든 캐릭터의 확률값이 <b>33.3</b>으로 동일하게 설정되어 있습니다.</p>
+        <p>전원이 동률이 되므로 로직상 결과는 <b class="hlr">균등 무작위 = 각 8.33%</b>입니다.</p>
+        <p style="margin-top:10px;color:var(--white)"><b>33.3을 그대로 공개하면 실제(8.33%)와 달라 사실과 다른 표시가 됩니다.</b></p>
+      </div>
+      <div class="card" style="border-color:var(--ember-dim)">
+        <h5 style="color:var(--ember)">아이템 가챠</h5>
+        <p>정규화된 가중 테이블이 아니라 <b>아이템마다 독립적으로 난수를 굴리는 방식</b>입니다.</p>
+        <p>그 결과 확률 합계가 <b class="hlr">656.6%</b>입니다.</p>
+        <p style="margin-top:10px;color:var(--white)">기록값 <b>50 / 30 / 9 / 0.4</b> vs 실제 분포 <b class="hlr">45.7 / 41.1 / 12.3 / 0.85</b></p>
+      </div>
+    </div>
+
+    <div class="fig">
+      <div class="cap">// 아이템 가챠 — 기록된 값과 실제 분포</div>
+      <div class="scroll">
+      <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <text x="0" y="14" font-size="11.5" fill="#8a93a6" font-family="JetBrains Mono">기록된 값</text>
+        <text x="470" y="14" font-size="11.5" fill="#ff5b3a" font-family="JetBrains Mono">실제 나오는 비율</text>
+        <g font-size="12" fill="#c4ccd8">
+          <text x="0" y="46">Common</text><text x="0" y="84">Rare</text><text x="0" y="122">Epic</text><text x="0" y="160">Legendary</text>
+        </g>
+        <g>
+          <rect x="86" y="34" width="180" height="16" rx="3" fill="#8a93a6"/><text x="274" y="47" font-size="11" fill="#8a93a6" font-family="JetBrains Mono">50%</text>
+          <rect x="86" y="72" width="108" height="16" rx="3" fill="#5ab3ff"/><text x="202" y="85" font-size="11" fill="#5ab3ff" font-family="JetBrains Mono">30%</text>
+          <rect x="86" y="110" width="33" height="16" rx="3" fill="#ffb347"/><text x="127" y="123" font-size="11" fill="#ffb347" font-family="JetBrains Mono">9%</text>
+          <rect x="86" y="148" width="4" height="16" rx="2" fill="#ff5b3a"/><text x="98" y="161" font-size="11" fill="#ff5b3a" font-family="JetBrains Mono">0.4%</text>
+        </g>
+        <line x1="440" y1="26" x2="440" y2="178" stroke="#2b3342" stroke-dasharray="3 3"/>
+        <g>
+          <rect x="546" y="34" width="164" height="16" rx="3" fill="#8a93a6"/><text x="718" y="47" font-size="11" fill="#f2f5fa" font-family="JetBrains Mono" font-weight="700">45.7%</text>
+          <rect x="546" y="72" width="148" height="16" rx="3" fill="#5ab3ff"/><text x="702" y="85" font-size="11" fill="#f2f5fa" font-family="JetBrains Mono" font-weight="700">41.1%</text>
+          <rect x="546" y="110" width="44" height="16" rx="3" fill="#ffb347"/><text x="598" y="123" font-size="11" fill="#f2f5fa" font-family="JetBrains Mono" font-weight="700">12.3%</text>
+          <rect x="546" y="148" width="8" height="16" rx="2" fill="#ff5b3a"/><text x="562" y="161" font-size="11" fill="#f2f5fa" font-family="JetBrains Mono" font-weight="700">0.85%</text>
+        </g>
+        <text x="0" y="200" font-size="12" fill="#ffd24a">Rare는 30%로 기록되어 있으나 실제로는 41.1%가 나옵니다. 어느 값을 공개할 것인지에 대한 판단이 필요합니다.</text>
+      </svg>
+      </div>
+      <div class="src">가챠 로직 및 확률 테이블 실측 · 상세는 <a href="05-data.html#gacha">데이터 룸 · 가챠</a></div>
+    </div>
+
+    <h3 id="s-law">관련 법규</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td><b>시행일</b></td><td><b class="hlr">2024년 3월 22일 — 이미 시행 중</b></td></tr>
+          <tr class="rowcrit"><td><b>강화 확률 포함 여부</b></td><td><b class="hlr">포함됩니다.</b> 시행령이 확률형 아이템을 <b>캡슐형 / 강화형 / 합성형</b>으로 구분하여 각각의 표시사항을 규정합니다. 강화형은 <b>성공·실패·파괴 확률 전부</b>가 대상입니다.</td></tr>
+          <tr class="rowcrit"><td><b>「골드로만 강화하므로 해당 없음」 논리</b></td><td><b class="hlr">성립하지 않습니다.</b> 문체부 해설서는 <i>"무상으로 얻을 수 있는 재화(예: 골드)를 통해 구매할 수 있다 하더라도 이 재화가 <b>직간접적으로 유료 구매할 수 있다면</b> 온전한 무상 범위에 포함되지 않는다"</i>고 명시합니다.<span class="fn" data-t="본 게임에의 적용 여부" data-c="본 게임에는 <b>골드를 루비로 구매할 수 있는 상품</b>(골드 천만 = 300루비, 골드 1억 = 2,800루비)이 존재합니다.<br><br>따라서 골드가 <b>직접적으로 유료 구매 가능한 재화</b>에 해당하며, 골드를 소모하는 강화 시스템은 표시 의무 대상일 가능성이 높습니다.<br><br>다만 <b>최종 판단은 법무 검토가 필요</b>합니다. 본 보고서는 법률 자문이 아닙니다."></span></td></tr>
+          <tr><td><b>표시 장소</b></td><td>게임물 내 + 인터넷 홈페이지 + 광고·선전물 — <b>세 곳 모두</b>. 검색 가능한 형태로 제공하여야 합니다.</td></tr>
+          <tr class="rowcrit"><td><b>2025년 8월 1일 개정</b></td><td>① <b class="hlr">징벌적 손해배상 — 손해액의 최대 3배</b><br>② <b class="hlr">입증책임 전환 — 게임사가 고의·과실 없음을 스스로 입증하여야 면책</b></td></tr>
+          <tr><td><b>제재 절차</b></td><td>시정요청 → 시정권고 → 시정명령 → 불이행 시 <b>2년 이하 징역 또는 2천만원 이하 벌금</b></td></tr>
+          <tr><td><b>중소기업 면제</b></td><td>제작·배급·제공자가 <b>모두</b> 3년 평균 매출 <b>1억원 이하</b>인 경우에 한합니다. 실무상 요건이 좁습니다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src" style="border:none;padding-left:2px">
+      출처: <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148924297" target="_blank">정책브리핑(문체부)</a> ·
+      <a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=2858&ccfNo=1&cciNo=2&cnpClsNo=2" target="_blank">법제처 생활법령정보</a> ·
+      <a href="https://mcst.go.kr/kor/s_notice/notice/noticeView.jsp?pSeq=17856" target="_blank">문체부 해설서</a> ·
+      <a href="https://www.yulchon.com/ko/resources/publications/newsletter-view/41159/page.do" target="_blank">율촌 뉴스레터</a>
+    </div>
+
+    <div class="call">
+      <div class="ct">참고 사례 — 넥슨 큐브</div>
+      <p>2010년 5월 도입 시 균등 확률이었으나 <b>같은 해 9월 인기 옵션에 가중치를 부여하고 고지하지 않았습니다.</b> 2011~2021년에는 선호 옵션이 <b>출현하지 않도록</b> 변경하고 고지하지 않았습니다. 큐브 누적 매출은 약 <b>5,500억원</b>(메이플 전체 매출의 약 30%)으로 알려져 있습니다.</p>
+      <p style="margin-top:10px">공정거래위원회는 <b>전자상거래법 위반</b>으로 과징금 <b>116억 4,200만원</b>을 부과하였습니다.</p>
+      <p style="margin-top:10px;color:var(--molten)"><b>인용 시 주의:</b> 해당 과징금은 <b class="hlr">1심 미확정</b> 상태입니다. 취소소송이 진행 중이며 <b>2026년 7월 22일 선고 예정</b>입니다. 「넥슨이 116억을 납부하였다」는 표현은 사실과 다릅니다.<span class="fn" data-t="소송 경과" data-c="2024년 넥슨이 과징금 취소소송을 제기하였습니다.<br><br>· 2025-12-17 최초 선고기일 → 하루 앞두고 연기<br>· 2026-01-28 재지정 선고기일 → 변론 재개<br>· 2026-04-29 최종 변론 (서울고법 행정6-3부)<br>· <b>2026-07-22 선고 예정</b><br><br><b>쟁점</b>: ① 확률 변경 미고지가 소비자 기망에 해당하는가 ② 확률 공개 의무가 없던 시기(2024-03 이전)의 행위에 대한 제재가 사실상 소급 적용인가<br><br>출처: <a href='https://www.thelec.kr/news/articleView.html?idxno=55895' target='_blank'>디일렉</a>"></span></p>
+    </div>
+
+    <div class="call ok">
+      <div class="ct">기회 요인</div>
+      <p>확률 공개는 의무이자 <b>신뢰 회복 수단</b>이 될 수 있습니다. 한 번의 작업으로 세 가지가 함께 해결됩니다.</p>
+      <ol>
+        <li>법적 표시 의무 이행</li>
+        <li>유저가 제기하는 <b>확률 신뢰 문제 해소</b> — 유저가 직접 요청하고 있는 사항입니다</li>
+        <li><b class="hl">「정보 부족으로 투자 판단이 어렵다」는 문제 동시 해결</b> — 확률과 요구량이 공개되면 유저가 투자 계획을 세울 수 있습니다</li>
+      </ol>
+      <p style="margin-top:12px"><b>다만 선행 과제가 있습니다.</b> 공개에 앞서 <b class="hl">확률 시스템을 정규화된 가중 테이블로 재구현</b>하는 작업이 필요합니다. 화면 설계안은 <a href="08-ui.html#s2">「UI 개선안」</a>에 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-6</span><h2><i class="e">📈</i>성장 곡선</h2></div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n">8.24<small>배</small></div><div class="l">26 → 27레벨 요구 경험치 점프</div></div>
+      <div class="kpi"><div class="n">1.08<small>~1.75x</small></div><div class="l">27레벨 외 <b>전 구간</b> 배율</div></div>
+      <div class="kpi"><div class="n">21<small>억</small></div><div class="l">40레벨까지 누적 경험치</div></div>
+      <div class="kpi"><div class="n">5,251<small>만</small></div><div class="l">필요한 Lv4 몬스터 처치 수 <span class="mut">(계산)</span></div></div>
+    </div>
+
+    <div class="call">
+      <div class="ct">관찰된 사항</div>
+      <ul>
+        <li><b>26→27 구간만 8.24배</b>입니다 (127만 → 1,047만). 초반 2레벨(3.00배)을 제외하면 나머지 전 구간이 1.08~1.75배 범위에 있습니다.</li>
+        <li>전체 경험치의 <b class="hl">99.6%가 27레벨 이후</b>에 집중되어 있습니다.</li>
+        <li><b>보스는 경험치 1</b>이므로 대체 경로가 되지 못합니다.</li>
+        <li><b>카카(Lv1, HP 500)의 경험치가 100</b>으로, Lv4 몬스터(40)의 <b>2.5배</b>입니다. HP는 1/100~1/1,200 수준입니다.</li>
+      </ul>
+      <p style="margin-top:12px">순수 사냥만으로 도달하기 어려운 규모이며, <b>경험치 버프(+100%, 600루비)</b> 등 유료 가속 수단 또는 미구현 콘텐츠를 전제한 설계로 보입니다.</p>
+      <p style="margin-top:10px">전체 곡선과 대조 데이터는 <a href="05-data.html#growth">「데이터 룸 · 성장 곡선」</a>에 있습니다.</p>
+    </div>
+
+    <div class="call gold">
+      <div class="ct">업계 데이터와 겹쳐 볼 지점</div>
+      <p>업계 실측상 <b class="hlg">고액 결제 유저의 첫 결제 시점은 평균 18일차</b>이며, 소액 지출자(8일차)보다 늦습니다. 즉 <b>충분히 오래 잔류해야 고액 결제 유저가 됩니다.</b></p>
+      <p style="margin-top:10px">본 게임의 성장 정체 구간이 이 시점보다 앞에 위치할 경우, <b>결제 전환 이전에 이탈이 발생할 가능성</b>이 있습니다.</p>
+      <p style="margin-top:10px;color:var(--molten)"><b>다만 이는 가설입니다.</b> 본 게임 유저가 며칠에 26레벨에 도달하는지는 <b class="hlr">현재 계측이 없어 확인할 수 없습니다.</b> 검증에는 이벤트 로그가 필요합니다. → <a href="02-analytics.html">「데이터 계측」</a></p>
+      <div class="src" style="border-top-color:rgba(233,201,106,.3)">출처: <a href="https://www.gameanalytics.com/blog/what-good-game-monetization-looks-like" target="_blank">GameAnalytics</a> · 상세는 <a href="07-benchmark.html#s1">「업계 비교」</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-7</span><h2><i class="e">💰</i>골드 던전</h2></div>
+    <div class="call">
+      <div class="ct">효율 구조</div>
+      <p>몬스터 HP는 1단계에서 5단계로 가며 <b>7,639배</b> 증가하는 반면 보상은 <b>30배</b> 증가합니다. 결과적으로 <b>골드/HP 효율이 50.0에서 0.196으로 약 255배 악화</b>됩니다.</p>
+      <p style="margin-top:10px">또한 5단계 몬스터 HP(<b>76,388,000</b>)는 최종 보스 킹가디언(<b>57,291,000</b>)보다 <b class="hlr">33% 높습니다.</b></p>
+      <p style="margin-top:10px">상세 표는 <a href="05-data.html#monster">「데이터 룸 · 골드 던전」</a>에 있습니다.</p>
+    </div>
+    <div class="call info">
+      <div class="ct">제안과의 연결</div>
+      <p>이 구조는 <b>고인물 유저의 시간 우위가 누적되는 형태</b>입니다. 로스트아크는 골드 획득에 <b>원정대 단위 주간 상한</b>을 적용하고 있습니다.</p>
+      <p style="margin-top:8px"><b class="hl">상한 도입은 시점이 중요합니다.</b> 이미 지급되던 것을 회수하면 반발이 발생하므로, 도입한다면 이른 시점이 유리합니다. → <a href="09-proposal.html#p0">개선 제안 Phase 0</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-8</span><h2><i class="e float">🎪</i>이벤트 운영 구조</h2></div>
+
+    <div class="call gold">
+      <div class="ct">전제 — 이벤트가 결제를 유발한다는 점은 유저 진술로 확인됩니다</div>
+      <div class="q" style="margin:8px 0"><div class="qt">창찬드리고 싶은거는 <em>이벤트는 잘하시는것같아요. 루비 방금 샀습니다. 현질은 모바일게임하고선 처음인데</em> 서비스 좀 주셔요ㅋ</div><div class="qm">— 자유의견 [41]</div></div>
+      <p style="margin-top:10px">「이벤트가 좋다 → 루비를 구매했다 → 그런데 이것이 모바일 게임 첫 결제다」라는 순서가 한 문장에 담겨 있습니다. 이벤트 관련 요청은 총 <b>22건</b>입니다.</p>
+    </div>
+
+    <div class="call">
+      <div class="ct">확인된 구조</div>
+      <p>이벤트 재화가 <b class="hlr">단일 항목(추석 코인)으로 고정</b>되어 있습니다. 클라이언트 로직뿐 아니라 <b>서버 데이터 테이블의 컬럼까지 해당 이름으로 고정</b>되어 있습니다.</p>
+      <p style="margin-top:12px"><b>새로운 이벤트를 추가하려면 다음이 필요합니다:</b></p>
+      <ol>
+        <li>데이터 필드 추가</li>
+        <li>분기 로직 추가</li>
+        <li>서버 테이블 스키마 변경</li>
+        <li>저장·조회 로직 수정</li>
+        <li><b class="hlr">앱 빌드 · 스토어 심사 · 유저 업데이트</b></li>
+      </ol>
+      <p style="margin-top:14px;font-size:15.5px;color:var(--white)">즉 <b class="hlr">신규 이벤트 1회당 앱 업데이트 1회가 필요한 구조</b>입니다.</p>
+      <p style="margin-top:10px">이벤트 재화를 <b class="hl">테이블 기반으로 일반화</b>하면 코드 수정 없이 이벤트를 운영할 수 있습니다. → <a href="09-proposal.html#p1">개선 제안 Phase 1</a></p>
+      <p style="margin-top:10px" class="mut">※ 서버 측에서 이벤트를 원격 제어하는 별도 경로가 있는지는 <b>추가 확인이 필요</b>합니다. 현재까지 확인된 범위에서는 발견되지 않았습니다.</p>
+    </div>
+
+    <div class="call info">
+      <div class="ct">업계 대비</div>
+      <p>매출 상위 100개 iOS 게임의 <b>90% 이상</b>이 시즌 이벤트를 운영하며, Clash of Clans는 시즌 이벤트 기간 중 <b>월 중반 일매출이 300% 이상 상승</b>한 사례가 보고되어 있습니다. → <a href="07-benchmark.html#s5">「업계 비교 · 이벤트」</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04-9</span><h2><i class="e">🧾</i>설계 이슈 및 점검 항목</h2></div>
+    <p class="slead">밸런스 논의와 별개로, 데이터 확인 과정에서 <b>수치가 서로 맞지 않는 지점</b>들이 관찰되었습니다. 의도된 설계인지 확인이 필요한 항목들입니다.</p>
+
+    <h3>점검이 필요한 항목</h3>
+    <div class="tw">
+      <table class="wide">
+        <thead><tr><th style="width:26%">항목</th><th>관찰 내용</th><th style="width:13%">성격</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit">
+            <td><b class="hlr">영웅 상의 E등급 +10이 +9보다 낮음</b></td>
+            <td>HP <b>1,200 → 1,000</b>, 물리방어 <b>700 → 500</b>, 마법방어 <b>580 → 300</b>. 해당 강화의 비용은 <b>5,000만 골드</b>, 성공 확률은 <b>35%</b>입니다. 즉 비용을 지불하고 확률을 통과했을 때 성능이 하락합니다.</td>
+            <td><span class="b p0">우선 확인</span></td>
+          </tr>
+          <tr class="rowcrit">
+            <td><b class="hlr">강화 테이블 초기화 기능의 값 불일치</b></td>
+            <td>강화 테이블을 초기화하는 기능이 존재하는데, 그 안의 값이 <b>현재 운영 중인 값과 전면 불일치</b>합니다(구버전으로 보입니다). <b>실행될 경우 라이브 강화 밸런스가 변경됩니다.</b></td>
+            <td><span class="b p0">우선 확인</span></td>
+          </tr>
+          <tr><td>강화 하락 하한 보정 부재</td><td>하락 폭이 0~3 무작위인데 하한 보정이 없어 <b>강화 레벨이 음수가 될 수 있습니다.</b></td><td><span class="b p1">확인 필요</span></td></tr>
+          <tr class="rowcrit"><td><b>성수 · 최상급 마법서 · 시련의 증표</b></td><td><b class="hlr">드랍 몬스터가 지정되어 있지 않습니다.</b> → <a href="#s1">04-2</a></td><td><span class="b p0">우선 확인</span></td></tr>
+          <tr><td>정수 제작 재료</td><td><b>워리어·어쌔신·메이지의 정수가 모두 「헌터 각인」을 요구</b>합니다. 팔라딘만 해당 직업 각인을 사용합니다.</td><td><span class="b p1">확인 필요</span></td></tr>
+          <tr><td>C등급 등급 계수</td><td>저장된 필드명이 달라 <b>C등급 계수가 전부 0으로 읽힙니다.</b> R/E/RD는 정상입니다.</td><td><span class="b p1">확인 필요</span></td></tr>
+          <tr><td>아이템 번호 중복</td><td><b>차원석 = 메이지 각인 = 37</b>, <b>라바 해머 = 루나 화살 = 22</b></td><td><span class="b p1">확인 필요</span></td></tr>
+          <tr><td>마법 방어 옵션</td><td>마법 방어 옵션 4종이 <b>마법 공격 필드에 값을 기입</b>하고 있습니다. E=600 / RD=1,200이 마법 공격으로 부여되어 <b>정식 마법 공격 옵션(800)보다 높습니다.</b></td><td><span class="b p1">확인 필요</span></td></tr>
+          <tr><td>공격 속도 RD 옵션</td><td>다른 RD 옵션(0.005)의 <b>10배인 0.05</b>로 설정되어 있습니다.</td><td><span class="b p2">확인 필요</span></td></tr>
+          <tr><td>스톤 · 케르베르 · 이그니토</td><td>스톤(Lv5)은 <b>공격력 0</b>. 케르베르·이그니토 보스는 <b>골드·경험치·드랍이 모두 0</b>입니다.</td><td><span class="b p2">확인 필요</span></td></tr>
+          <tr><td>출석 7일차</td><td>실제 지급 <b>300</b> vs 표시값 <b>250</b></td><td><span class="b p2">확인 필요</span></td></tr>
+          <tr><td>일일 미션</td><td>몬스터 <b>5,000마리</b> 보상(망치 10)이 <b>3,000마리</b> 보상(영웅소환서 35)보다 <b>가치가 낮습니다.</b> PVP 미션은 <b>보상이 설정되어 있지 않습니다.</b></td><td><span class="b p2">확인 필요</span></td></tr>
+          <tr><td>퀘스트</td><td>장비 제작 1회 보상이 <b>3,000만 골드</b>(골드 던전 5단계의 2배)입니다. 한 퀘스트는 보상이 비어 있습니다.</td><td><span class="b p2">확인 필요</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>설계 이슈</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">이슈</th><th>수치</th></tr></thead>
+        <tbody>
+          <tr class="rowcrit"><td><b class="hlr">E등급 무기가 RD등급보다 비싸고 어렵습니다</b></td><td>E: <b>250,000,000골드 / 성공률 10~15% / 200~360분</b><br>RD: <b>50,000,000골드 / 25~30% / 720분</b><br>→ <b class="hlr">골드 5배, 확률 절반</b>으로 등급 순서가 역전되어 있습니다.</td></tr>
+          <tr class="rowcrit"><td><b class="hlr">정수 등급 역전</b></td><td>+10 최종 HP: E등급 <b>1,000</b> vs C·R등급 <b>1,500</b>. E등급이 더 낮은데 강화 골드는 <b>C등급의 100배</b>입니다.</td></tr>
+          <tr><td>정수 RD의 +10 확률</td><td><b>15%</b> — 다른 RD 슬롯은 35%. 전 아이템 중 최저입니다.</td></tr>
+          <tr><td>가챠 천장 부재</td><td>캐릭터·아이템 <b>전부</b> 천장이 없습니다. 알피아는 어느 풀에도 포함되어 있지 않습니다.</td></tr>
+          <tr><td>조각 대용량 할인</td><td>50조각 팩 6.00루비/조각 → 600조각 팩 5.67루비/조각 = <b>5.5%</b></td></tr>
+          <tr><td>초월 요구치</td><td>전 구간 <b>300조각 균일</b> — 단계별 테이블이 없습니다.</td></tr>
+          <tr><td>시련의 탑 진행 한계</td><td>HP는 약 107층, 방어는 약 68층에서 <b>상한 도달 후 고정</b>되는데 <b class="hlr">공격력만 무한 증가</b>합니다(200층 기준 1,590만).</td></tr>
+          <tr><td>펌킨의 일기 1~4권</td><td>재료가 <b>12배</b> 차이인데 <b>HP는 전부 400으로 동일</b>합니다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="call info">
+      <div class="ct">전제 재확인</div>
+      <p>위 항목 중 <b>강화·가챠·상점·보상</b>은 <b class="hl">서버에서 덮어쓰지 않는 확정 운영값</b>입니다. 반면 <b>스탯·몬스터·아이템</b>은 서버 차트로 덮어써지므로 <b>실운영값 확인이 필요</b>하며, 본 보고서는 해당 영역을 단정하지 않았습니다. → <a href="05-data.html">데이터 룸 상단 참조</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pager">
+      <a href="03-users.html"><span class="pl">◂ 이전</span><span class="pt">PAGE 03 · 유저 반응 심층 분석</span></a>
+      <a href="05-data.html" class="next"><span class="pl">다음 ▸</span><span class="pt">PAGE 05 · 데이터 룸</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">
+      PAGE 04 · 밸런스 실측 및 교차 검증<br>
+      VULCAN 개선 제안 · 2026.07.17 · 내부 검토용
+    </p>
+  </div>
+</footer>
+
+<script src="assets/report.js"></script>
+</body>
+</html>
