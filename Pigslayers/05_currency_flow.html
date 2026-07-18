@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>재화 흐름도 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html" class="on">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">05 · Currency Flow</p>
+<h1>재화 흐름도</h1>
+<p class="lead">재화가 <strong>어디서 생성되어(faucet) 어디로 소멸하는지(sink)</strong>를 그린 것입니다.
+방치형 게임의 건강도는 이 순환이 균형을 이루는가로 결정됩니다.</p>
+
+<h2>전체 순환도</h2>
+<div class="flow">
+<svg viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="재화 순환도">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#F86B9D"/>
+    </marker>
+    <marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9e9e9e"/>
+    </marker>
+  </defs>
+
+  <!-- FAUCET -->
+  <text x="120" y="30" text-anchor="middle" font-size="15" fill="#1DB06B">▼ 생성 (FAUCET)</text>
+  <g>
+    <rect x="20" y="46"  width="200" height="42" rx="21" fill="#DEF5EA" stroke="#1DB06B" stroke-width="2"/>
+    <text x="120" y="72" text-anchor="middle" font-size="13" fill="#0d6b41">스테이지 전투 (50)</text>
+    <rect x="20" y="98"  width="200" height="42" rx="21" fill="#DEF5EA" stroke="#1DB06B" stroke-width="2"/>
+    <text x="120" y="124" text-anchor="middle" font-size="13" fill="#0d6b41">던전 (102)</text>
+    <rect x="20" y="150" width="200" height="42" rx="21" fill="#DEF5EA" stroke="#1DB06B" stroke-width="2"/>
+    <text x="120" y="176" text-anchor="middle" font-size="13" fill="#0d6b41">모험 (70)</text>
+    <rect x="20" y="202" width="200" height="42" rx="21" fill="#DEF5EA" stroke="#1DB06B" stroke-width="2"/>
+    <text x="120" y="228" text-anchor="middle" font-size="13" fill="#0d6b41">채굴 (20)</text>
+    <rect x="20" y="254" width="200" height="42" rx="21" fill="#DEF5EA" stroke="#1DB06B" stroke-width="2"/>
+    <text x="120" y="280" text-anchor="middle" font-size="13" fill="#0d6b41">퀘스트 · 출석 · 패스</text>
+    <rect x="20" y="306" width="200" height="42" rx="21" fill="#DEF5EA" stroke="#1DB06B" stroke-width="2"/>
+    <text x="120" y="332" text-anchor="middle" font-size="13" fill="#0d6b41">미니게임 3종</text>
+    <rect x="20" y="358" width="200" height="42" rx="21" fill="#FFE7D5" stroke="#FC8B35" stroke-width="2"/>
+    <text x="120" y="384" text-anchor="middle" font-size="13" fill="#a5510a">광고 (4종)</text>
+    <rect x="20" y="410" width="200" height="42" rx="21" fill="#FFEBF2" stroke="#F86B9D" stroke-width="2"/>
+    <text x="120" y="436" text-anchor="middle" font-size="13" fill="#E93C7A">결제 (56종)</text>
+  </g>
+
+  <!-- POOL -->
+  <rect x="360" y="120" width="240" height="290" rx="30" fill="#fff" stroke="#F86B9D" stroke-width="3"/>
+  <text x="480" y="152" text-anchor="middle" font-size="15" fill="#E93C7A">유저 지갑</text>
+  <g font-size="13" fill="#282828">
+    <rect x="382" y="168" width="196" height="30" rx="15" fill="#FFF6DC" stroke="#FCC737" stroke-width="1.5"/>
+    <text x="480" y="188" text-anchor="middle">골드 · 435건</text>
+    <rect x="382" y="204" width="196" height="30" rx="15" fill="#FFEBF2" stroke="#F86B9D" stroke-width="1.5"/>
+    <text x="480" y="224" text-anchor="middle">루비 · 840건</text>
+    <rect x="382" y="240" width="196" height="30" rx="15" fill="#FFEBF2" stroke="#F86B9D" stroke-width="1.5"/>
+    <text x="480" y="260" text-anchor="middle">피그젤리 · 321건</text>
+    <rect x="382" y="276" width="196" height="30" rx="15" fill="#DEF5EA" stroke="#1DB06B" stroke-width="1.5"/>
+    <text x="480" y="296" text-anchor="middle">경험치 · 274건</text>
+    <rect x="382" y="312" width="196" height="30" rx="15" fill="#FFF6DC" stroke="#FCC737" stroke-width="1.5"/>
+    <text x="480" y="332" text-anchor="middle">골드티켓 · 112건</text>
+    <rect x="382" y="348" width="196" height="30" rx="15" fill="#E4F0FF" stroke="#4D98F7" stroke-width="1.5"/>
+    <text x="480" y="368" text-anchor="middle">열쇠 · 고기 · 시간조각</text>
+  </g>
+
+  <!-- SINK -->
+  <text x="850" y="30" text-anchor="middle" font-size="15" fill="#E93C7A">▼ 소멸 (SINK)</text>
+  <g>
+    <rect x="740" y="46"  width="220" height="42" rx="21" fill="#F0DEF5" stroke="#7E5CAD" stroke-width="2"/>
+    <text x="850" y="72" text-anchor="middle" font-size="13" fill="#4c3a70">로열 성장 · 포스 · 마스터리</text>
+    <rect x="740" y="98"  width="220" height="42" rx="21" fill="#F0DEF5" stroke="#7E5CAD" stroke-width="2"/>
+    <text x="850" y="124" text-anchor="middle" font-size="13" fill="#4c3a70">장비 레벨업 · 합성</text>
+    <rect x="740" y="150" width="220" height="42" rx="21" fill="#F0DEF5" stroke="#7E5CAD" stroke-width="2"/>
+    <text x="850" y="176" text-anchor="middle" font-size="13" fill="#4c3a70">뽑기 6종 (500~30,000)</text>
+    <rect x="740" y="202" width="220" height="42" rx="21" fill="#F0DEF5" stroke="#7E5CAD" stroke-width="2"/>
+    <text x="850" y="228" text-anchor="middle" font-size="13" fill="#4c3a70">스킬 슬롯 해금 (5만~50만)</text>
+    <rect x="740" y="254" width="220" height="42" rx="21" fill="#E4F0FF" stroke="#4D98F7" stroke-width="2"/>
+    <text x="850" y="280" text-anchor="middle" font-size="13" fill="#1d5da8">던전 입장 (고기 · 열쇠)</text>
+    <rect x="740" y="306" width="220" height="42" rx="21" fill="#E4F0FF" stroke="#4D98F7" stroke-width="2"/>
+    <text x="850" y="332" text-anchor="middle" font-size="13" fill="#1d5da8">아티팩트 강화 (시간조각)</text>
+    <rect x="740" y="358" width="220" height="42" rx="21" fill="#E4F0FF" stroke="#4D98F7" stroke-width="2"/>
+    <text x="850" y="384" text-anchor="middle" font-size="13" fill="#1d5da8">마일리지 교환</text>
+    <rect x="740" y="410" width="220" height="42" rx="21" fill="#FFF" stroke="#DFDFDF" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="850" y="436" text-anchor="middle" font-size="13" fill="#9e9e9e">크라운 · 메달 (사용처 없음)</text>
+  </g>
+
+  <!-- arrows in -->
+  <g stroke="#F86B9D" stroke-width="2" fill="none" marker-end="url(#ar)">
+    <path d="M224,67  C300,67  310,180 356,205"/>
+    <path d="M224,119 C300,119 310,200 356,225"/>
+    <path d="M224,171 C300,171 310,220 356,245"/>
+    <path d="M224,223 C300,223 315,240 356,262"/>
+    <path d="M224,275 C300,275 315,275 356,282"/>
+    <path d="M224,327 C300,327 315,310 356,300"/>
+    <path d="M224,379 C300,379 315,340 356,320"/>
+    <path d="M224,431 C300,431 315,380 356,340"/>
+  </g>
+  <!-- arrows out -->
+  <g stroke="#F86B9D" stroke-width="2" fill="none" marker-end="url(#ar)">
+    <path d="M604,200 C660,200 680,90  736,67"/>
+    <path d="M604,215 C660,215 680,130 736,119"/>
+    <path d="M604,240 C660,240 680,175 736,171"/>
+    <path d="M604,265 C660,265 680,225 736,223"/>
+    <path d="M604,300 C660,300 690,275 736,275"/>
+    <path d="M604,330 C660,330 690,320 736,327"/>
+    <path d="M604,355 C660,355 690,370 736,379"/>
+  </g>
+  <g stroke="#9e9e9e" stroke-width="2" fill="none" marker-end="url(#ar2)" stroke-dasharray="5 4">
+    <path d="M604,385 C660,385 690,420 736,431"/>
+  </g>
+</svg>
+</div>
+<div class="legend">
+  <span><b style="background:#DEF5EA;border:2px solid #1DB06B"></b>플레이로 생성</span>
+  <span><b style="background:#FFE7D5;border:2px solid #FC8B35"></b>광고로 생성</span>
+  <span><b style="background:#FFEBF2;border:2px solid #F86B9D"></b>결제로 생성</span>
+  <span><b style="background:#F0DEF5;border:2px solid #7E5CAD"></b>성장 소멸(재화 종류 미상)</span>
+  <span><b style="background:#E4F0FF;border:2px solid #4D98F7"></b>소멸(재화 명시)</span>
+  <span><b style="background:#fff;border:2px dashed #DFDFDF"></b>미구현</span>
+</div>
+
+<h2>이 그림에서 읽어야 할 것</h2>
+<div class="grid g2">
+<div class="card"><h3 style="margin-top:0">① 루비가 골드보다 많이 등장합니다</h3>
+<p class="small" style="margin:0">루비 <strong>840건</strong> vs 골드 <strong>435건</strong>.
+유료 재화가 소프트 재화보다 데이터가 많다는 건 <strong>보상으로 루비를 매우 자주 뿌린다</strong>는 뜻입니다.
+가이드 미션에서만 루비가 449건 등장합니다. 초반 루비 지급이 후한 설계입니다.</p></div>
+
+<div class="card"><h3 style="margin-top:0">② 골드 싱크가 흐름도의 왼쪽 위에 몰려 있습니다</h3>
+<p class="small" style="margin:0">골드는 <strong>로열 성장 · 장비 · 뽑기 · 스킬 해금</strong> 4곳으로 빠집니다.
+반면 획득은 스테이지·던전·모험·채굴 전부에서 들어옵니다.
+그래서 <a href="09_bm.html">골드티켓 상품이 14종</a>이나 되는 것입니다 —
+<strong>골드가 이 게임의 병목</strong>입니다.</p></div>
+
+<div class="card"><h3 style="margin-top:0">③ 시간조각은 던전 전용 폐쇄 루프</h3>
+<p class="small" style="margin:0"><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 시간조각은
+<strong>TBL_DUNGEON에서만 나오고(102건) TBL_ARTIFACT로만 나갑니다</strong>.
+획득처와 사용처가 각각 1곳뿐인 <strong>완전 폐쇄 루프</strong>입니다.
+던전을 안 돌면 아티팩트를 못 키웁니다.</p></div>
+
+<div class="card"><h3 style="margin-top:0">④ 마일리지는 결제 전용 루프</h3>
+<p class="small" style="margin:0"><img src="img/currency/Mileage.png" alt="Mileage" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 마일리지는
+<code>TBL_SHOP</code>에서만 등장합니다(61건). 결제로 쌓여 마일리지 상점에서만 쓰입니다.
+플레이로는 절대 얻을 수 없는 <strong>과금 충성도 전용 재화</strong>입니다.</p></div>
+</div>
+
+<div class="warn"><strong>흐름도의 한계</strong> — 오른쪽 「성장 소멸」 4개 항목은
+<strong>어떤 재화가 빠지는지 테이블에 없습니다</strong>(코드 하드코딩).
+화살표는 “골드가 그리로 간다”는 <span class="chip orange">추정</span>이며,
+금액대와 재화 성격으로 추론한 것입니다. 확정하려면 <code>libil2cpp.so</code>의
+메서드 본문 디컴파일이 필요한데, IL2CPP 특성상 이번 분석 범위 밖입니다.</div>
+
+<h2>재화별 획득처 상세 (실측)</h2>
+<h3><img src="img/currency/Gold.png" alt="Gold" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 골드 — 획득처 14곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>가이드 미션</td><td><code>TBL_GUIDE_MISSION</code></td><td class="num">103</td><td class="num">123,757,430,000</td></tr><tr><td>던전 최초 클리어</td><td><code>TBL_DUNGEON</code></td><td class="num">82</td><td class="num">—</td></tr><tr><td>스테이지 전투</td><td><code>TBL_STAGE</code></td><td class="num">50</td><td class="num">68,110,558,539</td></tr><tr><td>던전 보상</td><td><code>TBL_DUNGEON</code></td><td class="num">41</td><td class="num">—</td></tr><tr><td>출석(일반) 특별</td><td><code>TBL_ATTENDANCE</code></td><td class="num">27</td><td class="num">—</td></tr><tr><td>던전 전투</td><td><code>TBL_DUNGEON</code></td><td class="num">20</td><td class="num">7,647,602,992,000</td></tr><tr><td>채굴</td><td><code>TBL_MINER</code></td><td class="num">20</td><td class="num">27,504,318,071,000</td></tr><tr><td>레벨 패스(무료)</td><td><code>TBL_PASS_LEVEL</code></td><td class="num">10</td><td class="num">—</td></tr><tr><td>레벨 패스(유료)</td><td><code>TBL_PASS_LEVEL</code></td><td class="num">10</td><td class="num">—</td></tr><tr><td>스테이지 패스(무료)</td><td><code>TBL_PASS_STAGE</code></td><td class="num">10</td><td class="num">—</td></tr><tr><td>스테이지 패스(유료)</td><td><code>TBL_PASS_STAGE</code></td><td class="num">10</td><td class="num">—</td></tr><tr><td>유튜브 보상</td><td><code>TBL_YOUTUBE</code></td><td class="num">3</td><td class="num">—</td></tr><tr><td>상점</td><td><code>TBL_SHOP</code></td><td class="num">3</td><td class="num">8,000,000,000,000</td></tr><tr><td>동굴 던전 드랍</td><td><code>TBL_DUNGEON_CAVE_REWARD</code></td><td class="num">1</td><td class="num">15</td></tr></tbody></table></div><h3><img src="img/currency/Ruby.png" alt="Ruby" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 루비 — 획득처 19곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>가이드 미션</td><td><code>TBL_GUIDE_MISSION</code></td><td class="num">449</td><td class="num">530,100</td></tr><tr><td>이벤트 레벨(무료)</td><td><code>TBL_EVENT_LEVEL_DATA</code></td><td class="num">119</td><td class="num">209,500</td></tr><tr><td>이벤트 레벨(유료)</td><td><code>TBL_EVENT_LEVEL_DATA</code></td><td class="num">119</td><td class="num">1,269,500</td></tr><tr><td>이벤트 스테이지(무료)</td><td><code>TBL_EVENT_STAGE_DATA</code></td><td class="num">75</td><td class="num">1,425,000</td></tr><tr><td>이벤트 스테이지(유료)</td><td><code>TBL_EVENT_STAGE_DATA</code></td><td class="num">75</td><td class="num">2,225,000</td></tr><tr><td>상점</td><td><code>TBL_SHOP</code></td><td class="num">32</td><td class="num">1,536,800</td></tr><tr><td>던전 최초 클리어</td><td><code>TBL_DUNGEON</code></td><td class="num">20</td><td class="num">121,000</td></tr><tr><td>주간 퀘스트</td><td><code>TBL_QUEST_WEEKLY</code></td><td class="num">12</td><td class="num">7,000</td></tr><tr><td>출석(일반)</td><td><code>TBL_ATTENDANCE</code></td><td class="num">12</td><td class="num">18,000</td></tr><tr><td>빙고(일반)</td><td><code>TBL_BINGO_REWARD_NORMAL</code></td><td class="num">12</td><td class="num">18,000</td></tr><tr><td>일일 퀘스트</td><td><code>TBL_QUEST_DAILY</code></td><td class="num">9</td><td class="num">900</td></tr><tr><td>반복 퀘스트</td><td><code>TBL_QUEST_REPEAT</code></td><td class="num">6</td><td class="num">2,100</td></tr><tr><td>두더지</td><td><code>TBL_MOLE_REWARD</code></td><td class="num">4</td><td class="num">16,500</td></tr><tr><td>주사위 게임</td><td><code>TBL_DICE_GAME</code></td><td class="num">4</td><td class="num">48,000</td></tr><tr><td>출석(일반) 특별</td><td><code>TBL_ATTENDANCE</code></td><td class="num">3</td><td class="num">—</td></tr><tr><td>7일 출석</td><td><code>TBL_ATTENDANCE_SEVEN</code></td><td class="num">3</td><td class="num">17,000</td></tr><tr><td>빙고(스페셜)</td><td><code>TBL_BINGO_REWARD_SPECIAL</code></td><td class="num">3</td><td class="num">35,000</td></tr><tr><td>대표 퀘스트</td><td><code>TBL_QUEST_TOP</code></td><td class="num">2</td><td class="num">7,000</td></tr><tr><td>출석 버프</td><td><code>TBL_ATTENDANCE_BUFF</code></td><td class="num">1</td><td class="num">10,000</td></tr></tbody></table></div><h3><img src="img/currency/PigJelly.png" alt="PigJelly" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 피그젤리 — 획득처 7곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>가이드 미션</td><td><code>TBL_GUIDE_MISSION</code></td><td class="num">95</td><td class="num">2,229,335,000</td></tr><tr><td>스테이지 전투</td><td><code>TBL_STAGE</code></td><td class="num">50</td><td class="num">6,811,055,872</td></tr><tr><td>던전 보상</td><td><code>TBL_DUNGEON</code></td><td class="num">20</td><td class="num">—</td></tr><tr><td>던전 전투</td><td><code>TBL_DUNGEON</code></td><td class="num">20</td><td class="num">3,823,801,496,000</td></tr><tr><td>채굴</td><td><code>TBL_MINER</code></td><td class="num">20</td><td class="num">275,043,180,710</td></tr><tr><td>상점</td><td><code>TBL_SHOP</code></td><td class="num">3</td><td class="num">4,000,000,000,000</td></tr><tr><td>동굴 던전 드랍</td><td><code>TBL_DUNGEON_CAVE_REWARD</code></td><td class="num">1</td><td class="num">15</td></tr></tbody></table></div><h3><img src="img/currency/Exp.png" alt="Exp" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 경험치 — 획득처 3곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>스테이지 전투</td><td><code>TBL_STAGE</code></td><td class="num">50</td><td class="num">10,199,707,282</td></tr><tr><td>던전 전투</td><td><code>TBL_DUNGEON</code></td><td class="num">40</td><td class="num">95,595,037,400</td></tr><tr><td>채굴</td><td><code>TBL_MINER</code></td><td class="num">20</td><td class="num">15,127,374,930,550</td></tr></tbody></table></div><h3><img src="img/currency/GoldTicket.png" alt="GoldTicket" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 골드티켓 — 획득처 13곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>두더지 보너스</td><td><code>TBL_MOLE_BONUS</code></td><td class="num">24</td><td class="num">240</td></tr><tr><td>빙고(보너스)</td><td><code>TBL_BINGO_REWARD_BONUS</code></td><td class="num">22</td><td class="num">220</td></tr><tr><td>주사위 보너스</td><td><code>TBL_DICE_BONUS_REWARD</code></td><td class="num">21</td><td class="num">210</td></tr><tr><td>상점</td><td><code>TBL_SHOP</code></td><td class="num">16</td><td class="num">1,156</td></tr><tr><td>출석 버프 보너스</td><td><code>TBL_ATTENDANCE_BUFF_BONUS</code></td><td class="num">10</td><td class="num">100</td></tr><tr><td>출석(일반)</td><td><code>TBL_ATTENDANCE</code></td><td class="num">6</td><td class="num">140</td></tr><tr><td>빙고(일반)</td><td><code>TBL_BINGO_REWARD_NORMAL</code></td><td class="num">3</td><td class="num">10</td></tr><tr><td>대표 퀘스트</td><td><code>TBL_QUEST_TOP</code></td><td class="num">2</td><td class="num">12</td></tr><tr><td>두더지</td><td><code>TBL_MOLE_REWARD</code></td><td class="num">2</td><td class="num">6</td></tr><tr><td>빙고(스페셜)</td><td><code>TBL_BINGO_REWARD_SPECIAL</code></td><td class="num">2</td><td class="num">25</td></tr><tr><td>주사위 게임</td><td><code>TBL_DICE_GAME</code></td><td class="num">2</td><td class="num">17</td></tr><tr><td>7일 출석</td><td><code>TBL_ATTENDANCE_SEVEN</code></td><td class="num">1</td><td class="num">30</td></tr><tr><td>출석 버프</td><td><code>TBL_ATTENDANCE_BUFF</code></td><td class="num">1</td><td class="num">10</td></tr></tbody></table></div><h3><img src="img/currency/Key.png" alt="Key" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 열쇠 — 획득처 9곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>상점</td><td><code>TBL_SHOP</code></td><td class="num">14</td><td class="num">6,060</td></tr><tr><td>출석(일반)</td><td><code>TBL_ATTENDANCE</code></td><td class="num">6</td><td class="num">450</td></tr><tr><td>빙고(일반)</td><td><code>TBL_BINGO_REWARD_NORMAL</code></td><td class="num">5</td><td class="num">100</td></tr><tr><td>빙고(스페셜)</td><td><code>TBL_BINGO_REWARD_SPECIAL</code></td><td class="num">3</td><td class="num">300</td></tr><tr><td>두더지</td><td><code>TBL_MOLE_REWARD</code></td><td class="num">2</td><td class="num">70</td></tr><tr><td>주사위 게임</td><td><code>TBL_DICE_GAME</code></td><td class="num">2</td><td class="num">500</td></tr><tr><td>일일 퀘스트</td><td><code>TBL_QUEST_DAILY</code></td><td class="num">1</td><td class="num">30</td></tr><tr><td>대표 퀘스트</td><td><code>TBL_QUEST_TOP</code></td><td class="num">1</td><td class="num">200</td></tr><tr><td>7일 출석</td><td><code>TBL_ATTENDANCE_SEVEN</code></td><td class="num">1</td><td class="num">50</td></tr></tbody></table></div><h3><img src="img/currency/Pork.png" alt="Pork" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 돼지고기 — 획득처 9곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>상점</td><td><code>TBL_SHOP</code></td><td class="num">13</td><td class="num">10,770</td></tr><tr><td>출석(일반)</td><td><code>TBL_ATTENDANCE</code></td><td class="num">6</td><td class="num">450</td></tr><tr><td>빙고(일반)</td><td><code>TBL_BINGO_REWARD_NORMAL</code></td><td class="num">5</td><td class="num">250</td></tr><tr><td>빙고(스페셜)</td><td><code>TBL_BINGO_REWARD_SPECIAL</code></td><td class="num">3</td><td class="num">900</td></tr><tr><td>주사위 게임</td><td><code>TBL_DICE_GAME</code></td><td class="num">3</td><td class="num">1,200</td></tr><tr><td>7일 출석</td><td><code>TBL_ATTENDANCE_SEVEN</code></td><td class="num">2</td><td class="num">300</td></tr><tr><td>두더지</td><td><code>TBL_MOLE_REWARD</code></td><td class="num">2</td><td class="num">150</td></tr><tr><td>일일 퀘스트</td><td><code>TBL_QUEST_DAILY</code></td><td class="num">1</td><td class="num">50</td></tr><tr><td>대표 퀘스트</td><td><code>TBL_QUEST_TOP</code></td><td class="num">1</td><td class="num">100</td></tr></tbody></table></div><h3><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:24px;height:24px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 시간조각 — 획득처 1곳</h3><div class="tw"><table><thead><tr><th>획득처</th><th>테이블</th><th class="num">항목 수</th><th class="num">합계 지급량</th></tr></thead><tbody><tr><td>던전 전투</td><td><code>TBL_DUNGEON</code></td><td class="num">10</td><td class="num">110</td></tr></tbody></table></div>
+
+<div class="pager"><a href="04_currency.html">← 재화 구성</a><a href="06_growth.html">성장 밸런스 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">전체 순환도</span></li><li class="dot" data-i="2"><span class="tip">이 그림에서 읽어야 할 것</span></li><li class="dot" data-i="3"><span class="tip">재화별 획득처 상세 (실측)</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

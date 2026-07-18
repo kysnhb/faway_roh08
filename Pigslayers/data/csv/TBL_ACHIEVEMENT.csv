@@ -1,0 +1,6 @@
+﻿name,AchievementType,DefaultShow,CompleteCount,StatType,Value,Description,IsSet,DefaultProgress
+출석을 잘해요.,Attendance,True,7.0,FinalDamageRate,120.0,출석 7회에 도전하세요!,False,1.0
+나는야 출석왕!,Attendance,True,30.0,FinalDamageRate,200.0,출석 30회를 한 용사. 출석왕으로 인정합니다.!!,False,1.0
+모루의 달인,Compose,True,1000.0,FinalHealthRate,110.0,"장비 합성을 1,000회한 당신은 모루의 달인.",False,0.0
+뽑기좀 해본 친구,Gacha,True,1000.0,FinalHealthRate,110.0,어릴때 뽑기좀 해봤나봐요?,False,0.0
+뽑기왕!,Gacha,False,100000.0,FinalDamageRate,120.0,피그 슬레이어즈를 즐겨주셔서 감사합니다.,False,0.0

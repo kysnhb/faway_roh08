@@ -1,0 +1,10 @@
+﻿name,HeroType,AttackSpeed,AttackRange,MoveSpeed,DefaultHave,PassiveSkill1,PassiveSkill2,PassiveSkill3,StatType,StatValue,StatDescription,Exp,AddExp,UnlockConditionType,UnlockConditionValue,NameText
+왕,King,1000.0,100.0,4000.0,True,투지,광기,토르,FinalHealthRate,50.0,최종 체력 +{0}%,3,1,Level,0,Hero.Name.00
+왕비,Queen,1000.0,260.0,4000.0,False,집중,도움,활무,MoveSpeed,20.0,이동속도 +{0}%,3,1,Level,10,Hero.Name.01
+왕자,Prince,1000.0,100.0,4000.0,False,검무,신속,질풍,AttackSpeedRate,30.0,공격속도 +{0}%,3,1,Level,50,Hero.Name.02
+공주,Princess,1200.0,220.0,4000.0,False,증폭,지혜,힐링,SkillDamageRate,1.0,{0},100,40,Null,0,Hero.Name.03
+돼지왕,PigKing,1000.0,130.0,4000.0,False,분노,동족,증강,BossDamageRate,1.0,{0},100,40,Null,0,Hero.Name.04
+선장,Captain,1000.0,130.0,4000.0,False,리치,스텝,댄스,FinalGoldBonusRate,1.0,{0},100,40,Null,0,Hero.Name.05
+사신,Reaper,1000.0,130.0,4000.0,False,그림자,허무,암살,DamageRate,1.0,{0},100,40,Null,0,Hero.Name.06
+렘,BlueMermaid,1000.0,200.0,4000.0,False,공허,공허,공허,Empty,1.0,{0},100,40,Null,0,Hero.Name.07
+람,PinkMermaid,1000.0,200.0,4000.0,False,공허,공허,공허,Empty,1.0,{0},100,40,Null,0,Hero.Name.08

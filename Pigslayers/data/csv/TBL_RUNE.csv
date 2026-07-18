@@ -1,0 +1,19 @@
+﻿name,StatType,Value,AddValue,Cost,AddCost,Percent,MinusPercent,Weight,MaxLevel,NameText,DescriptionText
+맹공의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.00,Rune.Description.00
+생명의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.01,Rune.Description.01
+풍요의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.02,Rune.Description.02
+경험의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.03,Rune.Description.03
+질풍의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.04,Rune.Description.04
+송곳의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.05,Rune.Description.05
+치명상의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.06,Rune.Description.06
+명중의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.07,Rune.Description.07
+지혜의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.08,Rune.Description.08
+용기의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.09,Rune.Description.09
+바람의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.10,Rune.Description.10
+젤리의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.11,Rune.Description.11
+대지의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.12,Rune.Description.12
+탐색의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.13,Rune.Description.13
+수집의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.14,Rune.Description.14
+약화의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.15,Rune.Description.15
+폭주의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.16,Rune.Description.16
+황제의 룬,Empty,0.0,0.0,0,0,0.0,0.0,0,100,Rune.Name.17,Rune.Description.17

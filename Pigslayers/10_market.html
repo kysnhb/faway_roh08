@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>시장 조사 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html" class="on">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">10 · Market Research</p>
+<h1>시장 조사</h1>
+<p class="lead">PigSlayers가 진입하는 <strong>방치형 RPG</strong> 시장의 규모·성장·경쟁 구도입니다.
+출처는 각 항목에 명시했습니다.</p>
+
+<h2>시장 규모</h2>
+<div class="grid g4">
+  <div class="stat"><div class="k">글로벌 방치형 시장</div><div class="v">$14.2B</div><div class="s">2025년</div></div>
+  <div class="stat"><div class="k">2034 전망</div><div class="v">$34.8B</div><div class="s">CAGR 10.5%</div></div>
+  <div class="stat"><div class="k">모바일 비중</div><div class="v">61.3%</div><div class="s">$8.7B / 2025</div></div>
+  <div class="stat"><div class="k">아시아태평양</div><div class="v">38.4%</div><div class="s">$5.5B · 최대 지역</div></div>
+</div>
+<p class="small">출처: <a href="https://dataintelo.com/report/idle-games-market" target="_blank">Dataintelo — Idle Games Market Report 2034</a></p>
+
+<h2>한국 시장 — 방치형의 급부상</h2>
+<div class="tw"><table><thead><tr><th>지표</th><th>값</th><th>출처</th></tr></thead><tbody><tr><td>국내 모바일 RPG 중 방치형 매출 비중</td><td><strong>1.7% (2020) → 16% (2024)</strong> · 4년간 약 10배</td><td><a href="https://www.kfenews.co.kr/news/articleView.html" target="_blank">KFE News</a></td></tr><tr><td>국내 게임시장 규모 (2024)</td><td>23조 8,515억 원</td><td><a href="https://www.issueinsight.co.kr/news/articleView.html?idxno=2774" target="_blank">이슈인사이트</a></td></tr><tr><td>→ 방치형 추산 규모</td><td><strong>약 3.8조 원</strong></td><td>위 두 값의 곱 (기사 추산)</td></tr><tr><td>MMORPG 매출 비중 변화</td><td>80% 육박 → <strong>56.2%</strong></td><td><a href="https://www.issueinsight.co.kr/news/articleView.html?idxno=2774" target="_blank">이슈인사이트</a></td></tr><tr><td>한국 모바일 게임 중 RPG 비중</td><td>약 60% — 주요국 중 1위</td><td><a href="https://sensortower.com/ko/blog/Korea-stands-out-as-the-leading-country-with-RPG-revenue-constituting-approximately-60-percent-of-total-mobile-game-revenue" target="_blank">Sensor Tower</a></td></tr></tbody></table></div>
+<div class="fact"><strong>시장 판단</strong> — 방치형은 이미 <strong>비주류가 아니라 주류</strong>입니다.
+MMORPG가 내준 점유율을 방치형이 흡수하는 중이며, 한국은 RPG 매출 비중이 세계 1위인 시장입니다.
+PigSlayers의 장르 선택 자체는 <span class="chip jade">시장 흐름에 부합</span>합니다.</div>
+
+<h2>경쟁 구도</h2>
+<div class="tw"><table><thead><tr><th>게임</th><th>포지션</th><th>성과</th><th>핵심 차별점</th></tr></thead><tbody><tr><td><strong>메이플 키우기</strong> (넥슨)</td><td>IP 방치형</td><td>2026년 3월 모바일 매출 <strong>1위</strong> · 약 452억 원/월</td><td>메이플스토리 IP 파워</td></tr><tr><td><strong>버섯커 키우기</strong> (조이넷게임즈)</td><td>장비 수집형 방치형</td><td>한국 서비스 2개월 매출 <strong>약 850억 원</strong> · 글로벌 매출의 66%가 한국</td><td>‘램프’ 슬롯머신형 장비 뽑기</td></tr><tr><td><strong>킹 오브 파이터즈 AFK</strong> (넷마블)</td><td>IP 방치형</td><td>-</td><td>격투 IP</td></tr><tr><td><strong>라그나로크 아이들 어드벤처+</strong> (그라비티)</td><td>IP 방치형</td><td>-</td><td>라그나로크 IP</td></tr><tr><td><strong>PigSlayers</strong> (몽길몽길게임즈)</td><td><span class='chip orange'>오리지널 IP 방치형</span></td><td>미출시</td><td>돼지 테마 · 픽셀아트 · 성장축 6계층</td></tr></tbody></table></div>
+<p class="small">출처: <a href="https://www.econovill.com/news/articleView.html?idxno=650886" target="_blank">이코노믹리뷰</a>,
+<a href="https://namu.wiki/w/%EB%B2%84%EC%84%AF%EC%BB%A4%20%ED%82%A4%EC%9A%B0%EA%B8%B0" target="_blank">나무위키 — 버섯커 키우기</a>,
+<a href="https://news.nate.com/view/20260409n33733" target="_blank">네이트뉴스</a></p>
+
+<div class="warn"><strong>가장 큰 리스크 — IP 부재</strong><br>
+경쟁작 상위권은 <strong>전부 기존 IP</strong>(메이플·KOF·라그나로크)이거나 <strong>압도적 마케팅</strong>(버섯커)입니다.
+PigSlayers는 오리지널 IP이므로 <strong>초기 인지도 확보 비용</strong>이 성패를 가릅니다.
+현재 빌드에 <strong>어트리뷰션 SDK(AppsFlyer/Adjust)가 전혀 없다</strong>는 점은
+대규모 UA 캠페인 준비가 안 됐다는 신호로 <span class="chip orange">추정</span>됩니다.</div>
+
+<h2>유저가 방치형을 고르는 기준</h2>
+<div class="tw"><table><thead><tr><th>요인</th><th>응답률</th><th>PigSlayers 대응</th></tr></thead><tbody><tr><td>쉬운 조작 및 플레이</td><td><strong>47%</strong></td><td><span class="chip jade">양호</span> 완전 자동 전투</td></tr><tr><td>빠른 성장</td><td><strong>40%</strong></td><td><span class="chip orange">확인 필요</span> 성장축 6계층 — 오히려 복잡할 위험</td></tr><tr><td>과금 요소</td><td>26%</td><td><span class="chip jade">양호</span> 광고로 전 성장축 접근 가능</td></tr><tr><td>이벤트 보상</td><td>23%</td><td><span class="chip jade">우수</span> 이벤트 12계열 · 미니게임 3종</td></tr></tbody></table></div>
+<p class="small">출처: <a href="https://www.digitaltoday.co.kr/news/articleView.html?idxno=501300" target="_blank">디지털투데이</a></p>
+
+<h2>버섯커 벤치마크 — 배울 점</h2>
+<div class="card">
+<p style="margin:0 0 10px"><strong>성공 요인 1 — 장비로 “진짜 RPG처럼” 보이게 함.</strong>
+방치형인데 득템의 쾌감을 준 것이 차별점이었습니다.
+PigSlayers는 장비 <strong>7등급 × 3부위</strong>로 이 축은 이미 갖췄습니다.</p>
+<p style="margin:0 0 10px"><strong>성공 요인 2 — 단일 강력 훅(‘램프’).</strong>
+장비 획득과 경험치 수급을 하나의 슬롯머신에 통합해, 유저가 <em>뭘 해야 하는지</em>가 명확했습니다.
+PigSlayers는 반대로 <strong>성장축이 6계층·탭이 10개</strong>라 훅이 분산돼 있습니다.
+<span class="chip orange">검토 제안</span> — 초반 30분 동안 노출되는 축을 줄이는 방향.</p>
+<p style="margin:0"><strong>성공 요인 3 — 고과금자 만족.</strong>
+소환 횟수가 곧 스펙이 되는 구조로 상단을 열어뒀습니다.
+PigSlayers도 <code>ruby_100000</code>과 마일리지로 상단이 열려 있습니다.</p>
+</div>
+<p class="small">출처: <a href="https://gall.dcinside.com/mgallery/board/view/?id=game_dev&no=151921" target="_blank">인디 게임 개발 갤러리 분석글</a>,
+<a href="https://www.econovill.com/news/articleView.html?idxno=650886" target="_blank">이코노믹리뷰</a></p>
+
+<h2>트렌드 — 하이브리드화</h2>
+<p>단순 자동 성장에서 벗어나 <strong>수집·액션·꾸미기·퍼즐</strong>을 결합하는 하이브리드 경쟁이 본격화됐습니다.
+PigSlayers는 이 흐름에 이미 대응돼 있습니다 — 도감(Collection), 코스튬(Costume 탭),
+미니게임 3종(빙고·주사위·두더지), 채굴(Mine).</p>
+<div class="fact"><strong>종합 판단</strong> —
+<span class="chip jade">장르 선택</span>과 <span class="chip jade">콘텐츠 폭</span>은 시장 요구에 부합합니다.
+리스크는 <span class="chip ruby">IP 인지도</span>와 <span class="chip orange">초반 복잡도</span>
+(유저의 40%가 “빠른 성장”을 원하는데 성장축이 6계층) 두 가지로 좁혀집니다.</div>
+
+<div class="pager"><a href="09_bm.html">← 수익화 구조</a><a href="11_assets.html">이미지 리소스 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">시장 규모</span></li><li class="dot" data-i="2"><span class="tip">한국 시장</span></li><li class="dot" data-i="3"><span class="tip">경쟁 구도</span></li><li class="dot" data-i="4"><span class="tip">유저가 방치형을 고르는 기준</span></li><li class="dot" data-i="5"><span class="tip">버섯커 벤치마크</span></li><li class="dot" data-i="6"><span class="tip">트렌드</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

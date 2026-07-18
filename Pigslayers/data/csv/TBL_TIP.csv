@@ -1,0 +1,34 @@
+﻿name,TipType,MinLevel,MinStage,IsSequence,BottomText,TabText,MainText,ButtonText
+가이드 미션 보상,GuideMissionReward,0,0,False,Tip.GuideMissionReward.Bottom,Tip.GuideMissionReward.Tab,Tip.GuideMissionReward.Main,Tip.GuideMissionReward.Button
+무료 축복(Lv.2),BlessOn,2,0,False,Tip.BlessOn.Bottom,Tip.BlessOn.Tab,Tip.BlessOn.Main,Tip.BlessOn.Button
+럭키 피그,LuckyPig,2,0,False,Tip.LuckyPig.Bottom,Tip.LuckyPig.Tab,Tip.LuckyPig.Main,Tip.LuckyPig.Button
+왕가 ▶ 골드 성장,RoyalGrowth,1,0,True,Tip.RoyalGrowth.Bottom,Tip.RoyalGrowth.Tab,Tip.RoyalGrowth.Main,Tip.RoyalGrowth.Button
+왕가 ▶ 젤리 성장,RoyalForce,1,0,True,Tip.RoyalForce.Bottom,Tip.RoyalForce.Tab,Tip.RoyalForce.Main,Tip.RoyalForce.Button
+왕가 ▶ 마스터리,RoyalMastery,2,0,True,Tip.RoyalMastery.Bottom,Tip.RoyalMastery.Tab,Tip.RoyalMastery.Main,Tip.RoyalMastery.Button
+장비 ▶ 무료 무기,EquipmentSwordFree,3,0,True,Tip.EquipmentSwordFree.Bottom,Tip.EquipmentSwordFree.Tab,Tip.EquipmentSwordFree.Main,Tip.EquipmentSwordFree.Button
+장비 ▶ 무기 장착,EquipmentSwordEquip,3,0,True,Tip.EquipmentSwordEquip.Bottom,Tip.EquipmentSwordEquip.Tab,Tip.EquipmentSwordEquip.Main,Tip.EquipmentSwordEquip.Button
+장비 ▶ 무료 방패,EquipmentShieldFree,3,0,True,Tip.EquipmentShieldFree.Bottom,Tip.EquipmentShieldFree.Tab,Tip.EquipmentShieldFree.Main,Tip.EquipmentShieldFree.Button
+장비 ▶ 방패 장착,EquipmentShieldEquip,3,0,True,Tip.EquipmentShieldEquip.Bottom,Tip.EquipmentShieldEquip.Tab,Tip.EquipmentShieldEquip.Main,Tip.EquipmentShieldEquip.Button
+장비 ▶ 합성 (Lv.3),EquipmentCompose,3,0,True,Tip.EquipmentCompose.Bottom,Tip.EquipmentCompose.Tab,Tip.EquipmentCompose.Main,Tip.EquipmentCompose.Button
+스킬 ▶ 무료 스킬,SkillFree,5,0,True,Tip.SkillFree.Bottom,Tip.SkillFree.Tab,Tip.SkillFree.Main,Tip.SkillFree.Button
+스킬 ▶ 스킬 장착,SkillEquip,5,0,True,Tip.SkillEquip.Bottom,Tip.SkillEquip.Tab,Tip.SkillEquip.Main,Tip.SkillEquip.Button
+스킬 ▶ 스킬 강화 (Lv.5),SkillUpgrade,5,0,True,Tip.SkillUpgrade.Bottom,Tip.SkillUpgrade.Tab,Tip.SkillUpgrade.Main,Tip.SkillUpgrade.Button
+던전 ▶ 피쉬 파이트,DungeonEnterFishFight,7,0,True,Tip.DungeonEnterFishFight.Bottom,Tip.DungeonEnterFishFight.Tab,Tip.DungeonEnterFishFight.Main,Tip.DungeonEnterFishFight.Button
+던전 ▶ 리본 돼지,DungeonEnterPigCow,7,0,True,Tip.DungeonEnterPigCow.Bottom,Tip.DungeonEnterPigCow.Tab,Tip.DungeonEnterPigCow.Main,Tip.DungeonEnterPigCow.Button
+영웅 ▶ 출전,HeroEquip,10,0,True,Tip.HeroEquip.Bottom,Tip.HeroEquip.Tab,Tip.HeroEquip.Main,Tip.HeroEquip.Button
+영웅 ▶ 성장 (Lv.15),HeroPower,15,0,True,Tip.HeroPower.Bottom,Tip.HeroPower.Tab,Tip.HeroPower.Main,Tip.HeroPower.Button
+던전 ▶ 무한의 탑,DungeonEnterInfiniteTower,15,0,True,Tip.DungeonEnterInfiniteTower.Bottom,Tip.DungeonEnterInfiniteTower.Tab,Tip.DungeonEnterInfiniteTower.Main,Tip.DungeonEnterInfiniteTower.Button
+던전 ▶ 무한의 탑 ▶ 이벤트,InfiniteTowerEvent,15,0,True,Tip.InfiniteTowerEvent.Bottom,Tip.InfiniteTowerEvent.Tab,Tip.InfiniteTowerEvent.Main,Tip.InfiniteTowerEvent.Button
+던전 ▶ 미믹 던전,DungeonEnterCave,20,0,True,Tip.DungeonEnterCave.Bottom,Tip.DungeonEnterCave.Tab,Tip.DungeonEnterCave.Main,Tip.DungeonEnterCave.Button
+영웅 ▶ 잠재능력,HeroAbility,20,0,True,Tip.HeroAbility.Bottom,Tip.HeroAbility.Tab,Tip.HeroAbility.Main,Tip.HeroAbility.Button
+장비 ▶ 무기 성장,EquipmentSwordUpgrade,20,0,True,Tip.EquipmentSwordUpgrade.Bottom,Tip.EquipmentSwordUpgrade.Tab,Tip.EquipmentSwordUpgrade.Main,Tip.EquipmentSwordUpgrade.Button
+장비 ▶ 방패 성장,EquipmentShieldUpgrade,20,0,True,Tip.EquipmentShieldUpgrade.Bottom,Tip.EquipmentShieldUpgrade.Tab,Tip.EquipmentShieldUpgrade.Main,Tip.EquipmentShieldUpgrade.Button
+던전 ▶ 콜로세움,DungeonEnterColosseum,30,0,True,Tip.DungeonEnterColosseum.Bottom,Tip.DungeonEnterColosseum.Tab,Tip.DungeonEnterColosseum.Main,Tip.DungeonEnterColosseum.Button
+광산 ▶ 획득,MinerGet,40,0,True,Tip.MinerGet.Bottom,Tip.MinerGet.Tab,Tip.MinerGet.Main,Tip.MinerGet.Button
+광산 ▶ 성장,MinerUpgrade,40,0,True,Tip.MinerUpgrade.Bottom,Tip.MinerUpgrade.Tab,Tip.MinerUpgrade.Main,Tip.MinerUpgrade.Button
+장비 ▶ 무료 악세사리,EquipmentAccFree,120,0,True,Tip.EquipmentAccFree.Bottom,Tip.EquipmentAccFree.Tab,Tip.EquipmentAccFree.Main,Tip.EquipmentAccFree.Button
+장비 ▶ 악세사리 장착,EquipmentAccEquip,120,0,True,Tip.EquipmentAccEquip.Bottom,Tip.EquipmentAccEquip.Tab,Tip.EquipmentAccEquip.Main,Tip.EquipmentAccEquip.Button
+스테이지 보스 도전,StageBossChallenge,0,11,False,Tip.StageBossChallenge.Bottom,Tip.StageBossChallenge.Tab,Tip.StageBossChallenge.Main,Tip.StageBossChallenge.Button
+출석부,Attendance,0,0,False,Tip.Attendance.Bottom,Tip.Attendance.Tab,Tip.Attendance.Main,Tip.Attendance.Button
+퀘스트,Quest,0,0,False,Tip.Quest.Bottom,Tip.Quest.Tab,Tip.Quest.Main,Tip.Quest.Button
+채팅,Chat,20,0,False,Tip.Chat.Bottom,Tip.Chat.Tab,Tip.Chat.Main,Tip.Chat.Button

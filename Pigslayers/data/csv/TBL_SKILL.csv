@@ -1,0 +1,23 @@
+﻿name,SkillKind,SkillType,SkillTriggerType,TriggerConditionCount,TargetCount,Range,Speed,Duration,SkillValueType,StatType,Value,AddValue,MaxLevel,Cost,AddCost,Weight,EnableAuto,ResetZero,IsLock,NameText,DescriptionText,TalkText
+헤이스트,Passive,Haste,Passive,0.0,5.0,5.0,0.0,3.0,NormalValue,MoveSpeedRate,30.0,4.0,20,10.0,15.0,50,True,False,False,Skill.Name.00,Skill.Description.00,Skill.Talk.00
+토네이도,Attack,AirTornado,AttackCount,5.0,5.0,5.0,7.0,3.0,NormalValue,Empty,50.0,10.0,20,10.0,15.0,50,False,False,False,Skill.Name.01,Skill.Description.01,Skill.Talk.01
+텔레포트,Move,Teleport,CoolTime,5.0,0.0,0.0,0.0,0.0,TriggerValue,Empty,0.0,-0.2,20,10.0,15.0,50,False,False,False,Skill.Name.02,Skill.Description.02,Skill.Talk.02
+레이징블로우,Attack,RagingBlow,CoolTime,5.0,0.0,0.0,0.0,0.0,NormalValue,Empty,100.0,35.0,20,10.0,15.0,50,False,False,False,Skill.Name.03,Skill.Description.03,Skill.Talk.03
+샤크,Attack,Shark,CoolTime,5.0,0.0,0.0,0.0,0.0,NormalValue,Empty,500.0,100.0,20,10.0,15.0,50,False,False,False,Skill.Name.04,Skill.Description.04,Skill.Talk.04
+몽키킹,Attack,Yeouibong,AttackCount,4.0,0.0,0.0,0.0,0.0,NormalValue,Empty,150.0,30.0,20,10.0,15.0,50,False,False,False,Skill.Name.05,Skill.Description.05,Skill.Talk.05
+애로우샤워,Attack,ArrowRain,CoolTime,5.0,0.0,0.0,0.0,0.0,NormalValue,Empty,120.0,10.0,20,10.0,15.0,0,False,False,True,Skill.Name.06,Skill.Description.06,Skill.Talk.06
+더블 어택,Passive,DoubleAttack,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,DoubleAttackChance,50.0,2.5,20,10.0,15.0,50,False,False,False,Skill.Name.07,Skill.Description.07,Skill.Talk.07
+용의가호,Attack,DragonBless,CoolTime,11.0,0.0,0.0,0.0,5.0,NormalValue,Empty,30.0,10.0,20,10.0,15.0,50,True,True,False,Skill.Name.08,Skill.Description.08,Skill.Talk.08
+블라스트,Attack,Blast,KillCount,6.0,0.0,0.0,0.0,0.0,NormalValue,Empty,200.0,20.0,20,10.0,15.0,50,True,True,False,Skill.Name.09,Skill.Description.09,Skill.Talk.09
+유니티소드,Attack,UnitySword,CoolTime,20.0,0.0,0.0,4.0,35.0,NormalValue,Empty,120.0,10.0,20,10.0,15.0,0,True,True,True,Skill.Name.10,Skill.Description.10,Skill.Talk.10
+바람의 검,Passive,WindSword,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,AttackSpeedRate,30.0,4.0,20,10.0,15.0,50,False,False,False,Skill.Name.11,Skill.Description.11,Skill.Talk.11
+황금잔,Passive,GoldenBox,Passive,0.0,3.0,0.0,0.0,0.0,NormalValue,FinalGoldBonusRate,50.0,10.0,20,10.0,15.0,50,False,False,False,Skill.Name.12,Skill.Description.12,Skill.Talk.12
+신성한 축복,All,Heal,AttackCount,7.0,0.0,0.0,0.0,0.0,NormalValue,Empty,10.0,1.5,20,10.0,15.0,50,False,False,False,Skill.Name.13,Skill.Description.13,Skill.Talk.13
+경험의 손,Passive,HandOfExp,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,FinalExpBonusRate,50.0,10.0,20,10.0,15.0,50,False,False,False,Skill.Name.14,Skill.Description.14,Skill.Talk.14
+드레인,Passive,Drain,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,VampireRate,1.0,0.25,20,10.0,15.0,50,False,False,False,Skill.Name.15,Skill.Description.15,Skill.Talk.15
+회심의 일격,Passive,Strike,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,CriticalDamageRate,100.0,150.0,20,10.0,15.0,50,False,False,False,Skill.Name.16,Skill.Description.16,Skill.Talk.16
+젤리뿔,Passive,JellyBonus,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,FinalJellyBonusRate,50.0,10.0,20,10.0,15.0,50,False,False,False,Skill.Name.17,Skill.Description.17,Skill.Talk.17
+자강두천,Passive,BossDamage,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,BossDamageRate,50.0,10.0,20,10.0,15.0,50,False,False,False,Skill.Name.18,Skill.Description.18,Skill.Talk.18
+이글아이,Passive,Acc,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,AccRate,50.0,20.0,20,10.0,15.0,50,False,False,False,Skill.Name.19,Skill.Description.19,Skill.Talk.19
+행운잎사귀,Passive,Dodge,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,Dodge,50.0,20.0,20,10.0,15.0,50,False,False,False,Skill.Name.20,Skill.Description.20,Skill.Talk.20
+총공깽,Passive,FinalDamage,Passive,0.0,0.0,0.0,0.0,0.0,NormalValue,FinalDamageRate,25.0,5.0,20,10.0,15.0,50,False,False,False,Skill.Name.21,Skill.Description.21,Skill.Talk.21

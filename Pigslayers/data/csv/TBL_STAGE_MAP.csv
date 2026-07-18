@@ -1,0 +1,7 @@
+﻿name,StageType,Order,UseTop,BoundaryTop,UseBottom,BoundaryBottom,UseLeft,BoundaryLeft,UseRight,BoundaryRight
+TBL_STAGE_MAP0,Castle,0,True,7.0,True,-8.399999618530273,True,-3.5,True,19.5
+TBL_STAGE_MAP1,Castle,1,True,9.600000381469727,True,-7.0,True,-5.5,True,12.5
+TBL_STAGE_MAP2,Sea,0,True,7.0,True,-8.399999618530273,True,-3.5,True,30.5
+TBL_STAGE_MAP3,Desert,0,True,7.0,True,-8.399999618530273,True,-3.5,True,27.5
+TBL_STAGE_MAP4,Snow,0,True,7.0,True,-8.399999618530273,True,-4.0,True,28.5
+TBL_STAGE_MAP5,ToyLand,0,True,7.0,True,-8.399999618530273,True,-3.5,True,29.5

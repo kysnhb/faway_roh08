@@ -1,0 +1,9 @@
+﻿name,MonsterKind,RewardType,Weight,Amount
+TBL_CAVE_REWARD0,Mimic_Currency,Gold,10,15.0
+TBL_CAVE_REWARD1,Mimic_Currency,PigJelly,10,15.0
+TBL_CAVE_REWARD2,Mimic_Currency,EquipmentStone,50,700.0
+TBL_CAVE_REWARD3,Mimic_Currency,Clover,10,10.0
+TBL_CAVE_REWARD5,Mimic_Currency,Dice,20,50.0
+TBL_DUNGEON_CAVE_REWARD0,Mimic_Currency,SkipTicket,5,0.04
+TBL_CAVE_REWARD6,Mimic_Sword,EquipmentWeapon,100,0.15
+TBL_CAVE_REWARD7,Mimic_Shield,EquipmentShield,100,0.15

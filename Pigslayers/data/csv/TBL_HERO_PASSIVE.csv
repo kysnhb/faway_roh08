@@ -1,0 +1,23 @@
+﻿name,StatType,Value,ValueAdd,Cost,CostAdd,Description,NameText
+투지,HealthRate,1000.0,500.0,50.0,50.0,추가 체력 +{0}%,Hero.Passive.Name.00
+광기,CriticalDamageRate,100.0,50.0,50.0,50.0,추가 치명타 공격력 +{0}%,Hero.Passive.Name.01
+토르,DoubleAttackChance,5.0,1.0,50.0,50.0,더블 어택 확률 +{0}%,Hero.Passive.Name.02
+집중,Acc,10.0,1.0,50.0,50.0,명중률 +{0},Hero.Passive.Name.03
+도움,DamageRate,1000.0,500.0,50.0,50.0,추가 공격력 +{0}%,Hero.Passive.Name.04
+활무,MonsterDamageReduceRate,5.0,1.0,50.0,50.0,피해량 감소 +{0}%,Hero.Passive.Name.05
+검무,DamageRate,1000.0,500.0,50.0,50.0,추가 공격력 +{0}%,Hero.Passive.Name.06
+신속,MoveSpeedRate,5.0,5.0,50.0,50.0,추가 이동속도 +{0}%,Hero.Passive.Name.07
+질풍,AttackSpeedRate,20.0,5.0,50.0,50.0,추가 공격속도 +{0}%,Hero.Passive.Name.08
+증폭,SkillDamageRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.09
+지혜,SkillCoolTimeReduction,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.10
+힐링,HealthRecoveryRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.11
+분노,DamageRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.12
+동족,StageJellyBonusRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.13
+증강,HealthRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.14
+리치,StageGoldBonusRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.15
+스텝,Dodge,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.16
+댄스,CriticalDamageRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.17
+그림자,MonsterDamageReduceRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.18
+허무,StageExpBonusRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.19
+암살,VampireRate,0.0,0.0,50.0,100.0,{0},Hero.Passive.Name.20
+공허,Empty,0.0,0.0,100000.0,100000.0,{0},Hero.Passive.Name.21

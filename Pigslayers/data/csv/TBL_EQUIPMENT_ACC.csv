@@ -1,0 +1,24 @@
+﻿name,Grade,EquipStatType,EquipValue,EquipAddValue,HaveStatType,HaveValue,HaveAddValue,CostMultipler,MaxLevel,Weight,HaveNext,NeedComposeCount,NameText
+용기의 훈장,Normal,Empty,10.0,10.0,DamageRate,4.0,4.0,2.0,200,500,True,10,Equipment.Acc.Name.00
+별 귀고리,Normal,Empty,50.0,50.0,DamageRate,16.0,16.0,4.0,200,500,True,10,Equipment.Acc.Name.01
+포도 반지,Normal,Empty,90.0,90.0,DamageRate,30.0,30.0,6.0,200,500,True,10,Equipment.Acc.Name.02
+체리 반지,Normal,Empty,180.0,180.0,DamageRate,60.0,60.0,8.0,200,500,True,10,Equipment.Acc.Name.03
+수정 펜던트,Normal,Empty,300.0,300.0,DamageRate,90.0,90.0,10.0,200,500,True,10,Equipment.Acc.Name.04
+러브 펜던트,Rare,Empty,500.0,500.0,DamageRate,150.0,150.0,12.0,200,400,True,10,Equipment.Acc.Name.05
+달의 귀고리,Rare,Empty,600.0,600.0,DamageRate,180.0,180.0,14.0,200,400,True,10,Equipment.Acc.Name.06
+리본 머리끈,Rare,Empty,740.0,740.0,DamageRate,210.0,210.0,16.0,200,400,True,10,Equipment.Acc.Name.07
+옥 반지,Rare,Empty,840.0,840.0,DamageRate,240.0,240.0,18.0,200,400,True,10,Equipment.Acc.Name.08
+장미 반지,Rare,Empty,940.0,940.0,DamageRate,270.0,270.0,20.0,200,400,True,10,Equipment.Acc.Name.09
+옥 목걸이,Epic,Empty,1800.0,1800.0,DamageRate,450.0,450.0,22.0,200,20,True,10,Equipment.Acc.Name.10
+루비 반지,Epic,Empty,2400.0,2400.0,DamageRate,600.0,600.0,24.0,200,20,True,10,Equipment.Acc.Name.11
+목도리,Epic,Empty,3000.0,3000.0,DamageRate,750.0,750.0,26.0,200,20,True,10,Equipment.Acc.Name.12
+루비 귀고리,Epic,Empty,3600.0,3600.0,DamageRate,900.0,900.0,28.0,200,20,True,10,Equipment.Acc.Name.13
+블루 귀고리,Epic,Empty,4200.0,4200.0,DamageRate,1050.0,1050.0,30.0,200,10,True,10,Equipment.Acc.Name.14
+핑크  팔찌,Unique,Empty,7000.0,7000.0,DamageRate,1500.0,1500.0,32.0,200,3,True,5,Equipment.Acc.Name.15
+푸른 귀고리,Unique,Empty,8000.0,8000.0,DamageRate,1800.0,1800.0,34.0,200,2,True,5,Equipment.Acc.Name.16
+레드 반지,Unique,Empty,9400.0,9400.0,DamageRate,2100.0,2100.0,36.0,200,1,True,5,Equipment.Acc.Name.17
+보라 반지,Unique,Empty,11000.0,11000.0,DamageRate,2400.0,2400.0,38.0,200,1,True,5,Equipment.Acc.Name.18
+사랑 반지,Unique,Empty,12000.0,12000.0,DamageRate,2700.0,2700.0,40.0,200,1,True,5,Equipment.Acc.Name.19
+왕의 무게,Legend,Empty,24000.0,24000.0,DamageRate,4500.0,4500.0,42.0,200,0,True,5,Equipment.Acc.Name.20
+븐홍 반지,Legend,Empty,35000.0,35000.0,DamageRate,5700.0,5700.0,45.0,200,0,True,5,Equipment.Acc.Name.21
+보라 팔찌,Legend,Empty,50000.0,50000.0,DamageRate,7000.0,7000.0,50.0,200,0,False,0,Equipment.Acc.Name.22

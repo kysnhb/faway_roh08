@@ -1,0 +1,300 @@
+﻿name,Korean,English
+Empty,,XXX
+Stat_Empty,0,XXX
+Stat_Health,체력,XXX
+Stat_HealthRate,추가 체력,XXX
+Stat_MaxHealth,전체 체력,XXX
+Stat_HealthRecovery,체력 회복량,XXX
+Stat_Damage,공격력,XXX
+Stat_DamageRate,추가 공격력,XXX
+Stat_CriticalDamageRate,치명타 공격력,XXX
+Stat_CriticalChance1,치명타 확률1,XXX
+Stat_CriticalDamageRate1,치명타 공격력1,XXX
+Stat_CriticalChance2,치명타 확률2,XXX
+Stat_CriticalDamageRate2,치명타 공격력2,XXX
+Stat_CriticalChance3,치명타 확률3,XXX
+Stat_CriticalDamageRate3,치명타 공격력3,XXX
+Stat_Acc,명중,XXX
+Stat_Dodge,회피,XXX
+Stat_AttackSpeed,공격속도,XXX
+Stat_AttackSpeedRate,추가 공격속도,XXX
+Stat_MoveSpeed,이동속도,XXX
+Stat_MoveSpeedRate,추가 이동속도,XXX
+Stat_AttackRange,공격범위,XXX
+Stat_GoldBonusRate,추가 골드 획득,XXX
+Stat_JellyBonusRate,추가 젤리 획득,XXX
+Stat_ExpBonusRate,추가 경혐치 획득,XXX
+Stat_BossDamageRate,추가 보스 공격력,XXX
+Stat_VampireRate,흡혈량,XXX
+Currency_Gold,골드,XXX
+Currency_Ruby,루비,XXX
+Currency_StatPoint,스탯 포인트,XXX
+Currency_Stone,강화석,XXX
+Currency_PigJelly,젤리,XXX
+Currency_Exp,경험치,XXX
+Currency_ToyHammer,뿅망치,XXX
+Currency_Dice,주사위,XXX
+Currency_Mileage,마일리지,XXX
+Currency_Key,열쇠,XXX
+Currency_Pork,고기,XXX
+Currency_SkipTicket,소탕권,XXX
+Currency_InfinityStone,각성석,XXX
+Message_Ready,준비중입니다.,XXX
+Message_Lack_Gold,골드가 부족합니다.,XXX
+Common_Level,레벨,XXX
+Common_LevelUp,레벨업,XXX
+Common_Royal,왕가,XXX
+Common_Hero,영웅,XXX
+Common_Equipment,장비,XXX
+Common_Mine,광산,XXX
+Common_Artifact,유물,XXX
+Common_Shop,상점,XXX
+Common_Dungeon,던전,XXX
+Common_Adventure,모험,XXX
+Common_Bless,축복,XXX
+Common_Postbox,우편함,XXX
+Common_Setting,설정,XXX
+Common_Ranking,랭킹,XXX
+Common_Attendance,출석부,XXX
+Common_Friend,친구,XXX
+Common_PiggyBank,저금통,XXX
+Common_Event,이벤트,XXX
+Common_GuideMission,가이드 미션,XXX
+Common_Quest,퀘스트,XXX
+Common_Pass,패스권,XXX
+Common_Achievement,업적,XXX
+Common_PvP,PvP,XXX
+Common_Mole,두돼지,XXX
+Common_Coupon,쿠폰,XXX
+Common_LuckyBag,복주머니,XXX
+Common_Chat,채팅,XXX
+Common_Capture,포획,XXX
+Common_Summon,소환,XXX
+Common_Skill,스킬,XXX
+Common_Treasure,보물,XXX
+Common_PowerUp,각성,XXX
+Common_Repeat,반복,XXX
+Common_AutoBoss,자동 보스,XXX
+Common_BossChallenge,보스 도전,XXX
+Common_Giveup,포기,XXX
+Common_AutoDungeon,연속 토벌,XXX
+Common_Day,일,XXX
+Common_Hour,시간,XXX
+Common_Minute,분,XXX
+Common_Second,초,XXX
+Common_Get,받기,XXX
+Common_AllGet,전체 받기,XXX
+Common_Achieve,획득,XXX
+Common_AllAchieve,일괄 획득,XXX
+Common_Weapon,무기,XXX
+Common_Shield,방패,XXX
+Common_Acc,악세사리,XXX
+Common_Grade,등급,XXX
+Common_Have_Effect,보유 효과,XXX
+Common_Equipped_Effect,장착 효과,XXX
+Common_Have,보유,XXX
+Common_NotHave,미보유,XXX
+Common_All,전체,XXX
+Common_NeedGet,획득 필요,XXX
+Common_Force,강화,XXX
+Common_AutoCompose,자동 합성,XXX
+Common_Notice,공지,XXX
+Common_Alarm,알림,XXX
+Common_Confirm,확인,XXX
+Common_Cancel,취소,XXX
+Setting_BackgroundMusic,배경 음악,XXX
+Setting_SFX,효과음,XXX
+Setting_Push,푸시 알림,XXX
+Setting_Language,언어,XXX
+Setting_LowSpecMode,저사양 모드,XXX
+Setting_LowBatteryMode,절전 모드,XXX
+Setting_NicknameChange,닉네임 변경,XXX
+Setting_MailQuestion,문의하기,XXX
+Setting_NaverCafe,네이버 카페,XXX
+Setting_Review,응원 하기,XXX
+Setting_Notice,공지 사항,XXX
+Setting_CouponRegister,쿠폰 등록,XXX
+Royal_Growth,성장,XXX
+Royal_Force,강화,XXX
+Royal_Stat,특성,XXX
+Royal_Promotion,승급,XXX
+Promotion_Name_0,성주,XXX
+Promotion_Name_1,남작,XXX
+Promotion_Name_2,자작,XXX
+Promotion_Name_3,백작,XXX
+Promotion_Name_4,후작,XXX
+Promotion_Name_5,공작,XXX
+Promotion_Name_6,대공작,XXX
+Promotion_Name_7,왕,XXX
+Promotion_Name_8,국왕,XXX
+Promotion_Name_9,대왕,XXX
+Promotion_Name_10,황제,XXX
+Bless_Description,축복 효과가 활성화 되어있는 동안에는 축복의 경험치를 획득할 수 있습니다.,XXX
+Bless_Name_0,공격의 축복,XXX
+Bless_Name_1,생명의 축복,XXX
+Bless_Name_2,탐욕의 축복,XXX
+Bless_Name_3,경험의 축복,XXX
+Bless_On,축복 활성화,XXX
+Friend_AllSend,전체 보내기,XXX
+Friend_Delete,친구 삭제,XXX
+Friend_Add,친구 추가,XXX
+Friend_RequestList,요청 목록,XXX
+Friend_RequestList2,요청된 친구 목록,XXX
+Friend_ListEmpty,목록이 없습니다.,XXX
+Friend_SearchedList,검색된 친구 목록,XXX
+Friend_Back,돌아가기,XXX
+Ranking_Description,랭킹은 {0}분에 한 번 갱신됩니다.,XXX
+Hero_Name_0,0,XXX
+Hero_Name_1,0,XXX
+Hero_Name_2,0,XXX
+Hero_Name_3,0,XXX
+Hero_Name_4,0,XXX
+Hero_Name_5,0,XXX
+Hero_Name_6,0,XXX
+Hero_Name_7,0,XXX
+Miner_Name_0,몽일이,XXX
+Miner_Name_1,호옹이,XXX
+Miner_Name_2,크롱이,XXX
+Miner_Name_3,메롱이,XXX
+Miner_Name_4,초롱이,XXX
+Miner_Name_5,푸롱이,XXX
+Miner_Name_6,뾰롱이,XXX
+Miner_Name_7,콜롱이,XXX
+Miner_Name_8,라형이,XXX
+Miner_Name_9,댕댕이,XXX
+Miner_Name_10,투덜이,XXX
+Miner_Name_11,치롱이,XXX
+Miner_Name_12,멜빵이,XXX
+Miner_Name_13,용용이,XXX
+Miner_Name_14,헤롱이,XXX
+Miner_Name_15,팔팔이,XXX
+Miner_Name_16,냥냥이,XXX
+Miner_Name_17,나영이,XXX
+Miner_Name_18,호돌이,XXX
+Miner_Name_19,열혈이,XXX
+Summon_Weapon,무기 소환,XXX
+Summon_Shield,방패 소환,XXX
+Summon_Acc,악세사리 소환,XXX
+Summon_Weapon_Desc,무기는 공격력을 강화합니다.,XXX
+Summon_Shield_Desc,방패는 체력을 강화합니다.,XXX
+Summon_Acc_Desc,액세서리는 공격력과 체력을 강화합니다.,XXX
+Summon_Count,{0}회 소환,XXX
+Equipment_Weapon_Name_0,0,XXX
+Equipment_Weapon_Name_1,0,XXX
+Equipment_Weapon_Name_2,0,XXX
+Equipment_Weapon_Name_3,0,XXX
+Equipment_Weapon_Name_4,0,XXX
+Equipment_Weapon_Name_5,0,XXX
+Equipment_Weapon_Name_6,0,XXX
+Equipment_Weapon_Name_7,0,XXX
+Equipment_Weapon_Name_8,0,XXX
+Equipment_Weapon_Name_9,0,XXX
+Equipment_Weapon_Name_10,0,XXX
+Equipment_Weapon_Name_11,0,XXX
+Equipment_Weapon_Name_12,0,XXX
+Equipment_Weapon_Name_13,0,XXX
+Equipment_Weapon_Name_14,0,XXX
+Equipment_Weapon_Name_15,0,XXX
+Equipment_Weapon_Name_16,0,XXX
+Equipment_Weapon_Name_17,0,XXX
+Equipment_Weapon_Name_18,0,XXX
+Equipment_Weapon_Name_19,0,XXX
+Equipment_Weapon_Name_20,0,XXX
+Equipment_Weapon_Name_21,0,XXX
+Equipment_Weapon_Name_22,0,XXX
+Equipment_Weapon_Name_23,0,XXX
+Equipment_Weapon_Name_24,0,XXX
+Equipment_Weapon_Name_25,0,XXX
+Equipment_Shield_Name_0,0,XXX
+Equipment_Shield_Name_1,0,XXX
+Equipment_Shield_Name_2,0,XXX
+Equipment_Shield_Name_3,0,XXX
+Equipment_Shield_Name_4,0,XXX
+Equipment_Shield_Name_5,0,XXX
+Equipment_Shield_Name_6,0,XXX
+Equipment_Shield_Name_7,0,XXX
+Equipment_Shield_Name_8,0,XXX
+Equipment_Shield_Name_9,0,XXX
+Equipment_Shield_Name_10,0,XXX
+Equipment_Shield_Name_11,0,XXX
+Equipment_Shield_Name_12,0,XXX
+Equipment_Shield_Name_13,0,XXX
+Equipment_Shield_Name_14,0,XXX
+Equipment_Shield_Name_15,0,XXX
+Equipment_Shield_Name_16,0,XXX
+Equipment_Shield_Name_17,0,XXX
+Equipment_Shield_Name_18,0,XXX
+Equipment_Shield_Name_19,0,XXX
+Equipment_Shield_Name_20,0,XXX
+Equipment_Shield_Name_21,0,XXX
+Equipment_Shield_Name_22,0,XXX
+Equipment_Shield_Name_23,0,XXX
+Equipment_Shield_Name_24,0,XXX
+Equipment_Shield_Name_25,0,XXX
+Equipment_ACC_Name_0,0,XXX
+Equipment_ACC_Name_1,0,XXX
+Equipment_ACC_Name_2,0,XXX
+Equipment_ACC_Name_3,0,XXX
+Equipment_ACC_Name_4,0,XXX
+Equipment_ACC_Name_5,0,XXX
+Equipment_ACC_Name_6,0,XXX
+Equipment_ACC_Name_7,0,XXX
+Equipment_ACC_Name_8,0,XXX
+Equipment_ACC_Name_9,0,XXX
+Equipment_ACC_Name_10,0,XXX
+Equipment_ACC_Name_11,0,XXX
+Equipment_ACC_Name_12,0,XXX
+Equipment_ACC_Name_13,0,XXX
+Equipment_ACC_Name_14,0,XXX
+Equipment_ACC_Name_15,0,XXX
+Equipment_ACC_Name_16,0,XXX
+Equipment_ACC_Name_17,0,XXX
+Equipment_ACC_Name_18,0,XXX
+Equipment_ACC_Name_19,0,XXX
+Equipment_ACC_Name_20,0,XXX
+Grade_Normal,노말,XXX
+Grade_Rare,레어,XXX
+Grade_Epic,에픽,XXX
+Grade_Unique,유니트,XXX
+Grade_Legend,레전드,XXX
+Grade_Mythology,신화,XXX
+Grade_God,갓,XXX
+Artifact_Force_Precent,강화 성공 확률 {0}%,XXX
+Dungeon_PigCow,리본 돼지 토벌,XXX
+Dungeon_FishFight,피쉬 파이트!,XXX
+Dungeon_Cave,광부 포획!,XXX
+Quest_Type_Daily,일일 퀘스트,XXX
+Quest_Type_Repeat,반복 퀘스트,XXX
+Quest_Type_Weekly,주간 퀘스트,XXX
+Quest_MosterKill,몬스터 처치 {0}회,XXX
+Monster_Name_0,0,XXX
+Monster_Name_1,0,XXX
+Monster_Name_2,0,XXX
+Monster_Name_3,0,XXX
+Monster_Name_4,0,XXX
+Monster_Name_5,0,XXX
+Monster_Name_6,0,XXX
+Monster_Name_7,0,XXX
+Monster_Name_8,0,XXX
+Monster_Name_9,0,XXX
+Monster_Name_10,0,XXX
+Monster_Name_11,0,XXX
+Monster_Name_12,0,XXX
+Monster_Name_13,0,XXX
+Monster_Name_14,0,XXX
+Monster_Name_15,0,XXX
+Monster_Name_16,0,XXX
+Monster_Name_17,0,XXX
+Monster_Name_18,0,XXX
+Monster_Name_19,0,XXX
+Monster_Name_20,0,XXX
+Monster_Name_21,0,XXX
+Monster_Name_22,0,XXX
+Monster_Name_23,0,XXX
+Monster_Name_24,0,XXX
+Monster_Name_25,0,XXX
+Monster_Name_26,0,XXX
+Monster_Name_27,0,XXX
+Monster_Name_28,0,XXX
+Monster_Name_29,0,XXX
+Monster_Name_30,0,XXX

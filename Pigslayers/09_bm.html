@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>수익화 구조 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html" class="on">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">09 · Monetization</p>
+<h1>수익화 구조</h1>
+<p class="lead"><code>ProductID</code> enum에 정의된 <strong>결제 상품 56종</strong> 전수와
+상점·광고 구성입니다. 가격은 스토어(서버)에 있으므로 APK에서는 확인되지 않습니다.</p>
+
+<div class="grid g4">
+  <div class="stat"><div class="k">결제 상품</div><div class="v">56</div><div class="s">ProductID enum</div></div>
+  <div class="stat"><div class="k">매니페스트 상품</div><div class="v">40</div><div class="s">실제 등록분</div></div>
+  <div class="stat"><div class="k">상점 탭</div><div class="v">6</div><div class="s">ShopType</div></div>
+  <div class="stat"><div class="k">광고 지면</div><div class="v">11</div><div class="s">ADType</div></div>
+</div>
+<div class="warn"><strong>불일치 1건</strong> — 코드 enum은 56종인데 매니페스트/스토어 등록 상품은 40종입니다.
+차액 16종은 ① 광고·마일리지 등 <strong>비결제 항목</strong>(<code>Ad_*</code>, <code>Mileage</code>, <code>Mileage_Item</code>)이거나
+② <strong>미출시 예정 상품</strong>일 수 있습니다. 오픈 전 점검 항목으로 남깁니다.</div>
+
+<h2>상점 구성 (ShopType 6종)</h2>
+<div class="tw"><table><thead><tr><th>탭</th><th>성격</th><th>상품</th></tr></thead><tbody><tr><td><span class="chip ruby">Ruby</span></td><td>유료 재화 직판</td><td>ruby_1000 ~ ruby_100000 (6단계)</td></tr><tr><td><span class="chip gold">Package</span></td><td>패키지</td><td>ShopPackageType 9종 (아래)</td></tr><tr><td><span class="chip violet">Event</span></td><td>기간 이벤트 상품</td><td>event_level_* · event_stage_*</td></tr><tr><td><span class="chip jade">Mileage</span></td><td>마일리지 교환</td><td><img src="img/currency/Mileage.png" alt="Mileage" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Mileage · Mileage_Item</td></tr><tr><td><span class="chip sky">AD</span></td><td>광고 리워드</td><td>Ad_GoldTicket · Ad_Pork · Ad_Ruby · Ad_Key</td></tr><tr><td><span class="chip orange">Popup</span></td><td>팝업 노출 상품</td><td>타이밍 기반 제안 (추정)</td></tr></tbody></table></div>
+
+<h2>루비 팩 — 6단계</h2>
+<div class="tw"><table><thead><tr><th>상품 ID</th><th>지급량</th><th>가격</th></tr></thead><tbody><tr><td><code>ruby_1000</code></td><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 1,000</td><td>-</td></tr><tr><td><code>ruby_3000</code></td><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 3,000</td><td>-</td></tr><tr><td><code>ruby_6500</code></td><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 6,500</td><td>-</td></tr><tr><td><code>ruby_21000</code></td><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 21,000</td><td>-</td></tr><tr><td><code>ruby_45000</code></td><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 45,000</td><td>-</td></tr><tr><td><code>ruby_100000</code></td><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 100,000</td><td>-</td></tr></tbody></table></div>
+<p class="small">최저 1,000 → 최고 100,000으로 <strong>100배 스프레드</strong>. 고래 유저 대응 상단 구간이 열려 있습니다.
+가격은 Google Play 콘솔 값이라 APK에 없습니다.</p>
+
+<h2>패키지 (ShopPackageType 9종)</h2>
+<div class="tw"><table><thead><tr><th>패키지</th><th>대응 상품</th><th>주기</th></tr></thead><tbody><tr><td><span class="chip gold">Start</span> 첫결제</td><td><code>firstpremium1/2/3</code></td><td>1회성 · 3단계</td></tr><tr><td><span class="chip ruby">Ruby</span></td><td><code>ruby_*</code></td><td>상시</td></tr><tr><td><span class="chip sky">DailyGrowth</span> 일일성장</td><td><code>dailygrowthpremium1~5</code></td><td>매일 · 5단계</td></tr><tr><td><span class="chip violet">WeeklyGrowth</span> 주간성장</td><td><code>weeklypremium1~5</code></td><td>주간 · 5단계</td></tr><tr><td><span class="chip gold">WeeklyGoldTicket</span></td><td><code>weeklygoldticket1~3</code></td><td>주간 · 3단계</td></tr><tr><td><span class="chip gold">DailyGoldTicketPackage</span></td><td><code>dailygoldticketpackage1~5</code></td><td>매일 · 5단계</td></tr><tr><td><span class="chip gold">WeeklyGoldTicketPackage</span></td><td><code>weeklygoldticketpackage1~5</code></td><td>주간 · 5단계</td></tr><tr><td><span class="chip jade">GoldTicket</span></td><td><code>dailygoldticketpremium</code></td><td>매일</td></tr></tbody></table></div>
+<div class="fact"><strong>구조 요약</strong> — 골드티켓 관련 상품만 <strong>14종</strong>(주간3 + 일일패키지5 + 주간패키지5 + 프리미엄1)입니다.
+<img src="img/currency/GoldTicket.png" alt="GoldTicket" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>골드티켓이 이 게임 BM의 중심축</strong>입니다.
+골드가 장비 레벨업·로열 성장의 주 싱크이므로, “골드 부족 → 골드티켓 구매”가 핵심 퍼널로 <span class="chip orange">추정</span>됩니다.</div>
+
+<h2>구독형 / 영구형 상품</h2>
+<div class="tw"><table><thead><tr><th>상품</th><th>성격</th><th>비고</th></tr></thead><tbody><tr><td><code>adremove</code></td><td>광고 제거</td><td>영구 · 방치형 필수 상품</td></tr><tr><td><code>infinitedamagebless</code></td><td>데미지 축복 영구</td><td>축복 5종 전부 개별 판매</td></tr><tr><td><code>infinitehealthbless</code></td><td>체력 축복 영구</td><td></td></tr><tr><td><code>infinitegoldbless</code></td><td>골드 축복 영구</td><td></td></tr><tr><td><code>infiniteexpbless</code></td><td>경험치 축복 영구</td><td></td></tr><tr><td><code>infiniteminingbless</code></td><td>채굴 축복 영구</td><td></td></tr><tr><td><code>infinitetowerspecial</code></td><td>무한의 탑 특별</td><td>던전 특화</td></tr><tr><td><code>infinitetowerpremium</code></td><td>무한의 탑 프리미엄</td><td>던전 특화</td></tr><tr><td><code>currencydungeonpremium</code></td><td>재화 던전 프리미엄</td><td>던전 특화</td></tr><tr><td><code>dailyrubypremium</code></td><td>일일 루비</td><td>구독형 (추정)</td></tr></tbody></table></div>
+
+<h2>이벤트 상품 (7종)</h2>
+<div class="tw"><table><thead><tr><th>상품</th><th>연결 콘텐츠</th></tr></thead><tbody><tr><td><code>event_level_1</code> / <code>_150</code> / <code>_300</code> / <code>_450</code></td><td>레벨 패스 — 4개 구간 분할 판매</td></tr><tr><td><code>event_stage_normal</code> / <code>_hard</code> / <code>_hell</code></td><td>스테이지 패스 — 난이도별 판매</td></tr></tbody></table></div>
+
+<h2>광고 지면 (ADType 11종)</h2>
+<p>AdMob 단독(미디에이션 없음), 리워드 지면 4종이 실제 재화를 줍니다.</p>
+<div class="card"><p style="margin:0;line-height:2.4">
+<span class="chip jade">Bless</span>
+<span class="chip violet">GachaWeapon</span> <span class="chip violet">GachaShield</span>
+<span class="chip violet">GachaAcc</span> <span class="chip violet">GachaSkill</span>
+<span class="chip violet">GachaArtifact</span> <span class="chip violet">GachaRune</span>
+<span class="chip sky">Quest</span> <span class="chip ruby">Shop</span>
+<span class="chip orange">Mole</span> <span class="chip orange">DiceGame</span>
+</p></div>
+<div class="note"><strong>뽑기 6종 전부에 광고</strong>가 붙어 있습니다(무기·방패·장신구·스킬·아티팩트·룬).
+무과금 유저도 성장 축 전부에 접근 가능하되 <strong>시간을 지불</strong>하는 구조입니다.
+<code>adremove</code>가 팔리는 근거이자, 광고 수익과 IAP가 상충하지 않도록 설계된 지점입니다.</div>
+
+<h2>과금 퍼널 (추정)</h2>
+<div class="card">
+<p style="margin:0 0 12px"><strong>1. 진입</strong> — 가이드 미션 11~14단계에서 축복 4종을 무료 체험시킴 (광고)</p>
+<p style="margin:0 0 12px"><strong>2. 첫 결제</strong> — <code>firstpremium1/2/3</code> 3단계 첫결제 패키지</p>
+<p style="margin:0 0 12px"><strong>3. 습관화</strong> — <code>dailygrowthpremium1~5</code>, <code>dailygoldticketpackage1~5</code> 일일 상품</p>
+<p style="margin:0 0 12px"><strong>4. 영구화</strong> — <code>adremove</code> + <code>infinite*bless</code> 5종 영구 상품</p>
+<p style="margin:0 0 12px"><strong>5. 심화</strong> — 던전 특화 상품(무한탑·재화던전) + 패스 7종</p>
+<p style="margin:0"><strong>6. 고래</strong> — <code>ruby_100000</code> + <img src="img/currency/Mileage.png" alt="Mileage" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 마일리지 누적 보상</p>
+</div>
+<div class="warn"><strong>확정 불가</strong> — 가격·확률·지급량은 APK에 없거나(스토어/서버) 테이블 숫자 컬럼에 있습니다.
+위 퍼널은 <strong>상품 이름과 콘텐츠 연결 관계에서 역추론한 구조</strong>이며, 실제 유저 행동 데이터로 검증되지 않았습니다.</div>
+
+<div class="pager"><a href="08_events.html">← 인게임 이벤트</a><a href="10_market.html">시장 조사 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">상점 구성 (ShopType 6종)</span></li><li class="dot" data-i="2"><span class="tip">루비 팩</span></li><li class="dot" data-i="3"><span class="tip">패키지 (ShopPackageType 9</span></li><li class="dot" data-i="4"><span class="tip">구독형 / 영구형 상품</span></li><li class="dot" data-i="5"><span class="tip">이벤트 상품 (7종)</span></li><li class="dot" data-i="6"><span class="tip">광고 지면 (ADType 11종)</span></li><li class="dot" data-i="7"><span class="tip">과금 퍼널 (추정)</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

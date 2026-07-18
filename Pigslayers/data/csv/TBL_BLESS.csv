@@ -1,0 +1,6 @@
+﻿name,BlessType,StatType,NameText,DescriptionText
+공격의 가호,Damage,FinalDamageRate,Bless.Name.00,Bless.Description.00
+생명의 가호,Health,FinalHealthRate,Bless.Name.01,Bless.Description.01
+탐욕의 가호,Gold,FinalGoldBonusRate,Bless.Name.02,Bless.Description.02
+경험의 가호,Exp,FinalExpBonusRate,Bless.Name.03,Bless.Description.03
+채굴의 가호,Mining,FinalMiningBonusRate,Bless.Name.04,Bless.Description.04

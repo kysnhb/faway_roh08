@@ -1,0 +1,1188 @@
+﻿name,ko,en,ja,ru,zhcht
+Ability.Stat.DamageRate,추가 데미지 +{0}%,Additional Damage +{0}%,追加のダメージ +{0}％,Дополнительный Урон +{0}%,額外傷害 +{0}％
+Ability.Stat.CriticalDamageRate,추가 크리티컬 데미지 +{0}%,Additional Critical Damage +{0}%,追加の重大なダメージ +{0}％,Дополнительный Критический Урон +{0}%,其他關鍵傷害 +{0}％
+Ability.Stat.HealthRate,추가 체력 +{0}%,Additional Health +{0}%,追加の健康 +{0}％,Дополнительное Здоровье +{0}%,其他健康 +{0}％
+Ability.Stat.HealthRecoveryRate,추가 체력 회복 +{0}%,Additional Fitness Recovery +{0}%,追加のフィットネスリカバリ +{0}％,Дополнительное Восстановление Фитнеса +{0}%,額外的健身恢復 +{0}％
+Ability.Stat.AllGoldBonusRate,추가 골드 획득량 +{0}%,Additional Gold Acquisition +{0}%,追加の金の獲得 +{0}％,Дополнительное Приобретение Золота +{0}%,額外的黃金獲取 +{0}％
+Ability.Stat.AllExpBonusRate,추가 경험치 획득량 +{0}%,Additional Experience Acquisition +{0}%%,追加のエクスペリエンス取得 +{0} %%,Дополнительное Приобретение Опыта +{0} %%,額外的經驗獲取 +{0} %%
+Ability.Stat.AllJellyBonusRate,추가 젤리 획득량 +{0}%,Additional Jelly Acquisition +{0}%,追加のゼリー取得 +{0}％,Дополнительное Приобретение Желе +{0}%,其他果凍獲取 +{0}％
+Ability.Stat.Acc,추가 명중률 +{0},Additional Accuracy +{0},追加の精度 +{0},Дополнительная Точность +{0},附加精度 +{0}
+Ability.Stat.DoubleAttackChance,추가 더블 어택 확률 +{0}%,Additional Double Attack Probability +{0}%,追加の二重攻撃確率 +{0}％,Дополнительная Вероятность Двойной Атаки +{0}%,附加的雙重攻擊概率 +{0}％
+Artifact.Name.00,돼지를 부르는 호각,A Whistle Calling A Pig,豚を呼ぶwhi,"Свисток, Зовущий Свинью",一個叫豬的哨子
+Artifact.Name.01,거울아 누가 제일 이쁘니,"Mirror, Who Is The Prettiest",ミラー、最も美しい人,"Зеркало, Самое Красивое",鏡子，最漂亮的
+Artifact.Name.02,모래 더하기 시계,Sand Plus Clock,砂と時計,Песок Плюс Часы,沙子鐘
+Artifact.Name.03,만들다 만 세계지도,Make A World Map,世界地図を作成します,Сделать Карту Мира,製作世界地圖
+Artifact.Name.04,심장을 쥐었다.,I Grabbed My Heart.,私は心をつかみました。,Я Схватил Свое Сердце.,我抓住了我的心。
+Artifact.Name.05,번쩍 번쩍한 휘장,Sparkling Insignia,きらめく記章,Сверкающая Знака,閃閃發光的徽章
+Artifact.Name.06,사자 얼굴 방패,Lion Shield,ライオンシールド,Львиный Щит,獅子盾
+Artifact.Name.07,따노스 장갑,Thanos Gloves,サノスグローブ,Танос Перчатки,Thanos手套
+Artifact.Name.08,X칼리버를 뽑아라,Pull The X Caliber,Xキャリバーを引っ張ります,Потянуть X -Калибр,拉x口徑
+Artifact.Name.09,호랑이 기운,Tiger Energy,タイガーエネルギー,Tiger Energy,老虎能
+Artifact.Name.10,황금 곡괭이,Golden Pickaxe,ゴールデンピカックス,Золотая Пик,金鎬
+Artifact.Name.11,돼지 사용 설명서,Pig Usage Manual,豚の使用マニュアル,Руководство По Использованию Свиньи,豬使用手冊
+Artifact.Name.12,이상하게 좋은 왕관,Strangely Good Crown,奇妙に良い王冠,Странно Хорошая Корона,奇怪的好冠
+Artifact.Name.13,파라오의 마술잔,Pharaoh,ファラオ,Фараон,法老
+Artifact.Name.14,복!주!Money,Bok! Lord! Money,ボク！主！お金,Бок! Господин! Деньги,吧！主！錢
+Artifact.StatDecription.00,돼지 광부 채굴 속도 +{0}%,Pig Mining Speed +{0}%%,豚の採掘速度 +{0} %%,Скорость Добычи Свиней +{0} %%,豬開採速度 +{0} %%
+Artifact.StatDecription.01,더블 어택 추가 데미지 +{0}%,Double Attack Additional Damage +{0}%%,ダブル攻撃追加ダメージ +{0} %%,Двойная Атака Дополнительный Урон +{0} %%,雙重攻擊額外傷害 +{0} %%
+Artifact.StatDecription.02,던전 오버 타임 +{0}%,Dungeon Over Time +{0}%,時間の経過とともにダンジョン +{0}％,Подземелье С Течением Времени +{0}%,隨著時間的推移，地牢 +{0}％
+Artifact.StatDecription.03,스테이지 보스 오버 타임 +{0}%,Stage Boss Over Time +{0}%,時間の経過とともにステージボス +{0}％,Сценический Босс С Течением Времени +{0}%,階段老闆隨著時間 +{0}％
+Artifact.StatDecription.04,보스 몬스터 체력 -{0}%,Boss Monster Health- {0}%,ボスモンスターヘルス -  {0}％,Boss Monster Health- {0}%,Boss Monster Health- {0}％
+Artifact.StatDecription.05,보스 몬스터 데미지 -{0}%,Boss Monster Damage- {0}%,ボスモンスターダメージ -  {0}％,Урон Монстра Босса- {0}%,老闆怪物傷害 -  {0}％
+Artifact.StatDecription.06,체력 +{0},Health +{0},健康 +{0},Health +{0},健康 +{0}
+Artifact.StatDecription.07,데미지 +{0},Damage +{0},ダメージ +{0},Повреждение +{0},傷害 +{0}
+Artifact.StatDecription.08,크리티컬 데미지 +{0}%,Critical Damage +{0}%,重大なダメージ +{0}％,Критический Урон +{0}%,關鍵傷害 +{0}％
+Artifact.StatDecription.09,보스 몬스터 추가 데미지 +{0}%,Boss Monster Additional Damage +{0}%,ボスモンスター追加ダメージ +{0}％,Босс Монстр Дополнительный Урон +{0}%,老闆怪物額外傷害 +{0}％
+Artifact.StatDecription.10,돼지 광부 채굴 골드 +{0}%,Pork Mining Mining Gold +{0}%,ポークマイニングマイニングゴールド +{0}％,Горнодобывающая Добыча Свинина Золото +{0}%,豬肉採礦採礦黃金 +{0}％
+Artifact.StatDecription.11,돼지 광부 채굴 젤리 +{0}%,Pig Mining Jelly +{0}%,豚採掘ゼリー +{0}％,Желея Для Свиньи +{0}%,豬開採果凍 +{0}％
+Artifact.StatDecription.12,돼지 광부 채굴 경험치 +{0}%,Pig Mining Experience +{0}%%,豚の採掘体験 +{0} %%,Опыт Добычи Свиней +{0} %%,豬開採經驗 +{0} %%
+Artifact.StatDecription.13,스킬 쿨타임 -{0}%,Skill Cold Time- {0}%,スキルコールドタイム -  {0}％,Навык Холодное Время- {0}%,技能冷時間 -  {0}％
+Artifact.StatDecription.14,럭키 피그 보너스 +{0}%,Lucky Pig Bonus +{0}%,ラッキーピッグボーナス +{0}％,Бонус Lucky Pig +{0}%,幸運的豬獎金 +{0}％
+Bless.Name.00,공격의 가호,Attack,攻撃,Атака,攻擊
+Bless.Name.01,생명의 가호,Life,人生,Жизнь,生活
+Bless.Name.02,탐욕의 가호,Greed,貪欲,Жадность,貪婪
+Bless.Name.03,경험의 가호,Praise,賞賛,Хвалить,稱讚
+Bless.Name.04,채굴의 가호,Mining,マイニング,Добыча,礦業
+Bless.Description.00,공격력 +{0}%,Attack +{0}%,攻撃 +{0}％,Атака +{0}%,攻擊 +{0}％
+Bless.Description.01,체력 +{0}%,Health +{0}%,健康 +{0}％,Health +{0}%,健康 +{0}％
+Bless.Description.02,골드 획득 +{0}%,Gold Acquisition +{0}%,金の獲得 +{0}％,Приобретение Золота +{0}%,獲得黃金 +{0}％
+Bless.Description.03,경험치 획득 +{0}%,Experience Acquisition +{0}%,取得の経験 +{0}％,Приобретение Опыта +{0}%,經驗獲取 +{0}％
+Bless.Description.04,채굴량 +{0}%,Mining Amount +{0}%,マイニング量 +{0}％,Сумма Добычи +{0}%,採礦量 +{0}％
+Equipment.Bonus.Weapon,무기 보너스,Weapon Bonus,武器ボーナス,Бонус Оружия,武器獎金
+Equipment.Bonus.Shield,방패 보너스,Shield Bonus,シールドボーナス,Бонус Щита,盾牌獎金
+Equipment.Bonus.Acc,악세사리 보너스,Accessories,アクセサリー,Аксессуары,配件
+Equipment.Weapon.Name.00,오래된 검,Old sword,古い剣,Старый меч,舊劍
+Equipment.Weapon.Name.01,초심자의 검,Novice,初心者,Новичок,新手
+Equipment.Weapon.Name.02,흔한 검,Common sword,一般的な剣,Общий меч,普通劍
+Equipment.Weapon.Name.03,듀란달,Durandal,デュランダル,Дюрандал,杜蘭達
+Equipment.Weapon.Name.04,모글레이,Moglay,モグレイ,Моглай,Moglay
+Equipment.Weapon.Name.05,레바테인,Lebataine,レバタイン,Lebataine,Lebataine
+Equipment.Weapon.Name.06,아스칼론,Ascalon,アスカロン,Аскалон,阿斯卡隆
+Equipment.Weapon.Name.07,아조트,Azot,azot,Азот,Azot
+Equipment.Weapon.Name.08,알마스,Almas,アルマス,Алмас,阿爾馬斯
+Equipment.Weapon.Name.09,카타나,Katana,カタナ,Катана,卡塔納
+Equipment.Weapon.Name.10,용연,Yongyeon,ヨンヨン,Йонгион,Yongyeon
+Equipment.Weapon.Name.11,칼라드볼그,Callard Volg,Callard Volg,Каллард Волг,卡拉德·沃爾格（Callard Volg）
+Equipment.Weapon.Name.12,크로케아 모르스,Croqueers,クローク,Кровейеры,Croqueers
+Equipment.Weapon.Name.13,크루아딘 카다켄,Cruidine Kada Ken,クルイディンカダケン,Круидийн Када Кен,Cruidine Kada Ken
+Equipment.Weapon.Name.14,바리사다,Barissa,バリッサ,Барисса,巴麗莎
+Equipment.Weapon.Name.15,모랄타,Moralta,モラルタ,Моральта,莫拉爾塔
+Equipment.Weapon.Name.16,다인슬라이프,Dine Slave,食事奴隷,Поужинать раб,用餐奴隸
+Equipment.Weapon.Name.17,리딜,Redyl,レディール,Редил,氧化基
+Equipment.Weapon.Name.18,솔라스,Solas,ソラ,Солас,Solas
+Equipment.Weapon.Name.19,호푸드,Ho food,HO FOOD,Ho Food,Ho食物
+Equipment.Weapon.Name.20,발뭉,Feet,フィート,Ноги,腳
+Equipment.Weapon.Name.21,나겔링,Nagelling,nagelling,Нагеллинг,納格林
+Equipment.Weapon.Name.22,베갈타,Vegala,ベガラ,Овоя,維加拉
+Equipment.Weapon.Name.23,부르트강,Bourd,バード,Бурд,布爾德
+Equipment.Weapon.Name.24,앵거바딜,Anger Badill,怒りバディル,Гнев Бадлл,憤怒
+Equipment.Weapon.Name.25,아론다이트,Aondite,aondite,Аондайт,阿登
+Equipment.Weapon.Name.26,에케작스,Ecjaks,ecjaks,Экьякс,束縛
+Equipment.Weapon.Name.27,칼리번,Caliburn,キャリバーン,Калиберн,卡利本
+Equipment.Shield.Name.00,오래된 방패,Old Shield,古いシールド,Старый Щит,舊盾牌
+Equipment.Shield.Name.01,초심자의 방패,Beginner,初心者,Новичок,初學者
+Equipment.Shield.Name.02,흔한 방패,Common Shield,共通シールド,Общий Щит,普通盾牌
+Equipment.Shield.Name.03,듀란달의 방패,Duran Moon'S Shield,デュランムーンズシールド,Щит Duran Moon'S Щит,杜蘭·穆恩的盾牌
+Equipment.Shield.Name.04,모글레이의 방패,Mogley'S Shield,モグリーの盾,Щит Могли,莫格利的盾牌
+Equipment.Shield.Name.05,레바테인의 방패,Lebatain'S Shield,Lebatain'S Shield,Щит Лебатаина,Lebatain的盾牌
+Equipment.Shield.Name.06,아스칼론의 방패,Ascalon'S Shield,アスカロンの盾,Щит Аскалона,阿斯卡隆的盾牌
+Equipment.Shield.Name.07,아조트의 방패,Azot'S Shield,Azot'S Shield,Щит Азота,Azot的盾牌
+Equipment.Shield.Name.08,알마스의 방패,Almas Shield,アルマスシールド,Almas Щит,阿爾馬斯盾
+Equipment.Shield.Name.09,커터나의 방패,Cutter,カッター,Резак,刀具
+Equipment.Shield.Name.10,용연의 방패,Yongyeon'S Shield,ヨンヨンの盾,Щит Йонгиона,Yongyeon的盾牌
+Equipment.Shield.Name.11,칼라드볼그의 방패,Callard Volg'S Shield,Callard Volg'S Shield,Щит Калларда Вольга,卡拉德·沃爾格的盾牌
+Equipment.Shield.Name.12,크로케아 모르스의 방패,Croquarus Shield,Croquarus Shield,Croquarus Щит,克羅誇拉斯盾牌
+Equipment.Shield.Name.13,크루아딘 카다켄의 방패,Crudine Kada Ken'S Shield,Crudine Kada Ken'S Shield,Щит Крудин Када Кен,Crudine Kada Ken'S Shield
+Equipment.Shield.Name.14,바리사다의 방패,Barisada'S Shield,バリサダの盾,Щит Барисады,Barisada的盾牌
+Equipment.Shield.Name.15,모랄타의 방패,Moralta'S Shield,モラルタの盾,Щит Моральты,Moralta的盾牌
+Equipment.Shield.Name.16,다인슬라이프의 방패,Dine Slee Life'S Shield,スリーライフシールドを食いつけます,Поужинать,美食袖子的盾牌
+Equipment.Shield.Name.17,리딜의 방패,Riddiel'S Shield,リディエルの盾,Щит Риддиэля,里迪爾的盾牌
+Equipment.Shield.Name.18,솔라스의 방패,Solas Shield,ソラスシールド,Solas Щит,Solas Shield
+Equipment.Shield.Name.19,호푸드의 방패,Ho Food'S Shield,Ho Food'S Shield,Ho Food Щит,Ho Food'S Shield
+Equipment.Shield.Name.20,발뭉의 방패,Berth,バース,Причал,泊位
+Equipment.Shield.Name.21,나겔링의 방패,Nageling'S Shield,ネーゲリングのシールド,Щит Нагелинга,納格林的盾牌
+Equipment.Shield.Name.22,베갈타의 방패,Vegala'S Shield,ベガラの盾,Вегальский Щит,維加拉的盾牌
+Equipment.Shield.Name.23,부르트강의 방패,Bourd,バード,Бурд,布爾德
+Equipment.Shield.Name.24,앵거바딜의 방패,Anger Badill'S Shield,怒りバディルの盾,Гнев Щит Бадилла,憤怒的盾牌
+Equipment.Shield.Name.25,아론다이트의 방패,Aondite'S Shield,Aonditeの盾,Щит Аондита,Aondite的盾牌
+Equipment.Shield.Name.26,에케작스의 방패,Ecjazas' Shield,Ecjazasのシールド,Экджазас Щит,Ecjazas的盾牌
+Equipment.Shield.Name.27,칼리번의 방패,Caliburn'S Shield,Caliburn'S Shield,Щит Калиберна,卡利本的盾牌
+Equipment.Acc.Name.00,용기의 훈장,Courage,勇気,Храбрость,勇氣
+Equipment.Acc.Name.01,별 귀고리,Starrge,Starrge,Старг,Starrge
+Equipment.Acc.Name.02,포도 반지,Grape Ring,グレープリング,Виноградное Кольцо,葡萄環
+Equipment.Acc.Name.03,체리 반지,Cherry Ring,チェリーリング,Вишневое Кольцо,櫻桃戒指
+Equipment.Acc.Name.04,수정 펜던트,Crystal,結晶,Кристалл,水晶
+Equipment.Acc.Name.05,러브 펜던트,Love Pendant,大好きなペンダント,Любовь Кулон,愛吊墜
+Equipment.Acc.Name.06,달의 귀고리,Lunar,月,Лунный,月球
+Equipment.Acc.Name.07,리본 머리끈,Ribbon,リボン,Лента,絲帶
+Equipment.Acc.Name.08,옥 반지,Jade Ring,ジェイドリング,Нефритовое Кольцо,玉戒指
+Equipment.Acc.Name.09,장미 반지,Rose Ring,ローズリング,Розовое Кольцо,玫瑰戒指
+Equipment.Acc.Name.10,옥 목걸이,Jade Necklace,ジェイドのネックレス,Нефритовое Ожерелье,翡翠項鍊
+Equipment.Acc.Name.11,루비 반지,Ruby Ring,ルビーリング,Рубиновое Кольцо,紅寶石環
+Equipment.Acc.Name.12,목도리,Muffler,マフラー,Глушитель,圍巾
+Equipment.Acc.Name.13,루비 귀고리,Ruby Earrings,ルビーイヤリング,Рубиновые Серьги,紅寶石耳環
+Equipment.Acc.Name.14,블루 귀고리,Blue Earring,ブルーイヤリング,Синяя Серьга,藍色耳環
+Equipment.Acc.Name.15,핑크 팔찌,Pink Bracelet,ピンクのブレスレット,Розовый Браслет,粉紅色手鐲
+Equipment.Acc.Name.16,푸른 귀고리,Blue Earring,ブルーイヤリング,Синяя Серьга,藍色耳環
+Equipment.Acc.Name.17,레드 반지,Red Ring,赤いリング,Красное Кольцо,紅環
+Equipment.Acc.Name.18,보라 반지,Bora Ring,ボラリング,Бора Кольцо,波拉戒指
+Equipment.Acc.Name.19,사랑 반지,Love Ring,愛のリング,Любовное Кольцо,愛戒指
+Equipment.Acc.Name.20,왕의 무게,King'S Weight,王の体重,Вес Короля,國王的體重
+Equipment.Acc.Name.21,븐홍 반지,Ben Hong Ring,ベンホンリング,Бен Хонг Кольцо,本洪戒指
+Equipment.Acc.Name.22,보라 팔찌,Purple Bracelet,紫色のブレスレット,Фиолетовый Браслет,紫色手鐲
+Event.Level.Name.00,레벨업 이벤트 I,Level Up Event I,レベルアップイベントi,Событие На Уровне I,升級事件我
+Event.Level.Name.01,레벨업 이벤트 II,Level Up Event Ii,レベルアップイベントii,Событие Ii Уровня Ii,升級事件ii
+Event.Level.Name.02,레벨업 이벤트 III,Level Up Event Iii,レベルアップイベントiii,Событие Iii Уровня Iii,升級事件iii
+Event.Level.Name.03,레벨업 이벤트 IV,Level Up Event Iv,レベルアップイベントiv,Событие На Уровне Iv,升級事件iv
+Event.Stage.Name.00,스테이지 클리어 이벤트 I,Stage Clear Event I,ステージクリアイベントi,Стадия Ясного События I,舞台清晰的事件我
+Event.Stage.Name.01,스테이지 클리어 이벤트 II,Stage Clear Event Ii,ステージクリアイベントii,Стадия Ясного События Ii,階段清除事件ii
+Event.Stage.Name.02,스테이지 클리어 이벤트 III,Stage Clear Event Iii,ステージクリアイベントiii,Стадия Ясного События Iii,舞台清晰的事件iii
+GuideMission.Description.Attendance,출석 보상을 받으세요.,Get The Attendance Reward.,出席報酬を取得します。,Получите Награду За Посещение.,獲得出席獎勵。
+GuideMission.Description.RoyalGrowthDamageLevel,왕가 ▶ 성장 [공격력] 레벨 {0}을 달성하세요.,Royal Family ▶ Growth [Attack] Level {0}.,王室の家族▶成長[攻撃]レベル{0}。,Королевская Семья ▶ Рост [Атака] Уровень {0}.,王室▶增長[攻擊]等級{0}。
+GuideMission.Description.RoyalGrowthHealthLevel,왕가 ▶ 성장 [체력] 레벨 {0}을 달성하세요.,Royal Family ▶ Growth [Health] Level {0}.,王室家族▶成長[健康]レベル{0}。,Королевская Семья ▶ Рост [Здоровье] Уровень {0}.,王室▶增長[健康]水平{0}。
+GuideMission.Description.RoyalForceAttackSpeedLevel,왕가 ▶ 강화 [공격 속도] 레벨 {0}을 달성하세요.,Royal Family ▶ Enhancement [Attack Speed] Achieve Level {0}.,王室の家族▶強化[攻撃速度]レベル{0}を達成します。,Королевская Семья ▶ Улучшение [Скорость Атаки] Достичь Уровня {0}.,王室▶增強[攻擊速度]達到水平{0}。
+GuideMission.Description.RoyalForceMoveSpeedLevel,왕가 ▶ 강화 [이동 속도] 레벨 {0}을 달성하세요.,Royal Family ▶ Enhancement [Movement Speed] Achieve Level {0}.,王室の家族▶強化[移動速度]レベル{0}を達成します。,Королевская Семья ▶ Улучшение [Скорость Движения] Достичь Уровня {0}.,王室▶增強[運動速度]達到水平{0}。
+GuideMission.Description.RoyalForceCriticalLevel,왕가 ▶ 강화 [치명타 공격력] 레벨 {0}을 달성하세요.,Royal Family ▶ Enhancement [Critical Strike] Achieve Level {0}.,王室の家族▶強化[クリティカルストライク]達成レベル{0}。,Королевская Семья ▶ Улучшение [Критический Удар] Достичь Уровня {0}.,王室▶增強[關鍵打擊]達到水平{0}。
+GuideMission.Description.RoyalForceAccLevel,왕가 ▶ 강화 [명중률] 레벨 {0}을 달성하세요.,Royal Family ▶ Enhancement [Hits] Level {0}.,王室の家族▶強化[ヒット]レベル{0}。,Королевская Семья ▶ Улучшение [Хитов] Уровень {0}.,王室▶增強[命中]級{0}。
+GuideMission.Description.Stage,스테이지 {0}을 클리어하세요.,Clear The Stage {0}.,ステージ{0}をクリアします。,Очистить Стадию {0}.,清除階段{0}。
+GuideMission.Description.Level,레벨 {0}을 달성하세요.,Achieve Level {0}.,レベル{0}を達成します。,Достичь Уровня {0}.,達到級別{0}。
+GuideMission.Description.MonsterKill,몬스터 {0}마리를 처치하세요.,Keep The Monster {0}.,モンスター{0}を保持します。,Держите Монстра {0}.,保持怪物{0}。
+GuideMission.Description.BlessDamageCount,축복 ▶ [공격의 가호] 를 {0}회 사용하세요.,Blessing ▶ Use {0} Sashimi.,祝福▶{0} Sashimiを使用します。,Благословение ▶ Используйте {0} Сашими.,祝福▶使用{0}生魚片。
+GuideMission.Description.BlessHealthCount,축복 ▶ [생명의 가호] 를 {0}회 사용하세요.,Blessing ▶ Use {0} Sashimi.,祝福▶{0} Sashimiを使用します。,Благословение ▶ Используйте {0} Сашими.,祝福▶使用{0}生魚片。
+GuideMission.Description.BlessGoldCount,축복 ▶ [탐욕의 가호] 를 {0}회 사용하세요.,Blessing ▶ Use {0} Sashimi.,祝福▶{0} Sashimiを使用します。,Благословение ▶ Используйте {0} Сашими.,祝福▶使用{0}生魚片。
+GuideMission.Description.BlessExpCount,축복 ▶ [경험의 가호] 를 {0}회 사용하세요.,Blessing ▶ Use {0} Sashimi.,祝福▶{0} Sashimiを使用します。,Благословение ▶ Используйте {0} Сашими.,祝福▶使用{0}生魚片。
+GuideMission.Description.GachaWeaponCount,장비 ▶ [무기 소환] {0}회 누적 소환하세요.,Equipment ▶ [Summon Weapon] {0} Summon Cummon.,機器▶[召喚武器] {0}召喚cummon。,Оборудование ▶ [Призыв Оружие] {0} Призыв Каммона.,設備▶[召喚武器] {0}召喚康蒙。
+GuideMission.Description.GachaShieldCount,장비 ▶ [방어구 소환] {0}회 누적 소환하세요.,Equipment ▶ [Summon Armor] {0} Summon Cummon.,機器▶[召喚装甲] {0}召喚カモン。,Оборудование ▶ [Summon Armor] {0} Summon Cummon.,設備▶[召喚裝甲] {0}召喚康蒙。
+GuideMission.Description.GachaSkillCount,스킬 ▶ [스킬 소환] {0}회 누적 소환하세요.,Skill ▶ [Summon Skill] {0} Summon Cummon.,スキル▶[召喚スキル] {0}召喚cummon。,Навык ▶ [Summon Skill] {0} Summon Cummon.,技能▶[召喚技能] {0}召喚康蒙。
+GuideMission.Description.DungeonFishFightClearCount,던전 ▶ [피쉬 파이트]를 {0}회 이상 클리어하세요.,Dungeon ▶ Clear More Than {0} Sashimi.,ダンジョン▶{0} Sashimi以上をクリアします。,"Dungeon ▶ Ясно, Чем {0} Сашими.",地牢▶清除超過{0}生魚片。
+GuideMission.Description.DungeonPigCowClearCount,던전 ▶ [리본 돼지 토벌]을 {0}회 이상 클리어하세요.,Dungeon ▶ Clear More Than {0} Sashimi.,ダンジョン▶{0} Sashimi以上をクリアします。,"Dungeon ▶ Ясно, Чем {0} Сашими.",地牢▶清除超過{0}生魚片。
+GuideMission.Description.DungeonInfiniteTowerClearCount,던전 ▶ [무한의 탑]을 {0}회 이상 클리어하세요.,Dungeon ▶ Clear More Than {0} Sashimi.,ダンジョン▶{0} Sashimi以上をクリアします。,"Dungeon ▶ Ясно, Чем {0} Сашими.",地牢▶清除超過{0}生魚片。
+GuideMission.Description.RoyalGrowthCriticalChance1Level,왕가 ▶ 성장 [치명타률] 레벨 {0}을 달성하세요.,Royal Family ▶ Growth [Critical Burning] Level {0}.,王室の家族▶成長[クリティカルバーニング]レベル{0}。,Королевская Семья ▶ Рост [Критическое Сжигание] Уровень {0}.,王室▶增長[關鍵燃燒]級{0}。
+GuideMission.Description.RoyalGrowthCriticalDamageRate1Level,왕가 ▶ 성장 [치명타 공격력] 레벨 {0}을 달성하세요.,Royal Family ▶ Growth [Critical Heat Attack] Achieve Level {0}.,王室の家族▶成長[クリティカルヒート攻撃]レベル{0}を達成します。,Королевская Семья ▶ Рост [Критическая Тепловая Атака] Достичь Уровня {0}.,王室▶增長[關鍵熱攻擊]達到水平{0}。
+Hero.Name.00,왕,King,王,Король,國王
+Hero.Name.01,왕비,Queen,女王,Королева,女王
+Hero.Name.02,왕자,Prince,王子,Принц,王子
+Hero.Name.03,공주,Princess,お姫様,Принцесса,公主
+Hero.Name.04,돼지왕,Pork King,ポークキング,Свиная Король,豬王
+Hero.Name.05,선장,Captain,キャプテン,Капитан,隊長
+Hero.Name.06,사신,Reaper,刈取,Жнец,收割者
+Hero.Name.07,렘,Rem,Rem,Перепончаться,Rem
+Hero.Name.08,람,Trim,トリム,Подрезать,修剪
+Hero.Passive.Name.00,투지,Dumping,ダンピング,Сброс,傾倒
+Hero.Passive.Name.01,광기,Madness,狂気,Безумие,瘋狂
+Hero.Passive.Name.02,토르,Thor,ソー,Тор,雷神
+Hero.Passive.Name.03,집중,Concentration,集中,Концентрация,專注
+Hero.Passive.Name.04,도움,Help,ヘルプ,Помощь,幫助
+Hero.Passive.Name.05,활무,Vitality,活力,Жизнеспособность,活力
+Hero.Passive.Name.06,검무,Sword,剣,Меч,劍
+Hero.Passive.Name.07,신속,Fast,速い,Быстрый,快速地
+Hero.Passive.Name.08,질풍,Gale,ゲイル,Шарнир,大風
+Hero.Passive.Name.09,증폭,Amplification,増幅,Усиление,放大
+Hero.Passive.Name.10,지혜,Wisdom,知恵,Мудрость,智慧
+Hero.Passive.Name.11,힐링,Healing,ヒーリング,Выздоровление,康復
+Hero.Passive.Name.12,분노,Anger,怒り,Злость,憤怒
+Hero.Passive.Name.13,동족,Cognation,認識,Родство,認知
+Hero.Passive.Name.14,증강,Enhancement,強化,Улучшение,增強
+Hero.Passive.Name.15,리치,Rich,リッチ,Богатый,富有的
+Hero.Passive.Name.16,스텝,Step,ステップ,Шаг,步
+Hero.Passive.Name.17,댄스,Dance,ダンス,Танец,舞蹈
+Hero.Passive.Name.18,그림자,Shadow,影,Тень,陰影
+Hero.Passive.Name.19,허무,Nothingness,何も,Ничто,虛無
+Hero.Passive.Name.20,암살,Assassination,暗殺,Убийство,暗殺
+Hero.Passive.Name.21,공허,Vacuity,空虚度,Не Пустота,真空
+Miner.Name.00,몽일이,Mongil,モンギル,Монгил,蒙古
+Miner.Name.01,호옹이,Hoong,ひも,Хлеб,洪
+Miner.Name.02,크롱이,Krong,クロン,Крунг,克朗
+Miner.Name.03,메롱이,Melong,メロン,Мелонг,美龍
+Miner.Name.04,초롱이,Lantern,ランタン,Фонарь,燈籠
+Miner.Name.05,푸롱이,Puron,プロン,Пурон,Puron
+Miner.Name.06,뽀롱이,Porong,ポロング,Порог,波隆
+Miner.Name.07,지현이,Jihyun,ジヒュン,Джихён,Jihyun
+Miner.Name.08,나영이,Nayoung,Nayoung,Найонг,Nayoung
+Miner.Name.09,댕댕이,Dog,犬,Собака,狗
+Miner.Name.10,투덜이,Grumble,不平を言う,Ворчать,嘰
+Miner.Name.11,혜성이,Comet,彗星,Комета,彗星
+Miner.Name.12,멜빵이,Mel Bread,メルパン,Мел Хлеб,梅爾麵包
+Miner.Name.13,용용이,Use,使用,Использовать,使用
+Miner.Name.14,헤롱이,Harong,ハロン,Аронг,哈隆
+Miner.Name.15,팔팔이,Arm,腕,Рука,手臂
+Miner.Name.16,냥냥이,Nyan,ニャン,Ньян,尼安
+Miner.Name.17,또롱이,Torong,トロング,Торонг,托隆
+Miner.Name.18,호돌이,Hodoli,ホドリ,Ходоли,霍多利
+Miner.Name.19,열혈이,Eagerness,意気込み,Рвение,渴望
+Monster.Name.MimicCurrency,보석 미믹,Jewelry Mimic,ジュエリー,Ювелирные Изделия,珠寶
+Monster.Name.MimicSword,무기 미믹,Weapon Mimic,武器の模倣,Оружие Имитирует,武器模仿
+Monster.Name.MimicShield,방패 미믹,Shield Mimic,シールドミミック,Щит Имит,盾牌模仿
+Quest.Type.Daily,일일 퀘스트 {0}회 달성,Daily Quest {0} Achievement,毎日のクエスト{0}功績,Daily Quest {0} Достижение,每日任務{0}成就
+Quest.Type.Weekly,주간 퀘스트 {0}회 달성,Weekly Quest {0} Achievement,毎週のクエスト{0}功績,Еженедельный Квест {0} Достижения,每週任務{0}成就
+Quest.Type.Repeat,반복 퀘스트 {0}회 달성,Repeat Quest {0} Achievement,Quest {0}の繰り返しの達成,Повторите Квест {0} Достижение,重複任務{0}成就
+Quest.Name.Attendance,접속해주세요!,Please Connect!,接続してください！,"Пожалуйста, Подключитесь!",請連接！
+Quest.Name.MonsterKill,몬스터를 처치하라!,Keep The Monster!,モンスターを維持してください！,Держите Монстра!,保留怪物！
+Quest.Name.EquipmentAdd,장비를 모아라!,Collect The Equipment!,機器を集めてください！,Соберите Оборудование!,收集設備！
+Quest.Name.RoyalGrowth,왕가 성장 레벨업!,Royal Family Growth Level Up!,王室の成長レベルアップ！,Рост Королевской Семьи Повышается!,王室成長水平！
+Quest.Name.RoyalForce,왕가 특성 레벨업!,Royal Characteristic Level Up!,王室の特性レベルアップ！,Королевский Характерный Уровень Вверх!,皇家特徵級別！
+Quest.Name.EquipmentCompose,장비를 합성하라!,Synthetic Equipment!,合成機器！,Синтетическое Оборудование!,合成設備！
+Quest.Name.PorkUse,고기를 사용하라!,Use Meat!,肉を使ってください！,Используйте Мясо!,用肉！
+Quest.Name.KeyUse,열쇠를 사용하라!,Use The Key!,キーを使用してください！,Используйте Ключ!,使用鑰匙！
+Quest.Name.ChallengeFishFight,물고기를 잡아라!,Catch The Fish!,魚を捕まえる！,Поймай Рыбу!,釣魚！
+Quest.Name.ChallengePigCow,리본 돼지 토벌!,Ribbon Pigs!,リボンブタ！,Ленточные Свиньи!,絲帶豬！
+Quest.Name.ChallengeInfiniteTower,무한의 탑을 오르자!,Let'S Climb The Infinite Tower!,無限の塔に登りましょう！,Давайте Поднимаемся На Бесконечную Башню!,讓我們攀登無限塔！
+Quest.Name.ChallengeCave,미믹 던전 탐험!,Mimic Dungeon Exploration!,ダンジョンの探索を模倣します！,Mimic Dungeon Exploration!,模仿地牢探索！
+Quest.Name.ChallengeColosseum,콜로세움 출전!,Colosseum!,コロッセオ！,Колизей!,羅馬競技！
+Quest.Name.SwordAdd,무기 모으기,Collecting Weapons,武器の収集,Сбор Оружия,收集武器
+Quest.Name.ShieldAdd,방패 모으기,Shield Collection,シールドコレクション,Коллекция Щита,盾牌收集
+Quest.Name.AccAdd,장비 합성,Equipment Synthesis,機器の合成,Синтез Оборудования,設備合成
+Quest.Name.ChallengeDungeon,던전 도전,Dungeon,ダンジョン,Подземелье,地牢
+Quest.Name.QuestReward,퀘스트 보상,Quest Reward,クエスト報酬,Quest Ward,任務獎勵
+Quest.Description.Attendance,피그 슬레이어즈에 접속하세요.,Access Pig Slayers.,豚の殺害者にアクセスします。,Доступ К Убийствам Свиньи.,訪問豬殺手。
+Quest.Description.MonsterKill,몬스터를 {0}회 물리치세요.,Defeat {0} Sashimi.,{0} Sashimiを倒します。,Поражение {0} Сашими.,打敗{0}生魚片。
+Quest.Description.EquipmentAdd,장비를 {0}개 획득하세요.,Get The Equipment {0}.,機器を取得{0}。,Получите Оборудование {0}.,獲取設備{0}。
+Quest.Description.RoyalGrowth,왕가 '성장' 레벨업을 {0}회 하세요.,{0} To Level Up The Royal Family 'Growth'.,{0}王室の「成長」を平準化する。,"{0}, Чтобы Повысить Рост Королевской Семьи '.",{0}升級王室“成長”。
+Quest.Description.RoyalForce,왕가 '특성' 레벨업을 {0}회 하세요.,{0} To Level Up The Royal Family 'Characteristics'.,{0}王室の「特徴」を平準化する。,{0} Чтобы Выровнять Характеристики Королевской Семьи '.,{0}升級王室的“特徵”。
+Quest.Description.EquipmentCompose,장비 합성을 {0}회 하세요.,{0} Soul The Equipment Synthesis.,{0}ソウル機器合成。,{0} Душа Синтез Оборудования.,{0}靈魂設備合成。
+Quest.Description.PorkUse,고기'를 {0}회 사용하세요.,Use {0} Sashimi.,{0} Sashimiを使用します。,Используйте {0} Sashimi.,使用{0}生魚片。
+Quest.Description.KeyUse,열쇠'를 {0}회 사용하세요.,Use {0} Sashimi.,{0} Sashimiを使用します。,Используйте {0} Sashimi.,使用{0}生魚片。
+Quest.Description.ChallengeFishFight,던전 '피쉬 파이트'에 {0}회 도전하세요.,Challenge {0} To The Dungeon 'Fish Fight'.,ダンジョン「魚の戦い」へのチャレンジ{0}。,Задача {0} В Подземелье 'Fish Fight'.,挑戰{0}對地牢“魚打架”。
+Quest.Description.ChallengePigCow,던전 '리본 돼지 토벌'에 {0}회 도전하세요.,Challenge {0} To The Dungeon 'Ribbon Pig'.,ダンジョン「リボンピッグ」への挑戦{0}。,Задача {0} В Подземелье 'Ленточная Свинья'.,挑戰{0}對地牢“絲帶豬”。
+Quest.Description.ChallengeInfiniteTower,던전 '무한의 탑'에 {0}회 도전하세요.,Challenge {0} To The Dungeon 'Infinite Tower'.,ダンジョン「Infinite Tower」へのチャレンジ{0}。,Задача {0} В Подземелье «Бесконечная Башня».,挑戰{0}到地牢“無限塔”。
+Quest.Description.ChallengeCave,던전 '미믹 던전'을 {0}회 탐험하세요.,Explore The Dungeon 'Mimic Dungeon'.,ダンジョン「ミミックダンジョン」を探索してください。,Исследуйте Подземелье «Mimic Dungeon».,探索地牢“模仿地牢”。
+Quest.Description.ChallengeColosseum,던전 '콜로세움'에 {0}회 출전하세요.,Participate In The Dungeon 'Colosseum'.,ダンジョン「コロッセオ」に参加します。,Участвуйте В Подземелье «Колизей».,參加地牢“羅馬競賽”。
+Quest.Description.SwordAdd,무기를 {0}개 모으세요.,Collect {0} Weapons.,{0}武器を集めます。,Соберите {0} Оружие.,收集{0}武器。
+Quest.Description.ShieldAdd,방패를 {0}개 모으세요.,Collect {0} Shields.,{0}シールドを収集します。,Соберите {0} Щиты.,收集{0}盾牌。
+Quest.Description.AccAdd,장비 합성을 {0}회 하세요.,{0} Soul The Equipment Synthesis.,{0}ソウル機器合成。,{0} Душа Синтез Оборудования.,{0}靈魂設備合成。
+Quest.Description.ChallengeDungeon,던전 도전을 {0}회 하세요.,{0} {0}.,{0} {0}。,{0} {0}.,{0} {0}。
+Quest.Description.QuestReward,퀘스트 보상을 {0}회 받으세요.,Receive {0} Sashimi For Quest Rewards.,クエスト報酬のために{0} Sashimiを受信します。,Получить {0} Сашими Для Quest Rewards.,接收{0}生魚片以獲得任務獎勵。
+Royal.Growth.Name.00,공격력,Offense Power,攻撃力,Правонарушения,進攻力量
+Royal.Growth.Name.01,체력,Health,健康,Здоровье,健康
+Royal.Growth.Name.02,체력 회복,Health Recovery,健康回復,Восстановление Здоровья,健康恢復
+Royal.Growth.Name.03,치명타율,Critical Batting Average,重要なバッティング平均,Критическое Среднее Значение Ватина,關鍵的擊球平均值
+Royal.Growth.Name.04,치명타 공격력,Critical Damage,致命傷,Критическое Повреждение,嚴重損害
+Royal.Growth.Name.05,슈퍼 치명타율,Super Fatal Batting Average,超致命的なバッティング平均,Супер Фатальный Средний,超級致命的擊球平均
+Royal.Growth.Name.06,슈퍼 치명타 공격력,Super Critical Attack,超重要な攻撃,Супер Критическая Атака,超級關鍵的攻擊
+Royal.Growth.Name.07,울트라 치명타율,Ultra Critical Batting Average,超重要なバッティング平均,Ультра -Критический Средний,超臨界擊球平均
+Royal.Growth.Name.08,울트라 치명타 공격력,Ultra Critical Attack,超重要な攻撃,Ультра Критическая Атака,超臨界攻擊
+Royal.Growth.Name.09,캡숑 치명타율,Capon Fatal Batting Average,Capon致命的なバッティング平均,Капон Смертельный Ватин Средний,卡孔致命的擊球平均
+Royal.Growth.Name.10,캡숑 치명타 공격력,Capchon Critical Attack,Capchonクリティカル攻撃,Кэпчон Критическая Атака,Capchon關鍵攻擊
+Royal.Growth.Name.11,짱짱 치명타율,Great Critical Batting Average,非常に重要なバッティング平均,Отличный Критический Средний,大關鍵擊球平均值
+Royal.Growth.Name.12,짱짱 치명타 공격력,Awesome Damage Attack Power,素晴らしいダメージ攻撃力,Потрясающая Атака Ущерба,很棒的傷害攻擊力量
+Royal.Force.Name.00,공격 속도 증가,Increase Attack Speed,攻撃速度を上げます,Увеличить Скорость Атаки,提高攻擊速度
+Royal.Force.Name.01,이동 속도 증가,Increasing Movement Speed,移動速度の向上,Увеличение Скорости Движения,提高運動速度
+Royal.Force.Name.02,치명타 공격력 증가,Increased Critical Damage,重大な損傷の増加,Увеличение Критического Ущерба,增加關鍵損害
+Royal.Force.Name.03,명중률 증가,Increased Accuracy,精度の向上,Повышенная Точность,提高準確性
+Royal.Force.Name.04,골드 보너스 증가,Gold Bonus Increase,ゴールドボーナスの増加,Золотой Бонус Увеличивается,黃金獎金增加
+Royal.Force.Name.05,경험치 보너스 증가,Experience Bonus Increase,ボーナスの増加を経験します,Испытать Бонусный Увеличение,體驗獎勵增加
+Royal.Force.Name.06,추가 공격력 증가,Increased Additional Damage,追加のダメージを増やしました,Увеличение Дополнительного Ущерба,增加額外損壞
+Royal.Force.Name.07,추가 체력 증가,Increased Additional Health,追加の健康増加,Увеличение Дополнительного Здоровья,增加額外的健康
+Royal.Force.Name.08,회피률 증가,Increased Evasion Rate,回避率の増加,Увеличение Уровня Уклонения,逃避率提高
+Royal.Promotion.Name.00,성주,Castellan,カステラン,Кастеллан,卡斯特蘭
+Royal.Promotion.Name.01,남작,Baron,男爵,Барон,男爵
+Royal.Promotion.Name.02,자작,Viscount,子爵,Виконт,子爵
+Royal.Promotion.Name.03,백작,Count,カウント,Считать,數數
+Royal.Promotion.Name.04,후작,Marquis,マーキス,Маркиз,侯爵
+Royal.Promotion.Name.05,공작,Peacock,孔雀,Павлин,孔雀
+Royal.Promotion.Name.06,대공작,Anti -Work,ワーク,Анти -Работа,反工作
+Royal.Promotion.Name.07,왕,King,王,Король,國王
+Royal.Promotion.Name.08,국왕,King,王,Король,國王
+Royal.Promotion.Name.09,대왕,Maharaja,マハラジャ,Махараджа,大公
+Royal.Promotion.Name.10,황제,Emperor,天皇,Император,皇帝
+Royal.Mastery.Battle.Name.Damage,공격 강화 {0},Strengthening Attack {0},攻撃の強化{0},Укрепление Атаки {0},加強攻擊{0}
+Royal.Mastery.Battle.Description.Damage,추가 공격력 +{0},Additional Damage +{0},追加のダメージ +{0},Дополнительный Урон +{0},附加傷害 +{0}
+Royal.Mastery.Battle.Name.SkillDamageRate,스킬 강화 {0},Skill Enhancement {0},スキルエンハンスメント{0},Улучшение Навыков {0},技能增強{0}
+Royal.Mastery.Battle.Description.SkillDamageRate,추가 스킬 피해량 +{0}%,Additional Skill Damage +{0}%,追加のスキルダメージ +{0}％,Дополнительное Повреждение Навыков +{0}%,額外的技能傷害 +{0}％
+Royal.Mastery.Battle.Name.Health,체력 강화 {0},Stamina Strengthening {0},スタミナ強化{0},Укрепление Выносливости {0},耐力加強{0}
+Royal.Mastery.Battle.Description.Health,추가 체력 +{0},Additional Health +{0},追加の健康 +{0},Дополнительное Здоровье +{0},其他健康 +{0}
+Royal.Mastery.Battle.Name.Acc,명중 강화 {0},Strengthening Hit {0},強化ヒット{0},Укрепление Хит {0},加強命中{0}
+Royal.Mastery.Battle.Description.Acc,추가 명중률 +{0},Additional Accuracy +{0},追加の精度 +{0},Дополнительная Точность +{0},附加精度 +{0}
+Royal.Mastery.Battle.Name.Dodge,회피 강화 {0},Evasion Enhancement {0},回避強化{0},Улучшение Уклонения {0},逃避增強{0}
+Royal.Mastery.Battle.Description.Dodge,추가 회피율 +{0},Additional Evasion Rate +{0},追加の回避率 +{0},Дополнительная Скорость Уклонения +{0},額外的逃避率 +{0}
+Royal.Mastery.Battle.Name.BossDamageRate,보스 강화 {0},Boss Strengthening {0},ボス強化{0},Босс Усиление {0},老闆加強{0}
+Royal.Mastery.Battle.Description.BossDamageRate,추가 보스 피해량 +{0}%,Additional Boss Damage +{0}%,追加のボスダメージ +{0}％,Дополнительный Урон Босса +{0}%,額外的老闆傷害 +{0}％
+Royal.Mastery.Bonus.Name.StageGoldBonusRate,골드 보너스 {0},Gold Bonus {0},ゴールドボーナス{0},Золотой Бонус {0},金獎金{0}
+Royal.Mastery.Bonus.Description.StageGoldBonusRate,스테이지에서 골드 추가 획득 +{0}%,Additional Gold On The Stage +{0}%,ステージ上の追加の金 +{0}％,Дополнительное Золото На Стадии +{0}%,舞台上的其他黃金 +{0}％
+Royal.Mastery.Bonus.Name.DungeonGoldBonusRate,골드 던전 {0},Gold Dungeon {0},ゴールドダンジョン{0},Золотое Подземелье {0},金地下城{0}
+Royal.Mastery.Bonus.Description.DungeonGoldBonusRate,던전에서 골드 추가 획득 +{0}%,Additional Gold In The Dungeon +{0}%,ダンジョンの追加の金 +{0}％,Дополнительное Золото В Подземелье +{0}%,地牢中的其他金 +{0}％
+Royal.Mastery.Bonus.Name.StageJellyBonusRate,젤리 보너스 {0},Jelly Bonus {0},ゼリーボーナス{0},Желе Бонус {0},果凍獎勵{0}
+Royal.Mastery.Bonus.Description.StageJellyBonusRate,스테이지에서 젤리 추가 획득 +{0}%,Added Jelly From The Stage +{0}%%,ステージからゼリーを追加 +{0} %%,Добавлен Желе Со Сцены +{0} %%,從舞台 +{0} %%添加了果凍
+Royal.Mastery.Bonus.Name.DungeonJellyBonusRate,골드 던전 {0},Gold Dungeon {0},ゴールドダンジョン{0},Золотое Подземелье {0},金地下城{0}
+Royal.Mastery.Bonus.Description.DungeonJellyBonusRate,던전에서 젤리 추가 획득 +{0}%,Additional Jelly From The Dungeon +{0}%%,ダンジョン +{0}からの追加のゼリー,Дополнительное Желе Из Dungeon +{0} %%,來自地牢 +{0} %%的其他果凍
+Royal.Mastery.Bonus.Name.StageExpBonusRate,성장 보너스 {0},Growth Bonus {0},成長ボーナス{0},Бонус Роста {0},增長獎金{0}
+Royal.Mastery.Bonus.Description.StageExpBonusRate,스테이지에서 경험치 추가 획득 +{0}%,Additional Experience On The Stage +{0}%%,ステージでの追加エクスペリエンス +{0} %%,Дополнительный Опыт На Стадии +{0} %%,舞台上的其他經驗 +{0} %%
+Royal.Mastery.Bonus.Name.DungeonExpBonusRate,성장 던전 {0},Growth Dungeon {0},成長ダンジョン{0},Подземелье Для Роста {0},增長地牢{0}
+Royal.Mastery.Bonus.Description.DungeonExpBonusRate,던전에서 경험치 추가 획득 +{0}%,Additional Experience In Dungeons +{0}%%,ダンジョン +{0} %%での追加エクスペリエンス,Дополнительный Опыт В Подземельях +{0} %%,地牢 +{0} %%的其他經驗
+Royal.Mastery.Utile.Name.AttackSpeed,공격 속도 {0},Attack Speed {0},攻撃速度{0},Скорость Атаки {0},攻擊速度{0}
+Royal.Mastery.Utile.Description.AttackSpeed,공격 속도 +{0},Attack Speed +{0},攻撃速度 +{0},Скорость Атаки +{0},攻擊速度 +{0}
+Royal.Mastery.Utile.Name.MoveSpeed,이동 속도 {0},Movement Speed {0},移動速度{0},Скорость Движения {0},運動速度{0}
+Royal.Mastery.Utile.Description.MoveSpeed,이동 속도 +{0},Mobile Speed +{0},モバイル速度 +{0},Мобильная Скорость +{0},移動速度 +{0}
+Royal.Mastery.Utile.Name.SkillCoolTimeReduceRate,스킬 쿨타임 {0},Skill Cold Time {0},スキルコールドタイム{0},Навык Холодное Время {0},技能冷時間{0}
+Royal.Mastery.Utile.Description.SkillCoolTimeReduceRate,스킬 쿨타임 -{0}%,Skill Cold Time- {0}%,スキルコールドタイム -  {0}％,Навык Холодное Время- {0}%,技能冷時間 -  {0}％
+Rune.Name.00,맹공의 룬,Runner -Up,準優勝,Второе Место,亞軍
+Rune.Name.01,생명의 룬,Lifestyle,ライフスタイル,Стиль Жизни,生活方式
+Rune.Name.02,풍요의 룬,Rich,リッチ,Богатый,富有的
+Rune.Name.03,경험의 룬,Run Of Experience,経験の実行,Пробег Опыта,經驗
+Rune.Name.04,질풍의 룬,Runner -Up,準優勝,Второе Место,亞軍
+Rune.Name.05,송곳의 룬,Rune,ルーン,Руна,符文
+Rune.Name.06,치명상의 룬,Dazzle,眩しい,Ослепитель,炫
+Rune.Name.07,명중의 룬,Rune,ルーン,Руна,符文
+Rune.Name.08,지혜의 룬,Wisdom,知恵,Мудрость,智慧
+Rune.Name.09,용기의 룬,Cherry,チェリー,Вишня,櫻桃
+Rune.Name.10,바람의 룬,Wind Rune,ウィンドルーン,Ветром Руна,風符文
+Rune.Name.11,젤리의 룬,Jelly,ゼリー,Желе,果凍
+Rune.Name.12,대지의 룬,Rune,ルーン,Руна,符文
+Rune.Name.13,탐색의 룬,Search,検索,Поиск,搜索
+Rune.Name.14,수집의 룬,Rune,ルーン,Руна,符文
+Rune.Name.15,약화의 룬,Run Of Weakness,弱さの実行,Забег Слабости,弱點
+Rune.Name.16,폭주의 룬,Runaway,逃げる,Убегать,逃跑
+Rune.Name.17,황제의 룬,Emperor,天皇,Император,皇帝
+Rune.Description.00,공격력이 증가합니다.,The Damage Increases.,損傷が増加します。,Ущерб Увеличивается.,傷害增加。
+Rune.Description.01,체력이 증가합니다.,Stamina Increases.,スタミナが増加します。,Выносливость Увеличивается.,耐力增加。
+Rune.Description.02,골드 획득량이 증가합니다.,Gold Acquisition Increases.,金の獲得が増加します。,Приобретение Золота Увеличивается.,獲得黃金的增加。
+Rune.Description.03,경험치 획득량이 증가합니다.,Experience Acquisition Increases.,経験の増加が増加します。,Опыт Приобретения Увеличивается.,經驗獲取的增加。
+Rune.Description.04,공격속도가 증가합니다.,The Attack Speed Increases.,攻撃速度が増加します。,Скорость Атаки Увеличивается.,攻擊速度增加。
+Rune.Description.05,치명타 확률이 증가합니다.,The Critical Strike Chance Increases.,クリティカルストライクの機会が増加します。,Критический Ударный Шанс Увеличивается.,關鍵的罷工機會增加了。
+Rune.Description.06,치명타 피해량이 증가합니다.,Critical Damage Damage Increases.,重大な損傷が増加します。,Критический Ущерб Увеличивается.,關鍵傷害增加。
+Rune.Description.07,명중이 증가합니다.,Hit Increases.,ヒットの増加。,Увеличение Удара.,命中率增加。
+Rune.Description.08,스킬 피해량이 증가합니다.,Skill Damage Increases.,スキルの損傷が増加します。,Ущерб Навыка Увеличивается.,技能損害增加。
+Rune.Description.09,보스 피해량이 증가합니다.,Boss Damage Increases.,ボスのダメージが増加します。,Ущерб Босса Увеличивается.,老闆傷害增加。
+Rune.Description.10,이동속도가 증가합니다.,Movement Speed Increases.,移動速度が増加します。,Скорость Движения Увеличивается.,運動速度增加。
+Rune.Description.11,젤리 획득량이 증가합니다.,Jelly Acquisition Increases.,ゼリーの取得が増加します。,Приобретение Желе Увеличивается.,果凍的獲取增加。
+Rune.Description.12,받는 피해량이 감소합니다.,The Damage Is Reduced.,損傷は減少します。,Ущерб Уменьшается.,損壞減少了。
+Rune.Description.13,장비 강화석 획득량이 증가합니다.,Equipment Reinforcement Acquisition Increases.,機器の強化の獲得が増加します。,Приобретение Усиления Оборудования Увеличивается.,設備加固採集增加。
+Rune.Description.14,장비 획득 확률이 증가합니다.,The Probability Of Equipment Acquisition Increases.,機器の取得の可能性が増加します。,Вероятность Приобретения Оборудования Увеличивается.,設備採集的可能性增加。
+Rune.Description.15,몬스터의 공격력을 감소시킵니다.,Reduces The Attack Power Of The Monster.,モンスターの攻撃力を減らします。,Уменьшает Силу Атаки Монстра.,降低了怪物的攻擊力。
+Rune.Description.16,스킬 쿨타임을 감소시킵니다.,Reduces Skill Cooldown.,スキルクールダウンを減らします。,Уменьшает Увольнение.,減少技能冷卻。
+Rune.Description.17,회피 확률이 증가합니다.,The Probability Of Evasion Increases.,回避の確率が増加します。,Вероятность Уклонения Увеличивается.,逃避的可能性增加。
+Shop.Name.00,황금 티켓 x1,Golden Ticket X1,ゴールデンチケットx1,Золотой Билет X1,金票x1
+Shop.Name.01,고기 x 20,Meat X 20,肉x 20,Мясо X 20,肉x 20
+Shop.Name.02,열쇠 x10,Key X10,キーx10,Ключ X10,鍵x10
+Shop.Name.03,루비 x300,Ruby X300,Ruby X300,Ruby X300,紅寶石x300
+Shop.Name.04,"루비 1,000개","1,000 Rubies","1,000ルビー",1000 Рубин,"1,000紅寶石"
+Shop.Name.05,"루비 3,000개","3,000 Rubies","3,000ルビー",3000 Рубин,"3,000紅寶石"
+Shop.Name.06,"루비 6,500개","Ruby 6,500","Ruby 6,500",Ruby 6500,"紅寶石6,500"
+Shop.Name.07,"루비 21,000개","Ruby 21,000","Ruby 21,000",Руби 21 000,"紅寶石21,000"
+Shop.Name.08,"루비 45,000개","Ruby 45,000","Ruby 45,000",Руби 45 000,"紅寶石45,000"
+Shop.Name.09,"보석 100,000개","100,000 Jewelry","100,000ジュエリー",100 000 Ювелирных Изделий,"100,000首珠寶"
+Shop.Name.10,무한 광고 제거,Infinite Advertising Removal,無限の広告削除,Бесконечное Устранение Рекламы,無限廣告刪除
+Shop.Name.11,무한 공격의 축복 패키지,Infinite Attack Blessing Package,無限の攻撃の祝福パッケージ,Бесконечный Пакет Благословения Атаки,無限攻擊祝福包
+Shop.Name.12,무한 생명의 축복 패키지,Infinite Life Blessing Package,Infinite Life Blessingパッケージ,Бесконечный Пакет Благословения Жизни,無限的生命祝福套餐
+Shop.Name.13,무한 탐욕의 축복 패키지,Blessing Package Of Infinite Greed,無限の貪欲の祝福パッケージ,Благословение Пакет Бесконечной Жадности,無限貪婪的祝福套餐
+Shop.Name.14,무한 경험의 축복 패키지,Blessing Package Of Infinite Experience,無限の経験の祝福パッケージ,Благословенный Пакет Бесконечного Опыта,無限體驗的祝福套餐
+Shop.Name.15,무한 채굴의 축복 패키지,Infinite Mining Blessing Package,Infinite Mining Blessingパッケージ,Бесконечный Пакет Благословения По Добыче Полезных Ископаемых,無限採礦祝福包
+Shop.Name.16,고기 x50,Meat X50,肉x50,Мясо X50,肉x50
+Shop.Name.17,"루비 x10,000","Ruby X10,000","Ruby X10,000",Ruby X10 000,"紅寶石x10,000"
+Shop.Name.18,스킵 티켓 x20,Skip Kwon X20,Kwon X20をスキップします,Skip Kwon X20,跳過kwon X20
+Shop.Name.19,열쇠 x50,Key X50,キーx50,Ключ X50,鑰匙x50
+Shop.Name.20,황금 티켓 x5,Golden Ticket X5,ゴールデンチケットx5,Золотой Билет X5,金票x5
+Shop.Name.21,"주사위 x5,000","Dice X5,000","サイコロx5,000",Кости X5000,"骰子x5,000"
+Shop.Name.22,뿅망치 x50,Uphamchi X50,Uphamchi X50,Uphamchi X50,Uphamchi X50
+Shop.Name.23,고속 <color=#F11F1F>스타트</color> 패키지 I,High Speed <Color =#F11F1F> Start </Color> Package I,高速<色=＃F11F1F> Start </Color>パッケージi,Высокая Скорость <Color =#F11F1F> Start </Color> Пакет I,高速<Color =＃F11F1F>開始</Color>軟件包i
+Shop.Name.24,고속 <color=#F11F1F>스타트</color> 패키지 II,High Speed ​​<Color =#F11F1F> Start </Color> Package Ii,高速<色=＃F11F1F> Start </Color>パッケージii,Высокая Скорость <Color =#F11F1F> Start </Color> Пакет Ii,高速<Color =＃F11F1F>開始</Color>軟件包ii
+Shop.Name.25,고속 <color=#F11F1F>스타트</color> 패키지 III,High Speed <Color =#F11F1F> Start </Color> Package Iii,高速<色=＃F11F1F> Start </Color>パッケージiii,Высокая Скорость <Color =#F11F1F> Start </Color> Пакет Iii,高速<Color =＃F11F1F>開始</Color>軟件包iii
+Shop.Name.26,<color=#FF0000>루비</color> 프리미엄,<Color =#Ff0000> Ruby </Color> Premium,<色=＃Ff0000> Ruby​​ </Color>プレミアム,<Color =#Ff0000> Ruby </Color> Premium,<Color =＃Ff0000>紅寶石</Color>優質
+Shop.Name.27,주간 마차 <color=#FFD515>황금 티켓</color> I,Weekly Wagon <Color =#Ffd515> Golden Ticket </Color> I,毎週のワゴン<色=＃Ffd515>ゴールデンチケット</Color> I,Weekly Wagon <Color =#Ffd515> Золотой Билет </Color> I,每週旅行車<Color =＃Ffd515>金票</Color> I
+Shop.Name.28,주간 마차 <color=#FFD515>황금 티켓</color> II,Weekly Wagon <Color =#Ffd515> Golden Ticket </Color> Ii,毎週のワゴン<色=＃Ffd515>ゴールデンチケット</Color> Ii,Weekly Wagon <Color =#Ffd515> Золотой Билет </Color> Ii,每週旅行車<Color =＃Ffd515>金票</Color> Ii
+Shop.Name.29,주간 마차 <color=#FFD515>황금 티켓</color> III,Weekly Wagon <Color =#Ffd515> Golden Ticket </Color> Iii,毎週のワゴン<色=＃Ffd515>ゴールデンチケット</Color> Iii,Weekly Wagon <Color =#Ffd515> Золотой Билет </Color> Iii,每週旅行車<Color =＃Ffd515>金票</Color> Iii
+Shop.Name.30,일일 <color=#6EC4DD>프리미엄</color> 지원상자 I,Daily <Color =#6Ec4Dd> Premium </Color> Support Box I,毎日<色=＃6Ec4Dd>プレミアム</Color>サポートボックスi,Daily <Color =#6Ec4Dd> Premium </Color> Box I.,每日<Color =＃6Ec4Dd> Premium </Color>支持框我
+Shop.Name.31,일일 <color=#6EC4DD>프리미엄</color> 지원상자 II,Daily <Color =#6Ec4Dd> Premium </Color> Support Box Ii,毎日<色=＃6Ec4Dd>プレミアム</Color>サポートボックスii,Daily <Color =#6Ec4Dd> Premium </Color> Box Oper Ii,每日<Color =＃6Ec4Dd> Premium </Color>支持框ii
+Shop.Name.32,일일 <color=#6EC4DD>프리미엄</color> 지원상자 III,Daily <Color =#6Ec4Dd> Premium </Color> Support Box Iii,毎日<色=＃6Ec4Dd>プレミアム</Color>サポートボックスiii,Daily <Color =#6Ec4Dd> Premium </Color> Box Iii Поддержки Iii,每日<Color =＃6Ec4Dd> Premium </Color>支持框iii
+Shop.Name.33,일일 <color=#6EC4DD>프리미엄</color> 지원상자 IV,Daily <Color =#6Ec4Dd> Premium </Color> Support Box Iv,毎日<色=＃6Ec4Dd>プレミアム</Color>サポートボックスiv,Daily <Color =#6Ec4Dd> Premium </Color> Box Iv Поддержка Iv,每日<Color =＃6Ec4Dd> Premium </Color>支持框iv
+Shop.Name.34,일일 <color=#6EC4DD>프리미엄</color> 지원상자 V,Daily <Color =#6Ec4Dd> Premium </Color> Support Box V,毎日<色=＃6Ec4Dd>プレミアム</Color>サポートボックスv,Daily <Color =#6Ec4Dd> Premium </Color> Box V.,每日<Color =＃6Ec4Dd> Premium </Color>支持框v
+Shop.Name.35,주간 <color=#EED878>프리미엄</color> 지원상자 I,Weekly <Color =#Eed878> Premium </Color> Support Box I,毎週<色=＃Eed878>プレミアム</Color>サポートボックスi,Weekly <Color =#Eed878> Premium </Color> Box I.,每週<Color =＃Eed878> Premium </Color>支持框我
+Shop.Name.36,주간 <color=#EED878>프리미엄</color> 지원상자 II,Weekly <Color = #Eed878> Premium </Color> Support Box Ii,毎週<色=＃Eed878>プレミアム</Color>サポートボックスii,Weekly <Color = #Eed878> Premium </Color> Box Ii Поддержки Ii,每週<Color =＃Eed878> Premium </Color>支持框ii
+Shop.Name.37,주간 <color=#EED878>프리미엄</color> 지원상자 III,Weekly <Color = #Eed878> Premium </Color> Support Box Iii,Weekly <Color =＃Eed878> Premium </Color>サポートボックスiii,Weekly <Color = #Eed878> Premium </Color> Box Iii Поддержки Iii,每週<Color =＃Eed878> Premium </Color>支持框iii
+Shop.Name.38,주간 <color=#EED878>프리미엄</color> 지원상자 IV,Weekly <Color = #Eed878> Premium </Color> Support Box Iv,Weekly <Color =＃Eed878> Premium </Color>サポートボックスiv,Weekly <Color = #Eed878> Premium </Color> Box Iv Поддержка Iv,每週<Color =＃Eed878> Premium </Color>支持框iv
+Shop.Name.39,주간 <color=#EED878>프리미엄</color> 지원상자 V,Weekly <Color =#Eed878> Premium </Color> Support Box V,毎週<色=＃Eed878>プレミアム</Color>サポートボックスv,Weekly <Color =#Eed878> Premium </Color> Box V,每週<Color =＃Eed878> Premium </Color>支持框v
+Shop.Name.40,무합의 탑 스페셜,Top Special,トップスペシャル,Top Special,頂級特價
+Shop.Name.41,무한의 탑 프리미엄,Infinite Top Premium,無限のトッププレミアム,Бесконечная Верхняя Премия,無限高級
+Shop.Name.42,재화 던전 프리미엄,Goods Dungeon Premium,Goods Dungeon Premium,Товарный Подземелий Премиум,商品地牢溢價
+Shop.Name.43,일일 <color=#6EC4DD>프리미엄</color> 황금마차 I,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon I,毎日<色=＃6Ec4Dd>プレミアム</Color>ゴールデンワゴンi,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon I,每日<Color =＃6Ec4Dd> Premium </Color>黃金旅行車
+Shop.Name.44,일일 <color=#6EC4DD>프리미엄</color> 황금마차 II,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon Ii,毎日<色=＃6Ec4Dd>プレミアム</Color>ゴールデンワゴンii,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon Ii Ii,每日<Color =＃6Ec4Dd> Premium </Color>黃金旅行車ii
+Shop.Name.45,일일 <color=#6EC4DD>프리미엄</color> 황금마차 III,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon Iii,毎日<色=＃6Ec4Dd>プレミアム</Color>ゴールデンワゴンiii,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon Iii,每日<Color =＃6Ec4Dd> Premium </Color>黃金貨車iii
+Shop.Name.46,일일 <color=#6EC4DD>프리미엄</color> 황금마차 IV,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon Iv,毎日<色=＃6Ec4Dd>プレミアム</Color>ゴールデンワゴンiv,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon Iv,每日<Color =＃6Ec4Dd> Premium </Color>黃金貨車iv
+Shop.Name.47,일일 <color=#6EC4DD>프리미엄</color> 황금마차 V,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon V,毎日<色=＃6Ec4Dd>プレミアム</Color>ゴールデンワゴンv,Daily <Color =#6Ec4Dd> Premium </Color> Golden Wagon V,每日<Color =＃6Ec4Dd> Premium </Color>黃金貨車v
+Shop.Name.48,주간 <color=#EED878>프리미엄</color> 황금마차 I,Weekly <Color = #Eed878> Premium </Color> Golden Carriage I,毎週<色=＃Eed878>プレミアム</Color>ゴールデンキャリッジi,Weekly <Color = #Eed878> Premium </Color> Golden Carriage I,每週<Color =＃Eed878> Premium </Color>金馬車i
+Shop.Name.49,주간 <color=#EED878>프리미엄</color> 황금마차 II,Weekly <Color = #Eed878> Premium </Color> Golden Wagon Ii,Weekly <Color =＃Eed878> Premium </Color>ゴールデンワゴンii,Weekly <Color = #Eed878> Premium </Color> Golden Wagon Ii Ii,每週<Color =＃Eed878> Premium </Color>黃金旅行車ii
+Shop.Name.50,주간 <color=#EED878>프리미엄</color> 황금마차 III,Weekly <Color = #Eed878> Premium </Color> Golden Wagon Iii,Weekly <Color =＃Eed878>プレミアム</Color>ゴールデンワゴンiii,Weekly <Color = #Eed878> Premium </Color> Golden Wagon Iii,每週<Color =＃Eed878> Premium </Color>黃金貨車iii
+Shop.Name.51,주간 <color=#EED878>프리미엄</color> 황금마차 IV,Weekly <Color = #Eed878> Premium </Color> Golden Wagon Iv,Weekly <Color =＃Eed878>プレミアム</Color>ゴールデンワゴンiv,Weekly <Color = #Eed878> Premium </Color> Golden Wagon Iv,每週<Color =＃Eed878> Premium </Color>黃金貨車iv
+Shop.Name.52,주간 <color=#EED878>프리미엄</color> 황금마차 V,Weekly <Color = #Eed878> Premium </Color> Golden Wagon V,毎週<色=＃Eed878>プレミアム</Color>ゴールデンワゴンv,Weekly <Color = #Eed878> Premium </Color> Golden Wagon V,每週<Color =＃Eed878> Premium </Color>黃金貨車v
+Shop.Name.53,<color=#FEB533>황금 티켓</color> 프리미엄,<Color =#Feb533> Golden Ticket </Color> Premium,<色=＃Feb533>ゴールデンチケット</Color>プレミアム,<Color =#Feb533> Золотой Билет </Color> Premium,<Color =＃Feb533>金票</Color>高級
+Shop.Name.54,레벨 달성 스페셜 I,Level Achievement Special I,レベルアチーブメントスペシャルi,Уровень Достижения Особенный Я,水平成就特別i
+Shop.Name.55,레벨 달성 스페셜 II,Level Achievement Special Ii,レベルアチーブメントスペシャルii,Уровень Достижения Special Ii,水平成就特別ii
+Shop.Name.56,레벨 달성 스페셜 III,Level Achievement Special Iii,レベルアチーブメントスペシャルiii,Уровень Достижения Специального Iii,水平成就特別iii
+Shop.Name.57,레벨 달성 스페셜 IV,Level Achievement Special Iv,レベルアチーブメントスペシャルiv,Уровень Достижения Специального Iv,水平成就特別iv
+Shop.Name.58,스테이지 클리어 스페셜 I,Stage Clear Special I,ステージクリアスペシャルi,Стадия Ясного Особого Я,舞台清晰特別i
+Shop.Name.59,스테이지 클리어 스페셜 II,Stage Clear Special Ii,ステージクリアスペシャルii,Стадия Ясного Специального Ii,階段清除特別ii
+Shop.Name.60,스테이지 클리 스페셜 III,Stage Clich Special Iii,ステージクリックスペシャルiii,Сценический Клиш Special Iii,舞台陳詞濫調特別iii
+Shop.Description.08,"루비 45,000개 추가 증정","45,000 Additional Ruby","45,000の追加ルビー",45 000 Дополнительных Рубин,"45,000個紅寶石"
+Shop.Description.09,"보석 100,000개 추가 증정","100,000 Additional Gems","100,000の追加の宝石",100 000 Дополнительных Драгоценных Камней,"100,000個額外的寶石"
+Shop.Description.10,게임 내 모든 광고보기가 무한 스킵됩니다.,All Advertisements In The Game Will Skip Infinite.,ゲーム内のすべての広告は無限にスキップします。,Все Рекламные Объявления В Игре Будут Пропустить Бесконечные.,遊戲中的所有廣告都會跳過無限。
+Shop.Description.11,무한 공격의 축복 활성화 (영구),Activation Of The Blessing Of Infinite Attack (Permanent),無限攻撃の祝福の活性化（永久）,Активация Благословения Бесконечной Атаки (Постоянная),激活無限攻擊的祝福（永久）
+Shop.Description.12,무한 생명의 축복 활성화 (영구),Infinite Life Blessing Activation (Permanent),無限の人生の祝福の活性化（永久）,Бесконечная Активация Благословения Жизни (Постоянная),無限的生命祝福激活（永久）
+Shop.Description.13,무한 탐욕의 축복 활성화 (영구),Activation Of Blessing Of Infinite Greed (Permanent),無限の貪欲の祝福の活性化（永久）,Активация Благословения Бесконечной Жадности (Постоянная),無限貪婪的祝福激活（永久）
+Shop.Description.14,무한 경험의 축복 활성화 (영구),Vitalization Of The Blessing Of Infinite Experience (Permanent),無限の経験の祝福の活性化（永続的）,Витализация Благословения Бесконечного Опыта (Постоянный),無限經驗的祝福（永久）的活力
+Shop.Description.15,무한 채굴의 축복 활성화 (영구),Activation Of The Blessing Of Infinite Mining (Permanent),無限の採掘の祝福の活性化（永久）,Активация Благословения Бесконечной Добычи (Постоянная),激活無限採礦的祝福（永久）
+Shop.Description.23,"1,3단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1 And 3, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1と3を購入するとき、<Color =＃D3Ce7D> Legent </Color>機器の支払い！,"При Покупке Шагов 1 И 3, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1和3時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.24,"1,3단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1 And 3, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1と3を購入するとき、<Color =＃D3Ce7D> Legent </Color>機器の支払い！,"При Покупке Шагов 1 И 3, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1和3時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.25,"1,3단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1 And 3, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1と3を購入するとき、<Color =＃D3Ce7D> Legent </Color>機器の支払い！,"При Покупке Шагов 1 И 3, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1和3時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.26,매일 딱 한번 살 수 있는 <color=#FF0000>루비</color> 꾸러미,<Color =#Ff0000> Ruby </Color>,<色=＃Ff0000> Ruby​​ </Color>,<Color =#Ff0000> Ruby </Color>,<Color =＃Ff0000>紅寶石</Color>
+Shop.Description.27,"2,3단계 상품 구매 시 <color=#FFD515>황금 티켓 추가 지급!</color>",When Purchasing 2 And 3 Products <Color =#Ffd515> Additional Payment Of Golden Tickets! </Color>,2および3の製品を購入するとき<Color =＃Ffd515>ゴールデンチケットの追加支払い！ </Color>,При Покупке 2 И 3 Продуктов <Color =#Ffd515> Дополнительный Платеж Золотых Билетов! </Color>,購買2和3產品時，<Color =＃Ffd515>額外支付金票！ </Color>
+Shop.Description.28,"2,3단계 상품 구매 시 <color=#FFD515>황금 티켓 추가 지급!</color>",When Purchasing 2 And 3 Products <Color =#Ffd515> Additional Payment Of Golden Tickets! </Color>,2および3の製品を購入するとき<Color =＃Ffd515>ゴールデンチケットの追加支払い！ </Color>,При Покупке 2 И 3 Продуктов <Color =#Ffd515> Дополнительный Платеж Золотых Билетов! </Color>,購買2和3產品時，<Color =＃Ffd515>額外支付金票！ </Color>
+Shop.Description.29,"2,3단계 상품 구매 시 <color=#FFD515>황금 티켓 추가 지급!</color>",When Purchasing 2 And 3 Products <Color =#Ffd515> Additional Payment Of Golden Tickets! </Color>,2および3の製品を購入するとき<Color =＃Ffd515>ゴールデンチケットの追加支払い！ </Color>,При Покупке 2 И 3 Продуктов <Color =#Ffd515> Дополнительный Платеж Золотых Билетов! </Color>,購買2和3產品時，<Color =＃Ffd515>額外支付金票！ </Color>
+Shop.Description.30,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.31,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.32,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.33,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.34,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.35,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.36,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.37,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.38,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.39,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.40,"무한의 탑 <color=""#DB495C"">스페셜</color> 혜택","Infinite Top <Color = ""#Db495C""> Special </Color> Benefits","Infinite Top <Color = ""＃Db495C"">特別</Color>利点","Infinite Top <Color = ""#Db495C""> Специальные </Color> Преимущества",無限頂部<Color =“＃Db495C”>特殊</Color>好處
+Shop.Description.41,"무한의 탑 <color=""#9544A6"">프리미엄</color> 혜택","Infinite Tower <Color = ""#9544A6""> Premium </Color> Benefits","Infinite Tower <Color = ""＃9544A6"">プレミアム</Color>利点","Infinite Tower <Color = ""#9544A6""> Premium </Color> Преимущества",無限塔<Color =“＃9544A6”>高級</Color>好處
+Shop.Description.42,"재화 던전 <color=""#3CFF00"">프리미엄</color> 혜택","Goods Dungeon <Color = ""#3Cff00""> Premium </Color> Benefits","Goods Dungeon <Color = ""＃3Cff00"">プレミアム</Color>利点","Товары Dungeon <Color = ""#3Cff00""> Premium </Color> Преимущества",商品地牢<Color =“＃3Cff00”>高級</Color>好處
+Shop.Description.43,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.44,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.45,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.46,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.47,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.48,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.49,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.50,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.51,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.52,"1,3,5단계 상품 구매 시 <color=#D3CE7D>레전드</color> 장비 지급!","When Purchasing Steps 1, 3, 5 Products, <Color =#D3Ce7D> Legend </Color> Equipment Payment!",手順1、3、5製品を購入するとき、<Color =＃D3Ce7D> Legend </Color>機器の支払い！,"При Покупке Этапов 1, 3, 5 Продуктов, <Color =#D3Ce7D> Legend </Color> Оплата Оборудования!",購買步驟1、3、5產品時，<Color =＃D3Ce7D>傳奇</Color>設備付款！
+Shop.Description.53,매일 딱 한번 살 수 있는 <color=#FEB533>황금 티켓</color> 꾸러미,<Color =#Feb533> Golden Ticket </Color>,<色=＃Feb533>ゴールデンチケット</Color>,<Color =#Feb533> Золотой Билет </Color>,<Color =＃Feb533>金票</Color>
+Shop.Description.54,3배 효율!!!,3 Times Efficiency !!!,3倍の効率!!!,3 Раза Эффективность !!!,效率3次！！！
+Shop.Description.55,3배 효율!!!,3 Times Efficiency !!!,3倍の効率!!!,3 Раза Эффективность !!!,效率3次！！！
+Shop.Description.56,3배 효율!!!,3 Times Efficiency !!!,3倍の効率!!!,3 Раза Эффективность !!!,效率3次！！！
+Shop.Description.57,3배 효율!!!,3 Times Efficiency !!!,3倍の効率!!!,3 Раза Эффективность !!!,效率3次！！！
+Shop.Description.58,5배 효율!!!!!,5X Efficiency !!!!!,5X効率!!!!!,5X Эффективность !!!!!,5X效率！
+Shop.Description.59,5배 효율!!!!!,5X Efficiency !!!!!,5X効率!!!!!,5X Эффективность !!!!!,5X效率！
+Shop.Description.60,5배 효율!!!!!,5X Efficiency !!!!!,5X効率!!!!!,5X Эффективность !!!!!,5X效率！
+Shop.Description2.40,"※ <color=""#EAD985"">열쇠</color> 소모 <color='#00FF75'>50%</color> 영구 감소\n※ 구매 시 <color=""#EAD985"">열쇠</color> 600개 보너스 증정","※ <Color = ""#Ead985""> Key </Color> Consumption </Color = '#00Ff75'> 50%</Color> Permanent Reduction \ N ※ <Color = ""#Ad985""> Key </Color> 600 Dog Bonus Presentation","※<Color = ""＃Ead985""> Key </Color>消費</Color = '＃00Ff75'> 50％</Color>永久削減\ Nボーナスプレゼンテーション","※ <Color = ""#Ead985""> Key </Color> Потребление </Color = '#00Ff75'> 50%</Color> Постоянное Сокращение \ N ※ <Color = ""#Ad985""> Ключ </Color> 600 Собака Бонусная Презентация",※<Color =“＃Ead985”>鍵</Color>消費</Color ='＃00Ff75'> 50％</Color>永久減少\N※<Color =“＃Ad985”> Key </Color </Color </Color> 600狗獎勵演示
+Shop.Description2.41,"※ <color=""#77B766"">클로버</color> 보상 <color='#00FF75'>2배</color> 영구 증가\n※ 구매 시 <color=""#EAD985"">열쇠</color> 300개 보너스 증정","※ <Color = ""#77B766""> Clover </Color> Reward <Color = '#00Ff75'> Double </Color> Permanent Increase \ N ※ <Color = ""#Ad985""> Key </Color> 300 Dog Bonus Presentation","※<色= ""＃77B766""> Clover </Color> Reward <Color = '＃00Ff75'> Double </Color>永続的な増加\ N","※ <Color = ""#77B766""> Clover </Color> Reward <Color = '#00Ff75'> Double </Color> Постоянное Увеличение \ N ※ <Color = ""#Ad985""> Ключ </Color> 300 Dog Bonus Presentation",※<Color =“＃77B766”>三葉草</Color>獎勵<Color ='＃00Ff75'> Double </Color>永久增長\ N※<Color =“＃Ad985”> Key </Color </Color </Color </Color> 300狗獎勵呈現
+Shop.Description2.42,"※ <color=""#C27E53"">고기</color> 소모 <color='#00FF75'>50%</color> 영구 감소\n※ 구매 시 <color=""#C27E53"">고기</color> 500개 보너스 증정","※ <Color = ""#C27E53""> Meat </Color> Consumption </Color>#00Ff75 '> 50%</Color> Permanent Reduction \ N ※ <Color = ""#C27E53""> Meat </Color> 500 Dog Bonus Presentation","※<Color = ""＃C27E53"">肉</Color>消費</Color>＃00Ff75 '> 50％</Color>永久削減\ Nプレゼンテーション","※ <Color = ""#C27E53""> Мясо </Color> Потребление </Color>#00Ff75 '> 50%</Color> Постоянное Сокращение \ N ※ <Color = ""#C27E53""> Мясо </Color> 500 Бонус Собак. Презентация",※<Color =“＃C27E53”>肉</Color>消費</Color>＃00Ff75'> 50％</Color>永久減少\N※<Color =“＃C27E53”>肉推介會
+Shop.EventDescription.08,기간 한정 1+1 이벤트,Duration Limited 1+1 Event,期間限定1+1イベント,Продолжительность Ограниченного 1+1 Событие,持續時間有限1+1事件
+Shop.EventDescription.09,기간 한정 1+1 이벤트,Duration Limited 1+1 Event,期間限定1+1イベント,Продолжительность Ограниченного 1+1 Событие,持續時間有限1+1事件
+Shop.EventDescription.11,<color=yellow>공축 성장 속도 2배!</color>,<Color = Yellow> 2 Times The Speed Of Growth Growth! </Color>,<色=黄色>成長速度の2倍！ </Color>,<Color = Желтый> В 2 Раза Превышает Скорость Роста! </Color>,<Color =黃色>生長速度的2倍！ </Color>
+Shop.EventDescription.12,<color=yellow>생축 성장 속도 2배!</color>,<Color = Yellow> 2 Times The Growth Rate Of Birth Growth! </Color>,<色=黄色>出生成長率の2倍！ </Color>,<Color = Желтый> В 2 Раза Превышает Скорость Роста Роста! </Color>,<Color =黃色>生長增長的2倍！ </Color>
+Shop.EventDescription.13,<color=yellow>탐축 성장 속도 2배!</color>,<Color = Yellow> Twice The Growth Rate Of Exploration Growth! </Color>,<色=黄色>探索成長の成長率の2倍！ </Color>,<Color = Желтый> Вдвое Больше Темпов Роста Развития Роста! </Color>,<Color =黃色>勘探生長的增長率的兩倍！ </Color>
+Shop.EventDescription.14,<color=yellow>경축 성장 속도 2배!</color>,<Color = Yellow> Celebration Growth Rate Twice! </Color>,<色=黄色>お祝いの成長率は2回！ </Color>,<Color = Желтый> Дважды Рост Праздников! </Color>,<Color =黃色>慶祝增長率兩次！ </Color>
+Shop.EventDescription.15,<color=yellow>채축 성장 속도 2배!</color>,<Color = Yellow> Doubling The Growth Rate Of Reconciliation! </Color>,<Color = Yellow>和解の成長率を2倍にします！ </Color>,<Цвет = Желтый> Удвоение Скорости Роста Примирения! </Color>,<Color = Yellow>將和解的增長率加倍！ </Color>
+Shop.EventDescription.23,"₩10,000",,,,
+Shop.EventDescription.24,"₩50,000",,,,
+Shop.EventDescription.25,"₩100,000",,,,
+Shop.EventDescription.26,"₩35,000",,,,
+Shop.EventDescription.27,"₩10,000",,,,
+Shop.EventDescription.28,"₩10,000",,,,
+Shop.EventDescription.29,"₩10,000",,,,
+Shop.EventDescription.30,"₩10,000",,,,
+Shop.EventDescription.31,"₩20,000",,,,
+Shop.EventDescription.32,"₩30,000",,,,
+Shop.EventDescription.33,"₩40,000",,,,
+Shop.EventDescription.34,"₩50,000",,,,
+Shop.EventDescription.35,"₩30,000",,,,
+Shop.EventDescription.36,"₩50,000",,,,
+Shop.EventDescription.37,"₩70,000",,,,
+Shop.EventDescription.38,"₩90,000",,,,
+Shop.EventDescription.39,"₩110,000",,,,
+Shop.EventDescription.40,"₩30,000",,,,
+Shop.EventDescription.41,"₩60,000",,,,
+Shop.EventDescription.42,"₩30,000",,,,
+Shop.EventDescription.43,"₩10,000",,,,
+Shop.EventDescription.44,"₩20,000",,,,
+Shop.EventDescription.45,"₩30,000",,,,
+Shop.EventDescription.46,"₩40,000",,,,
+Shop.EventDescription.47,"₩50,000",,,,
+Shop.EventDescription.48,"₩30,000",,,,
+Shop.EventDescription.49,"₩50,000",,,,
+Shop.EventDescription.50,"₩70,000",,,,
+Shop.EventDescription.51,"₩90,000",,,,
+Shop.EventDescription.52,"₩110,000",,,,
+Shop.EventDescription.53,"₩35,000",,,,
+Shop.PriceDescription.00,,,,,
+Shop.PriceDescription.01,,,,,
+Shop.PriceDescription.02,,,,,
+Shop.PriceDescription.03,,,,,
+Shop.PriceDescription.04,"₩2,200",,,,
+Shop.PriceDescription.05,"₩5,500",,,,
+Shop.PriceDescription.06,"₩9,900",,,,
+Shop.PriceDescription.07,"₩30,000",,,,
+Shop.PriceDescription.08,"₩60,000",,,,
+Shop.PriceDescription.09,"₩119,000",,,,
+Shop.PriceDescription.10,"₩5,900",,,,
+Shop.PriceDescription.11,"₩5,900",,,,
+Shop.PriceDescription.12,"₩5,900",,,,
+Shop.PriceDescription.13,"₩5,900",,,,
+Shop.PriceDescription.14,"₩5,900",,,,
+Shop.PriceDescription.15,"₩5,900",,,,
+Shop.PriceDescription.16,,,,,
+Shop.PriceDescription.17,,,,,
+Shop.PriceDescription.18,,,,,
+Shop.PriceDescription.19,,,,,
+Shop.PriceDescription.20,,,,,
+Shop.PriceDescription.21,,,,,
+Shop.PriceDescription.22,,,,,
+Shop.PriceDescription.23,"₩5,500",,,,
+Shop.PriceDescription.24,"₩25,000",,,,
+Shop.PriceDescription.25,"₩50,000",,,,
+Shop.PriceDescription.26,"₩20,000",,,,
+Shop.PriceDescription.27,"₩6,600",,,,
+Shop.PriceDescription.28,"₩6,600",,,,
+Shop.PriceDescription.29,"₩6,600",,,,
+Shop.PriceDescription.30,"₩6,600",,,,
+Shop.PriceDescription.31,"₩12,000",,,,
+Shop.PriceDescription.32,"₩19,000",,,,
+Shop.PriceDescription.33,"₩25,000",,,,
+Shop.PriceDescription.34,"₩36,000",,,,
+Shop.PriceDescription.35,"₩19,000",,,,
+Shop.PriceDescription.36,"₩30,000",,,,
+Shop.PriceDescription.37,"₩32,000",,,,
+Shop.PriceDescription.38,"₩54,000",,,,
+Shop.PriceDescription.39,"₩69,000",,,,
+Shop.PriceDescription.40,"₩25,000",,,,
+Shop.PriceDescription.41,"₩49,000",,,,
+Shop.PriceDescription.42,"₩25,000",,,,
+Shop.PriceDescription.43,"₩6,600",,,,
+Shop.PriceDescription.44,"₩12,000",,,,
+Shop.PriceDescription.45,"₩19,000",,,,
+Shop.PriceDescription.46,"₩25,000",,,,
+Shop.PriceDescription.47,"₩36,000",,,,
+Shop.PriceDescription.48,"₩19,000",,,,
+Shop.PriceDescription.49,"₩30,000",,,,
+Shop.PriceDescription.50,"₩32,000",,,,
+Shop.PriceDescription.51,"₩54,000",,,,
+Shop.PriceDescription.52,"₩69,000",,,,
+Shop.PriceDescription.53,"₩20,000",,,,
+Shop.PriceDescription.54,"₩32,000",,,,
+Shop.PriceDescription.55,"₩69,000",,,,
+Shop.PriceDescription.56,"₩119,000",,,,
+Shop.PriceDescription.57,"₩179,000",,,,
+Shop.PriceDescription.58,"₩69,000",,,,
+Shop.PriceDescription.59,"₩179,000",,,,
+Shop.PriceDescription.60,"₩179,000",,,,
+Shop.PurchasedDescription.00,황금 티켓 1개를 획득했습니다.,I Got One Golden Ticket.,ゴールデンチケットが1つありました。,Я Получил Один Золотой Билет.,我有一張金票。
+Shop.PurchasedDescription.01,고기 20개를 획득했습니다.,I Got 20 Meat.,20肉を手に入れました。,У Меня 20 Мяса.,我有20肉。
+Shop.PurchasedDescription.02,열쇠 10개를 획득했습니다.,I Got 10 Keys.,10個のキーがありました。,У Меня 10 Ключей.,我有10個鑰匙。
+Shop.PurchasedDescription.03,루비 300개를 획득했습니다.,I Got 300 Rubies.,300個のルビーを手に入れました。,Я Получил 300 Рубин.,我有300個紅寶石。
+Shop.PurchasedDescription.04,"루비 1,000개를 구매했습니다.","I Bought 1,000 Rubies.","1,000個のルビーを購入しました。",Я Купил 1000 Рубин.,"我買了1,000個紅寶石。"
+Shop.PurchasedDescription.05,"루비 3,000개를 구매했습니다.","I Bought 3,000 Rubies.","3,000個のルビーを購入しました。",Я Купил 3000 Рубин.,"我買了3,000個紅寶石。"
+Shop.PurchasedDescription.06,"루비 6,500개를 구매했습니다.","I Bought 6,500 Ruby.","6,500ルビーを購入しました。",Я Купил 6500 Рубин.,"我買了6,500條紅寶石。"
+Shop.PurchasedDescription.07,"루비 21,000개를 구매했습니다.","I Bought 21,000 Rubies.","21,000枚のルビーを購入しました。",Я Купил 21 000 Рубин.,"我買了21,000紅寶石。"
+Shop.PurchasedDescription.08,"루비 90,000개를 구매했습니다.","I Bought 90,000 Rubies.","90,000個のルビーを購入しました。",Я Купил 90 000 Рубин.,"我買了90,000個紅寶石。"
+Shop.PurchasedDescription.09,"루비 200,000개를 구매했습니다.","I Bought 200,000 Rubies.","200,000枚のルビーを購入しました。",Я Купил 200 000 Рубин.,"我買了200,000紅寶石。"
+Shop.PurchasedDescription.10,무한 광고 제거가 활성화 됐습니다.,Infinite Ad Removal Has Been Activated.,無限の広告除去がアクティブになっています。,Бесконечное Удаление Рекламы Было Активировано.,無限的ad去除已被激活。
+Shop.PurchasedDescription.11,무한 공격의 축복이 활성화 됐습니다.,The Blessing Of Infinite Attacks Has Been Activated.,無限の攻撃の祝福が活性化されています。,Благословение Бесконечных Атак Было Активировано.,無限攻擊的祝福已被激活。
+Shop.PurchasedDescription.12,무한 생명의 축복이 활성화 됐습니다.,Infinite Life Blessings Have Been Activated.,無限の人生の祝福が活性化されています。,Бесконечные Жизненные Благословения Были Активированы.,無限的生命祝福已被激活。
+Shop.PurchasedDescription.13,무한 탐욕의 축복이 활성화 됐습니다.,The Blessing Of Infinite Greed Has Been Activated.,無限の貪欲の祝福が活性化されました。,Благословение Бесконечной Жадности Было Активировано.,無限貪婪的祝福已被激活。
+Shop.PurchasedDescription.14,무한 경험의 축복이 활성화 됐습니다.,The Blessing Of Infinite Experience Has Been Activated.,無限の経験の祝福が活性化されました。,Благословение Бесконечного Опыта Было Активировано.,無限經驗的祝福已被激活。
+Shop.PurchasedDescription.15,무한 채굴의 축복이 활성화 됐습니다.,The Blessing Of Infinite Mining Has Been Activated.,無限の採掘の祝福が活性化されました。,Благословение Бесконечной Добычи Было Активировано.,無限採礦的祝福已被激活。
+Shop.PurchasedDescription.16,고기 50개를 구매했습니다.,I Bought 50 Meat.,50個の肉を買いました。,Я Купил 50 Мяса.,我買了50肉。
+Shop.PurchasedDescription.17,"루비 10,000개를 구매했습니다.","I Bought 10,000 Rubies.","10,000個のルビーを購入しました。",Я Купил 10 000 Рубин.,"我買了10,000個紅寶石。"
+Shop.PurchasedDescription.18,스킵 티켓 20개를 구매했습니다.,I Bought 20 Skip Tickets.,20枚のスキップチケットを購入しました。,Я Купил 20 Билетов Skip.,我買了20張跳過門票。
+Shop.PurchasedDescription.19,열쇠 50개를 구매했습니다.,I Bought 50 Keys.,50個のキーを購入しました。,Я Купил 50 Ключей.,我買了50個鑰匙。
+Shop.PurchasedDescription.20,황금 티켓 5개를 구매했습니다.,I Bought Five Golden Tickets.,5つのゴールデンチケットを購入しました。,Я Купил Пять Золотых Билетов.,我買了五張金票。
+Shop.PurchasedDescription.21,"주사위 5,000개를 구매했습니다.","I Bought 5,000 Dice.","5,000個のサイコロを購入しました。",Я Купил 5000 Кубиков.,"我買了5,000個骰子。"
+Shop.PurchasedDescription.22,뿅망치 50개를 구매했습니다.,I Bought 50 Hammocks.,50個のハンモックを購入しました。,Я Купил 50 Гамаков.,我買了50座吊床。
+Shop.PurchasedDescription.23,첫출발 스타트 프리미엄1을 구매했습니다.,I Bought The First Start Start Premium 1.,最初のスタートプレミアム1を購入しました。,Я Купил Первый Старт Premium 1.,我買了第一個開始溢價1。
+Shop.PurchasedDescription.24,첫출발 스타트 프리미엄2을 구매했습니다.,I Bought The First Start Start Premium 2.,最初のスタートプレミアム2を購入しました。,Я Купил Первый Старт Premium 2.,我買了第一個開始premium 2。
+Shop.PurchasedDescription.25,첫출발 스타트 프리미엄3을 구매했습니다.,I Bought The First Start Start Premium 3.,最初のスタートスタートプレミアム3を購入しました。,Я Купил Первый Старт Premium 3.,我買了第一個start Start Premium 3。
+Shop.PurchasedDescription.26,"루비 프리미엄, 루비 25,000개를 구매했습니다.","I Bought Ruby Premium And 25,000 Ruby.","Ruby Premiumと25,000 Rubyを購入しました。",Я Купил Ruby Premium И 25 000 Ruby.,"我買了ruby Premium和25,000 Ruby。"
+Shop.PurchasedDescription.27,"골드 티켓 20개를 구매했습니다.,",I Bought 20 Gold Tickets.,20個のゴールドチケットを購入しました。,Я Купил 20 Золотых Билетов.,我買了20張金票。
+Shop.PurchasedDescription.28,"골드 티켓 40개를 구매했습니다.,",I Bought 40 Gold Tickets.,40個の金のチケットを購入しました。,Я Купил 40 Золотых Билетов.,我買了40張金票。
+Shop.PurchasedDescription.29,"골드 티켓 80개를 구매했습니다.,",I Bought 80 Gold Tickets.,80個のゴールドチケットを購入しました。,Я Купил 80 Золотых Билетов.,我買了80張金票。
+Shop.PurchasedDescription.30,일일 성장 프리미엄1을 구매했습니다.,I Bought A Daily Growth Premium 1.,毎日の成長プレミアム1を購入しました1。,Я Купил Ежедневный Рост Премии 1.,我購買了每日增長溢價1。
+Shop.PurchasedDescription.31,일일 성장 프리미엄2를 구매했습니다.,I Bought A Daily Growth Premium 2.,毎日の成長プレミアム2を購入しました。,Я Купил Ежедневный Рост Premium 2.,我購買了每日增長溢價2。
+Shop.PurchasedDescription.32,일일 성장 프리미엄3을 구매했습니다.,I Bought A Daily Growth Premium 3.,毎日の成長プレミアム3を購入しました。,Я Купил Ежедневный Рост Premium 3.,我購買了每日增長溢價3。
+Shop.PurchasedDescription.33,일일 성장 프리미엄4를 구매했습니다.,I Bought A Daily Growth Premium 4.,毎日の成長プレミアム4を購入しました。,Я Купил Ежедневный Рост Premium 4.,我購買了每日增長溢價4。
+Shop.PurchasedDescription.34,일일 성장 프리미엄5를 구매했습니다.,I Bought A Daily Growth Premium 5.,毎日の成長プレミアム5を購入しました。,Я Купил Ежедневный Рост Premium 5.,我購買了每日增長溢價5。
+Shop.PurchasedDescription.35,주간 성장 프리미엄1을 구매했습니다.,I Bought Weekly Growth Premium 1.,毎週成長プレミアム1を購入しました。,Я Купил Еженедельный Рост Premium 1.,我購買了每週的增長保費1。
+Shop.PurchasedDescription.36,주간 성장 프리미엄2를 구매했습니다.,I Bought Weekly Growth Premium 2.,毎週の成長プレミアム2を購入しました。,Я Купил Еженедельный Рост Premium 2.,我購買了每週的增長保費2。
+Shop.PurchasedDescription.37,주간 성장 프리미엄3을 구매했습니다.,I Bought Weekly Growth Premium 3.,毎週成長プレミアム3を購入しました。,Я Купил Еженедельный Рост Premium 3.,我購買了每週的增長保費3。
+Shop.PurchasedDescription.38,주간 성장 프리미엄4를 구매했습니다.,I Bought Weekly Growth Premium 4.,毎週成長プレミアム4を購入しました。,Я Купил Еженедельный Рост Premium 4.,我購買了每週的增長保費4。
+Shop.PurchasedDescription.39,주간 성장 프리미엄5를 구매했습니다.,I Bought Weekly Growth Premium 5.,毎週成長プレミアム5を購入しました。,Я Купил Еженедельный Рост Premium 5.,我購買了每週的增長保費5。
+Shop.PurchasedDescription.40,무한의 탑 스페셜을 구매했습니다.,I Bought An Infinite Top Special.,私は無限のトップスペシャルを購入しました。,Я Купил Infinite Top Special.,我買了一個無限的頂級特惠。
+Shop.PurchasedDescription.41,무한의 탑 프리미엄을 구매했습니다.,I Bought An Infinite Top Premium.,無限のトッププレミアムを購入しました。,Я Купил Бесконечную Верхнюю Премию.,我買了一個無限的高級溢價。
+Shop.PurchasedDescription.42,재화 던전 프리미엄을 구매했습니다.,I Bought A Goods Dungeon Premium.,私はgoods Dungeon Premiumを購入しました。,Я Купил Товарную Премию Dungeon.,我買了一個商品地牢溢價。
+Shop.PurchasedDescription.43,일일 프리미엄 황금 마차1을 구매했습니다.,I Bought A Daily Premium Golden Wagon 1.,毎日のプレミアムゴールデンワゴン1を購入しました。,Я Купил Ежедневную Премию Golden Wagon 1.,我買了每日高級金貨車1。
+Shop.PurchasedDescription.44,일일 프리미엄 황금 마차2를 구매했습니다.,I Bought A Daily Premium Golden Wagon 2.,毎日のプレミアムゴールデンワゴン2を購入しました。,Я Купил Ежедневную Премию Golden Wagon 2.,我買了每日高級金貨車2。
+Shop.PurchasedDescription.45,일일 프리미엄 황금 마차3을 구매했습니다.,I Bought A Daily Premium Golden Wagon 3.,毎日のプレミアムゴールデンワゴン3を購入しました。,Я Купил Ежедневную Премию Golden Wagon 3.,我買了每日高級金貨車3。
+Shop.PurchasedDescription.46,일일 프리미엄 황금 마차4를 구매했습니다.,I Bought A Daily Premium Golden Wagon 4.,毎日のプレミアムゴールデンワゴン4を購入しました。,Я Купил Ежедневную Премию Golden Wagon 4.,我買了每日高級金貨車4。
+Shop.PurchasedDescription.47,일일 프리미엄 황금 마차5를 구매했습니다.,I Bought A Daily Premium Golden Wagon 5.,毎日のプレミアムゴールデンワゴン5を購入しました。,Я Купил Ежедневную Премию Golden Wagon 5.,我買了每日高級金貨車5。
+Shop.PurchasedDescription.48,주간 프리미엄 황금 마차1을 구매했습니다.,I Bought A Weekly Premium Golden Wagon 1.,毎週のプレミアムゴールデンワゴン1を購入しました。,Я Купил Еженедельную Премию Golden Wagon 1.,我購買了每週的高級金貨車1。
+Shop.PurchasedDescription.49,주간 프리미엄 황금 마차2를 구매했습니다.,I Bought A Weekly Premium Golden Wagon 2.,毎週のプレミアムゴールデンワゴン2を購入しました。,Я Купил Еженедельную Премию Golden Wagon 2.,我購買了每週的高級金貨車2。
+Shop.PurchasedDescription.50,주간 프리미엄 황금 마차3을 구매했습니다.,I Bought A Weekly Premium Golden Wagon 3.,毎週のプレミアムゴールデンワゴン3を購入しました。,Я Купил Еженедельную Премию Golden Wagon 3.,我購買了每週的高級金貨車3。
+Shop.PurchasedDescription.51,주간 프리미엄 황금 마차4를 구매했습니다.,I Bought A Weekly Premium Golden Wagon 4.,毎週のプレミアムゴールデンワゴン4を購入しました。,Я Купил Еженедельную Премию Golden Wagon 4.,我購買了每週的高級金貨車4。
+Shop.PurchasedDescription.52,주간 프리미엄 황금 마차5를 구매했습니다.,I Bought A Weekly Premium Golden Wagon 5.,毎週のプレミアムゴールデンワゴン5を購入しました。,Я Купил Еженедельную Премию Golden Wagon 5.,我購買了每週的高級金貨車5。
+Shop.PurchasedDescription.53,"황금 티켓 프리미엄, 황금 티켓 50개를 구매했습니다.",We Purchased 50 Golden Ticket Premiums And 50 Golden Tickets.,50個のゴールデンチケットプレミアムと50個のゴールデンチケットを購入しました。,Мы Купили 50 Золотых Билетных Премий И 50 Золотых Билетов.,我們購買了50張金牌保費和50張金票。
+Shop.PurchasedDescription.54,레벨 달성 스페셜 I을 구매했습니다.,I Bought A Level Achievement Special I.,レベルの功績スペシャルiを購入しました。,Я Купил Специальное Достижение.,我買了一個水平成就特別i。
+Shop.PurchasedDescription.55,레벨 달성 스페셜 II을 구매했습니다.,I Bought A Level Achievement Special Ii.,レベルアチーブメントスペシャルiiを購入しました。,Я Купил Ровное Достижение Special Ii.,我買了一個水平成就特別ii。
+Shop.PurchasedDescription.56,레벨 달성 스페셜 III을 구매했습니다.,I Bought A Level Achievement Special Iii.,レベルアチーブメントスペシャルiiiを購入しました。,Я Купил Ровное Достижение Special Iii.,我買了一個水平成就特別iii。
+Shop.PurchasedDescription.57,레벨 달성 스페셜 IV을 구매했습니다.,I Bought A Level Achievement Special Iv.,レベルアチーブメントスペシャルivを購入しました。,Я Купил Ровное Достижение Специальное Iv.,我買了一個水平成就特別iv。
+Shop.PurchasedDescription.58,스테이지 돌파 스페셜 I을 구매했습니다.,I Bought A Special I.,私は特別な私を買いました。,Я Купил Особый I.,我買了一個特殊的i。
+Shop.PurchasedDescription.59,스테이지 돌파 스페셜 II을 구매했습니다.,I Bought A Special Ii.,私は特別なiiを買いました。,Я Купил Специальный Ii.,我買了一個特別ii。
+Shop.PurchasedDescription.60,스테이지 돌파 스페셜 III을 구매했습니다.,I Bought A Special Iii.,特別なiiiを購入しました。,Я Купил Специальный Iii.,我買了一個特別的iii。
+Skill.Name.00,헤이스트,History,歴史,История,歷史
+Skill.Name.01,토네이도,Tornado,竜巻,Торнадо,龍捲風
+Skill.Name.02,텔레포트,Teleport,テレポート,Телепорт,傳送
+Skill.Name.03,레이징블로우,Raying Blow,レイニングブロー,Рэйнг Удар,射線打擊
+Skill.Name.04,샤크,Chak,チャク,Чак,煙
+Skill.Name.05,몽키킹,Monkey,猿,Обезьяна,猴
+Skill.Name.06,애로우샤워,Arrow Shower,矢印のシャワー,Стрелка Душ,箭頭淋浴
+Skill.Name.07,더블 어택,Double Attack,二重攻撃,Двойная Атака,雙重攻擊
+Skill.Name.08,용의가호,Dragon,ドラゴン,Дракон,龍
+Skill.Name.09,블라스트,Blast,爆発,Взрыв,爆破
+Skill.Name.10,유니티소드,Unity,団結,Единство,統一
+Skill.Name.11,바람의 검,Wind Sword,風の剣,Ветрный Меч,風劍
+Skill.Name.12,황금잔,Golden Cup,ゴールデンカップ,Золотая Чашка,金杯
+Skill.Name.13,신성한 축복,Sacred Blessings,神聖な祝福,Священные Благословения,神聖的祝福
+Skill.Name.14,경험의 손,Hand,手,Рука,手
+Skill.Name.15,드레인,Drain,ドレイン,Осушать,流走
+Skill.Name.16,회심의 일격,Conversion,会話,Обращение,轉換
+Skill.Name.17,젤리뿔,Jelly Horn,ゼリーホーン,Желе,果凍喇叭
+Skill.Name.18,자강두천,Jagang Doocheon,ジャガンドゥーチョン,Джаганг Дуочон,Jagang Doocheon
+Skill.Name.19,이글아이,Eagle Eye,鋭い目,Орлиный Глаз,鷹眼
+Skill.Name.20,행운잎사귀,Lucky Leaves,幸運な葉,Счастливые Листья,幸運的葉子
+Skill.Name.21,총공깽,Gunfire,砲火,Стрельба,炮火
+Skill.Description.00,이동속도가 {0}% 증가합니다.,Movement Speed Increases {0}%.,移動速度は{0}％増加します。,Скорость Движения Увеличивается {0}%.,運動速度增加{0}％。
+Skill.Description.01,토네이도를 날려 {0}% 공격력으로 공격합니다.,Blow Tornado And Attack With {0}% Attack Power.,竜巻を吹き、{0}％攻撃力で攻撃します。,Взорвать Торнадо И Атаку С {0}% Атаки.,吹龍捲風，並用{0}％攻擊功率攻擊。
+Skill.Description.02,{0}초 마다 가까운 적에게 순간이동합니다.,Each Second Is Teleported To The Enemy Every Second.,毎秒は毎秒敵にテレポートされます。,Каждую Секунду Телепортируется С Врагом Каждую Секунду.,每秒每秒都會傳送到敵人。
+Skill.Description.03,가까운 적들을 {0}% 공격력으로 3번 공격합니다.,Attack The Enemies Close To {0}% With {0}% Attack Power.,{0}％攻撃電源で{0}％に近い敵を攻撃します。,Атаковать Врагов Близко К {0}% С {0}% Атаки.,用{0}％攻擊力量攻擊接近{0}％的敵人。
+Skill.Description.04,상어를 소환해 전방의 적들을 {0}% 공격력으로 공격합니다.,Summon Sharks And Attack Enemies In Front Of Them With {0}% Attack Power.,サメを召喚し、{0}％攻撃力で敵の前で敵を攻撃します。,Призывайте Акул И Атакуйте Врагов Перед Ними С Помощью Мощности Атаки {0}%.,用{0}％攻擊力量在他們面前召喚鯊魚和攻擊敵人。
+Skill.Description.05,여의봉을 휘둘러 전방의 적들을 {0}% 공격력으로 공격합니다.,Wield Yeouibong And Attack Enemies In Front Of Them With {0}% Attack Power.,Yeouibongを使用し、{0}％攻撃力で敵の前で敵を攻撃します。,Имейте Yeouibong И Атакуйте Врагов Перед Ними С Помощью Мощности Атаки {0}%.,用{0}％攻擊能力在他們面前揮舞yeouibong並攻擊敵人。
+Skill.Description.06,…,…,…,…,…
+Skill.Description.07,일반 공격시 {0}% 확률으로 한번 더 공격합니다.,"In General Attack, {0} Will Attack Once More.",一般的に攻撃では、{0}はもう一度攻撃します。,В Общей Атаке {0} Будет Атаковать Еще Раз.,在一般攻擊中，{0}將再次攻擊。
+Skill.Description.08,용의 가호가 5초 동안 주변의 적들에게 {0}% 공격력으로 공격합니다.,The Dragon'S Protection Attacks The Enemies Around For 5 Seconds With {0}% Attack.,ドラゴンの保護は、{0}％攻撃で敵を5秒間攻撃します。,Защита Дракона Атакует Врагов В Течение 5 Секунд С Атакой {0}%.,龍的保護在{0}％攻擊下攻擊敵人大約5秒鐘。
+Skill.Description.09,망취를 휘둘러 전방의 적에게 {0}% 공격력으로 공격합니다.,Wield The Net And Attack The Enemy In Front Of The Enemy With {0}% Attack Power.,ネットを装備し、{0}％攻撃力で敵の前で敵を攻撃します。,Владеть Сетью И Атаковать Врага Перед Врагом С Помощью {0}% Атаки.,用{0}％攻擊力量揮舞網上並攻擊敵人前面的敵人。
+Skill.Description.10,…,…,…,…,…
+Skill.Description.11,공격속도가 {0}% 증가합니다.,Attack Speed Increases {0}%.,攻撃速度は{0}％増加します。,Скорость Атаки Увеличивается {0}%.,攻擊速度增加{0}％。
+Skill.Description.12,최종 골드 획득량이 {0}% 증가합니다.,The Final Gold Acquisition Increases {0}%.,最終的な金の獲得により{0}％が増加します。,Окончательное Приобретение Золота Увеличивается {0}%.,最終的黃金獲取增加了{0}％。
+Skill.Description.13,축복을 받아 체력을 {0}% 회복합니다.,Recover {0}% With A Blessing.,祝福で{0}％を回復します。,Восстановить {0}% С Благословением.,恢復{0}％的祝福。
+Skill.Description.14,최종 경험치 획득량이 {0}% 증가합니다.,The Final Experience Acquisition Increases {0}%.,最終的なエクスペリエンスの取得により、{0}％が増加します。,Окончательное Приобретение Опыта Увеличивается {0}%.,最終的經驗獲取增加了{0}％。
+Skill.Description.15,흡혈량이 {0}% 증가합니다. (기본 공격력 기반),Vampire Increases {0}%. (Basic Damage Base),吸血鬼は{0}％を増やします。 （基本的なダメージベース）,Вампир Увеличивается {0}%. (Основная База Повреждений),吸血鬼增加{0}％。 （基本損壞基礎）
+Skill.Description.16,치명타 공격력이 {0}% 증가합니다.,Critical Damage Increases {0}%.,重大なダメージが{0}％増加します。,Критическое Урон Увеличивается {0}%.,關鍵損害增加{0}％。
+Skill.Description.17,최종 젤리 획득량이 {0}% 증가합니다.,The Final Jelly Acquisition Increases {0}%.,最終的なゼリーの取得は{0}％増加します。,Окончательное Приобретение Желе Увеличивается {0}%.,最終的果凍採集增加了{0}％。
+Skill.Description.18,보스 공격력이 {0}% 증가합니다.,Boss Damage Increases {0}%.,ボスのダメージが{0}％増加します。,Ущерб Босса Увеличивается {0}%.,老闆傷害增加{0}％。
+Skill.Description.19,명중률이 {0}% 증가합니다.,The Hit Rate Increases {0}%.,ヒット率は{0}％増加します。,Скорость Попадания Увеличивается {0}%.,命中率增加{0}％。
+Skill.Description.20,회피량이 {0}% 증가합니다.,The Dodge Increases {0}%.,ダッジは{0}％増加します。,Dodge Увеличивается {0}%.,道奇增加{0}％。
+Skill.Description.21,최종 공격력이 {0}% 증가합니다.,The Final Damage Increases {0}%.,最終的なダメージは{0}％増加します。,Окончательный Урон Увеличивается {0}%.,最終傷害增加了{0}％。
+Skill.Talk.00,,,,,
+Skill.Talk.01,토네이도,Tornado,竜巻,Торнадо,龍捲風
+Skill.Talk.02,<color=green>텔레포트!</color>,<Color = Green> Teleport! </Color>,<Color = Green>テレポート！ </Color>,<Color = Green> Teleport! </Color>,<Color =綠色>傳送！ </Color>
+Skill.Talk.03,<color=red>레.이.징 블로우</color>,<Color = Red> Les.,<Color = Red> Les。,<Color = Red> Les.,<Color =紅色> Les。
+Skill.Talk.04,<color=blue>상어.</color>,<Color = Blue> Shark. </Color>,<色=青>サメ。 </Color>,<Color = Blue> Акула. </Color>,<Color =藍色>鯊魚。 </Color>
+Skill.Talk.05,몽키킹!,Monkey,,,
+Skill.Talk.06,,,,,
+Skill.Talk.07,,,,,
+Skill.Talk.08,용의 가호,Dragon,ドラゴン,Дракон,龍
+Skill.Talk.09,블라스트,Blast,爆発,Взрыв,爆破
+Skill.Talk.10,유니티 소드!,Unity Sword!,ユニティソード！,Юнит!,團結劍！
+Skill.Talk.11,,,,,
+Skill.Talk.12,,,,,
+Skill.Talk.13,,,,,
+Skill.Talk.14,,,,,
+Skill.Talk.15,,,,,
+Skill.Talk.16,,,,,
+Skill.Talk.17,,,,,
+Skill.Talk.18,,,,,
+Skill.Talk.19,,,,,
+Skill.Talk.20,,,,,
+Skill.Talk.21,,,,,
+Stage.Name.Castle,돼지의 성,Pork,豚肉,Свинина,豬肉
+Stage.Name.Sea,비키니 해변,Bikini Beach,ビキニビーチ,Бикини Пляж,比基尼海灘
+Stage.Name.Desert,황금 사막,Golden Desert,黄金の砂漠,Золотая Пустыня,黃金沙漠
+Stage.Name.Snow,눈덮인 숲,Snowy Forest,雪の森,Снежный Лес,雪森林
+Stage.Name.ToyLand,장난감 공원,Toy Park,おもちゃ公園,Игрушечный Парк,玩具公園
+Stage.Description.Castle,돼지들이 반란을 일으키고 도망간 성. 우루루 몰려가서 반란 돼지들을 뚜까패자!,The Pigs Revolted And Ran Away. Ururu Flocked And Rebeled Pigs!,豚は反乱し、逃げました。ウルルは群れ、反逆した豚！,Свиньи Восстали И Убежали. Уруру Стекался И Переиграл Свиней!,豬起義並逃跑了。烏魯魯蜂擁而至，反叛的豬！
+Stage.Description.Sea,,,,,
+Stage.Description.Desert,,,,,
+Stage.Description.Snow,,,,,
+Stage.Description.ToyLand,,,,,
+Dungeon.Name.PigCow,리본 돼지 토벌 {0}단계,Ribbon Pig Pig {0} Step,リボンピッグ{0}ステップ,Ленточная Свинья {0} Шаг,絲帶豬豬{0}步驟
+Dungeon.Name.FishFight,피쉬 파이트! {0}단계,Fish Fight! {0} Step,魚の戦い！ {0}ステップ,Рыбайся! {0} Шаг,魚打架！ {0}步驟
+Dungeon.Name.Miner,{0} 포획!,{0} Capture!,{0}キャプチャ！,{0} Захват!,{0}捕獲！
+Dungeon.Name.Miner2,야생의 {0} 포획!,,,,
+Dungeon.Name.InfiniteTower,무한의 탑 {0}층,Infinite Tower {0} Layer,無限のタワー{0}レイヤー,Бесконечная Башня {0} Слой,無限塔{0}層
+Dungeon.Name.Colosseum,콜로세움 {0}단계,Colosseum {0} Step,コロッセオ{0}ステップ,Colosseum {0} Шаг,羅馬鬥獸場{0}步驟
+Dungeon.Name.Cave,미믹 동굴,Mimic Cave,洞窟を模倣します,Имитируя Пещера,模仿洞穴
+Dungeon.Name.Promotion,{0}의 길,Road Of {0},{0}の道,Дорога {0},{0}的道路
+Dungeon.Name.StageBoss,스테이지 보스 {0}층,,,,
+Dungeon.Name.SkyTemple.00,하늘 신전 I - 천사 꿀이의 추억,Sky Temple I -Memories Of Angel Honey,スカイテンプルi-エンジェルハニーの思い出,Sky Temple I -Memories Of Angel Honey,天廟一世 - 天使蜂蜜的記憶
+Dungeon.Name.SkyTemple.01,하늘 신전 II - 천사 꿀이의 망각,Sky Temple Ii -Objects Of Angel Honey,スカイテンプルii-エンジェルハニーのオブジェクト,Sky Temple Ii -Bjects Of Angel Honey,天神廟ii-天使蜂蜜的對象
+Dungeon.Name.SkyTemple.02,하늘 신전 III - 천사 꿀이의 분노,Sky Temple Iii -Angel Honey'S Anger,スカイテンプルiii -Angel Honey'S Anger,Sky Temple Iii -Angel Honey'S Гнев,天廟三世 - 天使蜂蜜的憤怒
+Dungeon.Name.SkyTemple.03,하늘 신전 IV - 천사 꿀이의 후회,Sky Temple Iv -Angel Honey Regret,スカイテンプルiv -Angelハニー後悔,Sky Temple Iv -Angel Honey Сожалеет,天神廟四世 - 天使蜂蜜遺憾
+Dungeon.Name.SkyTemple.04,하늘 신전 V - 천사 꿀이의 우울,Sky Temple V -Angel Honey'S Depression,Sky Temple V -Angel Honey'S Depression,Небесный Храм V -Ангел Мед.,Sky Temple V -Angel Honey的抑鬱症
+Dungeon.Name.SkyTemple.05,하늘 신전 VI - 악마 꿀이의 추억,Sky Temple Vi -Memories Of Devil Honey,スカイテンプルvi  - 悪魔の蜂蜜の思い出,Sky Temple Vi -Memories Of Devil Honey,天神廟六世 - 魔鬼蜂蜜的記憶
+Dungeon.Name.SkyTemple.06,하늘 신전 VII - 악마 꿀이의 망각,Sky Temple Vii -Demon Honey'S Oblivion,スカイテンプルvii-デモンハニーの忘却,Sky Temple Vii -Демоновый Мед -Обливион,天廟vii -Demon Honey的遺忘
+Dungeon.Name.SkyTemple.07,하늘 신전 VIII - 악마 꿀이의 분노,Sky Temple Viii -Evil Honey'S Rage,Sky Temple Viii -Evil Honey'S Rage,Sky Temple Viii -Evil Honey'S Rage,天神廟viii -Evil Honey的憤怒
+Dungeon.Name.SkyTemple.08,하늘 신전 IX - 악마 꿀이의 후회,Sky Temple Ix -Regret Of Devil Honey,スカイテンプルix-デビルハニーのリグレット,Sky Temple Ix -Regret Of Devil Honey,天神殿ix-魔鬼蜂蜜的regret
+Dungeon.Name.SkyTemple.09,하늘 신전 X - 악마 꿀이의 우울,Sky Temple X -Demon Honey'S Depression,スカイテンプルx-デモンハニーのうつ病,Скай Храм Х -Демоновый Мед.,天神廟x-迪蒙蜂蜜的抑鬱症
+Tip.GuideMissionReward.Bottom,,,,,
+Tip.GuideMissionReward.Tab,,,,,
+Tip.GuideMissionReward.Main,가이드 미션 보상을 획득하세요!,Gain Guide Mission Reward!,Gain Guide Mission Reward！,Получить Награду По Гида!,獲得指南任務獎勵！
+Tip.GuideMissionReward.Button,,,,,
+Tip.BlessOn.Bottom,,,,,
+Tip.BlessOn.Tab,,,,,
+Tip.BlessOn.Main,축복을 통해 더 강력해지세요!,Be More Powerful Through Blessing!,祝福を通してより強力になりましょう！,Будьте Сильнее Благодаря Благословению!,通過祝福變得更強大！
+Tip.BlessOn.Button,,,,,
+Tip.LuckyPig.Bottom,,,,,
+Tip.LuckyPig.Tab,,,,,
+Tip.LuckyPig.Main,럭키 피그 보상을 획득하세요!,Gain A Lucky Pig Reward!,幸運な豚の報酬を得る！,Получите Награду С Счастливой Свинью!,獲得幸運的豬獎勵！
+Tip.LuckyPig.Button,,,,,
+Tip.RoyalGrowth.Bottom,골드를 이용해 왕가를 성장시켜보세요!,Use Gold To Grow The Royal Family!,金を使って王室を育てましょう！,"Используйте Золото, Чтобы Вырастить Королевскую Семью!",用黃金種植王室！
+Tip.RoyalGrowth.Tab,성장 탭을 선택해주세요.,Please Select The Growth Tab.,[成長]タブを選択してください。,"Пожалуйста, Выберите Вкладку «Рост».",請選擇“增長”選項卡。
+Tip.RoyalGrowth.Main,골드를 사용해 성장해보세요.,Grow Up Using Gold.,金を使って成長します。,"Вырасти, Используя Золото.",使用黃金長大。
+Tip.RoyalGrowth.Button,,,,,
+Tip.RoyalForce.Bottom,젤리를 이용해 왕가를 성장시켜보세요!,Use Jelly To Grow The Royal Family!,ゼリーを使って王室を育てましょう！,"Используйте Желе, Чтобы Вырастить Королевскую Семью!",用果凍種植王室！
+Tip.RoyalForce.Tab,강화 탭을 선택해주세요.,Please Select The Enhancement Tab.,[拡張]タブを選択してください。,"Пожалуйста, Выберите Вкладку «Усовершенствование».",請選擇“增強”選項卡。
+Tip.RoyalForce.Main,젤리를 사용해 강화해보세요.,Enhance With Jelly.,ゼリーで強化します。,Улучшить С Желе.,用果凍增強。
+Tip.RoyalForce.Button,,,,,
+Tip.RoyalMastery.Bottom,마스터리 강화를 통해 레벨업을 느껴보세요!,Feel The Level Up By Strengthening The Mastery!,習得を強化することでレベルを上げてください！,"Почувствуйте Уровень, Укрепляя Мастерство!",通過加強精通來感受升級！
+Tip.RoyalMastery.Tab,마스터리 탭을 선택해주세요.,Please Select The Mastery Tab.,[マスタリー]タブを選択してください。,"Пожалуйста, Выберите Вкладку Mastery.",請選擇“掌握”選項卡。
+Tip.RoyalMastery.Main,성장할 마스터리를 선택해주세요.,Please Select A Mastery To Grow.,成長する習得を選択してください。,"Пожалуйста, Выберите Мастерство, Чтобы Расти.",請選擇一個掌握來成長。
+Tip.RoyalMastery.Button,왕관을 사용해 마스터리를 강화해보세요.,Use The Crown To Strengthen The Mastery.,クラウンを使用して、習得を強化します。,"Используйте Корону, Чтобы Укрепить Мастерство.",用冠冕加強精通。
+Tip.EquipmentSwordFree.Bottom,무기를 소환해보세요!,Summon The Weapon!,武器を召喚します！,Призовите Оружие!,召喚武器！
+Tip.EquipmentSwordFree.Tab,소환 탭을 선택해주세요.,Please Select The Summon Tab.,[召喚]タブを選択してください。,"Пожалуйста, Выберите Вкладку Summon.",請選擇“召喚”選項卡。
+Tip.EquipmentSwordFree.Main,무료 소환 버튼을 클릭해주세요.,Click The Free Summon Button.,[召喚]ボタンをクリックします。,Нажмите Кнопку «Бесплатный Призыв».,單擊免費的召喚按鈕。
+Tip.EquipmentSwordFree.Button,,,,,
+Tip.EquipmentSwordEquip.Bottom,새로운 무기를 장착해보세요!,Try New Weapons!,新しい武器を試してみてください！,Попробуйте Новое Оружие!,嘗試新武器！
+Tip.EquipmentSwordEquip.Tab,무기 탭을 선택해주세요.,Please Select The Weapon Tab.,[武器]タブを選択してください。,"Пожалуйста, Выберите Вкладку «Оружие».",請選擇武器選項卡。
+Tip.EquipmentSwordEquip.Main,보유중인 무기를 선택해주세요.,Please Select The Weapon You Have.,持っている武器を選択してください。,"Пожалуйста, Выберите Оружие, Которое У Вас Есть.",請選擇您擁有的武器。
+Tip.EquipmentSwordEquip.Button,새로운 무기를 장착해보세요.,Try New Weapons.,新しい武器を試してみてください。,Попробуйте Новое Оружие.,嘗試新武器。
+Tip.EquipmentShieldFree.Bottom,방패를 소환해보세요!,Summon The Shield!,シールドを召喚します！,Призовите Щит!,召喚盾牌！
+Tip.EquipmentShieldFree.Tab,소환 탭을 선택해주세요.,Please Select The Summon Tab.,[召喚]タブを選択してください。,"Пожалуйста, Выберите Вкладку Summon.",請選擇“召喚”選項卡。
+Tip.EquipmentShieldFree.Main,무료 소환 버튼을 클릭해주세요.,Click The Free Summon Button.,[召喚]ボタンをクリックします。,Нажмите Кнопку «Бесплатный Призыв».,單擊免費的召喚按鈕。
+Tip.EquipmentShieldFree.Button,,,,,
+Tip.EquipmentShieldEquip.Bottom,새로운 방패를 장착해보세요!,Try New Shields!,新しいシールドを試してみてください！,Попробуйте Новые Щиты!,嘗試新的盾牌！
+Tip.EquipmentShieldEquip.Tab,방패 탭을 선택해주세요.,Please Select The Shield Tab.,[シールド]タブを選択してください。,"Пожалуйста, Выберите Вкладку Shield.",請選擇“盾牌”選項卡。
+Tip.EquipmentShieldEquip.Main,보유중인 방패를 선택해주세요.,Please Select The Shield You Have.,持っているシールドを選択してください。,"Пожалуйста, Выберите Щит, Который У Вас Есть.",請選擇您擁有的盾牌。
+Tip.EquipmentShieldEquip.Button,새로운 방패를 장착해보세요.,Try New Shields.,新しいシールドを試してください。,Попробуйте Новые Щиты.,嘗試新的盾牌。
+Tip.EquipmentCompose.Bottom,장비 합성을 통해 강해지세요!,Strong Through The Composite Of The Equipment!,機器の複合を通して強い！,Строго Через Совокупность Оборудования!,通過設備的複合材料強！
+Tip.EquipmentCompose.Tab,무기/방패 탭을 선택해주세요.,Please Select The Weapon/Shield Tab.,[武器/シールド]タブを選択してください。,"Пожалуйста, Выберите Вкладку «Оружие/Щит».",請選擇武器/盾牌選項卡。
+Tip.EquipmentCompose.Main,자동합성 버튼을 클릭해주세요.,Click The Automatic Synthetic Button.,自動合成ボタンをクリックします。,Нажмите Кнопку «Автоматическая Синтетическая».,單擊自動合成按鈕。
+Tip.EquipmentCompose.Button,,,,,
+Tip.SkillFree.Bottom,스킬을 소환해보세요!,Summon The Skill!,スキルを召喚します！,Призовите Навык!,召喚技能！
+Tip.SkillFree.Tab,,,,,
+Tip.SkillFree.Main,무료 소환 버튼을 클릭해주세요.,Click The Free Summon Button.,[召喚]ボタンをクリックします。,Нажмите Кнопку «Бесплатный Призыв».,單擊免費的召喚按鈕。
+Tip.SkillFree.Button,,,,,
+Tip.SkillEquip.Bottom,새로운 스킬을 사용해보세요!,Try New Skills!,新しいスキルを試してみてください！,Попробуйте Новые Навыки!,嘗試新技能！
+Tip.SkillEquip.Tab,보유중인 스킬을 선택해주세요.,Please Select The Skill You Have.,持っているスキルを選択してください。,"Пожалуйста, Выберите У Вас Навык.",請選擇您擁有的技能。
+Tip.SkillEquip.Main,장착 버튼을 클릭해주세요.,Click The Mounting Button.,マウントボタンをクリックします。,Нажмите Кнопку Монтажа.,單擊“安裝”按鈕。
+Tip.SkillEquip.Button,스킬 사용 슬롯을 선택해주세요.,Please Select The Skill Use Slot.,スキル使用スロットを選択してください。,"Пожалуйста, Выберите Слот Для Использования Навыков.",請選擇技能使用插槽。
+Tip.SkillUpgrade.Bottom,스킬을 강화시켜보세요!,Strengthen Your Skills!,あなたのスキルを強化してください！,Укрепляйте Свои Навыки!,增強您的技能！
+Tip.SkillUpgrade.Tab,보유중인 스킬을 선택해주세요.,Please Select The Skill You Have.,持っているスキルを選択してください。,"Пожалуйста, Выберите У Вас Навык.",請選擇您擁有的技能。
+Tip.SkillUpgrade.Main,스킬 카드를 이용해 강화해보세요.,Enhance With Your Skill Card.,スキルカードで強化します。,Улучшите С Помощью Карты Навыков.,使用您的技能卡增強。
+Tip.SkillUpgrade.Button,,,,,
+Tip.DungeonEnterFishFight.Bottom,물고기를 잡아보세요!,Catch The Fish!,魚を捕まえる！,Поймай Рыбу!,釣魚！
+Tip.DungeonEnterFishFight.Tab,재화 던전 탭을 선택해주세요.,Please Select The Goods Dungeon Tab.,Goods Dungeonタブを選択してください。,"Пожалуйста, Выберите Вкладку Doungeon Dungeon.",請選擇“地牢”選項卡。
+Tip.DungeonEnterFishFight.Main,물고기를 잡아서 경험치와 '골드'를 대량 획득하세요!,Catch The Fish And Get A Lot Of Experience And 'Gold'!,魚を捕まえて、多くの経験と「金」を手に入れましょう！,Поймайте Рыбу И Получите Большой Опыт И «Золото»!,捕撈魚，獲得很多經驗和“黃金”！
+Tip.DungeonEnterFishFight.Button,,,,,
+Tip.DungeonEnterPigCow.Bottom,리본 돼지를 토벌하세요!,Configate The Ribbon Pig!,リボンピッグを構成します！,Сохраните Ленточную Свинью!,混淆絲帶豬！
+Tip.DungeonEnterPigCow.Tab,재화 던전 탭을 선택해주세요.,Please Select The Goods Dungeon Tab.,Goods Dungeonタブを選択してください。,"Пожалуйста, Выберите Вкладку Doungeon Dungeon.",請選擇“地牢”選項卡。
+Tip.DungeonEnterPigCow.Main,리본 돼지를 잡아서 경험치와 '젤리'를 대량 획득하세요!,Catch The Ribbon Pigs And Acquire The Experience And 'Jelly'!,リボンブタを捕まえて、体験と「ゼリー」を獲得してください！,Поймайте Ленточных Свиней И Приобретите Опыт И «Желе»!,抓住絲帶豬並獲得體驗和“果凍”！
+Tip.DungeonEnterPigCow.Button,,,,,
+Tip.HeroEquip.Bottom,새로운 영웅을 전투에 참가시켜보세요!,Participate A New Hero In The Battle!,戦いに新しいヒーローに参加してください！,Участвуйте Нового Героя В Битве!,參加戰鬥的新英雄！
+Tip.HeroEquip.Tab,전투 참가 버튼을 클릭해주세요.,Click The Battle Participation Button.,バトル参加ボタンをクリックします。,Нажмите Кнопку Участия В Битве.,單擊戰鬥參與按鈕。
+Tip.HeroEquip.Main,영웅의 전투 위치를 선택해주세요.,Please Select The Hero'S Battle Position.,ヒーローの戦いの位置を選択してください。,"Пожалуйста, Выберите «Боевую Позицию Героя».",請選擇英雄的戰鬥位置。
+Tip.HeroEquip.Button,,,,,
+Tip.HeroPower.Bottom,클로버를 이용해 영웅을 성장시켜보세요!,Use Your Clover To Grow Heroes!,クローバーを使ってヒーローを育ててください！,"Используйте Свой Клевер, Чтобы Выращивать Героев!",用你的三葉草來發展英雄！
+Tip.HeroPower.Tab,성장 탭을 선택해주세요.,Please Select The Growth Tab.,[成長]タブを選択してください。,"Пожалуйста, Выберите Вкладку «Рост».",請選擇“增長”選項卡。
+Tip.HeroPower.Main,클로버를 사용해 성장해보세요.,Grow Up Using Clover.,クローバーを使用して成長します。,"Вырасти, Используя Клевер.",使用三葉草長大。
+Tip.HeroPower.Button,,,,,
+Tip.DungeonEnterInfiniteTower.Bottom,무한의 탑에 도전하세요!,Challenge The Infinite Tower!,無限の塔に挑戦してください！,Вызов Бесконечной Башне!,挑戰無限塔！
+Tip.DungeonEnterInfiniteTower.Tab,무한의 탑 탭을 선택해주세요.,Please Select An Infinite Top Tab.,無限のトップタブを選択してください。,"Пожалуйста, Выберите Вкладку «Бесконечный Топ».",請選擇一個無限的頂部選項卡。
+Tip.DungeonEnterInfiniteTower.Main,무한의 탑에서 '클로버'를 획득하세요!,Gain 'Clover' From Infinite Tower!,無限の塔から「クローバー」を獲得してください！,Получите «Клевер» От Infinite Tower!,從無限塔中獲得“三葉草”！
+Tip.DungeonEnterInfiniteTower.Button,,,,,
+Tip.InfiniteTowerEvent.Bottom,무탑 이벤트 보상을 받아보세요!,Get Rewards For The Top Event!,トップイベントの報酬を得てください！,Получите Награды За Высшее Мероприятие!,獲得頂級活動的獎勵！
+Tip.InfiniteTowerEvent.Tab,무한의 탑 탭을 선택해주세요.,Please Select An Infinite Top Tab.,無限のトップタブを選択してください。,"Пожалуйста, Выберите Вкладку «Бесконечный Топ».",請選擇一個無限的頂部選項卡。
+Tip.InfiniteTowerEvent.Main,이벤트 버튼을 클릭해주세요.,Click The Event Button.,[イベント]ボタンをクリックします。,Нажмите Кнопку События.,單擊事件按鈕。
+Tip.InfiniteTowerEvent.Button,다양한 이벤트 보상을 받아보세요!,Get A Variety Of Event Rewards!,さまざまなイベントの報酬を得てください！,Получите Разнообразные Награды За Мероприятия!,獲得各種活動獎勵！
+Tip.DungeonEnterCave.Bottom,미믹 동굴에 도전하세요!,Challenge Mimic Cave!,挑戦する洞窟！,Вызов Имитируется Пещера!,挑戰模仿洞穴！
+Tip.DungeonEnterCave.Tab,미믹 동굴 탭을 선택해주세요.,Please Select The Mimic Cave Tab.,[Mimic Cave]タブを選択してください。,"Пожалуйста, Выберите Вкладку Mimic Cave.",請選擇“模擬洞穴”選項卡。
+Tip.DungeonEnterCave.Main,장비,Equipment,装置,Оборудование,設備
+Tip.DungeonEnterCave.Button,장비 강화석' 그리고 '주사위'를 획득하세요!,Get The Equipment Reinforcement 'And' Dice '!,機器の補強材と「サイコロ」を入手してください！,Получите Подкрепление Оборудования И «Кости»!,獲取設備加固'和“骰子”！
+Tip.HeroAbility.Bottom,주사위를 이용해 잠재능력을 개방해보세요!,Use The Dice To Open Your Potential!,サイコロを使用して可能性を開きましょう！,"Используйте Кубики, Чтобы Открыть Свой Потенциал!",用骰子打開您的潛力！
+Tip.HeroAbility.Tab,잠재능력 탭을 선택해주세요.,Please Select The Potential Tab.,[潜在的なタブ]を選択してください。,"Пожалуйста, Выберите Вкладку Потенциала.",請選擇“潛在”選項卡。
+Tip.HeroAbility.Main,주사위를 사용해 잠재능력을 개방해보세요.,Use The Dice To Open Your Potential.,サイコロを使用して、潜在能力を開きます。,"Используйте Кубики, Чтобы Открыть Свой Потенциал.",用骰子打開您的潛力。
+Tip.HeroAbility.Button,,,,,
+Tip.EquipmentSwordUpgrade.Bottom,무기를 강화시켜보세요!,Strengthen The Weapon!,武器を強化してください！,Усилить Оружие!,加強武器！
+Tip.EquipmentSwordUpgrade.Tab,무기 탭을 선택해주세요.,Please Select The Weapon Tab.,[武器]タブを選択してください。,"Пожалуйста, Выберите Вкладку «Оружие».",請選擇武器選項卡。
+Tip.EquipmentSwordUpgrade.Main,보유중인 무기를 선택해주세요.,Please Select The Weapon You Have.,持っている武器を選択してください。,"Пожалуйста, Выберите Оружие, Которое У Вас Есть.",請選擇您擁有的武器。
+Tip.EquipmentSwordUpgrade.Button,강화석을 이용해 무기를 강화해보세요.,Enhance Your Weapons Using Ganghwa Stone.,Ganghwa Stoneを使用して武器を強化します。,"Улучшите Свое Оружие, Используя Ganghwa Stone.",使用ganghwa石頭增強武器。
+Tip.EquipmentShieldUpgrade.Bottom,방패를 강화시켜보세요!,Strengthen The Shield!,シールドを強化してください！,Усилить Щит!,加強盾牌！
+Tip.EquipmentShieldUpgrade.Tab,방패 탭을 선택해주세요.,Please Select The Shield Tab.,[シールド]タブを選択してください。,"Пожалуйста, Выберите Вкладку Shield.",請選擇“盾牌”選項卡。
+Tip.EquipmentShieldUpgrade.Main,보유중인 방패를 선택해주세요.,Please Select The Shield You Have.,持っているシールドを選択してください。,"Пожалуйста, Выберите Щит, Который У Вас Есть.",請選擇您擁有的盾牌。
+Tip.EquipmentShieldUpgrade.Button,강화석을 이용해 방패를 강화해보세요.,Enhance The Shield Using Ganghwa Stone.,Ganghwa Stoneを使用してシールドを強化します。,"Улучшите Щит, Используя Ganghwa Stone.",使用ganghwa石頭增強盾牌。
+Tip.DungeonEnterColosseum.Bottom,콜로세움에 출전하세요!,Participate In Colosseum!,コロッセオに参加してください！,Участвуйте В Колизее!,參加羅馬鬥獸場！
+Tip.DungeonEnterColosseum.Tab,콜로세움 탭을 선택해주세요.,Please Select The Colosseum Tab.,Colosseuchタブを選択してください。,"Пожалуйста, Выберите Вкладку Colosseum.",請選擇“鬥獸場”選項卡。
+Tip.DungeonEnterColosseum.Main,곰 투사를 처치해 '인피니티 스톤'을 획득하세요!,Keep The Bear Project And Get 'Infinity Stone'!,クマのプロジェクトを維持し、「インフィニティストーン」を手に入れましょう！,Держите Проект Медведя И Получите «Бесконечный Камень»!,保留熊項目並獲得“無限石”！
+Tip.DungeonEnterColosseum.Button,,,,,
+Tip.MinerGet.Bottom,돼지 광부를 포획해보세요!,Capture The Pig Miner!,豚の鉱夫を捕まえてください！,Захватите Свинья!,捕獲豬礦工！
+Tip.MinerGet.Tab,,,,,
+Tip.MinerGet.Main,포획에 도전해보세요.,Try To Capture.,キャプチャしてみてください。,Попробуйте Запечатлеть.,嘗試捕獲。
+Tip.MinerGet.Button,,,,,
+Tip.MinerUpgrade.Bottom,돼지 광부를 성장시켜보세요!,Grow The Pig Miner!,豚の鉱夫を育てなさい！,Вырасти Свинейный Шахтер!,種植豬礦工！
+Tip.MinerUpgrade.Tab,,,,,
+Tip.MinerUpgrade.Main,골드를 이용해 돼지 광부를 성장해보세요.,Grow The Pig Miner Using Gold.,金を使って豚の鉱夫を育てます。,Выращивать Свинья С Использованием Золота.,使用黃金種植豬礦工。
+Tip.MinerUpgrade.Button,,,,,
+Tip.EquipmentAccFree.Bottom,악세사리를 소환해보세요!,Summon The Accessories!,アクセサリーを召喚します！,Призывайте Аксессуары!,召喚配件！
+Tip.EquipmentAccFree.Tab,소환 탭을 선택해주세요.,Please Select The Summon Tab.,[召喚]タブを選択してください。,"Пожалуйста, Выберите Вкладку Summon.",請選擇“召喚”選項卡。
+Tip.EquipmentAccFree.Main,무료 소환 버튼을 클릭해주세요.,Click The Free Summon Button.,[召喚]ボタンをクリックします。,Нажмите Кнопку «Бесплатный Призыв».,單擊免費的召喚按鈕。
+Tip.EquipmentAccFree.Button,,,,,
+Tip.EquipmentAccEquip.Bottom,새로운 악세사리를 장착해보세요!,Try New Accessories!,新しいアクセサリーをお試しください！,Попробуйте Новые Аксессуары!,嘗試新配件！
+Tip.EquipmentAccEquip.Tab,악세사리 탭을 선택해주세요.,Please Select The Accessory Tab.,[アクセサリ]タブを選択してください。,"Пожалуйста, Выберите Вкладку Аксессуаров.",請選擇“配件”選項卡。
+Tip.EquipmentAccEquip.Main,보유중인 악세사리를를 선택해주세요.,Please Select The Accessories You Have.,持っているアクセサリーを選択してください。,"Пожалуйста, Выберите Аксессуары, Которые У Вас Есть.",請選擇您擁有的配件。
+Tip.EquipmentAccEquip.Button,새로운 악세사리를 장착해보세요.,Try New Accessories.,新しいアクセサリーをお試しください。,Попробуйте Новые Аксессуары.,嘗試新配件。
+Tip.StageBossChallenge.Bottom,보스에 바로 도전해보세요!,Challenge The Boss Right Away!,すぐに上司に挑戦してください！,Вызов Боссу Сразу!,立即挑戰老闆！
+Tip.StageBossChallenge.Tab,,,,,
+Tip.StageBossChallenge.Main,,,,,
+Tip.StageBossChallenge.Button,,,,,
+Tip.Attendance.Bottom,,,,,
+Tip.Attendance.Tab,,,,,
+Tip.Attendance.Main,출석 보상을 획득하세요!,Gain Attendance Rewards!,出席した報酬を得る！,Получить Награды За Посещение!,獲得出勤獎勵！
+Tip.Attendance.Button,,,,,
+Tip.Quest.Bottom,,,,,
+Tip.Quest.Tab,,,,,
+Tip.Quest.Main,퀘스트 보상을 획득하세요!,Gain Quest Rewards!,クエストの報酬を得る！,Получите Награды!,獲得任務獎勵！
+Tip.Quest.Button,,,,,
+Tip.Chat.Bottom,,,,,
+Tip.Chat.Tab,,,,,
+Tip.Chat.Main,채팅을 즐겨보세요!,Enjoy Chat!,チャットをお楽しみください！,Наслаждайтесь Чатом!,享受聊天！
+Tip.Chat.Button,,,,,
+Common_Royal,왕가,Royal family,王室,Королевская семья,王室
+Common_Hero,영웅,Hero,ヒーロー,Герой,英雄
+Common_Equipment,장비,Equipment,装置,Оборудование,設備
+Common_Mine,광산,Mine,私の,Мой,礦
+Common_Treasure,보물,Treasure,宝物,Сокровище,寶藏
+Common_Dungeon,던전,Dungeon,ダンジョン,Подземелье,地牢
+Common_Adventure,모험,Adventure,冒険,Приключение,冒險
+Common_Shop,상점,Shop,店,Магазин,店鋪
+Common_Floor,층,,,,
+Common_PurchaseCompleted,구매 완료,,,,
+Common_PurchaseFailed,구매 실패,,,,
+Common_Notification,알림,,,,
+Common_GameExit,게임 종료,,,,
+Common_Yes,네,,,,
+Common_No,아니오,,,,
+Common_Confirm,확인,,,,
+Common_Cancel,취소,,,,
+Common_Registration,등록,,,,
+Common_Week,주,,,,
+Common_Day,일,,,,
+Common_Hour,시간,,,,
+Common_Minute,분,,,,
+Common_Second,초,,,,
+Common_Stroke,타,,,,
+Common_Kill,킬,,,,
+Common_ServerMaintainance,서버 점검,,,,
+Common_AppleLogin,Apple로 로그인,,,,
+Common_FindRunAwayPig,도망간 돼지 찾는중.,,,,
+Common_Recovery,복구,,,,
+Common_CountSpawn,{0}회 소환,,,,
+Common_UnlockLevel,레벨 {0}에 해금됩니다.,,,,
+Common_BingoBonus,빙고 보너스,,,,
+Common_EventRemainTime,이벤트 남은 시간,,,,
+Common_RemainTime,남은 시간,,,,
+Common_Remain,남음,,,,
+Common_Th,{0}번,,,,
+Common_LastConnection,마지막 접속,,,,
+Common_Ago,전,,,,
+Common_Stage,스테이지,,,,
+Common_BestStage,최고 스테이지,,,,
+Common_Initialize,초기화,,,,
+Common_InitializeAfterSecond,{0}초 후 초기화,,,,
+Common_Basic,기본,,,,
+Common_Level,레벨,,,,
+Common_HighestLevel,최고 레벨,,,,
+Common_Step,단계,,,,
+Common_Change,변경,,,,
+Common_Capture,포획,,,,
+Common_Uncaptured,미포획,,,,
+Common_Necessity,필요,,,,
+Common_Pcs,{0}개,,,,
+Common_Period,기간,,,,
+Common_NoPeriod,기간없음,,,,
+Common_Get,받기,,,,
+Common_AllDay,하루종일,,,,
+Common_Server,서버,,,,
+Common_AccountWithdrawal,계정 탈퇴,,,,
+Common_Nickname,닉네임,,,,
+Common_NicknameInput,닉네임 입력,,,,
+Common_GiveUp,포기,,,,
+Common_Active,액티브,,,,
+Common_Passive,패시브,,,,
+Common_Infinite,무한,,,,
+Common_Bless,축복,,,,
+Common_Class,작위,,,,
+Common_Skill,스킬,,,,
+Common_Waiting,대기중,,,,
+Common_Equipped,장착중,,,,
+Common_St,{0}위,,,,
+Common_Boss,보스,,,,
+Common_Ranking,랭킹,,,,
+Common_Attendance,출석,,,,
+Common_AttendanceBook,출석부,,,,
+Common_MyMaxContinueAttendanceDay,나의 최대 연속 출석일,,,,
+Common_ContinueBonus,연속 보너스,,,,
+StatType_DamageHealth,공격력/체력,,,,
+StatType_Health,체력,,,,
+StatType_HealthRate,추가 체력,,,,
+StatType_MaxHealth,전체 체력,,,,
+StatType_HealthRecovery,체력 회복,,,,
+StatType_Damage,공격력,,,,
+StatType_DamageRate,추가 공격력,,,,
+StatType_CriticalDamageRate,추가 치명타 공격력,,,,
+StatType_CriticalChance1,치명타 확률,,,,
+StatType_CriticalDamageRate1,치명타 공격력,,,,
+StatType_CriticalChance2,슈퍼 치명타 확률,,,,
+StatType_CriticalDamageRate2,슈퍼 치명타 공격력,,,,
+StatType_CriticalChance3,울트라 치명타 확률,,,,
+StatType_CriticalDamageRate3,울트라 치명타 공격력,,,,
+StatType_CriticalChance4,캡숑 치면타 확률,,,,
+StatType_CriticalDamageRate4,캡숍 치명타 공격력,,,,
+StatType_CriticalChance5,짱짱 치명타 확률,,,,
+StatType_CriticalDamageRate5,짱짱 치명타 공격력,,,,
+StatType_Acc,명중,,,,
+StatType_Dodge,회피,,,,
+StatType_AttackSpeed,공격 속도,,,,
+StatType_AttackSpeedRate,추가 공격 속도,,,,
+StatType_MoveSpeed,이동 속도,,,,
+StatType_MoveSpeedRate,추가 이동 속도,,,,
+StatType_AttackRange,공격 범위,,,,
+StatType_StageGoldBonusRate,스테이지 골드 추가 획득,,,,
+StatType_StageJellyBonusRate,스테이지 젤리 추가 획득,,,,
+StatType_StageExpBonusRate,스테이지 경험치 추가 획득,,,,
+StatType_BossDamage,추가 보스 피해,,,,
+StatType_VampireRate,흡혈량,,,,
+StatType_SkillDamage,스킬 공격력,,,,
+StatType_SkillDamageRate,추가 스킬 공격력,,,,
+StatType_DungeonGoldBonusRate,던전 골드 추가 획득,,,,
+StatType_DungeonJellyBonusRate,던전 젤리 추가 획득,,,,
+StatType_DungeonExpBonusRate,던전 경험치 추가 획득,,,,
+StatType_AdventureGoldBonusRate,모험 골드 추가 획득,,,,
+StatType_AdventureJellyBonusRate,모험 젤리 추가 획득,,,,
+StatType_AdventureExpBonusRate,모험 경험치 추가 획득,,,,
+StatType_FinalDamageRate,최종 추가 공격력,,,,
+StatType_FinalHealthRate,최종 추가 체력,,,,
+StatType_FinalGoldBonusRate,최종 추가 골드 획득,,,,
+StatType_FinalExpBonusRate,최종 추가 경험치 획득,,,,
+StatType_FinalSkillDamageRate,최종 추가 스킬 공격력,,,,
+StatType_MonsterDamageReduceRate,몬스터 공격력,,,,
+StatType_MonsterHealthReduceRate,몬스터 체력,,,,
+StatType_SkillCoolTimeReduction,스킬 쿨타임 감소,,,,
+StatType_HealthRecoveryRate,추가 체력 회복,,,,
+StatType_AttackRangeRate,추가 공격 범위,,,,
+StatType_DetectRange,탐지 범위,,,,
+StatType_DoubleAttackChance,더블 어택 확률,,,,
+StatType_FinalJellyBonusRate,최종 젤리 추가 획득,,,,
+StatType_AccRate,추가 명중,,,,
+StatType_AllGoldBonusRate,골드 추가 획득,,,,
+StatType_AllJellyBonusRate,젤리 추가 획득,,,,
+StatType_AllExpBonusRate,경험치 추가 획득,,,,
+StatType_MiningSpeedRate,추가 채굴 속도,,,,
+StatType_DoubleAttackDamageRate,더블 어택 공격력,,,,
+StatType_DungeonAddTime,던전 시간,,,,
+StatType_DungeonAddTimeRate,추가 던전 시간,,,,
+StatType_StageAddTime,스테이지 보스 시간,,,,
+StatType_StageBossAddTimeRate,추가 스테이지 보스 시간,,,,
+StatType_BossHealthReduceRate,보스 체력,,,,
+StatType_BossDamageReduceRate,보스 공격력,,,,
+StatType_SkillCoolTimeReduceRate,추가 스킬 쿨타임,,,,
+StatType_LuckyPigBonusRate,럭키 피그 보너스,,,,
+CurrencyType_Gold,골드,,,,
+CurrencyType_Ruby,루비,,,,
+CurrencyType_Crown,왕관,,,,
+CurrencyType_EquipmentStone,장비 강화석,,,,
+CurrencyType_PigJelly,젤리,,,,
+CurrencyType_Exp,경험치,,,,
+CurrencyType_ToyHammer,뿅망치,,,,
+CurrencyType_Dice,주사위,,,,
+CurrencyType_Mileage,마일리지,,,,
+CurrencyType_Key,열쇠,,,,
+CurrencyType_Pork,고기,,,,
+CurrencyType_SkipTicket,스킵 티켓,,,,
+CurrencyType_InfiniteStone,곰발바닥,,,,
+CurrencyType_Clover,클로버,,,,
+CurrencyType_Medal,메달,,,,
+CurrencyType_GoldTicket,황금 티켓,,,,
+CurrencyType_GachaCoupon,소환 쿠폰,,,,
+CurrencyType_TimePiece,시간 조각,,,,
+Currency_Gold,,,,,
+Msg_TryAgainLater,잠시후에 다시 시도해주세요.,,,,
+Msg_Dungeon_Cave_Challenge,미믹 동굴 도전!,,,,
+Msg_Dungeon_Cave_Reward,미믹 동굴 보상을 획득했습니다.,,,,
+Msg_Dungeon_End1,아쉽다!,,,,
+Msg_Dungeon_End2,당근을 흔들어주세요.,,,,
+Msg_Dungeon_End3,다음 기회에!,,,,
+Msg_Dungeon_Colosseum_Reawrd,콜로세움 클리어 보상을 획득했습니다.,,,,
+Msg_Dungeon_Reward,던전 클리어 보상을 획득했습니다.,,,,
+Msg_Dungeon_FishFight_Challenge,피쉬 파이트! {0}단계 도전,,,,
+Msg_Dungeon_FishFight_Reservation,피쉬 파이트 클리어 시,,,,
+Msg_Dungeon_PigCow_Challenge,리본 돼지 토벌 {0}단계 도전,,,,
+Msg_Dungeon_PigCow_Reservation,리본 돼지 토벌 클리어 시,,,,
+Msg_Dungeon_Miner_Challenge,야생의 {0} 포획!,,,,
+Msg_Dungeon_Miner_Reward,새로운 돼지 광부를 포획했습니다.,,,,
+Msg_Dungeon_Promotion_Challenge,{0}의 길,,,,
+Msg_Dungeon_InfiniteTower_Challenge,무한의 탑 {0}층 도전!,,,,
+Msg_Dungeon_InfiniteTower_Reward,무한의 탑 클리어 보상을 획득했습니다.,,,,
+Msg_Dungeon_InfiniteTower_Floor,{0}-{1}층,,,,
+Msg_Christmas_TodayReward,오늘의 산타모자를 받아가세요.,,,,
+Msg_Christmas_Reward,산타모자를 받아가세요.,,,,
+Msg_DiceGame_TodayReward,오늘의 게임 주사위 받아가세요.,,,,
+Msg_DiceGame_Reward,게임 주사위를 받았습니다.,,,,
+Msg_Friend_Accept,친구가 되었습니다.,,,,
+Msg_Friend_AcceptFail,상대방 친구가 꽉찼습니다.,,,,
+Msg_Friend_Request,친구 요청을 보냈습니다.,,,,
+Msg_Friend_Delete,친구 삭제를 했습니다.,,,,
+Msg_Friend_GiftTitle,[친구의 선물],,,,
+Msg_Friend_GiftDescription,{0}님이 선물을 보냈어요.,,,,
+Msg_Friend_RequestList,요청된 친구 목록,,,,
+Msg_Friend_SearchList,검색된 친구 목록,,,,
+Msg_Friend_RequestEnable,친구 요청이 가능합니다.,,,,
+Msg_Mole_ToyHammer_TodayReward,오늘의 뿅망치를 받아가세요.,,,,
+Msg_Mole_ToyHammer_Reward,뿅망치를 받았습니다.,,,,
+Msg_Mole_Find,두돼지 보물을 찾았습니다.,,,,
+Msg_Mole_TreasureBonus,보물 보너스,,,,
+Msg_Mole_RewardBonus,두돼지 보너스 보상 획득,,,,
+Msg_Mole_ChanceLack,뿅망치가 부족합니다.,,,,
+Msg_Attendance_Restore,출석일을 복구했어요.,,,,
+Msg_AttendanceBuff_Reward,연속 출석 보상을 획득했습니다.,,,,
+Msg_AttendanceBuff_Need,연속 출석 {0}일을 해주세요.,,,,
+Msg_Post_Reward,우편을 수령했습니다.,,,,
+Msg_Post_AllReward,우편을 모두 수령했습니다.,,,,
+Msg_RoyalBox_Reward,로얄 박스를 열었습니다.,,,,
+Msg_Battle_Next,다음 전투부터 적용됩니다.,,,,
+Msg_Battle_StageOnly,스테이지 전투중에만 입장할 수 있어요.,,,,
+Msg_Battle_DungeonClearOnly,클리어한 던전만 스킵 할 수 있어요.,,,,
+Msg_Preset_Purchase,추가 프리셋 구매,,,,
+Msg_Preset_PurchaseComplete,추가 프리셋을 구매했습니다.,,,,
+Msg_Hack1,"(핵 프로그램 사용이 감지됐습니다..\n<size=18>(문의는 공식 카페를 이용해주세요.)</size>""",,,,
+Msg_Hack2,"<size=20>({0})</size>\n차단된 계정입니다.\n<size=18>(문의는 공식 카페를 이용해주세요.)</size>""",,,,
+Msg_Hack3,(차단된 계정입니다.\n<size=18>(문의는 공식 카페를 이용해주세요.)</size>,,,,
+Msg_GameExitQuestion,피그 슬레이어즈를 종료하시겠습니까?,,,,
+Msg_30006,같은 계정으로 다른 디바이스에서 피슬키가 실행중입니다.,,,,
+Msg_70002,(차단된 계정입니다.\n<size=18>(문의는 공식 카페를 이용해주세요.)</size>,,,,
+Msg_30007,<size=22>플레이어 계정이 탈퇴 진행중입니다.\n(탈퇴 예정일: {0})</size>\n<color='yellow'>복구하시겠습니까?</color>,,,,
+Msg_30007_Recovery,계정 복구가 완료되었습니다.,,,,
+Msg_30007_Fail,공식 카페를 통해 문의해주시기 바랍니다.,,,,
+Msg_LuckyPig_RemainTime,럭키피그 남은시간,,,,
+Msg_LuckyPig_Reward,럭키피그 보상을 획득했습니다.,,,,
+Msg_Coupon_Use,쿠폰을 사용했습니다.,,,,
+Msg_Coupon_Fail,등록되지 않거나 이미 사용한 쿠폰입니다.,,,,
+Msg_Artifact_Have,유물 보유,,,,
+Msg_Artifact_UpgradePercent,강화 성공 확률: {0}%,,,,
+Msg_Artifact_UpgradeSuccess,유물 강화에 성공했습니다.,,,,
+Msg_Artifact_UpgradeFail,유물 강화에 실패했습니다.,,,,
+Msg_Attendance_Description,{0}일 출석했습니다. 오늘도 돼지를 뚜까패요!,,,,
+Msg_Attendance_Reward,출석 보상을 획득했습니다.,,,,
+Msg_Attendance_7Reward,7일 출석 이벤트 보상을 획득했습니다.,,,,
+Msg_Bingo_ChanceLack,산타모자가 부족합니다.,,,,
+Msg_Bingo_Reward,이벤트 빙고 보상 획득,,,,
+Msg_Bingo_BonusReward,빙고 보너스 보상 획득,,,,
+Msg_Bless_Running,무한 축복 적용중,,,,
+Msg_Bless_Run,{0}가 활성화되었습니다.,,,,
+Msg_AD_Lack,준비된 광고가 없습니다. 잠시 후 다시 시도해주세요.,,,,
+Msg_Unlock_Hero,영웅' 콘텐츠는 레벨 {0}에 오픈됩니다.,,,,
+Msg_Unlock_Equipment,장비' 콘텐츠는 레벨 {0}에 오픈됩니다.,,,,
+Msg_Unlock_Mine,광산' 콘텐츠는 레벨 {0}에 오픈됩니다.,,,,
+Msg_Unlock_Skill,스킬' 콘텐츠는 레벨 {0}에 오픈됩니다.,,,,
+Msg_Unlock_Dungeon,던전' 콘텐츠는 레벨 {0}에 오픈됩니다.,,,,
+Msg_Unlock_Adeventure,모험' 콘텐츠는 레벨 {0}에 오픈됩니다.,,,,
+Msg_Unlock_Chat,채팅' 콘텐츠는 레벨 {0}에 오픈됩니다.,,,,
+Msg_Chat_Slow,조금만 천천히...,,,,
+Msg_Chat_Over,도배는 나빠요!,,,,
+Msg_Currency_Gold_Title,골드가 부족합니다.,,,,
+Msg_Currency_Ruby_Title,루비가 부족합니다.,,,,
+Msg_Currency_Ruby_Desc,다양한 콘텐츠를 통해 루비를 획득해보세요.,,,,
+Msg_Currency_Pork_Title,던전 입장에 필요한 고기가 부족합니다.,,,,
+Msg_Currency_Pork_Desc,다양한 콘텐츠를 통해 고기를 획득해보세요.,,,,
+Msg_Currency_Key_Title,던전 입장에 필요한 열쇠가 부족합니다.,,,,
+Msg_Currency_Key_Desc,다양한 콘텐츠를 통해 열쇠를 획득해보세요.,,,,
+Msg_Currency_GoldTicket_Title,황금 티켓이 부족합니다.,,,,
+Msg_Currency_GoldTicket_Desc,다양한 콘텐츠를 통해 황금 티켓을 획득해보세요.,,,,
+Msg_Currency_Clover_Title,클로버가 부족합니다.,,,,
+Msg_Currency_Clover_Desc,다양한 콘텐츠를 통해 클로버를 획득해보세요.,,,,
+Msg_DiceGame_ChanceLack,게임 주사위가 부족합니다.,,,,
+Msg_DiceGame_BonusReward,주사위 게임 보너스 보상 획득,,,,
+Msg_DiceGame_GoalBonus,골인 보너스,,,,
+Msg_Currency_SkipTicket_Title,스킷 티켓이 부족합니다.,,,,
+Msg_Currency_SkipTicket_Desc,다양한 콘텐츠를 통해 스킵 티켓을 획득해보세요.,,,,
+Msg_Skip_PigCow,<size=32><color=#BAED60>리본 돼지 토벌!</color></size> {0}단계 스킵,,,,
+Msg_Skip_FishFight,<size=32><color=#FFDE64>피쉬 파이트!</color></size> {0}단계 스킵,,,,
+Msg_Skip_InfiniteTower,<size=28>무한의 탑</size> <color=#F38C00>{0}층</color> 스킵,,,,
+Msg_Skip_Cave,<color=#A32E46>미믹 동굴</color> 스킵,,,,
+Msg_Dungon_SkyTemple_RewardCount,<color='#6EDDC6'>시간의 조각</color> 드랍 개수 {0:n0}개,,,,
+Msg_Equipment_Damage_Desc,공격력 +{0}%,,,,
+Msg_Equipment_Health_Desc,체력 +{0}%,,,,
+Msg_Equipment_DamageHealth_Desc,공격력/체력 +{0}%,,,,
+Msg_Equipment_Weapon_SummonPercent,무기 소환 확률,,,,
+Msg_Equipment_Shield_SummonPercent,방패 소환 확률,,,,
+Msg_Equipment_Acc_SummonPercent,악세사리 소환 확률,,,,
+Msg_GetBonusReward,보너스 보상을 획득했습니다.,,,,
+Msg_SummonCount,{0}회 소환,,,,
+Msg_Event_Level_Reward,레벨 이벤트 보상을 획득했습니다.,,,,
+Msg_Event_Level_SpecialReward,레벨 스페셜 보상을 획득했습니다.,,,,
+Msg_Event_Stage_Reward,스테이지 이벤트 보상을 획득했습니다.,,,,
+Msg_Event_Stage_SpecialReward,스테이지 스페셜 보상을 획득했습니다.,,,,
+Msg_GuideMission_Reward,가이드 미션 보상을 획득했습니다.,,,,
+Msg_NextUpdate,다음 업데이트를 기대해주세요.,,,,
+Msg_Ability_Change,잠재능력 변경,,,,
+Msg_Ability_Unique,유니크 등급 이상의 잠재능력이 있습니다.\n변경하시겠습니까?,,,,
+Msg_Ability_Dice,주사위를 굴려 잠재능력을 해방해주세요.,,,,
+Msg_Hero_Need,영웅이 필요합니다.,,,,
+Msg_Hero_NeedSuperLevel,영웅 각성 {0}단계 필요,,,,
+Msg_AutomaticShutdownSecond,({0}초 후 자동 종료),,,,
+Msg_LevelUp_Pop,레벨 <size=34><color=#D2BE11>{0}</color></size> 달성을 축하합니다.,,,,
+Msg_Bless_Applying,무한 축복 적용중,,,,
+Msg_Bless_Activate,{0}가 활성화되었습니다.,,,,
+Msg_Mine_PerGet,{0}마다 재화와 경험치 획득,,,,
+Msg_Nickname_DuplicateTitle,닉네임 중복,,,,
+Msg_Nickname_DuplicateDesc,이미 사용중인 닉네임입니다.,,,,
+Msg_Quest_Reward,퀘스트 보상을 획득했습니다.,,,,
+Msg_Ranking_UnlockLevel,랭킹은 Lv.{0}부터 갱신됩니다.,,,,
+Msg_RandomEquipmentLegendCount,레전드 장비 {0}개,,,,
+Msg_Event_StartLevel,레벨 {0}부터 진행할 수 있는 이벤트입니다.,,,,
+Msg_Event_End,종료된 이벤트입니다.,,,,
+Msg_Royal_MasteryReset,마스터리가 리셋되었어요.,,,,
+Msg_Promotion_Need,승급 필요,,,,
+Msg_Promotion_Complete,승급 완료,,,,
+Msg_Promotion_StatDesc,공격력 x{0} 체력 x{1},,,,
+Msg_Promotion_Lack,승급에 도전할 자격이 부족합니다.,,,,
+Msg_LevelNeed,Lv.{0} 필요,,,,
+Msg_Ready,준비 중입니다.,,,,
+Msg_ServerSaveComplete,서버 저장을 완료했어요.,,,,
+Msg_CouponLevelLimit,쿠폰 사용은 레벨 {0}부터 가능합니다.,,,,
+Msg_AccountWithdrawal_Title,,,,,
+Msg_AccountWithdrawal_Desc1,정말로 계정 탈퇴를 신청하시겠습니까?,,,,
+Msg_AccountWithdrawal_Desc2,(피슬키를 떠나실껀가요?ㅠ),,,,
+Msg_AccountWithdrawal_NickInput,자신의 닉네임을 입력해주세요.,,,,
+Msg_AccountWithdrawal_Seven,계정 탈퇴에는 7일의 유예 기간이 있습니다.,,,,
+Msg_AccountWithdrawal_ResultTitle,계정 탈퇴 신청 완료,,,,
+Msg_AccountWithdrawal_ResultDesc,피슬키를 즐겨주셔서 감사합니다.,,,,
+Msg_Skill_Condition_AttackCount,공격 {0}회,,,,
+Msg_Skill_Condition_KillCount,몬스터 처치 {0}회,,,,
+Msg_Skill_Condition_CoolTime,쿨타임 {0}초,,,,
+Msg_Skill_Slot_Purchase_Title,스킬 슬롯을 구매합니다.,,,,
+Msg_Skill_Slot_Purchase_Success,스킬 슬롯을 구매했습니다.,,,,
+Msg_Stage_Move_Title,스테이지 이동,,,,
+Msg_Stage_Move_Desc,{0}로 이동합니다.,,,,
+Msg_Stage_Challenge_Title,스테이지 도전,,,,
+Msg_Stage_Challenge_Desc,{0}에 도전합니다.,,,,
+Msg_GiveUpQuestion,정말로 포기하시겠습니까?,,,,
+Msg_Speech_01,해치웠나...?,,,,
+Msg_Speech_02,해치웠다!,,,,
+Msg_Speech_03,으악!,,,,
+Grade_Normal,노말,,,,
+Grade_Rare,레어,,,,
+Grade_Epic,에픽,,,,
+Grade_Unique,유니크,,,,
+Grade_Legend,레전드,,,,
+Grade_Mythology,신화,,,,
+Grade_God,갓,,,,
+Grade_Default,기본,,,,
+AdventureGroup.Name.00,모험 0,,,,
+AdventureGroup.Name.01,모험 1,,,,
+AdventureGroup.Name.02,모험 2,,,,
+AdventureGroup.Name.03,모험 3,,,,
+AdventureGroup.Name.04,모험 4,,,,
+AdventureGroup.Name.05,모험 5,,,,
+AdventureGroup.Name.06,모험 6,,,,

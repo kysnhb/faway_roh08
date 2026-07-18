@@ -1,0 +1,16 @@
+﻿name,StatType,StatValue,StatAddValue,MaxLevel,DefaultPercent,MinusPercent,ArtifactCost,ArtifactAddCost,TimePieceCost,TimePieceAddCost,BackgroundColor,NameText,DescriptionText
+돼지를 부르는 호각,MiningSpeedRate,0.6000000238418579,0.6000000238418579,100,100.0,0.5,2,1,100.0,100.0,#cbcc73ff,Artifact.Name.00,Artifact.StatDecription.00
+거울아 누가 제일 이쁘니,DoubleAttackDamageRate,5.0,5.0,100,100.0,0.5,2,1,100.0,100.0,#f4d9cfff,Artifact.Name.01,Artifact.StatDecription.01
+모래 더하기 시계,DungeonAddTimeRate,1.0,1.0,100,100.0,0.5,2,1,100.0,100.0,#f4d062ff,Artifact.Name.02,Artifact.StatDecription.02
+만들다 만 세계지도,StageBossAddTimeRate,1.0,1.0,100,100.0,0.5,2,1,100.0,100.0,#f1a77fff,Artifact.Name.03,Artifact.StatDecription.03
+심장을 쥐었다.,BossHealthReduceRate,0.4000000059604645,0.4000000059604645,100,100.0,0.5,2,1,100.0,100.0,#97c1e5ff,Artifact.Name.04,Artifact.StatDecription.04
+번쩍 번쩍한 휘장,BossDamageReduceRate,0.4000000059604645,0.4000000059604645,100,100.0,0.5,2,1,100.0,100.0,#a8d5dbff,Artifact.Name.05,Artifact.StatDecription.05
+사자 얼굴 방패,Health,250000.0,250000.0,100,100.0,0.5,2,1,100.0,100.0,#f49139ff,Artifact.Name.06,Artifact.StatDecription.06
+따노스 장갑,Damage,25000.0,25000.0,100,100.0,0.5,2,1,100.0,100.0,#f29b87ff,Artifact.Name.07,Artifact.StatDecription.07
+X칼리버를 뽑아라,CriticalDamageRate,100.0,100.0,100,100.0,0.5,2,1,100.0,100.0,#f0e5d7ff,Artifact.Name.08,Artifact.StatDecription.08
+호랑이 기운,BossDamageRate,50.0,50.0,100,100.0,0.5,2,1,100.0,100.0,#c4debfff,Artifact.Name.09,Artifact.StatDecription.09
+황금 곡괭이,MiningGoldBonusRate,50.0,50.0,100,100.0,0.5,2,1,100.0,100.0,#a27a63ff,Artifact.Name.10,Artifact.StatDecription.10
+돼지 사용 설명서,MiningJellyBonusRate,50.0,50.0,100,100.0,0.5,2,1,100.0,100.0,#dfd0e3ff,Artifact.Name.11,Artifact.StatDecription.11
+이상하게 좋은 왕관,MiningExpBonusRate,50.0,50.0,100,100.0,0.5,2,1,100.0,100.0,#eeb340ff,Artifact.Name.12,Artifact.StatDecription.12
+파라오의 마술잔,SkillCoolTimeReduceRate,0.4000000059604645,0.4000000059604645,100,100.0,0.5,2,1,100.0,100.0,#e0483dff,Artifact.Name.13,Artifact.StatDecription.13
+복!주!Money,LuckyPigBonusRate,50.0,50.0,100,100.0,0.5,2,1,100.0,100.0,#f4babaff,Artifact.Name.14,Artifact.StatDecription.14

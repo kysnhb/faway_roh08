@@ -1,0 +1,19 @@
+﻿name,Number,IconIndex,RoyalMasteryType,Order,StatType,Value,ValueAdd,MaxLevel,LevelUpCost,NameText,DescriptionText
+공격 속도 I,1,0,Utile,0,AttackSpeed,10.0,10.0,5,3,Royal.Mastery.Utile.Name.AttackSpeed,Royal.Mastery.Utile.Description.AttackSpeed
+Empty,0,0,Utile,0,Empty,0.0,0.0,0,0,,
+이동 속도 I,1,1,Utile,0,MoveSpeed,10.0,10.0,5,3,Royal.Mastery.Utile.Name.MoveSpeed,Royal.Mastery.Utile.Description.MoveSpeed
+Empty,0,0,Utile,1,Empty,0.0,0.0,0,0,,
+스킬 쿨타임  I,1,2,Utile,1,SkillCoolTimeReduceRate,1.0,1.0,10,3,Royal.Mastery.Utile.Name.SkillCoolTimeReduceRate,Royal.Mastery.Utile.Description.SkillCoolTimeReduceRate
+Empty,0,0,Utile,1,Empty,0.0,0.0,0,0,,
+공격 속도 II,2,3,Utile,2,AttackSpeed,15.0,15.0,5,5,Royal.Mastery.Utile.Name.AttackSpeed,Royal.Mastery.Utile.Description.AttackSpeed
+Empty,0,0,Utile,2,Empty,0.0,0.0,0,0,,
+이동 속도 II,2,4,Utile,2,MoveSpeed,15.0,15.0,5,5,Royal.Mastery.Utile.Name.MoveSpeed,Royal.Mastery.Utile.Description.MoveSpeed
+Empty,0,0,Utile,3,Empty,0.0,0.0,0,0,,
+스킬 쿨타임 II,2,5,Utile,3,SkillCoolTimeReduceRate,1.0,1.0,10,5,Royal.Mastery.Utile.Name.SkillCoolTimeReduceRate,Royal.Mastery.Utile.Description.SkillCoolTimeReduceRate
+Empty,0,0,Utile,3,Empty,0.0,0.0,0,0,,
+공격 속도 III,3,6,Utile,4,AttackSpeed,20.0,20.0,5,10,Royal.Mastery.Utile.Name.AttackSpeed,Royal.Mastery.Utile.Description.AttackSpeed
+Empty,0,0,Utile,4,Empty,0.0,0.0,0,0,,
+이동 속도 III,3,7,Utile,4,MoveSpeed,20.0,20.0,5,10,Royal.Mastery.Utile.Name.MoveSpeed,Royal.Mastery.Utile.Description.MoveSpeed
+Empty,0,0,Utile,5,Empty,0.0,0.0,0,0,,
+스킬 쿨타임  III,3,8,Utile,5,SkillCoolTimeReduceRate,1.0,1.0,10,10,Royal.Mastery.Utile.Name.SkillCoolTimeReduceRate,Royal.Mastery.Utile.Description.SkillCoolTimeReduceRate
+Empty,0,0,Utile,5,Empty,0.0,0.0,0,0,,

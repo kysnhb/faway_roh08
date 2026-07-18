@@ -1,0 +1,7 @@
+﻿name,QuestType,CompleteCount,RewardType,RewardAmount,NameText
+일일 퀘스트 2회 달성,Daily,2,Pork,100.0,Quest.Type.Daily
+일일 퀘스트 4회 달성,Daily,4,GoldTicket,2.0,Quest.Type.Daily
+일일 퀘스트 8회 달성,Daily,8,Ruby,2000.0,Quest.Type.Daily
+주간 퀘스트 2회 달성,Weekly,2,Key,200.0,Quest.Type.Weekly
+주간 퀘스트 4회 달성,Weekly,4,GoldTicket,10.0,Quest.Type.Weekly
+주간 퀘스트 8회 달성,Weekly,8,Ruby,5000.0,Quest.Type.Weekly

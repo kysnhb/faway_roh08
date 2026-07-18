@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>이미지 리소스 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html" class="on">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">11 · Art Assets</p>
+<h1>이미지 리소스</h1>
+<p class="lead">APK의 <code>data.unity3d</code>(40MB)에서 추출한 아트 에셋입니다.
+아래는 대표 샘플이며, <strong>전체 파일은 <code>D:\newgaems\assets_extracted\</code></strong>에 있습니다.</p>
+
+<div class="grid g4">
+  <div class="stat"><div class="k">스프라이트</div><div class="v">4,678</div><div class="s">sprites/</div></div>
+  <div class="stat"><div class="k">텍스처</div><div class="v">2,578</div><div class="s">textures/ · 31.6 MB</div></div>
+  <div class="stat"><div class="k">폰트</div><div class="v">8</div><div class="s">fonts/</div></div>
+  <div class="stat"><div class="k">텍스트 에셋</div><div class="v">11</div><div class="s">테이블 원본 포함</div></div>
+</div>
+
+<h2>재화 아이콘 (17종)</h2>
+<div class="gal"><div class="gc"><div class="box"><img src="img/currency/Gold.png" alt="Gold" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Gold</div></div><div class="gc"><div class="box"><img src="img/currency/Ruby.png" alt="Ruby" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Ruby</div></div><div class="gc"><div class="box"><img src="img/currency/Crown.png" alt="Crown" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Crown</div></div><div class="gc"><div class="box"><img src="img/currency/PigJelly.png" alt="PigJelly" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">PigJelly</div></div><div class="gc"><div class="box"><img src="img/currency/Exp.png" alt="Exp" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Exp</div></div><div class="gc"><div class="box"><img src="img/currency/ToyHammer.png" alt="ToyHammer" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">ToyHammer</div></div><div class="gc"><div class="box"><img src="img/currency/Dice.png" alt="Dice" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Dice</div></div><div class="gc"><div class="box"><img src="img/currency/Mileage.png" alt="Mileage" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Mileage</div></div><div class="gc"><div class="box"><img src="img/currency/Key.png" alt="Key" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Key</div></div><div class="gc"><div class="box"><img src="img/currency/Pork.png" alt="Pork" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Pork</div></div><div class="gc"><div class="box"><img src="img/currency/SkipTicket.png" alt="SkipTicket" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">SkipTicket</div></div><div class="gc"><div class="box"><img src="img/currency/InfiniteStone.png" alt="InfiniteStone" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">InfiniteStone</div></div><div class="gc"><div class="box"><img src="img/currency/Clover.png" alt="Clover" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Clover</div></div><div class="gc"><div class="box"><img src="img/currency/Medal.png" alt="Medal" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Medal</div></div><div class="gc"><div class="box"><img src="img/currency/GoldTicket.png" alt="GoldTicket" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">GoldTicket</div></div><div class="gc"><div class="box"><img src="img/currency/GachaCoupon.png" alt="GachaCoupon" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">GachaCoupon</div></div><div class="gc"><div class="box"><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:44px;height:44px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">TimePiece</div></div></div>
+<p class="small">원본 이름 규칙은 <code>&lt;재화명&gt;32.png</code>입니다 (예: <code>Gold32</code>, <code>Ruby32</code>).
+<code>EquipmentStone</code>만 대응 스프라이트를 찾지 못했습니다 — 아틀라스에 다른 이름으로 있거나 미제작 상태로 <span class="chip orange">추정</span>됩니다.</p>
+
+<h2>영웅 (9종)</h2>
+<div class="gal"><div class="gc"><div class="box"><img src="img/hero/King.png" alt="King"></div><div class="n">King</div></div><div class="gc"><div class="box"><img src="img/hero/Queen.png" alt="Queen"></div><div class="n">Queen</div></div><div class="gc"><div class="box"><img src="img/hero/Prince.png" alt="Prince"></div><div class="n">Prince</div></div><div class="gc"><div class="box"><img src="img/hero/Princess.png" alt="Princess"></div><div class="n">Princess</div></div><div class="gc"><div class="box"><img src="img/hero/PigKing.png" alt="PigKing"></div><div class="n">PigKing</div></div><div class="gc"><div class="box"><img src="img/hero/Captain.png" alt="Captain"></div><div class="n">Captain</div></div><div class="gc"><div class="box"><img src="img/hero/Reaper.png" alt="Reaper"></div><div class="n">Reaper</div></div><div class="gc"><div class="box"><img src="img/hero/BlueMermaid.png" alt="BlueMermaid"></div><div class="n">BlueMermaid</div></div><div class="gc"><div class="box"><img src="img/hero/PinkMermaid.png" alt="PinkMermaid"></div><div class="n">PinkMermaid</div></div></div>
+<p class="small">각 영웅은 <code>&lt;이름&gt;.Sprites._N</code> 형태의 프레임 시퀀스로 저장돼 있습니다
+(예: Princess는 100프레임 이상). 위 이미지는 각 영웅의 최대 크기 프레임입니다.</p>
+
+<h2>몬스터 (36종)</h2>
+<div class="gal"><div class="gc"><div class="box"><img src="img/monster/PigBomb.png" alt="PigBomb"></div><div class="n">PigBomb</div></div><div class="gc"><div class="box"><img src="img/monster/PigBox.png" alt="PigBox"></div><div class="n">PigBox</div></div><div class="gc"><div class="box"><img src="img/monster/PigCannon.png" alt="PigCannon"></div><div class="n">PigCannon</div></div><div class="gc"><div class="box"><img src="img/monster/PigHide.png" alt="PigHide"></div><div class="n">PigHide</div></div><div class="gc"><div class="box"><img src="img/monster/PigIndian.png" alt="PigIndian"></div><div class="n">PigIndian</div></div><div class="gc"><div class="box"><img src="img/monster/PigKnife.png" alt="PigKnife"></div><div class="n">PigKnife</div></div><div class="gc"><div class="box"><img src="img/monster/PigKnight.png" alt="PigKnight"></div><div class="n">PigKnight</div></div><div class="gc"><div class="box"><img src="img/monster/PigWizard.png" alt="PigWizard"></div><div class="n">PigWizard</div></div><div class="gc"><div class="box"><img src="img/monster/Crabby.png" alt="Crabby"></div><div class="n">Crabby</div></div><div class="gc"><div class="box"><img src="img/monster/FierceTooth.png" alt="FierceTooth"></div><div class="n">FierceTooth</div></div><div class="gc"><div class="box"><img src="img/monster/PinkStar.png" alt="PinkStar"></div><div class="n">PinkStar</div></div><div class="gc"><div class="box"><img src="img/monster/SeaShell.png" alt="SeaShell"></div><div class="n">SeaShell</div></div><div class="gc"><div class="box"><img src="img/monster/Anubis.png" alt="Anubis"></div><div class="n">Anubis</div></div><div class="gc"><div class="box"><img src="img/monster/FlowerLion.png" alt="FlowerLion"></div><div class="n">FlowerLion</div></div><div class="gc"><div class="box"><img src="img/monster/Genie.png" alt="Genie"></div><div class="n">Genie</div></div><div class="gc"><div class="box"><img src="img/monster/Khumn.png" alt="Khumn"></div><div class="n">Khumn</div></div><div class="gc"><div class="box"><img src="img/monster/Ra.png" alt="Ra"></div><div class="n">Ra</div></div><div class="gc"><div class="box"><img src="img/monster/Sckhmcf.png" alt="Sckhmcf"></div><div class="n">Sckhmcf</div></div><div class="gc"><div class="box"><img src="img/monster/YetiCannon.png" alt="YetiCannon"></div><div class="n">YetiCannon</div></div><div class="gc"><div class="box"><img src="img/monster/YetiSword.png" alt="YetiSword"></div><div class="n">YetiSword</div></div><div class="gc"><div class="box"><img src="img/monster/PigCowKing.png" alt="PigCowKing"></div><div class="n">PigCowKing</div></div><div class="gc"><div class="box"><img src="img/monster/PigCowQueen.png" alt="PigCowQueen"></div><div class="n">PigCowQueen</div></div><div class="gc"><div class="box"><img src="img/monster/FishBlack.png" alt="FishBlack"></div><div class="n">FishBlack</div></div><div class="gc"><div class="box"><img src="img/monster/FishBlue.png" alt="FishBlue"></div><div class="n">FishBlue</div></div><div class="gc"><div class="box"><img src="img/monster/FishGreen.png" alt="FishGreen"></div><div class="n">FishGreen</div></div><div class="gc"><div class="box"><img src="img/monster/FishRed.png" alt="FishRed"></div><div class="n">FishRed</div></div><div class="gc"><div class="box"><img src="img/monster/BigPigFire.png" alt="BigPigFire"></div><div class="n">BigPigFire</div></div><div class="gc"><div class="box"><img src="img/monster/BigPigGentleman.png" alt="BigPigGentleman"></div><div class="n">BigPigGentleman</div></div><div class="gc"><div class="box"><img src="img/monster/BigPigIron.png" alt="BigPigIron"></div><div class="n">BigPigIron</div></div><div class="gc"><div class="box"><img src="img/monster/BigPigSunflower.png" alt="BigPigSunflower"></div><div class="n">BigPigSunflower</div></div><div class="gc"><div class="box"><img src="img/monster/BigPigThanos.png" alt="BigPigThanos"></div><div class="n">BigPigThanos</div></div><div class="gc"><div class="box"><img src="img/monster/BigBear.png" alt="BigBear"></div><div class="n">BigBear</div></div><div class="gc"><div class="box"><img src="img/monster/AngelPig.png" alt="AngelPig"></div><div class="n">AngelPig</div></div><div class="gc"><div class="box"><img src="img/monster/AngelCow.png" alt="AngelCow"></div><div class="n">AngelCow</div></div><div class="gc"><div class="box"><img src="img/monster/DevilPig.png" alt="DevilPig"></div><div class="n">DevilPig</div></div><div class="gc"><div class="box"><img src="img/monster/DevilCow.png" alt="DevilCow"></div><div class="n">DevilCow</div></div></div>
+<p class="small"><code>MonsterKind</code> enum 59종 중 광부(Miner_00~19) 20종을 제외한 실제 전투 몬스터입니다.
+체급이 일반 돼지 → 지역 보스 → 대형 보스(PigCow/BigPig/천사·악마) 순으로 명확히 나뉩니다.</p>
+
+<h2>스킬 · 이펙트 (17종)</h2>
+<div class="gal"><div class="gc"><div class="box"><img src="img/skill/AirTornado.png" alt="AirTornado"></div><div class="n">AirTornado</div></div><div class="gc"><div class="box"><img src="img/skill/Teleport.png" alt="Teleport"></div><div class="n">Teleport</div></div><div class="gc"><div class="box"><img src="img/skill/RagingBlow.png" alt="RagingBlow"></div><div class="n">RagingBlow</div></div><div class="gc"><div class="box"><img src="img/skill/Shark.png" alt="Shark"></div><div class="n">Shark</div></div><div class="gc"><div class="box"><img src="img/skill/DragonBless.png" alt="DragonBless"></div><div class="n">DragonBless</div></div><div class="gc"><div class="box"><img src="img/skill/Blast.png" alt="Blast"></div><div class="n">Blast</div></div><div class="gc"><div class="box"><img src="img/skill/UnitySwordAether.png" alt="UnitySwordAether"></div><div class="n">UnitySwordAether</div></div><div class="gc"><div class="box"><img src="img/skill/FireBall.png" alt="FireBall"></div><div class="n">FireBall</div></div><div class="gc"><div class="box"><img src="img/skill/IceSpell.png" alt="IceSpell"></div><div class="n">IceSpell</div></div><div class="gc"><div class="box"><img src="img/skill/FireSun.png" alt="FireSun"></div><div class="n">FireSun</div></div><div class="gc"><div class="box"><img src="img/skill/FireExplosion.png" alt="FireExplosion"></div><div class="n">FireExplosion</div></div><div class="gc"><div class="box"><img src="img/skill/FireAura.png" alt="FireAura"></div><div class="n">FireAura</div></div><div class="gc"><div class="box"><img src="img/skill/Angel.png" alt="Angel"></div><div class="n">Angel</div></div><div class="gc"><div class="box"><img src="img/skill/Elephant.png" alt="Elephant"></div><div class="n">Elephant</div></div><div class="gc"><div class="box"><img src="img/skill/Mimic_Currency.png" alt="Mimic_Currency"></div><div class="n">Mimic_Currency</div></div><div class="gc"><div class="box"><img src="img/skill/Mimic_Sword.png" alt="Mimic_Sword"></div><div class="n">Mimic_Sword</div></div><div class="gc"><div class="box"><img src="img/skill/Mimic_Shield.png" alt="Mimic_Shield"></div><div class="n">Mimic_Shield</div></div></div>
+
+<h2>추출 방법</h2>
+<div class="tw"><table><thead><tr><th>리소스</th><th>위치</th><th>추출 도구</th></tr></thead><tbody><tr><td>스프라이트 · 텍스처</td><td><code>assets/bin/Data/data.unity3d</code></td><td>UnityPy 1.25.2</td></tr><tr><td>폰트</td><td>동일</td><td>UnityPy</td></tr><tr><td>데이터 테이블</td><td><code>data.unity3d</code> 내 TextAsset</td><td>UnityPy → 자체 BGDatabase 파서</td></tr><tr><td>앱 아이콘</td><td><code>res/</code></td><td>APK 직접 압축 해제</td></tr><tr><td>오디오</td><td><code>sharedassets0.resource</code></td><td><span class="chip orange">미추출</span> — 아래 참고</td></tr></tbody></table></div>
+<div class="warn"><strong>오디오는 추출하지 못했습니다.</strong> AudioClip 82개가 존재하지만
+샘플 데이터가 <code>sharedassets0.resource</code>(12MB)에 <strong>스트리밍으로 분리</strong>돼 있고,
+FMOD FSB5 컨테이너 디코딩이 필요합니다. 이름 목록은 확보했습니다
+(<code>_work/audio_loc.txt</code>). 필요하시면 별도로 진행하겠습니다.</div>
+
+<div class="pager"><a href="10_market.html">← 시장 조사</a><a href="12_tech.html">기술 스택 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">재화 아이콘 (17종)</span></li><li class="dot" data-i="2"><span class="tip">영웅 (9종)</span></li><li class="dot" data-i="3"><span class="tip">몬스터 (36종)</span></li><li class="dot" data-i="4"><span class="tip">스킬 · 이펙트 (17종)</span></li><li class="dot" data-i="5"><span class="tip">추출 방법</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

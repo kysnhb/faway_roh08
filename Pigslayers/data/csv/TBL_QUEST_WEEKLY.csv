@@ -1,0 +1,13 @@
+﻿name,MissionType,ReportType,CompleteCount,RewardType,RewardAmount,NameText,DescriptionText
+몬스터를 처치하라!,MonsterKill,Add,1000.0,Ruby,500.0,Quest.Name.MonsterKill,Quest.Description.MonsterKill
+장비를 모아라!,EquipmentAdd,Add,500.0,Ruby,500.0,Quest.Name.EquipmentAdd,Quest.Description.EquipmentAdd
+왕가 성장 레벨업!,RoyalGrowth,Add,50.0,Ruby,500.0,Quest.Name.RoyalGrowth,Quest.Description.RoyalGrowth
+왕가 강화 레벨업!,RoyalForce,Add,50.0,Ruby,500.0,Quest.Name.RoyalForce,Quest.Description.RoyalForce
+장비를 합성하라!,EquipmentCompose,Add,30.0,Ruby,500.0,Quest.Name.EquipmentCompose,Quest.Description.EquipmentCompose
+고기를 사용하라!,PorkUse,Add,30.0,Ruby,500.0,Quest.Name.PorkUse,Quest.Description.PorkUse
+열쇠를 사용하라!,KeyUse,Add,30.0,Ruby,500.0,Quest.Name.KeyUse,Quest.Description.KeyUse
+물고기를 잡아라!,ChallengeFishFight,Add,30.0,Ruby,500.0,Quest.Name.ChallengeFishFight,Quest.Description.ChallengeFishFight
+리본 돼지 토벌!,ChallengePigCow,Add,30.0,Ruby,500.0,Quest.Name.ChallengePigCow,Quest.Description.ChallengePigCow
+무한의 탑을 오르자!,ChallengeInfiniteTower,Add,30.0,Ruby,500.0,Quest.Name.ChallengeInfiniteTower,Quest.Description.ChallengeInfiniteTower
+미믹 동굴을 탐험하라!,ChallengeCave,Add,20.0,Ruby,1000.0,Quest.Name.ChallengeCave,Quest.Description.ChallengeCave
+콜로세움 출전!,ChallengeColosseum,Add,20.0,Ruby,1000.0,Quest.Name.ChallengeColosseum,Quest.Description.ChallengeColosseum

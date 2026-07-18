@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>던전 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html" class="on">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">07 · Dungeon</p>
+<h1>던전 — 요구 조건과 보상</h1>
+<p class="lead"><code>TBL_DUNGEON</code> <strong>102행 · 29필드</strong>를 던전 종류별로 정리했습니다.
+입장 비용·요구 레벨·제한시간·보상이 전부 실측값입니다.</p>
+
+<div class="grid g4">
+  <div class="stat"><div class="k">던전 종류</div><div class="v">8</div><div class="s">DungeonType</div></div>
+  <div class="stat"><div class="k">총 단계</div><div class="v">102</div><div class="s">TBL_DUNGEON</div></div>
+  <div class="stat"><div class="k">입장 재화</div><div class="v">2</div><div class="s">돼지고기 · 열쇠</div></div>
+  <div class="stat"><div class="k">시간조각 공급</div><div class="v">100%</div><div class="s">던전이 유일 획득처</div></div>
+</div>
+
+<h2>던전 8종 요약</h2>
+<div class="tw"><table><thead><tr><th>던전</th><th class="num">단계</th><th>입장 비용</th><th>요구 레벨</th><th>제한시간</th><th>보상 재화</th></tr></thead><tbody><tr><td><strong>돼지소</strong><br><span class="small">PigCow</span></td><td class="num">20</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2~200</td><td><span class="small">없음</span></td><td>60초</td><td><img src="img/currency/PigJelly.png" alt="PigJelly" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> PigJelly</td></tr><tr><td><strong>물고기</strong><br><span class="small">FishFight</span></td><td class="num">20</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2~200</td><td><span class="small">없음</span></td><td>60초</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Gold</td></tr><tr><td><strong>광부</strong><br><span class="small">Miner</span></td><td class="num">20</td><td><span class="small">무료</span></td><td><span class="small">없음</span></td><td>60초</td><td> Miner</td></tr><tr><td><strong>무한의 탑</strong><br><span class="small">InfiniteTower</span></td><td class="num">20</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2~40</td><td><span class="small">없음</span></td><td>60초</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Clover</td></tr><tr><td><strong>승급</strong><br><span class="small">Promotion</span></td><td class="num">10</td><td><span class="small">무료</span></td><td><span class="small">없음</span></td><td>60초</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Gold</td></tr><tr><td><strong>하늘신전</strong><br><span class="small">SkyTemple</span></td><td class="num">10</td><td><span class="small">무료</span></td><td>Lv.150~600</td><td>600초</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Gold</td></tr><tr><td><strong>동굴</strong><br><span class="small">Cave</span></td><td class="num">1<br><span class="small">템플릿 1행</span></td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 1~1</td><td><span class="small">없음</span></td><td>10초</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Gold</td></tr><tr><td><strong>콜로세움</strong><br><span class="small">Colosseum</span></td><td class="num">1<br><span class="small">템플릿 1행</span></td><td><span class="small">무료</span></td><td><span class="small">없음</span></td><td>60초</td><td><img src="img/currency/InfiniteStone.png" alt="InfiniteStone" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> InfiniteStone</td></tr></tbody></table></div>
+
+<div class="fact"><strong>입장 비용은 테이블상 2종뿐</strong>입니다 —
+<img src="img/currency/Pork.png" alt="Pork" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>돼지고기</strong>(돼지소·물고기)와
+<img src="img/currency/Key.png" alt="Key" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>열쇠</strong>(무한의 탑·동굴).
+광부·승급·콜로세움·하늘신전은 <strong>입장 비용이 없습니다</strong>.
+돼지고기와 열쇠는 둘 다 <a href="09_bm.html">광고로 얻을 수 있어</a>(<code>Ad_Pork</code>, <code>Ad_Key</code>)
+<strong>던전 회전율이 곧 광고 시청 유인</strong>이 됩니다.
+비용은 단계마다 선형 증가합니다 — 돼지고기 2·4·6·10…, 열쇠 2·4·6·8….</div>
+
+<div class="warn"><strong>⚠ 데이터 충돌 1건 — 동굴 입장 비용</strong><br>
+<code>TBL_DUNGEON</code>의 동굴 행은 <strong><code>KeyCost = 1</code></strong>(열쇠 1개)인데,
+<code>TBL_CONST</code>에는 <strong><code>CAVE_ENTER_GOLD_TICKET_COST = 1</code></strong>(골드티켓 1장)이 있습니다.
+두 값이 서로 다른 재화를 가리킵니다. 어느 쪽이 실제로 쓰이는지는
+<strong>코드를 봐야 확정</strong>되며(IL2CPP라 이번 범위 밖), 둘 다 쓰일 수도 있습니다.
+<strong>출시 전 확인 항목</strong>으로 남깁니다.</div>
+
+<div class="warn"><strong>⚠ 요구 레벨은 하늘신전에만 있습니다.</strong>
+<code>RequireLevel</code>이 0이 아닌 던전은 <strong>하늘신전(150·200·250…600)</strong> 하나뿐이고,
+나머지 7종은 전부 0입니다. 즉 던전 진입 게이트는 <code>TBL_DUNGEON</code>이 아니라
+<code>TBL_CONST</code>의 <code>UNLOCK_LEVEL_DUNGEON_*</code>(던전7·무한탑15·동굴20·콜로세움30)가 담당합니다
+— <a href="03_content_flow.html">해금은 탭 단위, 단계 진입은 재화 단위</a>로 이원화된 구조입니다.</div>
+
+<div class="note"><strong>동굴·콜로세움은 1행짜리 템플릿</strong>입니다.
+다른 던전이 단계별로 20·10행을 갖는 것과 달리, 이 둘은 행이 <strong>1개</strong>뿐이고
+층별 난이도를 <code>TBL_CONST</code>의 배수 상수로 계산합니다
+(<code>CAVE_HEALTH_START × 1.6^n</code>, <code>COLOSSEUM_HEALTH_START × 1.9^n</code>).
+그래서 <strong>무한 층 도전형</strong>입니다.</div>
+
+<h2>동굴 던전 드랍 테이블</h2>
+<p><code>TBL_DUNGEON_CAVE_REWARD</code> — 몬스터별 가중치 드랍입니다.</p>
+<div class="tw"><table><thead><tr><th>몬스터</th><th>보상</th><th class="num">가중치</th><th class="num">수량</th></tr></thead><tbody><tr><td>Mimic_Currency</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Gold</td><td class="num">10</td><td class="num">15</td></tr><tr><td>Mimic_Currency</td><td><img src="img/currency/PigJelly.png" alt="PigJelly" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> PigJelly</td><td class="num">10</td><td class="num">15</td></tr><tr><td>Mimic_Currency</td><td> EquipmentStone</td><td class="num">50</td><td class="num">700</td></tr><tr><td>Mimic_Currency</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Clover</td><td class="num">10</td><td class="num">10</td></tr><tr><td>Mimic_Currency</td><td><img src="img/currency/Dice.png" alt="Dice" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Dice</td><td class="num">20</td><td class="num">50</td></tr><tr><td>Mimic_Currency</td><td><img src="img/currency/SkipTicket.png" alt="SkipTicket" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> SkipTicket</td><td class="num">5</td><td class="num">0.04</td></tr><tr><td>Mimic_Sword</td><td> EquipmentWeapon</td><td class="num">100</td><td class="num">0.15</td></tr><tr><td>Mimic_Shield</td><td> EquipmentShield</td><td class="num">100</td><td class="num">0.15</td></tr></tbody></table></div>
+
+<h2>⚠ 미입력 컬럼 2개</h2>
+<div class="warn">
+<p style="margin:0 0 10px"><strong><code>Rewards</code> (해시테이블) — 102행 중 1행만 채워져 있고, 그 값도 전부 0입니다.</strong><br>
+유일하게 채워진 동굴 행의 값이
+<code>ToyHammer=0.0 ; EquipmentShield=0.0 ; EquipmentStone=0.0 ; EquipmentWeapon=0.0 ; Dice=0.0</code> —
+<strong>키만 있고 수량이 전부 0</strong>입니다. 드랍 후보만 잡아두고 수치는 미입력 상태로 <span class="chip orange">추정</span>됩니다.
+동굴의 실제 드랍은 아래 <code>TBL_DUNGEON_CAVE_REWARD</code>가 담당합니다.</p>
+<p style="margin:0"><strong><code>FirstReward</code> (최초 클리어 보상) — 102행 중 82행이 <code>Gold 0</code>입니다.</strong><br>
+즉 사실상 <strong>보상 없음</strong>. 의미 있는 값이 들어간 건
+<strong>하늘신전 10행뿐</strong>(<img src="img/currency/Ruby.png" alt="Ruby" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 루비 150 → 300 → 450 → 600 → 750…)입니다.
+최초 클리어 보상은 <strong>하늘신전에만 구현</strong>돼 있습니다.</p>
+</div>
+
+<h2>난이도 곡선 (TBL_CONST)</h2>
+<div class="tw"><table><thead><tr><th>던전</th><th class="num">시작 체력</th><th class="num">층당 배수</th><th>입장 비용</th><th>기타</th></tr></thead><tbody><tr><td>동굴 (Cave)</td><td class="num">1,000</td><td class="num"><strong>×1.6</strong></td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 열쇠 1 <span class="small">(테이블)</span><br><img src="img/currency/GoldTicket.png" alt="GoldTicket" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 골드티켓 1 <span class="small">(상수)</span> <span class="chip orange">충돌</span></td><td>층 클리어 시 +3초</td></tr><tr><td>콜로세움 (Colosseum)</td><td class="num">50,000,000</td><td class="num"><strong>×1.9</strong></td><td>—</td><td>보상 100 + 층당 50</td></tr></tbody></table></div>
+<div class="warn"><strong>콜로세움 시작 체력이 5,000만</strong>입니다 — 동굴(1,000)의 <strong>5만 배</strong>.
+층당 배수도 ×1.9로 더 가파릅니다(동굴 ×1.6).
+콜로세움은 Lv.30에 해금되는데 시작 체력이 이 정도면
+<strong>해금 시점과 실제 클리어 가능 시점 사이에 큰 격차</strong>가 있을 것으로 <span class="chip orange">추정</span>됩니다.
+콜로세움 보스는 <code>BIgBear</code>(빅베어)입니다.</div>
+
+<div class="note"><strong>사소한 오타 1건 (무해)</strong> — <code>TBL_MONSTER</code>의 행 이름이
+<code>BIgBear</code>로 <strong>대문자 I 오타</strong>입니다. 다만 같은 행의
+<code>MonsterKind</code> 필드는 <code>BigBear</code>로 정확하고 게임은 이 enum을 읽으므로
+<strong>동작에는 영향이 없습니다</strong>. 59행 중 이름과 enum이 다른 건 4건인데,
+나머지 3건은 미믹 3종(<code>Mimic_Currency</code>·<code>Mimic_Sword</code>·<code>Mimic_Shield</code>)의
+한글 표시명이라 의도된 것입니다.</div>
+
+<h2>던전별 상세 (실측)</h2>
+<h3>돼지소 <span class="small">(PigCow · 총 20단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>PigCow_01</td><td class="num">1</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2</td><td>없음</td><td class="num">80</td><td>60초</td><td>PigCowKing</td><td><img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 100 · <img src="img/currency/PigJelly.png" alt="PigJelly" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 8,000</td></tr><tr><td>PigCow_02</td><td class="num">2</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 4</td><td>없음</td><td class="num">480</td><td>60초</td><td>PigCowKing</td><td><img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 600 · <img src="img/currency/PigJelly.png" alt="PigJelly" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 48,000</td></tr><tr><td>PigCow_03</td><td class="num">3</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 6</td><td>없음</td><td class="num">1,920</td><td>60초</td><td>PigCowKing</td><td><img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2,400 · <img src="img/currency/PigJelly.png" alt="PigJelly" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 192,000</td></tr><tr><td>PigCow_04</td><td class="num">4</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 10</td><td>없음</td><td class="num">8,000</td><td>60초</td><td>PigCowKing</td><td><img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 10,000 · <img src="img/currency/PigJelly.png" alt="PigJelly" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 800,000</td></tr><tr><td>PigCow_05</td><td class="num">5</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 14</td><td>없음</td><td class="num">26,880</td><td>60초</td><td>PigCowKing</td><td><img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 33,600 · <img src="img/currency/PigJelly.png" alt="PigJelly" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2,688,000</td></tr><tr><td>PigCow_06</td><td class="num">6</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 20</td><td>없음</td><td class="num">102,400</td><td>60초</td><td>PigCowKing</td><td><img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 128,000 · <img src="img/currency/PigJelly.png" alt="PigJelly" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 10,240,000</td></tr></tbody></table></div><h3>물고기 <span class="small">(FishFight · 총 20단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>FishFight_01</td><td class="num">1</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2</td><td>없음</td><td class="num">80</td><td>60초</td><td>FishBlack</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 16,000 · <img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 100</td></tr><tr><td>FishFight_02</td><td class="num">2</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 4</td><td>없음</td><td class="num">480</td><td>60초</td><td>FishBlack</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 96,000 · <img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 600</td></tr><tr><td>FishFight_03</td><td class="num">3</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 6</td><td>없음</td><td class="num">1,920</td><td>60초</td><td>FishBlack</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 384,000 · <img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2,400</td></tr><tr><td>FishFight_04</td><td class="num">4</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 10</td><td>없음</td><td class="num">8,000</td><td>60초</td><td>FishBlack</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 1,600,000 · <img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 10,000</td></tr><tr><td>FishFight_05</td><td class="num">5</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 14</td><td>없음</td><td class="num">26,880</td><td>60초</td><td>FishBlack</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 5,376,000 · <img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 33,600</td></tr><tr><td>FishFight_06</td><td class="num">6</td><td><img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 20</td><td>없음</td><td class="num">102,400</td><td>60초</td><td>FishBlack</td><td><img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 20,480,000 · <img src="img/currency/Exp.png" alt="Exp" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 128,000</td></tr></tbody></table></div><h3>광부 <span class="small">(Miner · 총 20단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>Miner_00</td><td class="num">1</td><td>무료</td><td>없음</td><td class="num">160</td><td>60초</td><td>Miner_00</td><td> 1</td></tr><tr><td>Miner_01</td><td class="num">2</td><td>무료</td><td>없음</td><td class="num">960</td><td>60초</td><td>Miner_01</td><td> 1</td></tr><tr><td>Miner_02</td><td class="num">3</td><td>무료</td><td>없음</td><td class="num">3,840</td><td>60초</td><td>Miner_02</td><td> 1</td></tr><tr><td>Miner_03</td><td class="num">4</td><td>무료</td><td>없음</td><td class="num">16,000</td><td>60초</td><td>Miner_03</td><td> 1</td></tr><tr><td>Miner_04</td><td class="num">5</td><td>무료</td><td>없음</td><td class="num">53,760</td><td>60초</td><td>Miner_04</td><td> 1</td></tr><tr><td>Miner_05</td><td class="num">6</td><td>무료</td><td>없음</td><td class="num">204,800</td><td>60초</td><td>Miner_05</td><td> 1</td></tr></tbody></table></div><h3>무한의 탑 <span class="small">(InfiniteTower · 총 20단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>InfiniteTower_01</td><td class="num">1</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2</td><td>없음</td><td class="num">400</td><td>60초</td><td>BigPigIron</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 100</td></tr><tr><td>InfiniteTower_02</td><td class="num">2</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 4</td><td>없음</td><td class="num">4,800</td><td>60초</td><td>BigPigIron</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 250</td></tr><tr><td>InfiniteTower_03</td><td class="num">3</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 6</td><td>없음</td><td class="num">38,400</td><td>60초</td><td>BigPigIron</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 400</td></tr><tr><td>InfiniteTower_04</td><td class="num">4</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 8</td><td>없음</td><td class="num">240,000</td><td>60초</td><td>BigPigIron</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 550</td></tr><tr><td>InfiniteTower_05</td><td class="num">5</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 10</td><td>없음</td><td class="num">1,075,200</td><td>60초</td><td>BigPigFire</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 700</td></tr><tr><td>InfiniteTower_06</td><td class="num">6</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 12</td><td>없음</td><td class="num">4,096,000</td><td>60초</td><td>BigPigFire</td><td><img src="img/currency/Clover.png" alt="Clover" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 850</td></tr></tbody></table></div><h3>동굴 <span class="small">(Cave · 총 1단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>Cave</td><td class="num">0</td><td><img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 1</td><td>없음</td><td class="num">100,231</td><td>10초</td><td>—</td><td>—</td></tr></tbody></table></div><h3>콜로세움 <span class="small">(Colosseum · 총 1단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>Colosseum</td><td class="num">1</td><td>무료</td><td>없음</td><td class="num">0</td><td>60초</td><td>BIgBear</td><td><img src="img/currency/InfiniteStone.png" alt="InfiniteStone" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 100</td></tr></tbody></table></div><h3>승급 <span class="small">(Promotion · 총 10단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>Promotion_01</td><td class="num">1</td><td>무료</td><td>없음</td><td class="num">585,937,500</td><td>60초</td><td>DevilPig</td><td>—</td></tr><tr><td>Promotion_02</td><td class="num">2</td><td>무료</td><td>없음</td><td class="num">1,875,000,000</td><td>60초</td><td>DevilPig</td><td>—</td></tr><tr><td>Promotion_03</td><td class="num">3</td><td>무료</td><td>없음</td><td class="num">5,859,375,000</td><td>60초</td><td>DevilPig</td><td>—</td></tr><tr><td>Promotion_04</td><td class="num">4</td><td>무료</td><td>없음</td><td class="num">17,578,125,000</td><td>60초</td><td>DevilPig</td><td>—</td></tr><tr><td>Promotion_05</td><td class="num">5</td><td>무료</td><td>없음</td><td class="num">51,269,531,250</td><td>60초</td><td>DevilPig</td><td>—</td></tr><tr><td>Promotion_06</td><td class="num">6</td><td>무료</td><td>없음</td><td class="num">146,484,375,000</td><td>60초</td><td>DevilPig</td><td>—</td></tr></tbody></table></div><h3>하늘신전 <span class="small">(SkyTemple · 총 10단계, 아래는 1~6단계)</span></h3><div class="tw"><table><thead><tr><th>단계</th><th class="num">Lv</th><th>입장 비용</th><th>요구 레벨</th><th class="num">몬스터 체력</th><th>제한시간</th><th>보스</th><th>보상</th></tr></thead><tbody><tr><td>하늘 신전 I - 천사 꿀이의 추억</td><td class="num">1</td><td>무료</td><td>Lv.150</td><td class="num">50,790,400</td><td>600초</td><td>—</td><td><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 2</td></tr><tr><td>하늘 신전 II - 천사 꿀이의 망각</td><td class="num">2</td><td>무료</td><td>Lv.200</td><td class="num">145,489,920</td><td>600초</td><td>—</td><td><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 4</td></tr><tr><td>하늘 신전 III - 천사 꿀이의 분노</td><td class="num">3</td><td>무료</td><td>Lv.250</td><td class="num">394,526,720</td><td>600초</td><td>—</td><td><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 6</td></tr><tr><td>하늘 신전 IV - 천사 꿀이의 후회</td><td class="num">4</td><td>무료</td><td>Lv.300</td><td class="num">1,048,576,000</td><td>600초</td><td>—</td><td><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 8</td></tr><tr><td>하늘 신전 V - 천사 꿀이의 우울</td><td class="num">5</td><td>무료</td><td>Lv.350</td><td class="num">2,689,597,440</td><td>600초</td><td>—</td><td><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 10</td></tr><tr><td>하늘 신전 VI - 악마 꿀이의 추억</td><td class="num">6</td><td>무료</td><td>Lv.400</td><td class="num">6,815,744,000</td><td>600초</td><td>—</td><td><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 12</td></tr></tbody></table></div>
+<p class="small">전체 102행은 <a href="data/csv/TBL_DUNGEON.csv">TBL_DUNGEON.csv</a>에서 볼 수 있습니다.</p>
+
+<div class="pager"><a href="06_growth.html">← 성장 밸런스</a><a href="08_events.html">인게임 이벤트 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">던전 8종 요약</span></li><li class="dot" data-i="2"><span class="tip">동굴 던전 드랍 테이블</span></li><li class="dot" data-i="3"><span class="tip">⚠ 미입력 컬럼 2개</span></li><li class="dot" data-i="4"><span class="tip">난이도 곡선 (TBL_CONST)</span></li><li class="dot" data-i="5"><span class="tip">던전별 상세 (실측)</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

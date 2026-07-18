@@ -1,0 +1,7 @@
+﻿name,MissionType,ReportType,CompleteCount,RewardType,RewardAmount,NameText,DescriptionText
+몬스터 처치,MonsterKill,Add,500.0,Ruby,200.0,Quest.Name.MonsterKill,Quest.Description.MonsterKill
+무기 모으기,SwordAdd,Add,50.0,Ruby,300.0,Quest.Name.SwordAdd,Quest.Description.SwordAdd
+방패 모으기,ShieldAdd,Add,50.0,Ruby,300.0,Quest.Name.ShieldAdd,Quest.Description.ShieldAdd
+장비 합성,EquipmentCompose,Add,30.0,Ruby,300.0,Quest.Name.EquipmentCompose,Quest.Description.EquipmentCompose
+던전 도전,ChallengeDungeon,Add,20.0,Ruby,500.0,Quest.Name.ChallengeDungeon,Quest.Description.ChallengeDungeon
+퀘스트 보상,QuestReward,Add,5.0,Ruby,500.0,Quest.Name.QuestReward,Quest.Description.QuestReward

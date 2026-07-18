@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>테이블 데이터 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html" class="on">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">13 · Table Data</p>
+<h1>테이블 데이터</h1>
+<p class="lead">게임의 데이터 테이블은 <strong>BGDatabase</strong> 포맷의 바이너리 단일 파일
+(<code>bansheegz_database.bytes</code>, 415KB)에 들어 있습니다.
+공개 파서가 없어 <strong>포맷을 직접 역분석해 파서를 작성</strong>했습니다.</p>
+
+<div class="grid g4">
+  <div class="stat"><div class="k">테이블</div><div class="v">69 / 69</div><div class="s">전부 파싱</div></div>
+  <div class="stat"><div class="k">필드</div><div class="v">545 / 545</div><div class="s">UNPARSED 0건</div></div>
+  <div class="stat"><div class="k">총 행 수</div><div class="v">4,495</div><div class="s">전 테이블 합</div></div>
+  <div class="stat"><div class="k">검증</div><div class="v">코드젠 대조</div><div class="s">66개 테이블 전부 일치</div></div>
+</div>
+<div class="fact"><strong>검증 방법</strong> — 파싱한 필드명·타입을 게임 코드(IL2CPP 덤프)의
+BGDatabase 코드젠 클래스와 <strong>기계적으로 대조</strong>했습니다. 표의 “codegen match”가 그 결과이며,
+게임 고유 테이블 <strong>66개 전부 OK</strong>입니다. 즉 이 데이터는 추측이 아니라
+<strong>게임이 실제로 읽는 값과 동일</strong>합니다.</div>
+
+<h2>상점 테이블 원본 (TBL_SHOP · 61행 중 26행)</h2>
+<div class="tw"><table><thead><tr><th>상품명</th><th>탭</th><th>ProductID</th><th>보상</th><th>결제</th></tr></thead><tbody><tr><td>황금 티켓 x1</td><td><span class="chip">AD</span></td><td><code>Ad_GoldTicket</code></td><td>GoldTicket=1.0</td><td>—</td></tr><tr><td>고기 x 20</td><td><span class="chip">AD</span></td><td><code>Ad_Pork</code></td><td>Pork=20.0</td><td>—</td></tr><tr><td>열쇠 x10</td><td><span class="chip">AD</span></td><td><code>Ad_Key</code></td><td>Key=10.0</td><td>—</td></tr><tr><td>루비 x300</td><td><span class="chip">AD</span></td><td><code>Ad_Ruby</code></td><td>Ruby=300.0</td><td>—</td></tr><tr><td>루비 1,000개</td><td><span class="chip">Ruby</span></td><td><code>ruby_1000</code></td><td>Mileage=20.0;Ruby=1000.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>루비 3,000개</td><td><span class="chip">Ruby</span></td><td><code>ruby_3000</code></td><td>Mileage=50.0;Ruby=3000.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>루비 6,500개</td><td><span class="chip">Ruby</span></td><td><code>ruby_6500</code></td><td>Mileage=1000.0;Ruby=6500.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>루비 21,000개</td><td><span class="chip">Ruby</span></td><td><code>infinitedamagebless</code></td><td>Mileage=300.0;Ruby=21000.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>루비 45,000개</td><td><span class="chip">Ruby</span></td><td><code>ruby_45000</code></td><td>Mileage=600.0;Ruby=90000.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>보석 100,000개</td><td><span class="chip">Ruby</span></td><td><code>ruby_100000</code></td><td>Mileage=1200.0;Ruby=200000.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>무한 광고 제거</td><td><span class="chip">Package</span></td><td><code>adremove</code></td><td>Mileage=100.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>무한 공격의 축복 패키지</td><td><span class="chip">Package</span></td><td><code>infinitedamagebless</code></td><td>Mileage=100.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>무한 생명의 축복 패키지</td><td><span class="chip">Package</span></td><td><code>infinitehealthbless</code></td><td>Mileage=100.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>무한 탐욕의 축복 패키지</td><td><span class="chip">Package</span></td><td><code>infinitegoldbless</code></td><td>Mileage=100.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>무한 경험의 축복 패키지</td><td><span class="chip">Package</span></td><td><code>infiniteexpbless</code></td><td>Mileage=100.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>무한 채굴의 축복 패키지</td><td><span class="chip">Package</span></td><td><code>infiniteminingbless</code></td><td>Mileage=100.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>고기 x50</td><td><span class="chip">Mileage</span></td><td><code>Mileage_Item</code></td><td>Pork=50.0</td><td>—</td></tr><tr><td>루비 x10,000</td><td><span class="chip">Mileage</span></td><td><code>Mileage_Item</code></td><td>Ruby=10000.0</td><td>—</td></tr><tr><td>스킵권 x20</td><td><span class="chip">Mileage</span></td><td><code>Mileage_Item</code></td><td>SkipTicket=20.0</td><td>—</td></tr><tr><td>열쇠 x50</td><td><span class="chip">Mileage</span></td><td><code>Mileage_Item</code></td><td>Key=50.0</td><td>—</td></tr><tr><td>황금 티켓 x5</td><td><span class="chip">Mileage</span></td><td><code>Mileage_Item</code></td><td>GoldTicket=5.0</td><td>—</td></tr><tr><td>주사위 x5,000</td><td><span class="chip">Mileage</span></td><td><code>Mileage_Item</code></td><td>Dice=5000.0</td><td>—</td></tr><tr><td>뿅망치 x50</td><td><span class="chip">Mileage</span></td><td><code>Mileage_Item</code></td><td>ToyHammer=50.0</td><td>—</td></tr><tr><td>고속 <color=#F11F1F>스타트</color> 패키지 I</td><td><span class="chip">Event</span></td><td><code>firstpremium1</code></td><td>Ruby=10000.0;RandomEquipment_Legend=1.0;PigJelly=250000000000.0;Mileage=100.0;Gold=500000000000.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>고속 <color=#F11F1F>스타트</color> 패키지 II</td><td><span class="chip">Event</span></td><td><code>firstpremium2</code></td><td>PigJelly=1250000000000.0;Gold=2500000000000.0;Mileage=500.0;Ruby=50000.0</td><td><span class="chip ruby">IAP</span></td></tr><tr><td>고속 <color=#F11F1F>스타트</color> 패키지 III</td><td><span class="chip">Event</span></td><td><code>firstpremium3</code></td><td>RandomEquipment_Legend=1.0;PigJelly=2500000000000.0;Gold=5000000000000.0;Mileage=1000.0;Ruby=100000.0</td><td><span class="chip ruby">IAP</span></td></tr></tbody></table></div>
+<p class="small">전체는 <a href="data/csv/TBL_SHOP.csv">TBL_SHOP.csv</a> 참고.</p>
+
+<h2>전체 테이블 목록</h2>
+<div class="tw"><table><thead><tr><th>테이블</th><th class="num">행</th><th class="num">필드</th><th>파싱</th><th>다운로드</th></tr></thead><tbody><tr><td><code>TBL_STAGE</code></td><td class="num">50</td><td class="num">24</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_STAGE.csv">TBL_STAGE.csv</a></td></tr><tr><td><code>TBL_TEXT</code></td><td class="num">299</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_TEXT.csv">TBL_TEXT.csv</a></td></tr><tr><td><code>TBL_MONSTER</code></td><td class="num">59</td><td class="num">9</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_MONSTER.csv">TBL_MONSTER.csv</a></td></tr><tr><td><code>TBL_ROYAL_GROWTH</code></td><td class="num">13</td><td class="num">12</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_GROWTH.csv">TBL_ROYAL_GROWTH.csv</a></td></tr><tr><td><code>TBL_ROYAL_LEVEL</code></td><td class="num">600</td><td class="num">2</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_LEVEL.csv">TBL_ROYAL_LEVEL.csv</a></td></tr><tr><td><code>TBL_ROYAL_PROMOTION</code></td><td class="num">11</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_PROMOTION.csv">TBL_ROYAL_PROMOTION.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_WEAPON</code></td><td class="num">28</td><td class="num">14</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EQUIPMENT_WEAPON.csv">TBL_EQUIPMENT_WEAPON.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_SHIELD</code></td><td class="num">28</td><td class="num">14</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EQUIPMENT_SHIELD.csv">TBL_EQUIPMENT_SHIELD.csv</a></td></tr><tr><td><code>TBL_QUEST_REPEAT</code></td><td class="num">6</td><td class="num">8</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_QUEST_REPEAT.csv">TBL_QUEST_REPEAT.csv</a></td></tr><tr><td><code>TBL_QUEST_DAILY</code></td><td class="num">11</td><td class="num">8</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_QUEST_DAILY.csv">TBL_QUEST_DAILY.csv</a></td></tr><tr><td><code>TBL_QUEST_WEEKLY</code></td><td class="num">12</td><td class="num">8</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_QUEST_WEEKLY.csv">TBL_QUEST_WEEKLY.csv</a></td></tr><tr><td><code>TBL_ACHIEVEMENT</code></td><td class="num">5</td><td class="num">9</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ACHIEVEMENT.csv">TBL_ACHIEVEMENT.csv</a></td></tr><tr><td><code>TBL_GUIDE_MISSION</code></td><td class="num">647</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_GUIDE_MISSION.csv">TBL_GUIDE_MISSION.csv</a></td></tr><tr><td><code>TBL_ATTENDANCE</code></td><td class="num">30</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ATTENDANCE.csv">TBL_ATTENDANCE.csv</a></td></tr><tr><td><code>TBL_MINER</code></td><td class="num">20</td><td class="num">14</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_MINER.csv">TBL_MINER.csv</a></td></tr><tr><td><code>TBL_EVENT_ATTENDANCE_REWARD</code></td><td class="num">0</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EVENT_ATTENDANCE_REWARD.csv">TBL_EVENT_ATTENDANCE_REWARD.csv</a></td></tr><tr><td><code>TBL_BLESS</code></td><td class="num">5</td><td class="num">5</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_BLESS.csv">TBL_BLESS.csv</a></td></tr><tr><td><code>TBL_BLESS_LEVEL</code></td><td class="num">22</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_BLESS_LEVEL.csv">TBL_BLESS_LEVEL.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_ACC</code></td><td class="num">23</td><td class="num">14</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EQUIPMENT_ACC.csv">TBL_EQUIPMENT_ACC.csv</a></td></tr><tr><td><code>TBL_ARTIFACT</code></td><td class="num">15</td><td class="num">14</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ARTIFACT.csv">TBL_ARTIFACT.csv</a></td></tr><tr><td><code>TBL_PASS_LEVEL</code></td><td class="num">10</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_PASS_LEVEL.csv">TBL_PASS_LEVEL.csv</a></td></tr><tr><td><code>TBL_PASS_STAGE</code></td><td class="num">10</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_PASS_STAGE.csv">TBL_PASS_STAGE.csv</a></td></tr><tr><td><code>TBL_ABILITY</code></td><td class="num">46</td><td class="num">7</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ABILITY.csv">TBL_ABILITY.csv</a></td></tr><tr><td><code>TBL_YOUTUBE</code></td><td class="num">3</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_YOUTUBE.csv">TBL_YOUTUBE.csv</a></td></tr><tr><td><code>TBL_DUNGEON</code></td><td class="num">102</td><td class="num">29</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_DUNGEON.csv">TBL_DUNGEON.csv</a></td></tr><tr><td><code>TBL_HERO</code></td><td class="num">9</td><td class="num">17</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_HERO.csv">TBL_HERO.csv</a></td></tr><tr><td><code>TBL_CONST</code></td><td class="num">102</td><td class="num">2</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_CONST.csv">TBL_CONST.csv</a></td></tr><tr><td><code>TBL_ROYAL_FORCE</code></td><td class="num">9</td><td class="num">11</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_FORCE.csv">TBL_ROYAL_FORCE.csv</a></td></tr><tr><td><code>TBL_ROYAL_MASTERY</code></td><td class="num">55</td><td class="num">13</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_MASTERY.csv">TBL_ROYAL_MASTERY.csv</a></td></tr><tr><td><code>TBL_HERO_PASSIVE</code></td><td class="num">22</td><td class="num">8</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_HERO_PASSIVE.csv">TBL_HERO_PASSIVE.csv</a></td></tr><tr><td><code>TBL_STAGE_GROUP</code></td><td class="num">10</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_STAGE_GROUP.csv">TBL_STAGE_GROUP.csv</a></td></tr><tr><td><code>TBL_SKILL</code></td><td class="num">22</td><td class="num">23</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_SKILL.csv">TBL_SKILL.csv</a></td></tr><tr><td><code>TBL_QUEST_TOP</code></td><td class="num">6</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_QUEST_TOP.csv">TBL_QUEST_TOP.csv</a></td></tr><tr><td><code>TBL_RUNE</code></td><td class="num">18</td><td class="num">12</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_RUNE.csv">TBL_RUNE.csv</a></td></tr><tr><td><code>TBL_SHOP</code></td><td class="num">61</td><td class="num">17</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_SHOP.csv">TBL_SHOP.csv</a></td></tr><tr><td><code>TBL_MOLE_REWARD</code></td><td class="num">11</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_MOLE_REWARD.csv">TBL_MOLE_REWARD.csv</a></td></tr><tr><td><code>TBL_STAGE_MAP</code></td><td class="num">6</td><td class="num">11</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_STAGE_MAP.csv">TBL_STAGE_MAP.csv</a></td></tr><tr><td><code>TBL_DUNGEON_CAVE_REWARD</code></td><td class="num">8</td><td class="num">5</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_DUNGEON_CAVE_REWARD.csv">TBL_DUNGEON_CAVE_REWARD.csv</a></td></tr><tr><td><code>TBL_ROYAL_GROWTH_LEVEL</code></td><td class="num">174</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_GROWTH_LEVEL.csv">TBL_ROYAL_GROWTH_LEVEL.csv</a></td></tr><tr><td><code>TBL_ROYAL_FORCE_LEVEL</code></td><td class="num">18</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_FORCE_LEVEL.csv">TBL_ROYAL_FORCE_LEVEL.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_LEVEL</code></td><td class="num">22</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EQUIPMENT_LEVEL.csv">TBL_EQUIPMENT_LEVEL.csv</a></td></tr><tr><td><code>TBL_TIP</code></td><td class="num">33</td><td class="num">9</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_TIP.csv">TBL_TIP.csv</a></td></tr><tr><td><code>TBL_ATTENDANCE_SEVEN</code></td><td class="num">7</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ATTENDANCE_SEVEN.csv">TBL_ATTENDANCE_SEVEN.csv</a></td></tr><tr><td><code>TBL_SERVER</code></td><td class="num">6</td><td class="num">9</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_SERVER.csv">TBL_SERVER.csv</a></td></tr><tr><td><code>TBL_SYMBOL</code></td><td class="num">5</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_SYMBOL.csv">TBL_SYMBOL.csv</a></td></tr><tr><td><code>TBL_ROYAL_MASTERY_BATTLE</code></td><td class="num">45</td><td class="num">12</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_MASTERY_BATTLE.csv">TBL_ROYAL_MASTERY_BATTLE.csv</a></td></tr><tr><td><code>TBL_ROYAL_MASTERY_UTILE</code></td><td class="num">18</td><td class="num">12</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_MASTERY_UTILE.csv">TBL_ROYAL_MASTERY_UTILE.csv</a></td></tr><tr><td><code>TBL_ROYAL_MASTERY_BONUS</code></td><td class="num">30</td><td class="num">12</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_MASTERY_BONUS.csv">TBL_ROYAL_MASTERY_BONUS.csv</a></td></tr><tr><td><code>TBL_ROYAL_MASTERY_LEVEL</code></td><td class="num">31</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ROYAL_MASTERY_LEVEL.csv">TBL_ROYAL_MASTERY_LEVEL.csv</a></td></tr><tr><td><code>TBL_BINGO_REWARD_NORMAL</code></td><td class="num">25</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_BINGO_REWARD_NORMAL.csv">TBL_BINGO_REWARD_NORMAL.csv</a></td></tr><tr><td><code>TBL_BINGO_REWARD_SPECIAL</code></td><td class="num">11</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_BINGO_REWARD_SPECIAL.csv">TBL_BINGO_REWARD_SPECIAL.csv</a></td></tr><tr><td><code>TBL_BINGO_REWARD_BONUS</code></td><td class="num">22</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_BINGO_REWARD_BONUS.csv">TBL_BINGO_REWARD_BONUS.csv</a></td></tr><tr><td><code>TBL_EVENT_LEVEL</code></td><td class="num">4</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EVENT_LEVEL.csv">TBL_EVENT_LEVEL.csv</a></td></tr><tr><td><code>TBL_EVENT_LEVEL_DATA</code></td><td class="num">119</td><td class="num">7</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EVENT_LEVEL_DATA.csv">TBL_EVENT_LEVEL_DATA.csv</a></td></tr><tr><td><code>TBL_EVENT_STAGE</code></td><td class="num">3</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EVENT_STAGE.csv">TBL_EVENT_STAGE.csv</a></td></tr><tr><td><code>TBL_EVENT_STAGE_DATA</code></td><td class="num">75</td><td class="num">7</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EVENT_STAGE_DATA.csv">TBL_EVENT_STAGE_DATA.csv</a></td></tr><tr><td><code>TBL_DICE_GAME</code></td><td class="num">16</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_DICE_GAME.csv">TBL_DICE_GAME.csv</a></td></tr><tr><td><code>TBL_DICE_BONUS_REWARD</code></td><td class="num">21</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_DICE_BONUS_REWARD.csv">TBL_DICE_BONUS_REWARD.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_BONUS_WRAP</code></td><td class="num">3</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EQUIPMENT_BONUS_WRAP.csv">TBL_EQUIPMENT_BONUS_WRAP.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_BONUS</code></td><td class="num">96</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_EQUIPMENT_BONUS.csv">TBL_EQUIPMENT_BONUS.csv</a></td></tr><tr><td><code>TBL_MOLE_BONUS</code></td><td class="num">24</td><td class="num">4</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_MOLE_BONUS.csv">TBL_MOLE_BONUS.csv</a></td></tr><tr><td><code>Localization</code></td><td class="num">1</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/Localization.csv">Localization.csv</a></td></tr><tr><td><code>Locale</code></td><td class="num">5</td><td class="num">2</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/Locale.csv">Locale.csv</a></td></tr><tr><td><code>TBL_ADVENTURE</code></td><td class="num">70</td><td class="num">18</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ADVENTURE.csv">TBL_ADVENTURE.csv</a></td></tr><tr><td><code>TBL_ADVENTURE_GROUP</code></td><td class="num">7</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ADVENTURE_GROUP.csv">TBL_ADVENTURE_GROUP.csv</a></td></tr><tr><td><code>TBL_ATTENDANCE_BUFF</code></td><td class="num">12</td><td class="num">6</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ATTENDANCE_BUFF.csv">TBL_ATTENDANCE_BUFF.csv</a></td></tr><tr><td><code>TBL_COLLECTION_MONSTER</code></td><td class="num">1</td><td class="num">5</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_COLLECTION_MONSTER.csv">TBL_COLLECTION_MONSTER.csv</a></td></tr><tr><td><code>TBL_ATTENDANCE_BUFF_BONUS</code></td><td class="num">10</td><td class="num">3</td><td><span class="chip jade">완전</span></td><td><a href="data/csv/TBL_ATTENDANCE_BUFF_BONUS.csv">TBL_ATTENDANCE_BUFF_BONUS.csv</a></td></tr><tr><td><code>TBL_EVENT_LEVEL_DATA</code></td><td class="num">44</td><td class="num">Nested->TBL_EVENT_LEVEL_DATA</td><td><span class="chip orange">일부 4필드 미해석</span></td><td><a href="data/csv/TBL_EVENT_LEVEL_DATA.csv">TBL_EVENT_LEVEL_DATA.csv</a></td></tr><tr><td><code>TBL_EVENT_LEVEL</code></td><td class="num">46</td><td class="num">RelationSingle->TBL_EVENT_LEVEL</td><td><span class="chip orange">일부 2860필드 미해석</span></td><td><a href="data/csv/TBL_EVENT_LEVEL.csv">TBL_EVENT_LEVEL.csv</a></td></tr><tr><td><code>TBL_EVENT_STAGE_DATA</code></td><td class="num">44</td><td class="num">Nested->TBL_EVENT_STAGE_DATA</td><td><span class="chip orange">일부 4필드 미해석</span></td><td><a href="data/csv/TBL_EVENT_STAGE_DATA.csv">TBL_EVENT_STAGE_DATA.csv</a></td></tr><tr><td><code>TBL_EVENT_STAGE</code></td><td class="num">46</td><td class="num">RelationSingle->TBL_EVENT_STAGE</td><td><span class="chip orange">일부 1804필드 미해석</span></td><td><a href="data/csv/TBL_EVENT_STAGE.csv">TBL_EVENT_STAGE.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_BONUS</code></td><td class="num">44</td><td class="num">Nested->TBL_EQUIPMENT_BONUS</td><td><span class="chip orange">일부 4필드 미해석</span></td><td><a href="data/csv/TBL_EQUIPMENT_BONUS.csv">TBL_EQUIPMENT_BONUS.csv</a></td></tr><tr><td><code>TBL_EQUIPMENT_BONUS_WRAP</code></td><td class="num">46</td><td class="num">RelationSingle->TBL_EQUIPMENT_BONUS_WRAP</td><td><span class="chip orange">일부 2308필드 미해석</span></td><td><a href="data/csv/TBL_EQUIPMENT_BONUS_WRAP.csv">TBL_EQUIPMENT_BONUS_WRAP.csv</a></td></tr><tr><td><code>Locale</code></td><td class="num">44</td><td class="num">Nested->Locale</td><td><span class="chip orange">일부 4필드 미해석</span></td><td><a href="data/csv/Locale.csv">Locale.csv</a></td></tr><tr><td><code>Localization</code></td><td class="num">46</td><td class="num">RelationSingle->Localization</td><td><span class="chip orange">일부 124필드 미해석</span></td><td><a href="data/csv/Localization.csv">Localization.csv</a></td></tr></tbody></table></div>
+
+<h2>포맷 해설 — BGDatabase 바이너리</h2>
+<p>역분석으로 확인한 구조입니다. 모든 정수는 little-endian int32, 문자열은 <code>길이(int32) + UTF-8</code>입니다.</p>
+<div class="card">
+<p style="margin:0 0 8px"><strong>파일 헤더</strong> — 버전(7) + GUID(16B) + 애드온 메타
+(<code>BGAddonCodeGen</code>, <code>BGAddonLocalization</code>, 원본 경로 <code>Assets/01_Script/DataTable/DataTable.cs</code>)</p>
+<p style="margin:0 0 8px"><strong>핵심 발견</strong> — 테이블(meta) 레코드와 필드 레코드가 <strong>완전히 동일한 레이아웃</strong>을
+쓰고, int16 타입코드로 구분됩니다:</p>
+<pre style="margin:0 0 8px;background:var(--bg2);padding:12px;border-radius:8px;overflow-x:auto;font-size:12.5px;color:var(--jade)">int32 marker(=3) | int16 typeCode | guid16 | string name
+int32 cfgLen + cfg | byte flag | string annotation | byte[PAD]  (meta 8 / field 18)
+int32 blobLen + blob</pre>
+<p style="margin:0 0 8px"><strong>페이로드</strong> — 고정폭 타입은 <code>blobLen == 행수 × 폭</code>의 raw 배열.
+가변 타입은 <code>int32 count + count×(행인덱스, 끝오프셋) + packed</code> —
+<strong>문자열·관계·해시테이블·중첩이 전부 이 하나의 레이아웃</strong>을 씁니다.</p>
+<p style="margin:0"><strong>타입코드</strong> — <code>9</code>=Enum, <code>25</code>=Bool, <code>28</code>=Double,
+<code>29</code>=Float, <code>31</code>=Int, <code>34</code>=String, <code>44</code>=Nested,
+<code>45/46</code>=Relation, <code>47</code>=EntityName, <code>61</code>=Color,
+<code>8</code>=Hashtable, <code>85</code>=LocalizedString</p>
+</div>
+<p class="small">파서 소스: <code>D:\newgaems\_work\bgdb_parser.py</code> — 스캔/휴리스틱 없는 <strong>순차 파서</strong>입니다.
+모든 meta가 <strong>바이트 단위로 정확히 다음 meta의 marker에 착지</strong>하며(재동기화 0회),
+순회가 EOF 4바이트 앞(제로 터미네이터)에서 끝납니다. 이것이 포맷 해석이 옳다는 가장 강한 증거입니다.</p>
+
+<h2>파싱 결과 — 잔여 없음</h2>
+<div class="fact"><strong>69개 테이블 · 545개 필드 전부 해석 완료. UNPARSED 0건.</strong>
+로케일 파일 5종도 동일한 컨테이너를 써서 같은 파서로 처리됐고, 행 GUID가 일치해
+<code>LocalizedString</code>(코드 85) 컬럼에 그대로 접합됩니다.
+QA 스윕 결과 미매핑 enum 0건, 미해결 관계 GUID 0건입니다.</div>
+<div class="warn"><strong>단, 두 가지는 “디코딩”이 아니라 “유도”입니다</strong> (파서 소스에 명시):
+<strong>①</strong> 중첩(Nested) 컬럼 3개는 디스크에 실제로 아무것도 저장하지 않습니다(빈 페이로드로 검증됨) —
+자식 테이블의 역관계를 뒤집어 채웠습니다. 자식 테이블 자체는 독립 추출됐고 그쪽이 정본입니다.
+<strong>②</strong> 타입 <em>이름</em>은 코드젠 클래스에서 왔습니다. 다만 타입 <em>크기</em>는
+<code>blobLen == 행수 × 폭</code>으로 바이너리가 독립 증명하므로, 레이아웃 자체는 디컴파일에 의존하지 않습니다.</div>
+<div class="note"><strong>빈 테이블 1건</strong> — <code>TBL_EVENT_ATTENDANCE_REWARD</code>는 <strong>0행</strong>입니다.
+파싱 실패가 아니라 <strong>데이터가 진짜로 비어 있음</strong>을 검증했습니다
+(행 GUID 블록 길이 0, 모든 필드 블롭 비어 있음). 이벤트 출석 보상이 아직 미입력이라는 뜻입니다.</div>
+
+<div class="pager"><a href="12_tech.html">← 기술 스택</a><a href="14_method.html">방법론과 한계 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">상점 테이블 원본 (TBL_SHOP · </span></li><li class="dot" data-i="2"><span class="tip">전체 테이블 목록</span></li><li class="dot" data-i="3"><span class="tip">포맷 해설</span></li><li class="dot" data-i="4"><span class="tip">파싱 결과</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

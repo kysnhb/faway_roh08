@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>콘텐츠 흐름도 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html" class="on">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">03 · Content Flow</p>
+<h1>콘텐츠 흐름도</h1>
+<p class="lead">유저가 레벨을 올리며 <strong>언제 무엇을 만나는지</strong>를 실제 해금 수치
+(<code>TBL_CONST</code>의 <code>UNLOCK_LEVEL_*</code> 13개)로 그린 것입니다.</p>
+
+<h2>해금 타임라인</h2>
+<div class="flow">
+<svg viewBox="0 0 960 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="콘텐츠 해금 타임라인">
+  <line x1="60" y1="250" x2="920" y2="250" stroke="#FFD9E6" stroke-width="6" stroke-linecap="round"/>
+  <text x="40" y="255" text-anchor="end" font-size="12" fill="#9e9e9e">Lv.1</text>
+  <text x="935" y="255" text-anchor="start" font-size="12" fill="#9e9e9e">160</text>
+  <rect x="60" y="243" width="215.0" height="14" rx="7" fill="#F86B9D" opacity=".85"/>
+  <text x="167.5" y="378" text-anchor="middle" font-size="12" fill="#E93C7A">Lv.3~40 · 11개 집중</text>
+  <rect x="275.0" y="245" width="430.0" height="10" rx="5" fill="#DFDFDF"/>
+  <text x="490.0" y="378" text-anchor="middle" font-size="12" fill="#9e9e9e">Lv.40~120 · 공백 80레벨</text>
+  
+    <line x1="76.1" y1="250" x2="76.1" y2="190" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="76.1" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="34.1" y="156.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="76.1" y="174.0" text-anchor="middle" font-size="12" fill="#E93C7A">장비</text>
+    <text x="76.1" y="164.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.3</text>
+    <line x1="86.9" y1="250" x2="86.9" y2="310" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="86.9" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="44.9" y="310.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="86.9" y="328.0" text-anchor="middle" font-size="12" fill="#E93C7A">보물</text>
+    <text x="86.9" y="340.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.5</text>
+    <line x1="97.6" y1="250" x2="97.6" y2="190" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="97.6" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="55.6" y="156.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="97.6" y="174.0" text-anchor="middle" font-size="12" fill="#E93C7A">던전</text>
+    <text x="97.6" y="164.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.7</text>
+    <line x1="97.6" y1="250" x2="97.6" y2="310" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="97.6" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="55.6" y="310.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="97.6" y="328.0" text-anchor="middle" font-size="12" fill="#E93C7A">모험</text>
+    <text x="97.6" y="340.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.7</text>
+    <line x1="113.8" y1="250" x2="113.8" y2="190" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="113.8" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="71.8" y="156.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="113.8" y="174.0" text-anchor="middle" font-size="12" fill="#E93C7A">영웅</text>
+    <text x="113.8" y="164.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.10</text>
+    <line x1="140.6" y1="250" x2="140.6" y2="310" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="140.6" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="98.6" y="310.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="140.6" y="328.0" text-anchor="middle" font-size="12" fill="#E93C7A">무한의 탑</text>
+    <text x="140.6" y="340.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.15</text>
+    <line x1="167.5" y1="250" x2="167.5" y2="190" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="167.5" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="125.5" y="156.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="167.5" y="174.0" text-anchor="middle" font-size="12" fill="#E93C7A">동굴</text>
+    <text x="167.5" y="164.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.20</text>
+    <line x1="167.5" y1="250" x2="167.5" y2="310" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="167.5" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="125.5" y="310.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="167.5" y="328.0" text-anchor="middle" font-size="12" fill="#E93C7A">채팅</text>
+    <text x="167.5" y="340.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.20</text>
+    <line x1="221.2" y1="250" x2="221.2" y2="190" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="221.2" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="179.2" y="156.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="221.2" y="174.0" text-anchor="middle" font-size="12" fill="#E93C7A">콜로세움</text>
+    <text x="221.2" y="164.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.30</text>
+    <line x1="221.2" y1="250" x2="221.2" y2="310" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="221.2" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="179.2" y="310.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="221.2" y="328.0" text-anchor="middle" font-size="12" fill="#E93C7A">쿠폰</text>
+    <text x="221.2" y="340.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.30</text>
+    <line x1="275.0" y1="250" x2="275.0" y2="190" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="275.0" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="233.0" y="156.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="275.0" y="174.0" text-anchor="middle" font-size="12" fill="#E93C7A">채굴</text>
+    <text x="275.0" y="164.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.40</text>
+    <line x1="705.0" y1="250" x2="705.0" y2="310" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="705.0" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="663.0" y="310.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="705.0" y="328.0" text-anchor="middle" font-size="12" fill="#E93C7A">장신구</text>
+    <text x="705.0" y="340.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.120</text>
+    <line x1="866.2" y1="250" x2="866.2" y2="190" stroke="#F86B9D" stroke-width="2"/>
+    <circle cx="866.2" cy="250" r="7" fill="#F86B9D" stroke="#fff" stroke-width="2.5"/>
+    <rect x="824.2" y="156.0" width="84" height="26" rx="13"
+          fill="#fff" stroke="#F86B9D" stroke-width="2"/>
+    <text x="866.2" y="174.0" text-anchor="middle" font-size="12" fill="#E93C7A">아티팩트</text>
+    <text x="866.2" y="164.0" text-anchor="middle" font-size="11" fill="#9e9e9e">Lv.150</text>
+</svg>
+</div>
+
+<div class="warn"><strong>공백 구간이 눈에 보입니다.</strong>
+13개 해금 중 <strong>11개가 Lv.40 안에</strong> 몰려 있고,
+Lv.40 → Lv.120 <strong>80레벨 동안 새 시스템이 하나도 없습니다</strong>.
+남은 둘은 장신구(120)·아티팩트(150)입니다.
+<a href="10_market.html">유저의 40%가 “빠른 성장”을 이유로 방치형을 고른다</a>는 조사와 겹쳐 보면,
+이 구간이 중반 이탈 후보입니다.</div>
+
+<h2>핵심 루프</h2>
+<div class="flow">
+<svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="핵심 게임 루프">
+  <defs><marker id="lr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L8,3 z" fill="#F86B9D"/></marker></defs>
+
+  <rect x="40" y="130" width="160" height="64" rx="32" fill="#FFEBF2" stroke="#F86B9D" stroke-width="2.5"/>
+  <text x="120" y="158" text-anchor="middle" font-size="14" fill="#E93C7A">자동 전투</text>
+  <text x="120" y="178" text-anchor="middle" font-size="11" fill="#9e9e9e">스테이지 · 던전 · 모험</text>
+
+  <rect x="270" y="130" width="160" height="64" rx="32" fill="#FFF6DC" stroke="#FCC737" stroke-width="2.5"/>
+  <text x="350" y="158" text-anchor="middle" font-size="14" fill="#8a6a00">재화 획득</text>
+  <text x="350" y="178" text-anchor="middle" font-size="11" fill="#9e9e9e">골드 · 젤리 · 경험치</text>
+
+  <rect x="500" y="130" width="160" height="64" rx="32" fill="#F0DEF5" stroke="#7E5CAD" stroke-width="2.5"/>
+  <text x="580" y="158" text-anchor="middle" font-size="14" fill="#4c3a70">성장 투자</text>
+  <text x="580" y="178" text-anchor="middle" font-size="11" fill="#9e9e9e">로열 · 장비 · 스킬 · 보물</text>
+
+  <rect x="730" y="130" width="140" height="64" rx="32" fill="#DEF5EA" stroke="#1DB06B" stroke-width="2.5"/>
+  <text x="800" y="158" text-anchor="middle" font-size="14" fill="#0d6b41">더 높은 층</text>
+  <text x="800" y="178" text-anchor="middle" font-size="11" fill="#9e9e9e">스테이지 50구간</text>
+
+  <g stroke="#F86B9D" stroke-width="2.5" fill="none" marker-end="url(#lr)">
+    <path d="M204,162 L264,162"/>
+    <path d="M434,162 L494,162"/>
+    <path d="M664,162 L724,162"/>
+    <path d="M800,198 C800,270 460,300 120,270 L120,200"/>
+  </g>
+  <text x="460" y="298" text-anchor="middle" font-size="12" fill="#E93C7A">반복</text>
+
+  <!-- accelerators -->
+  <rect x="270" y="30" width="390" height="60" rx="30" fill="#fff" stroke="#FC8B35" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="465" y="54" text-anchor="middle" font-size="13" fill="#a5510a">가속 장치 — 이 루프의 대기시간을 줄인다</text>
+  <text x="465" y="76" text-anchor="middle" font-size="12" fill="#9e9e9e">축복 5종 · 광고 11지면 · 결제 56종 · 스킵티켓</text>
+  <path d="M465,94 L465,124" stroke="#FC8B35" stroke-width="2.5" marker-end="url(#lr)" fill="none" stroke-dasharray="6 4"/>
+</svg>
+</div>
+
+<h2>탭 → 콘텐츠 계층</h2>
+<div class="tw"><table><thead><tr><th>하단 탭</th><th>해금</th><th>하위 콘텐츠</th><th>데이터 규모</th></tr></thead><tbody><tr><td><span class="chip pink">Royal 로열</span></td><td>기본</td><td>성장 · 포스 · 마스터리 · 승급 · 레벨</td><td>레벨 600 · 마스터리 55 · 성장 13</td></tr><tr><td><span class="chip sky">Hero 영웅</span></td><td>Lv.10</td><td>파워 · 스킬 · 어빌리티 · 코스튬</td><td>영웅 9 · 패시브 22 · 어빌리티 46</td></tr><tr><td><span class="chip violet">Equipment 장비</span></td><td>Lv.3</td><td>무기 · 방패 · 장신구(Lv.120)</td><td>28 + 28 + 23 · 보너스 96</td></tr><tr><td><span class="chip jade">Mine 채굴</span></td><td>Lv.40</td><td>광부 20종</td><td>20행</td></tr><tr><td><span class="chip gold">Treasure 보물</span></td><td>Lv.5</td><td>아티팩트(Lv.150) · 룬 · 심볼 · 축복</td><td>15 · 18 · 5 · 5</td></tr><tr><td><span class="chip ruby">Shop 상점</span></td><td>기본</td><td>루비 · 패키지 · 이벤트 · 마일리지 · 광고 · 팝업</td><td>61행 · 상품 56</td></tr><tr><td><span class="chip sky">Dungeon 던전</span></td><td>Lv.7</td><td>동굴(20) · 무한탑(15) · 콜로세움(30) · 하늘신전</td><td>102행 · 8종</td></tr><tr><td><span class="chip orange">Adventure 모험</span></td><td>Lv.7</td><td>5개 지역 그룹</td><td>70행 · 그룹 7</td></tr><tr><td><span class="chip">Chat 채팅</span></td><td>Lv.20</td><td>채널 8 · 친구 · 랭킹</td><td>서버 6</td></tr><tr><td><span class="chip">Summary 종합</span></td><td>기본</td><td>스탯 요약 · 도감</td><td>도감 1행 (미완성)</td></tr></tbody></table></div>
+
+<div class="pager"><a href="02_content.html">← 콘텐츠 구성도</a><a href="04_currency.html">재화 구성 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">해금 타임라인</span></li><li class="dot" data-i="2"><span class="tip">핵심 루프</span></li><li class="dot" data-i="3"><span class="tip">탭 → 콘텐츠 계층</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

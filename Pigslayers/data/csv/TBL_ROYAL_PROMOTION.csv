@@ -1,0 +1,12 @@
+﻿name,DamageRateValue,HealthRateValue,Dungeon,RequireHeroList,NameText
+성주,1.0,1.0,,,Royal.Promotion.Name.00
+남작,1.5,1.5,Promotion_01,Prince=5;Queen=5;King=5,Royal.Promotion.Name.01
+자작,2.0,2.0,Promotion_02,Prince=7;Queen=7;King=7,Royal.Promotion.Name.02
+백작,2.5,2.5,Promotion_03,Prince=10;Queen=10;King=10,Royal.Promotion.Name.03
+후작,3.0,3.0,Promotion_04,Princess=5,Royal.Promotion.Name.04
+공작,3.5,3.5,Promotion_05,,Royal.Promotion.Name.05
+대공작,4.0,4.0,Promotion_06,,Royal.Promotion.Name.06
+왕,4.5,4.5,Promotion_07,,Royal.Promotion.Name.07
+국왕,5.0,5.0,Promotion_08,,Royal.Promotion.Name.08
+대왕,5.5,5.5,Promotion_09,,Royal.Promotion.Name.09
+황제,6.0,6.0,Promotion_10,,Royal.Promotion.Name.10

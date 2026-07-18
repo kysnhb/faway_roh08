@@ -1,0 +1,13 @@
+﻿name,StatType,StatValue,DescriptionText,RewardType,RewardCount
+TBL_ATTENDANCE_BUFF0,FinalDamageRate,50.0,최종 공격력 +150%,None,0.0
+TBL_ATTENDANCE_BUFF1,FinalHealthRate,50.0,최종 체력 +150%,None,0.0
+TBL_ATTENDANCE_BUFF2,FinalGoldBonusRate,50.0,최종 골드 보너스 150%,None,0.0
+TBL_ATTENDANCE_BUFF3,FinalExpBonusRate,50.0,최종 경험치 보너스 +150%,None,0.0
+TBL_ATTENDANCE_BUFF4,FinalJellyBonusRate,50.0,최종 젤리 보너스 +150%,None,0.0
+TBL_ATTENDANCE_BUFF5,FinalMiningBonusRate,50.0,최종 광산 보너스 +150%,None,0.0
+TBL_ATTENDANCE_BUFF6,FinalSkillDamageRate,50.0,최종 스킬 공격력 + 150%,None,0.0
+TBL_ATTENDANCE_BUFF7,FinalDamageRate,100.0,최종 공격력 +200%,None,0.0
+TBL_ATTENDANCE_BUFF8,FinalHealthRate,100.0,최종 체력 +200%,None,0.0
+TBL_ATTENDANCE_BUFF13,FinalSkillDamageRate,100.0,최종 스킬 공격력 + 200%,None,0.0
+TBL_ATTENDANCE_BUFF9,Empty,0.0,"매일 루비 10,000개",Ruby,10000.0
+TBL_ATTENDANCE_BUFF10,Empty,0.0,매일 황금 티켓 10개,GoldTicket,10.0

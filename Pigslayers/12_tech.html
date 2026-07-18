@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>기술 스택 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html" class="on">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">12 · Tech Stack</p>
+<h1>기술 스택</h1>
+<div style="display:flex;gap:20px;align-items:center;margin:20px 0">
+  <img src="img/app/ic_launcher_xxxhdpi_192.png" alt="앱 아이콘" style="width:88px;height:88px;border-radius:18px;image-rendering:pixelated">
+  <div>
+    <div style="font-size:21px;font-weight:800">피그 슬레이어즈 <span class="small">(Pig Slayers)</span></div>
+    <div class="small"><code>com.mongilmongilgames.pigslayers</code> · v15.8.0 (266)</div>
+  </div>
+</div>
+
+<h2>빌드 정보</h2>
+<div class="tw"><table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody><tr><td>엔진</td><td><strong>Unity 6000.3.9f1</strong> (Unity 6.3) · IL2CPP Release</td></tr><tr><td>패키지</td><td><code>com.mongilmongilgames.pigslayers</code></td></tr><tr><td>버전</td><td>versionName <strong>15.8.0</strong> / versionCode <strong>266</strong></td></tr><tr><td>SDK</td><td>minSdk <strong>25</strong> (Android 7.1) → targetSdk <strong>34</strong> (Android 14)</td></tr><tr><td>ABI</td><td>arm64-v8a + armeabi-v7a (유니버설)</td></tr><tr><td>APK 크기</td><td>131 MB</td></tr><tr><td>개발사</td><td>몽길몽길게임즈 (Mongilmongil Games)</td></tr><tr><td>커뮤니티</td><td><a href="https://cafe.naver.com/pigslayers" target="_blank">cafe.naver.com/pigslayers</a></td></tr></tbody></table></div>
+
+<h2>SDK 구성</h2>
+<div class="tw"><table><thead><tr><th>분류</th><th>SDK</th><th>버전</th></tr></thead><tbody><tr><td><span class="chip jade">결제</span></td><td>Google Play Billing</td><td>8.0.0</td></tr><tr><td><span class="chip jade">결제</span></td><td>Unity IAP</td><td>4.14.2</td></tr><tr><td><span class="chip ruby">광고</span></td><td>Google AdMob</td><td>23.2.0</td></tr><tr><td><span class="chip ruby">광고</span></td><td>UMP (동의 관리)</td><td>2.2.0</td></tr><tr><td><span class="chip sky">플랫폼</span></td><td>Google Play Games</td><td>21.0.0</td></tr><tr><td><span class="chip sky">플랫폼</span></td><td>Play Games Unity 플러그인</td><td>0.10.14</td></tr><tr><td><span class="chip violet">분석</span></td><td>Firebase Analytics</td><td>22.1.0</td></tr><tr><td><span class="chip violet">분석</span></td><td>Firebase Crashlytics (+NDK)</td><td>-</td></tr><tr><td><span class="chip violet">분석</span></td><td>Firebase C++</td><td>12.3.0</td></tr><tr><td><span class="chip gold">보안</span></td><td>Play Integrity</td><td>1.2.0</td></tr><tr><td><span class="chip gold">보안</span></td><td>Firebase App Check</td><td>-</td></tr><tr><td><span class="chip gold">보안</span></td><td>Anti-Cheat Toolkit (ACTk)</td><td>-</td></tr><tr><td><span class="chip orange">백엔드</span></td><td><strong>PlayNANOO</strong></td><td>-</td></tr><tr><td><span class="chip">유틸</span></td><td>Addressables</td><td>2.8.1</td></tr><tr><td><span class="chip">유틸</span></td><td>Unity Services Core</td><td>1.16.0</td></tr><tr><td><span class="chip">유틸</span></td><td>Easy Save 3 · DOTween · FMOD · ProCamera2D · Newtonsoft.Json · Odin(Sirenix) · UniRx · UniTask · BGDatabase</td><td>-</td></tr></tbody></table></div>
+<div class="fact"><strong>구성 판단</strong> — <strong>Google 단일 생태계</strong>로 깔끔하게 통일돼 있습니다.
+백엔드는 자체 서버 + PlayNANOO(국내 백엔드 서비스) 조합입니다.
+데이터 테이블은 <strong>BGDatabase</strong>, 세이브는 <strong>Easy Save 3</strong>, 치트 방어는
+<strong>Play Integrity + App Check + ACTk</strong> 3중입니다.</div>
+
+<h2>서버 구성</h2>
+<div class="tw"><table><thead><tr><th>용도</th><th>엔드포인트</th></tr></thead><tbody><tr><td>게임 로그</td><td><code>www.mongilmongilgames.com/gamelog/insert.php</code></td></tr><tr><td>공지</td><td><code>www.mongilmongilgames.com/pigslayers/notice.php</code></td></tr><tr><td>업데이트 체크</td><td><code>www.mongilmongilgames.com/pigslayers/update.php</code></td></tr><tr><td>백엔드 API</td><td><code>api.playnanoo.com</code> · <code>service-api.playnanoo.com</code></td></tr><tr><td>스토리지</td><td><code>storage-api.playnanoo.com</code> · <code>service-storage-api.playnanoo.com</code></td></tr><tr><td>Firebase</td><td>project_id <code>rpg-42119513</code></td></tr><tr><td>Unity CCD</td><td>프로젝트 <code>c832608a-…</code> / 버킷 <code>739ffd6c-…</code></td></tr></tbody></table></div>
+
+<h2>보안 — 양호</h2>
+<ul>
+<li>민감 권한 <strong>미요청</strong></li>
+<li>네트워크 보안 설정으로 게임 서버 <strong>HTTPS 강제</strong> (평문 허용은 captive-portal 프로브 9종뿐)</li>
+<li>Play Integrity + Firebase App Check + Anti-Cheat Toolkit <strong>3중 무결성</strong></li>
+<li><code>HackCheckType</code>으로 Currency·Equipment·Skill·User·Royal·Artifact·Collection 개별 검증</li>
+<li>Privacy Sandbox 대응</li>
+</ul>
+
+<h2>⚠ 출시 전 조치 필요 (3건)</h2>
+<div class="warn">
+<p style="margin:0 0 10px"><strong>1. Discord 웹훅 4건이 토큰까지 평문 하드코딩</strong> — <code>global-metadata.dat</code>에 포함.
+웹훅 URL은 <strong>그 자체가 인증 수단</strong>이라, APK를 가진 누구나 해당 채널에 임의 메시지를 보낼 수 있습니다.
+<strong>즉시 재발급(revoke) 권장</strong>. 가장 시급한 항목입니다.</p>
+<p style="margin:0 0 10px"><strong>2. AdMob 공식 테스트 광고 유닛 ID 잔존</strong>
+(<code>ca-app-pub-3940256099942544/…</code>)이 실 유닛과 함께 존재.
+IL2CPP 특성상 런타임 실사용 여부는 정적 분석으로 확정 불가하나,
+실제로 쓰인다면 <strong>리워드 광고 수익이 0</strong>이 됩니다. 코드 확인 필요.</p>
+<p style="margin:0"><strong>3. 개발용 산출물 동봉</strong> — <code>google-services-desktop.json</code>(데스크톱용),
+Firebase <strong>App Check Debug Registrar</strong>가 릴리스에 포함, <strong>SRDebugger</strong> 포함.</p>
+</div>
+
+<h2>어트리뷰션 — 부재</h2>
+<div class="note"><strong>AppsFlyer / Adjust / Facebook SDK가 전혀 없습니다.</strong>
+현재는 Google Play Install Referrer + GA4 조합으로 <span class="chip orange">추정</span>됩니다.
+유료 UA 캠페인을 집행할 계획이라면 <strong>출시 전에 어트리뷰션 SDK 도입이 필요</strong>합니다
+— 사후 도입은 초기 코호트 데이터를 영구히 잃습니다.</div>
+
+<div class="pager"><a href="11_assets.html">← 이미지 리소스</a><a href="13_tables.html">테이블 데이터 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">빌드 정보</span></li><li class="dot" data-i="2"><span class="tip">SDK 구성</span></li><li class="dot" data-i="3"><span class="tip">서버 구성</span></li><li class="dot" data-i="4"><span class="tip">보안</span></li><li class="dot" data-i="5"><span class="tip">⚠ 출시 전 조치 필요 (3건)</span></li><li class="dot" data-i="6"><span class="tip">어트리뷰션</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

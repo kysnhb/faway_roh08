@@ -1,0 +1,11 @@
+﻿name,Level,RewardType,RewardCount,PassRewardType,PassRewardCount
+TBL_PASS_LEVEL0,5,Gold,0,Gold,0
+TBL_PASS_LEVEL1,10,Gold,0,Gold,0
+TBL_PASS_LEVEL2,15,Gold,0,Gold,0
+TBL_PASS_LEVEL3,20,Gold,0,Gold,0
+TBL_PASS_LEVEL4,25,Gold,0,Gold,0
+TBL_PASS_LEVEL5,30,Gold,0,Gold,0
+TBL_PASS_LEVEL6,35,Gold,0,Gold,0
+TBL_PASS_LEVEL7,40,Gold,0,Gold,0
+TBL_PASS_LEVEL8,45,Gold,0,Gold,0
+TBL_PASS_LEVEL9,50,Gold,0,Gold,0

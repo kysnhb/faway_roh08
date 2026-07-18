@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>콘텐츠 구성도 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html" class="on">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">02 · Content Map</p>
+<h1>콘텐츠 구성도</h1>
+<p class="lead">게임에 실제로 존재하는 콘텐츠를 코드 enum과 UI 오브젝트 기준으로 전수 정리했습니다.
+아래 목록은 기획서가 아니라 <strong>빌드에 들어있는 것</strong>입니다.</p>
+
+<h2>하단 탭 — 게임의 뼈대</h2>
+<p><code>BottomTabType</code>이 정의하는 10개 탭이 콘텐츠의 최상위 분류입니다.</p>
+<div class="tw"><table><thead><tr><th class="num">#</th><th>탭</th><th>역할</th><th>하위 콘텐츠</th></tr></thead><tbody><tr><td class="num">0</td><td><span class="chip gold">Royal</span></td><td>왕국/계정 단위 성장</td><td>Growth · Force · Mastery · Promotion · Level · RoyalBox</td></tr><tr><td class="num">1</td><td><span class="chip">Hero</span></td><td>영웅 육성</td><td>Power · Skill · Ability · Costume (HeroTabType)</td></tr><tr><td class="num">2</td><td><span class="chip">Equipment</span></td><td>장비</td><td>Weapon · Shield · Acc / 레벨업 · 합성</td></tr><tr><td class="num">3</td><td><span class="chip jade">Mine</span></td><td>채굴(방치 수급)</td><td>Miner 20종 · MineLightType 4단계</td></tr><tr><td class="num">4</td><td><span class="chip violet">Treasure</span></td><td>보물</td><td>Artifact · Rune · Symbol · Bless</td></tr><tr><td class="num">5</td><td><span class="chip ruby">Shop</span></td><td>상점</td><td>Ruby · Package · Event · Mileage · AD · Popup</td></tr><tr><td class="num">6</td><td><span class="chip sky">Dungeon</span></td><td>던전</td><td>Cave · InfiniteTower · Colosseum · SkyTemple (+3)</td></tr><tr><td class="num">7</td><td><span class="chip orange">Adventure</span></td><td>모험</td><td>5개 지역별 그룹 진행</td></tr><tr><td class="num">8</td><td><span class="chip">Chat</span></td><td>커뮤니티</td><td>채널 8종 · 친구 · 랭킹</td></tr><tr><td class="num">9</td><td><span class="chip">Summary</span></td><td>종합 정보</td><td>스탯 요약 · 도감</td></tr></tbody></table></div>
+
+<h2>스테이지</h2>
+<p>메인 진행은 <strong>5개 테마 × 3개 난이도</strong>입니다. <code>TBL_STAGE</code>는 <strong>50행</strong>이며,
+1행 이름은 <code>돼지의 성 I</code>, 2행은 <code>돼지의 성 II</code>로 확인했습니다.</p>
+<div class="grid g2">
+<div class="card"><h3 style="margin-top:0">테마 (StageType)</h3>
+<p style="margin:0">
+<span class="chip gold">Castle 성</span> <span class="chip sky">Sea 바다</span>
+<span class="chip orange">Desert 사막</span> <span class="chip">Snow 눈</span>
+<span class="chip violet">ToyLand 장난감나라</span></p>
+<p class="small" style="margin:10px 0 0">씬 오브젝트 <code>StageMap_Castle_0</code> · <code>_Sea_0</code> · <code>_Desert_0</code> · <code>_Snow_0</code> · <code>_ToyLand_0</code>로 실체 확인.</p>
+</div>
+<div class="card"><h3 style="margin-top:0">난이도 (StageDifficulty)</h3>
+<p style="margin:0"><span class="chip jade">Normal</span> <span class="chip orange">Hard</span> <span class="chip ruby">Hell</span></p>
+<p class="small" style="margin:10px 0 0">이벤트 스테이지 상품도 <code>event_stage_normal / hard / hell</code>로 동일하게 3분화됩니다.</p>
+</div>
+</div>
+
+<h2>던전 — 재화 수급의 핵심</h2>
+<p><code>DungeonType</code> 8종. 이 중 4종만 던전 탭(<code>DungeonTabType</code>)에 노출되고,
+나머지는 별도 진입점을 갖는 것으로 <span class="chip orange">추정</span>됩니다.</p>
+<div class="tw"><table><thead><tr><th>던전</th><th>탭 노출</th><th>성격 (추정)</th></tr></thead><tbody><tr><td><span class="chip sky">Cave</span> 동굴</td><td>O</td><td>보상형 — <code>TBL_DUNGEON_CAVE_REWARD</code> 존재</td></tr><tr><td><span class="chip violet">InfiniteTower</span> 무한의 탑</td><td>O</td><td>층 무한 도전 — 전용 상품 2종(special/premium)</td></tr><tr><td><span class="chip ruby">Colosseum</span> 콜로세움</td><td>O</td><td>대전 콘텐츠 — <code>ColosseumHero</code> vs <code>ColosseumMonster</code></td></tr><tr><td><span class="chip gold">SkyTemple</span> 하늘신전</td><td>O</td><td>전용 맵 <code>SkyTempleMap</code> · <code>DungeonDoorTemple</code></td></tr><tr><td><span class="chip">PigCow</span> 돼지소</td><td>-</td><td>보스 던전 — PigCowKing/Queen</td></tr><tr><td><span class="chip">FishFight</span> 물고기</td><td>-</td><td>Fish 4색 몬스터 던전</td></tr><tr><td><span class="chip jade">Miner</span> 광부</td><td>-</td><td>채굴 연계 — <code>MinerDungeon</code></td></tr><tr><td><span class="chip orange">Promotion</span> 승급</td><td>-</td><td><code>TBL_ROYAL_PROMOTION</code> 연계 승급전</td></tr></tbody></table></div>
+
+<h2>모험 (Adventure)</h2>
+<p><code>AdventureType</code> 5종 — <strong>CastleAndSea · Desert · PigCow · Snow · ToyLand</strong>.
+스테이지 테마와 거의 겹치되 <em>성과 바다가 하나로 묶이고 PigCow가 추가</em>됩니다.
+진행 조건은 <code>AdventureConditionType</code>으로 <code>Level</code>(레벨 도달) 또는
+<code>PrevIndex</code>(선행 완료) 두 가지입니다.</p>
+
+<h2>전투 종류</h2>
+<p><code>BattleType</code> 12종이 게임 내 모든 전투 상황을 규정합니다.</p>
+<div class="card"><p style="margin:0">
+<span class="chip gold">Stage</span> <span class="chip gold">StageBoss</span>
+<span class="chip orange">Promotion</span> <span class="chip sky">PigCowDungeon</span>
+<span class="chip sky">FishFightDungeon</span> <span class="chip jade">MinerDungeon</span>
+<span class="chip violet">InfiniteTower</span> <span class="chip ruby">Colosseum</span>
+<span class="chip sky">Cave</span> <span class="chip gold">SkyTemple</span>
+<span class="chip">Adventure</span>
+</p></div>
+
+<h2>시스템 전체 지도</h2>
+<p><code>RefreshEventType</code>은 UI 갱신 이벤트 목록이라, 사실상 <strong>게임이 가진 시스템의 완전한 색인</strong>입니다. 38개 항목 전수:</p>
+<div class="card"><p style="margin:0;line-height:2.4">
+<span class="chip">Battle</span> <span class="chip">BattleState</span> <span class="chip">Currency</span> <span class="chip">Royal</span> <span class="chip">Equipment</span> <span class="chip">Quest</span> <span class="chip">Achievement</span> <span class="chip">User</span> <span class="chip">GuideMission</span> <span class="chip">Attendance</span> <span class="chip">Mine</span> <span class="chip">Bless</span> <span class="chip">Postbox</span> <span class="chip">Ranking</span> <span class="chip">Chat</span> <span class="chip">Artifact</span> <span class="chip">Pass</span> <span class="chip">Friend</span> <span class="chip">Book</span> <span class="chip">Youtube</span> <span class="chip">Dungeon</span> <span class="chip">Mole</span> <span class="chip">Setting</span> <span class="chip">Gacha</span> <span class="chip">Time</span> <span class="chip">Stat</span> <span class="chip">Hero</span> <span class="chip">Skill</span> <span class="chip">Rune</span> <span class="chip">Shop</span> <span class="chip">Tutorial</span> <span class="chip">Adventure</span> <span class="chip">Event</span> <span class="chip">RoyalBox</span> <span class="chip">Bingo</span> <span class="chip">DiceGame</span> <span class="chip">Collection</span> <span class="chip">AttendanceBuff</span>
+</p></div>
+<div class="fact"><strong>읽는 법</strong> — 이 목록에 있는데 UI 탭에 없는 것(Book·Postbox·Ranking·Friend·Youtube·Mole·Bingo·DiceGame)은
+탭이 아니라 <strong>팝업/서브 화면으로 진입하는 콘텐츠</strong>입니다. 실제로 <code>UI_PostboxSlot</code>,
+<code>UI_RankingSlot</code>, <code>UI_FriendSlot</code>, <code>UI_YoutubeSlot</code>, <code>UI_MoleSlot</code>,
+<code>UI_DiceGameSlot</code> 프리팹이 모두 존재합니다.</div>
+
+<div class="pager"><a href="01_overview.html">← 게임 소개서</a><a href="03_content_flow.html">콘텐츠 흐름도 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">하단 탭</span></li><li class="dot" data-i="2"><span class="tip">스테이지</span></li><li class="dot" data-i="3"><span class="tip">던전</span></li><li class="dot" data-i="4"><span class="tip">모험 (Adventure)</span></li><li class="dot" data-i="5"><span class="tip">전투 종류</span></li><li class="dot" data-i="6"><span class="tip">시스템 전체 지도</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

@@ -1,0 +1,11 @@
+﻿name,StageDifficulty,StageType,StageList,NameText,DescriptionText
+돼지의 성,Normal,Castle,돼지의 성 I|돼지의 성 II|돼지의 성 III|돼지의 성 IV|돼지의 성 V,Stage.Name.Castle,Stage.Description.Castle
+비키니 해변,Normal,Sea,비키니 해변 I|비키니 해변 II|비키니 해변 III|비키니 해변 IV|비키니 해변 V,Stage.Name.Sea,Stage.Description.Sea
+황금 사막,Normal,Desert,황금 사막 I|황금 사막 II|황금 사막 III|황금 사막 IV|황금 사막 V,Stage.Name.Desert,Stage.Description.Desert
+눈덮인 숲,Normal,Snow,눈덮인 숲 I|눈덮인 숲 II|눈덮인 숲 III|눈덮인 숲 IV|눈덮인 숲 V,Stage.Name.Snow,Stage.Description.Snow
+장난감 공원,Normal,ToyLand,장난감 공원 I|장난감 공원 II|장난감 공원 III|장난감 공원 IV|장난감 공원 V,Stage.Name.ToyLand,Stage.Description.ToyLand
+돼지의 성,Hard,Castle,돼지의 성 VI|돼지의 성 VII|돼지의 성 VIII|돼지의 성 IX|돼지의 성 X,Stage.Name.Castle,Stage.Description.Castle
+비키니 해변,Hard,Sea,비키니 해변 VI|비키니 해변 VI|비키니 해변 VIII|비키니 해변 IX|비키니 해변 X,Stage.Name.Sea,Stage.Description.Sea
+황금 사막,Hard,Desert,황금 사막 VI|황금 사막 VII|황금 사막 VIII|황금 사막 IX|황금 사막 X,Stage.Name.Desert,Stage.Description.Desert
+눈덮인 숲,Hard,Snow,눈덮인 숲 VI|눈덮인 숲 VII|눈덮인 숲 VIII|눈덮인 숲 IX|눈덮인 숲 X,Stage.Name.Snow,Stage.Description.Snow
+장난감 공원,Hard,ToyLand,장난감 공원 VI|장난감 공원 VII|장난감 공원 VIII|장난감 공원 IX|장난감 공원 X,Stage.Name.ToyLand,Stage.Description.ToyLand

@@ -1,0 +1,29 @@
+﻿name,Grade,EquipStatType,EquipValue,EquipAddValue,HaveStatType,HaveValue,HaveAddValue,CostMultipler,MaxLevel,Weight,HaveNext,NeedComposeCount,NameText
+오래된 방패,Normal,HealthRate,5.0,5.0,HealthRate,2.0,2.0,1.0,250,400,True,10,Equipment.Shield.Name.00
+초심자의 방패,Normal,HealthRate,25.0,25.0,HealthRate,8.0,8.0,2.0,250,400,True,10,Equipment.Shield.Name.01
+흔한 방패,Normal,HealthRate,45.0,45.0,HealthRate,15.0,15.0,3.0,250,400,True,10,Equipment.Shield.Name.02
+듀란달의 방패,Normal,HealthRate,90.0,90.0,HealthRate,30.0,30.0,4.0,250,400,True,10,Equipment.Shield.Name.03
+모글레이의 방패,Normal,HealthRate,150.0,150.0,HealthRate,45.0,45.0,5.0,250,380,True,10,Equipment.Shield.Name.04
+레바테인의 방패,Rare,HealthRate,250.0,250.0,HealthRate,75.0,75.0,6.0,250,360,True,10,Equipment.Shield.Name.05
+아스칼론의 방패,Rare,HealthRate,300.0,300.0,HealthRate,90.0,90.0,7.0,250,360,True,10,Equipment.Shield.Name.06
+아조트의 방패,Rare,HealthRate,370.0,370.0,HealthRate,105.0,105.0,8.0,250,350,True,10,Equipment.Shield.Name.07
+알마스의 방패,Rare,HealthRate,420.0,420.0,HealthRate,120.0,120.0,9.0,250,350,True,10,Equipment.Shield.Name.08
+커터나의 방패,Rare,HealthRate,470.0,470.0,HealthRate,135.0,135.0,10.0,250,350,True,10,Equipment.Shield.Name.09
+용연의 방패,Epic,HealthRate,900.0,900.0,HealthRate,225.0,225.0,11.0,250,220,True,10,Equipment.Shield.Name.10
+칼라드볼그의 방패,Epic,HealthRate,1200.0,1200.0,HealthRate,300.0,300.0,12.0,250,210,True,10,Equipment.Shield.Name.11
+크로케아 모르스의 방패,Epic,HealthRate,1500.0,1500.0,HealthRate,375.0,375.0,13.0,250,200,True,10,Equipment.Shield.Name.12
+크루아딘 카다켄의 방패,Epic,HealthRate,1800.0,1800.0,HealthRate,450.0,450.0,14.0,250,180,True,10,Equipment.Shield.Name.13
+바리사다의 방패,Epic,HealthRate,2100.0,2100.0,HealthRate,525.0,525.0,15.0,250,180,True,10,Equipment.Shield.Name.14
+모랄타의 방패,Unique,HealthRate,3500.0,3500.0,HealthRate,750.0,750.0,16.0,250,15,True,10,Equipment.Shield.Name.15
+다인슬라이프의 방패,Unique,HealthRate,4000.0,4000.0,HealthRate,900.0,900.0,17.0,250,15,True,10,Equipment.Shield.Name.16
+리딜의 방패,Unique,HealthRate,4700.0,4700.0,HealthRate,1050.0,1050.0,18.0,250,15,True,10,Equipment.Shield.Name.17
+솔라스의 방패,Unique,HealthRate,5500.0,5500.0,HealthRate,1200.0,1200.0,19.0,250,15,True,10,Equipment.Shield.Name.18
+호푸드의 방패,Unique,HealthRate,6000.0,6000.0,HealthRate,1350.0,1350.0,20.0,250,15,True,10,Equipment.Shield.Name.19
+발뭉의 방패,Legend,HealthRate,12000.0,12000.0,HealthRate,2250.0,2250.0,22.0,250,2,True,5,Equipment.Shield.Name.20
+나겔링의 방패,Legend,HealthRate,23000.0,23000.0,HealthRate,4500.0,4500.0,26.0,250,2,True,5,Equipment.Shield.Name.21
+베갈타의 방패,Legend,HealthRate,34000.0,34000.0,HealthRate,6750.0,6750.0,28.0,250,2,True,5,Equipment.Shield.Name.22
+부르트강의 방패,Legend,HealthRate,45000.0,45000.0,HealthRate,9000.0,9000.0,30.0,250,1,True,5,Equipment.Shield.Name.23
+앵거바딜의 방패,Legend,HealthRate,60000.0,60000.0,HealthRate,12000.0,12000.0,32.0,250,1,True,5,Equipment.Shield.Name.24
+아론다이트의 방패,Mythology,HealthRate,120000.0,120000.0,HealthRate,22500.0,22500.0,34.0,250,0,True,3,Equipment.Shield.Name.25
+에케작스의 방패,Mythology,HealthRate,200000.0,200000.0,HealthRate,35000.0,35000.0,40.0,250,0,True,3,Equipment.Shield.Name.26
+칼리번의 방패,Mythology,HealthRate,350000.0,350000.0,HealthRate,50000.0,50000.0,45.0,250,0,False,3,Equipment.Shield.Name.27

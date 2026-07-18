@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>재화 구성 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html" class="on">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">04 · Currency</p>
+<h1>재화 구성</h1>
+<p class="lead"><code>CurrencyType</code>이 정의하는 <strong>재화 18종</strong>과,
+각 재화가 <strong>실제로 어디서 들어오고 어디로 나가는지</strong>를 전 테이블에서 기계적으로 집계했습니다.
+아이콘은 게임 리소스 원본입니다.</p>
+
+<div class="icons"><div class="ic"><img src="img/currency/Gold.png" alt="Gold" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">골드</div><div class="d">435건</div></div><div class="ic"><img src="img/currency/Ruby.png" alt="Ruby" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">루비</div><div class="d">840건</div></div><div class="ic"><img src="img/currency/Crown.png" alt="Crown" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">크라운</div><div class="d">0건</div></div><div class="ic"><div style='height:40px;line-height:40px;color:var(--tx3);font-size:11px'>없음</div><div class="n">장비석</div><div class="d">2건</div></div><div class="ic"><img src="img/currency/PigJelly.png" alt="PigJelly" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">피그젤리</div><div class="d">321건</div></div><div class="ic"><img src="img/currency/Exp.png" alt="Exp" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">경험치</div><div class="d">274건</div></div><div class="ic"><img src="img/currency/ToyHammer.png" alt="ToyHammer" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">장난감망치</div><div class="d">3건</div></div><div class="ic"><img src="img/currency/Dice.png" alt="Dice" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">주사위</div><div class="d">3건</div></div><div class="ic"><img src="img/currency/Mileage.png" alt="Mileage" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">마일리지</div><div class="d">61건</div></div><div class="ic"><img src="img/currency/Key.png" alt="Key" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">열쇠</div><div class="d">35건</div></div><div class="ic"><img src="img/currency/Pork.png" alt="Pork" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">돼지고기</div><div class="d">36건</div></div><div class="ic"><img src="img/currency/SkipTicket.png" alt="SkipTicket" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">스킵티켓</div><div class="d">15건</div></div><div class="ic"><img src="img/currency/InfiniteStone.png" alt="InfiniteStone" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">무한석</div><div class="d">1건</div></div><div class="ic"><img src="img/currency/Clover.png" alt="Clover" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">클로버</div><div class="d">21건</div></div><div class="ic"><img src="img/currency/Medal.png" alt="Medal" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">메달</div><div class="d">0건</div></div><div class="ic"><img src="img/currency/GoldTicket.png" alt="GoldTicket" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">골드티켓</div><div class="d">112건</div></div><div class="ic"><img src="img/currency/GachaCoupon.png" alt="GachaCoupon" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">뽑기쿠폰</div><div class="d">2건</div></div><div class="ic"><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"><div class="n">시간조각</div><div class="d">102건</div></div></div>
+<p class="small">숫자 = 게임 데이터 테이블에서 그 재화가 등장하는 행 수 (LOCALE_TEXT 이름 문자열 제외).</p>
+
+<h2>재화별 획득처 · 사용처</h2>
+<div class="tw"><table><thead><tr><th>재화</th><th>코드</th><th>상태</th><th class="num">등장</th><th>획득처</th><th>주요 획득 경로</th><th>사용처(테이블 명시)</th></tr></thead><tbody><tr><td><img src="img/currency/Gold.png" alt="Gold" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>골드</strong></td><td><code>Gold</code></td><td><span class="chip jade">운영</span></td><td class="num">435</td><td>14곳</td><td>가이드 미션 · 던전 최초 클리어 · 스테이지 전투 · 던전 보상 · 출석(일반) 특별</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>루비</strong></td><td><code>Ruby</code></td><td><span class="chip jade">운영</span></td><td class="num">840</td><td>19곳</td><td>가이드 미션 · 이벤트 레벨(무료) · 이벤트 레벨(유료) · 이벤트 스테이지(무료) · 이벤트 스테이지(유료)</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/Crown.png" alt="Crown" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>크라운</strong></td><td><code>Crown</code></td><td><span class="chip ruby">미구현</span></td><td class="num">0</td><td>0곳</td><td>—</td><td><span class="small">테이블에 없음</span></td></tr><tr><td> <strong>장비석</strong></td><td><code>EquipmentStone</code></td><td><span class="chip orange">거의 미사용</span></td><td class="num">2</td><td>1곳</td><td>동굴 던전 드랍</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/PigJelly.png" alt="PigJelly" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>피그젤리</strong></td><td><code>PigJelly</code></td><td><span class="chip jade">운영</span></td><td class="num">321</td><td>7곳</td><td>가이드 미션 · 스테이지 전투 · 던전 보상 · 던전 전투 · 채굴</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/Exp.png" alt="Exp" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>경험치</strong></td><td><code>Exp</code></td><td><span class="chip jade">운영</span></td><td class="num">274</td><td>3곳</td><td>스테이지 전투 · 던전 전투 · 채굴</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/ToyHammer.png" alt="ToyHammer" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>장난감망치</strong></td><td><code>ToyHammer</code></td><td><span class="chip orange">거의 미사용</span></td><td class="num">3</td><td>2곳</td><td>주사위 게임 · 상점</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/Dice.png" alt="Dice" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>주사위</strong></td><td><code>Dice</code></td><td><span class="chip orange">거의 미사용</span></td><td class="num">3</td><td>2곳</td><td>동굴 던전 드랍 · 상점</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/Mileage.png" alt="Mileage" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>마일리지</strong></td><td><code>Mileage</code></td><td><span class="chip jade">운영</span></td><td class="num">61</td><td>1곳</td><td>상점</td><td>마일리지 상점 교환</td></tr><tr><td><img src="img/currency/Key.png" alt="Key" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>열쇠</strong></td><td><code>Key</code></td><td><span class="chip jade">운영</span></td><td class="num">35</td><td>9곳</td><td>상점 · 출석(일반) · 빙고(일반) · 빙고(스페셜) · 두더지</td><td>던전 입장</td></tr><tr><td><img src="img/currency/Pork.png" alt="Pork" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>돼지고기</strong></td><td><code>Pork</code></td><td><span class="chip jade">운영</span></td><td class="num">36</td><td>9곳</td><td>상점 · 출석(일반) · 빙고(일반) · 빙고(스페셜) · 주사위 게임</td><td>던전 입장</td></tr><tr><td><img src="img/currency/SkipTicket.png" alt="SkipTicket" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>스킵티켓</strong></td><td><code>SkipTicket</code></td><td><span class="chip jade">운영</span></td><td class="num">15</td><td>4곳</td><td>상점 · 주사위 게임 · 동굴 던전 드랍 · 두더지</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/InfiniteStone.png" alt="InfiniteStone" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>무한석</strong></td><td><code>InfiniteStone</code></td><td><span class="chip orange">거의 미사용</span></td><td class="num">1</td><td>1곳</td><td>던전 보상</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/Clover.png" alt="Clover" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>클로버</strong></td><td><code>Clover</code></td><td><span class="chip jade">운영</span></td><td class="num">21</td><td>2곳</td><td>던전 보상 · 동굴 던전 드랍</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/Medal.png" alt="Medal" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>메달</strong></td><td><code>Medal</code></td><td><span class="chip ruby">미구현</span></td><td class="num">0</td><td>0곳</td><td>—</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/GoldTicket.png" alt="GoldTicket" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>골드티켓</strong></td><td><code>GoldTicket</code></td><td><span class="chip jade">운영</span></td><td class="num">112</td><td>13곳</td><td>두더지 보너스 · 빙고(보너스) · 주사위 보너스 · 상점 · 출석 버프 보너스</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/GachaCoupon.png" alt="GachaCoupon" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>뽑기쿠폰</strong></td><td><code>GachaCoupon</code></td><td><span class="chip orange">거의 미사용</span></td><td class="num">2</td><td>1곳</td><td>주사위 게임</td><td><span class="small">테이블에 없음</span></td></tr><tr><td><img src="img/currency/TimePiece.png" alt="TimePiece" style="width:22px;height:22px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>시간조각</strong></td><td><code>TimePiece</code></td><td><span class="chip jade">운영</span></td><td class="num">102</td><td>1곳</td><td>던전 전투</td><td>아티팩트 강화</td></tr></tbody></table></div>
+
+<div class="warn"><strong>재화 18종 중 실제로 돌아가는 건 11종입니다.</strong>
+<ul style="margin:8px 0 0">
+<li><strong>완전 미구현 (2종)</strong> — <img src="img/currency/Crown.png" alt="Crown" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>크라운</strong> · <img src="img/currency/Medal.png" alt="Medal" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>메달</strong>.
+어떤 테이블에도 등장하지 않습니다. <code>Medal</code>은 이름조차 로케일에 없습니다.</li>
+<li><strong>거의 미사용 (5종)</strong> —  <strong>장비석</strong>(2건) · <img src="img/currency/ToyHammer.png" alt="ToyHammer" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>장난감망치</strong>(3건) · <img src="img/currency/Dice.png" alt="Dice" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>주사위</strong>(3건) · <img src="img/currency/InfiniteStone.png" alt="InfiniteStone" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>무한석</strong>(1건) · <img src="img/currency/GachaCoupon.png" alt="GachaCoupon" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>뽑기쿠폰</strong>(2건).
+enum과 아이콘은 있는데 데이터가 1~3행뿐입니다.</li>
+<li><code>Crown</code>(크라운)은 로케일에 이름만 2건 있고 <strong>게임플레이 데이터는 0건</strong>입니다.</li>
+<li><code>EquipmentStone</code>(장비석)은 <strong>스프라이트조차 없습니다</strong> — 아이콘 미제작.</li>
+</ul>
+이 게임의 <a href="06_growth.html">영웅 9종 중 3종만 완성</a>된 것과 같은 패턴입니다.
+<strong>enum·아이콘 등 껍데기는 넓게 잡아뒀지만 데이터가 아직 안 채워진 상태</strong>로 보입니다.</div>
+
+<h2>사용처가 테이블에 없는 이유</h2>
+<p>재화를 <strong>주는</strong> 쪽은 <code>RewardType</code> 컬럼으로 재화 종류가 명시돼 있어 전수 집계가 됩니다.
+반면 <strong>쓰는</strong> 쪽은 대부분 <code>Cost</code> 같은 숫자 컬럼만 있고 <em>어떤 재화인지</em>가 테이블에 없습니다 —
+코드에 하드코딩돼 있습니다.</p>
+<div class="tw"><table><thead><tr><th>사용처</th><th>테이블 · 컬럼</th><th class="num">행</th><th>값 범위</th><th>재화</th></tr></thead><tbody><tr><td>스킬 레벨업</td><td><code>TBL_SKILL.Cost</code></td><td class="num">22</td><td>10 ~ 10</td><td><span class="chip orange">테이블에 없음</span></td></tr><tr><td>영웅 패시브</td><td><code>TBL_HERO_PASSIVE.Cost</code></td><td class="num">22</td><td>50 ~ 100,000</td><td><span class="chip orange">테이블에 없음</span></td></tr><tr><td>로열 포스</td><td><code>TBL_ROYAL_FORCE.Cost</code></td><td class="num">9</td><td>10 ~ 10</td><td><span class="chip orange">테이블에 없음</span></td></tr><tr><td>로열 마스터리</td><td><code>TBL_ROYAL_MASTERY.LevelUpCost</code></td><td class="num">55</td><td>1 ~ 10</td><td><span class="chip orange">테이블에 없음</span></td></tr><tr><td>아티팩트 뽑기</td><td><code>TBL_ARTIFACT.ArtifactCost</code></td><td class="num">15</td><td>2 ~ 2</td><td><span class="chip orange">테이블에 없음</span></td></tr></tbody></table></div>
+<p class="small">재화 종류가 <strong>명시된</strong> 사용처는 4곳뿐입니다 —
+<code>TBL_DUNGEON.PorkCost</code>(<img src="img/currency/Pork.png" alt="Pork" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 돼지고기),
+<code>TBL_DUNGEON.KeyCost</code>(<img src="img/currency/Key.png" alt="Key" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 열쇠),
+<code>TBL_ARTIFACT.TimePieceCost</code>(<img src="img/currency/TimePiece.png" alt="TimePiece" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 시간조각),
+<code>TBL_SHOP.Mileage</code>(<img src="img/currency/Mileage.png" alt="Mileage" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 마일리지).</p>
+
+<h2>뽑기 비용 (TBL_CONST · 재화 종류는 코드 결정)</h2>
+<div class="tw"><table><thead><tr><th>대상</th><th class="num">5회</th><th class="num">25회</th><th class="num">50회</th><th class="num">125회</th></tr></thead><tbody><tr><td>무기</td><td class="num">500</td><td class="num">2,000</td><td class="num">4,000</td><td class="num">10,000</td></tr><tr><td>방패</td><td class="num">500</td><td class="num">2,000</td><td class="num">4,000</td><td class="num">10,000</td></tr><tr><td>장신구</td><td class="num">1,500</td><td class="num">6,000</td><td class="num">12,000</td><td class="num">30,000</td></tr><tr><td>스킬</td><td class="num">1,000 (5회)</td><td class="num">2,000 (10회)</td><td class="num">4,000 (20회)</td><td class="num">—</td></tr><tr><td>아티팩트</td><td class="num">5,000 (1회)</td><td class="num">22,000 (5회)</td><td class="num">—</td><td class="num">—</td></tr><tr><td>룬</td><td class="num">5,000 (1회)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr></tbody></table></div>
+<div class="note">금액대(500~30,000)와 골드가 주 소프트 재화인 점으로 보아
+뽑기 비용은 <img src="img/currency/Gold.png" alt="Gold" style="width:16px;height:16px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> <strong>골드</strong>일 가능성이 높습니다 <span class="chip orange">추정</span>.
+다만 테이블에 재화명이 없으므로 <strong>확정하지 않습니다</strong>.</div>
+
+<h2>광고로 얻는 재화 — 4종</h2>
+<div class="tw"><table><thead><tr><th>광고 상품</th><th>보상</th><th>일일 제한</th></tr></thead><tbody><tr><td><code>Ad_GoldTicket</code></td><td><img src="img/currency/GoldTicket.png" alt="GoldTicket" style="width:20px;height:20px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 골드티켓</td><td>—</td></tr><tr><td><code>Ad_Pork</code></td><td><img src="img/currency/Pork.png" alt="Pork" style="width:20px;height:20px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 돼지고기</td><td>—</td></tr><tr><td><code>Ad_Ruby</code></td><td><img src="img/currency/Ruby.png" alt="Ruby" style="width:20px;height:20px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 루비</td><td>—</td></tr><tr><td><code>Ad_Key</code></td><td><img src="img/currency/Key.png" alt="Key" style="width:20px;height:20px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> 열쇠</td><td>—</td></tr><tr><td>상점 광고 전체</td><td>—</td><td><strong>3회</strong></td></tr></tbody></table></div>
+
+<div class="pager"><a href="03_content_flow.html">← 콘텐츠 흐름도</a><a href="05_currency_flow.html">재화 흐름도 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">재화별 획득처 · 사용처</span></li><li class="dot" data-i="2"><span class="tip">사용처가 테이블에 없는 이유</span></li><li class="dot" data-i="3"><span class="tip">뽑기 비용 (TBL_CONST · 재화 </span></li><li class="dot" data-i="4"><span class="tip">광고로 얻는 재화</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

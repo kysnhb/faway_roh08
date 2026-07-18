@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>표지 · 목차 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html" class="on">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">Internal Analysis Report · 2026-07-17</p>
+<div style="display:flex;gap:22px;align-items:center;margin:0 0 18px">
+  <img src="img/app/ic_launcher_xxxhdpi_192.png" alt="피그 슬레이어즈"
+       style="width:96px;height:96px;border-radius:20px;image-rendering:pixelated;flex-shrink:0">
+  <div>
+    <h1 style="margin:0">피그 슬레이어즈 <span style="color:var(--tx3);font-weight:400">PigSlayers</span></h1>
+    <div class="small" style="margin-top:4px">
+      <code>com.mongilmongilgames.pigslayers</code> · v15.8.0 (266) · 몽길몽길게임즈
+    </div>
+  </div>
+</div>
+<p class="lead">
+출시 전 빌드 <code>pigslayers.apk</code>(131MB)를 역분석해 게임의 콘텐츠 구성·재화 체계·성장 밸런스·
+수익화 구조를 복원하고, 방치형 RPG 시장 맥락에서 검토한 문서입니다.
+유저 문의 데이터가 없는 <strong>오픈 전 단계</strong>이므로, 모든 근거는 클라이언트 리소스에서 직접 추출했습니다.
+</p>
+
+<div class="grid g4">
+  <div class="stat"><div class="k">엔진</div><div class="v">Unity 6.3</div><div class="s">6000.3.9f1 · IL2CPP</div></div>
+  <div class="stat"><div class="k">데이터 테이블</div><div class="v">69/69</div><div class="s">BGDatabase 전부 파싱</div></div>
+  <div class="stat"><div class="k">재화</div><div class="v">18종</div><div class="s">CurrencyType</div></div>
+  <div class="stat"><div class="k">결제 상품</div><div class="v">56종</div><div class="s">ProductID</div></div>
+  <div class="stat"><div class="k">추출 이미지</div><div class="v">7,256</div><div class="s">스프라이트+텍스처</div></div>
+  <div class="stat"><div class="k">영웅</div><div class="v">9종</div><div class="s">HeroType</div></div>
+  <div class="stat"><div class="k">몬스터</div><div class="v">59종</div><div class="s">MonsterKind</div></div>
+  <div class="stat"><div class="k">지원 언어</div><div class="v">5개국</div><div class="s">ko·en·ja·ru·zh-Hant</div></div>
+</div>
+
+<div class="warn" style="margin-top:22px">
+<strong>⚠ 출시 전 즉시 조치 권고</strong> — <code>global-metadata.dat</code>에
+<strong>Discord 웹훅 4건이 토큰까지 평문으로</strong> 들어 있습니다. 웹훅 URL은 그 자체가 인증 수단이라
+APK를 가진 누구나 해당 채널에 임의 메시지를 보낼 수 있습니다. <strong>재발급이 필요합니다.</strong>
+상세는 <a href="12_tech.html">09 · 기술 스택</a> 참고.
+</div>
+
+<h2>핵심 발견 7가지</h2>
+<div class="grid g2">
+<div class="card"><h3 style="margin-top:0"><span class="chip ruby">1</span> 영웅 9종 중 3종만 완성</h3>
+<p class="small" style="margin:0">왕·왕비·왕자만 고유 스탯이 차등 설계(+50/+20/+30)돼 있고 설명 텍스트가 채워져 있습니다.
+나머지 6종은 스탯이 전부 <strong>+1.0 동일</strong>, 설명은 <code>&#123;0&#125;</code> 플레이스홀더입니다.
+렘·람은 <code>StatType</code>이 <strong>Empty</strong>, 패시브가 전부 <strong>“공허”</strong>입니다.
+→ <a href="06_growth.html">04 · 성장 밸런스</a></p></div>
+
+<div class="card"><h3 style="margin-top:0"><span class="chip orange">2</span> Lv.40~120 시스템 공백</h3>
+<p class="small" style="margin:0">해금 곡선이 Lv.3~40에 집중(장비3·보물5·던전7·영웅10·무한탑15·동굴20·콜로세움30·채굴40)된 뒤
+<strong>Lv.40에서 120까지 새 시스템이 하나도 없습니다</strong>. 장신구가 120, 아티팩트가 150입니다.
+중반 이탈 구간 후보입니다. → <a href="06_growth.html">04 · 성장 밸런스</a></p></div>
+
+<div class="card"><h3 style="margin-top:0"><span class="chip gold">3</span> BM 축은 ‘골드티켓’</h3>
+<p class="small" style="margin:0">결제 상품 56종 중 <strong>골드티켓 관련만 14종</strong>입니다.
+골드가 장비 레벨업·로열 성장의 주 싱크이므로 “골드 부족 → 골드티켓” 퍼널이 중심입니다.
+뽑기 6종 전부에 광고가 붙어 무과금 경로도 열려 있습니다. → <a href="09_bm.html">06 · 수익화</a></p></div>
+
+<div class="card"><h3 style="margin-top:0"><span class="chip ruby">4</span> Discord 웹훅 평문 노출</h3>
+<p class="small" style="margin:0">웹훅 4건이 <strong>토큰까지</strong> <code>global-metadata.dat</code>에 평문으로 있습니다.
+웹훅 URL은 그 자체가 인증 수단이라 APK를 가진 누구나 해당 채널에 전송 가능합니다.
+<strong>출시 전 재발급 필요.</strong> → <a href="12_tech.html">09 · 기술 스택</a></p></div>
+
+<div class="card"><h3 style="margin-top:0"><span class="chip sky">5</span> 어트리뷰션 SDK 부재</h3>
+<p class="small" style="margin:0">AppsFlyer·Adjust·Facebook SDK가 <strong>전혀 없습니다</strong>.
+유료 UA를 집행할 계획이라면 출시 전 도입이 필요합니다 — 사후 도입은 초기 코호트를 영구히 잃습니다.
+경쟁작 상위권이 전부 IP 기반인 시장에서 특히 중요합니다. → <a href="10_market.html">07 · 시장 조사</a></p></div>
+
+<div class="card"><h3 style="margin-top:0"><span class="chip violet">6</span> 재화 18종 중 7종이 껍데기</h3>
+<p class="small" style="margin:0"><strong>메달</strong>은 어느 테이블에도 없고, <strong>크라운</strong>은 이름만 있고 데이터 0건입니다.
+<strong>장비석</strong>은 아이콘조차 없습니다. 주사위·장난감망치·뽑기쿠폰·무한석도 데이터가 1~3행뿐입니다.
+실제로 도는 재화는 <strong>11종</strong>입니다. → <a href="04_currency.html">04 · 재화 구성</a></p></div>
+
+<div class="card"><h3 style="margin-top:0"><span class="chip orange">7</span> 미입력 · 충돌 데이터</h3>
+<p class="small" style="margin:0"><code>TBL_EVENT_ATTENDANCE_REWARD</code> <strong>0행</strong>,
+도감 <strong>1행</strong>(몬스터는 59종), 던전 <code>Rewards</code>는 <strong>102행 중 1행·값 전부 0</strong>,
+최초클리어 보상은 82행이 <code>Gold 0</code>. 동굴 입장 비용은 테이블(열쇠)과 상수(골드티켓)가 <strong>충돌</strong>합니다.
+→ <a href="07_dungeon.html">07 · 던전</a></p></div>
+</div>
+
+<h2>영웅 라인업</h2>
+<div class="gal"><div class="gc"><div class="box"><img src="img/hero/King.png" alt="King" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">King</div></div><div class="gc"><div class="box"><img src="img/hero/Queen.png" alt="Queen" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Queen</div></div><div class="gc"><div class="box"><img src="img/hero/Prince.png" alt="Prince" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Prince</div></div><div class="gc"><div class="box"><img src="img/hero/Princess.png" alt="Princess" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Princess</div></div><div class="gc"><div class="box"><img src="img/hero/PigKing.png" alt="PigKing" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">PigKing</div></div><div class="gc"><div class="box"><img src="img/hero/Captain.png" alt="Captain" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Captain</div></div><div class="gc"><div class="box"><img src="img/hero/Reaper.png" alt="Reaper" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">Reaper</div></div><div class="gc"><div class="box"><img src="img/hero/BlueMermaid.png" alt="BlueMermaid" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">BlueMermaid</div></div><div class="gc"><div class="box"><img src="img/hero/PinkMermaid.png" alt="PinkMermaid" style="width:64px;height:64px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"></div><div class="n">PinkMermaid</div></div></div>
+<p class="small">※ 위 9종 중 <strong>왕·왕비·왕자</strong>만 스탯이 완성돼 있습니다. 나머지는 미완성 상태입니다.</p>
+
+<h2>목차</h2>
+<div class="toc"><a href="01_overview.html"><div class="no">01</div><div class="ti">게임 소개서</div><div class="ds">PigSlayers는 어떤 게임인가 — 장르·테마·핵심 루프</div></a><a href="02_content.html"><div class="no">02</div><div class="ti">콘텐츠 구성도</div><div class="ds">탭·스테이지·던전·모험 전체 지도</div></a><a href="03_content_flow.html"><div class="no">03</div><div class="ti">콘텐츠 흐름도</div><div class="ds">유저가 레벨을 올리며 콘텐츠를 만나는 순서</div></a><a href="04_currency.html"><div class="no">04</div><div class="ti">재화 구성</div><div class="ds">재화 18종과 획득처·사용처 전수</div></a><a href="05_currency_flow.html"><div class="no">05</div><div class="ti">재화 흐름도</div><div class="ds">재화가 어디서 들어와 어디로 빠지는가</div></a><a href="06_growth.html"><div class="no">06</div><div class="ti">성장 밸런스</div><div class="ds">로열·장비·스킬·영웅 성장 축과 실측 수치</div></a><a href="07_dungeon.html"><div class="no">07</div><div class="ti">던전</div><div class="ds">던전 8종의 요구 조건과 보상 전수</div></a><a href="08_events.html"><div class="no">08</div><div class="ti">인게임 이벤트</div><div class="ds">출석·빙고·주사위·패스·이벤트 스테이지</div></a><a href="09_bm.html"><div class="no">09</div><div class="ti">수익화 구조</div><div class="ds">결제 상품 56종·상점·광고 구성</div></a><a href="10_market.html"><div class="no">10</div><div class="ti">시장 조사</div><div class="ds">방치형 RPG 시장과 경쟁작 벤치마크</div></a><a href="11_assets.html"><div class="no">11</div><div class="ti">이미지 리소스</div><div class="ds">추출된 아트 에셋 갤러리</div></a><a href="12_tech.html"><div class="no">12</div><div class="ti">기술 스택</div><div class="ds">엔진·SDK·빌드 구성</div></a><a href="13_tables.html"><div class="no">13</div><div class="ti">테이블 데이터</div><div class="ds">BGDatabase 원본 테이블 69종</div></a><a href="14_method.html"><div class="no">14</div><div class="ti">방법론과 한계</div><div class="ds">어떻게 추출했고 무엇을 확인 못 했는가</div></a><a href="15_simulator.html"><div class="no">15</div><div class="ti">성장 시뮬레이터</div><div class="ds">성장 요소 전수 + 실시간 계산기</div></a></div>
+
+<div class="fact">
+<strong>이 리포트의 근거</strong> — 모든 수치는 APK 안에서 기계적으로 추출한 값입니다.
+게임 코드(IL2CPP)에서 뽑은 enum, BGDatabase 바이너리 테이블, Unity 에셋 번들의 이미지와
+오브젝트 계층이 원본입니다. 추측이 섞인 항목은 본문에서 <span class="chip orange">추정</span>으로 따로 표시했습니다.
+</div>
+
+
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">핵심 발견 7가지</span></li><li class="dot" data-i="2"><span class="tip">영웅 라인업</span></li><li class="dot" data-i="3"><span class="tip">목차</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

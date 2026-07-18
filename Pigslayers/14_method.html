@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>방법론과 한계 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html" class="on">방법</a><a href="15_simulator.html">계산기</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">14 · Methodology</p>
+<h1>방법론과 한계</h1>
+<p class="lead">이 리포트의 모든 수치가 <strong>어디서 어떻게 나왔는지</strong>, 그리고
+<strong>무엇을 확인하지 못했는지</strong>를 밝힙니다. 검증 가능하지 않은 분석은 의미가 없습니다.</p>
+
+<h2>입력</h2>
+<div class="tw"><table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody><tr><td>원본</td><td><code>C:\Users\kysnh\Downloads\pigslayers.apk</code></td></tr><tr><td>크기</td><td>137,751,238 바이트 (131 MB)</td></tr><tr><td>엔트리 수</td><td>633</td></tr><tr><td>빌드</td><td>Unity 6000.3.9f1 · IL2CPP · Release</td></tr></tbody></table></div>
+
+<h2>추출 파이프라인</h2>
+<div class="tw"><table><thead><tr><th>단계</th><th>대상</th><th>도구</th><th>결과</th></tr></thead><tbody><tr><td>1</td><td>APK 압축 해제</td><td>Python <code>zipfile</code></td><td>633 엔트리</td></tr><tr><td>2</td><td>매니페스트 · 리소스</td><td><code>pyaxmlparser</code> · jadx</td><td>패키지·권한·SDK·상품 40종</td></tr><tr><td>3</td><td>Unity 에셋</td><td><code>UnityPy 1.25.2</code></td><td>스프라이트 4,678 · 텍스처 2,578 · 폰트 8</td></tr><tr><td>4</td><td>IL2CPP 코드</td><td><strong>Cpp2IL 2022.1.0-pre.21</strong></td><td>DLL 132개 · C# 11,480 파일 · enum 전수</td></tr><tr><td>5</td><td>데이터 테이블</td><td><strong>자체 제작 파서</strong></td><td>BGDatabase 69/69 테이블 · 545/545 필드</td></tr><tr><td>6</td><td>오브젝트 계층</td><td>UnityPy</td><td>GameObject 24,180 · 루트 168</td></tr></tbody></table></div>
+
+<h2>IL2CPP 덤프 — 걸림돌과 해결</h2>
+<div class="card">
+<p style="margin:0 0 10px"><strong>문제</strong> — 표준 도구인 <strong>Il2CppDumper</strong>가
+“메타데이터 버전 39는 지원하지 않음”으로 실패했습니다. 처음에는 <strong>난독화를 의심</strong>했습니다.
+실존하는 메타데이터 버전은 31까지였기 때문입니다.</p>
+<p style="margin:0 0 10px"><strong>검증</strong> — 매직넘버(<code>0xFAB11BAF</code>)는 정상이었고,
+문자열이 <strong>평문으로 읽혔습니다</strong>. 암호화가 아니라는 뜻입니다.
+그리고 번들 헤더에서 엔진 버전이 <strong>6000.3.9f1(Unity 6.3)</strong>로 확인됐습니다.</p>
+<p style="margin:0"><strong>결론</strong> — v39는 난독화가 아니라 <strong>Unity 6.3의 신규 정식 버전</strong>이고,
+Il2CppDumper가 아직 대응하지 못한 것이었습니다. v39를 지원하는 <strong>Cpp2IL</strong>로 교체해 해결했습니다
+(로그: <code>Using actual IL2CPP Metadata version 39</code>).</p>
+</div>
+
+<h2>BGDatabase 파서 — 자체 제작</h2>
+<p>게임 테이블은 <strong>BGDatabase</strong>(유니티 유료 에셋)의 바이너리 포맷입니다.
+공개 파서가 없어 포맷을 직접 역분석했습니다.</p>
+<div class="card">
+<p style="margin:0 0 10px"><strong>검증 기준</strong> — 파싱 결과가 “그럴듯한지”가 아니라
+<strong>기계적으로 대조 가능한지</strong>로 판단했습니다.</p>
+<ul style="margin:0">
+<li>파싱한 <strong>필드명·타입</strong>을 IL2CPP 덤프의 BGDatabase 코드젠 클래스와 대조 → 게임 테이블 <strong>66개 전부 일치</strong></li>
+<li>블롭 길이 검산 — <code>1268 = 4(행수) + 400(오프셋쌍) + 864(문자열)</code> 형태로 모든 필드 검증</li>
+<li>내용 검증 — <code>TBL_STAGE</code> 1행이 <code>돼지의 성 I</code>, 레벨 구간이 1–10 → 11–20으로 단조 증가</li>
+<li>순회 정합성 — 모든 meta가 <strong>바이트 단위로 정확히 다음 meta의 marker에 착지</strong>(재동기화 0회)하고,
+순회가 EOF 4바이트 앞에서 끝남. 포맷 해석이 옳다는 가장 강한 증거</li>
+<li>최종 결과 <strong>69/69 테이블 · 545/545 필드 · UNPARSED 0건</strong>.
+미매핑 enum 0건, 미해결 관계 GUID 0건</li>
+</ul>
+<p style="margin:10px 0 0"><strong>단, 두 가지는 “디코딩”이 아니라 “유도”입니다</strong> —
+① 중첩(Nested) 컬럼 3개는 디스크에 빈 페이로드라 자식 테이블의 역관계로 채웠고(자식 테이블이 정본),
+② 타입 <em>이름</em>은 코드젠에서 왔습니다(타입 <em>크기</em>는 바이너리가 독립 증명).</p>
+</div>
+
+<h2>⚠ 확인하지 못한 것</h2>
+<div class="warn">
+<p style="margin:0 0 10px"><strong>1. 가격.</strong> IAP 가격은 Google Play 콘솔(서버)에 있습니다.
+APK에는 상품 ID만 있습니다. 따라서 <strong>ARPU·매출 추정은 이 리포트 범위 밖</strong>입니다.</p>
+<p style="margin:0 0 10px"><strong>2. 확률.</strong> 뽑기 확률이 클라이언트 테이블에 없습니다
+(<code>EquipmentRate</code> 등 일부 드랍률만 존재). <strong>서버 결정</strong>으로 <span class="chip orange">추정</span>됩니다.</p>
+<p style="margin:0 0 10px"><strong>3. 이벤트 일정.</strong> 이벤트 시작/종료 시각은 테이블에 없습니다.
+서버(<code>notice.php</code> / PlayNANOO) 제어로 <span class="chip orange">추정</span>됩니다.</p>
+<p style="margin:0 0 10px"><strong>4. 런타임 실사용 여부.</strong> IL2CPP는 메서드 본문이 네이티브 코드입니다.
+Cpp2IL의 <code>diffable-cs</code> 출력은 <strong>타입·필드·enum·시그니처</strong>만 제공하고 로직은 없습니다.
+따라서 “문자열/상수가 존재한다”는 사실이지만 “실제로 그렇게 동작한다”는 <strong>확정할 수 없습니다</strong>.
+(대표 사례: AdMob 테스트 광고 ID 잔존 — 존재는 사실, 사용 여부는 미확정)</p>
+<p style="margin:0 0 10px"><strong>5. 오디오.</strong> AudioClip 82개가 <code>sharedassets0.resource</code>에
+FMOD FSB5로 스트리밍 분리돼 있어 미추출입니다. 이름 목록만 확보했습니다.</p>
+<p style="margin:0"><strong>6. 유저 데이터.</strong> 오픈 전이므로 리텐션·전환율·이탈 구간 <strong>실측치가 없습니다</strong>.
+이 리포트의 “초반 이탈 위험” 류 언급은 전부 <strong>구조에서 추론한 가설</strong>이며 검증되지 않았습니다.</p>
+</div>
+
+<h2>표기 규칙</h2>
+<div class="tw"><table><thead><tr><th>표기</th><th>의미</th></tr></thead><tbody><tr><td><span class="chip jade">일반 서술</span></td><td>APK에서 직접 추출한 <strong>사실</strong>. 테이블 값·enum·매니페스트.</td></tr><tr><td><span class="chip orange">추정</span></td><td>이름·구조에서 <strong>역추론</strong>한 것. 반증 가능성 있음.</td></tr><tr><td><span class="chip">검토 제안</span></td><td>데이터가 아니라 <strong>판단</strong>. 논의 대상.</td></tr></tbody></table></div>
+
+<h2>산출물 위치</h2>
+<div class="tw"><table><thead><tr><th>내용</th><th>경로</th></tr></thead><tbody><tr><td>이 리포트</td><td><code>D:\newgaems\site\</code></td></tr><tr><td>추출 이미지 전체</td><td><code>D:\newgaems\assets_extracted\</code> (sprites · textures · fonts · textassets)</td></tr><tr><td>테이블 CSV/JSON</td><td><code>D:\newgaems\tables\</code></td></tr><tr><td>분석 리포트(마크다운)</td><td><code>D:\newgaems\reports\</code></td></tr><tr><td>작업 파일 · 파서 · 덤프</td><td><code>D:\newgaems\_work\</code></td></tr></tbody></table></div>
+<div class="fact"><strong>재현 가능성</strong> — 모든 추출 스크립트가 <code>_work\</code>에 남아 있습니다
+(<code>dump_images.py</code>, <code>bgdb_parser.py</code>, <code>gen_site.py</code> 등).
+APK만 있으면 이 리포트를 통째로 재생성할 수 있습니다.</div>
+
+<div class="pager"><a href="13_tables.html">← 테이블 데이터</a><a href="15_simulator.html">성장 시뮬레이터 →</a></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">입력</span></li><li class="dot" data-i="2"><span class="tip">추출 파이프라인</span></li><li class="dot" data-i="3"><span class="tip">IL2CPP 덤프</span></li><li class="dot" data-i="4"><span class="tip">BGDatabase 파서</span></li><li class="dot" data-i="5"><span class="tip">⚠ 확인하지 못한 것</span></li><li class="dot" data-i="6"><span class="tip">표기 규칙</span></li><li class="dot" data-i="7"><span class="tip">산출물 위치</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+</body></html>

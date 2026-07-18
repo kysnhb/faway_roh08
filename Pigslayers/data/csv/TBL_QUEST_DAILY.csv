@@ -1,0 +1,12 @@
+﻿name,MissionType,ReportType,CompleteCount,RewardType,RewardAmount,NameText,DescriptionText
+접속해주세요!,Attendance,Set,1.0,Pork,50.0,Quest.Name.Attendance,Quest.Description.Attendance
+몬스터를 처치하라!,MonsterKill,Add,200.0,Key,30.0,Quest.Name.MonsterKill,Quest.Description.MonsterKill
+장비를 모아라!,EquipmentAdd,Add,100.0,Ruby,100.0,Quest.Name.EquipmentAdd,Quest.Description.EquipmentAdd
+왕가 성장 레벨업!,RoyalGrowth,Add,5.0,Ruby,100.0,Quest.Name.RoyalGrowth,Quest.Description.RoyalGrowth
+왕가 특성 레벨업!,RoyalForce,Add,5.0,Ruby,100.0,Quest.Name.RoyalForce,Quest.Description.RoyalForce
+장비를 합성하라!,EquipmentCompose,Add,5.0,Ruby,100.0,Quest.Name.EquipmentCompose,Quest.Description.EquipmentCompose
+고기를 사용하라!,PorkUse,Add,5.0,Ruby,100.0,Quest.Name.PorkUse,Quest.Description.PorkUse
+열쇠를 사용하라!,KeyUse,Add,5.0,Ruby,100.0,Quest.Name.KeyUse,Quest.Description.KeyUse
+물고기를 잡아라!,ChallengeFishFight,Add,3.0,Ruby,100.0,Quest.Name.ChallengeFishFight,Quest.Description.ChallengeFishFight
+리본 돼지 토벌!,ChallengePigCow,Add,3.0,Ruby,100.0,Quest.Name.ChallengePigCow,Quest.Description.ChallengePigCow
+무한의 탑을 오르자!,ChallengeInfiniteTower,Add,3.0,Ruby,100.0,Quest.Name.ChallengeInfiniteTower,Quest.Description.ChallengeInfiniteTower

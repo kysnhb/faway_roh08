@@ -1,0 +1,11 @@
+﻿name,Stage,RewardType,RewardCount,PassRewardType,PassRewardCount
+TBL_PASS_STAGE0,5,Gold,0,Gold,0
+TBL_PASS_STAGE1,10,Gold,0,Gold,0
+TBL_PASS_STAGE2,15,Gold,0,Gold,0
+TBL_PASS_STAGE3,20,Gold,0,Gold,0
+TBL_PASS_STAGE4,25,Gold,0,Gold,0
+TBL_PASS_STAGE5,30,Gold,0,Gold,0
+TBL_PASS_STAGE6,35,Gold,0,Gold,0
+TBL_PASS_STAGE7,40,Gold,0,Gold,0
+TBL_PASS_STAGE8,45,Gold,0,Gold,0
+TBL_PASS_STAGE9,50,Gold,0,Gold,0

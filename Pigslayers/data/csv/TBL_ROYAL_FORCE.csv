@@ -1,0 +1,10 @@
+﻿name,StatType,DefaultValue,ValueMultipler,ValueDivision,DefaultLevel,MaxLevel,Cost,CostAdd,IsPercentPostfix,NameText
+공격 속도 증가,AttackSpeed,0.0,1.0,1.0,0,900,10.0,10.0,False,Royal.Force.Name.00
+이동 속도 증가,MoveSpeed,0.0,1.0,1.0,0,900,10.0,10.0,False,Royal.Force.Name.01
+치명타 공격력 증가,CriticalDamageRate,0.0,0.5,1.0,0,900,10.0,10.0,True,Royal.Force.Name.02
+명중률 증가,Acc,0.0,2.0,1.0,0,600,10.0,10.0,False,Royal.Force.Name.03
+골드 보너스 증가,AllGoldBonusRate,0.0,1.0,1.0,0,500,10.0,10.0,True,Royal.Force.Name.04
+경험치 보너스 증가,AllExpBonusRate,0.0,1.0,1.0,0,500,10.0,10.0,True,Royal.Force.Name.05
+추가 공격력 증가,DamageRate,0.0,50.0,1.0,0,600,10.0,10.0,True,Royal.Force.Name.06
+추가 체력 증가,HealthRate,0.0,50.0,1.0,0,600,10.0,10.0,True,Royal.Force.Name.07
+회피률 증가,Dodge,0.0,2.0,1.0,0,600,10.0,10.0,False,Royal.Force.Name.08
