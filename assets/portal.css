@@ -31,7 +31,7 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
 /* ---------- header ---------- */
-header{padding:76px 0 40px;text-align:center}
+header{padding:32px 0 20px;text-align:center}
 .eyebrow{
   display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.24em;
   color:var(--tx3);border:1px solid var(--line);border-radius:999px;padding:.5em 1.3em;margin-bottom:24px
@@ -42,14 +42,16 @@ h1{
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent
 }
 header p{color:var(--tx2);font-size:16px;max-width:640px;margin:0 auto}
-.stats{display:flex;gap:32px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.stats{display:flex;gap:32px;justify-content:center;margin-top:20px;flex-wrap:wrap}
 .stats .s{text-align:center}
 .stats .n{font-family:var(--mono);font-size:26px;font-weight:700;color:#fff}
 .stats .l{font-size:12px;color:var(--tx3);letter-spacing:.04em}
 
 /* ---------- game cards ---------- */
 main{padding:24px 0 90px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:22px}
+/* 2 x 2 고정 — 4개 게임이 한 화면에 균등하게 */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
 .game{
   position:relative;display:flex;flex-direction:column;
   background:linear-gradient(180deg,var(--bg2),var(--card));
@@ -58,7 +60,7 @@ main{padding:24px 0 90px}
 }
 .game:hover{transform:translateY(-8px);border-color:var(--ac);box-shadow:0 20px 50px -20px var(--acglow)}
 .game .cover{
-  position:relative;height:190px;display:flex;align-items:center;justify-content:center;
+  position:relative;height:112px;display:flex;align-items:center;justify-content:center;
   background:radial-gradient(120% 120% at 50% 0%,var(--acbg),transparent 70%);
   overflow:hidden;border-bottom:1px solid var(--line)
 }
@@ -67,29 +69,30 @@ main{padding:24px 0 90px}
   background-image:radial-gradient(var(--acdot) 1px,transparent 1px);background-size:18px 18px;opacity:.4
 }
 .game .cover img{
-  position:relative;max-height:140px;max-width:78%;object-fit:contain;
+  position:relative;max-height:96px;max-width:70%;object-fit:contain;
   image-rendering:pixelated;filter:drop-shadow(0 10px 22px rgba(0,0,0,.5))
 }
 .game .cover .ph{
   position:relative;font-family:var(--mono);font-weight:800;font-size:52px;letter-spacing:.04em;
   color:var(--ac);text-shadow:0 6px 30px var(--acglow)
 }
-.game .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
-.game .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.game .body{padding:16px 20px 18px;display:flex;flex-direction:column;flex:1}
+.game .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
 .chip{
   font-size:11.5px;font-weight:700;padding:.25em .8em;border-radius:999px;
   border:1px solid var(--line);color:var(--tx2);background:rgba(255,255,255,.03);white-space:nowrap
 }
 .chip.ac{color:#0e1016;background:var(--ac);border-color:var(--ac)}
 .game h2{font-size:21px;margin:0 0 3px;letter-spacing:-.01em}
-.game .en{font-family:var(--mono);font-size:12px;color:var(--tx3);margin-bottom:12px}
-.game .desc{color:var(--tx2);font-size:14px;flex:1;margin:0 0 16px}
-.game .meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--tx3);margin-bottom:18px}
+.game .en{font-family:var(--mono);font-size:11.5px;color:var(--tx3);margin-bottom:9px}
+.game .desc{color:var(--tx2);font-size:13.5px;line-height:1.55;flex:1;margin:0 0 12px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.game .meta{display:flex;flex-wrap:wrap;gap:5px 14px;font-size:11.5px;color:var(--tx3);margin-bottom:13px}
 .game .meta b{color:var(--tx2);font-weight:600}
 .game .go{
   display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
-  font-weight:700;font-size:14px;color:var(--ac);
-  border:1.5px solid var(--ac);border-radius:999px;padding:.6em 1.4em;transition:.2s
+  font-weight:700;font-size:13px;color:var(--ac);
+  border:1.5px solid var(--ac);border-radius:999px;padding:.45em 1.15em;transition:.2s
 }
 .game:hover .go{background:var(--ac);color:#0e1016}
 .game .go .arw{transition:transform .2s}
