@@ -89,6 +89,7 @@ body{padding-left:var(--gb-w)}
     <a class="" href="13_tables.html"><span class="num">13</span><span>테이블</span></a>
     <a class="" href="14_method.html"><span class="num">14</span><span>방법</span></a>
     <a class="" href="15_simulator.html"><span class="num">15</span><span>계산기</span></a>
+    <a class="" href="16_appstore.html"><span class="num">16</span><span>스토어</span></a>
   </nav>
 </aside>
 <div class="topbar"><div class="wrap">
@@ -96,7 +97,7 @@ body{padding-left:var(--gb-w)}
   <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
     <span></span><span></span><span></span>
   </button>
-  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html" class="on">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a></nav>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html" class="on">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a><a href="16_appstore.html">스토어</a></nav>
 </div></div>
 <div class="navdim" id="navDim"></div>
 <script>
@@ -129,7 +130,7 @@ body{padding-left:var(--gb-w)}
 </div>
 <div class="warn"><strong>불일치 1건</strong> — 코드 enum은 56종인데 매니페스트/스토어 등록 상품은 40종입니다.
 차액 16종은 ① 광고·마일리지 등 <strong>비결제 항목</strong>(<code>Ad_*</code>, <code>Mileage</code>, <code>Mileage_Item</code>)이거나
-② <strong>미출시 예정 상품</strong>일 수 있습니다. 오픈 전 점검 항목으로 남깁니다.</div>
+② <strong>미등록 상품</strong>일 수 있습니다. 실제로 iOS App Store에 노출된 상품은 <strong>10종뿐</strong>입니다 — <a href="16_appstore.html">16 · 버전 기록</a> 참고.</div>
 
 <h2>상점 구성 (ShopType 6종)</h2>
 <div class="tw"><table><thead><tr><th>탭</th><th>성격</th><th>상품</th></tr></thead><tbody><tr><td><span class="chip ruby">Ruby</span></td><td>유료 재화 직판</td><td>ruby_1000 ~ ruby_100000 (6단계)</td></tr><tr><td><span class="chip gold">Package</span></td><td>패키지</td><td>ShopPackageType 9종 (아래)</td></tr><tr><td><span class="chip violet">Event</span></td><td>기간 이벤트 상품</td><td>event_level_* · event_stage_*</td></tr><tr><td><span class="chip jade">Mileage</span></td><td>마일리지 교환</td><td><img src="img/currency/Mileage.png" alt="Mileage" style="width:18px;height:18px;object-fit:contain;image-rendering:pixelated;vertical-align:middle"> Mileage · Mileage_Item</td></tr><tr><td><span class="chip sky">AD</span></td><td>광고 리워드</td><td>Ad_GoldTicket · Ad_Pork · Ad_Ruby · Ad_Key</td></tr><tr><td><span class="chip orange">Popup</span></td><td>팝업 노출 상품</td><td>타이밍 기반 제안 (추정)</td></tr></tbody></table></div>

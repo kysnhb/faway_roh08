@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>버전 기록 · 리뷰 · 피그 슬레이어즈 분석</title>
+<link rel="stylesheet" href="assets/style.css">
+<style id="gb-css">
+:root{--gb-w:266px}
+.gb-side{
+  position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
+  background:#11141c;border-right:1px solid #262d3b;overflow-y:auto;
+  padding:16px 12px 28px;
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.gb-side::-webkit-scrollbar{width:8px}
+.gb-side::-webkit-scrollbar-thumb{background:#2b3346;border-radius:4px}
+.gb-home{
+  display:flex;align-items:center;gap:7px;color:#aab4c6;text-decoration:none;
+  font-size:12.5px;padding:9px 11px;border-radius:9px;border:1px solid #262d3b;
+  background:#171b25;transition:.18s;margin-bottom:14px
+}
+.gb-home:hover{background:#1e2431;color:#fff;border-color:var(--gb-ac);text-decoration:none}
+.gb-title{
+  color:#fff;font-size:15px;font-weight:800;padding:0 11px 10px;margin-bottom:8px;
+  border-bottom:1px solid #262d3b;letter-spacing:-.01em;line-height:1.4
+}
+.gb-title small{display:block;color:#6f7a8f;font-size:11px;font-weight:500;margin-top:3px;letter-spacing:.06em}
+.gb-nav{display:flex;flex-direction:column;gap:1px}
+.gb-nav a{
+  display:flex;align-items:center;gap:9px;color:#aab4c6;text-decoration:none;
+  font-size:13px;padding:8px 11px;border-radius:8px;transition:.15s;line-height:1.45
+}
+.gb-nav a .num{
+  font-family:'Consolas',monospace;font-size:10.5px;color:#5d6779;min-width:18px;flex-shrink:0
+}
+.gb-nav a:hover{background:#1b2130;color:#fff;text-decoration:none}
+.gb-nav a.on{background:var(--gb-ac);color:#0e1016;font-weight:700}
+.gb-nav a.on .num{color:rgba(0,0,0,.5)}
+body{padding-left:var(--gb-w)}
+.gb-burger,.gb-dim{display:none}
+@media(max-width:900px){
+  body{padding-left:0}
+  .gb-side{transform:translateX(-100%);transition:transform .26s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 30px rgba(0,0,0,.4)}
+  body.gb-open .gb-side{transform:none}
+  .gb-burger{
+    display:flex;align-items:center;justify-content:center;position:fixed;
+    left:12px;bottom:14px;z-index:320;width:48px;height:48px;border-radius:50%;
+    background:var(--gb-ac);color:#0e1016;border:none;font-size:19px;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  .gb-dim{
+    display:block;position:fixed;inset:0;z-index:290;background:rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .22s
+  }
+  body.gb-open .gb-dim{opacity:1;pointer-events:auto}
+  body.gb-open{overflow:hidden}
+}
+@media print{.gb-side,.gb-burger,.gb-dim{display:none}body{padding-left:0}}
+  .gb-side{--gb-ac:#f86b9d}
+  :root{--gb-ac:#f86b9d}
+
+/* Pigslayers override */
+.topbar .topnav{display:none!important}
+.topbar .navbtn{display:none!important}
+.hi-progress{left:var(--gb-w)!important}
+@media(max-width:900px){ .hi-progress{left:0!important} }
+
+</style>
+<!--gb-injected--></head><body>
+<button class="gb-burger" aria-label="목차 열기">☰</button>
+<div class="gb-dim"></div>
+<aside class="gb-side">
+  <a class="gb-home" href="../index.html">← 게임 분석 아카이브</a>
+  <div class="gb-title">피그 슬레이어즈<small>ANALYSIS REPORT</small></div>
+  <nav class="gb-nav">
+        <a class="" href="index.html"><span class="num">—</span><span>표지</span></a>
+    <a class="" href="01_overview.html"><span class="num">01</span><span>소개</span></a>
+    <a class="" href="02_content.html"><span class="num">02</span><span>콘텐츠</span></a>
+    <a class="" href="03_content_flow.html"><span class="num">03</span><span>흐름</span></a>
+    <a class="" href="04_currency.html"><span class="num">04</span><span>재화</span></a>
+    <a class="" href="05_currency_flow.html"><span class="num">05</span><span>순환</span></a>
+    <a class="" href="06_growth.html"><span class="num">06</span><span>성장</span></a>
+    <a class="" href="07_dungeon.html"><span class="num">07</span><span>던전</span></a>
+    <a class="" href="08_events.html"><span class="num">08</span><span>이벤트</span></a>
+    <a class="" href="09_bm.html"><span class="num">09</span><span>수익화</span></a>
+    <a class="" href="10_market.html"><span class="num">10</span><span>시장</span></a>
+    <a class="" href="11_assets.html"><span class="num">11</span><span>아트</span></a>
+    <a class="" href="12_tech.html"><span class="num">12</span><span>기술</span></a>
+    <a class="" href="13_tables.html"><span class="num">13</span><span>테이블</span></a>
+    <a class="" href="14_method.html"><span class="num">14</span><span>방법</span></a>
+    <a class="" href="15_simulator.html"><span class="num">15</span><span>계산기</span></a>
+    <a class="on" href="16_appstore.html"><span class="num">16</span><span>스토어</span></a>
+  </nav>
+</aside>
+<div class="topbar"><div class="wrap">
+  <div class="brand">피그 슬레이어즈<em>ANALYSIS</em></div>
+  <button class="navbtn" id="navBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="topnav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav"><a href="index.html">표지</a><a href="01_overview.html">소개</a><a href="02_content.html">콘텐츠</a><a href="03_content_flow.html">흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">순환</a><a href="06_growth.html">성장</a><a href="07_dungeon.html">던전</a><a href="08_events.html">이벤트</a><a href="09_bm.html">수익화</a><a href="10_market.html">시장</a><a href="11_assets.html">아트</a><a href="12_tech.html">기술</a><a href="13_tables.html">테이블</a><a href="14_method.html">방법</a><a href="15_simulator.html">계산기</a><a href="16_appstore.html" class="on">스토어</a></nav>
+</div></div>
+<div class="navdim" id="navDim"></div>
+<script>
+(function(){
+  var b=document.getElementById('navBtn'), n=document.getElementById('topnav'), d=document.getElementById('navDim');
+  function set(open){
+    document.body.classList.toggle('nav-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('nav-open')); });
+  d.addEventListener('click', function(){ set(false); });
+  n.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+  addEventListener('resize', function(){ if(innerWidth>760) set(false); });
+})();
+</script>
+<main><div class="wrap">
+
+<p class="eyebrow">16 · App Store</p>
+<h1>버전 기록 · 사용자 리뷰</h1>
+<p class="lead">Apple App Store에 공개된 <strong>업데이트 이력 24개 버전</strong>과
+사용자 리뷰입니다. 버전번호·날짜는 Apple 공식 데이터이며,
+릴리즈 노트 본문은 스토어 게시분을 정리한 것입니다.</p>
+
+<div class="warn"><strong>이 페이지가 기존 분석을 보정합니다.</strong>
+APK만 봤을 때는 스토어 등록 여부를 알 수 없어 <strong>미출시로 추정</strong>했으나,
+실제로는 <strong>2022년 11월 소프트 런칭</strong>된 게임입니다.
+다만 <strong>2023년 6월 이후 업데이트가 중단</strong>돼 있습니다.</div>
+
+<h2>앱 기본 정보</h2>
+<div class="tw"><table><thead><tr><th>항목</th><th>값</th></tr></thead><tbody><tr><td>앱 이름</td><td>피그 슬레이어즈 : 방치형 키우기 RPG</td></tr><tr><td>번들 ID</td><td><code>com.mongilmongilgames.pigslayers</code></td></tr><tr><td><strong>최초 출시</strong></td><td><strong>2022-11-01</strong> (한국 App Store)</td></tr><tr><td><strong>최종 버전</strong></td><td><strong>15.7.1</strong> · 2023-06-16</td></tr><tr><td>판매자</td><td>hongil kim (개인) · © 몽일몽일게임즈</td></tr><tr><td>평점</td><td><strong>4.48 / 5</strong> · 평가 25개</td></tr><tr><td>용량</td><td>427 MB</td></tr><tr><td>지원 언어</td><td><span class="chip orange">한국어 단일</span> — 빌드에는 5개국어 데이터 존재</td></tr><tr><td>최소 iOS</td><td>12.0</td></tr><tr><td>가격</td><td>무료 (인앱결제)</td></tr></tbody></table></div>
+
+<h2>업데이트 생애주기 — 3단계</h2>
+<div class="grid g3">
+  <div class="card"><h3 style="margin-top:0"><span class="chip jade">1기 확장</span></h3>
+  <p class="small" style="margin:0"><strong>2022-11 ~ 2023-01 · 10개 버전</strong><br>
+  신규 시스템 투입, 서버 3개 증설, 이벤트 연속 개최. 공식카페 오픈.</p></div>
+  <div class="card"><h3 style="margin-top:0"><span class="chip orange">2기 수축</span></h3>
+  <p class="small" style="margin:0"><strong>2023-02 · 6개 버전</strong><br>
+  4개 서버를 1개로 통합. 핵 탐지 패치 4일간 3연속.</p></div>
+  <div class="card"><h3 style="margin-top:0"><span class="chip ruby">3기 안정화</span></h3>
+  <p class="small" style="margin:0"><strong>2023-04 ~ 06 · 8개 버전</strong><br>
+  신규 콘텐츠 <strong>0건</strong>. 버그 수정과 최적화만. 이후 중단.</p></div>
+</div>
+
+<h2>핵심 신호 — 서버 확장 3주 만에 통합</h2>
+<div class="flow">
+<svg viewBox="0 0 960 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="서버 확장에서 통합까지">
+  <defs><marker id="sa" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L8,3 z" fill="#FC8B35"/></marker></defs>
+  <line x1="60" y1="105" x2="900" y2="105" stroke="#FFD9E6" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="150" cy="105" r="9" fill="#1DB06B" stroke="#fff" stroke-width="3"/>
+  <text x="150" y="72" text-anchor="middle" font-size="13" fill="#0d6b41">서버 3개 증설</text>
+  <text x="150" y="140" text-anchor="middle" font-size="11" fill="#9e9e9e">2022-12-21</text>
+
+  <circle cx="420" cy="105" r="9" fill="#1DB06B" stroke="#fff" stroke-width="3"/>
+  <text x="420" y="72" text-anchor="middle" font-size="13" fill="#0d6b41">추가 서버 오픈</text>
+  <text x="420" y="140" text-anchor="middle" font-size="11" fill="#9e9e9e">2023-01-11</text>
+
+  <circle cx="760" cy="105" r="11" fill="#E23A3A" stroke="#fff" stroke-width="3"/>
+  <text x="760" y="72" text-anchor="middle" font-size="13" fill="#c02222" font-weight="bold">4개 → 1개 통합</text>
+  <text x="760" y="140" text-anchor="middle" font-size="11" fill="#9e9e9e">2023-02-02</text>
+
+  <path d="M430,168 L750,168" stroke="#FC8B35" stroke-width="2" marker-end="url(#sa)" fill="none" stroke-dasharray="5 4"/>
+  <text x="590" y="190" text-anchor="middle" font-size="12" fill="#a5510a">22일</text>
+</svg>
+</div>
+<div class="warn"><strong>서버 증설은 유입 기대의 표현이고, 통합은 각 서버 인구가 유지 불가라는 뜻입니다.</strong>
+3주 만의 반전은 초기 유입이 기대치를 크게 밑돌았음을 시사합니다 — 이력 전체에서 가장 강한 신호입니다.</div>
+
+<h2>핵(치트) 대응</h2>
+<div class="tw"><table><thead><tr><th>날짜</th><th>버전</th><th>내용</th></tr></thead><tbody><tr><td>2023-02-04</td><td>15.3.0</td><td>핵 탐지 향상</td></tr><tr><td>2023-02-05</td><td>15.3.1</td><td>핵 탐지 강화</td></tr><tr><td>2023-02-07</td><td>15.3.2</td><td>핵 탐지 정확도 개선</td></tr><tr><td>2023-02-18</td><td>15.4.1</td><td>핵 탐지 개선 (재차)</td></tr></tbody></table></div>
+<div class="note"><strong>나흘간 3연속 긴급 패치</strong>입니다.
+<a href="12_tech.html">기술 스택</a>에서 확인한 3중 무결성 보안
+(Play Integrity + Firebase App Check + Anti-Cheat Toolkit)은
+<strong>사전 설계가 아니라 이 시기의 사후 대응</strong>이었을 가능성이 높습니다 <span class="chip orange">추정</span>.</div>
+
+<h2>전체 버전 기록 (24개)</h2>
+<div class="tw"><table><thead><tr><th>버전</th><th>날짜</th><th>구간</th><th>내용</th></tr></thead><tbody><tr><td><strong>15.7.1</strong> <span class="chip ruby">최종</span></td><td>2023-06-16</td><td><span class="chip ruby">안정화기</span></td><td>[이벤트] 연속 출석 버프 이벤트 · 보상 상향<br>[게임 안정화] 프레임 최적화 · 사운드 최적화 · 편의 및 UX 수정</td></tr><tr><td><strong>15.7.0</strong></td><td>2023-06-12</td><td><span class="chip ruby">안정화기</span></td><td>[이벤트] 연속 출석 버프<br>[게임 안정화] 프레임 · 사운드 최적화</td></tr><tr><td><strong>15.6.5</strong></td><td>2023-05-05</td><td><span class="chip ruby">안정화기</span></td><td>[게임 안정화] 로그인 안정화 · UI/UX 최적화</td></tr><tr><td><strong>15.6.3</strong></td><td>2023-04-27</td><td><span class="chip ruby">안정화기</span></td><td>[게임 안정화] 스킬 선택/장착 버그 수정 · 상점 초기화 버그 수정</td></tr><tr><td><strong>15.6.1</strong></td><td>2023-04-26</td><td><span class="chip ruby">안정화기</span></td><td>게임 안정화 · 편의 UX 수정</td></tr><tr><td><strong>15.6.0</strong></td><td>2023-04-18</td><td><span class="chip ruby">안정화기</span></td><td>[게임 안정화] 던전 입장 버그 · 7일 출석 리셋<br>[편의] 출석 · 가이드미션 보상 일괄 수령</td></tr><tr><td><strong>15.5.0</strong></td><td>2023-04-12</td><td><span class="chip ruby">안정화기</span></td><td>[게임 안정화] 지난 이벤트 노출 제거 · 던전 입장 버그 · 하늘신전 맵 정상화</td></tr><tr><td><strong>15.4.1</strong></td><td>2023-02-18</td><td><span class="chip orange">수축기</span></td><td>[서버 시간] 리셋 00:00(KST)로 변경<br>[버그] 1일+ 로그인 서버 저장 · 데이터 초기화 · 핵 탐지 개선</td></tr><tr><td><strong>15.4.0</strong></td><td>2023-02-14</td><td><span class="chip orange">수축기</span></td><td>편의 업데이트 및 안정화</td></tr><tr><td><strong>15.3.2</strong></td><td>2023-02-07</td><td><span class="chip orange">수축기</span></td><td>[핵 탐지 개선] 더 정확한 탐지</td></tr><tr><td><strong>15.3.1</strong></td><td>2023-02-05</td><td><span class="chip orange">수축기</span></td><td>[핵 탐지 개선] 탐지 강화</td></tr><tr><td><strong>15.3.0</strong></td><td>2023-02-04</td><td><span class="chip orange">수축기</span></td><td>[핵 탐지 개선] 탐지 향상</td></tr><tr><td><strong>15.2.2</strong></td><td>2023-02-03</td><td><span class="chip orange">수축기</span></td><td><strong>[서버 통합] 4개 서버 → 1개 통합</strong></td></tr><tr><td><strong>15.2.0</strong></td><td>2023-02-02</td><td><span class="chip orange">수축기</span></td><td><strong>[서버 통합] 4개 서버 통합</strong></td></tr><tr><td><strong>15.1.1</strong></td><td>2023-01-28</td><td><span class="chip jade">확장기</span></td><td>[미니게임] 힌트 버그 수정 · [절전모드] 안내 추가</td></tr><tr><td><strong>15.1.0</strong></td><td>2023-01-26</td><td><span class="chip jade">확장기</span></td><td>[신년 이벤트] 3/1까지 연장 · 보상 상향<br>[크리스마스 이벤트] 연장 · [무한의 탑] 상품 변경</td></tr><tr><td><strong>15.0.3</strong></td><td>2023-01-21</td><td><span class="chip jade">확장기</span></td><td>공식카페 오픈 (cafe.naver.com/pigslayers)</td></tr><tr><td><strong>15.0.2</strong></td><td>2023-01-20</td><td><span class="chip jade">확장기</span></td><td>[이벤트] 신년 토끼 미니게임 · 레벨/스테이지 이벤트 · 장비 보너스 시스템</td></tr><tr><td><strong>15.0.0</strong></td><td>2023-01-11</td><td><span class="chip jade">확장기</span></td><td>[크리스마스] 빙고 이벤트 · [로열 마스터리] 시스템 확장<br>[로열 승급] 레벨별 잠재능력 · [UI/UX] 하단 UI 확대<br><strong>[신규 서버] 다수 서버 오픈</strong></td></tr><tr><td><strong>1.4.5</strong></td><td>2022-12-22</td><td><span class="chip jade">확장기</span></td><td>[로열 마스터리] 강화 · 재설계</td></tr><tr><td><strong>1.4.1</strong></td><td>2022-12-21</td><td><span class="chip jade">확장기</span></td><td>[로열 승급] 레벨별 잠재능력 해금</td></tr><tr><td><strong>1.4.0</strong></td><td>2022-12-21</td><td><span class="chip jade">확장기</span></td><td>[UI/UX] 하단 UI 확대 · 우편 일괄수령<br><strong>[신규 서버] '노을' '얼음' '진홍' 오픈</strong></td></tr><tr><td><strong>1.3.2</strong></td><td>2022-11-29</td><td><span class="chip jade">확장기</span></td><td>[로열 성장] 최대 레벨 조정 · 치명타 신규 기능<br>[밸런스] 루비 보상 5,000 상한 · 망치 드랍률 하향</td></tr><tr><td><strong>1.3.1</strong></td><td>2022-11-23</td><td><span class="chip jade">확장기</span></td><td>[프리셋] 마스터리·영웅·스킬 프리셋<br>[두 마리 돼지] · [아티팩트] · [하늘신전] · [7일 이벤트]</td></tr><tr><td><strong>1.3.0</strong></td><td>2022-11-21</td><td><span class="chip jade">확장기</span></td><td>(1.3.1과 동일)</td></tr></tbody></table></div>
+<p class="small">버전 번호가 <code>1.4.5</code> → <code>15.0.0</code>으로 점프합니다(2023-01-11).
+Android와 버전 체계를 통일했거나 내부 빌드 번호를 노출한 것으로 <span class="chip orange">추정</span>됩니다.
+분석한 <strong>Android APK는 15.8.0</strong>으로 iOS 최종(15.7.1)보다 한 단계 위입니다.</p>
+
+<h2>사용자 리뷰 (스토어 노출 6건)</h2>
+
+<div class="card" style="border-color:#FFD9E6;margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+    <strong style="font-size:15px">핸드폰마다 ui 뜨는 위치가 다른것 같아요</strong>
+    <span class="small">2022-12-22 · 르르르메</span>
+  </div>
+  <div style="color:var(--yellow);font-size:16px;letter-spacing:2px;margin:4px 0 8px">★★★★★</div>
+  <p style="margin:0;font-size:13.5px">아이폰13 미니인데 스킬장착창이 안내말풍선이랑 겹쳐서 스킬장착이 안됩니다..!</p>
+</div>
+<div class="card" style="border-color:#FFD9E6;margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+    <strong style="font-size:15px">재밌어요</strong>
+    <span class="small">2023-01-04 · 은쫄레이</span>
+  </div>
+  <div style="color:var(--yellow);font-size:16px;letter-spacing:2px;margin:4px 0 8px">★★★★★</div>
+  <p style="margin:0;font-size:13.5px">간만에 재밌는 게임이네요</p>
+</div>
+<div class="card" style="border-color:#FFD9E6;margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+    <strong style="font-size:15px">재밌네요 ㅎㅎ</strong>
+    <span class="small">2023-01-06 · 후후후홍호처허허허</span>
+  </div>
+  <div style="color:var(--yellow);font-size:16px;letter-spacing:2px;margin:4px 0 8px">★★★★★</div>
+  <p style="margin:0;font-size:13.5px">오랜만에 방치형 게임이라 좋아요</p>
+</div>
+<div class="card" style="border-color:#FFD9E6;margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+    <strong style="font-size:15px">재미지네요</strong>
+    <span class="small">2023-02-05 · 성규찌지임</span>
+  </div>
+  <div style="color:var(--yellow);font-size:16px;letter-spacing:2px;margin:4px 0 8px">★★★★★</div>
+  <p style="margin:0;font-size:13.5px">이만한 피드백 좋은 알피지 게임 없습니다</p>
+</div>
+<div class="card" style="border-color:#FFD9E6;margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+    <strong style="font-size:15px">재밌어요</strong>
+    <span class="small">2023-02-24 · ㅇ호ㄴㅑㅓㅐㅑ</span>
+  </div>
+  <div style="color:var(--yellow);font-size:16px;letter-spacing:2px;margin:4px 0 8px">★★★★★</div>
+  <p style="margin:0;font-size:13.5px">재밌어요 오랜만에 재미있는 게임 찾앗어요</p>
+</div>
+<div class="card" style="border-color:var(--orange);margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+    <strong style="font-size:15px">게임 망함 다운 ㄴㄴ</strong>
+    <span class="small">2024-01-09 · alalaao</span>
+  </div>
+  <div style="color:var(--orange);font-size:16px;letter-spacing:2px;margin:4px 0 8px">★☆☆☆☆</div>
+  <p style="margin:0;font-size:13.5px">컨텐츠 캐릭등 다 만들어놓고 업뎃을 안함 인게임 들어가면 다 잠겨져 있음 만들기는 만들어 놨는데 업뎃을 안함 7개월 째 업데이트 없음 유저간 소통 없음 걍 게임 망했음</p>
+</div>
+
+<h2>평점 4.5의 함정</h2>
+<div class="grid g2">
+<div class="card"><h3 style="margin-top:0">리뷰 시점 분포</h3>
+<p class="small" style="margin:0 0 10px">리뷰가 <strong>2022-12 ~ 2023-02</strong>(업데이트 활발기)에 전부 몰려 있습니다.</p>
+<div style="font-family:var(--num);font-size:12px;line-height:2">
+2022-12 &nbsp;<span style="color:var(--yellow)">★</span><br>
+2023-01 &nbsp;<span style="color:var(--yellow)">★★</span><br>
+2023-02 &nbsp;<span style="color:var(--yellow)">★★</span><br>
+<span style="color:var(--tx3)">2023-06 &nbsp;(마지막 업데이트)</span><br>
+<span style="color:var(--tx3)">…</span><br>
+2024-01 &nbsp;<span style="color:var(--orange)">★</span>
+</div></div>
+<div class="card"><h3 style="margin-top:0">읽는 법</h3>
+<p class="small" style="margin:0">업데이트 중단 이후 <strong>1년 반 동안 리뷰가 1건뿐</strong>입니다.
+평점 4.48이 높은 것은 <strong>평가할 유저가 남지 않았기 때문</strong>이지 만족도가 유지돼서가 아닙니다.
+출시 4년차에 누적 평가 <strong>25개</strong>는 매우 적은 수치입니다.</p></div>
+</div>
+
+<h2>★ 정적 분석과 유저 경험의 일치</h2>
+<p>이번 스토어 조회에서 가장 의미 있는 발견입니다.
+APK 테이블 분석으로 찾아낸 미완성 콘텐츠가, 실제 유저가 겪은 문제와 정확히 일치합니다.</p>
+<div class="tw"><table><thead><tr><th>APK 정적 분석 (이 리포트가 찾은 것)</th><th>2024-01 리뷰 (유저가 겪은 것)</th></tr></thead><tbody><tr><td>영웅 9종 중 <strong>3종만</strong> 스탯 완성 · 6종 값 미기입</td><td>"컨텐츠 <strong>캐릭</strong>등 다 만들어놓고"</td></tr><tr><td>룬 18종 <strong>전부</strong> StatType=Empty · Cost=0</td><td>"<strong>만들기는 만들어 놨는데</strong> 업뎃을 안함"</td></tr><tr><td>재화 18종 중 <strong>7종 미구현</strong> (메달 · 크라운 등)</td><td>"인게임 들어가면 <strong>다 잠겨져 있음</strong>"</td></tr><tr><td>Hell 난이도 — enum만 있고 스테이지 데이터 0</td><td></td></tr><tr><td>도감 테이블 1행 (몬스터는 59종)</td><td></td></tr><tr><td>던전 Rewards 102행 중 1행 · 값 전부 0</td><td></td></tr></tbody></table></div>
+<div class="fact"><strong>독립적으로 도달한 두 결론이 맞아떨어졌습니다.</strong>
+테이블에 껍데기만 있던 콘텐츠가 곧 게임 안에서 열리지 않은 콘텐츠였습니다.
+클라이언트 정적 분석이 실제 유저 경험을 예측할 수 있음을 보여주는 사례입니다.</div>
+
+<h2>인앱결제 가격 (스토어 확인)</h2>
+<p>APK에는 상품 ID만 있어 가격을 확인할 수 없었으나, App Store에서 확보했습니다.</p>
+<div class="tw"><table><thead><tr><th>상품</th><th>가격</th></tr></thead><tbody><tr><td>무한 광고제거</td><td>₩6,600</td></tr><tr><td>스타트 프리미엄 I</td><td>₩6,600</td></tr><tr><td>무한 공격의 가호 패키지</td><td>₩6,600</td></tr><tr><td>무한 탐욕의 가호 패키지</td><td>₩6,600</td></tr><tr><td>무한 경험의 가호 패키지</td><td>₩6,600</td></tr><tr><td>무한 생명의 가호 패키지</td><td>₩6,600</td></tr><tr><td>무한 채굴의 가호 패키지</td><td>₩6,600</td></tr><tr><td>데일리 프리미엄 황금마차 I</td><td>₩6,600</td></tr><tr><td>주간 황금마차 I</td><td>₩19,000</td></tr><tr><td>무한의 탑 스페셜</td><td><strong>₩25,000</strong></td></tr></tbody></table></div>
+<div class="warn"><strong>코드에는 상품 56종인데 iOS 실제 노출은 10종입니다.</strong>
+8개 상품이 <strong>₩6,600 동일가</strong>에 집중돼 있고 최고가는 ₩25,000입니다.
+<a href="09_bm.html">수익화 구조</a>에서 확인한 <code>ruby_100000</code>(최상위 루비팩) 같은
+고액 상품은 <strong>iOS에 등록되지 않았습니다</strong> — 고래 대응 구간이 실제로는 열려 있지 않았습니다.</div>
+
+<h2>APK 분석과의 차이 — 보정된 항목</h2>
+<div class="tw"><table><thead><tr><th>항목</th><th>APK만 봤을 때</th><th>스토어 확인 후</th></tr></thead><tbody><tr><td><strong>출시 상태</strong></td><td>미출시 추정</td><td><strong>2022-11 소프트 런칭</strong></td></tr><tr><td>현황</td><td>오픈 전 빌드</td><td><strong>2023-06 이후 업데이트 중단</strong></td></tr><tr><td>IAP 가격</td><td>확인 불가</td><td><strong>₩6,600 ~ ₩25,000</strong></td></tr><tr><td>상품 수</td><td>코드 56종 / 매니페스트 40종</td><td><strong>iOS 노출 10종</strong></td></tr><tr><td>지원 언어</td><td>5개국어 데이터 존재</td><td><strong>App Store는 한국어 단일</strong></td></tr><tr><td>개발사</td><td>몽길몽길게임즈</td><td>판매자 개인 <code>hongil kim</code></td></tr><tr><td>버전</td><td>APK 15.8.0</td><td>iOS 15.7.1 (Android가 한 단계 위)</td></tr></tbody></table></div>
+<div class="note"><strong>5개국어 데이터가 빌드에 있는데 스토어는 한국어 단일</strong>입니다.
+글로벌 확장을 준비만 하고 실행하지 못한 상태로 <span class="chip orange">추정</span>됩니다.</div>
+
+<h2>출처</h2>
+<p class="small">
+Apple App Store — <a href="https://apps.apple.com/kr/app/id1622193483" target="_blank">id 1622193483</a> ·
+iTunes Lookup API · 조회 2026-07-20<br>
+버전번호와 날짜는 Apple 공식 데이터입니다. 릴리즈 노트 본문은 스토어 게시분을 정리한 것으로,
+한국어 원문 전량은 App Store 앱에서 직접 확인하실 수 있습니다.
+</p>
+
+<div class="pager"><a href="15_simulator.html">← 성장 시뮬레이터</a><span></span></div>
+</div></main>
+<footer><div class="wrap">
+피그 슬레이어즈 APK 역분석 리포트 · 생성 2026-07-17 · 내부 참고용<br>
+<span class="small">본문 수치는 클라이언트 APK에서 추출한 값이며, 서버 제어 값은 포함되지 않습니다.
+폰트는 게임 원본(둥근모꼴·경기천년제목·Orbitron), 컬러는 The CNM 팔레트를 사용했습니다.</span>
+</div></footer>
+
+<div class="hi-progress" id="hiProgress">
+  <ul class="bar" id="hiBar">
+    <li class="dot" data-i="0"><span class="tip">맨 위</span></li><li class="dot" data-i="1"><span class="tip">앱 기본 정보</span></li><li class="dot" data-i="2"><span class="tip">업데이트 생애주기</span></li><li class="dot" data-i="3"><span class="tip">핵심 신호</span></li><li class="dot" data-i="4"><span class="tip">핵(치트) 대응</span></li><li class="dot" data-i="5"><span class="tip">전체 버전 기록 (24개)</span></li><li class="dot" data-i="6"><span class="tip">사용자 리뷰 (스토어 노출 6건)</span></li><li class="dot" data-i="7"><span class="tip">평점 4.5의 함정</span></li><li class="dot" data-i="8"><span class="tip">★ 정적 분석과 유저 경험의 일치</span></li><li class="dot" data-i="9"><span class="tip">인앱결제 가격 (스토어 확인)</span></li><li class="dot" data-i="10"><span class="tip">APK 분석과의 차이</span></li><li class="dot" data-i="11"><span class="tip">출처</span></li>
+    <li class="current" id="hiCurrent">
+      <div class="mascot"><img src="img/hero/PigKing.png" alt=""></div>
+      <span class="point"></span>
+    </li>
+  </ul>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('hiBar'), cur=document.getElementById('hiCurrent');
+  if(!bar||!cur) return;
+  var dots=[].slice.call(bar.querySelectorAll('.dot'));
+  if(dots.length<2){ document.getElementById('hiProgress').style.display='none'; return; }
+  var heads=[].slice.call(document.querySelectorAll('main h2'));
+  var OFF=78;                       // 상단 고정바 높이 보정
+  var X=[], T=[];
+
+  function measure(){
+    X=dots.map(function(d){ return d.offsetLeft + d.offsetWidth/2 - cur.offsetWidth/2; });
+    T=[0];
+    heads.forEach(function(h){
+      T.push(Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - OFF));
+    });
+  }
+  function update(){
+    if(!X.length) return;
+    var sc=window.pageYOffset, last=X.length-1;
+    var maxSc=Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if(sc>=maxSc-2){ cur.style.left=X[last]+'px'; mark(last); return; }
+    for(var i=0;i<T.length-1;i++){
+      if(sc>=T[i] && sc<T[i+1]){
+        var span=Math.max(1, T[i+1]-T[i]);
+        var r=(sc-T[i])/span;
+        cur.style.left=(X[i]+(X[i+1]-X[i])*r)+'px';
+        mark(r>0.5 ? i+1 : i);
+        return;
+      }
+    }
+    // 마지막 섹션 ~ 문서 끝 구간
+    var tl=T[T.length-1];
+    if(sc>=tl){
+      var r2=Math.min(1,(sc-tl)/Math.max(1,maxSc-tl));
+      cur.style.left=X[last]+'px'; mark(last);
+    } else { cur.style.left=X[0]+'px'; mark(0); }
+  }
+  function mark(i){
+    dots.forEach(function(d,j){ d.classList.toggle('done', j<=i); });
+  }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){
+      measure();
+      window.scrollTo({top:T[i], behavior:'smooth'});
+    });
+  });
+  function boot(){ measure(); update(); }
+  addEventListener('load', boot);
+  addEventListener('resize', boot);
+  addEventListener('scroll', update, {passive:true});
+
+  // scroll 이벤트가 오지 않는 환경(일부 임베드 뷰어)에서도 동작하도록 rAF로 위치를 감시.
+  // 값이 바뀔 때만 update() → 프레임당 비교 1회로 비용은 무시 가능.
+  var lastY=-1, lastH=-1;
+  (function tick(){
+    var y=window.pageYOffset, h=document.documentElement.scrollHeight;
+    if(y!==lastY){ lastY=y; update(); }
+    if(h!==lastH){ lastH=h; measure(); update(); }
+    requestAnimationFrame(tick);
+  })();
+
+  boot();
+})();
+</script>
+<script id="gb-js">
+(function(){
+  var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
+  function set(o){document.body.classList.toggle('gb-open',o);}
+  if(b) b.addEventListener('click',function(){set(!document.body.classList.contains('gb-open'));});
+  if(d) d.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>900)set(false);});
+  // 현재 항목이 사이드바 밖이면 보이도록 스크롤
+  var on=document.querySelector('.gb-nav a.on');
+  if(on){var s=document.querySelector('.gb-side');
+    if(s && on.offsetTop > s.clientHeight-80) s.scrollTop = on.offsetTop - s.clientHeight/2;}
+})();
+</script>
+</body></html>
