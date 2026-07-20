@@ -1,0 +1,400 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>에셋 · 잔망티키타카 분석</title><style>
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Medium.woff2') format('woff2');
+ font-weight:500;font-display:swap}
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Bold.woff2') format('woff2');
+ font-weight:700;font-display:swap}
+@font-face{font-family:'NotoSerifKR';src:url('fonts/NotoSerifKR-Black.woff2') format('woff2');
+ font-weight:900;font-display:swap}
+
+:root{
+ --bg:#160B26;--bg2:#1E1033;--card:#241541;--card2:#2C1A4D;
+ --rose:#D9A566;--magenta:#C2438B;--violet:#8B5CF6;
+ --ink:#E8DDF2;--muted:#A392B8;--line:#3A2459;--ok:#4FD1A5;--warn:#E0574F;
+ --serif:'NotoSerifKR',serif;
+ --shadow:0 1px 0 rgba(217,165,102,.10), 0 14px 30px -18px rgba(0,0,0,.85);
+ --shadow-lg:0 1px 0 rgba(217,165,102,.20), 0 26px 52px -22px rgba(0,0,0,.95);
+ --hair:1px solid rgba(217,165,102,.22);
+ --c0:#C2438B;--c1:#D9A566;--c2:#8B5CF6;--c3:#4FD1A5;--c4:#5AA9FF;--c5:#E0574F}
+
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'NotoSansKR',-apple-system,'Malgun Gothic',sans-serif;font-weight:500;
+ color:var(--ink);line-height:1.7;-webkit-text-size-adjust:100%;background:var(--bg);
+ background-image:
+  radial-gradient(ellipse 60% 40% at 8% 0%, rgba(194,67,139,.16), transparent 60%),
+  radial-gradient(ellipse 55% 45% at 92% 6%, rgba(139,92,246,.13), transparent 62%),
+  radial-gradient(ellipse 70% 40% at 50% 100%, rgba(217,165,102,.07), transparent 60%);
+ background-attachment:fixed;overflow-x:hidden}
+a{color:var(--rose);text-decoration:none;font-weight:700}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* ---------- 헤더 ---------- */
+header.top{position:sticky;top:0;z-index:50;color:var(--ink);overflow:hidden;
+ background:linear-gradient(118deg,#120820 0%,#22103A 55%,#2E1442 100%);
+ border-bottom:1px solid rgba(217,165,102,.28);
+ box-shadow:0 10px 30px -14px rgba(0,0,0,.9)}
+header.top::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:
+  radial-gradient(ellipse 240px 120px at 14% -40%, rgba(194,67,139,.42), transparent 72%),
+  radial-gradient(ellipse 240px 120px at 78% -46%, rgba(217,165,102,.24), transparent 72%)}
+.topbar{position:relative;z-index:1;display:flex;align-items:center;gap:14px;
+ padding:11px 18px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;
+ white-space:nowrap;letter-spacing:-.4px;font-size:17px}
+.brand img{width:32px;height:32px;border-radius:10px;display:block;
+ box-shadow:0 0 0 1px rgba(217,165,102,.5), 0 4px 16px rgba(194,67,139,.5)}
+.brand .g{color:var(--rose);text-shadow:0 0 14px rgba(217,165,102,.55)}
+nav.main{margin-left:auto;display:flex;flex-wrap:wrap;gap:3px}
+nav.main a{color:#C9B8DC;font-size:12.5px;padding:6px 10px;border-radius:9px;
+ white-space:nowrap;font-weight:700;transition:.16s}
+nav.main a:hover{background:rgba(255,255,255,.09);color:#fff;text-decoration:none;transform:translateY(-1px)}
+nav.main a.active{background:linear-gradient(135deg,var(--magenta),#8B2E63);color:#fff;
+ box-shadow:0 0 0 1px rgba(217,165,102,.35), 0 4px 14px rgba(194,67,139,.45)}
+.hamb{display:none;margin-left:auto;background:rgba(255,255,255,.12);border:0;color:var(--ink);
+ font-size:20px;width:42px;height:38px;border-radius:11px;cursor:pointer}
+@media(max-width:860px){.hamb{display:block}
+ nav.main{flex-basis:100%;flex-direction:column;max-height:0;overflow:hidden;
+  transition:max-height .28s ease;margin-left:0}
+ nav.main.open{max-height:900px;padding-bottom:8px}
+ nav.main a{padding:10px 9px;border-bottom:1px solid rgba(255,255,255,.07)}}
+
+/* ---------- 타이포 ---------- */
+h1{font-family:var(--serif);font-weight:900;font-size:32px;line-height:1.25;
+ margin:0 0 12px;letter-spacing:-.8px;
+ background:linear-gradient(96deg,#FFF3E2 0%,var(--rose) 52%,var(--magenta) 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-family:var(--serif);font-weight:900;font-size:22px;margin:40px 0 14px;
+ padding-bottom:10px;position:relative;letter-spacing:-.4px;
+ border-bottom:1px solid var(--line);color:#F5EAFB}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;width:72px;height:2px;border-radius:2px;
+ background:linear-gradient(90deg,var(--rose),var(--magenta));
+ box-shadow:0 0 12px rgba(217,165,102,.55)}
+h3{font-size:16px;margin:22px 0 8px;font-weight:700;color:#F0E4FA}
+main{padding:28px 0 104px}
+.lead{font-size:16px;color:var(--muted);margin:0 0 20px;line-height:1.8}
+.eyebrow{font-size:12px;letter-spacing:2.2px;color:var(--rose);
+ text-transform:uppercase;margin:0 0 6px;font-weight:700}
+p{margin:10px 0}
+b,strong{color:#FFF1DC;font-weight:700}
+/* 중점(·)으로 이어붙인 긴 로마자 상수 나열이 375px에서 넘치지 않도록 */
+p,li,td,th,.callout,.card,.stat,.kv .v,figcaption{overflow-wrap:anywhere}
+
+/* ---------- 카드 ---------- */
+.grid{display:grid;gap:15px}.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+@media(max-width:400px){.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(160deg,var(--card),var(--card2));border:var(--hair);
+ border-radius:18px;padding:18px;box-shadow:var(--shadow);min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease, border-color .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);
+ border-color:rgba(217,165,102,.42)}
+.card h3{margin-top:0}
+.card p{color:var(--muted);font-size:13.5px}
+.stat{position:relative;background:linear-gradient(160deg,var(--card),var(--card2));
+ border:var(--hair);border-radius:16px;padding:16px 12px;text-align:center;
+ box-shadow:var(--shadow);overflow:hidden;min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease}
+.stat::before{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+ background:linear-gradient(90deg,transparent,var(--rose),transparent);opacity:.75}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.stat .n{font-family:var(--serif);font-weight:900;font-size:27px;color:var(--rose);
+ line-height:1.15;letter-spacing:-.5px;word-break:keep-all}
+.stat .n.mag{color:var(--magenta)}
+.stat .n.warn{color:var(--warn)}
+.stat .l{font-size:11.5px;color:var(--muted);margin-top:6px;font-weight:700;word-break:keep-all}
+
+/* ---------- 칩 ---------- */
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;
+ border:1px solid transparent;white-space:nowrap;vertical-align:middle}
+.chip.fact{background:rgba(79,209,165,.14);color:#6FE0BC;border-color:rgba(79,209,165,.4)}
+.chip.inf {background:rgba(217,165,102,.14);color:var(--rose);border-color:rgba(217,165,102,.45)}
+.chip.unk {background:rgba(163,146,184,.13);color:#BCAAD2;border-color:rgba(163,146,184,.38)}
+.chip.warn{background:rgba(224,87,79,.15);color:#F0857E;border-color:rgba(224,87,79,.45)}
+.chip.op  {background:rgba(139,92,246,.16);color:#B79BFF;border-color:rgba(139,92,246,.45)}
+.tag{display:inline-block;background:rgba(217,165,102,.10);color:var(--rose);font-size:12px;
+ padding:4px 12px;border-radius:20px;margin:3px 3px 0 0;font-weight:700;
+ border:1px solid rgba(217,165,102,.3)}
+
+/* ---------- 표 ---------- */
+.tblwrap{overflow-x:auto;border:var(--hair);border-radius:16px;margin:14px 0;
+ background:var(--card);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:linear-gradient(180deg,#2E1A4E,#261541);color:var(--rose);
+ font-weight:700;white-space:nowrap;position:sticky;top:0;z-index:1}
+tbody tr:nth-child(even){background:rgba(255,255,255,.022)}
+tbody tr:hover{background:rgba(194,67,139,.09)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+td b{color:#FFF1DC}
+
+/* ---------- 콜아웃 ---------- */
+.callout{border-left:3px solid var(--rose);background:rgba(217,165,102,.07);padding:14px 17px;
+ border-radius:0 14px 14px 0;margin:16px 0;font-size:14px;color:#DED0EE}
+.callout.warn{border-color:var(--warn);background:rgba(224,87,79,.09)}
+.callout.mag{border-color:var(--magenta);background:rgba(194,67,139,.10)}
+.callout.ok{border-color:var(--ok);background:rgba(79,209,165,.08)}
+.callout b{color:#FFF1DC}
+
+/* 최상위 경고 배너 */
+.banner{position:relative;border-radius:18px;padding:22px 22px;margin:18px 0 8px;
+ background:linear-gradient(135deg,rgba(224,87,79,.20),rgba(194,67,139,.16) 60%,rgba(36,21,65,.9));
+ border:1px solid rgba(224,87,79,.45);box-shadow:var(--shadow-lg)}
+.banner .t{font-family:var(--serif);font-weight:900;font-size:20px;color:#FFD9CF;
+ margin:6px 0 8px;letter-spacing:-.4px;line-height:1.35}
+.banner p{margin:6px 0 0;font-size:14px;color:#EBD9E6}
+
+/* ---------- 도형·갤러리 ---------- */
+.svgwrap{overflow-x:auto;border:var(--hair);border-radius:16px;background:var(--card);
+ padding:12px;box-shadow:var(--shadow);margin:14px 0;max-width:100%}
+.svgwrap svg{display:block}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal img{width:100%;height:110px;object-fit:cover;border-radius:12px;border:var(--hair);
+ box-shadow:var(--shadow);transition:transform .18s;background:var(--card2)}
+.gal img:hover{transform:scale(1.04)}
+.gal figure{margin:0;min-width:0}
+.gal figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:5px;font-weight:700}
+.montage{width:100%;border:var(--hair);border-radius:16px;display:block;box-shadow:var(--shadow)}
+ul.clean{padding-left:20px;margin:8px 0}ul.clean li{margin:6px 0}
+ol.clean{padding-left:22px;margin:8px 0}ol.clean li{margin:6px 0}
+.src{font-size:12px;color:var(--muted)}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;
+ border-bottom:1px dashed var(--line);min-width:0}
+.kv:last-child{border-bottom:0}
+.kv .k{color:var(--muted);font-weight:700;flex-shrink:0}
+.kv .v{font-weight:700;text-align:right;color:#FFF1DC;min-width:0;word-break:break-word}
+.bar{height:9px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;border-radius:8px;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ box-shadow:0 0 10px rgba(217,165,102,.4)}
+code{background:rgba(139,92,246,.14);color:#D9C6FF;padding:1px 6px;border-radius:6px;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;
+ word-break:break-all}
+pre{background:#150C24;border:var(--hair);border-radius:14px;padding:14px 16px;
+ overflow-x:auto;font-size:12.5px;line-height:1.6;color:#D6C6EA;margin:14px 0;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;max-width:100%}
+pre code{background:none;padding:0;color:inherit}
+
+/* ---------- 하단 진행바 ---------- */
+footer.prog{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:9px 0;
+ background:linear-gradient(118deg,rgba(18,8,32,.97),rgba(46,20,66,.97));
+ border-top:1px solid rgba(217,165,102,.28);
+ box-shadow:0 -10px 28px -10px rgba(0,0,0,.9)}
+.ptrack{max-width:1080px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:12px}
+.dots{position:relative;flex:1;height:22px;min-width:0}
+.dline{position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,.11);
+ transform:translateY(-50%);border-radius:3px}
+.dfill{position:absolute;top:50%;left:0;height:3px;border-radius:3px;width:0;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ transform:translateY(-50%);transition:width .2s;box-shadow:0 0 10px rgba(217,165,102,.7)}
+.dot{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;background:#4B3968;
+ transform:translate(-50%,-50%);border:2px solid #1A0E2B;cursor:pointer;transition:.16s}
+.dot:hover{transform:translate(-50%,-50%) scale(1.4)}
+.dot.on{background:var(--rose);box-shadow:0 0 9px rgba(217,165,102,.9)}
+.mascot{width:34px;height:34px;border-radius:9px;flex-shrink:0;object-fit:cover;
+ border:1px solid rgba(217,165,102,.4);
+ filter:drop-shadow(0 3px 8px rgba(194,67,139,.5))}
+.plabel{color:var(--rose);font-size:13px;white-space:nowrap;flex-shrink:0;
+ letter-spacing:1.2px;font-weight:700;font-variant-numeric:tabular-nums}
+.foot-note{max-width:1080px;margin:28px auto 0;padding:16px 0 0;color:var(--muted);
+ font-size:12.5px;border-top:1px dashed var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:420px){h1{font-size:26px}h2{font-size:19px}.stat .n{font-size:23px}}
+</style><style id="gb-css">
+:root{--gb-w:266px}
+.gb-side{
+  position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
+  background:#11141c;border-right:1px solid #262d3b;overflow-y:auto;
+  padding:16px 12px 28px;
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.gb-side::-webkit-scrollbar{width:8px}
+.gb-side::-webkit-scrollbar-thumb{background:#2b3346;border-radius:4px}
+.gb-home{
+  display:flex;align-items:center;gap:7px;color:#aab4c6;text-decoration:none;
+  font-size:12.5px;padding:9px 11px;border-radius:9px;border:1px solid #262d3b;
+  background:#171b25;transition:.18s;margin-bottom:14px
+}
+.gb-home:hover{background:#1e2431;color:#fff;border-color:var(--gb-ac);text-decoration:none}
+.gb-title{
+  color:#fff;font-size:15px;font-weight:800;padding:0 11px 10px;margin-bottom:8px;
+  border-bottom:1px solid #262d3b;letter-spacing:-.01em;line-height:1.4
+}
+.gb-title small{display:block;color:#6f7a8f;font-size:11px;font-weight:500;margin-top:3px;letter-spacing:.06em}
+.gb-nav{display:flex;flex-direction:column;gap:1px}
+.gb-nav a{
+  display:flex;align-items:center;gap:9px;color:#aab4c6;text-decoration:none;
+  font-size:13px;padding:8px 11px;border-radius:8px;transition:.15s;line-height:1.45
+}
+.gb-nav a .num{
+  font-family:'Consolas',monospace;font-size:10.5px;color:#5d6779;min-width:18px;flex-shrink:0
+}
+.gb-nav a:hover{background:#1b2130;color:#fff;text-decoration:none}
+.gb-nav a.on{background:var(--gb-ac);color:#0e1016;font-weight:700}
+.gb-nav a.on .num{color:rgba(0,0,0,.5)}
+body{padding-left:var(--gb-w)}
+.gb-burger,.gb-dim{display:none}
+@media(max-width:900px){
+  body{padding-left:0}
+  .gb-side{transform:translateX(-100%);transition:transform .26s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 30px rgba(0,0,0,.4)}
+  body.gb-open .gb-side{transform:none}
+  .gb-burger{
+    display:flex;align-items:center;justify-content:center;position:fixed;
+    left:12px;bottom:14px;z-index:320;width:48px;height:48px;border-radius:50%;
+    background:var(--gb-ac);color:#0e1016;border:none;font-size:19px;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  .gb-dim{
+    display:block;position:fixed;inset:0;z-index:290;background:rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .22s
+  }
+  body.gb-open .gb-dim{opacity:1;pointer-events:auto}
+  body.gb-open{overflow:hidden}
+}
+@media print{.gb-side,.gb-burger,.gb-dim{display:none}body{padding-left:0}}
+  .gb-side{--gb-ac:#b07be0}
+  :root{--gb-ac:#b07be0}
+
+/* tikitaca override */
+header.top nav.main{display:none!important}
+header.top .hamb{display:none!important}
+footer.prog{left:var(--gb-w)!important}
+@media(max-width:900px){ footer.prog{left:0!important} }
+
+</style>
+<!--gb-injected--></head><body>
+<button class="gb-burger" aria-label="목차 열기">☰</button>
+<div class="gb-dim"></div>
+<aside class="gb-side">
+  <a class="gb-home" href="../index.html">← 게임 분석 아카이브</a>
+  <div class="gb-title">잔망티키타카<small>ANALYSIS REPORT</small></div>
+  <nav class="gb-nav">
+        <a class="" href="index.html"><span class="num">—</span><span>표지</span></a>
+    <a class="" href="01_overview.html"><span class="num">01</span><span>개요</span></a>
+    <a class="" href="02_architecture.html"><span class="num">02</span><span>앱 구조</span></a>
+    <a class="" href="03_game_system.html"><span class="num">03</span><span>게임 시스템</span></a>
+    <a class="" href="04_currency.html"><span class="num">04</span><span>재화</span></a>
+    <a class="" href="05_growth.html"><span class="num">05</span><span>성장</span></a>
+    <a class="" href="06_bm.html"><span class="num">06</span><span>수익화</span></a>
+    <a class="" href="07_protocol.html"><span class="num">07</span><span>프로토콜</span></a>
+    <a class="" href="08_security.html"><span class="num">08</span><span>보안</span></a>
+    <a class="" href="09_localization.html"><span class="num">09</span><span>로컬라이제이션</span></a>
+    <a class="on" href="10_assets.html"><span class="num">10</span><span>에셋</span></a>
+    <a class="" href="11_store.html"><span class="num">11</span><span>스토어</span></a>
+    <a class="" href="12_market.html"><span class="num">12</span><span>시장</span></a>
+    <a class="" href="13_method.html"><span class="num">13</span><span>방법론·한계</span></a>
+  </nav>
+</aside>
+<header class="top"><div class="topbar">
+<span class="brand"><img src="img/icon.png" alt="">잔망<span class="g">티키타카</span></span>
+<button class="hamb" aria-label="menu">&#9776;</button><nav class="main"><a href="index.html">표지</a><a href="01_overview.html">개요</a><a href="02_architecture.html">앱 구조</a><a href="03_game_system.html">게임 시스템</a><a href="04_currency.html">재화</a><a href="05_growth.html">성장</a><a href="06_bm.html">수익화</a><a href="07_protocol.html">프로토콜</a><a href="08_security.html">보안</a><a href="09_localization.html">로컬라이제이션</a><a href="10_assets.html" class="active">에셋</a><a href="11_store.html">스토어</a><a href="12_market.html">시장</a><a href="13_method.html">방법론·한계</a></nav>
+</div></header><div class="wrap"><main>
+<div class="eyebrow">Chapter 10</div>
+<h1>에셋</h1>
+<p class="lead">Cocos 2.x <code>decodeUuid</code>(22자 base64 → UUID)로 번들 3개의
+<code>config.json</code>을 전수 복호화해 <b>자산 12,209개</b>의 논리경로·타입을 복원했다.</p>
+
+<div class="grid g4">
+ <div class="stat"><div class="n">12,209</div><div class="l">총 자산</div></div><div class="stat"><div class="n">4,781</div><div class="l">스프라이트</div></div>
+ <div class="stat"><div class="n mag">1,608</div><div class="l">오디오 클립</div></div><div class="stat"><div class="n">860</div><div class="l">스파인 스켈레톤</div></div>
+ <div class="stat"><div class="n">797</div><div class="l">프리팹</div></div><div class="stat"><div class="n">2,699</div><div class="l">텍스처</div></div>
+ <div class="stat"><div class="n">182 MB</div><div class="l">번들 에셋</div></div><div class="stat"><div class="n">3</div><div class="l">폰트 (본고딕·본명조)</div></div>
+</div>
+
+<h2>자산 타입 분포</h2>
+<div class="tblwrap"><table style="min-width:440px"><thead><tr><th>타입</th><th>개수</th><th>비중</th></tr></thead><tbody><tr><td><code>cc.SpriteFrame</code></td><td><b>4,781</b></td><td><div class="bar"><i style="width:100.0%"></i></div></td></tr><tr><td><code>cc.Texture2D</code></td><td><b>2,699</b></td><td><div class="bar"><i style="width:70.7%"></i></div></td></tr><tr><td><code>cc.AudioClip</code></td><td><b>1,608</b></td><td><div class="bar"><i style="width:42.1%"></i></div></td></tr><tr><td><code>cc.Asset (스파인)</code></td><td><b>869</b></td><td><div class="bar"><i style="width:22.8%"></i></div></td></tr><tr><td><code>sp.SkeletonData</code></td><td><b>860</b></td><td><div class="bar"><i style="width:22.5%"></i></div></td></tr><tr><td><code>cc.Prefab</code></td><td><b>797</b></td><td><div class="bar"><i style="width:20.9%"></i></div></td></tr><tr><td><code>cc.TextAsset</code></td><td><b>426</b></td><td><div class="bar"><i style="width:11.2%"></i></div></td></tr><tr><td><code>cc.SpriteAtlas</code></td><td><b>94</b></td><td><div class="bar"><i style="width:2.5%"></i></div></td></tr><tr><td><code>cc.Material</code></td><td><b>26</b></td><td><div class="bar"><i style="width:0.7%"></i></div></td></tr><tr><td><code>cc.EffectAsset</code></td><td><b>14</b></td><td><div class="bar"><i style="width:0.4%"></i></div></td></tr><tr><td><code>cc.AnimationClip</code></td><td><b>11</b></td><td><div class="bar"><i style="width:0.3%"></i></div></td></tr><tr><td><code>cc.LabelAtlas</code></td><td><b>10</b></td><td><div class="bar"><i style="width:0.3%"></i></div></td></tr><tr><td><code>cc.JsonAsset</code></td><td><b>10</b></td><td><div class="bar"><i style="width:0.3%"></i></div></td></tr></tbody></table></div>
+
+<h2>읽는 법 — 스파인이 말해주는 것</h2>
+<div class="grid g2">
+ <div class="card"><h3>sp.SkeletonData 860 + cc.Asset 869 = 스파인 지배</h3><p>이 게임의 캐릭터는 <b>스파인(Spine) 2D 골격 애니메이션</b>이다.
+  픽셀아트도 3D도 아니다. 중국식 애니풍 가챠 RPG의 표준 파이프라인이며,
+  캐릭터 1종당 아틀라스+스켈레톤+텍스처 세트가 붙는다.</p>
+  <p class="src">부수 효과: TextAsset 426개 중 <b>413개가 스파인 <code>.atlas</code> 텍스트</b>다.
+  데이터처럼 보이지만 데이터가 아니다. <span class="chip fact">확정</span></p></div>
+ <div class="card"><h3>cc.AudioClip 1,608 — 이례적으로 많다</h3><p>선행 분석 게임들 대비 압도적인 수치다.
+  영웅별 보이스가 다수 포함된 것으로 <b>추정</b>된다(스킬 컷인·소환 연출 등).</p>
+  <p class="src">음성 언어가 무엇인지(중국어 원음 유지 여부)는 <b>미확인</b>이다 —
+  오디오 내용 분석은 이번 범위 밖. <span class="chip unk">미확인</span></p></div>
+</div>
+
+<h2>⚠️ 가장 중요한 발견: 밸런스 데이터가 없다</h2>
+<div class="banner">
+ <div class="eyebrow">Finding · 데이터 부재</div>
+ <div class="t">JsonAsset·TextAsset 435개 중 413개가 스파인 아틀라스다</div>
+ <p>비아틀라스 페이로드는 <b>단 13개</b>이며 그 실체는 전부
+ <b>로컬라이제이션·마케팅 설정·법무 텍스트</b>다.<br>
+ <b>스테이지표·레벨곡선·확률표·보상표·아이템/영웅/상점 정의는 APK 어디에도 없다.</b> <span class="chip fact">확정</span></p>
+</div>
+<div class="tblwrap"><table style="min-width:620px"><thead><tr><th>논리경로</th><th>타입</th><th>크기</th><th>내용</th></tr></thead><tbody><tr><td><code>configs/lang/kr/kr</code></td><td>Json</td><td>1,063,013</td><td>한국어 11,519행</td></tr><tr><td><code>configs/lang/cn/cn</code></td><td>Json</td><td>849,665</td><td>중국어 원문 10,908행</td></tr><tr><td><code>configs/lang/{{tw,hk,en,jp,ru,tha}}</code></td><td>Json</td><td>각 ~457,600</td><td><b>전부 빈 값</b></td></tr><tr><td><code>configs/adjust_ipa</code></td><td>Json</td><td>7,347</td><td>상품 153종 × 3스토어 토큰</td></tr><tr><td><code>configs/shiling16</code></td><td>Text</td><td>1,229</td><td>중국어 연령고지 402자</td></tr><tr><td><code>configs/useprivacy</code></td><td>Text</td><td>—</td><td><b>빈 파일</b> (네이티브 실체 없음)</td></tr><tr><td><code>uispine/zhanbu/particle_texture2</code></td><td>Json</td><td>1,297</td><td>파티클 설정 (밸런스 아님)</td></tr><tr><td><code>sound/skill/desktop</code></td><td>Text</td><td>1,089</td><td><b>Windows <code>desktop.ini</code> 잔재</b></td></tr><tr><td><code>spine/Wang/魍</code></td><td>Text</td><td>175</td><td>깨진 문자 잔재</td></tr></tbody></table></div>
+<p class="src">번들별: <code>main</code>은 <code>paths</code>가 비어 있고 부팅 씬 7개 + 스플래시 1장뿐 —
+<b>데이터 없음</b>. <code>internal</code>은 빌트인 머티리얼/이펙트 19개뿐.
+<code>native/**</code>에도 png 395 · atlas 368 · bin 300 · jpg 10뿐. <span class="chip fact">확정</span></p>
+
+<h2>폰트</h2>
+<p>APK에서 <b>본고딕(NotoSansKR Bold/Medium) + 본명조(NotoSerifKR Black)</b> 3종을 추출했다.
+이 리포트가 지금 쓰고 있는 폰트가 그것이다 — <b>게임 자체의 타이포그래피로 게임을 서술</b>한다.</p>
+<div class="grid g3">
+ <div class="card"><h3>NotoSerifKR Black</h3><p style="font-family:var(--serif);font-size:22px;color:var(--rose);margin:6px 0">잔망티키타카</p><p class="src">타이틀·h1/h2. 장식적·신비로운 톤.</p></div>
+ <div class="card"><h3>NotoSansKR Bold</h3><p style="font-weight:700;font-size:19px;margin:6px 0">잔망티키타카</p><p class="src">강조·표 헤더.</p></div>
+ <div class="card"><h3>NotoSansKR Medium</h3><p style="font-weight:500;font-size:19px;margin:6px 0">잔망티키타카</p><p class="src">본문.</p></div>
+</div>
+
+<h2>팔레트</h2>
+<div class="grid g4">
+<div class="stat"><div style="height:44px;border-radius:10px;background:#160B26;
+ border:1px solid rgba(217,165,102,.3);margin-bottom:8px"></div>
+ <div class="l">배경<br><span style="color:var(--rose)">#160B26</span></div></div><div class="stat"><div style="height:44px;border-radius:10px;background:#241541;
+ border:1px solid rgba(217,165,102,.3);margin-bottom:8px"></div>
+ <div class="l">카드<br><span style="color:var(--rose)">#241541</span></div></div><div class="stat"><div style="height:44px;border-radius:10px;background:#D9A566;
+ border:1px solid rgba(217,165,102,.3);margin-bottom:8px"></div>
+ <div class="l">로즈골드<br><span style="color:var(--rose)">#D9A566</span></div></div><div class="stat"><div style="height:44px;border-radius:10px;background:#C2438B;
+ border:1px solid rgba(217,165,102,.3);margin-bottom:8px"></div>
+ <div class="l">마젠타<br><span style="color:var(--rose)">#C2438B</span></div></div>
+</div>
+<p class="src"><b>추출 근거:</b> site/img/icon.png 직접 색상 추출 (design_tokens.json 미생성 시점) — 채도 픽셀의 색상환 분포가 300~330°(보라~마젠타)에 집중, 최빈 명도대 L0.3의 심보라를 배경으로, 크림/로즈골드 하이라이트를 장식색으로 채택</p>
+
+<h2>갤러리</h2>
+<div class="callout">🖼️ 갤러리 이미지는 에셋 분석 작업자가 별도로 채운다 (<code>site/img/gallery/</code>). 본 생성기는 해당 디렉터리를 건드리지 않는다.</div>
+
+<div class="foot-note">잔망티키타카 (com.megagiant.tikitaca.one v1.0.6) 정적 분석 리포트 ·
+생성 2026-07-20 (출시 예정일 D-1) · 게임 저작권은 MEGAGIANT INC에 있으며 본 문서는 내부 분석용입니다.</div>
+</main></div>
+<footer class="prog"><div class="ptrack"><img class="mascot" src="img/mascot.png" alt="">
+<span class="plabel">10 / 13</span>
+<div class="dots"><div class="dline"></div><div class="dfill"></div></div></div></footer>
+<script>
+(function(){var h=document.querySelector('.hamb'),n=document.querySelector('nav.main');
+if(h)h.addEventListener('click',function(){n.classList.toggle('open')});
+var secs=[].slice.call(document.querySelectorAll('main h2')),dots=document.querySelector('.dots');
+if(dots&&secs.length){secs.forEach(function(s,i){s.id=s.id||('sec'+i);
+ var d=document.createElement('div');d.className='dot';
+ d.style.left=(secs.length>1?(i/(secs.length-1))*100:0)+'%';d.title=s.textContent;
+ d.onclick=function(){s.scrollIntoView({behavior:'smooth',block:'start'})};dots.appendChild(d)});
+ var fill=document.querySelector('.dfill');
+ function upd(){var y=window.scrollY+130,idx=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)idx=i});
+  [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i<=idx)});
+  if(fill)fill.style.width=(secs.length>1?(idx/(secs.length-1))*100:100)+'%'}
+ window.addEventListener('scroll',upd,{passive:true});upd();}})();
+</script><script id="gb-js">
+(function(){
+  var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
+  function set(o){document.body.classList.toggle('gb-open',o);}
+  if(b) b.addEventListener('click',function(){set(!document.body.classList.contains('gb-open'));});
+  if(d) d.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>900)set(false);});
+  // 현재 항목이 사이드바 밖이면 보이도록 스크롤
+  var on=document.querySelector('.gb-nav a.on');
+  if(on){var s=document.querySelector('.gb-side');
+    if(s && on.offsetTop > s.clientHeight-80) s.scrollTop = on.offsetTop - s.clientHeight/2;}
+})();
+</script>
+</body></html>

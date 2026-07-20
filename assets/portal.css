@@ -4,7 +4,7 @@
 :root{
   --bg:#0e1016; --bg2:#161a24; --card:#1b2030; --line:#2a3142;
   --tx:#eef1f7; --tx2:#aab4c6; --tx3:#6f7a8f;
-  --vulcan:#e9c96a; --pig:#f86b9d; --anger:#3aa0e0; --kpop:#c83680;
+  --vulcan:#e9c96a; --pig:#f86b9d; --anger:#3aa0e0; --kpop:#c83680; --tiki:#b07be0;
   --mono:'DungGeunMo','Orbitron','Consolas',monospace;
 }
 *{box-sizing:border-box}
@@ -49,9 +49,10 @@ header p{color:var(--tx2);font-size:16px;max-width:640px;margin:0 auto}
 
 /* ---------- game cards ---------- */
 main{padding:24px 0 90px}
-/* 2 x 2 고정 — 4개 게임이 한 화면에 균등하게 */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}}
+/* 5개 게임 — 넓은 화면 3+2, 중간 2열, 모바일 1열 */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
 .game{
   position:relative;display:flex;flex-direction:column;
   background:linear-gradient(180deg,var(--bg2),var(--card));
@@ -106,6 +107,7 @@ main{padding:24px 0 90px}
 .g-pig{--ac:var(--pig);--acbg:rgba(248,107,157,.16);--acglow:rgba(248,107,157,.4);--acdot:rgba(248,107,157,.25)}
 .g-anger{--ac:var(--anger);--acbg:rgba(58,160,224,.16);--acglow:rgba(58,160,224,.4);--acdot:rgba(58,160,224,.25)}
 .g-kpop{--ac:var(--kpop);--acbg:rgba(200,54,128,.16);--acglow:rgba(200,54,128,.4);--acdot:rgba(200,54,128,.25)}
+.g-tiki{--ac:var(--tiki);--acbg:rgba(176,123,224,.16);--acglow:rgba(176,123,224,.4);--acdot:rgba(176,123,224,.25)}
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx3);font-size:13px;text-align:center}

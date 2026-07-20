@@ -1,0 +1,453 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>시장 · 잔망티키타카 분석</title><style>
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Medium.woff2') format('woff2');
+ font-weight:500;font-display:swap}
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Bold.woff2') format('woff2');
+ font-weight:700;font-display:swap}
+@font-face{font-family:'NotoSerifKR';src:url('fonts/NotoSerifKR-Black.woff2') format('woff2');
+ font-weight:900;font-display:swap}
+
+:root{
+ --bg:#160B26;--bg2:#1E1033;--card:#241541;--card2:#2C1A4D;
+ --rose:#D9A566;--magenta:#C2438B;--violet:#8B5CF6;
+ --ink:#E8DDF2;--muted:#A392B8;--line:#3A2459;--ok:#4FD1A5;--warn:#E0574F;
+ --serif:'NotoSerifKR',serif;
+ --shadow:0 1px 0 rgba(217,165,102,.10), 0 14px 30px -18px rgba(0,0,0,.85);
+ --shadow-lg:0 1px 0 rgba(217,165,102,.20), 0 26px 52px -22px rgba(0,0,0,.95);
+ --hair:1px solid rgba(217,165,102,.22);
+ --c0:#C2438B;--c1:#D9A566;--c2:#8B5CF6;--c3:#4FD1A5;--c4:#5AA9FF;--c5:#E0574F}
+
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'NotoSansKR',-apple-system,'Malgun Gothic',sans-serif;font-weight:500;
+ color:var(--ink);line-height:1.7;-webkit-text-size-adjust:100%;background:var(--bg);
+ background-image:
+  radial-gradient(ellipse 60% 40% at 8% 0%, rgba(194,67,139,.16), transparent 60%),
+  radial-gradient(ellipse 55% 45% at 92% 6%, rgba(139,92,246,.13), transparent 62%),
+  radial-gradient(ellipse 70% 40% at 50% 100%, rgba(217,165,102,.07), transparent 60%);
+ background-attachment:fixed;overflow-x:hidden}
+a{color:var(--rose);text-decoration:none;font-weight:700}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* ---------- 헤더 ---------- */
+header.top{position:sticky;top:0;z-index:50;color:var(--ink);overflow:hidden;
+ background:linear-gradient(118deg,#120820 0%,#22103A 55%,#2E1442 100%);
+ border-bottom:1px solid rgba(217,165,102,.28);
+ box-shadow:0 10px 30px -14px rgba(0,0,0,.9)}
+header.top::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:
+  radial-gradient(ellipse 240px 120px at 14% -40%, rgba(194,67,139,.42), transparent 72%),
+  radial-gradient(ellipse 240px 120px at 78% -46%, rgba(217,165,102,.24), transparent 72%)}
+.topbar{position:relative;z-index:1;display:flex;align-items:center;gap:14px;
+ padding:11px 18px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;
+ white-space:nowrap;letter-spacing:-.4px;font-size:17px}
+.brand img{width:32px;height:32px;border-radius:10px;display:block;
+ box-shadow:0 0 0 1px rgba(217,165,102,.5), 0 4px 16px rgba(194,67,139,.5)}
+.brand .g{color:var(--rose);text-shadow:0 0 14px rgba(217,165,102,.55)}
+nav.main{margin-left:auto;display:flex;flex-wrap:wrap;gap:3px}
+nav.main a{color:#C9B8DC;font-size:12.5px;padding:6px 10px;border-radius:9px;
+ white-space:nowrap;font-weight:700;transition:.16s}
+nav.main a:hover{background:rgba(255,255,255,.09);color:#fff;text-decoration:none;transform:translateY(-1px)}
+nav.main a.active{background:linear-gradient(135deg,var(--magenta),#8B2E63);color:#fff;
+ box-shadow:0 0 0 1px rgba(217,165,102,.35), 0 4px 14px rgba(194,67,139,.45)}
+.hamb{display:none;margin-left:auto;background:rgba(255,255,255,.12);border:0;color:var(--ink);
+ font-size:20px;width:42px;height:38px;border-radius:11px;cursor:pointer}
+@media(max-width:860px){.hamb{display:block}
+ nav.main{flex-basis:100%;flex-direction:column;max-height:0;overflow:hidden;
+  transition:max-height .28s ease;margin-left:0}
+ nav.main.open{max-height:900px;padding-bottom:8px}
+ nav.main a{padding:10px 9px;border-bottom:1px solid rgba(255,255,255,.07)}}
+
+/* ---------- 타이포 ---------- */
+h1{font-family:var(--serif);font-weight:900;font-size:32px;line-height:1.25;
+ margin:0 0 12px;letter-spacing:-.8px;
+ background:linear-gradient(96deg,#FFF3E2 0%,var(--rose) 52%,var(--magenta) 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-family:var(--serif);font-weight:900;font-size:22px;margin:40px 0 14px;
+ padding-bottom:10px;position:relative;letter-spacing:-.4px;
+ border-bottom:1px solid var(--line);color:#F5EAFB}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;width:72px;height:2px;border-radius:2px;
+ background:linear-gradient(90deg,var(--rose),var(--magenta));
+ box-shadow:0 0 12px rgba(217,165,102,.55)}
+h3{font-size:16px;margin:22px 0 8px;font-weight:700;color:#F0E4FA}
+main{padding:28px 0 104px}
+.lead{font-size:16px;color:var(--muted);margin:0 0 20px;line-height:1.8}
+.eyebrow{font-size:12px;letter-spacing:2.2px;color:var(--rose);
+ text-transform:uppercase;margin:0 0 6px;font-weight:700}
+p{margin:10px 0}
+b,strong{color:#FFF1DC;font-weight:700}
+/* 중점(·)으로 이어붙인 긴 로마자 상수 나열이 375px에서 넘치지 않도록 */
+p,li,td,th,.callout,.card,.stat,.kv .v,figcaption{overflow-wrap:anywhere}
+
+/* ---------- 카드 ---------- */
+.grid{display:grid;gap:15px}.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+@media(max-width:400px){.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(160deg,var(--card),var(--card2));border:var(--hair);
+ border-radius:18px;padding:18px;box-shadow:var(--shadow);min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease, border-color .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);
+ border-color:rgba(217,165,102,.42)}
+.card h3{margin-top:0}
+.card p{color:var(--muted);font-size:13.5px}
+.stat{position:relative;background:linear-gradient(160deg,var(--card),var(--card2));
+ border:var(--hair);border-radius:16px;padding:16px 12px;text-align:center;
+ box-shadow:var(--shadow);overflow:hidden;min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease}
+.stat::before{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+ background:linear-gradient(90deg,transparent,var(--rose),transparent);opacity:.75}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.stat .n{font-family:var(--serif);font-weight:900;font-size:27px;color:var(--rose);
+ line-height:1.15;letter-spacing:-.5px;word-break:keep-all}
+.stat .n.mag{color:var(--magenta)}
+.stat .n.warn{color:var(--warn)}
+.stat .l{font-size:11.5px;color:var(--muted);margin-top:6px;font-weight:700;word-break:keep-all}
+
+/* ---------- 칩 ---------- */
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;
+ border:1px solid transparent;white-space:nowrap;vertical-align:middle}
+.chip.fact{background:rgba(79,209,165,.14);color:#6FE0BC;border-color:rgba(79,209,165,.4)}
+.chip.inf {background:rgba(217,165,102,.14);color:var(--rose);border-color:rgba(217,165,102,.45)}
+.chip.unk {background:rgba(163,146,184,.13);color:#BCAAD2;border-color:rgba(163,146,184,.38)}
+.chip.warn{background:rgba(224,87,79,.15);color:#F0857E;border-color:rgba(224,87,79,.45)}
+.chip.op  {background:rgba(139,92,246,.16);color:#B79BFF;border-color:rgba(139,92,246,.45)}
+.tag{display:inline-block;background:rgba(217,165,102,.10);color:var(--rose);font-size:12px;
+ padding:4px 12px;border-radius:20px;margin:3px 3px 0 0;font-weight:700;
+ border:1px solid rgba(217,165,102,.3)}
+
+/* ---------- 표 ---------- */
+.tblwrap{overflow-x:auto;border:var(--hair);border-radius:16px;margin:14px 0;
+ background:var(--card);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:linear-gradient(180deg,#2E1A4E,#261541);color:var(--rose);
+ font-weight:700;white-space:nowrap;position:sticky;top:0;z-index:1}
+tbody tr:nth-child(even){background:rgba(255,255,255,.022)}
+tbody tr:hover{background:rgba(194,67,139,.09)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+td b{color:#FFF1DC}
+
+/* ---------- 콜아웃 ---------- */
+.callout{border-left:3px solid var(--rose);background:rgba(217,165,102,.07);padding:14px 17px;
+ border-radius:0 14px 14px 0;margin:16px 0;font-size:14px;color:#DED0EE}
+.callout.warn{border-color:var(--warn);background:rgba(224,87,79,.09)}
+.callout.mag{border-color:var(--magenta);background:rgba(194,67,139,.10)}
+.callout.ok{border-color:var(--ok);background:rgba(79,209,165,.08)}
+.callout b{color:#FFF1DC}
+
+/* 최상위 경고 배너 */
+.banner{position:relative;border-radius:18px;padding:22px 22px;margin:18px 0 8px;
+ background:linear-gradient(135deg,rgba(224,87,79,.20),rgba(194,67,139,.16) 60%,rgba(36,21,65,.9));
+ border:1px solid rgba(224,87,79,.45);box-shadow:var(--shadow-lg)}
+.banner .t{font-family:var(--serif);font-weight:900;font-size:20px;color:#FFD9CF;
+ margin:6px 0 8px;letter-spacing:-.4px;line-height:1.35}
+.banner p{margin:6px 0 0;font-size:14px;color:#EBD9E6}
+
+/* ---------- 도형·갤러리 ---------- */
+.svgwrap{overflow-x:auto;border:var(--hair);border-radius:16px;background:var(--card);
+ padding:12px;box-shadow:var(--shadow);margin:14px 0;max-width:100%}
+.svgwrap svg{display:block}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal img{width:100%;height:110px;object-fit:cover;border-radius:12px;border:var(--hair);
+ box-shadow:var(--shadow);transition:transform .18s;background:var(--card2)}
+.gal img:hover{transform:scale(1.04)}
+.gal figure{margin:0;min-width:0}
+.gal figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:5px;font-weight:700}
+.montage{width:100%;border:var(--hair);border-radius:16px;display:block;box-shadow:var(--shadow)}
+ul.clean{padding-left:20px;margin:8px 0}ul.clean li{margin:6px 0}
+ol.clean{padding-left:22px;margin:8px 0}ol.clean li{margin:6px 0}
+.src{font-size:12px;color:var(--muted)}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;
+ border-bottom:1px dashed var(--line);min-width:0}
+.kv:last-child{border-bottom:0}
+.kv .k{color:var(--muted);font-weight:700;flex-shrink:0}
+.kv .v{font-weight:700;text-align:right;color:#FFF1DC;min-width:0;word-break:break-word}
+.bar{height:9px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;border-radius:8px;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ box-shadow:0 0 10px rgba(217,165,102,.4)}
+code{background:rgba(139,92,246,.14);color:#D9C6FF;padding:1px 6px;border-radius:6px;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;
+ word-break:break-all}
+pre{background:#150C24;border:var(--hair);border-radius:14px;padding:14px 16px;
+ overflow-x:auto;font-size:12.5px;line-height:1.6;color:#D6C6EA;margin:14px 0;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;max-width:100%}
+pre code{background:none;padding:0;color:inherit}
+
+/* ---------- 하단 진행바 ---------- */
+footer.prog{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:9px 0;
+ background:linear-gradient(118deg,rgba(18,8,32,.97),rgba(46,20,66,.97));
+ border-top:1px solid rgba(217,165,102,.28);
+ box-shadow:0 -10px 28px -10px rgba(0,0,0,.9)}
+.ptrack{max-width:1080px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:12px}
+.dots{position:relative;flex:1;height:22px;min-width:0}
+.dline{position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,.11);
+ transform:translateY(-50%);border-radius:3px}
+.dfill{position:absolute;top:50%;left:0;height:3px;border-radius:3px;width:0;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ transform:translateY(-50%);transition:width .2s;box-shadow:0 0 10px rgba(217,165,102,.7)}
+.dot{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;background:#4B3968;
+ transform:translate(-50%,-50%);border:2px solid #1A0E2B;cursor:pointer;transition:.16s}
+.dot:hover{transform:translate(-50%,-50%) scale(1.4)}
+.dot.on{background:var(--rose);box-shadow:0 0 9px rgba(217,165,102,.9)}
+.mascot{width:34px;height:34px;border-radius:9px;flex-shrink:0;object-fit:cover;
+ border:1px solid rgba(217,165,102,.4);
+ filter:drop-shadow(0 3px 8px rgba(194,67,139,.5))}
+.plabel{color:var(--rose);font-size:13px;white-space:nowrap;flex-shrink:0;
+ letter-spacing:1.2px;font-weight:700;font-variant-numeric:tabular-nums}
+.foot-note{max-width:1080px;margin:28px auto 0;padding:16px 0 0;color:var(--muted);
+ font-size:12.5px;border-top:1px dashed var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:420px){h1{font-size:26px}h2{font-size:19px}.stat .n{font-size:23px}}
+</style><style id="gb-css">
+:root{--gb-w:266px}
+.gb-side{
+  position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
+  background:#11141c;border-right:1px solid #262d3b;overflow-y:auto;
+  padding:16px 12px 28px;
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.gb-side::-webkit-scrollbar{width:8px}
+.gb-side::-webkit-scrollbar-thumb{background:#2b3346;border-radius:4px}
+.gb-home{
+  display:flex;align-items:center;gap:7px;color:#aab4c6;text-decoration:none;
+  font-size:12.5px;padding:9px 11px;border-radius:9px;border:1px solid #262d3b;
+  background:#171b25;transition:.18s;margin-bottom:14px
+}
+.gb-home:hover{background:#1e2431;color:#fff;border-color:var(--gb-ac);text-decoration:none}
+.gb-title{
+  color:#fff;font-size:15px;font-weight:800;padding:0 11px 10px;margin-bottom:8px;
+  border-bottom:1px solid #262d3b;letter-spacing:-.01em;line-height:1.4
+}
+.gb-title small{display:block;color:#6f7a8f;font-size:11px;font-weight:500;margin-top:3px;letter-spacing:.06em}
+.gb-nav{display:flex;flex-direction:column;gap:1px}
+.gb-nav a{
+  display:flex;align-items:center;gap:9px;color:#aab4c6;text-decoration:none;
+  font-size:13px;padding:8px 11px;border-radius:8px;transition:.15s;line-height:1.45
+}
+.gb-nav a .num{
+  font-family:'Consolas',monospace;font-size:10.5px;color:#5d6779;min-width:18px;flex-shrink:0
+}
+.gb-nav a:hover{background:#1b2130;color:#fff;text-decoration:none}
+.gb-nav a.on{background:var(--gb-ac);color:#0e1016;font-weight:700}
+.gb-nav a.on .num{color:rgba(0,0,0,.5)}
+body{padding-left:var(--gb-w)}
+.gb-burger,.gb-dim{display:none}
+@media(max-width:900px){
+  body{padding-left:0}
+  .gb-side{transform:translateX(-100%);transition:transform .26s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 30px rgba(0,0,0,.4)}
+  body.gb-open .gb-side{transform:none}
+  .gb-burger{
+    display:flex;align-items:center;justify-content:center;position:fixed;
+    left:12px;bottom:14px;z-index:320;width:48px;height:48px;border-radius:50%;
+    background:var(--gb-ac);color:#0e1016;border:none;font-size:19px;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  .gb-dim{
+    display:block;position:fixed;inset:0;z-index:290;background:rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .22s
+  }
+  body.gb-open .gb-dim{opacity:1;pointer-events:auto}
+  body.gb-open{overflow:hidden}
+}
+@media print{.gb-side,.gb-burger,.gb-dim{display:none}body{padding-left:0}}
+  .gb-side{--gb-ac:#b07be0}
+  :root{--gb-ac:#b07be0}
+
+/* tikitaca override */
+header.top nav.main{display:none!important}
+header.top .hamb{display:none!important}
+footer.prog{left:var(--gb-w)!important}
+@media(max-width:900px){ footer.prog{left:0!important} }
+
+</style>
+<!--gb-injected--></head><body>
+<button class="gb-burger" aria-label="목차 열기">☰</button>
+<div class="gb-dim"></div>
+<aside class="gb-side">
+  <a class="gb-home" href="../index.html">← 게임 분석 아카이브</a>
+  <div class="gb-title">잔망티키타카<small>ANALYSIS REPORT</small></div>
+  <nav class="gb-nav">
+        <a class="" href="index.html"><span class="num">—</span><span>표지</span></a>
+    <a class="" href="01_overview.html"><span class="num">01</span><span>개요</span></a>
+    <a class="" href="02_architecture.html"><span class="num">02</span><span>앱 구조</span></a>
+    <a class="" href="03_game_system.html"><span class="num">03</span><span>게임 시스템</span></a>
+    <a class="" href="04_currency.html"><span class="num">04</span><span>재화</span></a>
+    <a class="" href="05_growth.html"><span class="num">05</span><span>성장</span></a>
+    <a class="" href="06_bm.html"><span class="num">06</span><span>수익화</span></a>
+    <a class="" href="07_protocol.html"><span class="num">07</span><span>프로토콜</span></a>
+    <a class="" href="08_security.html"><span class="num">08</span><span>보안</span></a>
+    <a class="" href="09_localization.html"><span class="num">09</span><span>로컬라이제이션</span></a>
+    <a class="" href="10_assets.html"><span class="num">10</span><span>에셋</span></a>
+    <a class="" href="11_store.html"><span class="num">11</span><span>스토어</span></a>
+    <a class="on" href="12_market.html"><span class="num">12</span><span>시장</span></a>
+    <a class="" href="13_method.html"><span class="num">13</span><span>방법론·한계</span></a>
+  </nav>
+</aside>
+<header class="top"><div class="topbar">
+<span class="brand"><img src="img/icon.png" alt="">잔망<span class="g">티키타카</span></span>
+<button class="hamb" aria-label="menu">&#9776;</button><nav class="main"><a href="index.html">표지</a><a href="01_overview.html">개요</a><a href="02_architecture.html">앱 구조</a><a href="03_game_system.html">게임 시스템</a><a href="04_currency.html">재화</a><a href="05_growth.html">성장</a><a href="06_bm.html">수익화</a><a href="07_protocol.html">프로토콜</a><a href="08_security.html">보안</a><a href="09_localization.html">로컬라이제이션</a><a href="10_assets.html">에셋</a><a href="11_store.html">스토어</a><a href="12_market.html" class="active">시장</a><a href="13_method.html">방법론·한계</a></nav>
+</div></header><div class="wrap"><main>
+<div class="eyebrow">Chapter 12</div>
+<h1>시장</h1>
+<p class="lead">방치형은 <b>4년 만에 10배 커진 장르</b>다. 그리고 바로 그래서 <b>레드오션</b>이다.</p>
+
+<h2>⚠️ 인용 주의사항 — 먼저 읽을 것</h2>
+<div class="callout warn">
+ <ol class="clean" style="margin-top:6px">
+  <li>KOCCA <b>"2025 게임백서"의 수치는 실제로 2024년 실적</b>이다. 연도 라벨을 반드시 명시해야 한다.</li>
+  <li>원스토어 홍보의 <b>49.2%는 점유율이 아니다.</b> 구글플레이·원스토어 <b>양쪽에 모두 입점한</b>
+  상위 매출 50개 게임의 <b>안드로이드 거래액</b>을 두 마켓이 나눈 비율이다.
+  <b>전체 시장 기준은 12.6%</b>다.</li>
+  <li>KOCCA(원화, 산업 전체)와 센서타워(달러, 앱스토어 한정)를 <b>한 문장에 섞지 말 것.</b>
+  집계 범위·환율·시점이 다르다.</li>
+ </ol>
+</div>
+
+<h2>한국 모바일 게임 시장 (2024년 실적)</h2>
+<div class="tblwrap"><table style="min-width:440px"><thead><tr><th>항목</th><th>2024년 실적</th></tr></thead><tbody><tr><td>국내 게임산업 전체</td><td><b>23조 8,515억 원</b> (전년 대비 <b>+3.9%</b>)</td></tr><tr><td><b>모바일 게임</b></td><td><b>14조 710억 원</b> (점유율 <b>59.0%</b>, 성장 +3.4%)</td></tr><tr><td>PC</td><td>6조 94억 원 (25.2%)</td></tr><tr><td>콘솔</td><td>1조 1,836억 원 (5.0%)</td></tr><tr><td>아케이드</td><td>2,759억 원 (1.2%)</td></tr></tbody></table></div>
+<p class="src">출처: 2025 대한민국 게임백서 (한국콘텐츠진흥원, 발간 2026-03-25) — <b>수치는 2024년 실적</b></p>
+
+<h3>앱스토어 소비지출 기준 (Sensor Tower) — 집계 범위가 다르다</h3>
+<div class="tblwrap"><table style="min-width:480px"><thead><tr><th>기간</th><th>매출</th><th>다운로드</th></tr></thead><tbody><tr><td>2025 연간(전망)</td><td>53억 달러 (구글플레이 약 75%)</td><td>—</td></tr><tr><td>2025 상반기</td><td>24억 달러</td><td>—</td></tr><tr><td>2025 하반기</td><td><b>28억 달러</b> (전기 대비 +8.3%, <b>전년 동기 대비 −1.1%</b>)</td><td><b>2.1억 건 (전년 대비 −21%)</b></td></tr></tbody></table></div>
+<div class="callout warn">
+ <b>방향은 분명하다: 매출은 정체, 다운로드는 −21% 급감.</b>
+ <b>신규 유입이 마르고 있는 시장에 신작이 들어가는 상황</b>이다. <span class="chip op">판단</span><br>
+ <span class="src">2026년 한국 시장 수치는 <b>확인 실패</b> — KOCCA 차기 백서 미발간,
+ 센서타워 2026 상반기 결산 미발표. <span class="chip unk">미확인</span></span>
+</div>
+
+<h2>장르 지형 — 방치형의 급성장</h2>
+<div class="tblwrap"><table style="min-width:440px"><thead><tr><th>구분</th><th>2020/2021</th><th>2024</th></tr></thead><tbody><tr><td><b>방치형 게임 전체 매출 비중</b></td><td><b>1.7%</b> (2020)</td><td><b>16%</b></td></tr><tr><td>방치형 RPG 비중</td><td>1.6% (2021)</td><td><b>7.1%</b></td></tr><tr><td>MMORPG 비중</td><td>67% (2021)</td><td><b>51.3%</b></td></tr></tbody></table></div>
+<div class="svgwrap">
+<svg viewBox="0 0 700 190" width="700" xmlns="http://www.w3.org/2000/svg"
+ font-family="NotoSansKR,sans-serif" font-size="12">
+<text x="20" y="24" fill="#A392B8" font-size="12">방치형 매출 비중 (한국 모바일 게임)</text>
+<line x1="70" y1="150" x2="670" y2="150" stroke="#3A2459" stroke-width="1.5"/>
+<rect x="130" y="138.1" width="90" height="11.9" rx="4" fill="#A392B8" fill-opacity=".55"/>
+<text x="175" y="130.1" fill="#A392B8" text-anchor="middle" font-weight="bold">1.7%</text>
+<text x="175" y="170" fill="#A392B8" text-anchor="middle">2020</text>
+<rect x="470" y="38" width="90" height="112" rx="4" fill="#C2438B" fill-opacity=".75"/>
+<text x="515" y="30" fill="#D9A566" text-anchor="middle" font-weight="bold" font-size="15">16%</text>
+<text x="515" y="170" fill="#A392B8" text-anchor="middle">2024</text>
+<path d="M230,132 Q350,50 462,44" stroke="#D9A566" stroke-width="2" fill="none"
+ stroke-dasharray="6 5" opacity=".7"/>
+<text x="350" y="80" fill="#D9A566" text-anchor="middle" font-weight="bold" font-size="13">약 10배</text>
+</svg></div>
+<p class="src">출처: KFE뉴스 2026-04-14 (2025 게임백서 인용).
+⚠️ <b>언론 2차 인용</b>이다. KOCCA 백서 원문 표로 재확인 권장.
+기사가 계산한 "약 3.8조 원" 추산치는 기사 자체 계산이므로 인용 비권장.</p>
+
+<h3>2025~2026 추가 변화</h3>
+<ul class="clean">
+ <li>장르별 매출 증가율(2025): <b>전략 +20%, 퍼즐 +14%</b></li>
+ <li><b>2026년 1월 4X 전략이 월매출 7,000만 달러 돌파 → 9년간 1위였던 MMORPG를 월매출 기준 최초 추월</b></li>
+ <li>MMORPG는 여전히 전체 매출의 <b>30%</b></li>
+ <li>4X 전략이 1월 전체 게임 광고의 <b>19%</b> 점유 (UA 경쟁 극심)</li>
+ <li>2026년 2월 <b>타워디펜스가 다운로드 순위 1위 최초 달성</b></li>
+ <li>2025 Q1~Q3: RPG 전체 매출 비중 <b>48%</b>, <b>미드코어가 전체 모바일 매출의 79%</b>,
+ 서브장르 YoY 턴제 RPG <b>+138%</b> · 머지 +89% · 4X 전략 +25%</li>
+</ul>
+<div class="callout mag">
+ 💡 <b>이 게임에 유리한 신호 하나:</b> 서브장르 YoY에서 <b>턴제 RPG가 +138%</b>로 가장 크게 성장했다.
+ 잔망티키타카는 5인 편성 <b>턴제 오토배틀</b>이다. 다만 이 수치는 장르 전체의 것이지
+ 개별 타이틀의 성공을 보장하지 않는다. <span class="chip op">판단</span>
+</div>
+
+<h2>레드오션 증거 — 원스토어가 붙인 '비슷한 게임'</h2>
+<p style="line-height:2.4">
+<span class="tag">픽셀 히어로즈: 방치형 RPG</span> <span class="tag">불사용사 키우기: 방치형 RPG</span> <span class="tag">돌격 소녀 키우기</span> <span class="tag">미스터 히어로 - 방치형 키우기</span> <span class="tag">히어로 원정대: 키우기 방치형 RPG</span> <span class="tag">캣 히어로: 방치형 RPG</span> <span class="tag">Mini Heroes: 영웅 키우기</span> <span class="tag">별별 히어로: 영웅 다 있소</span> <span class="tag">디멘션 클래시</span>
+</p>
+<div class="callout warn">
+ 유사 게임군이 <b>압도적으로 방치형 영웅 키우기 RPG</b>로 채워진다.
+ 스토어 알고리즘이 이 게임을 그 카테고리로 분류하고 있다는 뜻이고,
+ <b>동일 카테고리 안에서 최소 9개 타이틀과 직접 경쟁</b>한다는 뜻이다.
+ 소개문의 "똑같은 방치형은 가라"는 이 포화를 정확히 겨냥한 카피다. <span class="chip op">판단</span>
+</div>
+
+<h2>원스토어 채널 — 이 게임이 단독 등재된 곳</h2>
+<h3>점유율</h3>
+<div class="tblwrap"><table style="min-width:640px"><thead><tr><th>지표</th><th>수치</th><th>기간</th></tr></thead><tbody><tr><td>게임 거래액 점유율</td><td><b>원스토어 약 12.6%</b> vs 애플 앱스토어 약 12.3%</td><td>2020 하반기~2025 상반기 누적</td></tr><tr><td>구글플레이·원스토어 <b>동시 입점</b> 상위 매출 50개 게임 기준 원스토어 거래액 점유율</td><td><b>49.2%</b> ← <b>점유율 아님, 조건부 수치</b></td><td>2025 상반기</td></tr><tr><td>장르별(동시 입점 기준)</td><td>RPG 50.9% / <b>시뮬레이션 64.8%</b> / 전략 49.2% / 스포츠 74.3%</td><td>2025 상반기</td></tr><tr><td>ARPPU</td><td>구글플레이 대비 <b>약 5배</b></td><td>동기간</td></tr><tr><td>설치 기반</td><td>단말 3,800만, MAU 1,500만</td><td>2024-09</td></tr></tbody></table></div>
+
+<h3>수수료 — 소규모 개발사에 유리한 구간</h3>
+<div class="tblwrap"><table style="min-width:460px"><thead><tr><th>구분</th><th>배분</th></tr></thead><tbody><tr><td>기본 인앱결제</td><td><b>80 : 20</b> (개발사 80%)</td></tr><tr><td>자체결제 이용 시</td><td><b>95 : 5</b> (개발사 95%)</td></tr><tr><td><b>월 거래액 $5,000 이하 중소 개발사</b></td><td><b>수수료 50% 감면</b> → 실효 <b>10%</b>(원스토어 결제) / <b>2.5%</b>(자체결제)</td></tr></tbody></table></div>
+<div class="callout ok">
+ ✅ <b>본 건 관련성:</b> 신작·무명 개발사는 초기 월 거래액이 $5,000 이하일 가능성이 높다.
+ 그 구간에서 실효 수수료가 <b>10% 또는 2.5%</b>까지 내려간다.
+ 구글플레이 소규모 개발자 프로그램 15%보다도 유리하다.
+ <b>원스토어 선택의 합리적 근거가 된다.</b> <span class="chip op">판단</span><br>
+ <span class="src">2026년 2월, 2020년부터 매년 한시 연장하던 중소 개발사 감면을 <b>상시 운영으로 전환</b>했다.
+ 누적 약 2천 개 개발사·1만 6천여 콘텐츠에 적용됐다.</span>
+</div>
+
+<h3>왜 원스토어 단독 출시가 드문가 — 구조적 이유</h3>
+<div class="tblwrap"><table style="min-width:560px"><thead><tr><th>시점</th><th>내용</th></tr></thead><tbody><tr><td><b>2023년 공정위 제재</b></td><td>구글이 2016~2018년 게임사에 <b>"원스토어에 게임을 출시하지 않는 조건"</b>으로 이익 제공 → 시정명령 + 과징금 <b>421억원</b></td></tr><tr><td><b>2026년 진행 중</b></td><td>2019-07~2026-03 넷마블·엔씨소프트·액티비전블리자드킹·라이엇게임즈 등 <b>주요 게임사 22곳</b>과 체결한 <b>GVP(Google Velocity Program)</b> 계약의 최혜대우 조항 심사 중. 관련 매출 약 14조 1,600억원의 6%인 <b>최대 8,496억원</b> 과징금 전망</td></tr></tbody></table></div>
+<div class="callout mag">
+ 💡 <b>해석:</b> 원스토어 단독 출시가 드문 것은 시장이 선택하지 않아서가 아니라
+ <b>구글이 계약으로 억제해 왔기 때문</b>이라는 것이 규제당국 판단이다.
+ <b>소규모 개발사는 GVP 같은 계약 대상이 아니므로 이 제약에서 자유롭다</b> —
+ 대형사가 못 하는 선택지를 쓸 수 있는 위치다. <span class="chip op">판단</span><br><br>
+ <span class="src">검증된 사례: 라스트 오리진(스마트조이, 2019-03-20) — 구글플레이가 선정성 사유로 제재하자
+ 검열판을 Play에, <b>무검열판을 원스토어에</b> 출시. 하루 만에 인기 1위·최고매출 2위, 6일 만에 매출 1위.
+ 단 완전한 단독 출시는 아니었다. → <b>원스토어 선택의 실질적 동인은 수수료보다 콘텐츠 심의 유연성이었다.</b><br>
+ 확인 실패: 2024~2026년 day-one 원스토어 단독 출시 타이틀 명단은 특정하지 못했다. <span class="chip unk">미확인</span></span>
+</div>
+
+<h3>⚠️ 원스토어 지배구조가 바뀌었다 (2026년 6월)</h3>
+<div class="tblwrap"><table style="min-width:520px"><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>인수 주체</td><td><b>넥써쓰</b> (블록체인 게임 플랫폼)</td></tr><tr><td>거래</td><td><b>626억 2,703만원 / 지분 89.03%</b> (주식 2,024만 7,990주)</td></tr><tr><td>매도인</td><td>SK스퀘어 45.78%, 네이버 24.06%, 스틸넘버원제일차 17.02%, 크래프톤 2.17%</td></tr><tr><td>종결</td><td>2026-06-29 (2차 대금 지급)</td></tr><tr><td>리브랜딩</td><td>메인넷 '크로쓰'→<b>'원체인'</b>, 토큰 <code>$CROSS</code>→<code>$ONE</code>, 웹샵 '원샵' 출시 예정</td></tr><tr><td>IPO</td><td>2022년 코스피 상장 추진 <b>철회</b>, 사실상 종료</td></tr></tbody></table></div>
+<div class="callout warn">
+ ⚠️ <b>리스크로 명시한다:</b> 원스토어는 더 이상 SK스퀘어 계열 토종 앱마켓이 아니라
+ <b>블록체인 게임사가 인수한 유통 채널</b>이다. 인수 직후 브랜드·토큰 리네이밍이 진행 중이라,
+ <b>2026년 하반기 채널 정책 지속성(특히 중소 개발사 수수료 감면 상시화 유지 여부)은 불확실 요소다.</b><br>
+ 출시가 7/21이므로 <b>이 변화 한복판에서 런칭하는 셈</b>이다. <span class="chip op">판단</span>
+</div>
+
+<h2>확인 실패 — 명시</h2>
+<div class="tblwrap"><table style="min-width:560px"><thead><tr><th>항목</th><th>사유</th></tr></thead><tbody><tr><td>2026년 한국 모바일 시장 규모</td><td>KOCCA 차기 백서 미발간, 센서타워 2026 상반기 결산 미발표</td></tr><tr><td>캐주얼·퍼즐 장르 매출 점유율 %</td><td>퍼즐은 성장률(+14%)만, 캐주얼은 정성적 서술만 존재</td></tr><tr><td>한국 소형·인디 다운로드/매출/리텐션 벤치마크</td><td>공개된 것은 대형 퍼블리셔 타이틀 실적뿐. 인디 규모 코호트 데이터는 유료 리포트 뒤에 있다. 리텐션은 업계 통설("D1 40% 이상") 수준만 검색되어 <b>1차 출처 확인 실패</b>로 숫자를 싣지 않았다</td></tr><tr><td>2024~2026 원스토어 day-one 단독 출시 타이틀 명단</td><td>특정 실패</td></tr></tbody></table></div>
+<p class="src"><b>규모가 달라 벤치마크가 아닌 참고치</b>: 레전드 오브 슬라임: 방치형 RPG (2022-08) —
+한국 약 1,000만 달러 / 글로벌 약 7,700만 달러 · 세븐나이츠 리버스 (넷마블, 2025-05) —
+2025년 5~9월 약 1억 2,000만 달러</p>
+
+<div class="foot-note">잔망티키타카 (com.megagiant.tikitaca.one v1.0.6) 정적 분석 리포트 ·
+생성 2026-07-20 (출시 예정일 D-1) · 게임 저작권은 MEGAGIANT INC에 있으며 본 문서는 내부 분석용입니다.</div>
+</main></div>
+<footer class="prog"><div class="ptrack"><img class="mascot" src="img/mascot.png" alt="">
+<span class="plabel">12 / 13</span>
+<div class="dots"><div class="dline"></div><div class="dfill"></div></div></div></footer>
+<script>
+(function(){var h=document.querySelector('.hamb'),n=document.querySelector('nav.main');
+if(h)h.addEventListener('click',function(){n.classList.toggle('open')});
+var secs=[].slice.call(document.querySelectorAll('main h2')),dots=document.querySelector('.dots');
+if(dots&&secs.length){secs.forEach(function(s,i){s.id=s.id||('sec'+i);
+ var d=document.createElement('div');d.className='dot';
+ d.style.left=(secs.length>1?(i/(secs.length-1))*100:0)+'%';d.title=s.textContent;
+ d.onclick=function(){s.scrollIntoView({behavior:'smooth',block:'start'})};dots.appendChild(d)});
+ var fill=document.querySelector('.dfill');
+ function upd(){var y=window.scrollY+130,idx=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)idx=i});
+  [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i<=idx)});
+  if(fill)fill.style.width=(secs.length>1?(idx/(secs.length-1))*100:100)+'%'}
+ window.addEventListener('scroll',upd,{passive:true});upd();}})();
+</script><script id="gb-js">
+(function(){
+  var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
+  function set(o){document.body.classList.toggle('gb-open',o);}
+  if(b) b.addEventListener('click',function(){set(!document.body.classList.contains('gb-open'));});
+  if(d) d.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>900)set(false);});
+  // 현재 항목이 사이드바 밖이면 보이도록 스크롤
+  var on=document.querySelector('.gb-nav a.on');
+  if(on){var s=document.querySelector('.gb-side');
+    if(s && on.offsetTop > s.clientHeight-80) s.scrollTop = on.offsetTop - s.clientHeight/2;}
+})();
+</script>
+</body></html>

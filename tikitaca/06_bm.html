@@ -1,0 +1,479 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>수익화 · 잔망티키타카 분석</title><style>
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Medium.woff2') format('woff2');
+ font-weight:500;font-display:swap}
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Bold.woff2') format('woff2');
+ font-weight:700;font-display:swap}
+@font-face{font-family:'NotoSerifKR';src:url('fonts/NotoSerifKR-Black.woff2') format('woff2');
+ font-weight:900;font-display:swap}
+
+:root{
+ --bg:#160B26;--bg2:#1E1033;--card:#241541;--card2:#2C1A4D;
+ --rose:#D9A566;--magenta:#C2438B;--violet:#8B5CF6;
+ --ink:#E8DDF2;--muted:#A392B8;--line:#3A2459;--ok:#4FD1A5;--warn:#E0574F;
+ --serif:'NotoSerifKR',serif;
+ --shadow:0 1px 0 rgba(217,165,102,.10), 0 14px 30px -18px rgba(0,0,0,.85);
+ --shadow-lg:0 1px 0 rgba(217,165,102,.20), 0 26px 52px -22px rgba(0,0,0,.95);
+ --hair:1px solid rgba(217,165,102,.22);
+ --c0:#C2438B;--c1:#D9A566;--c2:#8B5CF6;--c3:#4FD1A5;--c4:#5AA9FF;--c5:#E0574F}
+
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'NotoSansKR',-apple-system,'Malgun Gothic',sans-serif;font-weight:500;
+ color:var(--ink);line-height:1.7;-webkit-text-size-adjust:100%;background:var(--bg);
+ background-image:
+  radial-gradient(ellipse 60% 40% at 8% 0%, rgba(194,67,139,.16), transparent 60%),
+  radial-gradient(ellipse 55% 45% at 92% 6%, rgba(139,92,246,.13), transparent 62%),
+  radial-gradient(ellipse 70% 40% at 50% 100%, rgba(217,165,102,.07), transparent 60%);
+ background-attachment:fixed;overflow-x:hidden}
+a{color:var(--rose);text-decoration:none;font-weight:700}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* ---------- 헤더 ---------- */
+header.top{position:sticky;top:0;z-index:50;color:var(--ink);overflow:hidden;
+ background:linear-gradient(118deg,#120820 0%,#22103A 55%,#2E1442 100%);
+ border-bottom:1px solid rgba(217,165,102,.28);
+ box-shadow:0 10px 30px -14px rgba(0,0,0,.9)}
+header.top::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:
+  radial-gradient(ellipse 240px 120px at 14% -40%, rgba(194,67,139,.42), transparent 72%),
+  radial-gradient(ellipse 240px 120px at 78% -46%, rgba(217,165,102,.24), transparent 72%)}
+.topbar{position:relative;z-index:1;display:flex;align-items:center;gap:14px;
+ padding:11px 18px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;
+ white-space:nowrap;letter-spacing:-.4px;font-size:17px}
+.brand img{width:32px;height:32px;border-radius:10px;display:block;
+ box-shadow:0 0 0 1px rgba(217,165,102,.5), 0 4px 16px rgba(194,67,139,.5)}
+.brand .g{color:var(--rose);text-shadow:0 0 14px rgba(217,165,102,.55)}
+nav.main{margin-left:auto;display:flex;flex-wrap:wrap;gap:3px}
+nav.main a{color:#C9B8DC;font-size:12.5px;padding:6px 10px;border-radius:9px;
+ white-space:nowrap;font-weight:700;transition:.16s}
+nav.main a:hover{background:rgba(255,255,255,.09);color:#fff;text-decoration:none;transform:translateY(-1px)}
+nav.main a.active{background:linear-gradient(135deg,var(--magenta),#8B2E63);color:#fff;
+ box-shadow:0 0 0 1px rgba(217,165,102,.35), 0 4px 14px rgba(194,67,139,.45)}
+.hamb{display:none;margin-left:auto;background:rgba(255,255,255,.12);border:0;color:var(--ink);
+ font-size:20px;width:42px;height:38px;border-radius:11px;cursor:pointer}
+@media(max-width:860px){.hamb{display:block}
+ nav.main{flex-basis:100%;flex-direction:column;max-height:0;overflow:hidden;
+  transition:max-height .28s ease;margin-left:0}
+ nav.main.open{max-height:900px;padding-bottom:8px}
+ nav.main a{padding:10px 9px;border-bottom:1px solid rgba(255,255,255,.07)}}
+
+/* ---------- 타이포 ---------- */
+h1{font-family:var(--serif);font-weight:900;font-size:32px;line-height:1.25;
+ margin:0 0 12px;letter-spacing:-.8px;
+ background:linear-gradient(96deg,#FFF3E2 0%,var(--rose) 52%,var(--magenta) 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-family:var(--serif);font-weight:900;font-size:22px;margin:40px 0 14px;
+ padding-bottom:10px;position:relative;letter-spacing:-.4px;
+ border-bottom:1px solid var(--line);color:#F5EAFB}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;width:72px;height:2px;border-radius:2px;
+ background:linear-gradient(90deg,var(--rose),var(--magenta));
+ box-shadow:0 0 12px rgba(217,165,102,.55)}
+h3{font-size:16px;margin:22px 0 8px;font-weight:700;color:#F0E4FA}
+main{padding:28px 0 104px}
+.lead{font-size:16px;color:var(--muted);margin:0 0 20px;line-height:1.8}
+.eyebrow{font-size:12px;letter-spacing:2.2px;color:var(--rose);
+ text-transform:uppercase;margin:0 0 6px;font-weight:700}
+p{margin:10px 0}
+b,strong{color:#FFF1DC;font-weight:700}
+/* 중점(·)으로 이어붙인 긴 로마자 상수 나열이 375px에서 넘치지 않도록 */
+p,li,td,th,.callout,.card,.stat,.kv .v,figcaption{overflow-wrap:anywhere}
+
+/* ---------- 카드 ---------- */
+.grid{display:grid;gap:15px}.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+@media(max-width:400px){.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(160deg,var(--card),var(--card2));border:var(--hair);
+ border-radius:18px;padding:18px;box-shadow:var(--shadow);min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease, border-color .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);
+ border-color:rgba(217,165,102,.42)}
+.card h3{margin-top:0}
+.card p{color:var(--muted);font-size:13.5px}
+.stat{position:relative;background:linear-gradient(160deg,var(--card),var(--card2));
+ border:var(--hair);border-radius:16px;padding:16px 12px;text-align:center;
+ box-shadow:var(--shadow);overflow:hidden;min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease}
+.stat::before{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+ background:linear-gradient(90deg,transparent,var(--rose),transparent);opacity:.75}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.stat .n{font-family:var(--serif);font-weight:900;font-size:27px;color:var(--rose);
+ line-height:1.15;letter-spacing:-.5px;word-break:keep-all}
+.stat .n.mag{color:var(--magenta)}
+.stat .n.warn{color:var(--warn)}
+.stat .l{font-size:11.5px;color:var(--muted);margin-top:6px;font-weight:700;word-break:keep-all}
+
+/* ---------- 칩 ---------- */
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;
+ border:1px solid transparent;white-space:nowrap;vertical-align:middle}
+.chip.fact{background:rgba(79,209,165,.14);color:#6FE0BC;border-color:rgba(79,209,165,.4)}
+.chip.inf {background:rgba(217,165,102,.14);color:var(--rose);border-color:rgba(217,165,102,.45)}
+.chip.unk {background:rgba(163,146,184,.13);color:#BCAAD2;border-color:rgba(163,146,184,.38)}
+.chip.warn{background:rgba(224,87,79,.15);color:#F0857E;border-color:rgba(224,87,79,.45)}
+.chip.op  {background:rgba(139,92,246,.16);color:#B79BFF;border-color:rgba(139,92,246,.45)}
+.tag{display:inline-block;background:rgba(217,165,102,.10);color:var(--rose);font-size:12px;
+ padding:4px 12px;border-radius:20px;margin:3px 3px 0 0;font-weight:700;
+ border:1px solid rgba(217,165,102,.3)}
+
+/* ---------- 표 ---------- */
+.tblwrap{overflow-x:auto;border:var(--hair);border-radius:16px;margin:14px 0;
+ background:var(--card);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:linear-gradient(180deg,#2E1A4E,#261541);color:var(--rose);
+ font-weight:700;white-space:nowrap;position:sticky;top:0;z-index:1}
+tbody tr:nth-child(even){background:rgba(255,255,255,.022)}
+tbody tr:hover{background:rgba(194,67,139,.09)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+td b{color:#FFF1DC}
+
+/* ---------- 콜아웃 ---------- */
+.callout{border-left:3px solid var(--rose);background:rgba(217,165,102,.07);padding:14px 17px;
+ border-radius:0 14px 14px 0;margin:16px 0;font-size:14px;color:#DED0EE}
+.callout.warn{border-color:var(--warn);background:rgba(224,87,79,.09)}
+.callout.mag{border-color:var(--magenta);background:rgba(194,67,139,.10)}
+.callout.ok{border-color:var(--ok);background:rgba(79,209,165,.08)}
+.callout b{color:#FFF1DC}
+
+/* 최상위 경고 배너 */
+.banner{position:relative;border-radius:18px;padding:22px 22px;margin:18px 0 8px;
+ background:linear-gradient(135deg,rgba(224,87,79,.20),rgba(194,67,139,.16) 60%,rgba(36,21,65,.9));
+ border:1px solid rgba(224,87,79,.45);box-shadow:var(--shadow-lg)}
+.banner .t{font-family:var(--serif);font-weight:900;font-size:20px;color:#FFD9CF;
+ margin:6px 0 8px;letter-spacing:-.4px;line-height:1.35}
+.banner p{margin:6px 0 0;font-size:14px;color:#EBD9E6}
+
+/* ---------- 도형·갤러리 ---------- */
+.svgwrap{overflow-x:auto;border:var(--hair);border-radius:16px;background:var(--card);
+ padding:12px;box-shadow:var(--shadow);margin:14px 0;max-width:100%}
+.svgwrap svg{display:block}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal img{width:100%;height:110px;object-fit:cover;border-radius:12px;border:var(--hair);
+ box-shadow:var(--shadow);transition:transform .18s;background:var(--card2)}
+.gal img:hover{transform:scale(1.04)}
+.gal figure{margin:0;min-width:0}
+.gal figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:5px;font-weight:700}
+.montage{width:100%;border:var(--hair);border-radius:16px;display:block;box-shadow:var(--shadow)}
+ul.clean{padding-left:20px;margin:8px 0}ul.clean li{margin:6px 0}
+ol.clean{padding-left:22px;margin:8px 0}ol.clean li{margin:6px 0}
+.src{font-size:12px;color:var(--muted)}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;
+ border-bottom:1px dashed var(--line);min-width:0}
+.kv:last-child{border-bottom:0}
+.kv .k{color:var(--muted);font-weight:700;flex-shrink:0}
+.kv .v{font-weight:700;text-align:right;color:#FFF1DC;min-width:0;word-break:break-word}
+.bar{height:9px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;border-radius:8px;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ box-shadow:0 0 10px rgba(217,165,102,.4)}
+code{background:rgba(139,92,246,.14);color:#D9C6FF;padding:1px 6px;border-radius:6px;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;
+ word-break:break-all}
+pre{background:#150C24;border:var(--hair);border-radius:14px;padding:14px 16px;
+ overflow-x:auto;font-size:12.5px;line-height:1.6;color:#D6C6EA;margin:14px 0;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;max-width:100%}
+pre code{background:none;padding:0;color:inherit}
+
+/* ---------- 하단 진행바 ---------- */
+footer.prog{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:9px 0;
+ background:linear-gradient(118deg,rgba(18,8,32,.97),rgba(46,20,66,.97));
+ border-top:1px solid rgba(217,165,102,.28);
+ box-shadow:0 -10px 28px -10px rgba(0,0,0,.9)}
+.ptrack{max-width:1080px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:12px}
+.dots{position:relative;flex:1;height:22px;min-width:0}
+.dline{position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,.11);
+ transform:translateY(-50%);border-radius:3px}
+.dfill{position:absolute;top:50%;left:0;height:3px;border-radius:3px;width:0;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ transform:translateY(-50%);transition:width .2s;box-shadow:0 0 10px rgba(217,165,102,.7)}
+.dot{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;background:#4B3968;
+ transform:translate(-50%,-50%);border:2px solid #1A0E2B;cursor:pointer;transition:.16s}
+.dot:hover{transform:translate(-50%,-50%) scale(1.4)}
+.dot.on{background:var(--rose);box-shadow:0 0 9px rgba(217,165,102,.9)}
+.mascot{width:34px;height:34px;border-radius:9px;flex-shrink:0;object-fit:cover;
+ border:1px solid rgba(217,165,102,.4);
+ filter:drop-shadow(0 3px 8px rgba(194,67,139,.5))}
+.plabel{color:var(--rose);font-size:13px;white-space:nowrap;flex-shrink:0;
+ letter-spacing:1.2px;font-weight:700;font-variant-numeric:tabular-nums}
+.foot-note{max-width:1080px;margin:28px auto 0;padding:16px 0 0;color:var(--muted);
+ font-size:12.5px;border-top:1px dashed var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:420px){h1{font-size:26px}h2{font-size:19px}.stat .n{font-size:23px}}
+</style><style id="gb-css">
+:root{--gb-w:266px}
+.gb-side{
+  position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
+  background:#11141c;border-right:1px solid #262d3b;overflow-y:auto;
+  padding:16px 12px 28px;
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.gb-side::-webkit-scrollbar{width:8px}
+.gb-side::-webkit-scrollbar-thumb{background:#2b3346;border-radius:4px}
+.gb-home{
+  display:flex;align-items:center;gap:7px;color:#aab4c6;text-decoration:none;
+  font-size:12.5px;padding:9px 11px;border-radius:9px;border:1px solid #262d3b;
+  background:#171b25;transition:.18s;margin-bottom:14px
+}
+.gb-home:hover{background:#1e2431;color:#fff;border-color:var(--gb-ac);text-decoration:none}
+.gb-title{
+  color:#fff;font-size:15px;font-weight:800;padding:0 11px 10px;margin-bottom:8px;
+  border-bottom:1px solid #262d3b;letter-spacing:-.01em;line-height:1.4
+}
+.gb-title small{display:block;color:#6f7a8f;font-size:11px;font-weight:500;margin-top:3px;letter-spacing:.06em}
+.gb-nav{display:flex;flex-direction:column;gap:1px}
+.gb-nav a{
+  display:flex;align-items:center;gap:9px;color:#aab4c6;text-decoration:none;
+  font-size:13px;padding:8px 11px;border-radius:8px;transition:.15s;line-height:1.45
+}
+.gb-nav a .num{
+  font-family:'Consolas',monospace;font-size:10.5px;color:#5d6779;min-width:18px;flex-shrink:0
+}
+.gb-nav a:hover{background:#1b2130;color:#fff;text-decoration:none}
+.gb-nav a.on{background:var(--gb-ac);color:#0e1016;font-weight:700}
+.gb-nav a.on .num{color:rgba(0,0,0,.5)}
+body{padding-left:var(--gb-w)}
+.gb-burger,.gb-dim{display:none}
+@media(max-width:900px){
+  body{padding-left:0}
+  .gb-side{transform:translateX(-100%);transition:transform .26s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 30px rgba(0,0,0,.4)}
+  body.gb-open .gb-side{transform:none}
+  .gb-burger{
+    display:flex;align-items:center;justify-content:center;position:fixed;
+    left:12px;bottom:14px;z-index:320;width:48px;height:48px;border-radius:50%;
+    background:var(--gb-ac);color:#0e1016;border:none;font-size:19px;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  .gb-dim{
+    display:block;position:fixed;inset:0;z-index:290;background:rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .22s
+  }
+  body.gb-open .gb-dim{opacity:1;pointer-events:auto}
+  body.gb-open{overflow:hidden}
+}
+@media print{.gb-side,.gb-burger,.gb-dim{display:none}body{padding-left:0}}
+  .gb-side{--gb-ac:#b07be0}
+  :root{--gb-ac:#b07be0}
+
+/* tikitaca override */
+header.top nav.main{display:none!important}
+header.top .hamb{display:none!important}
+footer.prog{left:var(--gb-w)!important}
+@media(max-width:900px){ footer.prog{left:0!important} }
+
+</style>
+<!--gb-injected--></head><body>
+<button class="gb-burger" aria-label="목차 열기">☰</button>
+<div class="gb-dim"></div>
+<aside class="gb-side">
+  <a class="gb-home" href="../index.html">← 게임 분석 아카이브</a>
+  <div class="gb-title">잔망티키타카<small>ANALYSIS REPORT</small></div>
+  <nav class="gb-nav">
+        <a class="" href="index.html"><span class="num">—</span><span>표지</span></a>
+    <a class="" href="01_overview.html"><span class="num">01</span><span>개요</span></a>
+    <a class="" href="02_architecture.html"><span class="num">02</span><span>앱 구조</span></a>
+    <a class="" href="03_game_system.html"><span class="num">03</span><span>게임 시스템</span></a>
+    <a class="" href="04_currency.html"><span class="num">04</span><span>재화</span></a>
+    <a class="" href="05_growth.html"><span class="num">05</span><span>성장</span></a>
+    <a class="on" href="06_bm.html"><span class="num">06</span><span>수익화</span></a>
+    <a class="" href="07_protocol.html"><span class="num">07</span><span>프로토콜</span></a>
+    <a class="" href="08_security.html"><span class="num">08</span><span>보안</span></a>
+    <a class="" href="09_localization.html"><span class="num">09</span><span>로컬라이제이션</span></a>
+    <a class="" href="10_assets.html"><span class="num">10</span><span>에셋</span></a>
+    <a class="" href="11_store.html"><span class="num">11</span><span>스토어</span></a>
+    <a class="" href="12_market.html"><span class="num">12</span><span>시장</span></a>
+    <a class="" href="13_method.html"><span class="num">13</span><span>방법론·한계</span></a>
+  </nav>
+</aside>
+<header class="top"><div class="topbar">
+<span class="brand"><img src="img/icon.png" alt="">잔망<span class="g">티키타카</span></span>
+<button class="hamb" aria-label="menu">&#9776;</button><nav class="main"><a href="index.html">표지</a><a href="01_overview.html">개요</a><a href="02_architecture.html">앱 구조</a><a href="03_game_system.html">게임 시스템</a><a href="04_currency.html">재화</a><a href="05_growth.html">성장</a><a href="06_bm.html" class="active">수익화</a><a href="07_protocol.html">프로토콜</a><a href="08_security.html">보안</a><a href="09_localization.html">로컬라이제이션</a><a href="10_assets.html">에셋</a><a href="11_store.html">스토어</a><a href="12_market.html">시장</a><a href="13_method.html">방법론·한계</a></nav>
+</div></header><div class="wrap"><main>
+<div class="eyebrow">Chapter 06</div>
+<h1>수익화 — 광고 0, IAP 100%</h1>
+<p class="lead">이 게임은 <b>광고로 한 푼도 벌지 않는다.</b> 전부 IAP다.
+그리고 그 IAP는 <b>중국식 고래 지향 구조를 그대로 가져왔다.</b></p>
+
+<div class="grid g4">
+ <div class="stat"><div class="n mag">153</div><div class="l">IAP 상품</div></div><div class="stat"><div class="n">16단</div><div class="l">가격 사다리</div></div>
+ <div class="stat"><div class="n warn">₩135,000</div><div class="l">최고가 단일 상품</div></div><div class="stat"><div class="n warn">0</div><div class="l">광고 지면</div></div>
+ <div class="stat"><div class="n mag">40+</div><div class="l">상시 과금 패널</div></div><div class="stat"><div class="n">25</div><div class="l">ActivityType</div></div>
+ <div class="stat"><div class="n">459</div><div class="l">Adjust 토큰 (153×3)</div></div><div class="stat"><div class="n">13</div><div class="l">인게임 상점</div></div>
+</div>
+
+<h2>광고 미탑재 — 확정 근거</h2>
+<p>"광고가 없다"는 <b>부재의 증명</b>이라 근거를 이중으로 잡았다.</p>
+<div class="tblwrap"><table style="min-width:620px"><thead><tr><th>레이어</th><th>검증</th><th>결과</th></tr></thead><tbody><tr><td>JS 번들 4.6MB</td><td>AdMob/admob · rewardVideo/RewardVideo/adReward · AppsFlyer · firebase(JS)</td><td><b>전부 0건</b></td></tr><tr><td>JS 번들</td><td>AppLovin / ironSource / Unity Ads / Vungle / Pangle 미디에이션</td><td><b>0건</b></td></tr><tr><td>dex 3개</td><td>광고 네트워크 클래스 (AdView/RewardedAd/MobileAds)</td><td><b>0건</b></td></tr><tr><td>dex 3개</td><td>Tapjoy·Chartboost·InMobi·Fyber·Mintegral</td><td><b>0건</b></td></tr><tr><td><b>매니페스트</b></td><td><code>com.google.android.gms.ads.APPLICATION_ID</code> meta-data</td><td><b>없음 ← 결정적</b></td></tr><tr><td>브리지</td><td>JS↔네이티브 명령 집합에 광고 동사</td><td><b>없음</b></td></tr></tbody></table></div>
+<div class="callout ok">
+ ✅ <b>결정적 근거는 매니페스트다.</b> AdMob을 연동한 앱은
+ <code>gms.ads.APPLICATION_ID</code>가 없으면 <b>기동 자체가 불가능</b>하다. 그것이 없다.<br><br>
+ <span class="src">오탐 정리: <code>gms/ads</code> 타입 8개는 전부 <code>AdvertisingIdClient</code>(GAID)다.
+ JS의 <code>showAd*</code> 히트 3건은 <code>ISSHOWADD</code>(+버튼 플래그)·<code>showAdult</code>(한국 실명확인)·
+ <code>showAddHeroPanel</code>로 전부 무관하다.
+ <code>pagead2.googlesyndication.com</code> 문자열은 <code>play-services-measurement</code>의
+ 전환추적용이지 광고 렌더러가 아니다.</span> <span class="chip fact">확정</span>
+</div>
+
+<h2>한국 가격 사다리 16단</h2>
+<p>원화 가격표가 <b>클라이언트에 하드코딩</b>되어 있다 (<code>LangManager.VKRU_PRICE</code>).
+위안화 티어 → 원화 매핑이며, 미등재 금액은 <code>money()</code>가
+근사 환율로 보간 후 100원 단위 반올림한다. <span class="chip fact">확정</span></p>
+<div class="card"><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">1元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:0.3%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩400</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">3元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:0.4%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩600</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">6元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:1.0%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩1,300</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">8元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:1.4%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩1,900</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">12元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:1.9%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩2,500</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">18元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:2.9%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩3,900</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">30元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:4.9%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩6,600</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">50元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:7.3%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩9,900</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">60元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:9.8%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩13,200</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">68元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:9.8%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩13,200</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">98元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:16.3%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩22,000</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">118元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:18.1%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩24,500</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">128元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:19.9%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩26,900</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">198元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:32.6%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--rose)">₩44,000</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">328元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:51.1%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--warn)">₩69,000</span></div><div style="display:flex;align-items:center;gap:10px;margin:5px 0;min-width:0">
+<span style="width:52px;flex-shrink:0;color:var(--muted);font-size:12px;text-align:right">648元</span>
+<div class="bar" style="flex:1;height:14px;min-width:0"><i style="width:100.0%"></i></div>
+<span style="width:78px;flex-shrink:0;font-weight:700;font-size:12.5px;text-align:right;
+color:var(--warn)">₩135,000</span></div></div>
+<div class="callout warn">
+ <b>최고가 135,000원 단일 상품이 존재한다.</b> 명백한 <b>고래(whale) 지향 설계</b>다.<br>
+ 16단 사다리 — 400원 미끼부터 13.5만원 정점까지 — 는 <b>중국식 과금 구조 그대로</b>이며
+ 한국 시장용으로 재설계된 흔적이 없다. 위안화 티어(1·3·6·8·12·18·30·50·60·68·98·118·128·198·328·648元)를
+ 그대로 환산했다는 점이 그 증거다. <span class="chip op">판단</span>
+</div>
+
+<h2>상시 과금 패널 40개 이상</h2>
+<div class="tblwrap"><table style="min-width:560px"><thead><tr><th>구분</th><th>상품</th></tr></thead><tbody><tr><td><b>정기권</b></td><td>钻石月卡(다이아 월카) · 铂金周卡(주간권) · <b>365王卡</b>(연간권) · 贵族之证(귀족증) · VIP</td></tr><tr><td><b>패키지</b></td><td>首充(첫충전) · 成长礼包(성장) · 每日/每周/每月礼包 · 每日特惠 · 特惠礼盒 · 限量盲盒</td></tr><tr><td><b>펀드</b></td><td>超值基金 · 战力冲刺 · 七日目标 · 七天登录</td></tr><tr><td><b>리베이트</b></td><td>充值返利 · 打赏返利 · 累充</td></tr><tr><td><b>뽑기 연계</b></td><td>无限召唤 · 精英召唤 · 天命召唤 · 占卜轮盘 · 英雄兑换</td></tr></tbody></table></div>
+<p class="src"><code>ActivityType</code> 25종 확정 — SHOUCHONG(첫충)·YUEKA(월카)·GUIZUZHIZHENG·TEHUILIHE·
+CHENGZHANGLIBAO·QITIANDENGLU·ZHANSHEN·DENGJILIBAO·MENGXIN(신규)·HERO·AUGURY·BLINDBOXTH·
+UNLIMITED·FUND·RECHARGE·ZHOUKA·WANGKA·CHONGCI 등. <span class="chip fact">확정</span></p>
+<div class="callout mag">
+ 💡 <b>월카·주카·365왕카가 동시에 존재한다.</b> 구독 상품을 기간별로 3층 쌓은 구조로,
+ 이탈 방지와 결제 습관화를 동시에 노린다. 여기에 첫충·성장패키지·펀드·리베이트가 겹치면
+ <b>신규 유저가 첫 7일 안에 마주치는 결제 진입점만 10개를 넘는다.</b> <span class="chip op">판단</span>
+</div>
+
+<h2>결제 경로</h2>
+<pre><code>[클라] RechargePanel → ChannelSdk.pay(buyID)
+   → GET http://159.75.155.107/gamepot/getOrderInfo.php
+        ?buyId=&amp;price=&amp;platform=&amp;serverId=&amp;playerId=     ← 평문 HTTP
+   → {orderid, sign}
+   → jsb.reflection.callStaticMethod("com/cocos2dx/javascript", "pay", json)
+   → [네이티브] 원스토어 결제
+   → 서버 검증 → 다이아 지급</code></pre>
+<div class="tblwrap"><table style="min-width:620px"><thead><tr><th>항목</th><th>값</th><th>판정</th></tr></thead><tbody><tr><td>결제 BaaS</td><td><b>GAMEPOT</b> (NHN, 한국)</td><td><span class="chip fact">확정</span> <code>gamepot/*.php</code></td></tr><tr><td>주문 서버</td><td><code>159.75.155.107</code> (Tencent Cloud)</td><td><span class="chip fact">확정</span></td></tr><tr><td>스토어 분기</td><td><code>KrOneStore</code> / <code>KrGoogle</code> / <code>KrApple</code></td><td><span class="chip fact">확정</span> ChannelSdk</td></tr><tr><td>상품 코드 규칙</td><td><code>kr_ckwy_google_&lt;가격&gt;</code> / <code>kr_ckwy_ipa_&lt;가격&gt;</code></td><td><span class="chip fact">확정</span></td></tr><tr><td>쿠폰</td><td><code>gamepot/useCoupon.php</code></td><td><span class="chip fact">확정</span></td></tr><tr><td>IAP 상품 수</td><td><b>153종</b> (buyID 101~70004)</td><td><span class="chip fact">확정</span></td></tr><tr><td><b>실제 상품 ID</b></td><td><b>APK에 없음</b> — 게임 서버가 <code>pay-&lt;productId&gt;-</code> 브리지로 전달</td><td><span class="chip fact">확정</span> dex·arsc·res 전부 0건</td></tr></tbody></table></div>
+<div class="callout warn">
+ ⚠️ <b>결제 개시가 평문 HTTP이고 <code>price</code>·<code>playerId</code>가 쿼리스트링에 실린다.</b>
+ 보안 장에서 다시 다루지만, 결제 흐름에 개인 식별자와 금액이 평문 URL로 흐른다는 점은
+ 그 자체로 심각하다. <span class="chip fact">확정</span>
+</div>
+
+<h2>분석·트래킹</h2>
+<div class="tblwrap"><table style="min-width:620px"><thead><tr><th>SDK</th><th>용도</th><th>근거</th></tr></thead><tbody><tr><td><b>Adjust</b></td><td>어트리뷰션 + 매출 이벤트</td><td><code>adjustBuy(price, adjust_ipa)</code>, 상품별 토큰 153×3 = <b>459개</b> <span class="chip fact">확정</span></td></tr><tr><td><b>GAMEPOT</b> (NHN)</td><td>한국 BaaS·주문·쿠폰</td><td><code>gamepot/*.php</code> <span class="chip fact">확정</span></td></tr><tr><td>자체 로그</td><td>역할 생성/로그인/레벨업/결제</td><td><code>reportCreateRole</code> <code>reportRoleLogin</code> <code>reportRoleLevelUp</code> <span class="chip fact">확정</span></td></tr><tr><td>퍼널 이벤트</td><td>튜토리얼완료·첫PVP·첫구매·영웅소환·챕터돌파</td><td><code>guideComplete</code> <code>firstPVP</code> <code>firstBuy</code> <code>heroCalled</code> <code>checkPoint</code> <span class="chip fact">확정</span></td></tr></tbody></table></div>
+<div class="callout">
+ <b>상품 하나하나에 개별 Adjust 토큰을 붙였다</b>(153종 × google/apple/one = 459개)
+ = <b>상품 단위 ROAS 추적</b>. 마케팅 계측만 놓고 보면 매우 정교하다. <span class="chip fact">확정</span><br><br>
+ ⚠️ <b>단, 정정이 필요하다.</b> Adjust는 <b>JS 레이어에만</b> 존재하고 <b>dex에는 클래스가 0건</b>이다.
+ <code>adjustBuy()</code>가 호출하는 네이티브 메서드가 실제로 구현되어 있는지는 <b>미확인</b>이며
+ <code>adjust_ipa.json</code>이 사용되지 않는 잔재일 가능성도 있다. <span class="chip unk">미확인</span><br>
+ <b>dex에서 확정된 트래킹은 Firebase Analytics(GA4) 하나뿐이다.</b>
+</div>
+
+<div class="callout warn">
+ <h3 style="margin-top:0">⚠️ 이 장에서 할 수 없는 것</h3>
+ <b>상품별 실제 가격·지급물·매출 추정은 불가능하다.</b>
+ 상품 ID가 APK에 없고 지급물은 <code>TopupItemNet</code> DTO로 서버에서 내려온다.
+ 확률·천장 수치도 <code>DrawChance</code> DTO 수신 전용이라 검증할 수 없다.
+ 게다가 이 게임은 <b>아직 출시되지 않았다</b> — 매출·유저수 추정을 일절 하지 않은 이유다. <span class="chip unk">미확인</span>
+</div>
+
+<div class="foot-note">잔망티키타카 (com.megagiant.tikitaca.one v1.0.6) 정적 분석 리포트 ·
+생성 2026-07-20 (출시 예정일 D-1) · 게임 저작권은 MEGAGIANT INC에 있으며 본 문서는 내부 분석용입니다.</div>
+</main></div>
+<footer class="prog"><div class="ptrack"><img class="mascot" src="img/mascot.png" alt="">
+<span class="plabel">06 / 13</span>
+<div class="dots"><div class="dline"></div><div class="dfill"></div></div></div></footer>
+<script>
+(function(){var h=document.querySelector('.hamb'),n=document.querySelector('nav.main');
+if(h)h.addEventListener('click',function(){n.classList.toggle('open')});
+var secs=[].slice.call(document.querySelectorAll('main h2')),dots=document.querySelector('.dots');
+if(dots&&secs.length){secs.forEach(function(s,i){s.id=s.id||('sec'+i);
+ var d=document.createElement('div');d.className='dot';
+ d.style.left=(secs.length>1?(i/(secs.length-1))*100:0)+'%';d.title=s.textContent;
+ d.onclick=function(){s.scrollIntoView({behavior:'smooth',block:'start'})};dots.appendChild(d)});
+ var fill=document.querySelector('.dfill');
+ function upd(){var y=window.scrollY+130,idx=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)idx=i});
+  [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i<=idx)});
+  if(fill)fill.style.width=(secs.length>1?(idx/(secs.length-1))*100:100)+'%'}
+ window.addEventListener('scroll',upd,{passive:true});upd();}})();
+</script><script id="gb-js">
+(function(){
+  var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
+  function set(o){document.body.classList.toggle('gb-open',o);}
+  if(b) b.addEventListener('click',function(){set(!document.body.classList.contains('gb-open'));});
+  if(d) d.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>900)set(false);});
+  // 현재 항목이 사이드바 밖이면 보이도록 스크롤
+  var on=document.querySelector('.gb-nav a.on');
+  if(on){var s=document.querySelector('.gb-side');
+    if(s && on.offsetTop > s.clientHeight-80) s.scrollTop = on.offsetTop - s.clientHeight/2;}
+})();
+</script>
+</body></html>

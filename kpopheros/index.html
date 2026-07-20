@@ -165,7 +165,9 @@ footer.prog{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:9px 0;
  font-size:12.5px;border-top:2px dashed var(--line)}
 @media(prefers-reduced-motion:reduce){
  *{animation:none!important;transition:none!important}}
-</style><style id="gb-css">
+</style>
+
+<style id="gb-css">
 :root{--gb-w:266px}
 .gb-side{
   position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
@@ -256,6 +258,8 @@ footer.prog{left:var(--gb-w)!important}
     <a class="" href="18_improve.html"><span class="num">18</span><span>개선 제안</span></a>
   </nav>
 </aside>
+
+
 <header class="top"><div class="topbar">
 <span class="brand"><img src="img/app/icon.png" alt="">케이팝<span class="g">히어로즈</span></span>
 <button class="hamb" aria-label="menu">☰</button><nav class="main"><a href="index.html" class="active">표지</a><a href="01_overview.html">게임 개요</a><a href="02_content.html">콘텐츠 구성</a><a href="03_content_flow.html">콘텐츠 흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">재화 흐름</a><a href="06_growth.html">성장</a><a href="07_battle.html">전투·적</a><a href="08_events.html">이벤트·리텐션</a><a href="09_bm.html">수익화(BM)</a><a href="10_market.html">시장</a><a href="11_assets.html">에셋</a><a href="12_tech.html">기술·보안</a><a href="13_tables.html">데이터</a><a href="14_method.html">방법론·한계</a><a href="15_unlock.html">콘텐츠 해금</a><a href="16_growth_deep.html">성장 심층</a><a href="17_simulator.html">성장 시뮬레이터</a><a href="18_improve.html">개선 제안</a></nav>
@@ -303,7 +307,9 @@ if(dots&&secs.length){secs.forEach(function(s,i){s.id=s.id||('sec'+i);
   [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i<=idx)});
   if(fill)fill.style.width=(secs.length>1?(idx/(secs.length-1))*100:100)+'%%'}
  window.addEventListener('scroll',upd);upd();}})();
-</script><script id="gb-js">
+</script>
+
+<script id="gb-js">
 (function(){
   var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
   function set(o){document.body.classList.toggle('gb-open',o);}

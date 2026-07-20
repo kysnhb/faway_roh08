@@ -1,0 +1,425 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>스토어 · 잔망티키타카 분석</title><style>
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Medium.woff2') format('woff2');
+ font-weight:500;font-display:swap}
+@font-face{font-family:'NotoSansKR';src:url('fonts/NotoSansKR-Bold.woff2') format('woff2');
+ font-weight:700;font-display:swap}
+@font-face{font-family:'NotoSerifKR';src:url('fonts/NotoSerifKR-Black.woff2') format('woff2');
+ font-weight:900;font-display:swap}
+
+:root{
+ --bg:#160B26;--bg2:#1E1033;--card:#241541;--card2:#2C1A4D;
+ --rose:#D9A566;--magenta:#C2438B;--violet:#8B5CF6;
+ --ink:#E8DDF2;--muted:#A392B8;--line:#3A2459;--ok:#4FD1A5;--warn:#E0574F;
+ --serif:'NotoSerifKR',serif;
+ --shadow:0 1px 0 rgba(217,165,102,.10), 0 14px 30px -18px rgba(0,0,0,.85);
+ --shadow-lg:0 1px 0 rgba(217,165,102,.20), 0 26px 52px -22px rgba(0,0,0,.95);
+ --hair:1px solid rgba(217,165,102,.22);
+ --c0:#C2438B;--c1:#D9A566;--c2:#8B5CF6;--c3:#4FD1A5;--c4:#5AA9FF;--c5:#E0574F}
+
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'NotoSansKR',-apple-system,'Malgun Gothic',sans-serif;font-weight:500;
+ color:var(--ink);line-height:1.7;-webkit-text-size-adjust:100%;background:var(--bg);
+ background-image:
+  radial-gradient(ellipse 60% 40% at 8% 0%, rgba(194,67,139,.16), transparent 60%),
+  radial-gradient(ellipse 55% 45% at 92% 6%, rgba(139,92,246,.13), transparent 62%),
+  radial-gradient(ellipse 70% 40% at 50% 100%, rgba(217,165,102,.07), transparent 60%);
+ background-attachment:fixed;overflow-x:hidden}
+a{color:var(--rose);text-decoration:none;font-weight:700}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* ---------- 헤더 ---------- */
+header.top{position:sticky;top:0;z-index:50;color:var(--ink);overflow:hidden;
+ background:linear-gradient(118deg,#120820 0%,#22103A 55%,#2E1442 100%);
+ border-bottom:1px solid rgba(217,165,102,.28);
+ box-shadow:0 10px 30px -14px rgba(0,0,0,.9)}
+header.top::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:
+  radial-gradient(ellipse 240px 120px at 14% -40%, rgba(194,67,139,.42), transparent 72%),
+  radial-gradient(ellipse 240px 120px at 78% -46%, rgba(217,165,102,.24), transparent 72%)}
+.topbar{position:relative;z-index:1;display:flex;align-items:center;gap:14px;
+ padding:11px 18px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;
+ white-space:nowrap;letter-spacing:-.4px;font-size:17px}
+.brand img{width:32px;height:32px;border-radius:10px;display:block;
+ box-shadow:0 0 0 1px rgba(217,165,102,.5), 0 4px 16px rgba(194,67,139,.5)}
+.brand .g{color:var(--rose);text-shadow:0 0 14px rgba(217,165,102,.55)}
+nav.main{margin-left:auto;display:flex;flex-wrap:wrap;gap:3px}
+nav.main a{color:#C9B8DC;font-size:12.5px;padding:6px 10px;border-radius:9px;
+ white-space:nowrap;font-weight:700;transition:.16s}
+nav.main a:hover{background:rgba(255,255,255,.09);color:#fff;text-decoration:none;transform:translateY(-1px)}
+nav.main a.active{background:linear-gradient(135deg,var(--magenta),#8B2E63);color:#fff;
+ box-shadow:0 0 0 1px rgba(217,165,102,.35), 0 4px 14px rgba(194,67,139,.45)}
+.hamb{display:none;margin-left:auto;background:rgba(255,255,255,.12);border:0;color:var(--ink);
+ font-size:20px;width:42px;height:38px;border-radius:11px;cursor:pointer}
+@media(max-width:860px){.hamb{display:block}
+ nav.main{flex-basis:100%;flex-direction:column;max-height:0;overflow:hidden;
+  transition:max-height .28s ease;margin-left:0}
+ nav.main.open{max-height:900px;padding-bottom:8px}
+ nav.main a{padding:10px 9px;border-bottom:1px solid rgba(255,255,255,.07)}}
+
+/* ---------- 타이포 ---------- */
+h1{font-family:var(--serif);font-weight:900;font-size:32px;line-height:1.25;
+ margin:0 0 12px;letter-spacing:-.8px;
+ background:linear-gradient(96deg,#FFF3E2 0%,var(--rose) 52%,var(--magenta) 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-family:var(--serif);font-weight:900;font-size:22px;margin:40px 0 14px;
+ padding-bottom:10px;position:relative;letter-spacing:-.4px;
+ border-bottom:1px solid var(--line);color:#F5EAFB}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;width:72px;height:2px;border-radius:2px;
+ background:linear-gradient(90deg,var(--rose),var(--magenta));
+ box-shadow:0 0 12px rgba(217,165,102,.55)}
+h3{font-size:16px;margin:22px 0 8px;font-weight:700;color:#F0E4FA}
+main{padding:28px 0 104px}
+.lead{font-size:16px;color:var(--muted);margin:0 0 20px;line-height:1.8}
+.eyebrow{font-size:12px;letter-spacing:2.2px;color:var(--rose);
+ text-transform:uppercase;margin:0 0 6px;font-weight:700}
+p{margin:10px 0}
+b,strong{color:#FFF1DC;font-weight:700}
+/* 중점(·)으로 이어붙인 긴 로마자 상수 나열이 375px에서 넘치지 않도록 */
+p,li,td,th,.callout,.card,.stat,.kv .v,figcaption{overflow-wrap:anywhere}
+
+/* ---------- 카드 ---------- */
+.grid{display:grid;gap:15px}.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+@media(max-width:400px){.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(160deg,var(--card),var(--card2));border:var(--hair);
+ border-radius:18px;padding:18px;box-shadow:var(--shadow);min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease, border-color .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);
+ border-color:rgba(217,165,102,.42)}
+.card h3{margin-top:0}
+.card p{color:var(--muted);font-size:13.5px}
+.stat{position:relative;background:linear-gradient(160deg,var(--card),var(--card2));
+ border:var(--hair);border-radius:16px;padding:16px 12px;text-align:center;
+ box-shadow:var(--shadow);overflow:hidden;min-width:0;
+ transition:transform .18s ease, box-shadow .18s ease}
+.stat::before{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+ background:linear-gradient(90deg,transparent,var(--rose),transparent);opacity:.75}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.stat .n{font-family:var(--serif);font-weight:900;font-size:27px;color:var(--rose);
+ line-height:1.15;letter-spacing:-.5px;word-break:keep-all}
+.stat .n.mag{color:var(--magenta)}
+.stat .n.warn{color:var(--warn)}
+.stat .l{font-size:11.5px;color:var(--muted);margin-top:6px;font-weight:700;word-break:keep-all}
+
+/* ---------- 칩 ---------- */
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;
+ border:1px solid transparent;white-space:nowrap;vertical-align:middle}
+.chip.fact{background:rgba(79,209,165,.14);color:#6FE0BC;border-color:rgba(79,209,165,.4)}
+.chip.inf {background:rgba(217,165,102,.14);color:var(--rose);border-color:rgba(217,165,102,.45)}
+.chip.unk {background:rgba(163,146,184,.13);color:#BCAAD2;border-color:rgba(163,146,184,.38)}
+.chip.warn{background:rgba(224,87,79,.15);color:#F0857E;border-color:rgba(224,87,79,.45)}
+.chip.op  {background:rgba(139,92,246,.16);color:#B79BFF;border-color:rgba(139,92,246,.45)}
+.tag{display:inline-block;background:rgba(217,165,102,.10);color:var(--rose);font-size:12px;
+ padding:4px 12px;border-radius:20px;margin:3px 3px 0 0;font-weight:700;
+ border:1px solid rgba(217,165,102,.3)}
+
+/* ---------- 표 ---------- */
+.tblwrap{overflow-x:auto;border:var(--hair);border-radius:16px;margin:14px 0;
+ background:var(--card);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:linear-gradient(180deg,#2E1A4E,#261541);color:var(--rose);
+ font-weight:700;white-space:nowrap;position:sticky;top:0;z-index:1}
+tbody tr:nth-child(even){background:rgba(255,255,255,.022)}
+tbody tr:hover{background:rgba(194,67,139,.09)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+td b{color:#FFF1DC}
+
+/* ---------- 콜아웃 ---------- */
+.callout{border-left:3px solid var(--rose);background:rgba(217,165,102,.07);padding:14px 17px;
+ border-radius:0 14px 14px 0;margin:16px 0;font-size:14px;color:#DED0EE}
+.callout.warn{border-color:var(--warn);background:rgba(224,87,79,.09)}
+.callout.mag{border-color:var(--magenta);background:rgba(194,67,139,.10)}
+.callout.ok{border-color:var(--ok);background:rgba(79,209,165,.08)}
+.callout b{color:#FFF1DC}
+
+/* 최상위 경고 배너 */
+.banner{position:relative;border-radius:18px;padding:22px 22px;margin:18px 0 8px;
+ background:linear-gradient(135deg,rgba(224,87,79,.20),rgba(194,67,139,.16) 60%,rgba(36,21,65,.9));
+ border:1px solid rgba(224,87,79,.45);box-shadow:var(--shadow-lg)}
+.banner .t{font-family:var(--serif);font-weight:900;font-size:20px;color:#FFD9CF;
+ margin:6px 0 8px;letter-spacing:-.4px;line-height:1.35}
+.banner p{margin:6px 0 0;font-size:14px;color:#EBD9E6}
+
+/* ---------- 도형·갤러리 ---------- */
+.svgwrap{overflow-x:auto;border:var(--hair);border-radius:16px;background:var(--card);
+ padding:12px;box-shadow:var(--shadow);margin:14px 0;max-width:100%}
+.svgwrap svg{display:block}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal img{width:100%;height:110px;object-fit:cover;border-radius:12px;border:var(--hair);
+ box-shadow:var(--shadow);transition:transform .18s;background:var(--card2)}
+.gal img:hover{transform:scale(1.04)}
+.gal figure{margin:0;min-width:0}
+.gal figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:5px;font-weight:700}
+.montage{width:100%;border:var(--hair);border-radius:16px;display:block;box-shadow:var(--shadow)}
+ul.clean{padding-left:20px;margin:8px 0}ul.clean li{margin:6px 0}
+ol.clean{padding-left:22px;margin:8px 0}ol.clean li{margin:6px 0}
+.src{font-size:12px;color:var(--muted)}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;
+ border-bottom:1px dashed var(--line);min-width:0}
+.kv:last-child{border-bottom:0}
+.kv .k{color:var(--muted);font-weight:700;flex-shrink:0}
+.kv .v{font-weight:700;text-align:right;color:#FFF1DC;min-width:0;word-break:break-word}
+.bar{height:9px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;border-radius:8px;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ box-shadow:0 0 10px rgba(217,165,102,.4)}
+code{background:rgba(139,92,246,.14);color:#D9C6FF;padding:1px 6px;border-radius:6px;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;
+ word-break:break-all}
+pre{background:#150C24;border:var(--hair);border-radius:14px;padding:14px 16px;
+ overflow-x:auto;font-size:12.5px;line-height:1.6;color:#D6C6EA;margin:14px 0;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace;max-width:100%}
+pre code{background:none;padding:0;color:inherit}
+
+/* ---------- 하단 진행바 ---------- */
+footer.prog{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:9px 0;
+ background:linear-gradient(118deg,rgba(18,8,32,.97),rgba(46,20,66,.97));
+ border-top:1px solid rgba(217,165,102,.28);
+ box-shadow:0 -10px 28px -10px rgba(0,0,0,.9)}
+.ptrack{max-width:1080px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:12px}
+.dots{position:relative;flex:1;height:22px;min-width:0}
+.dline{position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,.11);
+ transform:translateY(-50%);border-radius:3px}
+.dfill{position:absolute;top:50%;left:0;height:3px;border-radius:3px;width:0;
+ background:linear-gradient(90deg,var(--magenta),var(--rose));
+ transform:translateY(-50%);transition:width .2s;box-shadow:0 0 10px rgba(217,165,102,.7)}
+.dot{position:absolute;top:50%;width:10px;height:10px;border-radius:50%;background:#4B3968;
+ transform:translate(-50%,-50%);border:2px solid #1A0E2B;cursor:pointer;transition:.16s}
+.dot:hover{transform:translate(-50%,-50%) scale(1.4)}
+.dot.on{background:var(--rose);box-shadow:0 0 9px rgba(217,165,102,.9)}
+.mascot{width:34px;height:34px;border-radius:9px;flex-shrink:0;object-fit:cover;
+ border:1px solid rgba(217,165,102,.4);
+ filter:drop-shadow(0 3px 8px rgba(194,67,139,.5))}
+.plabel{color:var(--rose);font-size:13px;white-space:nowrap;flex-shrink:0;
+ letter-spacing:1.2px;font-weight:700;font-variant-numeric:tabular-nums}
+.foot-note{max-width:1080px;margin:28px auto 0;padding:16px 0 0;color:var(--muted);
+ font-size:12.5px;border-top:1px dashed var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:420px){h1{font-size:26px}h2{font-size:19px}.stat .n{font-size:23px}}
+</style><style id="gb-css">
+:root{--gb-w:266px}
+.gb-side{
+  position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
+  background:#11141c;border-right:1px solid #262d3b;overflow-y:auto;
+  padding:16px 12px 28px;
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.gb-side::-webkit-scrollbar{width:8px}
+.gb-side::-webkit-scrollbar-thumb{background:#2b3346;border-radius:4px}
+.gb-home{
+  display:flex;align-items:center;gap:7px;color:#aab4c6;text-decoration:none;
+  font-size:12.5px;padding:9px 11px;border-radius:9px;border:1px solid #262d3b;
+  background:#171b25;transition:.18s;margin-bottom:14px
+}
+.gb-home:hover{background:#1e2431;color:#fff;border-color:var(--gb-ac);text-decoration:none}
+.gb-title{
+  color:#fff;font-size:15px;font-weight:800;padding:0 11px 10px;margin-bottom:8px;
+  border-bottom:1px solid #262d3b;letter-spacing:-.01em;line-height:1.4
+}
+.gb-title small{display:block;color:#6f7a8f;font-size:11px;font-weight:500;margin-top:3px;letter-spacing:.06em}
+.gb-nav{display:flex;flex-direction:column;gap:1px}
+.gb-nav a{
+  display:flex;align-items:center;gap:9px;color:#aab4c6;text-decoration:none;
+  font-size:13px;padding:8px 11px;border-radius:8px;transition:.15s;line-height:1.45
+}
+.gb-nav a .num{
+  font-family:'Consolas',monospace;font-size:10.5px;color:#5d6779;min-width:18px;flex-shrink:0
+}
+.gb-nav a:hover{background:#1b2130;color:#fff;text-decoration:none}
+.gb-nav a.on{background:var(--gb-ac);color:#0e1016;font-weight:700}
+.gb-nav a.on .num{color:rgba(0,0,0,.5)}
+body{padding-left:var(--gb-w)}
+.gb-burger,.gb-dim{display:none}
+@media(max-width:900px){
+  body{padding-left:0}
+  .gb-side{transform:translateX(-100%);transition:transform .26s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 30px rgba(0,0,0,.4)}
+  body.gb-open .gb-side{transform:none}
+  .gb-burger{
+    display:flex;align-items:center;justify-content:center;position:fixed;
+    left:12px;bottom:14px;z-index:320;width:48px;height:48px;border-radius:50%;
+    background:var(--gb-ac);color:#0e1016;border:none;font-size:19px;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  .gb-dim{
+    display:block;position:fixed;inset:0;z-index:290;background:rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .22s
+  }
+  body.gb-open .gb-dim{opacity:1;pointer-events:auto}
+  body.gb-open{overflow:hidden}
+}
+@media print{.gb-side,.gb-burger,.gb-dim{display:none}body{padding-left:0}}
+  .gb-side{--gb-ac:#b07be0}
+  :root{--gb-ac:#b07be0}
+
+/* tikitaca override */
+header.top nav.main{display:none!important}
+header.top .hamb{display:none!important}
+footer.prog{left:var(--gb-w)!important}
+@media(max-width:900px){ footer.prog{left:0!important} }
+
+</style>
+<!--gb-injected--></head><body>
+<button class="gb-burger" aria-label="목차 열기">☰</button>
+<div class="gb-dim"></div>
+<aside class="gb-side">
+  <a class="gb-home" href="../index.html">← 게임 분석 아카이브</a>
+  <div class="gb-title">잔망티키타카<small>ANALYSIS REPORT</small></div>
+  <nav class="gb-nav">
+        <a class="" href="index.html"><span class="num">—</span><span>표지</span></a>
+    <a class="" href="01_overview.html"><span class="num">01</span><span>개요</span></a>
+    <a class="" href="02_architecture.html"><span class="num">02</span><span>앱 구조</span></a>
+    <a class="" href="03_game_system.html"><span class="num">03</span><span>게임 시스템</span></a>
+    <a class="" href="04_currency.html"><span class="num">04</span><span>재화</span></a>
+    <a class="" href="05_growth.html"><span class="num">05</span><span>성장</span></a>
+    <a class="" href="06_bm.html"><span class="num">06</span><span>수익화</span></a>
+    <a class="" href="07_protocol.html"><span class="num">07</span><span>프로토콜</span></a>
+    <a class="" href="08_security.html"><span class="num">08</span><span>보안</span></a>
+    <a class="" href="09_localization.html"><span class="num">09</span><span>로컬라이제이션</span></a>
+    <a class="" href="10_assets.html"><span class="num">10</span><span>에셋</span></a>
+    <a class="on" href="11_store.html"><span class="num">11</span><span>스토어</span></a>
+    <a class="" href="12_market.html"><span class="num">12</span><span>시장</span></a>
+    <a class="" href="13_method.html"><span class="num">13</span><span>방법론·한계</span></a>
+  </nav>
+</aside>
+<header class="top"><div class="topbar">
+<span class="brand"><img src="img/icon.png" alt="">잔망<span class="g">티키타카</span></span>
+<button class="hamb" aria-label="menu">&#9776;</button><nav class="main"><a href="index.html">표지</a><a href="01_overview.html">개요</a><a href="02_architecture.html">앱 구조</a><a href="03_game_system.html">게임 시스템</a><a href="04_currency.html">재화</a><a href="05_growth.html">성장</a><a href="06_bm.html">수익화</a><a href="07_protocol.html">프로토콜</a><a href="08_security.html">보안</a><a href="09_localization.html">로컬라이제이션</a><a href="10_assets.html">에셋</a><a href="11_store.html" class="active">스토어</a><a href="12_market.html">시장</a><a href="13_method.html">방법론·한계</a></nav>
+</div></header><div class="wrap"><main>
+<div class="eyebrow">Chapter 11</div>
+<h1>스토어 · 출시 현황</h1>
+<p class="lead"><b>이 조사의 답은 "실적이 없다"이고, 그것은 조사 실패가 아니라 확정된 사실이다.</b><br>
+이 게임은 아직 출시되지 않았다.</p>
+
+<div class="banner">
+ <div class="eyebrow">출시 D-1</div>
+ <div class="t">2026년 7월 21일 출시 예정 · 오늘은 7월 20일</div>
+ <p>원스토어 <b>사전예약</b> 단계다. 다운로드·평점·리뷰·매출 어느 것도 존재하지 않으며,
+ 이는 <b>아직 생성될 기회 자체가 없었기 때문</b>이다. <span class="chip fact">확정</span></p>
+</div>
+
+<h2>이름 정정 — 반드시 짚고 간다</h2>
+<div class="callout warn">
+ ⚠️ <b>「단맛티키타카」는 오기다. 실제 앱명은 「잔망티키타카」다.</b>
+ <div class="tblwrap"><table style="min-width:460px"><thead><tr><th>근거</th><th>내용</th></tr></thead><tbody><tr><td>APK <code>resources.arsc</code></td><td>앱 라벨 문자열의 UTF-8 원본 바이트가 <code>ec9e94 eba79d ed8bb0 ed82a4 ed8380 ecb9b4</code> = U+C794 U+B9DD… = <b>잔망티키타카</b></td></tr><tr><td>교차 검증</td><td>APK 전체에서 '티키타카'를 포함한 한글 문자열은 이 <b>1종뿐</b>, '단맛'은 <b>0건</b></td></tr><tr><td>원스토어 등록명</td><td><b>잔망티키타카</b> / 판매자 MEGAGIANT INC</td></tr></tbody></table></div>
+ '잔망(스럽다)'을 '단맛'으로 잘못 읽은 것으로 보인다. 콘솔 인코딩(cp949) 문제로 한글이 깨져 보이는
+ 상황에서 흔한 오독이다.<br><br>
+ <b>이 정정이 조사 전체를 바꿨다.</b> "단맛티키타카"로 검색했을 때는 전 채널 0건이라
+ 미등재로 결론날 뻔했으나, 정정된 이름으로 원스토어를 재조회하자 <b>실제 등록 상품이 나왔다.</b>
+</div>
+
+<h2>핵심 요약</h2>
+<div class="card"><div class="kv"><span class="k">앱명</span><span class="v"><b>잔망티키타카</b></span></div><div class="kv"><span class="k">패키지</span><span class="v"><code>com.megagiant.tikitaca.one</code></span></div><div class="kv"><span class="k">버전</span><span class="v">1.0.6 (versionCode 6)</span></div><div class="kv"><span class="k">개발사 표기</span><span class="v"><b>MEGAGIANT INC</b></span></div><div class="kv"><span class="k">공식 태그라인</span><span class="v">"본격 이세계 영웅 밀당 RPG"</span></div><div class="kv"><span class="k">연령등급</span><span class="v">15세이용가</span></div><div class="kv"><span class="k"><b>출시 예정일</b></span><span class="v"><b>2026년 7월 21일</b></span></div><div class="kv"><span class="k"><b>현재 상태</b></span><span class="v"><b>사전예약 진행 중 — 미출시</b></span></div><div class="kv"><span class="k">사전예약 보상</span><span class="v">10만원 상당 아이템</span></div><div class="kv"><span class="k">원스토어 상품ID</span><span class="v"><code>0001005553</code></span></div><div class="kv"><span class="k">구글플레이</span><span class="v"><b>미등재</b></span></div><div class="kv"><span class="k">애플 앱스토어</span><span class="v"><b>미등재</b></span></div><div class="kv"><span class="k">다운로드·평점·리뷰·매출</span><span class="v"><b>전부 존재하지 않음</b></span></div></div>
+
+<h2>스토어 등재 현황</h2>
+<div class="tblwrap"><table style="min-width:620px"><thead><tr><th>스토어</th><th>상태</th><th>검증 방법</th></tr></thead><tbody><tr><td><b>원스토어</b></td><td><b>등재 — 사전예약</b> (상품ID 0001005553)</td><td><span class="chip fact">확정</span> 브라우저로 직접 조회. 썸네일 경로에 <code>Preregistration</code> 명시, 자산 업로드 2026-07-06</td></tr><tr><td><b>구글플레이</b></td><td><b>미등재 확정</b></td><td><span class="chip fact">확정</span> 패키지 8종 프로브 <b>전부 404</b>. 대조군 <code>com.kakao.talk</code> → <b>200</b>으로 방법론 검증</td></tr><tr><td><b>애플 앱스토어</b></td><td><b>미등재 확정</b></td><td><span class="chip fact">확정</span> iTunes API 5개 쿼리 전부 resultCount 0. <code>term=tikitaca</code> 11건은 무관한 축구/퀴즈 앱</td></tr></tbody></table></div>
+<div class="callout">
+ 원스토어 <b>상품 상세 페이지</b>(<code>/v2/ko-kr/app/0001005553</code>)는 ERR504 —
+ "판매가 중지되었거나 이용할 수 없는 상품"이 뜬다.
+ 처음에는 '판매 중지(철수)'로 읽혔으나, <b>사전예약 페이지가 별도로 살아 있다.</b>
+ 즉 판매 페이지가 아직 개방되지 않은 <b>출시 전 정상 상태</b>다.
+ 철수한 상품이라면 출시 예정일이 미래(7/21)로 표기될 수 없다. <span class="chip fact">확정</span>
+</div>
+
+<h2>개발사 MEGAGIANT INC — 실체 확인 실패</h2>
+<div class="callout warn">
+ <b>이 항목은 확인 실패이며, 그 실패 자체가 정보다.</b>
+</div>
+<div class="tblwrap"><table style="min-width:440px"><thead><tr><th>조사 항목</th><th>결과</th></tr></thead><tbody><tr><td>법인 정보(설립연도·대표·소재지·자본금)</td><td><b>확인 실패 — 기록 0건</b></td></tr><tr><td>이전 출시작</td><td><b>확인 실패</b> (원스토어 등록 타이틀 1종뿐 = 데뷔작 추정)</td></tr><tr><td>투자 이력</td><td><b>0건</b></td></tr><tr><td>채용 공고</td><td><b>0건</b></td></tr><tr><td>보도자료·뉴스</td><td><b>0건</b></td></tr><tr><td>원스토어 등록 타이틀 수</td><td><b>1종</b> (잔망티키타카)</td></tr></tbody></table></div>
+<p class="src">원스토어 판매자 상세정보(사업자등록번호·대표자·주소)는 <b>원스토어 앱 내에서만 열람 가능</b>해
+웹에서 확보하지 못했다. 이것이 현재 남은 가장 큰 정보 공백이며, 원스토어 앱으로 접근하면 해소 가능하다.</p>
+
+<h3>⚠️ 동명이인 3곳 — 갖다 붙이지 말 것</h3>
+<div class="tblwrap"><table style="min-width:640px"><thead><tr><th>주체</th><th>실제 업종</th><th>판정</th></tr></thead><tbody><tr><td><b>(주)메가자이언트</b><br>(경기 포천시, 대표 김영재, 2021 설립, 직원 28명)</td><td><b>삼성/LG 리퍼TV 전문판매</b></td><td>게임업 영위 근거 없음. <b>동일 법인으로 단정 불가.</b> 한글명이 정확히 일치하고 기업정보도 풍부해 그대로 인용하면 그럴듯해 보이지만 게임 개발 이력이 전혀 없다</td></tr><tr><td><b>티키타카스튜디오</b></td><td>컴투스홀딩스 자회사, 방치형 RPG '프로젝트 알케미스트' 개발</td><td>이름만 겹침. <b>완전 무관</b></td></tr><tr><td><b>Mega Giant Studio</b><br>(megagiantstudio.com)</td><td>해외 소규모 게임 스튜디오</td><td>한국 원스토어 판매자와 연결 근거 없음</td></tr></tbody></table></div>
+
+<h3>APK 포렌식 — 조직 규모의 단서</h3>
+<pre><code>Subject     : CN=M
+Issuer      : CN=M          (자체 서명)
+Not Before  : 2026-04-27 03:44:14 UTC
+Not After   : 2051-04-21 03:44:14 UTC
+SHA-256     : 4E:45:28:25:F5:11:E1:26:38:B8:0C:A8:25:E4:D1:1A:
+              01:2F:CA:65:71:8D:57:B2:A9:47:E9:ED:D4:DF:7F:2A
+서명 스킴   : APK Signature Scheme v2 단독 (v1·v3 없음)</code></pre>
+<div class="callout mag">
+ <b>읽는 법:</b> 조직명(<code>O=</code>)·국가(<code>C=</code>)가 전혀 없고 CN이 <b>'M' 한 글자</b>인
+ 자체서명 키스토어다. 기업 표준 서명 관리 체계의 흔적이 없다.<br>
+ 게다가 <b>키 생성일이 빌드 2.5개월 전(2026-04-27)</b>이다.
+ 기존 타이틀을 운영해 온 회사라면 재사용하는 릴리스 키가 있게 마련인데, 이 프로젝트를 위해 새로 만든 키다.
+ <b>데뷔작이라는 추정을 뒷받침한다.</b> <span class="chip inf">추정</span>
+</div>
+<p class="src"><b>Git 리비전</b>: <code>7f15f30ef2e6ba755a8b9f40ef7b2c323db5daaf</code>
+(<code>META-INF/version-control-info.textproto</code>). AGP가 릴리스 빌드에 삽입한 정보로,
+저장소 URL은 <code>$PROJECT_DIR</code>로 익명화되어 있다. <span class="chip fact">확정</span><br>
+<b>SDK 구성</b>: 원스토어 결제 SDK와 <b>구글 계열(Firebase Auth·Messaging·Analytics, Play Services Auth,
+Play Core)이 동시 탑재</b>되어 있다 → <b>구글플레이 빌드를 함께 상정한 공통 코드베이스</b>로 보인다.
+향후 Play 출시 가능성을 시사하지만 <b>현재 Play 미등재는 확정</b>이다. <span class="chip inf">추정</span></p>
+
+<h2>타임라인</h2>
+<div class="tblwrap"><table style="min-width:660px"><thead><tr><th>날짜</th><th>사건</th><th>확신도</th><th>근거</th></tr></thead><tbody><tr><td><b>2026-01-09</b></td><td>MEGAGIANT 원스토어 판매자 계정 생성 (추정)</td><td><span class="chip inf">추정</span></td><td>판매자 ID &#x27;SE202601091559076820067958&#x27;의 접두 14자리가 20260109 15:59 타임스탬프 형식과 일치</td></tr><tr><td><b>2026-04-27</b></td><td>APK 서명 키스토어 생성</td><td><span class="chip fact">확정</span></td><td>인증서 notBefore (UTC)</td></tr><tr><td><b>2026-07-03</b></td><td>원스토어 상세설명 이미지 업로드</td><td><span class="chip fact">확정</span></td><td>og:image 경로 내 파일명 0001005553_20260703154208.jpg</td></tr><tr><td><b>2026-07-06</b></td><td>사전예약 마케팅 이미지 업로드</td><td><span class="chip fact">확정</span></td><td>썸네일 경로 .../marketing/Preregistration/202607/06/.../MK015001_1_20260706154329635.png</td></tr><tr><td><b>2026-07-11</b></td><td>APK v1.0.6 빌드</td><td><span class="chip inf">추정</span></td><td>파일 타임스탬프(브리핑 제공)</td></tr><tr><td><b>2026-07-20</b></td><td>본 조사 시점 — 사전예약 진행 중, 미출시</td><td><span class="chip fact">확정</span></td><td>원스토어 사전예약 페이지 직접 확인</td></tr><tr><td><b>2026-07-21</b></td><td>출시 예정일</td><td><span class="chip inf">추정</span></td><td>원스토어 사전예약 페이지 &#x27;출시일&#x27; 표기</td></tr></tbody></table></div>
+<div class="callout">
+ <b>읽는 법:</b> 판매자 계정(1월) → 키 생성(4월) → 스토어 자산 업로드(7월 초) → 빌드(7/11) → 출시(7/21).
+ 약 <b>6개월의 준비 기간</b>이 일관되게 나타난다. v1.0.6이라는 매우 낮은 버전번호도 이 서사와 정확히 맞는다.
+ <b>모순되는 신호가 없다.</b> <span class="chip op">판단</span>
+</div>
+
+<h2>사용자 반응 — 없음</h2>
+<div class="tblwrap"><table style="min-width:460px"><thead><tr><th>항목</th><th>결과</th></tr></thead><tbody><tr><td>스토어 리뷰</td><td><b>0건</b> (미출시로 리뷰 기능 미개방)</td></tr><tr><td>뉴스 보도</td><td><b>0건</b></td></tr><tr><td>유튜브 리뷰</td><td><b>0건 확인</b></td></tr><tr><td>네이버 웹문서</td><td>최상위 결과는 원스토어 사전예약 페이지 1건</td></tr><tr><td>네이버 카페·블로그</td><td>소수 게시물 검색되나 <b>사전예약 보상 홍보성 게시물로 추정</b>. 본문 직접 확인 실패(페치 차단)</td></tr></tbody></table></div>
+<div class="callout warn">
+ <b>출시 전 마케팅 노출 자체가 극히 미미하다.</b> 게임 전문 매체(게임메카·인벤·디스이즈게임)
+ 커버리지가 <b>전무</b>하고, 확인되는 것은 사전예약 보상을 노린 커뮤니티 게시물 몇 건뿐이다.
+ 무명 개발사가 <b>UA 예산 없이 출시한다면</b> 초기 유입은 원스토어 내 노출에 전적으로 의존하게 된다. <span class="chip op">판단</span>
+</div>
+
+<h2>스토어 기재 게임 내용</h2>
+<p class="src">⚠️ 아래는 <b>개발사가 스토어에 직접 써넣은 자기 서술</b>이다. 본 조사의 장르 판단이 아니며,
+코드 분석 결과와 대조할 참고 자료다. (대조 결과는 <a href="01_overview.html">개요 장</a> 참조 — 모순 없음)</p>
+<div class="tblwrap"><table style="min-width:520px"><thead><tr><th>축</th><th>기재 내용</th></tr></thead><tbody><tr><td>영웅 수집</td><td><b>75종</b> 영웅, <b>1성~10성</b> 성장, '환생/퇴화' 재활용 시스템</td></tr><tr><td>방치형</td><td>오프라인 자원 획득, "빠른 전투 버튼 하나면 오늘치 성장은 3초 컷"</td></tr><tr><td>전투 전략</td><td><b>1,269가지</b> 조합, 점화/빙결/기절 등 상성, 탱커·딜러 배치</td></tr><tr><td>가챠</td><td><b>40뽑 SSR 확정</b> (천장)</td></tr><tr><td>리텐션</td><td>7일 접속 이벤트, 성장 기금(레벨업 다이아)</td></tr><tr><td>콘텐츠</td><td>환상의 탑, 잃어버린 성전, 유적 탐험, 전 서버 통합 랭킹전 '제신들의 전쟁'</td></tr></tbody></table></div>
+<p class="src"><b>스토어 태그</b>: #히어로 #시뮬레이션 #시뮬레이션rpg #rpg ·
+<b>데이터 보안 선언</b>: 기기 또는 기타 ID / 앱 정보 및 성능<br>
+소개문이 <b>"똑같은 방치형은 가라"</b>로 시작한다 — 개발사 스스로 방치형 시장의 포화를 의식한 포지셔닝이다.</p>
+
+<div class="foot-note">잔망티키타카 (com.megagiant.tikitaca.one v1.0.6) 정적 분석 리포트 ·
+생성 2026-07-20 (출시 예정일 D-1) · 게임 저작권은 MEGAGIANT INC에 있으며 본 문서는 내부 분석용입니다.</div>
+</main></div>
+<footer class="prog"><div class="ptrack"><img class="mascot" src="img/mascot.png" alt="">
+<span class="plabel">11 / 13</span>
+<div class="dots"><div class="dline"></div><div class="dfill"></div></div></div></footer>
+<script>
+(function(){var h=document.querySelector('.hamb'),n=document.querySelector('nav.main');
+if(h)h.addEventListener('click',function(){n.classList.toggle('open')});
+var secs=[].slice.call(document.querySelectorAll('main h2')),dots=document.querySelector('.dots');
+if(dots&&secs.length){secs.forEach(function(s,i){s.id=s.id||('sec'+i);
+ var d=document.createElement('div');d.className='dot';
+ d.style.left=(secs.length>1?(i/(secs.length-1))*100:0)+'%';d.title=s.textContent;
+ d.onclick=function(){s.scrollIntoView({behavior:'smooth',block:'start'})};dots.appendChild(d)});
+ var fill=document.querySelector('.dfill');
+ function upd(){var y=window.scrollY+130,idx=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)idx=i});
+  [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i<=idx)});
+  if(fill)fill.style.width=(secs.length>1?(idx/(secs.length-1))*100:100)+'%'}
+ window.addEventListener('scroll',upd,{passive:true});upd();}})();
+</script><script id="gb-js">
+(function(){
+  var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
+  function set(o){document.body.classList.toggle('gb-open',o);}
+  if(b) b.addEventListener('click',function(){set(!document.body.classList.contains('gb-open'));});
+  if(d) d.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>900)set(false);});
+  // 현재 항목이 사이드바 밖이면 보이도록 스크롤
+  var on=document.querySelector('.gb-nav a.on');
+  if(on){var s=document.querySelector('.gb-side');
+    if(s && on.offsetTop > s.clientHeight-80) s.scrollTop = on.offsetTop - s.clientHeight/2;}
+})();
+</script>
+</body></html>
