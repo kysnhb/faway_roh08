@@ -1,0 +1,16 @@
+﻿index,kor,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,string,string,string,string,string,string,string,string,string
+1,단검,dagger,短剣,匕首,匕首,кинжал,poignard,daga,dao găm
+2,초록검,Green black,緑黒,绿黑色,綠黑色,Зеленый черный,Vert noir,Verde negro,Xanh đen
+3,형광검,fluorescent sword,蛍光剣,荧光剑,螢光劍,флуоресцентный меч,épée fluorescente,espada fluorescente,thanh kiếm huỳnh quang
+4,얼바람,Ice wind,氷風,冰风,冰風,Ледяной ветер,Vent glacial,viento helado,Gió băng
+5,타오름,Taoreum,タオレウム,陶瑞姆,陶瑞姆,Таореум,Taoreum,Taoreum,Taoreum
+6,뿅망치,toy hammer,おもちゃのハンマー,玩具锤,玩具錘,игрушечный молоток,marteau jouet,martillo de juguete,búa đồ chơi
+7,찬기운,cold air,冷気,冷空气,冷空氣,холодный воздух,air froid,aire frío,không khí lạnh
+8,열기운,heat,熱,热,熱,нагревать,chaleur,calor,nhiệt
+9,뿅기운,High energy,高エネルギー,高能量,高能量,Высокая энергия,Haute énergie,Alta energía,Năng lượng cao
+10,흑도,Black Island,ブラックアイランド,黑岛,黑島,Черный остров,Île Noire,Isla Negra,Đảo Đen
+11,핑크,pink,ピンク,粉色的,粉紅色的,розовый,rose,rosa,hồng
+12,서리날개,Frostwing,フロストウィング,霜翼,霜翼,Морозное Крыло,Aile de givre,Ala de Escarcha,Frostwing
+13,작열날개,Blazing Wings,ブレイジング・ウィングス,烈焰之翼,烈焰之翼,Пылающие Крылья,Ailes flamboyantes,Alas llameantes,Cánh lửa
+14,꿈결날개,Dream Wings,ドリームウィングス,梦想之翼,夢想之翼,Крылья мечты,Ailes de rêve,Alas de ensueño,Đôi cánh mơ ước

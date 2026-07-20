@@ -1,0 +1,90 @@
+﻿index,kor,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,string,string,string,string,string,string,string,string,string
+1,불기둥,Pillar of fire,炎の柱,火柱,火柱,Столп огня,Pilier de feu,Columna de fuego,Cột lửa
+2,나무가시,tree thorns,木の棘,树刺,樹刺,шипы деревьев,épines d'arbre,espinas de árbol,gai cây
+3,번개,lightning,稲妻,闪电,閃電,молния,foudre,iluminación,sét
+4,개구리,frog,蛙,青蛙,青蛙,лягушка,grenouille,rana,con ếch
+5,깨물기,snap,スナップ,折断,折斷,щелчок,instantané,quebrar,chụp
+6,파이어에로우,Fire Arrow,ファイアアロー,火箭,火箭,Огненная стрела,Flèche de feu,Flecha de fuego,Mũi tên lửa
+7,-,-,-,-,-,-,-,-,-
+8,나무칼,wooden knife,木製ナイフ,木刀,木刀,деревянный нож,couteau en bois,cuchillo de madera,dao gỗ
+9,화염유성,Flame Meteor,フレイムメテオ,火焰流星,火焰流星,Огненный метеор,Météore de flamme,Meteorito de llamas,Sao băng lửa
+10,번개파,Lightning wave,雷波,闪电波,閃電波,Молниеносная волна,onde de foudre,Onda de rayo,Sóng sét
+11,충격파,shock wave,衝撃波,激波,激波,ударная волна,onde de choc,onda de choque,sóng xung kích
+12,펌프,pump,ポンプ,泵,泵浦,насос,pompe,bomba,bơm
+13,프리즌,Prison,刑務所,监狱,監獄,Тюрьма,Prison,Prisión,Nhà tù
+14,텐타클,Tentacle,触手,触手,觸手,Щупальце,Tentacule,Tentáculo,Tua
+15,원형번개,circular lightning,円形の稲妻,圆形闪电,圓形閃電,круговая молния,éclair circulaire,relámpago circular,sét tròn
+16,파이어소드,Fire Sword,炎の剣,火焰剑,火焰劍,Огненный меч,Épée de feu,Espada de fuego,Kiếm Lửa
+17,나무사슴,tree deer,木の鹿,树鹿,樹鹿,древесный олень,cerf des arbres,ciervo arborícola,hươu cây
+18,빛나리,Shining,シャイニング,灼灼,灼灼,Сияющий,Brillant,Brillante,Tỏa sáng
+19,우주수리검,Space Shuriken,スペースシュリケン,太空手里剑,太空手裡劍,Космический сюрикен,Shuriken spatial,Shuriken espacial,Phi tiêu không gian
+20,하이드로,Hydro,水,水力,水力,Гидро,Hydro,Hidro,Thủy điện
+21,토네이도,tornado,竜巻,龙卷风,龍捲風,торнадо,tornade,tornado,lốc xoáy
+22,고드름,icicle,つらら,冰柱,冰柱,сосулька,stalactite,carámbano,cột băng
+23,어둠박쥐,Dark Bat,ダークバット,黑蝙蝠,黑蝙蝠,Тёмная Летучая Мышь,Chauve-souris sombre,Murciélago oscuro,Dơi đen
+24,뇌창,Brain Spear,ブレインスピア,脑矛,腦矛,Мозговое Копье,Lance cérébrale,Lanzamiento cerebral,Ngọn giáo não
+25,어둠번개,Dark Lightning,ダークライトニング,黑暗闪电,黑暗閃電,Тёмная молния,Éclair noir,Rayo oscuro,Tia chớp đen
+26,오색빛,Five-colored light,五色の光,五彩光,五彩光,Пятицветный свет,Lumière aux cinq couleurs,Luz de cinco colores,Ánh sáng năm màu
+27,메테오,Meteor,流星,流星,流星,Метеор,Météore,Meteorito,Sao băng
+28,썬더볼트,Thunderbolt,落雷,霹雳,霹靂,Громовой удар,Coup de tonnerre,Rayo,Thunderbolt
+29,화염망치,Flame Hammer,フレイムハンマー,火焰锤,火焰錘,Огненный молот,Marteau à flamme,Martillo de llama,Búa Lửa
+30,파워참,Power Charm,パワーチャーム,力量护符,力量護符,Силовой амулет,Charme de pouvoir,Encanto poderoso,Bùa hộ mệnh quyền năng
+31,가르기,Splitting,分割,分裂,分裂,Разделение,Scission,Terrible,Chia tách
+32,레이저,laser,レーザ,激光,雷射,лазер,laser,láser,tia laser
+33,블러드,Blood,血,血,血,Кровь,Sang,Sangre,Máu
+34,카리스마,charisma,カリスマ,魅力,魅力,харизма,charisme,carisma,sức hút
+35,체력관리,Physical fitness management,体力管理,体能管理,體能管理,управление физической подготовкой,Gestion de la condition physique,gestión de la aptitud física,Quản lý thể chất
+36,피날레,Finale,フィナーレ,终曲,終曲,Финал,Final,Final,Chung kết
+37,앙코르,Encore,アンコール,安可,安可,На бис,Bis,Bis,Màn trình diễn lại
+38,스페셜,Special,特別,特别的,特別的,Особенный,Spécial,Especial,Đặc biệt
+39,박자감,sense of rhythm,リズム感,节奏感,節奏感,чувство ритма,sens du rythme,sentido del ritmo,cảm giác nhịp điệu
+40,유연무브,Flexible Move,フレキシブルムーブ,灵活移动,靈活移動,Гибкий переезд,Déménagement flexible,Traslado flexible,Di chuyển linh hoạt
+41,함성,cry,泣く,哭,哭,плакать,pleurer,llorar,khóc
+42,애드립,Ad-lib,アドリブ,即兴发挥,即興發揮,Импровизация,Improvisation,Improvisar,Diễn xuất ngẫu hứng
+43,스테이지,Stage,ステージ,阶段,階段,Этап,Scène,Escenario,Sân khấu
+44,감각,sense,センス,感觉,感覺,смысл,sens,sentido,giác quan
+45,스포트,spot,スポット,点,點,место,place,lugar,điểm
+46,플래시,flash,フラッシュ,闪光,閃光,вспышка,éclair,destello,đèn flash
+47,루틴,routine,ルーティーン,常规,常規,рутина,routine,rutina,lịch trình
+48,절정,zenith,天頂,天顶,天頂,зенит,zénith,cenit,đỉnh cao
+49,선물,gift,贈り物,礼物,禮物,подарок,cadeau,regalo,quà 
+50,팀워크,teamwork,チームワーク,团队合作,團隊合作,командная работа,travail d'équipe,trabajo en equipo,làm việc nhóm
+51,호흡,breathing,呼吸,呼吸,呼吸,дыхание,respiration,respiración,thở
+52,그룹,group,グループ,团体,團體,группа,groupe,grupo,nhóm
+53,템포,Tempo,テンポ,速度,速度,Темп,Tempo,Tempo,Nhịp độ
+54,하모니,Harmony,調和,和谐,和諧,Гармония,Harmonie,Armonía,Hòa hợp
+55,군무,group dance,グループダンス,集体舞蹈,集體舞蹈,групповой танец,danse de groupe,baile en grupo,nhóm nhảy
+56,단채애드립,Danchae Ad-lib,ダンチェ・アドリブ,Danchae 即兴,Danchae 即興,Danchae Ad-lib,Danchae Ad-lib,Danchae Ad-lib,Danchae Ad-lib
+57,팬덤,Fandom,ファンダム,粉丝圈,粉絲圈,Фандом,Fandom,Fandom,Cộng đồng người hâm mộ
+58,굿즈,Goods,品,商品,商品,Товары,Marchandises,Bienes,Hàng hóa
+59,보급,Supply,供給,供应,供應,Поставлять,Fournir,Suministrar,Cung cấp
+60,스타일,style,スタイル,风格,風格,стиль,style,estilo,phong cách
+61,리워드,Rewards,報酬,奖励,獎勵,Награды,Récompenses,Recompensas,Phần thưởng
+62,럭키,Lucky,ラッキー,幸运的,幸運的,Удачливый,Chanceux,Afortunado,May mắn
+63,수면,sleep,寝る,睡觉,睡覺,спать,dormir,dormir,ngủ
+64,드랍더스피커,drop the speaker,スピーカーを落とす,放下扬声器,放下揚聲器,уронить динамик,Laissez tomber le haut-parleur,deja caer el altavoz,thả loa xuống
+65,굿즈레인,goods rain,良い雨,货物雨,貨物雨,товары дождь,pluie de marchandises,lluvia de bienes,mưa hàng hóa
+66,마이크레인,mic rain,マイクレイン,麦克风雨,麥克風雨,дождь из микрофонов,pluie de micro,lluvia de micrófonos,mưa mic
+67,별빛 샤인,Starlight Shine,星明かり,星光闪耀,星光閃耀,Звездное сияние,La lumière des étoiles brille,Brillo de las estrellas,Ánh Sao Tỏa Sáng
+68,스타폴,Starfall,スターフォール,星陨,星隕,Звездный дождь,Starfall,Caída de estrellas,Starfall
+69,일렉트릭쇼크,Electric Shock,感電,电击,電擊,Электрический шок,Choc électrique,Descarga eléctrica,Sốc điện
+70,대상 트로피,Grand Prize Trophy,グランプリトロフィー,大奖奖杯,大獎獎盃,Главный призовой кубок,Trophée du Grand Prix,Trofeo del Gran Premio,Cúp Giải Nhất
+71,핑크샤워,Pink Shower,ピンクシャワー,粉红雨,粉紅雨,Розовый душ,Douche rose,Ducha rosa,Tắm Hồng
+72,별 분수,Star fountain,星形の噴水,星泉,星泉,Звездный фонтан,Fontaine en forme d'étoile,Fuente de estrellas,Đài phun nước ngôi sao
+73,핑크BOMB!,Pink BOMB!,ピンクボム！,粉红炸弹！,粉紅炸彈！,Розовая БОМБА!,BOMBE rose !,¡BOMBA rosa!,Bom hồng!
+74,쇼크스피커,Shock speaker,ショックスピーカー,震荡扬声器,震盪揚聲器,Шоковый динамик,Haut-parleur à choc,Altavoz de choque,Loa gây sốc
+75,하트빔,Heart Beam,ハートビーム,心形光束,心形光束,Луч сердца,Rayon du cœur,Rayo del corazón,Tia sáng trái tim
+76,스타미사일,Star Missile,スターミサイル,星形导弹,星形飛彈,Звездная ракета,Missile Star,Misil estelar,Tên lửa sao
+77,응원봉,cheering stick,応援棒,加油棒,加油棒,палочка для болельщиц,bâton d'encouragement,palo de ánimo,gậy cổ vũ
+78,음표,note,注記,笔记,筆記,примечание,note,nota,ghi chú
+79,넥스트하이라이트,Next Highlight,次の注目作品,下一个亮点,下一個亮點,Следующий важный момент,Prochain point saillant,Siguiente punto destacado,Điểm nổi bật tiếp theo
+80,최종무대,Final stage,最終ステージ,最后阶段,最後階段,Финальный этап,Étape finale,Etapa final,Giai đoạn cuối
+81,BPM폭주,BPM Frenzy,BPMフレンジー,BPM狂热,BPM狂熱,BPM Frenzy,Frénésie BPM,Frenesí de BPM,Cơn cuồng BPM
+82,아이컨텍,eye contact,視線が合う,眼神交流,眼神交流,зрительный контакт,contact visuel,contacto visual,giao tiếp bằng mắt
+83,입장퍼포먼스,Entrance performance,入場パフォーマンス,入场表演,入場表演,Вступительное выступление,spectacle d'entrée,Actuación de entrada,Màn trình diễn mở màn
+84,앨범대박,Album hit,アルバムヒット,专辑热门歌曲,專輯熱門歌曲,Хит альбома,Album à succès,Éxito de álbum,Album thành công
+85,역경극복,Overcoming adversity,逆境を乗り越える,克服逆境,克服逆境,Преодоление трудностей,Surmonter l'adversité,Superar la adversidad,Vượt qua nghịch cảnh
+86,악플방지,Anti-malicious comments,悪意のあるコメントへの対策,反恶意评论,反惡意評論,Комментарии против злонамеренных высказываний,Commentaires anti-malveillants,Comentarios antimaliciosos,Bình luận chống ác ý
+87,팬덤실드,Fandom Shield,ファンダムシールド,粉丝盾,粉絲盾,Щит Фандома,Bouclier du fandom,Escudo de fans,Fandom Shield
+88,참,really,本当に,真的,真的,Действительно,vraiment,en realidad,Thực ra

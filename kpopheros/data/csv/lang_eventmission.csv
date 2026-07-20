@@ -1,0 +1,11 @@
+﻿index,kor,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,string,string,string,string,string,string,string,string,string
+1,몬스터 {0} 처치,Kill monster {0},モンスターを倒す {0},杀死怪物 {0},殺死怪物 {0},Убить монстра {0},Tuer le monstre {0},Matar monstruo {0},Tiêu diệt quái vật {0}
+2,점령전 {0}회 도전,Conquest Battle {0} times,征服戦 {0} 回,征服战 {0} 次,征服戰 {0} 次,Битва за завоевание {0} раз,Bataille de conquête {0} fois,Batalla de conquista {0} veces,Trận chiến chinh phục {0} lần
+3,네스 {0}회 성공,Ness {0} times successful,ネス{0}回成功,Ness 成功次数：0,Ness 成功次數：0,Нес {0} раз успешно,Ness {0} fois réussi,Ness {0} veces exitoso,Ness {0} lần thành công
+4,구스 {0}회 성공,Goose {0} times successful,ガチョウ {0} 回成功,鹅成功次数：0次,鵝成功次數：0次,Гусь {0} раз успешен,Oie {0} fois réussie,Ganso {0} veces exitoso,Ngỗng {0} lần thành công
+5,스컬 {0}회 성공,Skull succeeded {0} times,スカルは{0}回成功しました,骷髅头成功了 {0} 次,骷髏頭成功了 {0} 次,Череп преуспел {0} раз,Skull a réussi {0} fois,Skull tuvo éxito {0} veces,Skull đã thành công {0} lần
+6,스파이더 {0}회 성공,Spider {0} times successful,スパイダー{0}回成功,蜘蛛成功次数：0。,蜘蛛成功次數：0。,Паук {0} раз успешно,Spider {0} fois réussi,Araña {0} veces exitosa,Nhện {0} lần thành công
+7,교환소 {0}회 사용,Exchange used {0} times,交換は{0}回使用されました,交易所使用次数：{0} 次,交易所使用次數：{0} 次,Обмен использован {0} раз,Échange utilisé {0} fois,El intercambio se ha utilizado {0} veces,Trao đổi đã được sử dụng {0} lần
+8,모든 미션 클리어,Clear all missions,すべてのミッションをクリアする,完成所有任务,完成所有任務,Выполните все задания,Terminer toutes les missions,Completa todas las misiones,Hoàn thành tất cả nhiệm vụ
+9,스테이지 {0}회 클리어,Clear stage {0} times,ステージクリア回数：0回,清除阶段 {0} 次,清除階段 {0} 次,Очистить стадию {0} раз,Étape claire {0} fois,Etapa despejada {0} veces,Xóa màn hình {0} lần

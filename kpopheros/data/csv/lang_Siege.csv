@@ -1,0 +1,7 @@
+﻿index,kor,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,string,string,string,string,string,string,string,string,string
+1,얼음행성,Ice planet,氷の惑星,冰冻星球,冰凍星球,Ледяная планета,planète de glace,Planeta de hielo,Hành tinh băng
+2,화염행성,Flame Planet,フレイムプラネット,火焰星球,火焰星球,Планета Пламени,Planète de Flamme,Planeta de llamas,Hành tinh Lửa
+3,황금행성,Golden Planet,ゴールデンプラネット,黄金星球,黃金星球,Золотая Планета,Planète d'Or,Planeta Dorado,Hành tinh Vàng
+4,심해행성,Deep sea planet,深海惑星,深海星球,深海星球,Глубоководная планета,planète des profondeurs marines,planeta de aguas profundas,Hành tinh biển sâu
+5,미지행성,Unknown planet,未知の惑星,未知行星,未知行星,Неизвестная планета,Planète inconnue,Planeta desconocido,Hành tinh chưa được biết đến

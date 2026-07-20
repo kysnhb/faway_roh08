@@ -1,0 +1,63 @@
+﻿idx,Korean,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,string,string,string,string,string,string,string,string,string
+1,골드,Gold,金,金子,金子,Золото,Or,Oro,Vàng
+2,파란보석,Blue gem,ブルージェム,蓝色宝石,藍色寶石,Синий драгоценный камень,Gemme bleue,Gema azul,Viên ngọc xanh
+3,붉은보석,Red gem,赤い宝石,红宝石,紅寶石,Красный драгоценный камень,Gemme rouge,Gema roja,Đá quý màu đỏ
+4,소환서,Summoning Scroll,召喚の巻物,召唤卷轴,召喚捲軸,Свиток призыва,Parchemin d'invocation,Pergamino de invocación,Cuộn giấy triệu hồi
+5,금열쇠,Golden Key,ゴールデンキー,金钥匙,金鑰匙,Золотой ключ,Clé d'or,Llave de oro,Chìa khóa vàng
+6,은열쇠,silver key,銀の鍵,银钥匙,銀鑰匙,серебряный ключ,clé d'argent,llave plateada,chìa khóa bạc
+7,빨간포션,red potion,赤い薬,红色药水,紅色藥水,красное зелье,potion rouge,poción roja,thuốc đỏ
+8,성장알약,Growth pills,成長促進剤,生长药丸,生長藥丸,таблетки для роста,pilules de croissance,pastillas para el crecimiento,thuốc tăng trưởng
+9,보라포션,Purple Potion,紫色のポーション,紫色药水,紫色藥水,Фиолетовое зелье,Potion violette,Poción púrpura,Thuốc màu tím
+10,파란포션,Blue Potion,青い薬,蓝色药水,藍色藥水,Синее зелье,Potion bleue,Poción azul,Thuốc màu xanh
+11,망치고기,Hammerhead,ハンマーヘッド,锤头鲨,鎚頭鯊,Молотоголовый,Tête de marteau,Cabeza de martillo,Đầu búa
+12,메달,medal,メダル,勋章,勳章,медаль,médaille,medalla,huy chương
+13,주머니,pocket,ポケット,口袋,口袋,карман,poche,bolsillo,túi
+14,스킬북,Skill Book,スキルブック,技能手册,技能手冊,Книга навыков,Livre de compétences,Libro de habilidades,Sách kỹ năng
+15,고기,meat,肉,肉,肉,мясо,viande,carne,thịt
+16,쇠망치,sledgehammer,大ハンマー,大锤,大槌,кувалда,masse,almádena,búa tạ
+17,파란책,Blue book,ブルーブック,蓝皮书,藍皮書,Синяя книга,Livre bleu,Libro azul,Sách Xanh
+18,주사위,dice,サイコロ,骰子,骰子,игральные кости,dés,dados,xúc xắc
+19,복구석,Restoration stone,修復用石材,修复石,修復石,Реставрационный камень,Pierre de restauration,Piedra de restauración,Đá phục chế
+20,보라열쇠,Purple Key,パープルキー,紫色钥匙,紫色鑰匙,Фиолетовый ключ,Clé violette,Llave púrpura,Chìa khóa màu tím
+21,회색열쇠,Gray Key,グレイキー,灰键,灰鍵,Серый ключ,Clé grise,Clave gris,Chìa khóa Xám
+22,파란열쇠,Blue Key,ブルーキー,蓝钥匙,藍鑰匙,Синий ключ,Clé bleue,Llave Azul,Chìa khóa xanh
+23,초록열쇠,Green Key,グリーンキー,绿色钥匙,綠色鑰匙,Зеленый ключ,Clé verte,Clave verde,Chìa khóa xanh
+24,별,star,星,星星,星星,звезда,étoile,estrella,ngôi sao
+25,금망치,Golden Hammer,ゴールデンハンマー,金锤,金槌,Золотой Молот,Marteau d'or,Martillo de Oro,Búa vàng
+26,티켓,Ticket,チケット,票,票,Билет,Billet,Boleto,Vé
+27,회종시계,clock,クロック,钟,鐘,часы,horloge,reloj,cái đồng hồ
+28,보석상자,jewelry box,ジュエリーボックス,首饰盒,首飾盒,шкатулка для украшений,boîte à bijoux,joyero,hộp đựng trang sức
+29,특수무기파편상자,Special Weapon Shard Box,特殊武器破片ボックス,特殊武器碎片盒,特殊武器碎片盒,Ящик с осколками специального оружия,Boîte à éclats d'arme spéciale,Caja de fragmentos de armas especiales,Hộp mảnh vũ khí đặc biệt
+30,오라파편상자,Aura Shard Box,オーラシャードボックス,灵气碎片盒,靈氣碎片盒,Коробка с осколками ауры,Boîte à éclats d'aura,Caja de fragmentos de aura,Hộp Mảnh Vỡ Hào Quang
+31,강화석상자,Reinforcement Stone Box,補強用石箱,加固石箱,加固石箱,Коробка из арматурного камня,Boîte de renforcement en pierre,Caja de refuerzo para piedra,Hộp đá gia cố
+32,부러진 검,Broken sword,折れた剣,断剑,斷劍,Сломанный меч,Épée brisée,Espada rota,Thanh kiếm gãy
+33,깨진 오라석,Broken aura,壊れたオーラ,破碎的光环,破碎的光環,Разрушенная аура,Aura brisée,aura rota,Hào quang tan vỡ
+34,찬기운 석,Ice Stone,アイスストーン,冰石,冰石,Ледяной камень,Pierre de glace,Piedra de hielo,Đá băng
+35,열기운 석,Hot Stone,ホットストーン,热石,熱石,Горячий камень,Pierre chaude,Piedra caliente,Đá nóng
+36,뿅기운 석,Heart stone,ハートストーン,心石,心石,Камень сердца,Pierre du cœur,Piedra del corazón,Viên đá hình trái tim
+37,F등급 티켓,F-class ticket,Fクラスのチケット,F舱机票,F艙機票,билет класса F,Billet de classe F,Billete de clase F,Vé hạng F
+38,E등급 티켓,E-class ticket,Eクラスチケット,E级机票,E級機票,Билет E-класса,Billet de classe E,Billete de clase E,Vé hạng E
+39,D등급 티켓,D-class ticket,Dクラスチケット,D级机票,D級機票,билет класса D,Billet de classe D,Boleto de clase D,Vé hạng D
+40,C등급 티켓,Class C ticket,#ERROR!,#ERROR!,#ERROR!,#ERROR!,#ERROR!,#ERROR!,#ERROR!
+41,B등급 티켓,B-class ticket,Bクラスのチケット,B级机票,B級機票,билет класса B,Billet de classe B,Billete de clase B,Vé hạng B
+42,A등급 티켓,A-class ticket,Aクラスのチケット,A级机票,A級機票,билет класса А,Billet de classe A,Billete de clase A,Vé hạng A
+43,S등급 티켓,S-class ticket,Sクラスのチケット,S级机票,S級機票,билет S-класса,Billet de classe S,Billete de clase S,Vé hạng S
+44,뽑기 코인,Gacha Coins,ガチャコイン,扭蛋币,扭蛋幣,Монеты Гача,Pièces Gacha,Monedas Gacha,Xu Gacha
+45,마블코인,Marvel Coin,マーベルコイン,漫威硬币,漫威硬幣,Монета Marvel,Pièce Marvel,Moneda Marvel,Đồng xu Marvel
+46,특수무기상자,Special Weapon Crate,特殊武器クレート,特殊武器箱,特殊武器箱,Специальный ящик с оружием,Caisse d'armes spéciales,Caja de armas especiales,Thùng vũ khí đặc biệt
+47,오라상자,Aura Box,オーラボックス,灵气盒,靈氣盒,Аура Бокс,Boîte Aura,Caja Aura,Hộp Aura
+48,광고제거,Remove ads,広告を削除する,移除广告,移除廣告,Удалить рекламу,Supprimer les publicités,Eliminar anuncios,Xóa quảng cáo
+49,1등급 제작석,Grade 1 Crafting Stone,グレード1のクラフトストーン,一级工艺石,一級工藝石,Камень для крафта 1-го уровня,Pierre à modeler de première qualité,Piedra de artesanía de grado 1,Đá chế tác cấp 1
+50,2등급 제작석,Grade 2 Crafting Stone,グレード2のクラフトストーン,二级工艺石,二級工藝石,Камень для крафта 2-го уровня,Pierre à modeler de niveau 2,Piedra de artesanía de grado 2,Đá chế tác cấp 2
+51,3등급 제작석,Grade 3 crafting stone,グレード3の工芸用石,三级工艺石,三級工藝石,камень для крафта 3-го уровня,pierre à modeler de niveau 3,Piedra artesanal de grado 3,Đá chế tạo cấp 3
+52,4등급 제작석,Grade 4 Crafting Stone,グレード4のクラフトストーン,四级工艺石,四級工藝石,Камень для крафта 4-го уровня,Pierre à modeler de niveau 4,Piedra de artesanía de grado 4,Đá chế tác cấp 4
+53,5등급 제작석,Grade 5 Crafting Stone,グレード5のクラフトストーン,5级工艺石,5級工藝石,Камень для крафта 5-го уровня,Pierre à modeler de niveau 5,Piedra de artesanía de grado 5,Đá chế tác cấp 5
+54,6등급 제작석,Grade 6 crafting stone,グレード6の工芸用石,6级工艺石,6級工藝石,камень для крафта 6-го уровня,pierre à modeler de niveau 6,Piedra de artesanía de grado 6,Đá chế tác cấp 6
+55,7등급 제작석,Grade 7 Crafting Stone,7年生向けクラフトストーン,7级工艺石,7級工藝石,Камень для крафта 7-го уровня,Pierre à modeler de 7e année,Piedra de artesanía de grado 7,Đá chế tác cấp 7
+56,8등급 제작석,Grade 8 Crafting Stone,グレード8のクラフトストーン,8级工艺石,8級工藝石,Камень для крафта 8-го уровня,Pierre à modeler de niveau 8,Piedra de artesanía de grado 8,Đá chế tác cấp 8
+57,9등급 제작석,Grade 9 Crafting Stone,グレード9 クラフトストーン,9级工艺石,9級工藝石,Камень для крафта 9-го уровня,Pierre à modeler de niveau 9,Piedra de artesanía de grado 9,Đá chế tác lớp 9
+58,10등급 제작석,Grade 10 Crafting Stone,グレード10 クラフトストーン,10级工艺石,10級工藝石,Камень для крафта 10-го уровня,Pierre à modeler de niveau 10,Piedra de manualidades de grado 10,Đá chế tác cấp 10
+59,실버엔진,Silver Engine,シルバーエンジン,银色引擎,銀色引擎,Серебряный двигатель,Moteur d'argent,Motor plateado,Động cơ bạc
+60,골드엔진,Gold Engine,ゴールドエンジン,黄金引擎,黃金引擎,Золотой двигатель,Moteur d'or,Motor de oro,Động cơ vàng
+61,광고,advertisement,広告,广告,廣告,реклама,publicité,anuncio,quảng cáo

@@ -1,0 +1,593 @@
+﻿index,value,kor,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,int,string,string,string,string,string,string,string,string,string
+0,0,-,-,-,-,-,-,-,-,-
+1,0,스킬,Skill,スキル,技能,技能,Навык,Compétence,Habilidad,Kỹ năng
+2,0,보석,jewel,宝石,宝石,寶石,драгоценность,bijou,joya,viên ngọc
+3,0,동료,colleague,同僚,同事,同事,коллега,collègue,colega,đồng nghiệp
+4,1,{0}회,{0} times,{0}回,{0} 次,{0} 次,{0} раз,{0} fois,{0} veces,{0} lần
+5,0,특성,Traits,特性,特征,特徵,Черты,Caractéristiques,Rasgos,Đặc điểm
+6,0,공격력 증가,Increase attack power,攻撃力を上げる,提升攻击力,提升攻擊力,Увеличьте силу атаки,Augmenter la puissance d'attaque,Aumentar el poder de ataque,Tăng sức tấn công
+7,0,체력 증가,Increased stamina,スタミナの向上,耐力增强,耐力增強,Повышенная выносливость,endurance accrue,Mayor resistencia,Tăng cường sức bền
+8,0,명중 증가,Increased accuracy,精度向上,提高准确性,提高準確性,Повышенная точность,Précision accrue,Mayor precisión,Độ chính xác được tăng cường
+9,0,회피 증가,Increased evasion,回避率の向上,提高闪避率,提高閃避率,Усиление уклонения,Évasion accrue,Mayor evasión,Tăng cường khả năng né tránh
+10,0,스킬 피해량 증가,Skill damage increase,スキルダメージ増加,技能伤害提升,技能傷害提升,Увеличение урона от навыков,augmentation des dégâts de compétence,Aumento del daño de habilidad,Tăng sát thương kỹ năng
+11,0,치명타 피해량 증가,Increased critical hit damage,クリティカルヒットダメージ増加,暴击伤害增加,暴擊傷害增加,Увеличен урон от критических попаданий,Dégâts critiques accrus,Aumento del daño por golpe crítico,Tăng sát thương chí mạng
+12,0,보스 피해량 증가,Increased boss damage,ボスへのダメージ増加,首领伤害增加,首領傷害增加,Увеличен урон по боссам,Dégâts des boss augmentés,Daño aumentado a los jefes,Tăng sát thương của trùm
+13,0,힘,STR,STR,STR,STR,STR,STR,STR,STR
+14,0,체력,CON,CON,CON,CON,CON,CON,CON,CON
+15,0,민첩,AGI,AGI,AGI,AGI,AGI,AGI,AGI,AGI
+16,0,지능,INT,INT,INT,INT,INT,INT,INT,INT
+17,0,행운,LUCK,LUCK,LUCK,LUCK,LUCK,LUCK,LUCK,MAY MẮN
+18,0,공격력,Attack power,攻撃力,攻击力,攻擊力,Сила атаки,puissance d'attaque,Poder de ataque,Sức tấn công
+19,0,체력,Physical strength,体力,体力,體力,Физическая сила,force physique,fuerza física,Sức mạnh thể chất
+20,0,치명타 피해,Critical damage,致命的なダメージ,严重伤害,嚴重傷害,Критический ущерб,Dommages critiques,Daños críticos,Thiệt hại nghiêm trọng
+21,0,이동속도,Movement speed,移動速度,移动速度,移動速度,Скорость передвижения,vitesse de déplacement,Velocidad de movimiento,Tốc độ di chuyển
+22,0,공격속도,Attack speed,攻撃速度,攻击速度,攻擊速度,скорость атаки,vitesse d'attaque,Velocidad de ataque,Tốc độ tấn công
+23,0,스킬피해,Skill damage,スキルダメージ,技能伤害,技能傷害,Урон от навыков,dégâts de compétence,Daño de habilidad,Sát thương kỹ năng
+24,0,보스피해,Boss damage,ボスへのダメージ,首领伤害,首領傷害,Урон боссу,Dégâts du boss,Daño del jefe,Sát thương của trùm
+25,0,받는 피해 감소,Reduction in damage received,被った損害の減少,减少所受损失,減少所受損失,Снижение полученного ущерба,Réduction des dommages subis,Reducción de los daños sufridos,Giảm thiệt hại nhận được
+26,0,명중,Hit,打つ,打,打,Ударять,Frapper,Golpear,Đánh
+27,0,회피,evasion,回避,逃避,逃避,уклонение,évasion,evasión,sự né tránh
+28,0,흡혈,Bloodsucking,吸血,吸血鬼,吸血鬼,Кровососущий,suceur de sang,Chupasangre,Hút máu
+29,0,다중공격,multi-attack,マルチアタック,多重攻击,多重攻擊,многократная атака,attaque multiple,ataque múltiple,tấn công đa mục tiêu
+30,0,즉사,instant death,即死,立即死亡,立即死亡,мгновенная смерть,mort instantanée,muerte instantánea,chết ngay lập tức
+31,0,쿨감,Cooldown reduction,クールダウン短縮,冷却时间缩短,冷卻時間縮短,Снижение времени охлаждения,Réduction du temps de recharge,Reducción del tiempo de reutilización,Giảm thời gian hồi chiêu
+32,0,골드획득,Gold Acquisition,金の取得,黄金收购,黃金收購,Приобретение золота,Acquisition d'or,Adquisición de oro,Thu mua vàng
+33,0,재료드랍,Material Drop,マテリアルドロップ,材料投放,材料投放,Материальная капля,Lâcher de matériaux,Caída de material,Vật liệu rơi
+34,0,경험치,experience points,経験値,经验值,經驗值,баллы опыта,points d'expérience,puntos de experiencia,điểm kinh nghiệm
+35,0,아이템드랍,Item Drop,アイテムドロップ,物品掉落,物品掉落,Выпадение предмета,Lâcher d'objet,Caída de objeto,Vật phẩm rơi
+36,0,상위드랍,Top drop,トップドロップ,顶部落差,頂部落差,Верхний каплей,Chute du haut,Caída libre superior,Thả từ trên xuống
+37,0,화염 계열 데미지,Fire-type damage,炎タイプのダメージ,火属性伤害,火屬性傷害,Огненный урон,Dégâts de type Feu,Daños de tipo fuego,Thiệt hại kiểu lửa
+38,0,번개 계열 데미지,Lightning-based damage,雷属性のダメージ,闪电伤害,閃電傷害,Урон от молнии,Dégâts causés par la foudre,Daños causados ​​por rayos,Sát thương dựa trên sét
+39,0,땅 계열 데미지,Earth-type damage,土属性ダメージ,地属性伤害,地屬性傷害,Повреждения типа Земли,Dégâts de type Terre,Daños de tipo terrestre,Thiệt hại kiểu Trái đất
+40,0,물 계열 데미지,Water element damage,水による損傷,水元素损害,水元素損害,Повреждение водной стихии,dégâts causés par l'eau,Daños causados ​​por el elemento agua,thiệt hại do nguyên tố nước gây ra
+41,0,어둠 계열 데미지,Dark element damage,闇属性ダメージ,暗元素伤害,暗元素傷害,Урон от темной стихии,dégâts de l'élément ténèbres,Daño de elemento oscuro,Sát thương nguyên tố bóng tối
+42,0,검기(화염) - 화상(치명),Sword Energy (Flame) - Burn (Critical),剣のエネルギー（炎） - 燃焼（クリティカル）,剑气（火焰）- 燃烧（暴击）,劍氣（火焰）- 燃燒（暴擊）,Энергия меча (Пламя) - Ожог (Критический урон),Énergie de l'épée (Flamme) - Brûlure (Critique),Energía de espada (Llama) - Quemadura (Crítica),Năng lượng kiếm (Ngọn lửa) - Thiêu đốt (Chí mạng)
+43,0,검기(번개) - 체인기능,Sword Energy (Lightning) - Chain Function,剣のエネルギー（雷） - 連鎖機能,剑气（雷电）- 连锁功能,劍氣（雷電）- 連鎖功能,Энергия меча (молния) - Цепная функция,Énergie de l'épée (Foudre) - Fonction Chaîne,Energía de espada (rayo) - Función de cadena,Năng lượng kiếm (Sét) - Chức năng chuỗi
+44,0,검기(바람) - 토네이도,Sword Energy (Wind) - Tornado,剣のエネルギー（風） - 竜巻,剑气（风）- 龙卷风,劍氣（風）- 龍捲風,Энергия меча (Ветер) - Торнадо,Énergie de l'épée (Vent) - Tornade,Energía de espada (Viento) - Tornado,Năng lượng kiếm (Gió) - Lốc xoáy
+45,0,검기(물) - 파도,Black energy (water) - waves,黒いエネルギー（水） - 波,黑色能量（水）——波浪,黑色能量（水）－波浪,Черная энергия (вода) - волны,Énergie noire (eau) - vagues,Energía negra (agua) - olas,Năng lượng đen (nước) - sóng
+46,0,동료 공격속도,Ally Attack Speed,味方の攻撃速度,友军攻击速度,友軍攻擊速度,Скорость атаки союзника,Vitesse d'attaque des alliés,Velocidad de ataque de los aliados,Tốc độ tấn công của đồng minh
+47,0,동료 공격력,Ally Attack Power,味方の攻撃力,友军攻击力,友軍攻擊力,Сила атаки союзников,Puissance d'attaque des alliés,Poder de ataque aliado,Sức tấn công của đồng minh
+48,0,동료 치명타피해,Critical damage to allies,味方への致命的なダメージ,对友军造成致命伤害,對友軍造成致命傷害,Критический ущерб союзникам,Dommages critiques aux alliés,Daños críticos a los aliados,Gây thiệt hại nghiêm trọng cho đồng minh
+49,0,적을 죽일때마다 공격력 증가 ,Attack power increases every time you kill an enemy.,敵を倒すたびに攻撃力が上昇します。,每次击杀敌人，攻击力都会提升。,每次擊殺敵人，攻擊力都會提升。,"Сила атаки увеличивается каждый раз, когда вы убиваете врага.",La puissance d'attaque augmente à chaque fois que vous tuez un ennemi.,El poder de ataque aumenta cada vez que eliminas a un enemigo.,Sức tấn công tăng lên mỗi khi bạn tiêu diệt một kẻ địch.
+50,0,동료 스킬피해,Ally skill damage,味方のスキルダメージ,友军技能伤害,友軍技能傷害,Урон от навыков союзников,dégâts de compétence alliée,Daño de habilidad de aliado,Sát thương kỹ năng đồng minh
+51,0,동료 스킬 발동 확률,Companion Skill Activation Probability,コンパニオンスキル発動確率,伙伴技能激活概率,夥伴技能啟動機率,Вероятность активации навыка компаньона,Probabilité d'activation des compétences du compagnon,Probabilidad de activación de la habilidad del compañero,Xác suất kích hoạt kỹ năng đồng hành
+52,0,장비강화,Equipment Enhancement,機器の強化,装备增强,裝備增強,Усовершенствование оборудования,Amélioration des équipements,Mejora de equipos,Nâng cấp trang thiết bị
+53,0,동료 보스피해,Companion Boss Damage,コンパニオンのボスダメージ,同伴首领伤害,同儕首領傷害,Урон от босса-компаньона,Dégâts du boss compagnon,Daño del jefe acompañante,Sát thương của Boss Đồng Hành
+54,0,치명타 확률,Critical Hit Chance,クリティカルヒット率,暴击几率,暴擊幾率,Шанс критического удара,Chances de coup critique,Probabilidad de golpe crítico,Tỷ lệ chí mạng
+55,0,동료 치명타 확률,Companion Critical Hit Chance,コンパニオンのクリティカルヒット率,同伴暴击几率,同儕暴擊幾率,Шанс критического удара компаньона,Chances de coup critique du compagnon,Probabilidad de golpe crítico del compañero,Tỷ lệ chí mạng của đồng đội
+56,0,(▲{0}),(▲{0}),（▲{0}）,（▲{0}）,（▲{0}）,(▲{0}),(▲{0}),(▲{0}),(▲{0})
+57,0,배치,arrangement,配置,安排,安排,договоренность,arrangement,acuerdo,sắp xếp
+58,0,해제,clear,クリア,清除,清除,прозрачный,clair,claro,thông thoáng
+59,0,없음,doesn't exist,存在しない,不存在,不存在,не существует,n'existe pas,no existe,không tồn tại
+60,0,장착,put,置く,放,放,помещать,mettre,poner,đặt
+61,0,루나,Luna,ルナ,露娜,露娜,Луна,Luna,Luna,Mặt trăng
+62,0,아리아,Aria,アリア,咏叹调,詠嘆調,Ария,Aria,Aria,Aria
+63,0,리나,Lina,リナ,莉娜,莉娜,Лина,Lina,Lina,Lina
+64,0,헬렌,Helen,ヘレン,海伦,海倫,Хелен,Hélène,Helen,Helen
+65,0,셀리아,Celia,セリア,西莉亚,西莉亞,Селия,Célia,Celia,Celia
+66,0,펭,Peng,ペン,彭,彭,Пэн,Peng,Peng,Peng
+67,0,시리아,Syria,シリア,叙利亚,敘利亞,Сирия,Syrie,Siria,Syria
+68,0,분해,decomposition,分解,分解,分解,разложение,décomposition,descomposición,phân hủy
+69,0,강화,enforce,執行する,执行,執行,обеспечить,imposer,hacer cumplir,thực thi
+70,0,이하,below,下に,以下,以下,ниже,ci-dessous,abajo,dưới
+71,0,까지,until,それまで,直到,直到,до,jusqu'à,hasta,cho đến khi
+72,0,재화가 부족합니다.,We are short on goods.,商品が不足しています。,我们物资短缺。,我們物資短缺。,У нас нехватка товаров.,Nous manquons de marchandises.,Tenemos escasez de mercancías.,Chúng tôi đang thiếu hàng hóa.
+73,0,성장,growth,成長,生长,生長,рост,croissance,crecimiento,sự phát triển
+74,0,가방,bag,バッグ,包,包包,сумка,sac,bolsa,cái túi
+75,0,스킬,Skill,スキル,技能,技能,Навык,Compétence,Habilidad,Kỹ năng
+76,0,던전,dungeon,ダンジョン,地牢,地城,подземелье,cachot,mazmorra,ngục tối
+77,0,도감,Pokedex,ポケモン図鑑,图鉴,圖鑑,Покедекс,Pokédex,Pokédex,Pokedex
+78,0,뽑기,Draw,描く,画,畫,Рисовать,Dessiner,Dibujar,Vẽ tranh
+79,0,강화,enforce,執行する,执行,執行,обеспечить,imposer,hacer cumplir,thực thi
+80,0,마스터리,Mastery,熟練度,精通,精通,Мастерство,Maîtrise,Maestría,Thành thạo
+81,0,잠재력,potentiality,潜在力,潜力,潛力,потенциал,potentialité,potencialidad,tiềm năng
+82,0,외형,appearance,外観,外貌,外貌,появление,apparence,apariencia,vẻ bề ngoài
+83,0,액티브,Active,アクティブ,积极的,積極的,Активный,Actif,Activo,Tích cực
+84,0,특성,characteristic,特性,特征,特徵,характерный,caractéristiques,característica,đặc điểm
+85,0,점령전,Occupation battle,占領戦,占领战争,佔領戰爭,Битва за оккупацию,Bataille d'occupation,batalla de ocupación,Trận chiến chiếm đóng
+86,0,동물,animal,動物,动物,動物,животное,animal,animal,động vật
+87,0,좀비,zombi,ゾンビ,僵尸,殭屍,зомби,zombie,zombi,thây ma
+88,0,해골,skeleton,スケルトン,骨骼,骨骼,скелет,squelette,esqueleto,bộ xương
+89,0,그림자,shadow,影,阴影,陰影,тень,ombre,sombra,bóng tối
+90,0,스킬 뽑기,Skill Draw,スキルドロー,技能抽卡,技能抽卡,Умелая игра,Tirage au sort,Dibujo de habilidad,Kỹ năng rút súng
+91,0,보석 뽑기,Gem Draw,ジェムドロー,宝石抽奖,寶石抽獎,Рисование драгоценных камней,Tirage de gemmes,Sorteo de gemas,Vẽ Đá Quý
+92,0,동료 뽑기,Recruiting companions,仲間を募集する,招募同伴,招募同伴,Вербовка компаньонов,Recrutement de compagnons,Reclutar compañeros,Tuyển dụng đồng đội
+93,0,특성 뽑기,Trait Draw,特性ドロー,特性抽取,特性抽取,Рисунок черты,Tirage de traits,Dibujo de rasgos,Rút thăm đặc điểm
+94,0,보상,Reward,褒美,报酬,報酬,Награда,Récompense,Premio,Phần thưởng
+95,0,장비 교체,Equipment replacement,機器の交換,设备更换,設備更換,Замена оборудования,Remplacement du matériel,Sustitución de equipos,Thay thế thiết bị
+96,0,[교체시 기존 장비는 사라집니다.],[The existing equipment will be removed upon replacement.],【既存設備は交換時に撤去されます。】,【现有设备将在更换时拆除。】,【現有設備將在更換時拆除。 】,[Существующее оборудование будет демонтировано при замене.],[L'équipement existant sera retiré lors de son remplacement.],[El equipo existente será retirado al ser reemplazado.],[Thiết bị hiện có sẽ được tháo dỡ khi thay thế.]
+97,0,낡은 세트,old set,古いセット,旧套装,舊套裝,старый набор,ancien ensemble,conjunto antiguo,bộ cũ
+98,0,가죽 세트,leather set,レザーセット,皮革套装,皮革套裝,кожаный комплект,ensemble en cuir,conjunto de cuero,bộ đồ da
+99,0,청동 세트,Bronze set,ブロンズセット,青铜套装,青銅套裝,Бронзовый набор,Ensemble en bronze,Juego de bronce,Bộ đồ đồng
+100,0,철 세트,iron set,アイロンセット,铁套装,鐵套裝,набор утюгов,fer à repasser,juego de planchas,bộ sắt
+101,0,전사 세트,Warrior Set,戦士セット,战士套装,戰士套裝,Набор воина,Ensemble de guerrier,Conjunto de guerrero,Bộ trang phục chiến binh
+102,0,수비 세트,defensive set,守備陣形,防守阵型,防守陣型,защитный комплект,ensemble défensif,conjunto defensivo,thiết lập phòng thủ
+103,0,강철 세트,steel set,スチールセット,钢制套装,鋼製套裝,стальной комплект,ensemble en acier,juego de acero,bộ thép
+104,0,용병 세트,Mercenary Set,傭兵セット,佣兵套装,傭兵套裝,Набор наёмников,Ensemble de mercenaire,Conjunto de mercenarios,Bộ lính đánh thuê
+105,0,기사 세트,Knight set,騎士セット,骑士套装,騎士套裝,Рыцарский набор,Ensemble de chevalier,Conjunto de caballero,Bộ hiệp sĩ
+106,0,단단한 세트,Solid set,しっかりとしたセット,实心集,實心集,Твердый набор,Ensemble solide,Conjunto sólido,Bộ chắc chắn
+107,0,방호 세트,Protection set,保護セット,保护套装,保護套裝,Защитный комплект,Ensemble de protection,Conjunto de protección,Bộ bảo vệ
+108,0,중갑 세트,heavy armor set,重装甲セット,重甲套装,重甲套裝,комплект тяжелой брони,ensemble d'armure lourde,conjunto de armadura pesada,bộ giáp nặng
+109,0,명예 세트,Honor Set,栄誉セット,荣誉套装,榮譽套裝,Почетный набор,Ensemble d'honneur,Conjunto de honor,Bộ danh dự
+110,0,타오르는 세트,Burning Set,バーニングセット,燃烧套装,燃燒套裝,Набор для сжигания,Ensemble de brûlage,Juego de fuego,Bộ đồ cháy
+111,0,얼어붙은 세트,Frozen set,アナと雪の女王セット,冰雪奇缘套装,冰雪奇緣套裝,Холодное сердце,Ensemble Frozen,Set de Frozen,Bộ đồ đông lạnh
+112,0,대지의 세트,Set of the Earth,地球のセット,地球集合,地球集合,Сет Земли,Ensemble de la Terre,Conjunto de la Tierra,Bộ Trái Đất
+113,0,신속 세트,Quick Set,クイックセット,快速设置,快速設定,Быстрая установка,Réglage rapide,Ajuste rápido,Cài đặt nhanh
+114,0,그림자 세트,Shadow set,シャドウセット,阴影集,陰影集,Набор теней,Ensemble d'ombres,Conjunto de sombras,Bộ bóng
+115,0,신비한 세트,Mysterious set,謎めいたセット,神秘套装,神秘套裝,Загадочный набор,Ensemble mystérieux,Conjunto misterioso,Bộ bí ẩn
+116,0,정령의 세트,Spirit Set,スピリットセット,烈酒套装,烈酒套裝,Набор спиртных напитков,Ensemble d'esprits,Conjunto de espíritus,Bộ Linh hồn
+117,0,심연 세트,Abyss Set,アビスセット,深渊套装,深淵套裝,Набор Бездны,Ensemble Abysse,Conjunto Abismo,Bộ Abyss
+118,0,백야 세트,White Night Set,ホワイトナイトセット,白夜套装,白夜套裝,Набор «Белая ночь»,Ensemble de nuit blanche,Conjunto Noche Blanca,Bộ phim Đêm Trắng
+119,0,붉은달 세트,Red Moon Set,赤い月が沈む,红月集,紅月集,Набор «Красная луна»,Ensemble de lune rouge,Conjunto de Luna Roja,Trăng Đỏ
+120,0,검은빛 세트,Black set,ブラックセット,黑色套装,黑色套裝,Черный комплект,Ensemble noir,Conjunto negro,Bộ màu đen
+121,0,마력 세트,Magic Power Set,魔法の力セット,魔法力量套装,魔法力量套裝,Набор магической силы,Ensemble de pouvoirs magiques,Conjunto de Poder Mágico,Bộ sức mạnh ma thuật
+122,0,전율 세트,Thrill Set,スリルセット,惊险套装,驚險套裝,Набор захватывающих моментов,Ensemble de sensations fortes,Conjunto emocionante,Bộ đồ chơi cảm giác mạnh
+123,0,사신 세트,Reaper Set,リーパーセット,死神套装,死神套裝,Набор Жнеца,Ensemble Faucheur,Conjunto de la Parca,Bộ Reaper
+124,0,파멸 세트,Ruin Set,遺跡セット,废墟集,廢墟集,Набор руин,Ensemble de ruines,Conjunto de ruinas,Bộ đổ nát
+125,0,황금 세트,Golden set,ゴールデンセット,黄金套装,黃金套裝,Золотой комплект,Ensemble doré,Conjunto dorado,Bộ vàng
+126,0,불멸 세트,Immortal Set,不滅セット,不朽套装,不朽套裝,Бессмертный набор,Ensemble immortel,Conjunto Inmortal,Bộ Bất Tử
+127,0,천둥 세트,Thunder set,雷が鳴る,雷霆,雷霆,Громовой сет,Ensemble de tonnerre,Conjunto de truenos,Sấm sét
+128,0,유성 세트,Meteor set,流星セット,流星套装,流星套裝,Набор «Метеор»,Ensemble de météores,Conjunto de meteoritos,Bộ thiên thạch
+129,0,타이탄 세트,Titan Set,タイタンセット,泰坦套装,泰坦套裝,Набор Титан,Ensemble Titan,Conjunto Titán,Bộ Titan
+130,0,용 세트,Dragon set,ドラゴンセット,龙套装,龍套裝,набор Дракона,Ensemble Dragon,Conjunto de dragón,Bộ rồng
+131,0,위대한 세트,Great set,素晴らしいセット,很棒的套装,很棒的套裝,Отличный набор,Superbe ensemble,Gran conjunto,Bộ tuyệt vời!
+132,0,절대자 세트,Absolute Set,絶対セット,绝对集,絕對集,Абсолютный набор,Ensemble absolu,Conjunto absoluto,Bộ tuyệt đối
+133,0,심판 세트,Referee set,審判が設定,裁判设置,裁判設定,Судья установил,L'arbitre a mis,Árbitro establecido,Trọng tài đã thiết lập
+134,0,운명 세트,Destiny Set,デスティニーセット,命运套装,命運套裝,Набор Судьбы,Ensemble Destinée,Conjunto Destino,Bộ Định Mệnh
+135,0,창공 세트,Sky Set,スカイセット,天空集,天空集,Небесный набор,Ciel,Conjunto de cielo,Hoàng hôn
+136,0,왕의 세트,King's Set,キングズセット,国王套装,國王套裝,Королевский набор,Ensemble du roi,Conjunto del rey,Bộ của Vua
+137,0,고대 세트,Ancient Set,古代セット,古代套装,古代套裝,Древний набор,Ensemble ancien,Conjunto antiguo,Bộ cổ đại
+138,0,시간 세트,Time set,時刻設定,时间设定,時間設定,Установлено время,Heure fixée,Hora establecida,Thời gian đã đặt
+139,0,초월 세트,Transcendence Set,超越セット,超越集,超越集,Набор Трансценденции,Ensemble de transcendance,Conjunto de trascendencia,Bộ sưu tập siêu việt
+140,0,혼돈 세트,Chaos Set,カオスセット,混沌套装,混沌套裝,Набор Хаоса,Ensemble du chaos,Conjunto del caos,Bộ hỗn loạn
+141,0,성역 세트,Sanctuary Set,サンクチュアリセット,圣所套装,聖所套裝,Набор для святилища,Ensemble Sanctuaire,Conjunto Santuario,Bộ sưu tập Sanctuary
+142,0,천상 세트,Heavenly Set,天上のセット,天地,天地,Небесный набор,Ensemble céleste,Conjunto celestial,Thiên đường
+143,0,신 세트,New set,新しいセット,新套装,新套裝,Новый набор,Nouvel ensemble,Nuevo conjunto,Bộ mới
+144,0,태초 세트,Primordial Set,原始セット,原始套装,原始套裝,Первородный набор,Ensemble primordial,Conjunto primordial,Bộ nguyên thủy
+145,0,쿨타임 {0}초,Cooldown {0} seconds,クールダウン{0}秒,冷却时间 {0} 秒,冷卻時間 {0} 秒,Время восстановления: {0} секунд,Délai de récupération {0} secondes,Tiempo de reutilización {0} segundos,Thời gian hồi chiêu {0} giây
+146,0,출석체크,Attendance check,出席確認,考勤核查,考勤核查,Проверка посещаемости,Contrôle de présence,Control de asistencia,Kiểm tra điểm danh
+147,0,우편,mail,郵便,邮件,郵件,почта,mail,correo,thư
+148,0,저장,save,保存,节省,節省,сохранять,sauvegarder,ahorrar,cứu
+149,0,공지사항,announcement,発表,公告,公告,объявление,annonce,anuncio,thông báo
+150,0,스토어,Store,店,店铺,店鋪,Магазин,Magasin,Almacenar,Cửa hàng
+151,0,구매복원,Purchase restoration,購入修復,购买恢复,購買恢復,Реставрация покупки,Restauration de l'achat,Restauración de compra,Khôi phục mua hàng
+152,0,문의,inquiry,問い合わせ,询问,詢問,расследование,enquête,consulta,cuộc điều tra
+153,0,닉네임변경,Change nickname,ニックネームを変更する,更改昵称,更改暱稱,Изменить никнейм,Changer de surnom,Cambiar apodo,Đổi biệt danh
+154,0,알림,alarm,アラーム,警报,警報,тревога,alarme,alarma,báo thức
+155,0,효과음,sound effects,効果音,音效,音效,звуковые эффекты,bruitage,efectos sonoros,hiệu ứng âm thanh
+156,0,배경음,Background music,BGM,背景音乐,背景音樂,Фоновая музыка,Musique de fond,Música de fondo,Nhạc nền
+157,0,화면진동,Screen vibration,画面の振動,屏幕震动,螢幕震動,Вибрация экрана,Vibrations de l'écran,Vibración de la pantalla,Rung màn hình
+158,0,절전모드,Power saving mode,省電力モード,省电模式,省電模式,режим энергосбережения,mode économie d'énergie,modo de ahorro de energía,Chế độ tiết kiệm năng lượng
+159,0,재생,reproduction,再生,生殖,生殖,воспроизведение,reproduction,reproducción,sinh sản
+160,0,강화시 파괴될 위험이 있어 잠금을 해제해주세요.,"There is a risk of destruction during enhancement, so please unlock it.",強化中に破損する恐れがありますので、必ずロックを解除してください。,强化过程中​​存在损坏风险，请解锁。,強化過程中有損壞風險，請解鎖。,"В процессе улучшения существует риск повреждения, поэтому, пожалуйста, разблокируйте его.","Il existe un risque de destruction lors de l'amélioration, veuillez donc la déverrouiller.","Existe riesgo de destrucción durante la mejora, así que desbloquéalo.","Có nguy cơ bị phá hủy trong quá trình nâng cấp, vì vậy vui lòng mở khóa."
+161,0,MISS,MISS,逃す,错过,錯過,СКУЧАТЬ,MANQUER,EXTRAÑAR,CÔ
+162,0,나이다,Naida,ナイダ,奈达,奈達,Найда,Naida,Naida,Naida
+163,0,원더,Wonder,不思議,想知道,想知道,Удивляться,Merveille,Preguntarse,Thắc mắc
+164,0,대시,dash,ダッシュ,短跑,短跑,бросаться,tiret,estrellarse,dấu gạch ngang
+165,0,철벽,Iron wall,鉄壁,铁墙,鐵牆,Железная стена,Mur de fer,Muro de hierro,Bức tường sắt
+166,0,강타,bang,バン,砰,砰,хлопнуть,claquer,estallido,tiếng nổ
+167,0,기절,fainting,失神,昏厥,昏厥,обморок,évanouissement,desmayo,ngất xỉu
+168,1,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>,<color=yellow>(▲{0}%)</color>
+169,0,장착중,Installing,インストール中,安装,安裝,Установка,Installation,Instalación,Cài đặt
+170,0,미션,Mission,ミッション,使命,使命,Миссия,Mission,Misión,Nhiệm vụ
+171,0,스킬 뽑기,Skill Draw,スキルドロー,技能抽卡,技能抽卡,Умелая игра,Tirage au sort,Dibujo de habilidad,Kỹ năng rút súng
+172,0,보석 뽑기,Gem Draw,ジェムドロー,宝石抽奖,寶石抽獎,Рисование драгоценных камней,Tirage de gemmes,Sorteo de gemas,Vẽ Đá Quý
+173,0,동료 뽑기,Recruiting companions,仲間を募集する,招募同伴,招募同伴,Вербовка компаньонов,Recrutement de compagnons,Reclutar compañeros,Tuyển dụng đồng đội
+174,0,특성 뽑기,Trait Draw,特性ドロー,特性抽取,特性抽取,Рисунок черты,Tirage de traits,Dibujo de rasgos,Rút thăm đặc điểm
+175,0,제작완료,Production completed,生産完了,生产完成,生產完成,Производство завершено,Production terminée,Producción finalizada,Quá trình sản xuất đã hoàn tất.
+176,0,판매,sale,販売,销售,銷售,распродажа,vente,venta,doanh thu
+177,0,강화실패,Enhancement failure,機能強化の失敗,增强失败,增強失敗,Неудача при улучшении,Échec de l'amélioration,Fallo de mejora,Thất bại trong việc cải tiến
+178,0,강화결과,Reinforcement result,強化結果,强化结果,強化結果,Результат подкрепления,Résultat du renforcement,Resultado del refuerzo,Kết quả củng cố
+179,0,전투결과,Battle results,戦闘結果,战斗结果,戰鬥結果,Результаты боя,Résultats de la bataille,Resultados de la batalla,Kết quả trận chiến
+180,0,재도전,Retry,リトライ,重试,重試,Повторить попытку,Réessayer,Rever,Thử lại
+181,0,다음단계,Next step,次のステップ,下一步,下一步,Следующий шаг,Étape suivante,Siguiente paso,Bước tiếp theo
+182,0,합성결과,Synthesis result,合成結果,合成结果,合成結果,Результат синтеза,Résultat de la synthèse,Resultado de la síntesis,Kết quả tổng hợp
+183,0,분해결과,Decomposition result,分解結果,分解结果,分解結果,Результат разложения,Résultat de la décomposition,Resultado de la descomposición,Kết quả phân hủy
+184,0,우편보상,Mail reward,郵便報酬,邮件奖励,郵件獎勵,Почтовое вознаграждение,Récompense postale,recompensa por correo,Phần thưởng qua thư
+185,0,아직 열리지 않았습니다.,It hasn't opened yet.,まだオープンしていません。,它还没开业。,它還還沒開業。,Оно ещё не открылось.,Il n'a pas encore ouvert.,Todavía no ha abierto.,Nó vẫn chưa mở cửa.
+186,0,입장 가능,Admission available,入場可能,可入学,可入學,Вход свободный,Admission disponible,Admisión disponible,Có thể vào cửa
+187,0,광고 보기,View Ad,広告を見る,查看广告,查看廣告,Посмотреть объявление,Voir l'annonce,Ver anuncio,Xem quảng cáo
+188,0,빨강,red,赤,红色的,紅色的,красный,rouge,rojo,màu đỏ
+189,0,파랑,blue,青,蓝色的,藍色的,синий,bleu,azul,màu xanh da trời
+190,0,하늘,sky,空,天空,天空,небо,ciel,cielo,bầu trời
+191,0,노랑,yellow,黄色,黄色的,黃色的,желтый,jaune,amarillo,màu vàng
+192,0,초록,abstract,抽象的な,抽象的,抽象的,абстрактный,abstrait,abstracto,tóm tắt
+193,0,하얀,white,白,白色的,白色的,белый,blanc,blanco,trắng
+194,0,회색,gray,グレー,灰色的,灰色的,серый,gris,gris,xám
+195,0,연두,light green,薄緑色,浅绿色,淺綠色,светло-зелёный,vert clair,verde claro,xanh lá nhạt
+196,0,검정,black,黒,黑色的,黑色的,черный,noir,negro,đen
+197,0,연습생,Trainee,研修生,学员,學員,Стажер,Stagiaire,Aprendiz,Thực tập sinh
+198,0,데뷔,Debut,デビュー,首次亮相,首次亮相,Дебют,Début,Debut,Ra mắt
+199,0,루키,Rookie,ルーキー,新秀,新秀,Новобранец,Débutant,Novato,Tân binh
+200,0,신예,New Face,新しい顔,新面孔,新面孔,Новое лицо,Nouveau visage,Nueva cara,Gương mặt mới
+201,0,라이징스타,Rising Star,ライジングスター,冉冉升起的新星,冉冉升起的新星,Восходящая звезда,Étoile montante,Estrella en ascenso,Ngôi sao đang lên
+202,0,인기돌,Pupular Idol,人気アイドル,流行偶像,流行偶像,Популярный кумир,Idole populaire,Ídolo popular,Thần tượng phổ biến
+203,0,핫스타,Hot Star,ホットスター,热星,熱星,Горячая Звезда,Hot Star,Estrella caliente,Ngôi sao nóng bỏng
+204,0,대스타,Big Star,ビッグスター,大明星,大明星,Большая Звезда,Grande star,Gran estrella,Ngôi sao lớn
+205,0,톱스타,Top Star,トップスター,顶级明星,頂級明星,Топ-звезда,Top Star,Estrella principal,Ngôi sao hàng đầu
+206,0,아이콘,Icon,アイコン,图标,圖示,Икона,Icône,Icono,Biểu tượng
+207,0,슈퍼스타,Super Star,スーパースター,超级巨星,超級巨星,Суперзвезда,Super Star,Superestrella,Siêu sao
+208,0,월드스타,World Star,ワールドスター,世界之星,世界之星,Мировая звезда,Étoile du monde,Estrella del mundo,Ngôi sao thế giới
+209,0,우주대스타,Universe Star,宇宙の星,宇宙之星,宇宙之星,Звезда Вселенной,Étoile de l'Univers,Estrella del Universo,Ngôi sao vũ trụ
+210,0,레전드,Legend,伝説,传奇,傳奇,Легенда,Légende,Leyenda,Huyền thoại
+211,0,이터널스타,Eternal Star,エターナルスター,永恒之星,永恆之星,Вечная Звезда,Étoile éternelle,Estrella Eterna,Ngôi Sao Vĩnh Hằng
+212,0,재선택,Re-selection,再選,重新选举,重新選舉,Повторный выбор,Re-sélection,Reselección,Tái tuyển chọn
+213,0,자동,automatic,自動,自动的,自動的,автоматический,automatique,automático,tự động
+214,0,공격력%,Attack Power %,攻撃力％,攻击力%,攻擊力%,Сила атаки %,Puissance d'attaque %,Poder de ataque %,Sức tấn công %
+215,0,체력%,Stamina %,スタミナ％,耐力百分比,耐力百分比,Выносливость %,Endurance %,Resistencia %,Sự bền bỉ %
+216,0,회피 특화,Evasion specialization,回避特化,闪避专精,閃避專精,Специализация на уклонении,spécialisation en évasion,especialización en evasión,Chuyên môn né tránh
+217,0,동료 쿨감,Reduced cooldown of companions,コンパニオンのクールダウン時間を短縮,减少同伴技能冷却时间,減少同儕技能冷卻時間,Сокращено время восстановления способностей спутников.,Réduction du temps de recharge des compagnons,Reducción del tiempo de reutilización de los compañeros,Giảm thời gian hồi chiêu của đồng đội
+218,1,<color=red>Lv.{0}</color> 오픈,<color=red>Lv.{0}</color> Open,<color=red>Lv.{0}</color> 開く,<color=red>Lv.{0}</color> 打开,<color=red>Lv.{0}</color> 打開,<color=red>Уровень{0}</color> Открыть,<color=red>Niv.{0}</color> Ouvrir,<color=red>Nivel{0}</color> Abierto,<color=red>Lv.{0}</color> Mở
+219,0,출석체크,Attendance check,出席確認,考勤核查,考勤核查,Проверка посещаемости,Contrôle de présence,Control de asistencia,Kiểm tra điểm danh
+220,0,내구도,Durability,耐久性,耐久性,耐久性,Долговечность,Durabilité,Durabilidad,Độ bền
+221,0,실패하여 내구도가 <color=red>1</color> 감소했습니다.,Failure resulted in a decrease of <color=red>1</color> in durability.,故障により耐久性が<color=red>1</color>低下しました。,故障导致耐久性下降了<color=red>1</color>。,故障導致耐久性下降了<color=red>1</color>。,В результате отказа прочность снизилась на <color=red>1</color>.,Cette défaillance a entraîné une diminution de <color=red>1</color> de la durabilité.,El fallo resultó en una disminución de <color=red>1</color> en la durabilidad.,Sự cố này dẫn đến giảm độ bền đi <color=red>1</color>.
+222,0,월드투어,World Tour,ワールドツアー,世界巡回赛,世界巡迴賽,Мировое турне,Tour du monde,Gira mundial,Chuyến lưu diễn vòng quanh thế giới
+223,0,합성,synthesis,合成,合成,合成,синтез,synthèse,síntesis,tổng hợp
+224,0,승급,advancement,アドバンス,进步,進步,продвижение,avancement,adelanto,sự tiến bộ
+225,1,미션 <color=red>{0}</color> 잠금 해제,Unlock Mission <color=red>{0}</color>,ミッションをアンロック <color=red>{0}</color>,解锁任务 <color=red>{0}</color>,解鎖任務 <color=red>{0}</color>,Разблокировать миссию <color=red>{0}</color>,Débloquer la mission <color=red>{0}</color>,Desbloquear misión <color=red>{0}</color>,Mở khóa nhiệm vụ <color=red>{0}</color>
+226,0,최소,minimum,最小,最低限度,最低限度,минимум,minimum,mínimo,tối thiểu
+227,0,장착효과,Installation effect,設置効果,安装效果,安裝效果,эффект установки,Effet d'installation,Efecto de instalación,Hiệu ứng cài đặt
+228,0,회수,collect,集める,收集,收集,собирать,collecter,recolectar,sưu tầm
+229,1,LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1},LV {0} <color=green>▶</color> LV {1}
+230,1,{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1},{0} <color=green>▶</color> {1}
+231,1,{0} 등급,{0} grade,{0} グレード,{0} 等级,{0} 等級,0-й класс,{0} niveau,{0} grado,{0} điểm
+232,1,{0} 개,{0} pieces,{0}個,{0} 件,{0} 件,{0} штук,{0} pièces,{0} piezas,{0} mảnh
+233,1,{0} 단계,{0} Stage,{0} ステージ,{0} 阶段,{0} 階段,{0} Этап,Étape {0},{0} Etapa,{0} Giai đoạn
+234,1,침공,Invasion,侵入,入侵,入侵,Вторжение,Invasion,Invasión,Xâm lược
+235,1,루비,ruby,ルビー,红宝石,紅寶石,рубин,rubis,rubí,hồng ngọc
+236,1,사파이어,sapphire,サファイア,蓝宝石,藍寶石,сапфир,saphir,zafiro,sapphire
+237,1,아쿠아마린,Aquamarine,アクアマリン,蓝晶,藍晶,Аквамарин,Bleu vert,Aguamarina,Aquamarine
+238,1,토파즈,Topaz,トパーズ,黄玉,黃玉,Топаз,Topaze,Topacio,Topaz
+239,1,에메랄드,emerald,エメラルド,翠,翠,изумруд,émeraude,esmeralda,ngọc lục bảo
+240,1,다이아몬드,diamond,ダイヤモンド,钻石,鑽石,бриллиант,diamant,diamante,kim cương
+241,1,오닉스,onyx,オニキス,缟玛瑙,縞瑪瑙,оникс,onyx,ónix,đá onyx
+242,1,페리도트,Peridot,ペリドット,橄榄石,橄欖石,Перидот,Péridot,Peridoto,Peridot
+243,1,옵시디언,Obsidian,黒曜石,黑曜石,黑曜石,Обсидиан,Obsidienne,Obsidiana,Đá obsidian
+244,1,{0}초후 자동진행,Automatic progression after {0} seconds,{0}秒後に自動的に進行します,0 秒后自动开始,0 秒後自動開始,Автоматическое продолжение через {0} секунд,Progression automatique après {0} secondes,Progresión automática después de {0} segundos,Tự động chuyển tiếp sau {0} giây
+245,0,효과,effect,効果,影响,影響,эффект,effet,efecto,tác dụng
+246,0,효과 없음,No effect,効果なし,无影响,無影響,Нет эффекта,Aucun effet,Ningún efecto,Không có tác dụng
+247,1,강화<size=30><color=red>({0}%)</color></size>,Reinforcement<size=30><color=red>({0}%)</color></size>,補強<size=30><color=red>({0}%)</color></size>,加固<size=30><color=red>({0}%)</color></size>,加固<size=30><color=red>({0}%)</color></size>,Усиление<size=30><color=red>({0}%)</color></size>,Renforcement<size=30><color=red>({0}%)</color></size>,Refuerzo<size=30><color=red>({0}%)</color></size>,Gia cố<size=30><color=red>({0}%)</color></size>
+248,0,보유효과,Endowment effect,保有効果,禀赋效应,禀賦效應,эффект владения,Effet de dotation,Efecto dotación,Hiệu ứng tài sản
+249,0,변경,change,変化,改变,改變,изменять,changement,cambiar,thay đổi
+250,0,사용중,In use,使用中,正在使用中,正在使用中,В использовании,Utilisé,En uso,Đang sử dụng
+251,0,구매,purchase,購入,购买,購買,покупка,achat,compra,mua
+252,2,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>,{0} <size=40><color=green>▲ {1}</color></size>
+253,0,전투력,AP,AP,AP,AP,AP,AP,AP,AP
+254,0,<color=red>전설 </color>부터는 <color=yellow>승급</color> 으로 획득 가능합니다.,"From <color=red>Legend</color> onwards, you can obtain them through <color=yellow>Promotion</color>.",<color=red>Legend</color>以降は、<color=yellow>Promotion</color>を通じて入手できます。,从《传奇》开始，您可以通过《晋升》获得它们。,從《傳奇》開始，您可以透過《晉升》獲得它們。,"Начиная с <color=red>Легенды</color>, вы можете получить их через <color=yellow>Акцию</color>.","À partir de <color=red>Légende</color>, vous pouvez les obtenir via <color=yellow>Promotion</color>.","A partir de <color=red>Leyenda</color>, puedes obtenerlos mediante <color=yellow>Promoción</color>.","Từ cấp độ <color=red>Huyền thoại</color> trở đi, bạn có thể nhận được chúng thông qua <color=yellow>Khuyến mãi</color>."
+255,2,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>,{0} <size=40><color=red>▼ {1}</color></size>
+256,0,장비 판매,Equipment sales,機器販売,设备销售,設備銷售,Продажа оборудования,Vente d'équipement,Venta de equipos,Bán thiết bị
+257,0,장비를 판매하시겠습니까?,Would you like to sell the equipment?,その機器を売却したいですか？,您愿意出售这套设备吗？,您願意出售這套設備嗎？,Вы хотели бы продать оборудование?,Souhaiteriez-vous vendre le matériel ?,¿Le gustaría vender el equipo?,Bạn có muốn bán thiết bị này không?
+258,0,판매,Sell,売る,卖,賣,Продавать,Vendre,Vender,Bán
+259,0,장비가 파괴되었습니다.,The equipment was destroyed.,機器は破壊された。,设备已被损毁。,設備已被損毀。,Оборудование было уничтожено.,Le matériel a été détruit.,El equipo quedó destruido.,Thiết bị đã bị phá hủy.
+260,0,{0}/{1} 구매가능,{0}/{1},{0}/{1},{0}/{1},{0}/{1},{0}/{1},{0}/{1},{0}/{1},{0}/{1}
+261,0,구매완료,Purchase completed,購入完了,购买已完成,購買已完成,Покупка завершена,Achat terminé,Compra completada,Giao dịch mua bán hoàn tất
+262,0,갱신중,Updating,更新中,正在更新,正在更新,Обновление,Mise à jour,Actualizando,Đang cập nhật
+263,0,상품구매,Product purchase,製品購入,产品购买,產品購買,покупка товара,Achat de produits,Compra de producto,Mua sản phẩm
+264,1,{0} 다발,{0} bundle,{0} バンドル,{0} 捆绑包,{0} 捆綁包,{0} пучок,{0} paquet,{0} paquete,{0} bó
+265,1,{0} 무더기,{0} Heap,{0} ヒープ,{0} 堆,{0} 堆,{0} Куча,{0} Tas,{0} Montón,{0} Heap
+266,1,{0} 주머니,{0} pocket,{0} ポケット,{0} 口袋,{0} 口袋,{0} карман,poche {0},{0} bolsillo,{0} túi
+267,1,{0} 자루,{0} bag,{0}バッグ,{0} 袋,{0} 袋,{0} сумка,{0} sac,{0} bolsa,Túi {0}
+268,1,{0} 궤짝,{0} chest,{0} 胸,{0} 箱子,{0} 箱子,{0} сундук,{0} coffre,{0} cofre,Ngực {0}
+269,1,{0}를 구매하시겠습니까?,Would you like to purchase {0}?,{0}を購入しますか？,您想购买{0}吗？,您想購買{0}嗎？,Хотите приобрести {0}?,Souhaitez-vous acheter {0} ?,¿Te gustaría comprar {0}?,Bạn có muốn mua {0} không?
+270,0,아리아 패키지,Aria Package,ARIAパッケージ,咏叹调套餐,詠嘆調套餐,Пакет Aria,Pack Aria,Paquete Aria,Gói Aria
+271,0,리나 패키지,Lina Package,リナ・パッケージ,莉娜包裹,莉娜包裹,Пакет Лины,Paquet Lina,Paquete Lina,Gói Lina
+272,0,헬렌 패키지,Helen Package,ヘレン・パッケージ,海伦包裹,海倫包裹,Пакет Хелен,Helen Package,Paquete Helen,Gói Helen
+273,0,셀리아 패키지,Celia Package,セリアパッケージ,西莉亚·帕吉,西莉亞·帕吉,Пакет услуг для Селии,Celia Package,Paquete Celia,Gói hàng Celia
+274,0,펭 패키지,Penguin Package,ペンギンパッケージ,企鹅包裹,企鵝包裹,"Пакет ""Пингвин""",Paquet de pingouins,Paquete Pingüino,Gói Penguin
+275,0,시리아 패키지,Syria package,シリア関連パッケージ,叙利亚方案,敘利亞計畫,пакет мер для Сирии,colis Syrie,paquete de Siria,Gói hàng Syria
+276,0,나이다 패키지,Naida Package,ナイダパッケージ,奈达套餐,奈達套餐,Пакет «Найда»,Forfait Naïda,Paquete Naïda,Gói Naida
+277,0,원더 패키지,Wonder Package,ワンダーパッケージ,神奇包裹,神奇包裹,Чудо-пакет,Wonder Package,Paquete Maravilla,Gói Kỳ Diệu
+278,0,광고 제거 패키지,Ad removal package,広告削除パッケージ,广告移除套餐,廣告移除套餐,пакет для удаления рекламы,Pack de suppression de publicités,paquete de eliminación de anuncios,Gói loại bỏ quảng cáo
+279,0,초보자 패키지,Beginner Package,初心者向けパッケージ,入门套餐,入門套餐,Пакет для начинающих,Pack débutant,Paquete para principiantes,Gói dành cho người mới bắt đầu
+280,0,성장 패키지,Growth Package,成長支援パッケージ,增长计划,成長計劃,Пакет развития,Pack de croissance,Paquete de crecimiento,Gói tăng trưởng
+281,0,동료 패키지,Companion Package,コンパニオンパッケージ,配套包,配套包,Сопутствующий пакет,Pack d'accompagnement,Paquete complementario,Gói đi kèm
+282,0,무기 패키지,Weapon Package,武器パッケージ,武器包,武器包,Комплект вооружения,Ensemble d'armes,Paquete de armas,Gói vũ khí
+283,0,오라 패키지,Aura Package,オーラパッケージ,灵气套装,靈氣套裝,Пакет Аура,Pack Aura,Paquete Aura,Gói Aura
+284,0,데미지,damage,ダメージ,损害,損害,повреждать,dommage,daño,hư hại
+285,0,최종 피해량,Final damage amount,最終的な損害額,最终损失金额,最終損失金額,Окончательная сумма ущерба,montant final des dommages,Monto final de los daños,Số tiền sát thương cuối cùng
+286,0,쿨타임 감소,Cooldown reduction,クールダウン短縮,冷却时间缩短,冷卻時間縮短,Снижение времени охлаждения,Réduction du temps de recharge,Reducción del tiempo de reutilización,Giảm thời gian hồi chiêu
+287,0,개체수 증가,population increase,人口増加,人口增长,人口成長,увеличение населения,augmentation de la population,aumento de la población,gia tăng dân số
+288,0,빗나감,Miss,逃す,错过,錯過,Скучать,Manquer,Extrañar,Cô
+289,0,치명타,Critical hit,クリティカルヒット,暴击,暴擊,Критический удар,Coup critique,Golpe crítico,Đòn chí mạng
+290,0,점화,ignition,点火,点火,點火,зажигание,allumage,encendido,đánh lửa
+291,0,중독,poisoning,中毒,中毒,中毒,отравление,empoisonnement,envenenamiento,ngộ độc
+292,0,약화,weakening,弱体化,减弱,減弱,ослабление,affaiblissement,debilitación,suy yếu
+293,0,처단,Execution,実行,执行,執行,Исполнение,Exécution,Ejecución,Thực thi
+294,0,일일 패키지,Daily Package,日替わりパッケージ,每日包裹,每日包裹,Ежедневный пакет,Forfait journalier,Paquete diario,Gói hàng ngày
+295,0,주간 패키지,Weekly Package,週単位パッケージ,每周包裹,每週包裹,Еженедельный пакет,Forfait hebdomadaire,Paquete semanal,Gói hàng tuần
+296,0,월간 패키지,Monthly package,月額パッケージ,月度套餐,月度套餐,Ежемесячный пакет,forfait mensuel,paquete mensual,Gói hàng tháng
+297,0,무료,free,無料,自由的,自由的,бесплатно,gratuit,gratis,miễn phí
+298,0,사용,use,使用,使用,使用,использовать,utiliser,usar,sử dụng
+299,0,이동,go,行く,去,去,идти,aller,ir,đi
+300,0,해당 미션에서는 판매가 불가능합니다.,Selling is not possible in this mission.,このミッションでは販売はできません。,本次任务中不允许进行销售。,本次任務中無法進行銷售。,В этой миссии продажа товаров невозможна.,La vente n'est pas possible dans le cadre de cette mission.,En esta misión no es posible vender.,Việc bán hàng là không thể trong nhiệm vụ này.
+301,0,피해량,Damage amount,損害額,损失金额,損失金額,Сумма ущерба,montant des dommages,Cantidad de daños,Số tiền thiệt hại
+302,0,보스 피해,Boss damage,ボスへのダメージ,首领伤害,首領傷害,Урон боссу,Dégâts du boss,Daño del jefe,Sát thương của trùm
+303,0,지속시간,Duration,間隔,期间,期間,Продолжительность,Durée,Duración,Khoảng thời gian
+304,0,마스터리 초기화,Mastery Reset,マスタリーリセット,精通重置,精通重置,Сброс мастерства,Réinitialisation de la maîtrise,Reinicio de maestría,Thiết lập lại kỹ năng
+305,0,마스터리를 초기화 하시겠습니까?,Would you like to reset the mastery?,習熟度をリセットしますか？,您想重置精通等级吗？,您想重置精通等級嗎？,Хотите сбросить уровень мастерства?,Souhaitez-vous réinitialiser la maîtrise ?,¿Te gustaría restablecer la maestría?,Bạn có muốn đặt lại cấp độ thành thạo không?
+306,0,초기화,reset,リセット,重置,重置,перезагрузить,réinitialiser,reiniciar,cài lại
+307,0,마스터리가 초기화 되었습니다.,Mastery has been reset.,熟練度がリセットされました。,精通等级已重置。,精通等級已重置。,Уровень мастерства сброшен.,La maîtrise a été réinitialisée.,La maestría se ha restablecido.,Thành tích đã được thiết lập lại.
+308,0,미획득,Unobtained,未取得,未获得的,未獲得的,Не получено,Non obtenu,No obtenido,Chưa thu được
+309,0,동일한 보석끼리만 합성이 가능합니다.,Synthesis is only possible between identical gems.,合成は、同一の宝石同士でのみ可能です。,只有完全相同的宝石才能进行合成。,只有完全相同的寶石才能進行合成。,Синтез возможен только между идентичными драгоценными камнями.,La synthèse n'est possible qu'entre gemmes identiques.,La síntesis solo es posible entre gemas idénticas.,Quá trình tổng hợp chỉ có thể thực hiện giữa các viên đá quý giống hệt nhau.
+310,0,착용효과,Wearing effect,着用効果,磨损效果,磨損效果,Эффект ношения,Effet de port,Efecto de uso,Hiệu ứng mài mòn
+311,0,보유효과,Endowment effect,保有効果,禀赋效应,禀賦效應,эффект владения,Effet de dotation,Efecto dotación,Hiệu ứng tài sản
+312,0,없음,doesn't exist,存在しない,不存在,不存在,не существует,n'existe pas,no existe,không tồn tại
+313,0,판매완료,Sold,売却済み,卖,賣,Продал,Vendu,Vendido,Đã bán
+314,0,재침공 침공시간 감소,Re-invasion invasion time reduction,再侵入侵入時間の短縮,再次入侵 入侵时间缩短,再次入侵 入侵時間縮短,Сокращение времени повторного вторжения,Réduction du temps d'invasion lors de la réinvasion,Reducción del tiempo de reinvasión,Giảm thời gian tái xâm lược
+315,0,교환되는 골드는 스테이지 진행도에 따라 달라집니다.,The amount of gold exchanged varies depending on the stage progress.,交換される金の量は、ステージの進行状況によって異なります。,根据游戏阶段的进展情况，交换的黄金数量会有所不同。,根據遊戲階段的進展情況，交換的黃金數量會有所不同。,Объем обмениваемого золота варьируется в зависимости от этапа развития проекта.,La quantité d'or échangée varie en fonction de l'avancement du niveau.,La cantidad de oro intercambiada varía según el progreso de la etapa.,Lượng vàng trao đổi sẽ thay đổi tùy thuộc vào tiến độ của màn chơi.
+316,0,갱신 시간 {0},Update time {0},更新時刻 {0},更新时间 {0},更新時間 {0},Время обновления {0},Heure de mise à jour {0},Hora de actualización {0},Thời gian cập nhật {0}
+317,0,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>,<color=yellow>▲{0}%</color>
+318,0,추억의 뽑기,Nostalgic Claw Machine,懐かしのクレーンゲーム,怀旧抓娃娃机,懷舊抓娃娃機,Ностальгический игровой автомат с клешней,Machine à pinces nostalgique,Máquina de garras nostálgica,Máy gắp thú nhồi bông hoài cổ
+319,0,케이팝 마블,K-pop Marvel,K-POPマーベル,K-pop漫威,K-pop漫威,K-pop Marvel,K-pop Marvel,K-pop Marvel,K-pop Marvel
+320,0,해당 판을 완료하여 새로운 판으로 교체합니다.,Complete the corresponding plate to replace it with a new one.,対応するプレートを完成させて、新しいプレートと交換してください。,完成相应的铭牌，即可用新铭牌替换旧铭牌。,完成對應的銘牌，即可用新銘牌取代舊銘牌。,"Завершите заполнение соответствующей пластины, чтобы заменить ее новой.",Complétez la plaque correspondante pour la remplacer par une neuve.,Complete la placa correspondiente para reemplazarla por una nueva.,Hoàn thành tấm tương ứng để thay thế bằng tấm mới.
+321,0,각인보너스,Engraving Bonus,刻印特典,刻字奖励,刻字獎勵,Бонус за гравировку,Bonus de gravure,Bonificación por grabado,Quà tặng khắc chữ
+322,0,동료보너스,Companion Bonus,コンパニオンボーナス,同伴奖励,同儕獎勵,Бонус компаньона,Bonus compagnon,Bonificación de compañero,Phần thưởng dành cho người đồng hành
+323,0,보물찾기,treasure hunt,宝探し,寻宝游戏,尋寶遊戲,поиск сокровищ,chasse au trésor,búsqueda del tesoro,cuộc săn tìm kho báu
+324,0,버서커,Berserker,バーサーカー,狂战士,狂戰士,Берсерк,Berserker,Berserker,Chiến binh cuồng nộ
+325,0,드림,Dream,夢,梦,夢,Мечтать,Rêve,Sueño,Mơ
+326,1,오늘 침공 횟수 : {0},Number of invasions today : {0},本日の侵攻回数：{0},今日入侵次数：{0},今日入侵次數：{0},Количество вторжений сегодня: {0},Nombre d'invasions aujourd'hui : {0},Número de invasiones hoy: {0},Số lượng cuộc xâm lược hôm nay: {0}
+327,0,각인,engraving,彫刻,雕刻,雕刻,гравюра,gravure,grabado,khắc
+328,0,특수장비,Special equipment,特殊装備,特殊设备,特殊設備,Специальное оборудование,Équipement spécial,Equipos especiales,Thiết bị đặc biệt
+329,0,닉네임 설정이 완료되었습니다.,Nickname setting is complete.,ニックネームの設定が完了しました。,昵称设置完成。,暱稱設定完成。,Настройка псевдонима завершена.,La configuration du surnom est terminée.,La configuración del apodo está completa.,Việc thiết lập biệt danh đã hoàn tất.
+330,0,중복된 닉네임입니다.,This nickname is already taken.,このニックネームは既に使われています。,这个昵称已经被占用了。,這個暱稱已經被佔用了。,Это прозвище уже занято.,Ce surnom est déjà pris.,Este apodo ya está ocupado.,Biệt danh này đã có người sử dụng rồi.
+331,0,형식이 잘못되엇습니다.,The format is incorrect.,フォーマットが間違っています。,格式不正确。,格式不正確。,Формат неверный.,Le format est incorrect.,El formato es incorrecto.,Định dạng không chính xác.
+332,0,닉네임을 입력해주세요,Please enter your nickname,ニックネームを入力してください,请输入您的昵称,請輸入您的暱稱,"Пожалуйста, введите свой никнейм.",Veuillez saisir votre pseudonyme,"Por favor, introduce tu apodo",Vui lòng nhập biệt danh của bạn
+333,0,광고보고 입장,Enter after watching the ad,広告を見た後に入場してください,看完广告后即可进入,看完廣告後即可進入,Войдите после просмотра рекламы.,Entrez après avoir visionné la publicité,Entra después de ver el anuncio.,Vào sau khi xem quảng cáo.
+334,0,오늘 침공 성공 횟수 : {0} <color=yellow>(골드엔진 사용 : {1}회)</color>,Today's Invasion Success Count : {0} <color=yellow>(Gold Engine Used : {1} times)</color>,本日の侵略成功回数：{0} <color=yellow>(ゴールドエンジン使用回数：{1}回)</color>,今日入侵成功次数：{0} <color=yellow>（使用黄金引擎：{1} 次）</color>,今日入侵成功次數：{0} <color=yellow>（使用黃金引擎：{1} 次）</color>,Количество успешных вторжений сегодня: {0} <color=yellow>(Использовано золотого движка: {1} раз)</color>,Nombre d'invasions réussies aujourd'hui : {0} <color=yellow>(Moteur d'or utilisé : {1} fois)</color>,Recuento de éxitos de invasión de hoy: {0} <color=yellow>(Motor de oro usado: {1} veces)</color>,Số lần xâm lược thành công hôm nay: {0} <color=yellow>(Đã sử dụng động cơ vàng: {1} lần)</color>
+335,0,스킬 판매,Skill sales,スキルセールス,技能销售,技能銷售,продажи навыков,Vente de compétences,Ventas de habilidades,Kỹ năng bán hàng
+336,0,특수 무기 분해,Special Weapon Disassembly,特殊兵器の分解,特种武器拆卸,特種武器拆卸,Разборка специального оружия,Démontage d'armes spéciales,Desmontaje de armas especiales,Tháo rời vũ khí đặc biệt
+337,0,오라 분해,Aura Decomposition,オーラ分解,灵气分解,靈氣分解,Разложение ауры,Décomposition de l'aura,Descomposición del aura,Phân hủy hào quang
+338,0,먼저 장비를 해제해주세요.,Please unequip the device first.,まず、デバイスの装備を解除してください。,请先卸载设备。,請先卸載設備。,"Пожалуйста, сначала отключите устройство.",Veuillez d'abord déséquiper l'appareil.,"Por favor, desactive primero el dispositivo.",Vui lòng tháo thiết bị ra trước.
+339,0,오늘 하루 묻지 않기,Don't ask today,今日は聞かないで,今天别问了。,今天別問了。,Не спрашивайте сегодня,Ne posez pas la question aujourd'hui,No preguntes hoy,Đừng hỏi hôm nay
+340,0,잠재력 변경,Change potential,変化の可能性,变化潜力,變化潛力,Потенциал перемен,Potentiel de changement,Potencial de cambio,Tiềm năng thay đổi
+341,0,새로운 잠재력으로 변경하시겠습니까?,Would you like to change to the new potential?,新たな可能性へと変化してみませんか？,你想转型迎接新的挑战吗？,你想轉型迎接新的挑戰嗎？,Хотите перейти на новый уровень?,Souhaiteriez-vous évoluer vers ce nouveau potentiel ?,¿Te gustaría cambiar al nuevo potencial?,Bạn có muốn chuyển sang mức tiềm năng mới không?
+342,0,높은 등급의 잠재력을 변경하시겠습니까?,Would you like to change the high-grade potential?,高い潜在能力を変更したいですか？,你想改变高品位潜力吗？,你想改變高品味潛力嗎？,Хотите изменить потенциал высокого качества?,Souhaiteriez-vous modifier le potentiel de haut niveau ?,¿Te gustaría cambiar el potencial de alta calificación?,Bạn có muốn thay đổi tiềm năng cao cấp này không?
+343,0,▲,▲,▲,▲,▲,▲,▲,▲,▲
+344,0,{0}개,{0} items,{0}個のアイテム,{0} 项,{0} 項,{0} предметов,{0} éléments,{0} artículos,{0} mục
+345,0,교환,exchange,交換,交换,交換,обмен,échange,intercambio,trao đổi
+346,2,(하루 최대 {0}/<color=yellow>{1}</color>개),(Maximum {0}/{1} per day),（1日あたり最大{0}/{1}）,（每天最多{0}/{1}）,（每天最多{0}/{1}）,(Максимум {0}/{1} в день),(Maximum {0}/{1} par jour),(Máximo {0}/{1} por día),(Tối đa {0}/{1} mỗi ngày)
+347,0,계정 연동이 완료되었습니다.,Account linking is complete.,アカウント連携が完了しました。,账户关联已完成。,帳戶關聯已完成。,Привязка учетных записей завершена.,La liaison des comptes est terminée.,La vinculación de cuentas se ha completado.,Việc liên kết tài khoản đã hoàn tất.
+348,0,계정 연동이 실패했습니다.({0}),Account linking failed. ({0}),アカウント連携に失敗しました。（{0}）,账户关联失败。({0}),帳戶關聯失敗。 ({0}),Не удалось связать учетную запись. ({0}),Échec de la liaison des comptes. ({0}),Error al vincular la cuenta. ({0}),Liên kết tài khoản thất bại. ({0})
+349,0,해당 계정은 이미 다른 계정과 연결되어 있습니다.,This account is already linked to another account.,このアカウントは既に別のアカウントにリンクされています。,此账户已关联其他账户。,此帳戶已關聯其他帳戶。,Этот аккаунт уже связан с другим аккаунтом.,Ce compte est déjà lié à un autre compte.,Esta cuenta ya está vinculada a otra cuenta.,Tài khoản này đã được liên kết với một tài khoản khác.
+350,0,동일한 계정이 접속중입니다.,The same account is logged in.,同じアカウントでログインしています。,已登录同一账户。,已登入同一帳戶。,В систему вошла та же учетная запись.,Le même compte est connecté.,La misma cuenta está conectada.,Cùng một tài khoản đang đăng nhập.
+351,0,서버 점검 중입니다.,The server is undergoing maintenance.,サーバーはメンテナンス中です。,服务器正在维护中。,伺服器正在維護中。,Сервер находится на техническом обслуживании.,Le serveur est en cours de maintenance.,El servidor está en mantenimiento.,Máy chủ đang được bảo trì.
+352,0,접속 실패,Connection failed,接続に失敗しました,连接失败,連線失敗,Соединение не удалось.,Échec de la connexion,Falló la conexión.,Kết nối thất bại
+353,0,나가기,Exit,出口,出口,出口,Выход,Sortie,Salida,Ra
+354,0,쿠폰,coupon,クーポン,优惠券,優惠券,купон,coupon,cupón,phiếu giảm giá
+355,0,확인,check,チェック,查看,查看,проверять,vérifier,controlar,kiểm tra
+356,0,패시브,Passive,受け身,被动的,被動的,Пассивный,Passif,Pasivo,Thụ động
+357,0,동료를 장착할 슬롯이 없습니다.,There is no slot to equip a companion.,仲間を装備するためのスロットはありません。,没有装备同伴的栏位。,沒有裝備同伴的欄位。,Нет слота для экипировки компаньона.,Il n'y a pas d'emplacement pour équiper un compagnon.,No hay espacio para equipar un compañero.,Không có ô để trang bị đồng hành.
+358,0,쿠폰을 입력하세요,Please enter the coupon.,クーポンを入力してください。,请输入优惠券代码。,請輸入優惠券代碼。,"Пожалуйста, введите купон.",Veuillez saisir le code promo.,"Por favor, introduzca el cupón.",Vui lòng nhập mã giảm giá.
+359,0,업데이트,Update,アップデート,更新,更新,Обновлять,Mise à jour,Actualizar,Cập nhật
+360,0,새로운 버전이 출시되었습니다.,A new version has been released.,新バージョンがリリースされました。,新版本已发布。,新版本已發布。,Выпущена новая версия.,Une nouvelle version a été publiée.,Se ha lanzado una nueva versión.,Phiên bản mới đã được phát hành.
+361,0,이동,movement,動き,移动,移動,движение,mouvement,movimiento,sự chuyển động
+362,0,장비 복구,Equipment recovery,機器の回収,设备回收,設備回收,Восстановление оборудования,Récupération d'équipement,Recuperación de equipos,Khôi phục thiết bị
+363,0,장비를 복구하시겠습니까?,Would you like to repair the equipment?,機器の修理をご希望ですか？,您想维修这台设备吗？,您想維修這台設備嗎？,Вы хотели бы отремонтировать оборудование?,Souhaiteriez-vous réparer l'équipement ?,¿Le gustaría reparar el equipo?,Bạn có muốn sửa chữa thiết bị không?
+364,0,복구,restore,復元する,恢复,恢復,восстановить,restaurer,restaurar,khôi phục
+365,0,<color=yellow>T.10</color> 이상의 장비를 분해하면 일정확률로 <color=red>복구석</color>을 획득할 수 있습니다.,"If you dismantle equipment of T.10 or higher, you can obtain a Restoration Stone with a certain probability.",T.10以上の装備を分解すると、一定の確率で修復石を入手できます。,拆解 T.10 或更高级别的装备，有一定概率获得修复石。,拆解 T.10 或更高等級的裝備，有一定機率獲得修復石。,При разборке снаряжения 10-го уровня и выше с определённой вероятностью можно получить Камень восстановления.,"Si vous démontez un équipement de niveau T.10 ou supérieur, vous pouvez obtenir une Pierre de Restauration avec une certaine probabilité.","Si desmantelas un equipo de nivel T.10 o superior, puedes obtener una Piedra de Restauración con cierta probabilidad.","Nếu bạn tháo dỡ trang bị cấp T.10 trở lên, bạn có thể nhận được Đá Phục Hồi với một xác suất nhất định."
+366,0,팁,Tip,ヒント,提示,提示,Кончик,Conseil,Consejo,Mẹo
+367,0,상시,Always,いつも,总是,總是,Всегда,Toujours,Siempre,Luôn luôn
+368,0,보석 판매,Jewelry sales,ジュエリー販売,珠宝销售,珠寶銷售,Продажа ювелирных изделий,Vente de bijoux,Venta de joyas,Doanh số bán trang sức
+369,0,보석을 판매하시겠습니까?,Would you like to sell jewelry?,ジュエリーを販売してみませんか？,你想出售珠宝吗？,你想出售珠寶嗎？,Хотите продавать ювелирные изделия?,Souhaitez-vous vendre des bijoux ?,¿Te gustaría vender joyas?,Bạn có muốn bán trang sức không?
+370,0,마나 소모량,Mana consumption,マナ消費量,法力消耗,法力消耗,Потребление маны,Consommation de mana,Consumo de maná,Tiêu thụ mana
+371,1,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>,<color=yellow>(▲{0})</color>
+372,1,<color=yellow>(▲{0}개)</color>,<color=yellow>(▲{0} pieces)</color>,<color=yellow>(▲{0}個)</color>,<color=yellow>(▲{0} 件)</color>,<color=yellow>(▲{0} 件)</color>,<color=yellow>(▲{0} штук)</color>,<color=yellow>(▲{0} pièces)</color>,<color=yellow>(▲{0} piezas)</color>,<color=yellow>(▲{0} miếng)</color>
+373,0,등수 외,Rankings and beyond,ランキングとその先へ,排名及其他,排名及其他,Рейтинги и не только,Classements et au-delà,Clasificaciones y más allá,Bảng xếp hạng và hơn thế nữa
+374,0,다음 갱신까지 : {0},Until next update : {0},次回の更新まで：{0},下次更新时间：{0},下次更新時間：{0},До следующего обновления: {0},À bientôt pour la prochaine mise à jour : {0},Hasta la próxima actualización: {0},Cho đến bản cập nhật tiếp theo: {0}
+375,1,{0}위,{0}th,{0}番目,{0}th,{0}th,{0}-й,{0}ème,{0}º,{0}th
+376,0,가방 확장,Bag expansion,バッグ拡張,袋子扩张,袋子擴張,Расширение сумки,Extension de sac,Expansión de la bolsa,Mở rộng túi
+377,0,가방을 확장하시겠습니까?,Would you like to expand your bag?,バッグの容量を増やしますか？,您想扩充一下您的背包吗？,您想擴充一下您的背包嗎？,Хотите расширить свою сумку?,Souhaitez-vous agrandir votre sac ?,¿Te gustaría ampliar tu bolsa?,Bạn có muốn thêm đồ vào giỏ hàng không?
+378,0,확장,expansion,拡大,扩张,擴張,расширение,expansion,expansión,sự mở rộng
+379,0,최대치입니다.,This is the maximum value.,これは最大値です。,这是最大值。,這是最大值。,Это максимальное значение.,Il s'agit de la valeur maximale.,Este es el valor máximo.,Đây là giá trị tối đa.
+380,1,자리가 부족합니다(제작가능 개수 : <color=yellow>{0}</color>),Limited space (Available quantity: <color=yellow>{0}</color>),スペースに限りがあります（在庫数：<color=yellow>{0}</color>）,空间有限（可用数量：<color=yellow>{0}</color>）,空間有限（可用數量：<color=yellow>{0}</color>）,Ограниченное количество мест (Доступное количество: <color=yellow>{0}</color>),Espace limité (Quantité disponible : <color=yellow>{0}</color>),Espacio limitado (Cantidad disponible: <color=yellow>{0}</color>),Không gian có hạn (Số lượng có sẵn: <color=yellow>{0}</color>)
+381,0,자리가 부족합니다.,There aren't enough seats.,席数が足りません。,座位不够。,座位不夠。,Мест недостаточно.,Il n'y a pas assez de places.,No hay suficientes asientos.,Không đủ chỗ ngồi.
+382,0,랭킹 보상,Ranking rewards,ランキング報酬,排名奖励,排名獎勵,Награды за рейтинг,Récompenses de classement,Recompensas por clasificación,Phần thưởng xếp hạng
+383,0,계정 삭제,Delete account,アカウントを削除,删除帐户,刪除帳戶,Удалить аккаунт,Supprimer le compte,Eliminar cuenta,Xóa tài khoản
+384,0,<color=red>Delete</color> 를 작성해주세요,Please write <color=red>Delete</color>,<color=red>削除</color>と入力してください,请写<color=red>删除</color>,請寫<color=red>刪除</color>,"Пожалуйста, напишите <color=red>Удалить</color>",Veuillez écrire <color=red>Supprimer</color>,"Por favor, escriba <color=red>Eliminar</color>",Vui lòng viết <color=red>Xóa</color>
+385,0,삭제,delete,消去,删除,刪除,удалить,supprimer,borrar,xóa bỏ
+386,0,잘못 입력했습니다.,I entered it incorrectly.,入力ミスをしました。,我输入错了。,我輸入錯了。,Я ввёл это неправильно.,Je l'ai saisi incorrectement.,Lo ingresé incorrectamente.,Tôi đã nhập sai.
+387,0,부적절한 언어가 포함되어있습니다.,It contains inappropriate language.,不適切な表現が含まれています。,它包含不雅语言。,它包含不雅語言。,В нём содержится нецензурная лексика.,Il contient un langage inapproprié.,Contiene lenguaje inapropiado.,Nội dung có chứa ngôn từ không phù hợp.
+388,0,준비중입니다.,It is currently being prepared.,現在準備中です。,目前正在筹备中。,目前正在籌備中。,В настоящее время ведётся подготовка.,Il est actuellement en cours de préparation.,Actualmente se está preparando.,"Hiện tại, công việc đang được chuẩn bị."
+389,0,해당 스테이지를 먼저 클리어해주세요.,Please clear this stage first.,まずはこのステージをクリアしてください。,请先完成这一关。,請先完成這一關。,"Пожалуйста, сначала пройдите этот этап.",Veuillez d'abord terminer cette étape.,"Por favor, complete primero esta etapa.",Vui lòng hoàn thành giai đoạn này trước.
+390,0,작은 체구에서 뿜어져 나오는 폭발적인 에너지! 무대 위의 작은 거인입니다.,Explosive energy radiating from a small frame! A little giant on stage.,小さな体からほとばしる爆発的なエネルギー！ステージ上の小さな巨人。,小小身躯里蕴藏着爆炸性的能量！舞台上的小巨人。,小小身軀裡蘊藏著爆炸性的能量！舞台上的小巨人。,"Взрывная энергия, исходящая от крошечного тела! Маленький гигант на сцене.",Une énergie explosive qui émane d'un petit corps ! Un petit géant sur scène.,¡Energía explosiva que emana de un cuerpo pequeño! Un pequeño gigante en el escenario.,Năng lượng bùng nổ tỏa ra từ một thân hình nhỏ bé! Một người khổng lồ tí hon trên sân khấu.
+391,0,압도적인 비율과 시원시원한 퍼포먼스. 시선을 사로잡는 무대 위의 모델 아이돌입니다.,Overwhelming proportions and refreshing performances. A model idol on stage who captivates the eye.,圧倒的な存在感と爽快なパフォーマンス。ステージ上で視線を釘付けにする、まさに模範的なアイドル。,气场强大，表演精彩纷呈。舞台上的偶像典范，令人过目难忘。,氣場強大，表演精彩。舞台上的偶像典範，令人過目難忘。,"Потрясающие масштабы и освежающие выступления. Образцовый кумир на сцене, приковывающий взгляд.",Des proportions impressionnantes et des performances rafraîchissantes. Une idole modèle sur scène qui captive le regard.,Proyecciones imponentes y actuaciones refrescantes. Un ídolo sobre el escenario que cautiva la mirada.,Với quy mô ấn tượng và những màn trình diễn đầy mới mẻ. Một hình mẫu thần tượng trên sân khấu thu hút mọi ánh nhìn.
+392,0,절도 있는 안무와 카리스마! 무대를 진두지휘하는 아이돌계의 여전사입니다.,Precise choreography and charisma! She is a female warrior of the idol world who commands the stage.,緻密な振り付けとカリスマ性！彼女はステージを支配するアイドル界の女性戦士だ。,精准的舞蹈编排和强大的个人魅力！她是偶像界的女战士，牢牢掌控着舞台。,精準的舞蹈編排和強大的個人魅力！她是偶像界的女戰士，牢牢掌控著舞台。,"Точная хореография и харизма! Она – настоящая воительница в мире айдолов, покоряющая сцену.",Chorégraphie précise et charisme indéniable ! C'est une guerrière du monde des idoles qui règne sur scène.,¡Coreografía precisa y carisma! Es una guerrera del mundo del K-pop que domina el escenario.,"Vũ đạo chính xác và khí chất cuốn hút! Cô ấy là một nữ chiến binh của thế giới thần tượng, người làm chủ sân khấu."
+393,0,치명적인 향기와 화려함. 가시 돋친 매력으로 팬들의 마음을 매료시킵니다.,A fatal scent and splendor. Captivating fans' hearts with thorny charm.,魅惑的な香りと輝き。棘のある魅力でファンの心を虜にする。,致命的香气和华丽的气质。以带刺的魅力俘获粉丝的心。,致命的香氣和華麗的氣質。以帶刺的魅力擄獲粉絲的心。,Роковой аромат и великолепие. Покоряет сердца поклонников своим колючим очарованием.,Un parfum fatal et une splendeur envoûtante. Un charme épineux qui captive le cœur des fans.,Un aroma y un esplendor fatales. Cautivando los corazones de los fans con un encanto espinoso.,Một mùi hương chết người và vẻ đẹp lộng lẫy. Chinh phục trái tim người hâm mộ bằng sức quyến rũ gai góc.
+394,0,작지만 단단한 기개! 어떤 역경 속에서도 무대를 지켜내는 강인한 수호자입니다.,Small but steadfast spirit! A strong guardian who protects the stage amidst any adversity.,小柄ながらも揺るぎない精神！どんな逆境の中でも舞台を守る、力強い守護者。,虽小却意志坚定！是一位强大的守护者，在任何逆境中都守护着舞台。,雖小卻意志堅定！是一位強大的守護者，在任何逆境中都守護著舞台。,"Невысокий, но непоколебимый дух! Сильный защитник, оберегающий сцену перед лицом любых невзгод.",Petit mais inébranlable ! Un gardien puissant qui protège la scène face à l'adversité.,¡Pequeño pero firme espíritu! Un guardián inquebrantable que protege el escenario ante cualquier adversidad.,Tinh thần nhỏ bé nhưng kiên cường! Một người bảo vệ mạnh mẽ luôn che chở sân khấu giữa mọi nghịch cảnh.
+395,0,뒤태마저 치명적인 귀여움! 펭귄 수트 속에 감춰둔 엉뚱하고 깜찍한 매력을 발산합니다.,Fatal cuteness even from the back! Exuding the quirky and adorable charm hidden inside the penguin suit.,後ろ姿も致命的な可愛さ！ペンギンの着ぐるみの中に隠された、風変わりで愛らしい魅力が溢れ出ている。,连背影都萌到不行！企鹅服下隐藏着古灵精怪又可爱的魅力。,連背影都萌到不行！企鵝服下隱藏著古靈精怪又可愛的魅力。,"Невероятная милота даже со спины! Источает причудливое и очаровательное обаяние, скрытое под костюмом пингвина.","Une mignonnerie irrésistible, même de dos ! Elle dégage un charme à la fois original et adorable, dissimulé sous ce costume de pingouin.",¡Una ternura irresistible incluso de espaldas! Irradia el encanto peculiar y adorable que se esconde tras el disfraz de pingüino.,Vẻ đáng yêu chết người ngay cả từ phía sau! Toát lên nét duyên dáng kỳ quặc và dễ thương ẩn bên trong bộ đồ chim cánh cụt.
+396,0,거부할 수 없는 다크한 매혹. 무대 위를 지배하는 치명적인 악마적 카리스마입니다.,"Irresistible dark allure. A deadly, devilish charisma that dominates the stage.",抗いがたいほどのダークな魅力。舞台を支配する、恐ろしくも悪魔的なカリスマ性。,令人无法抗拒的黑暗魅力。一种致命的、魔鬼般的魅力，主宰着整个舞台。,令人無法抗拒的黑暗魅力。一種致命的、魔鬼般的魅力，主宰著整個舞台。,"Неотразимое темное очарование. Смертоносная, дьявольская харизма, которая доминирует на сцене.",Un charme ténébreux irrésistible. Un charisme mortel et diabolique qui domine la scène.,Un atractivo oscuro e irresistible. Un carisma letal y diabólico que domina el escenario.,"Sức hút đen tối khó cưỡng. Một khí chất quỷ quyệt, chết người thống trị sân khấu."
+397,0,심해의 신비로움을 머금은 보이스. 물결치듯 부드러운 선율로 팬들을 홀리는 인어입니다.,"A voice imbued with the mystery of the deep sea. A mermaid who enchants fans with soft, wave-like melodies.",深海の神秘を宿した歌声。優しく波打つようなメロディーでファンを魅了する人魚。,拥有深海般神秘嗓音的歌喉。宛如美人鱼般用柔和如波浪般的旋律俘获歌迷的心。,擁有深海般神秘嗓音的歌喉。宛如美人魚般用柔和如波浪般的旋律擄獲歌迷的心。,"Голос, пронизанный тайной морских глубин. Русалка, очаровывающая поклонников нежными, волнообразными мелодиями.",Une voix empreinte du mystère des profondeurs marines. Une sirène qui enchante ses fans avec des mélodies douces et ondulantes.,Una voz impregnada del misterio de las profundidades marinas. Una sirena que encanta a sus fans con melodías suaves y ondulantes.,"Một giọng hát thấm đẫm sự bí ẩn của biển sâu. Một nàng tiên cá quyến rũ người hâm mộ bằng những giai điệu nhẹ nhàng, êm ái như sóng biển."
+398,0,모두를 지키는 정의의 아이콘! 파워풀한 보컬로 희망과 용기를 전하는 무대 위의 영웅입니다.,An icon of justice protecting everyone! A hero on stage who conveys hope and courage with powerful vocals.,皆を守る正義の象徴！力強い歌声で希望と勇気を伝える、ステージ上のヒーロー。,他是正义的象征，守护着所有人！他是舞台上的英雄，用他充满力量的歌声传递希望和勇气。,他是正義的象徵，守護著所有人！他是舞台上的英雄，用他充滿力量的歌聲傳遞希望和勇氣。,"Символ справедливости, защищающий всех! Герой на сцене, передающий надежду и мужество мощным вокалом.",Une icône de la justice qui protège tous les êtres humains ! Un héros sur scène qui transmet espoir et courage grâce à sa voix puissante.,¡Un ícono de la justicia que protege a todos! Un héroe en el escenario que transmite esperanza y valentía con una voz poderosa.,Một biểu tượng của công lý bảo vệ mọi người! Một người hùng trên sân khấu truyền tải niềm hy vọng và lòng dũng cảm bằng giọng hát mạnh mẽ.
+399,0,키가 작다고 무시하지 마! 무대 위에서 내 에너지는 누구보다 크니까!,Don't underestimate me just because I'm short! My energy on stage is bigger than anyone's!,背が低いからって私を侮らないで！ステージ上での私のエネルギーは誰にも負けないわ！,别因为我个子矮就小瞧我！我在舞台上的能量比任何人都强！,別因為我個子矮就小看我！我在舞台上的能量比任何人都強！,"Не стоит недооценивать меня только потому, что я невысокого роста! Моя энергия на сцене невероятна!",Ne me sous-estimez pas simplement parce que je suis petite ! Mon énergie sur scène est plus grande que celle de n'importe qui !,¡No me subestimes solo porque soy bajita! ¡Mi energía en el escenario es mayor que la de cualquiera!,Đừng đánh giá thấp tôi chỉ vì tôi thấp bé! Năng lượng của tôi trên sân khấu lớn hơn bất kỳ ai!
+400,0,"저기, 거기선 제 정수리밖에 안 보일 텐데... 조금 더 뒤로 가서 보실래요?","Hey, from there you'll only be able to see the top of my head... Would you like to step back a little more to see?",ねえ、そこからだと私の頭のてっぺんしか見えないんだけど…もう少し後ろに下がって見てくれない？,嘿，从那里你只能看到我的头顶……你想再往后退一点看看吗？,嘿，從那裡你只能看到我的頭頂……你想再往後退一點看看嗎？,"Эй, оттуда видна только верхняя часть моей головы... Не хотите немного отойти назад, чтобы лучше рассмотреть?","Hé, de là, tu ne verras que le haut de ma tête… Tu veux bien reculer un peu pour mieux voir ?","Oye, desde ahí solo podrás ver la parte superior de mi cabeza... ¿Te gustaría alejarte un poco más para ver?","Này, từ chỗ đó bạn chỉ nhìn thấy được đỉnh đầu của tôi thôi... Bạn có muốn lùi lại một chút để nhìn rõ hơn không?"
+401,0,무대는 전쟁터입니다. 각 잡힌 안무로 팬들의 마음을 완벽히 점령하겠습니다!,The stage is a battlefield. We will completely conquer the hearts of our fans with our perfectly synchronized choreography!,ステージは戦場だ。完璧にシンクロした振り付けで、ファンの皆さんの心を完全に掴み取ります！,舞台就是战场。我们将用完美同步的舞蹈彻底征服粉丝们的心！,舞台就是戰場。我們將用完美同步的舞蹈徹底征服粉絲們的心！,Сцена — это поле битвы. Мы полностью покорим сердца наших поклонников нашей идеально синхронизированной хореографией!,La scène est un champ de bataille. Nous allons conquérir le cœur de nos fans grâce à notre chorégraphie parfaitement synchronisée !,El escenario es un campo de batalla. ¡Conquistaremos por completo los corazones de nuestros fans con nuestra coreografía perfectamente sincronizada!,Sân khấu là một chiến trường. Chúng ta sẽ chinh phục hoàn toàn trái tim người hâm mộ bằng màn vũ đạo được đồng bộ hóa hoàn hảo!
+402,0,아름다운 장미에는 가시가 있는 법이죠. 제 매력에 찔리지 않게 조심하세요.,Beautiful roses are bound to have thorns. Be careful not to get pricked by my charm.,美しいバラには必ず棘がある。私の魅力に刺されないように気をつけて。,美丽的玫瑰必然带刺。小心别被我的魅力刺伤。,美麗的玫瑰必然帶刺。小心別被我的魅力刺傷。,"У красивых роз обязательно должны быть шипы. Будьте осторожны, чтобы не уколоться моим чарами.",Les belles roses ont forcément des épines. Prenez garde à ne pas vous piquer à mon charme.,Las rosas más bellas tienen espinas. Ten cuidado de no pincharte con mi encanto.,Hoa hồng đẹp luôn có gai. Hãy cẩn thận đừng để bị vẻ quyến rũ của tôi đâm trúng.
+403,0,"이 작은 검이 무대 조명을 받으면, 세상 그 무엇보다 날카롭게 빛날 거예요.","When this little sword catches the stage lights, it will shine sharper than anything in the world.",この小さな剣が舞台照明を浴びると、世界中のどんなものよりも鋭く輝くだろう。,当这把小剑在舞台灯光下闪耀时，它将比世间任何事物都更加耀眼。,當這把小劍在舞檯燈光下閃耀時，它將比世間任何事物都更加耀眼。,"Когда этот маленький меч окажется в свете софитов, он засияет ярче, чем что-либо на свете.","Lorsque cette petite épée sera illuminée par les projecteurs, elle brillera plus fort que n'importe quoi au monde.","Cuando esta pequeña espada capte las luces del escenario, brillará con más intensidad que cualquier otra cosa en el mundo.","Khi thanh kiếm nhỏ này lọt vào tầm mắt của khán giả, nó sẽ tỏa sáng rực rỡ hơn bất cứ thứ gì trên thế giới."
+404,0,펭하! 이 옷이 좀 덥긴 하지만... 팬분들이 귀엽다고 하면 전 괜찮아요!,"Peng-ha! This outfit is a bit hot, but... if the fans say it's cute, I'm fine with it!",ペンハ！この衣装はちょっと暑いけど…ファンが可愛いって言ってくれるなら、それでいいよ！,彭哈！这身衣服有点热，但是……如果粉丝们觉得可爱，我就没意见！,彭哈！這身衣服有點熱，但是……如果粉絲覺得可愛，我就沒意見！,"Пэн-ха! Этот наряд немного жарковат, но... если фанаты скажут, что он милый, меня это вполне устраивает!","Peng-ha ! Cette tenue est un peu chaude, mais... si les fans la trouvent mignonne, ça me va !","¡Peng-ha! Este atuendo es un poco caluroso, pero... si a los fans les parece lindo, ¡me parece bien!","Peng-ha! Bộ đồ này hơi nóng một chút, nhưng... nếu fan khen dễ thương thì mình cũng thấy ổn!"
+405,0,"후후, 내 노래에 영혼을 뺏길 준비는 됐어? 거부해도 소용없을걸.","Hehe, are you ready to have your soul stolen by my song? It's no use refusing.",ふふ、私の歌に魂を奪われる準備はできてる？拒否しても無駄だよ。,呵呵，你准备好被我的歌声夺走灵魂了吗？拒绝是没用的。,呵呵，你準備好被我的歌聲奪走靈魂了嗎？拒絕是沒用的。,"Хе-хе, ты готов к тому, чтобы моя песня украла твою душу? Отказываться бесполезно.","Héhé, es-tu prêt à te laisser envoûter par ma chanson ? Refuser ne sert à rien.","Jeje, ¿estás listo para que mi canción te robe el alma? Es inútil negarse.","Hehe, bạn đã sẵn sàng để linh hồn mình bị bài hát của tôi đánh cắp chưa? Từ chối cũng vô ích thôi."
+406,0,깊은 바닷속 노래를 들려드릴게요. 마치 꿈을 꾸는 것처럼 황홀할 거예요.,"I will sing a song from the deep sea. It will be enchanting, just like a dream.",私は深海の歌を歌います。それは夢のように魅惑的な歌になるでしょう。,我将唱一首来自深海的歌。它将如梦似幻，令人陶醉。,我將唱一首來自深海的歌。它將如夢似幻，令人陶醉。,"Я спою песню из глубин моря. Она будет чарующей, словно сон.","Je chanterai une chanson venue des profondeurs marines. Elle sera enchanteresse, comme un rêve.","Cantaré una canción desde las profundidades del mar. Será mágica, como un sueño.","Tôi sẽ cất lên một bài hát từ đáy biển sâu. Nó sẽ mê hoặc, tựa như một giấc mơ."
+407,0,"걱정 마세요, 제가 있는 한 이 무대의 평화와 감동은 제가 지킵니다!","Don't worry, as long as I'm here, I will protect the peace and emotion of this stage!",心配しないでください。私がここにいる限り、このステージの平和と感動を守ります！,别担心，只要我在这里，我就会守护这个舞台的和平与情感！,別擔心，只要我在這裡，我就會守護這個舞台的和平與情感！,"Не волнуйтесь, пока я здесь, я буду оберегать мир и эмоции этой сцены!","Ne vous inquiétez pas, tant que je serai là, je protégerai la paix et l'émotion de cette scène !","No se preocupen, mientras esté aquí, ¡protegeré la paz y la emoción de este escenario!","Đừng lo, chỉ cần tôi ở đây, tôi sẽ bảo vệ sự bình yên và cảm xúc của sân khấu này!"
+408,0,저장 중입니다...,Saving...,保存中...,保存...,儲存...,Сохранение...,Économie...,Ahorro...,Đang lưu...
+409,0,종료 중입니다...,Closing...,終了…,即将关闭……,即將關閉…,Закрытие...,Clôture...,Cierre...,Đóng cửa...
+410,0,이미 연동되어 있습니다.,It is already linked.,既に連携済みです。,它已经链接了。,它已經連結了。,Связь уже установлена.,Le lien est déjà établi.,Ya está vinculado.,Nó đã được liên kết rồi.
+411,0,"로그인 정보가 만료\n<color=red>(중복 로그인, 제재 등)</color>되었습니다, 게임을 다시 시작해 주세요.","Your login information has expired (duplicate login, sanctions, etc.). Please restart the game.",ログイン情報が期限切れです（重複ログイン、制裁措置など）。ゲームを再起動してください。,您的登录信息已过期（重复登录、受到处罚等）。请重新启动游戏。,您的登入資訊已過期（重複登入、受到處罰等）。請重新啟動遊戲。,"Ваши учетные данные устарели (повторный вход, санкции и т. д.). Пожалуйста, перезапустите игру.","Vos identifiants de connexion ont expiré (identifiants dupliqués, sanctions, etc.). Veuillez redémarrer le jeu.","Tus datos de inicio de sesión han caducado (inicio de sesión duplicado, sanciones, etc.). Reinicia el juego.","Thông tin đăng nhập của bạn đã hết hạn (đăng nhập trùng lặp, bị cấm, v.v.). Vui lòng khởi động lại trò chơi."
+412,0,스킬을 장착해주세요.,Please equip the skill.,スキルを装備してください。,请装备该技能。,請裝備該技能。,"Пожалуйста, активируйте этот навык.",Veuillez équiper cette compétence.,"Por favor, equipa la habilidad.",Hãy trang bị kỹ năng này.
+413,0,"먼저 보석을 해제해주세요,",Please unlock the gem first.,まず宝石のロックを解除してください。,请先解锁宝石。,請先解鎖寶石。,"Пожалуйста, сначала откройте драгоценный камень.",Veuillez d'abord déverrouiller le joyau.,"Por favor, desbloquea la gema primero.",Vui lòng mở khóa viên ngọc trước.
+414,0,라운드가 종료되었습니다. <color=red>{0}</color>,The round has ended. <color=red>{0}</color>,ラウンドが終了しました。<color=red>{0}</color>,本轮比赛结束。,本輪比賽結束。,Раунд завершен. <color=red>{0}</color>,Le tour est terminé. <color=red>{0}</color>,La ronda ha terminado. <color=red>{0}</color>,Vòng đấu đã kết thúc. <color=red>{0}</color>
+415,0,판이 모두 종료되었습니다. <color=red>{0}</color>,All rounds have ended. <color=red>{0}</color>,全ラウンドが終了しました。<color=red>{0}</color>,所有回合均已结束。<color=red>{0}</color>,所有回合均已結束。 <color=red>{0}</color>,Все раунды завершены. <color=red>{0}</color>,Tous les tours sont terminés. <color=red>{0}</color>,Todas las rondas han terminado. <color=red>{0}</color>,Tất cả các vòng đấu đã kết thúc. <color=red>{0}</color>
+416,0,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>,<size=40><color=green>▲ {1}</color></size>
+417,0, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>, <size=40><color=red>▼ {1}</color></size>
+418,0,<color=#ECECEC>일반</color>,<color=#ECECEC>Common</color>,<color=#ECECEC>共通</color>,<color=#ECECEC>通用</color>,<color=#ECECEC>通用</color>,<color=#ECECEC>Common</color>,<color=#ECECEC>Commun</color>,<color=#ECECEC>Común</color>,<color=#ECECEC>Thông dụng</color>
+419,0,<color=#878787>고급</color>,<color=#878787>Uncommon</color>,<color=#878787>珍しい</color>,<color=#878787>不常见</color>,<color=#878787>不常見</color>,<color=#878787>Необычный</color>,<color=#878787>Peu commun</color>,<color=#878787>Poco común</color>,<color=#878787>Không phổ biến</color>
+420,0,<color=#20BF47>매직</color>,<color=#20BF47>Magic</color>,<color=#20BF47>魔法</color>,<color=#20BF47>魔法</color>,<color=#20BF47>魔法</color>,<color=#20BF47>Магия</color>,<color=#20BF47>Magie</color>,<color=#20BF47>Magia</color>,<color=#20BF47>Phép thuật</color>
+421,0,<color=#2065BF>희귀</color>,<color=#2065BF>Rare</color>,<color=#2065BF>レア</color>,<color=#2065BF>稀有</color>,<color=#2065BF>稀有</color>,<color=#2065BF>Редкий</color>,<color=#2065BF>Rare</color>,<color=#2065BF>Raro</color>,<color=#2065BF>Hiếm</color>
+422,0,<color=#8B20BF>에픽</color>,<color=#8B20BF>Epic</color>,<color=#8B20BF>壮大</color>,<color=#8B20BF>史诗级</color>,<color=#8B20BF>史詩級</color>,<color=#8B20BF>Эпический</color>,<color=#8B20BF>Épique</color>,<color=#8B20BF>Épico</color>,<color=#8B20BF>Tuyệt vời</color>
+423,0,<color=#E09D3B>전설</color>,<color=#E09D3B>Legendary</color>,<color=#E09D3B>伝説</color>,<color=#E09D3B>传奇</color>,<color=#E09D3B>傳奇</color>,<color=#E09D3B>Легендарный</color>,<color=#E09D3B>Légendaire</color>,<color=#E09D3B>Legendario</color>,<color=#E09D3B>Huyền thoại</color>
+424,0,<color=#C62D2A>신화</color>,<color=#C62D2A>Mythic</color>,<color=#C62D2A>神話級</color>,<color=#C62D2A>神话</color>,<color=#C62D2A>神話</color>,<color=#C62D2A>Мифический</color>,<color=#C62D2A>Mythique</color>,<color=#C62D2A>Mítico</color>,<color=#C62D2A>Thần thoại</color>
+425,0,<color=#37BEAB>고대</color>,<color=#37BEAB>Ancient</color>,<color=#37BEAB>古代</color>,<color=#37BEAB>古代</color>,<color=#37BEAB>古代</color>,<color=#37BEAB>Древний</color>,<color=#37BEAB>Ancien</color>,<color=#37BEAB>Antiguo</color>,<color=#37BEAB>Cổ đại</color>
+426,0,<color=#D11BAA>태고</color>,<color=#D11BAA>Primal</color>,<color=#D11BAA>プライマル</color>,<color=#D11BAA>原始</color>,<color=#D11BAA>原始</color>,<color=#D11BAA>Первобытный</color>,<color=#D11BAA>Primal</color>,<color=#D11BAA>Primal</color>,<color=#D11BAA>Nguyên thủy</color>
+427,0,<color=#FED72B>궁극</color>,<color=#FED72B>Ultimate</color>,<color=#FED72B>究極</color>,<color=#FED72B>终极版</color>,<color=#FED72B>終極版</color>,<color=#FED72B>Ultimate</color>,<color=#FED72B>Ultime</color>,<color=#FED72B>Máximo</color>,<color=#FED72B>Tuyệt đỉnh</color>
+428,0,리더,leader,リーダー,领导者,領導者,лидер,chef,líder,lãnh đạo
+429,0,<color=red>능력</color>은 모두 <color=yellow>동일한 확률</color>로 등장합니다.,All abilities appear with equal probability.,すべての能力は等しい確率で出現します。,所有能力出现的概率均等。,所有能力出現的機率均等。,Все способности проявляются с равной вероятностью.,Toutes les capacités apparaissent avec une probabilité égale.,Todas las habilidades aparecen con igual probabilidad.,Mọi khả năng đều xuất hiện với xác suất như nhau.
+430,0,언어,language,言語,语言,語言,язык,langue,idioma,ngôn ngữ
+431,0,계정삭제,Delete account,アカウントを削除,删除帐户,刪除帳戶,Удалить аккаунт,Supprimer le compte,Eliminar cuenta,Xóa tài khoản
+432,0,계정연동,Account linking,アカウント連携,账户关联,帳戶關聯,Привязка учетных записей,Liaison de comptes,vinculación de cuentas,Liên kết tài khoản
+433,0,설정,setting,設定,环境,環境,параметр,paramètre,configuración,cài đặt
+434,0,닫기,close,近い,关闭,關閉,закрывать,fermer,cerca,đóng
+435,0,장비,equipment,装置,设备,裝置,оборудование,équipement,equipo,thiết bị
+436,0,제작,produce,生産する,生产,生產,производить,produire,producir,sản xuất
+437,0,보석,jewel,宝石,宝石,寶石,драгоценность,bijou,joya,viên ngọc
+438,0,각인,engraving,彫刻,雕刻,雕刻,гравюра,gravure,grabado,khắc
+439,0,특수,Special,特別,特别的,特別的,Особенный,Spécial,Especial,Đặc biệt
+440,0,일괄 강화,Batch reinforcement,バッチ強化,批量增强,批量增強,Партийное подкрепление,Renforcement par lots,Refuerzo por lotes,Gia cố theo lô
+441,0,일괄 분해,Batch decomposition,バッチ分解,批量分解,大量分解,Пакетное разложение,Décomposition par lots,Descomposición por lotes,Phân hủy theo lô
+442,0,자동 분해,Automatic disassembly,自動分解,自动拆卸,自動拆卸,Автоматическая разборка,Démontage automatique,Desmontaje automático,Tháo lắp tự động
+443,0,자동 장착,Automatic mounting,自動マウント,自动安装,自動安裝,Автоматическая установка,Montage automatique,Montaje automático,Lắp đặt tự động
+444,0,파괴,destruction,破壊,破坏,破壞,разрушение,destruction,destrucción,sự phá hủy
+445,0,복원,restoration,復元,恢复,恢復,реставрация,restauration,restauración,phục hồi
+446,0,착용중,Wearing,着用,穿着,穿著,Утомительный,Résistant,Agotador,Mặc
+447,0,일괄선택,Batch selection,バッチ選択,批次选择,批次選擇,Выбор партии,Sélection par lots,Selección de lotes,Lựa chọn theo lô
+448,0,일괄해제,Batch unlock,一括ロック解除,批量解锁,批量解鎖,Пакетная разблокировка,Déverrouillage par lots,Desbloqueo por lotes,Mở khóa hàng loạt
+449,0,선택한 항목의 포함되는 장비는 스테이지에서 획득시 바로 분해됩니다.,The equipment included in the selected item is dismantled immediately upon acquisition in the stage.,選択されたアイテムに含まれる機器は、ステージでの取得後直ちに解体されます。,所选物品中包含的设备在舞台上获得后会立即拆卸。,所選物品中包含的設備在舞台上獲得後會立即拆卸。,"Оборудование, входящее в состав выбранного товара, демонтируется немедленно после его приобретения на данном этапе.",L'équipement inclus dans l'article sélectionné est démonté immédiatement après son acquisition sur le terrain.,El equipo incluido en el artículo seleccionado se desmonta inmediatamente después de su adquisición en la etapa.,Các thiết bị thuộc mặt hàng đã chọn sẽ được tháo dỡ ngay lập tức sau khi thu mua tại giai đoạn này.
+450,0,장비 제작,Equipment manufacturing,設備製造,设备制造,設備製造,производство оборудования,fabrication d'équipements,Fabricación de equipos,Sản xuất thiết bị
+451,0,한번에 100개까지 제작 가능,Up to 100 can be produced at a time,一度に最大100個生産可能,一次最多可生产100个。,一次最多可生產100個。,За один раз можно произвести до 100 штук.,On peut en produire jusqu'à 100 simultanément.,Se pueden producir hasta 100 unidades a la vez.,Có thể sản xuất tối đa 100 sản phẩm cùng một lúc.
+452,0,일괄 판매,Bulk sale,まとめ買い,批量销售,大量銷售,Оптовая продажа,vente en gros,Venta al por mayor,Bán sỉ
+453,0,정렬,array,配列,大批,大批,множество,tableau,formación,mảng
+454,0,최대레벨,Maximum level,最大レベル,最高级别,最高等級,Максимальный уровень,Niveau maximum,Nivel máximo,Mức tối đa
+455,0,등급,rating,評価,等级,等級,рейтинг,notation,clasificación,xếp hạng
+456,0,공격력(+),Attack Power(+),攻撃力(+),攻击力(+),攻擊力(+),Сила атаки (+),Puissance d'attaque (+),Poder de ataque (+),Sức tấn công (+)
+457,0,공격력(%),Attack Power (%),攻撃力（％）,攻击力（%）,攻擊力（%）,Сила атаки (%),Puissance d'attaque (%),Poder de ataque (%),Sức tấn công (%)
+458,0,체력(+),Stamina (+),スタミナ（+）,耐力（+）,耐力（+）,Выносливость (+),Endurance (+),Resistencia (+),Sức bền (+)
+459,0,체력(%),Physical strength (%),体力（％）,体能（%）,體能（%）,Физическая сила (%),force physique (%),Fuerza física (%),Sức mạnh thể chất (%)
+460,0,치명타피해,Critical damage,致命的なダメージ,严重伤害,嚴重傷害,Критический ущерб,Dommages critiques,Daños críticos,Thiệt hại nghiêm trọng
+461,0,스킬피해,Skill damage,スキルダメージ,技能伤害,技能傷害,Урон от навыков,dégâts de compétence,Daño de habilidad,Sát thương kỹ năng
+462,0,보스피해,Boss damage,ボスへのダメージ,首领伤害,首領傷害,Урон боссу,Dégâts du boss,Daño del jefe,Sát thương của trùm
+463,0,명중,Hit,打つ,打,打,Ударять,Frapper,Golpear,Đánh
+464,0,회피,evasion,回避,逃避,逃避,уклонение,évasion,evasión,sự né tránh
+465,0,쿨타임,Cooldown,クールダウン,冷却,冷卻,Остывать,Refroidir,Enfriarse,Thời gian hồi chiêu
+466,0,골드획득량,Gold acquisition amount,金の取得額,黄金收购金额,黃金收購金額,Сумма приобретения золота,montant d'acquisition d'or,Cantidad adquirida de oro,Số lượng vàng mua được
+467,0,아이템드랍,Item Drop,アイテムドロップ,物品掉落,物品掉落,Выпадение предмета,Lâcher d'objet,Caída de objeto,Vật phẩm rơi
+468,0,동료공격력(%),Ally Attack Power (%),味方の攻撃力（％）,友军攻击力（%）,友軍攻擊力（%）,Сила атаки союзников (%),Puissance d'attaque des alliés (%),Poder de ataque aliado (%),Sức tấn công của đồng minh (%)
+469,0,동료 치명타피해,Critical damage to allies,味方への致命的なダメージ,对友军造成致命伤害,對友軍造成致命傷害,Критический ущерб союзникам,Dommages critiques aux alliés,Daños críticos a los aliados,Gây thiệt hại nghiêm trọng cho đồng minh
+470,0,동료 스킬피해,Ally skill damage,味方のスキルダメージ,友军技能伤害,友軍技能傷害,Урон от навыков союзников,dégâts de compétence alliée,Daño de habilidad de aliado,Sát thương kỹ năng đồng minh
+471,0,동료 보스피해,Companion Boss Damage,コンパニオンのボスダメージ,同伴首领伤害,同儕首領傷害,Урон от босса-компаньона,Dégâts du boss compagnon,Daño del jefe acompañante,Sát thương của Boss Đồng Hành
+472,0,보석 분해,Gem disassembly,宝石の分解,Gem 拆解,Gem 拆解,Разборка драгоценного камня,Démontage de gemmes,Desmontaje de gemas,Tháo rời đá quý
+473,0,<color=red>전설 </color>부터는 <color=yellow>승급</color> 으로 획득 가능합니다.,"From <color=red>Legend</color> onwards, you can obtain them through <color=yellow>Promotion</color>.",<color=red>Legend</color>以降は、<color=yellow>Promotion</color>を通じて入手できます。,从《传奇》开始，您可以通过《晋升》获得它们。,從《傳奇》開始，您可以透過《晉升》獲得它們。,"Начиная с <color=red>Легенды</color>, вы можете получить их через <color=yellow>Акцию</color>.","À partir de <color=red>Légende</color>, vous pouvez les obtenir via <color=yellow>Promotion</color>.","A partir de <color=red>Leyenda</color>, puedes obtenerlos mediante <color=yellow>Promoción</color>.","Từ cấp độ <color=red>Huyền thoại</color> trở đi, bạn có thể nhận được chúng thông qua <color=yellow>Khuyến mãi</color>."
+474,0,점화 - 0.5초마다 공격력의 <color=red>5%</color>의 데미지를 입힘\n<color=red>[최대치 : 최대체력 5%]</color>,Ignite - Deals <color=red>5%</color> of Attack Power damage every 0.5 seconds	<color=red>[Max : 5% of Max HP]</color>,イグナイト - 0.5秒ごとに攻撃力の<color=red>5%</color>のダメージを与えます。<color=red>[最大：最大HPの5%]</color>,点燃 - 每 0.5 秒造成相当于攻击强度 5% 的伤害 [最高：最大生命值的 5%],點燃 - 每 0.5 秒造成相當於攻擊強度 5% 的傷害 [最高：最大生命值的 5%],"Воспламенение - Наносит <color=red>5%</color> урона от силы атаки каждые 0,5 секунды <color=red>[Макс.: 5% от максимального запаса здоровья]</color>","Embrasement - Inflige des dégâts équivalents à 5 % de la puissance d'attaque toutes les 0,5 secondes [Max : 5 % des PV max].","Ignite - Inflige <color=red>5%</color> de daño de Poder de Ataque cada 0,5 segundos <color=red>[Máx.: 5% de HP máximo]</color>","Thiêu đốt - Gây sát thương bằng <color=red>5%</color> Sức tấn công mỗi 0,5 giây <color=red>[Tối đa: 5% HP tối đa]</color>"
+475,0,젖음 - 5초간 받는 피해 <color=red>50%</color>증가,Wet - Increases damage taken by 50% for 5 seconds,濡れ状態 - 受けるダメージが5秒間50%増加する,潮湿 - 受到的伤害增加 50%，持续 5 秒。,潮濕 - 受到的傷害增加 50%，持續 5 秒。,«Мокрый» — увеличивает получаемый урон на 50% в течение 5 секунд.,Humide - Augmente les dégâts subis de 50 % pendant 5 secondes,Mojado: aumenta el daño recibido en un 50% durante 5 segundos.,Ướt - Tăng sát thương phải chịu thêm 50% trong 5 giây.
+476,0,빙결 - 1초간 <color=red>멈춤</color>,Freeze - <color=red>Pause</color> for 1 second,フリーズ - 1秒間一時停止,冻结 - 暂停 1 秒,凍結 - 暫停 1 秒,Заморозить - <color=red>Пауза</color> на 1 секунду,Geler - <color=red>Pause</color> pendant 1 seconde,Congelar - <color=red>Pausa</color> durante 1 segundo,Dừng hình - <color=red>Tạm dừng</color> trong 1 giây
+477,0,감전 - 주변 적 2명에게 데미지의 <color=red>50%</color> 피해를 입힘,Electrocution - Deals <color=red>50%</color> of damage to 2 nearby enemies,感電 - 近くの敵2体に<color=red>50%</color>のダメージを与える,电击 - 对附近 2 个敌人造成 50% 的伤害,電擊 - 對附近 2 個敵人造成 50% 的傷害,Удар электрическим током — наносит <color=red>50%</color> урона двум ближайшим врагам,Électrocution - Inflige <color=red>50%</color> des dégâts à 2 ennemis proches,Electrocución: inflige un <color=red>50%</color> de daño a 2 enemigos cercanos.,Điện giật - Gây <color=red>50%</color> sát thương cho 2 kẻ địch gần đó
+478,0,중독 - 속도 <color=red>50%</color> 감소\n1초마다 공격력의 <color=red>5%</color>의 데미지를 입힘 <color=red>[최대치 : 최대체력 5%]</color>,Poison - Reduces Speed ​​by 50%	Deals 5% of Attack Power every 1 second	[Max : 5% of Max HP],毒 - スピードを50%減少させる。1秒ごとに攻撃力の5%のダメージを与える。[最大：最大HPの5%],中毒 - 降低速度 50%，每秒造成相当于攻击力 5% 的伤害 [最高：最大生命值的 5%],中毒 - 降低速度 50%，每秒造成相當於攻擊力 5% 的傷害 [最高：最大生命值的 5%],Яд - Снижает скорость на 50%. Наносит 5% урона от силы атаки каждую секунду [Максимум: 5% от максимального запаса здоровья].,Poison - Réduit la vitesse de 50 % Inflige 5 % de la puissance d'attaque toutes les secondes [Max : 5 % des PV max],Veneno - Reduce la velocidad en un 50% Inflige un 5% del poder de ataque cada 1 segundo [Máx.: 5% de los PV máximos],Độc - Giảm tốc độ 50% Gây sát thương bằng 5% sức tấn công mỗi giây [Tối đa: 5% HP tối đa]
+479,0,신성 - 공격력의 <color=green>5%</color>를 회복 <color=yellow>[최대치 : 최대체력 5%]</color>,Divine - Recovers <color=green>5%</color> of Attack Power <color=yellow>[Max : 5% of Max HP]</color>,神聖 - 攻撃力の<color=green>5%</color>を回復します <color=yellow>[最大：最大HPの5%]</color>,神圣 - 恢复<color=green>5%</color>攻击力<color=yellow>[最高：5%最大生命值]</color>,神聖 - 恢復 5% 攻擊力 [最高恢復量：最大生命值的 5%],Божественный - Восстанавливает <color=green>5%</color> силы атаки <color=yellow>[Макс.: 5% от максимального HP]</color>,Divin - Restaure <color=green>5%</color> de la puissance d'attaque <color=yellow>[Max : 5% des PV max]</color>,Divino - Recupera <color=green>5%</color> del Poder de Ataque <color=yellow>[Máx.: 5% de los PV máximos]</color>,Thần thánh - Hồi phục <color=xanh lá cây>5%</color> Sức tấn công <color=vàng>[Tối đa: 5% HP tối đa]</color>
+480,0,멸시 - <color=yellow>일반 몹</color>에게 <color=red>5배</color>의 추가 피해를 입힘,Contempt - Deals <color=red>5x</color> additional damage to <color=yellow>normal mobs</color>,軽蔑 - 通常のモンスターに<color=red>5倍</color>の追加ダメージを与える,蔑视 - 对普通怪物造成额外5倍伤害。,蔑視 - 對普通怪物造成額外5倍傷害。,Презрение - Наносит <color=red>5x</color> дополнительного урона <color=yellow>обычным мобам</color>,Mépris - Inflige <color=red>5x</color> dégâts supplémentaires aux <color=yellow>monstres normaux</color>,Desprecio: inflige <color=red>5x</color> de daño adicional a <color=yellow>criaturas normales</color>,Khinh miệt - Gây thêm <color=red>5x</color> sát thương cho <color=yellow>quái vật thường</color>
+481,0,용맹 - <color=yellow>보스 몹</color>에게 <color=red>5배</color>의 추가 피해를 입힘,Valor - Deals <color=red>5x</color> additional damage to <color=yellow>bosses</color>.,勇気 - ボスに対して<color=red>5倍</color>の追加ダメージを与えます。,勇气 - 对首领造成<color=red>5倍</color>额外伤害。,勇氣 - 對頭目造成<color=red>5倍</color>額外傷害。,Доблесть - Наносит <color=red>5x</color> дополнительного урона <color=yellow>боссам</color>.,Valeur - Inflige <color=red>5x</color> dégâts supplémentaires aux <color=yellow>boss</color>.,Valor - Inflige <color=red>5x</color> de daño adicional a los <color=yellow>jefes</color>.,Valor - Gây thêm <color=red>5x</color> sát thương cho <color=yellow>trùm</color>.
+482,0,처단 - 적을 <color=red>즉사</color> 시킴 <color=red>[일반 몹 한정]</color>,Execution - Instantly kills enemies [Normal mobs only],処刑 - 敵を即死させる（通常の敵のみ）,处决 - 立即杀死敌人 [仅限普通怪物],處決 - 立即殺死敵人 [僅限普通怪物],Казнь — мгновенно убивает врагов [только обычных мобов],Exécution - Tue instantanément les ennemis [Monstres normaux uniquement],Ejecución: mata instantáneamente a los enemigos [solo enemigos normales].,Đòn kết liễu - Tiêu diệt kẻ thù ngay lập tức [Chỉ áp dụng cho quái vật thông thường]
+483,0,능력치,stats,統計,统计数据,統計數據,статистика,statistiques,estadísticas,số liệu thống kê
+484,0,자동장착,Automatic mounting,自動マウント,自动安装,自動安裝,Автоматическая установка,Montage automatique,Montaje automático,Lắp đặt tự động
+485,0,현재 장비,Current equipment,現在の設備,现有设备,現有設備,Текущее оборудование,Équipement actuel,Equipos actuales,Thiết bị hiện tại
+486,0,무기,weapon,武器,武器,武器,оружие,arme,arma,vũ khí
+487,0,오라,aura,オーラ,灵气,靈氣,аура,aura,aura,hào quang
+488,0,정보,info,情報,信息,資訊,информация,info,información,thông tin
+489,0,확률표,Probability table,確率表,概率表,機率表,Таблица вероятностей,Tableau des probabilités,Tabla de probabilidad,Bảng xác suất
+490,0,초월,transcendence,超越,超越,超越,трансценденция,transcendance,trascendencia,siêu việt
+491,0,탭해서 닫기,Tap to close,タップして閉じる,点击关闭,點選關閉,"Нажмите, чтобы закрыть",Appuyez pour fermer,Toca para cerrar,Nhấn để đóng
+492,0,일괄 합성,Batch synthesis,バッチ合成,批量合成,大量合成,Партионный синтез,Synthèse par lots,Síntesis por lotes,Tổng hợp theo lô
+493,0,특수효과,special effects,特撮,特效,特效,спецэффекты,effets spéciaux,efectos especiales,hiệu ứng đặc biệt
+494,0,보유효과,Endowment effect,保有効果,禀赋效应,禀賦效應,эффект владения,Effet de dotation,Efecto dotación,Hiệu ứng tài sản
+495,0,첫보상,First reward,最初の報酬,第一奖励,第一獎勵,Первая награда,Première récompense,Primera recompensa,Phần thưởng đầu tiên
+496,0,재침공,Re-invasion,再侵略,再次入侵,再次入侵,Повторное вторжение,Réinvasion,Reinvasión,Tái xâm lược
+497,0,입장,position,位置,位置,位置,позиция,position,posición,chức vụ
+498,0,퇴치,extermination,絶滅,灭绝,滅絕,истребление,extermination,exterminio,diệt trừ
+499,0,선택,select,選択,选择,選擇,выбирать,sélectionner,seleccionar,lựa chọn
+500,0,재침공을 성공하면 능력치가 향상 됩니다.,Your stats will improve if you succeed in the re-invasion.,再侵攻に成功すれば、あなたのステータスは向上します。,如果再次入侵成功，你的属性将会提升。,如果再次入侵成功，你的屬性將會提升。,"Ваши характеристики улучшатся, если вы добьетесь успеха в повторном вторжении.",Vos statistiques s'amélioreront si vous réussissez la réinvasion.,Tus estadísticas mejorarán si tienes éxito en la reinvasión.,Chỉ số của bạn sẽ được cải thiện nếu bạn thành công trong cuộc tái xâm lược.
+501,0,한번에,All at once,一度に,一下子,一下子,Внезапно,Tout à coup,De repente,Tất cả cùng một lúc
+502,0,오프라인 보상,Offline rewards,オフライン報酬,线下奖励,線下獎勵,Офлайн-награды,Récompenses hors ligne,Recompensas fuera de línea,Phần thưởng ngoại tuyến
+503,0,받기,Receive,受け取る,收到,收到,Получать,Recevoir,Recibir,Nhận được
+504,0,광고보고 2배,Double the money by watching an ad,広告を見てお金を2倍にしよう,看广告就能赚双倍的钱,看廣告就能賺雙倍的錢,"Удвойте деньги, посмотрев рекламу.",Doublez votre argent en regardant une publicité,Duplica tus ingresos viendo un anuncio.,Kiếm gấp đôi tiền bằng cách xem quảng cáo
+505,0,교환소,Exchange,交換,交换,交換,Обмен,Échange,Intercambio,Trao đổi
+506,0,일일 교환소,Daily Exchange,デイリーエクスチェンジ,每日交易所,每日交易所,Ежедневный обмен,Échange quotidien,Intercambio diario,Trao đổi hàng ngày
+507,0,주간 교환소,Weekly Exchange,週ごとの交換,每周交易,每週交易,Еженедельный обмен,Échange hebdomadaire,Intercambio semanal,Trao đổi hàng tuần
+508,0,자동진행,Automatic progress,自動進行,自动进度,自動進度,Автоматический прогресс,Progression automatique,Progreso automático,Tiến trình tự động
+509,0,버프,buff,バフ,增幅,增幅,бафф,chamois,pulir,đánh bóng
+510,0,응원 떼창,Cheering and singing along,声援を送り、一緒に歌う,欢呼雀跃，载歌载舞,歡呼雀躍，載歌載舞,Ликующие возгласы и подпевание,Acclamations et chants en chœur,Animando y cantando,Cổ vũ và hát theo
+511,0,보컬 연습,Vocal practice,発声練習,声乐练习,聲樂練習,Вокальная практика,Pratique vocale,Práctica vocal,Luyện thanh
+512,0,체력 단련,physical training,身体トレーニング,体育,體育,физическая подготовка,entraînement physique,entrenamiento físico,huấn luyện thể chất
+513,0,근검 절약,frugality and saving,倹約と貯蓄,节俭和储蓄,節儉和儲蓄,бережливость и экономия,frugalité et épargne,frugalidad y ahorro,tiết kiệm và chắt chiu
+514,0,랭킹,Ranking,ランキング,排行,排行,Рейтинг,Classement,Categoría,Xếp hạng
+515,0,전투력,Combat power,戦闘力,战斗力,戰鬥力,Боевая мощь,puissance de combat,Poder de combate,Sức mạnh chiến đấu
+516,0,스테이지,Stage,ステージ,阶段,階段,Этап,Scène,Escenario,Sân khấu
+517,0,순위,rank,ランク,秩,秩,классифицировать,rang,rango,thứ hạng
+518,0,보상표,Reward Table,報酬表,奖励表,獎勵表,Таблица вознаграждений,Tableau des récompenses,Tabla de recompensas,Bảng thưởng
+519,0,아직 갱신되지 않았습니다.,It has not been updated yet.,まだ更新されていません。,尚未更新。,尚未更新。,Информация ещё не обновлена.,Il n'a pas encore été mis à jour.,Todavía no se ha actualizado.,Nó vẫn chưa được cập nhật.
+520,0,<color=red>높은 단계</color> 강화석으로 <color=yellow>교환</color>할 수 있습니다.,You can exchange it for a high-level enhancement stone.,高レベルの強化石と交換できます。,你可以把它换成高级强化石。,你可以把它換成高級強化石。,Вы можете обменять его на камень улучшения высокого уровня.,Vous pouvez l'échanger contre une pierre d'amélioration de haut niveau.,Puedes cambiarlo por una piedra de mejora de alto nivel.,Bạn có thể đổi nó lấy một viên đá cường hóa cấp cao.
+521,0,교환소,Exchange,交換,交换,交換,Обмен,Échange,Intercambio,Trao đổi
+522,0,스테이지 이동,Stage transition,段階的移行,舞台过渡,舞台過渡,Переход между этапами,Transition de phase,Transición de etapa,Chuyển đổi giai đoạn
+523,0,소식,tidings,知らせ,消息,訊息,известия,nouvelles,noticias,tin tức
+524,0,공지사항,announcement,発表,公告,公告,объявление,annonce,anuncio,thông báo
+525,0,이벤트,event,イベント,事件,事件,событие,événement,evento,sự kiện
+526,0,상점,store,店,店铺,店鋪,магазин,magasin,almacenar,cửa hàng
+527,0,패키지,Package,パッケージ,包裹,包裹,Упаковка,Emballer,Paquete,Bưu kiện
+528,0,리더,leader,リーダー,领导者,領導者,лидер,chef,líder,lãnh đạo
+529,0,자원,resources,リソース,资源,資源,ресурсы,ressources,recursos,tài nguyên
+530,0,기간제,Fixed-term,有期雇用,固定期限,固定期限,Срочный контракт,Durée déterminée,Plazo fijo,Thời hạn cố định
+531,0,광고 제거 패키지,Ad removal package,広告削除パッケージ,广告移除套餐,廣告移除套餐,пакет для удаления рекламы,Pack de suppression de publicités,paquete de eliminación de anuncios,Gói loại bỏ quảng cáo
+532,0,초보자 패키지,Beginner Package,初心者向けパッケージ,入门套餐,入門套餐,Пакет для начинающих,Pack débutant,Paquete para principiantes,Gói dành cho người mới bắt đầu
+533,0,성장 패키지,Growth Package,成長支援パッケージ,增长计划,成長計劃,Пакет развития,Pack de croissance,Paquete de crecimiento,Gói tăng trưởng
+534,0,동료 패키지,Companion Package,コンパニオンパッケージ,配套包,配套包,Сопутствующий пакет,Pack d'accompagnement,Paquete complementario,Gói đi kèm
+535,0,무기 패키지,Weapon Package,武器パッケージ,武器包,武器包,Комплект вооружения,Ensemble d'armes,Paquete de armas,Gói vũ khí
+536,0,오라 패키지,Aura Package,オーラパッケージ,灵气套装,靈氣套裝,Пакет Аура,Pack Aura,Paquete Aura,Gói Aura
+537,0,광고를 제거하고 다양한 혜택을 얻어보세요. 다양한 재화는 서비스,Remove ads and enjoy various benefits. Various goods are services,広告を削除して、さまざまな特典をお楽しみください。さまざまな商品やサービスをご利用いただけます。,去除广告，享受多种福利。各种商品和服务,去除廣告，享受多種福利。各種商品和服務,Удалите рекламу и наслаждайтесь различными преимуществами. Различные товары и услуги.,Supprimez les publicités et profitez de nombreux avantages. Divers biens et services,Elimine los anuncios y disfrute de diversas ventajas. Diversos bienes son servicios.,Xóa quảng cáo và tận hưởng nhiều lợi ích. Nhiều hàng hóa và dịch vụ khác nhau.
+538,0,데뷔 초읽기! 단 한 번의 기회로 연습생 생활을 청산하고 초고속 성장을 시작하세요.,Debut countdown! End your trainee life with a single opportunity and start ultra-fast growth.,デビューまでのカウントダウン！たった一度のチャンスで研修生生活を終え、超高速成長をスタートさせよう。,出道倒计时！抓住这唯一的机会，结束你的练习生生涯，开启超高速成长之旅。,出道倒數！把握這唯一的機會，結束你的練習生生涯，開啟超高速成長之旅。,"Обратный отсчет до дебюта! Завершите свою стажировку, получив уникальную возможность, и начните стремительный карьерный рост.",Compte à rebours avant vos débuts ! Mettez fin à votre période de formation en une seule opportunité et entamez une croissance ultra-rapide.,¡Cuenta regresiva para el debut! Pon fin a tu etapa de aprendiz con una sola oportunidad y comienza un crecimiento ultrarrápido.,Đếm ngược đến màn ra mắt! Kết thúc quãng đời thực tập sinh với cơ hội duy nhất này và bắt đầu hành trình phát triển siêu tốc.
+539,0,멈추지 않는 쾌속 성장! 레벨에 따라 쏟아지는 보상으로 당신의 한계를 돌파하세요.,Non-stop rapid growth! Break through your limits with rewards pouring in as you level up.,ノンストップで急成長！レベルアップするにつれて報酬がどんどん増え、限界を突破しよう。,持续快速成长！突破极限，升级即可获得丰厚奖励。,持續快速成長！突破極限，升級即可獲得豐厚獎勵。,Непрерывный стремительный рост! Преодолевайте свои ограничения и получайте награды по мере повышения уровня.,Une croissance fulgurante et continue ! Dépassez vos limites grâce à des récompenses abondantes à chaque niveau franchi.,¡Crecimiento rápido e imparable! Supera tus límites y recibe recompensas a medida que subas de nivel.,Tăng trưởng nhanh chóng không ngừng nghỉ! Vượt qua giới hạn của bản thân với phần thưởng dồi dào khi bạn lên cấp.
+540,0,혼자보다는 팀이죠! 무대를 함께 빛낼 강력한 동료들을 영입해 최고의 라인업을 완성하세요.,"It's a team, not alone! Recruit powerful teammates to shine on stage together and complete the ultimate lineup.",チームで力を合わせよう！一人じゃダメだ！強力な仲間を集めて、共にステージで輝き、最強のラインナップを完成させよう。,这是一个团队，不是孤军奋战！招募强大的队友，一起在舞台上闪耀，打造最强阵容。,這是一個團隊，不是孤軍奮戰！招募強大的隊友，一起在舞台上閃耀，打造最強陣容。,"Это команда, а не одиночка! Соберите сильных товарищей по команде, чтобы вместе блистать на сцене и создать идеальный состав.","C'est un travail d'équipe, pas une équipe seule ! Recrutez des coéquipiers de talent pour briller ensemble sur scène et former l'équipe ultime.","¡Es un equipo, no estás solo! Recluta compañeros de equipo poderosos para brillar juntos en el escenario y completar la alineación definitiva.","Là một đội, không phải đơn độc! Hãy chiêu mộ những đồng đội tài năng để cùng tỏa sáng trên sân khấu và hoàn thiện đội hình đỉnh cao."
+541,0,무대 위의 화력 지원! 압도적인 퍼포먼스를 완성할 최상급 장비들로 적들을 압도하세요.,Firepower support on stage! Overwhelm your enemies with top-tier equipment to complete an overwhelming performance.,ステージ上で強力な火力支援を受けよう！最高級の装備で敵を圧倒し、圧倒的なパフォーマンスを完成させよう。,舞台上火力全开！用顶级装备压制敌人，完成一场压倒性的表演。,舞台上火力全開！用頂級裝備壓制敵人，完成一場壓倒性的表演。,"Огневая поддержка на сцене! Сокрушите врагов первоклассным снаряжением, чтобы устроить потрясающее выступление.",Déchaînez votre puissance de feu sur scène ! Submergez vos ennemis avec un équipement de pointe pour une performance époustouflante.,¡Potencia de fuego en el escenario! Abruma a tus enemigos con equipo de primera categoría para lograr una actuación arrolladora.,Tăng cường hỏa lực trên sân khấu! Áp đảo kẻ thù bằng trang bị hàng đầu để hoàn thành màn trình diễn ấn tượng.
+542,0,진정한 스타의 증표! 캐릭터를 감싸는 신비로운 오라로 능력치와 비주얼을 동시에 챙기세요.,The mark of a true star! Secure both stats and visuals with a mysterious aura enveloping your character.,真のスターの証！キャラクターを包み込む神秘的なオーラで、ステータスとビジュアルの両方を向上させよう。,真正的明星标志！神秘的光环笼罩着你的角色，提升你的各项属性，增强视觉效果。,真正的明星標誌！神秘的光環籠罩著你的角色，提升你的各項屬性，增強視覺效果。,"Признак настоящей звезды! Обеспечьте своему персонажу не только отличные характеристики, но и привлекательный внешний вид, окутанный таинственной аурой.",La marque d'une véritable star ! Obtenez des statistiques et un style visuel exceptionnels grâce à une aura mystérieuse qui enveloppe votre personnage.,¡La marca de una verdadera estrella! Mejora tanto tus estadísticas como tu apariencia con un aura misteriosa que envuelve a tu personaje.,Dấu ấn của một ngôi sao thực thụ! Sở hữu cả chỉ số và hình ảnh ấn tượng với hào quang bí ẩn bao trùm nhân vật của bạn.
+543,0,골드,Gold,金,金子,金子,Золото,Or,Oro,Vàng
+544,0,복구석,Restoration stone,修復用石材,修复石,修復石,Реставрационный камень,Pierre de restauration,Piedra de restauración,Đá phục chế
+545,0,회종시계,clock,クロック,钟,鐘,часы,horloge,reloj,cái đồng hồ
+546,0,뽑기 코인,Gacha Coins,ガチャコイン,扭蛋币,扭蛋幣,Монеты Гача,Pièces Gacha,Monedas Gacha,Xu Gacha
+547,0,마블 코인,Marvel Coin,マーベルコイン,漫威硬币,漫威硬幣,Монета Marvel,Pièce Marvel,Moneda Marvel,Đồng xu Marvel
+548,0,추억의 뽑기를해서 다양한 보상을 얻어보자고!,Let's try the nostalgic gacha and get various rewards!,懐かしのガチャに挑戦して、様々な報酬を手に入れよう！,来体验一下怀旧扭蛋游戏，赢取各种奖励吧！,來體驗懷舊扭蛋遊戲，贏取各種獎勵吧！,Давайте попробуем сыграть в ностальгическую гача-игру и получим разные награды!,Essayons ce gacha nostalgique et obtenons diverses récompenses !,¡Probemos el gacha nostálgico y consigamos diversas recompensas!,Hãy thử vận ​​may với trò chơi gacha hoài cổ và nhận nhiều phần thưởng hấp dẫn!
+549,0,주사위를 돌려 다양한 보상을 획득하세요.,Roll the dice to win various rewards.,サイコロを振って様々な報酬を獲得しよう。,掷骰子赢取各种奖励。,擲骰子贏取各種獎勵。,"Бросьте кубики, чтобы выиграть различные награды.",Lancez les dés pour gagner diverses récompenses.,Lanza los dados para ganar diversas recompensas.,Hãy tung xúc xắc để giành được nhiều phần thưởng khác nhau.
+550,0,일괄 수령,Bulk receipt,大量受領,批量收货,大量收貨,Оптовый чек,Réception groupée,Recibo por volumen,Biên lai số lượng lớn
+551,0,기기 변경,CHANGE,CHANGE,CHANGE,CHANGE,CHANGE,CHANGE,CHANGE,CHANGE
+552,0,<color=red>기기 변경</color> 를 작성하고\n데이터를 저장 후 기기를 변경해주세요,Please fill out <color=red>Change Device</color> and save the data before changing the device.,デバイスを変更する前に、<color=red>デバイス変更</color>に必要事項を入力してデータを保存してください。,请在更换设备前填写<color=red>更换设备</color>并保存数据。,請在更換設備前填寫<color=red>更換設備</color>並儲存資料。,"Пожалуйста, заполните форму <color=red>Замена устройства</color> и сохраните данные перед заменой устройства.",Veuillez remplir le formulaire <color=red>Changer d'appareil</color> et enregistrer les données avant de modifier l'appareil.,"Por favor, rellene el formulario <color=red>Cambiar dispositivo</color> y guarde los datos antes de cambiar el dispositivo.",Vui lòng điền vào biểu mẫu <color=red>Thay đổi thiết bị</color> và lưu dữ liệu trước khi thay đổi thiết bị.
+553,0,저장,save,保存,节省,節省,сохранять,sauvegarder,ahorrar,cứu
+554,0,<color=red>20글자</color> 까지 가능합니다.,Up to 20 characters are allowed.,最大20文字まで入力可能です。,最多允许输入20个字符。,最多允許輸入20個字元。,Допускается до 20 символов.,20 caractères maximum sont autorisés.,Se permiten hasta 20 caracteres.,Mỗi người được phép nhập tối đa 20 ký tự.
+555,0,계정 삭제,Delete account,アカウントを削除,删除帐户,刪除帳戶,Удалить аккаунт,Supprimer le compte,Eliminar cuenta,Xóa tài khoản
+556,0,<color=red>Delete</color> 를 작성하고\n삭제버튼을 누르면 삭제됩니다.,Write <color=red>Delete</color> and press the delete button to delete it.,「<color=red>削除</color>」と入力して削除ボタンを押すと削除されます。,输入<color=red>删除</color>，然后按删除键将其删除。,輸入<color=red>刪除</color>，然後按刪除鍵將其刪除。,"Напишите <color=red>Удалить</color> и нажмите кнопку удаления, чтобы удалить его.",Saisissez <color=red>Supprimer</color> et appuyez sur le bouton Supprimer pour le supprimer.,Escribe <color=red>Eliminar</color> y pulsa el botón de eliminar para borrarlo.,Viết <color=red>Xóa</color> và nhấn nút xóa để xóa nó.
+557,0,삭제,delete,消去,删除,刪除,удалить,supprimer,borrar,xóa bỏ
+558,0,보상 획득,Get,得る,得到,得到,Получать,Obtenir,Conseguir,Lấy
+559,0,뽑기판,board,ボード,木板,木板,доска,conseil,junta,Cái bảng
+560,0,<{0}일후 초기화>,<Reset after {0} days>,＜{0}日後にリセット＞,<0天后重置>,<0天後重置>,<Сброс через {0} дней>,<Réinitialiser après {0} jours>,<Reiniciar después de {0} días>,<Đặt lại sau {0} ngày>
+561,0,완주 보상,Finish reward,完走報酬,完成奖励,完成獎勵,Завершить награду,Récompense finale,Recompensa por finalizar,Hoàn thành phần thưởng
+562,0,주사위를 던져주세요,Please roll the dice.,サイコロを振ってください。,请掷骰子。,請擲骰子。,"Пожалуйста, бросьте кубик.",Veuillez lancer les dés.,"Por favor, tira los dados.",Hãy tung xúc xắc.
+563,0,완주,Finish,仕上げる,结束,結束,Заканчивать,Finition,Finalizar,Hoàn thành
+564,0,"<color=yellow>가로,세로</color> 빙고","<color=yellow>Horizontal, Vertical</color> Bingo",<color=yellow>水平、垂直</color> ビンゴ,<color=yellow>水平，垂直</color>宾果,<color=yellow>水平，垂直</color>賓果,"<color=yellow>Горизонтальный, Вертикальный</color> Бинго","<color=yellow>Horizontal, Vertical</color> Bingo","<color=yellow>Horizontal, Vertical</color> Bingo","<color=yellow>Ngang, Dọc</color> Bingo"
+565,0,<color=red>전체</color> 빙고,<color=red>All</color> Bingo,<color=red>すべて</color> ビンゴ,<color=red>全部</color> 宾果,<color=red>全部</color> 賓果,<color=red>Все</color> Бинго,<color=red>Tous</color> Bingo,<color=red>Todos</color> Bingo,<color=red>Tất cả</color> Bingo
+566,0,눈금(합계) 확률,Scale (Sum) Probability,スケール（合計）確率,规模（总和）概率,規模（總和）機率,Шкала (сумма) Вероятность,Échelle (Somme) Probabilité,Escala (Suma) Probabilidad,Xác suất (Tổng)
+567,0,합계 : {0},Total : {0},合計：{0},总计：{0},總計：{0},Всего: {0},Total : {0},Total: {0},Tổng cộng: {0}
+568,0,아이템 확률,Item probability,項目確率,项目概率,專案機率,Вероятность элемента,Probabilité de l'élément,Probabilidad del ítem,Xác suất của mục
+569,0,{0}개 <color=yellow>({1}%),{0} items <color=yellow>({1}%),{0}個のアイテム <color=yellow>({1}%),0 件商品 <color=yellow>({1}%),0 件商品 <color=yellow>({1}%),{0} товаров <color=yellow>({1}%),{0} articles <color=yellow>({1}%),{0} artículos <color=yellow>({1}%),{0} mục <color=yellow>({1}%)
+570,0,"드디어 퇴근 시간! 고생한 당신, 이제 즐길 시간입니다.","Finally, it's time to go home! You've worked hard, now it's time to enjoy yourself.",さあ、いよいよ帰宅の時間です！よく頑張ったんだから、これからはゆっくり休んでください。,终于可以回家了！你辛苦了，现在是好好放松的时候了。,終於可以回家了！你辛苦了，現在是好好放鬆的時候了。,"Наконец-то пора домой! Вы много работали, теперь пора отдохнуть и насладиться жизнью.","Enfin, il est temps de rentrer à la maison ! Vous avez bien travaillé, il est temps de vous détendre.","¡Por fin es hora de volver a casa! Has trabajado duro, ahora es momento de disfrutar.","Cuối cùng thì cũng đến lúc về nhà rồi! Bạn đã làm việc chăm chỉ, giờ là lúc để tận hưởng cuộc sống."
+571,0,케이팝,K-pop,K-POP,韩国流行音乐,韓國流行音樂,K-pop,K-pop,K-pop,K-pop
+572,0,<color=red>동일등급</color>안에서의 스킬은 모두 <color=yellow>동일한 확률</color>로 등장합니다.,All skills within the same grade appear with the same probability.,同じ学年内のすべてのスキルは、同じ確率で出現します。,同一等级的所有技能出现的概率相同。,同一等級的所有技能出現的機率相同。,Все навыки в рамках одного класса проявляются с одинаковой вероятностью.,Toutes les compétences d'un même niveau apparaissent avec la même probabilité.,Todas las habilidades dentro del mismo grado aparecen con la misma probabilidad.,Tất cả các kỹ năng trong cùng một cấp độ đều xuất hiện với xác suất như nhau.
+573,0,특성은 모두 <color=yellow>동일한 확률</color>로 등장 합니다.,All traits appear with equal probability.,すべての特性は等しい確率で現れる。,所有性状出现的概率均等。,所有性狀出現的機率均等。,Все признаки проявляются с равной вероятностью.,Tous les traits apparaissent avec une probabilité égale.,Todos los rasgos aparecen con igual probabilidad.,Tất cả các đặc điểm đều xuất hiện với xác suất như nhau.
+574,0,<color=red>동일등급</color>안에서의 보석은 모두 <color=yellow>동일한 확률</color>로 등장합니다.,All gems within the same grade appear with the same probability.,同じグレードの宝石はすべて、同じ確率で出現します。,同一等级的宝石出现概率相同。,同一等級的寶石出現機率相同。,Все драгоценные камни одного класса появляются с одинаковой вероятностью.,Toutes les gemmes de même qualité apparaissent avec la même probabilité.,Todas las gemas del mismo grado aparecen con la misma probabilidad.,Tất cả các viên đá quý cùng cấp độ đều xuất hiện với xác suất như nhau.
+575,0,<color=red>전설 </color>부터는 <color=yellow>승급</color> 으로 획득 가능합니다.,"From <color=red>Legend</color> onwards, you can obtain them through <color=yellow>Promotion</color>.",<color=red>Legend</color>以降は、<color=yellow>Promotion</color>を通じて入手できます。,从《传奇》开始，您可以通过《晋升》获得它们。,從《傳奇》開始，您可以透過《晉升》獲得它們。,"Начиная с <color=red>Легенды</color>, вы можете получить их через <color=yellow>Акцию</color>.","À partir de <color=red>Légende</color>, vous pouvez les obtenir via <color=yellow>Promotion</color>.","A partir de <color=red>Leyenda</color>, puedes obtenerlos mediante <color=yellow>Promoción</color>.","Từ cấp độ <color=red>Huyền thoại</color> trở đi, bạn có thể nhận được chúng thông qua <color=yellow>Khuyến mãi</color>."
+576,0,회수 완료,Recovery completed,復旧完了,恢复完成,恢復完成,Восстановление завершено.,Récupération terminée,Recuperación completada,Quá trình phục hồi đã hoàn tất.
+577,0,벌써 가는 거예요?,Game over,ゲームオーバー,游戏结束,遊戲結束,Игра закончена,Jeu terminé,Juego terminado,Trò chơi kết thúc
+578,0,응원 에너지 충전 완료! 다음에 또 만나요!,Would you like to exit the game?,ゲームを終了しますか？,您想退出游戏吗？,您想退出遊戲嗎？,Вы хотите выйти из игры?,Souhaitez-vous quitter le jeu ?,¿Deseas salir del juego?,Bạn có muốn thoát khỏi trò chơi không?
+579,0,다음에 봐요,yes,はい,是的,是的,да,Oui,Sí,Đúng
+580,0,조금 더 있기,no,いいえ,不,不,нет,Non,No,KHÔNG
+581,0,가방을 비워주세요!,Please empty your bag!,バッグの中身を空にしてください！,请清空您的包！,請清空您的包包！,"Пожалуйста, вытряхните содержимое своей сумки!",Veuillez vider votre sac !,"¡Por favor, vacíe su bolsa!",Hãy đổ hết đồ trong túi ra!
+582,0,랭킹 보상,Ranking rewards,ランキング報酬,排名奖励,排名獎勵,Награды за рейтинг,Récompenses de classement,Recompensas por clasificación,Phần thưởng xếp hạng
+583,0,랭킹은 <color=red>매주월요일 9시</color>에 종료됩니다.,The ranking ends at 9:00 every Monday.,ランキングは毎週月曜日の午前9時に締め切られます。,排名于每周一上午 9:00 结束。,排名於每週一上午 9:00 結束。,Рейтинг заканчивается в 9:00 каждый понедельник.,Le classement se termine tous les lundis à 9h00.,La clasificación finaliza todos los lunes a las 9:00.,Bảng xếp hạng kết thúc lúc 9:00 mỗi thứ Hai.
+584,0,"동점경우 <color=red>공동순위</color>로 처리되고, 다음순위는 수만큼 건너 뜁니다.","In case of a tie, it is treated as a joint ranking, and the next ranking is skipped by that number.",同点の場合は、共同順位として扱われ、次の順位はその順位分だけ飛ばされる。,如果出现并列情况，则视为并列排名，下一个排名将跳过该数字。,如果出現並列情況，則視為並列排名，下一個排名將跳過該數字。,"В случае ничьей, результат рассматривается как общий рейтинг, и следующий рейтинг пропускается на величину этого числа.","En cas d'égalité, le classement est considéré comme un classement commun, et le classement suivant est sauté de ce nombre.","En caso de empate, se considera una clasificación conjunta y se omite ese número en la siguiente posición.","Trong trường hợp có kết quả bằng nhau, thứ hạng sẽ được coi là đồng hạng, và thứ hạng tiếp theo sẽ bị bỏ qua một số điểm tương ứng."
+585,0,뽑기 일일 미션,Daily Draw Mission,デイリードローミッション,每日抽奖任务,每日抽獎任務,Ежедневное задание по рисованию,Mission de tirage quotidien,Misión del sorteo diario,Nhiệm vụ rút thăm hàng ngày
+586,0,마블 일일 미션,Marvel Daily Mission,マーベル・デイリーミッション,漫威每日任务,漫威每日任務,Ежедневная миссия Marvel,Mission quotidienne Marvel,Misión diaria de Marvel,Nhiệm vụ hàng ngày của Marvel
+587,0,일일 미션은 매일 초기화 됩니다,Daily missions are reset every day.,デイリーミッションは毎日リセットされます。,每日任务每天都会重置。,每日任務每天都會重置。,Ежедневные задания сбрасываются каждый день.,Les missions quotidiennes sont réinitialisées chaque jour.,Las misiones diarias se reinician todos los días.,Nhiệm vụ hàng ngày được thiết lập lại mỗi ngày.
+588,0,완료,complete,完了,完全的,完全的,полный,complet,completo,hoàn thành
+589,0,[공지사항],[NOTICE],[知らせ],[注意],[注意],[УВЕДОМЛЕНИЕ],[AVIS],[AVISO],[ĐỂ Ý]
+590,0,[업데이트],[UPDATE],[アップデート],[更新],[更新],[ОБНОВЛЯТЬ],[MISE À JOUR],[ACTUALIZAR],[CẬP NHẬT]

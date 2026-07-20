@@ -1,0 +1,475 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>성장 심층 · 케이팝히어로즈 분석</title><style>
+@font-face{font-family:'Pretendard';src:url('fonts/Pretendard-Regular.woff2') format('woff2');
+ font-weight:400 700;font-display:swap}
+:root{--primary:#D05090;--deep:#C83680;--lite:#F1DCE6;--bg:#FDF7FA;--ink:#102050;--navy:#102050;
+ --card:#fff;--line:#ecdde5;--muted:#6b6472;
+ --c0:#D05090;--c1:#102050;--c2:#F5A524;--c3:#3EC1D3;--c4:#8E5BF0;--c5:#FF6B6B}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:'Pretendard',-apple-system,'Malgun Gothic',sans-serif;color:var(--ink);
+ background:var(--bg);line-height:1.62;-webkit-text-size-adjust:100%}
+a{color:var(--deep);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;
+ box-shadow:0 2px 12px rgba(16,32,80,.25)}
+.topbar{display:flex;align-items:center;gap:14px;padding:11px 18px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;white-space:nowrap}
+.brand img{width:30px;height:30px;border-radius:9px;display:block}
+.brand .g{color:var(--primary)}
+nav.main{margin-left:auto;display:flex;flex-wrap:wrap;gap:2px}
+nav.main a{color:#d6cfe0;font-size:12.5px;padding:5px 9px;border-radius:7px;white-space:nowrap}
+nav.main a:hover{background:rgba(255,255,255,.10);text-decoration:none}
+nav.main a.active{background:var(--primary);color:#fff}
+.hamb{display:none;margin-left:auto;background:rgba(255,255,255,.14);border:0;color:#fff;
+ font-size:20px;width:40px;height:36px;border-radius:8px;cursor:pointer}
+@media(max-width:820px){.hamb{display:block}
+ nav.main{flex-basis:100%;flex-direction:column;max-height:0;overflow:hidden;
+  transition:max-height .28s ease;margin-left:0}
+ nav.main.open{max-height:760px}
+ nav.main a{padding:9px 8px;border-bottom:1px solid rgba(255,255,255,.07)}}
+h1{font-size:30px;line-height:1.22;margin:0 0 8px;letter-spacing:-.4px}
+h2{font-size:21px;margin:34px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--lite)}
+h3{font-size:16px;margin:20px 0 8px}
+main{padding:26px 0 92px}
+.lead{font-size:16px;color:var(--muted);margin:0 0 18px}
+.grid{display:grid;gap:14px}.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:720px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card h3{margin-top:0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;text-align:center}
+.stat .n{font-size:26px;font-weight:800;color:var(--deep);line-height:1.12}
+.stat .n.navy{color:var(--navy)}
+.stat .l{font-size:12px;color:var(--muted);margin-top:5px}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px}
+.chip.fact{background:#e6f4e6;color:#2f7a2f}.chip.inf{background:#fdf0dc;color:#a56312}
+.chip.op{background:#ece6f7;color:#5b40a8}.chip.warn{background:#fce4ec;color:#b3325f}
+.tag{display:inline-block;background:var(--lite);color:var(--deep);font-size:12px;
+ padding:3px 10px;border-radius:20px;margin:3px 3px 0 0;font-weight:600}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:12px 0;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--lite);color:var(--deep);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.callout{border-left:4px solid var(--primary);background:#fdeef5;padding:12px 15px;
+ border-radius:0 10px 10px 0;margin:14px 0;font-size:14px}
+.callout.warn{border-color:#e0567f;background:#fdeaf0}
+.callout.navy{border-color:var(--navy);background:#eef1f9}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(max-width:720px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal img{width:100%;height:110px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.gal figure{margin:0}.gal figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:3px}
+.montage{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
+.svgwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff;padding:10px}
+ul.clean{padding-left:19px;margin:8px 0}ul.clean li{margin:4px 0}
+.src{font-size:12px;color:var(--muted)}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.kv:last-child{border-bottom:0}.kv .k{color:var(--muted)}.kv .v{font-weight:700;text-align:right}
+.bar{height:9px;background:var(--lite);border-radius:6px;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--primary)}
+footer.prog{position:fixed;left:0;right:0;bottom:0;background:rgba(16,32,80,.96);z-index:40;padding:9px 0}
+.ptrack{max-width:1080px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:12px}
+.dots{position:relative;flex:1;height:22px}
+.dline{position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,.18);
+ transform:translateY(-50%);border-radius:3px}
+.dfill{position:absolute;top:50%;left:0;height:3px;background:var(--primary);
+ transform:translateY(-50%);border-radius:3px;width:0;transition:width .2s}
+.dot{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:#5b5f7a;
+ transform:translate(-50%,-50%);border:2px solid var(--navy);cursor:pointer}
+.dot.on{background:var(--primary)}
+.mascot{width:34px;height:34px;border-radius:9px;flex-shrink:0;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.plabel{color:#d6cfe0;font-size:12px;white-space:nowrap;flex-shrink:0}
+.foot-note{max-width:1080px;margin:22px auto 0;padding:14px 18px;color:var(--muted);font-size:12.5px;
+ border-top:1px solid var(--line)}
+</style><style id="gb-css">
+:root{--gb-w:266px}
+.gb-side{
+  position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
+  background:#11141c;border-right:1px solid #262d3b;overflow-y:auto;
+  padding:16px 12px 28px;
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.gb-side::-webkit-scrollbar{width:8px}
+.gb-side::-webkit-scrollbar-thumb{background:#2b3346;border-radius:4px}
+.gb-home{
+  display:flex;align-items:center;gap:7px;color:#aab4c6;text-decoration:none;
+  font-size:12.5px;padding:9px 11px;border-radius:9px;border:1px solid #262d3b;
+  background:#171b25;transition:.18s;margin-bottom:14px
+}
+.gb-home:hover{background:#1e2431;color:#fff;border-color:var(--gb-ac);text-decoration:none}
+.gb-title{
+  color:#fff;font-size:15px;font-weight:800;padding:0 11px 10px;margin-bottom:8px;
+  border-bottom:1px solid #262d3b;letter-spacing:-.01em;line-height:1.4
+}
+.gb-title small{display:block;color:#6f7a8f;font-size:11px;font-weight:500;margin-top:3px;letter-spacing:.06em}
+.gb-nav{display:flex;flex-direction:column;gap:1px}
+.gb-nav a{
+  display:flex;align-items:center;gap:9px;color:#aab4c6;text-decoration:none;
+  font-size:13px;padding:8px 11px;border-radius:8px;transition:.15s;line-height:1.45
+}
+.gb-nav a .num{
+  font-family:'Consolas',monospace;font-size:10.5px;color:#5d6779;min-width:18px;flex-shrink:0
+}
+.gb-nav a:hover{background:#1b2130;color:#fff;text-decoration:none}
+.gb-nav a.on{background:var(--gb-ac);color:#0e1016;font-weight:700}
+.gb-nav a.on .num{color:rgba(0,0,0,.5)}
+body{padding-left:var(--gb-w)}
+.gb-burger,.gb-dim{display:none}
+@media(max-width:900px){
+  body{padding-left:0}
+  .gb-side{transform:translateX(-100%);transition:transform .26s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 30px rgba(0,0,0,.4)}
+  body.gb-open .gb-side{transform:none}
+  .gb-burger{
+    display:flex;align-items:center;justify-content:center;position:fixed;
+    left:12px;bottom:14px;z-index:320;width:48px;height:48px;border-radius:50%;
+    background:var(--gb-ac);color:#0e1016;border:none;font-size:19px;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  .gb-dim{
+    display:block;position:fixed;inset:0;z-index:290;background:rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .22s
+  }
+  body.gb-open .gb-dim{opacity:1;pointer-events:auto}
+  body.gb-open{overflow:hidden}
+}
+@media print{.gb-side,.gb-burger,.gb-dim{display:none}body{padding-left:0}}
+  .gb-side{--gb-ac:#c83680}
+  :root{--gb-ac:#c83680}
+
+/* kpopheros override */
+header.top nav.main{display:none!important}
+header.top .hamb{display:none!important}
+footer.prog{left:var(--gb-w)!important}
+@media(max-width:900px){ footer.prog{left:0!important} }
+
+</style>
+<!--gb-injected--></head><body>
+<button class="gb-burger" aria-label="목차 열기">☰</button>
+<div class="gb-dim"></div>
+<aside class="gb-side">
+  <a class="gb-home" href="../index.html">← 게임 분석 아카이브</a>
+  <div class="gb-title">케이팝히어로즈<small>ANALYSIS REPORT</small></div>
+  <nav class="gb-nav">
+        <a class="" href="index.html"><span class="num">—</span><span>표지</span></a>
+    <a class="" href="01_overview.html"><span class="num">01</span><span>게임 개요</span></a>
+    <a class="" href="02_content.html"><span class="num">02</span><span>콘텐츠 구성</span></a>
+    <a class="" href="03_content_flow.html"><span class="num">03</span><span>콘텐츠 흐름</span></a>
+    <a class="" href="04_currency.html"><span class="num">04</span><span>재화</span></a>
+    <a class="" href="05_currency_flow.html"><span class="num">05</span><span>재화 흐름</span></a>
+    <a class="" href="06_growth.html"><span class="num">06</span><span>성장</span></a>
+    <a class="" href="07_battle.html"><span class="num">07</span><span>전투·적</span></a>
+    <a class="" href="08_events.html"><span class="num">08</span><span>이벤트·리텐션</span></a>
+    <a class="" href="09_bm.html"><span class="num">09</span><span>수익화(BM)</span></a>
+    <a class="" href="10_market.html"><span class="num">10</span><span>시장</span></a>
+    <a class="" href="11_assets.html"><span class="num">11</span><span>에셋</span></a>
+    <a class="" href="12_tech.html"><span class="num">12</span><span>기술·보안</span></a>
+    <a class="" href="13_tables.html"><span class="num">13</span><span>데이터</span></a>
+    <a class="" href="14_method.html"><span class="num">14</span><span>방법론·한계</span></a>
+    <a class="" href="15_unlock.html"><span class="num">15</span><span>콘텐츠 해금</span></a>
+    <a class="on" href="16_growth_deep.html"><span class="num">16</span><span>성장 심층</span></a>
+    <a class="" href="17_simulator.html"><span class="num">17</span><span>성장 시뮬레이터</span></a>
+    <a class="" href="18_improve.html"><span class="num">18</span><span>개선 제안</span></a>
+  </nav>
+</aside>
+<header class="top"><div class="topbar">
+<span class="brand"><img src="img/app/icon.png" alt="">케이팝<span class="g">히어로즈</span></span>
+<button class="hamb" aria-label="menu">☰</button><nav class="main"><a href="index.html">표지</a><a href="01_overview.html">게임 개요</a><a href="02_content.html">콘텐츠 구성</a><a href="03_content_flow.html">콘텐츠 흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">재화 흐름</a><a href="06_growth.html">성장</a><a href="07_battle.html">전투·적</a><a href="08_events.html">이벤트·리텐션</a><a href="09_bm.html">수익화(BM)</a><a href="10_market.html">시장</a><a href="11_assets.html">에셋</a><a href="12_tech.html">기술·보안</a><a href="13_tables.html">데이터</a><a href="14_method.html">방법론·한계</a><a href="15_unlock.html">콘텐츠 해금</a><a href="16_growth_deep.html" class="active">성장 심층</a><a href="17_simulator.html">성장 시뮬레이터</a><a href="18_improve.html">개선 제안</a></nav>
+</div></header><div class="wrap"><main>
+<style>
+.fx{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin:10px 0}
+.fx code{font-size:14px;color:var(--deep);font-weight:700}
+.fx .t{font-size:12.5px;color:var(--muted);margin-bottom:5px}
+.eqbar{display:flex;gap:2px;align-items:flex-end;height:70px;margin-top:8px}
+.eqbar span{flex:1;background:var(--lite);border-radius:2px 2px 0 0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+</style>
+
+<h1>성장 밸런스 심층</h1>
+<p class="lead">성장 4축(장비·동료·마스터리·스킬)의 곡선을 전부 계산했다.
+결론부터: <b>4축은 등가가 아니다.</b> 자릿수가 다르고, 사실상 <b>동료 단일 축</b>이 전투력을 결정한다.</p>
+
+<div class="grid g4" style="margin:18px 0">
+<div class="stat"><div class="n">×1.15</div><div class="l">장비 공격력 공비</div></div>
+<div class="stat"><div class="n navy">×1.47</div><div class="l">동료 dmg 공비</div></div>
+<div class="stat"><div class="n">×9.0</div><div class="l">40강 배수</div></div>
+<div class="stat"><div class="n">선형</div><div class="l">마스터리 곡선</div></div>
+<div class="stat"><div class="n navy">4,877배</div><div class="l">장비 ÷ 마스터리</div></div>
+<div class="stat"><div class="n navy">1.8배</div><div class="l">동료 ÷ 장비 전체</div></div>
+<div class="stat"><div class="n">96%</div><div class="l">장비 총합 중 type3 비중</div></div>
+<div class="stat"><div class="n">10마리</div><div class="l">동일 스탯 최상위 동료</div></div>
+</div>
+
+<h2>결론 3줄</h2>
+<div class="callout">
+<b>1. 성장 4축은 등가가 아니다.</b> 최대 기여치 기준 <b>동료 &gt; 장비 ≫≫ 마스터리</b>다.
+<b>장비 9부위를 전부 합쳐도(16,385,409) 동료 tier7(29,373,140) 하나가 1.79배 우위</b>다 — 동료는 여전히 최강 단일 축이다.
+반면 마스터리 flat 공격력 총합(3,360)은 장비 대비 <b>4,877배</b>, 동료 대비 <b>8,742배</b> 열세로 <b>투자 가치가 사실상 없다</b>.<br>
+<b>2. 곡선은 전부 단순하다.</b> 장비 = 등비 1.15, 동료 = 등비 1.47, 마스터리 = 완전 선형, 강화는 예외 없이 <code>× (1 + 0.2L)</code>. 밸런싱 미세조정 흔적이 없다.<br>
+<b>3. 미완성 콘텐츠가 대량이다.</b> ability 201행 중 128행이 빈 껍데기, siege 50행은 5행의 10회 복붙, 최상위 동료 10마리는 스탯이 완전히 동일하다.
+</div>
+
+<h2>축별 최대 기여 — 정면 비교 ⭐</h2>
+<div class="tblwrap"><table>
+<tr><th>성장 축</th><th style="text-align:right">최대 기여치</th><th>자릿수(로그 스케일)</th><th>단위</th><th>비용</th><th>근거</th></tr>
+<tr><td>마스터리 (공격력 flat 6노드 만렙)</td><td style='text-align:right'><b>3,360</b></td><td style='min-width:130px'><div class='bar'><i style='width:47.2%'></i></div></td><td>공격력 <b>+N</b> (flat)</td><td class='src'>740 포인트</td><td class='src'>ability 32</td></tr><tr><td>장비 <b>type 2 단독</b> 48등급 40강</td><td style='text-align:right'><b>640,584</b></td><td style='min-width:130px'><div class='bar'><i style='width:77.8%'></i></div></td><td>공격력 <b>N%</b> 증가</td><td class='src'>강화석/골드</td><td class='src'>부분값 — 비교 기준 아님</td></tr><tr><td>장비 <b>9부위 전체</b> 48등급 40강</td><td style='text-align:right'><b>16,385,409</b></td><td style='min-width:130px'><div class='bar'><i style='width:96.6%'></i></div></td><td>main 스탯 <b>N%</b> 합계</td><td class='src'>강화석/골드</td><td class='src'><b>본문 채택 기준</b></td></tr><tr><td>동료 index 30 (tier 6)</td><td style='text-align:right'><b>9,246,947</b></td><td style='min-width:130px'><div class='bar'><i style='width:93.3%'></i></div></td><td>동료 <b>dmg</b> (별도 딜소스)</td><td class='src'>뽑기코인 60</td><td class='src'>db_pet.dmg</td></tr><tr><td>동료 tier 7 (index 31~40)</td><td style='text-align:right'><b>29,373,140</b></td><td style='min-width:130px'><div class='bar'><i style='width:100.0%'></i></div></td><td>동료 <b>dmg</b> (별도 딜소스)</td><td class='src'>뽑기코인 100</td><td class='src'>프리미엄</td></tr></table></div>
+<p class="src">막대는 <b>로그 스케일</b>이다. 선형으로 그리면 마스터리가 0px이 되어 아무것도 읽히지 않는다 — 축 간 격차가 그만큼 크다는 뜻이다.</p>
+
+<div class="grid g3" style="margin:12px 0">
+<div class="card" style="text-align:center"><div class="stat" style="border:0;padding:6px"><div class="n">1.79배</div><div class="l">동료 tier7 ÷ <b>장비 9부위 전체</b></div></div></div>
+<div class="card" style="text-align:center"><div class="stat" style="border:0;padding:6px"><div class="n">4,877배</div><div class="l">장비 전체 ÷ 마스터리</div></div></div>
+<div class="card" style="text-align:center"><div class="stat" style="border:0;padding:6px"><div class="n navy">8,742배</div><div class="l">동료 tier7 ÷ 마스터리</div></div></div>
+</div>
+
+<h2>장비는 9부위다 — 부위별 기여 분해 ⭐</h2>
+<div class="callout warn">⚠️ <b>비교 기준 정정</b> <span class="chip fact">확정</span> —
+초기 집계는 <b>장비 최대치를 type 2(공격력) 하나로 잡아 640,584</b>로 봤다.
+그러나 장비는 <b>9개 부위(type 1~9, 각 48행)</b>이고 부위마다 40강 최대 기여가 전혀 다르다.
+9부위를 전부 합치면 <b>16,385,409</b>로, 같은 "장비 최대치"가 <b>26배</b> 차이난다.
+실제 플레이는 9부위를 전부 장착하므로 <b>본문 채택 기준은 9부위 합계</b>다.</div>
+
+<div class="tblwrap"><table>
+<tr><th>부위</th><th>main 스탯</th><th class="n">48등급 최대</th><th class="n">40강 (×9.0)</th>
+<th class="n">장비 총합 중 비중</th><th>비중(로그 아님 · 선형)</th></tr>
+<tr style="background:#fdeef5"><td><b>type 3</b></td><td>치명타 피해 N% 증가</td><td class='n'>1,747,506</td><td class='n'><b>15,727,554</b></td><td class='n'>95.99%</td><td style='min-width:120px'><div class='bar'><i style='width:95.99%'></i></div></td></tr><tr><td><b>type 2</b></td><td>공격력 N% 증가</td><td class='n'>71,176</td><td class='n'><b>640,584</b></td><td class='n'>3.91%</td><td style='min-width:120px'><div class='bar'><i style='width:3.91%'></i></div></td></tr><tr><td><b>type 4</b></td><td>보스 피해 N% 증가</td><td class='n'>480</td><td class='n'><b>4,320</b></td><td class='n'>0.03%</td><td style='min-width:120px'><div class='bar'><i style='width:0.03%'></i></div></td></tr><tr><td><b>type 6</b></td><td>보스 피해 N% 증가</td><td class='n'>480</td><td class='n'><b>4,320</b></td><td class='n'>0.03%</td><td style='min-width:120px'><div class='bar'><i style='width:0.03%'></i></div></td></tr><tr><td><b>type 8</b></td><td>보스 피해 N% 증가</td><td class='n'>480</td><td class='n'><b>4,320</b></td><td class='n'>0.03%</td><td style='min-width:120px'><div class='bar'><i style='width:0.03%'></i></div></td></tr><tr><td><b>type 7</b></td><td>체력 N% 증가</td><td class='n'>235</td><td class='n'><b>2,115</b></td><td class='n'>0.01%</td><td style='min-width:120px'><div class='bar'><i style='width:0.01%'></i></div></td></tr><tr><td><b>type 1</b></td><td>스킬 피해 N% 증가</td><td class='n'>144</td><td class='n'><b>1,296</b></td><td class='n'>&lt;0.01%</td><td style='min-width:120px'><div class='bar'><i style='width:0.01%'></i></div></td></tr><tr><td><b>type 5</b></td><td>5%확률로 N배 데미지</td><td class='n'>50</td><td class='n'><b>450</b></td><td class='n'>&lt;0.01%</td><td style='min-width:120px'><div class='bar'><i style='width:0.00%'></i></div></td></tr><tr><td><b>type 9</b></td><td>N% 확률로 임의스킬 10% 쿨타임 감소</td><td class='n'>50</td><td class='n'><b>450</b></td><td class='n'>&lt;0.01%</td><td style='min-width:120px'><div class='bar'><i style='width:0.00%'></i></div></td></tr>
+<tr style="background:var(--lite)"><td colspan="3"><b>9부위 합계</b></td>
+<td class="n"><b>16,385,409</b></td><td class="n"><b>100%</b></td><td></td></tr>
+</table></div>
+<p class="src">※ 각 부위의 <b>최대치</b>는 "그 부위 48행 중 최댓값"이다. type 7만은 최댓값이 <b>48등급이 아니라 47등급(235)</b>에 있다 —
+48등급 한 칸이 96로 꺾이는 데이터 이상 때문이다(아래 §type 7 참조).
+따라서 <b>"48등급으로 통일해 장착"</b>했다고 계산하면 합계는 16,384,158로,
+위 표(16,385,409)보다 1,251 낮다.
+<a href="17_simulator.html">17장 시뮬레이터</a>는 사용자가 고른 등급을 그대로 쓰므로 후자가 나온다.</p>
+
+<div class="callout">🔎 <b>신규 발견 — 장비도 사실상 단일 부위다</b> <span class="chip fact">확정</span><br>
+<b>type 3(치명타 피해 N% 증가) 하나가 장비 총합의 96%</b>를 차지하고,
+나머지 <b>8부위를 전부 합쳐도 4.0% 미만</b>이다.
+등비 슬롯(type 2·3)만 자릿수가 치솟고 선형 슬롯 7개는 세 자리 수에 머물기 때문이다.<br>
+즉 이 게임의 성장은 <b>축 단위로도 단일(동료), 축 안에서도 단일(type 3)</b>이다.
+"9부위를 균형 있게 키운다"는 설계 의도가 데이터에서는 성립하지 않는다. <span class="chip op">검토 제안</span></div>
+
+<div class="callout warn">⚠️ <b>이 비교의 단위 주의</b> <span class="chip inf">추정</span> —
+세 수치는 <b>단위가 서로 다르다.</b> 마스터리 ability 32는 <code>공격력 +N</code>(flat), 장비 type2는 <code>공격력 N% 증가</code>(배율),
+동료 <code>dmg</code>는 별도 딜 소스일 가능성이 높다(<code>Stats.GetPeerDmg()</code>·<code>SetPeer()</code>가 따로 존재).
+따라서 "4,877배"는 <b>동일 단위 비교가 아니라 자릿수 비교</b>로 읽어야 한다.
+<code>SetAp()</code> 본문 없이 이 셋을 하나의 축으로 환산할 방법은 없다.
+덧붙여 <b>장비 9부위 합계 자체도 이질 스탯의 합</b>이다 — 공격력%·치명타 피해%·보스 피해%·체력%가 한 숫자에 섞여 있다.
+다만 <b>자릿수 격차 자체는 유효</b>하며, 어느 축에 투자가 몰릴지를 결정하는 것도 이 자릿수다.</div>
+
+<div class="callout navy">📌 <b>판정</b> <span class="chip op">검토 제안</span> — 이 게임의 전투력은 사실상 <b>동료 티어 단일 축</b>으로 결정된다.
+장비 9부위를 전부 만렙·40강으로 채워도 동료 tier 7 하나가 <b>1.79배</b> 우위이고,
+최강 부위(type 3) 하나와 비교하면 <b>1.87배</b>다.
+장비는 보조, <b>마스터리는 8,742배 열세로 장식에 가깝다.</b>
+참고로 피그슬레이어즈의 "성장 vs 마스터리 33배"에 해당하는 지표가 여기서는 <b>4,877배</b>다.</div>
+
+<div class="callout navy">🧭 <b>방법론 — 비교 기준을 반드시 명시할 것</b> <span class="chip op">검토 제안</span><br>
+이 페이지를 만드는 과정에서 서로 다른 분석 단계가 "장비 최대치"를 <b>각각 다른 부위로 잡아 26배 차이 나는 수치</b>가 나왔다
+(type 2 단독 640,584 vs 9부위 합계 16,385,409).
+축 간 비교를 할 때는 <b>①부위별 분해를 먼저 하고 ②무엇을 합쳐 비교했는지 기준을 명시</b>해야 한다.
+이 페이지는 두 값을 모두 표에 남기고 채택 기준을 표시했다.</div>
+
+<h2>확정 공식 전부</h2>
+<p>시뮬레이터(<a href="17_simulator.html">17장</a>)는 아래 공식을 그대로 구현한 것이다.</p>
+<div class="fx"><div class="t"><span class="chip fact">확정</span> 장비 main 스탯 (강화 포함)</div><code>stat(g, L) = mainValue[g] × (1 + 0.2 × L)</code><div style="font-size:13px;color:var(--muted);margin-top:6px">432행 <b>전부</b>에서 <code>mainUpValue / mainValue</code>를 계산한 결과 <b>집합이 정확히 {0.2} 하나</b>. 예외 0건.</div></div><div class="fx"><div class="t"><span class="chip fact">확정</span> 장비 등급별 base — 공격력</div><code>mainValue(g) = 100 × 1.15^(g-1)</code><div style="font-size:13px;color:var(--muted);margin-top:6px">type2 48행 실측 공비 1.149974. 1 → 48등급에서 712배.</div></div><div class="fx"><div class="t"><span class="chip fact">확정</span> 장비 등급별 base — 치명타 피해</div><code>mainValue(g) = 2,000 × 1.155^(g-1)</code><div style="font-size:13px;color:var(--muted);margin-top:6px">type3 48행 실측 공비 1.155002. <b>공격력보다 공비가 높다.</b></div></div><div class="fx"><div class="t"><span class="chip fact">확정</span> 동료 데미지</div><code>dmg(n) = 130 × 1.47^(n-1)&nbsp;&nbsp;(n = 1..30)</code><div style="font-size:13px;color:var(--muted);margin-top:6px">30단계 전 구간 공비가 <b>소수 3자리까지 1.469/1.47/1.471로 고정</b>. 이보다 깔끔한 등비수열은 드물다.</div></div><div class="fx"><div class="t"><span class="chip fact">확정</span> 동료 레벨</div><code>dmg(n, L) = dmg(n) × (1 + 0.01 × L)</code><div style="font-size:13px;color:var(--muted);margin-top:6px"><code>upDmg / dmg == 0.01</code>, 전 행 일치.</div></div><div class="fx"><div class="t"><span class="chip fact">확정</span> 동료 비용</div><code>cost(n) = 2n&nbsp;&nbsp;(n = 1..30) · n ≥ 31은 100 고정</code><div style="font-size:13px;color:var(--muted);margin-top:6px">dmg는 225,947배 오르는데 cost는 50배만 오른다.</div></div><div class="fx"><div class="t"><span class="chip fact">확정</span> 마스터리</div><code>value(L) = value + upValue × (L - 1)&nbsp;&nbsp;(1 ≤ L ≤ max)</code><div style="font-size:13px;color:var(--muted);margin-top:6px">완전 선형. <code>upValue/value</code> 비율은 <b>0.2가 37개, 1.0이 28개</b> 두 종류뿐.</div></div><div class="fx"><div class="t"><span class="chip fact">확정</span> 마스터리 비용</div><code>총비용 = cost × max&nbsp;&nbsp;(레벨당 정액)</code><div style="font-size:13px;color:var(--muted);margin-top:6px">전 65노드 만렙 총비용 = <b>7,280 포인트</b>.</div></div><div class="fx"><div class="t"><span class="chip inf">추정</span> 스킬 데미지</div><code>dmg = 공격력 × dmg_mult ; 레벨업 시 +upValue</code><div style="font-size:13px;color:var(--muted);margin-top:6px">등급별 cost/sell은 확정. <b>upValue의 단위만 미확인</b>.</div></div><div class="fx"><div class="t"><span class="chip warn">미확인</span> 전투력 (AP) 최종 합산</div><code>Stats.SetAp() → ???</code><div style="font-size:13px;color:var(--muted);margin-top:6px"><b>본문이 IL2CPP 덤프에 없다</b> (시그니처만 존재, RVA <code>0x31AA044</code>). 개별 스탯은 전부 계산되지만 이를 하나의 전투력으로 접는 가중치를 모른다.</div></div>
+
+<h2>축① 장비 (db_item · 432행)</h2>
+<p>9개 슬롯 × 48등급 = <b>완전 정규 격자</b>다. tier 1~4와 grade 1~10이 순환하며 붙는다.</p>
+<div class="tblwrap"><table>
+<tr><th>type</th><th>main</th><th>스탯 (lang_Ability)</th><th>곡선</th><th>계수</th>
+<th style="text-align:right">1등급</th><th style="text-align:right">48등급</th><th style="text-align:right">배수</th></tr>
+<tr><td><b>1</b></td><td><code>5</code></td><td>스킬 피해 N% 증가</td><td>선형</td><td class='src'>+3 / 등급</td><td style='text-align:right'>3</td><td style='text-align:right'><b>144</b></td><td style='text-align:right'>48×</td></tr><tr><td><b>2</b></td><td><code>1</code></td><td>공격력 N% 증가</td><td>등비</td><td class='src'>×1.1500</td><td style='text-align:right'>100</td><td style='text-align:right'><b>71,176</b></td><td style='text-align:right'>711.76×</td></tr><tr><td><b>3</b></td><td><code>3</code></td><td>치명타 피해 N% 증가</td><td>등비</td><td class='src'>×1.1550</td><td style='text-align:right'>2,000</td><td style='text-align:right'><b>1,747,506</b></td><td style='text-align:right'>873.75×</td></tr><tr><td><b>4</b></td><td><code>4</code></td><td>보스 피해 N% 증가</td><td>선형</td><td class='src'>+10 / 등급</td><td style='text-align:right'>10</td><td style='text-align:right'><b>480</b></td><td style='text-align:right'>48×</td></tr><tr><td><b>5</b></td><td><code>11</code></td><td>5%확률로 N배 데미지</td><td>선형</td><td class='src'>+1 / 등급</td><td style='text-align:right'>3</td><td style='text-align:right'><b>50</b></td><td style='text-align:right'>16.67×</td></tr><tr><td><b>6</b></td><td><code>4</code></td><td>보스 피해 N% 증가</td><td>선형</td><td class='src'>+10 / 등급</td><td style='text-align:right'>10</td><td style='text-align:right'><b>480</b></td><td style='text-align:right'>48×</td></tr><tr><td><b>7</b></td><td><code>2</code></td><td>체력 N% 증가</td><td>등비</td><td class='src'>×1.0814</td><td style='text-align:right'>5</td><td style='text-align:right'><b>96</b></td><td style='text-align:right'>19.20×</td></tr><tr><td><b>8</b></td><td><code>4</code></td><td>보스 피해 N% 증가</td><td>선형</td><td class='src'>+10 / 등급</td><td style='text-align:right'>10</td><td style='text-align:right'><b>480</b></td><td style='text-align:right'>48×</td></tr><tr><td><b>9</b></td><td><code>12</code></td><td>N% 확률로 임의스킬 10% 쿨타임 감소</td><td>선형</td><td class='src'>+1 / 등급</td><td style='text-align:right'>3</td><td style='text-align:right'><b>50</b></td><td style='text-align:right'>16.67×</td></tr></table></div>
+
+<div class="callout warn">⚠️ <b>스탯 라벨 정정</b> <span class="chip fact">확정</span> —
+<code>reports/11_growth_deep.md</code> §2-1 표의 스탯 이름이 어긋나 있었다. 이 페이지는 <code>lang_Ability.csv</code> 원본으로 재대조한 값이다.
+<code>db_item.main</code> = <code>lang_Ability.index</code> 직접 참조로 확인했다.<br>
+· type 3 = <b>치명타 피해</b>(체력 아님) — ×1.155 등비인 것은 체력이 아니라 치명타 피해다.<br>
+· type 4·6·8 = <b>보스 피해</b>(치명타 확률 아님) · type 1 = <b>스킬 피해</b> · type 7 = <b>체력</b>.<br>
+즉 <b>체력은 등비가 아니라 선형(+5)</b>이고, 등비 슬롯은 <b>공격력·치명타 피해 2종</b>뿐이다.</div>
+
+<div class="callout">🔎 <b>핵심 비대칭</b> — 등비는 공격력·치명타 피해 <b>2슬롯뿐</b>이고 나머지 7슬롯은 전부 선형이다.
+48등급 진행 시 공격력은 <b>712배</b>, 치명타 피해는 <b>874배</b> 오르는 반면
+보스 피해는 <b>48배</b>, 체력은 <b>47배</b>에 그친다.
+→ <b>후반으로 갈수록 체력·보스피해·쿨감 슬롯의 상대 가치가 붕괴</b>한다. 밸런스 검토 지점. <span class="chip op">검토 제안</span></div>
+
+<div class="svgwrap"><svg viewBox="0 0 780 320" width="780" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,Arial" font-size="11"><line x1="62" y1="276.0" x2="766" y2="276.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="279.5" text-anchor="end" fill="#6b6472">1</text><line x1="62" y1="238.9" x2="766" y2="238.9" stroke="#ecdde5" stroke-width="1"/><text x="55" y="242.4" text-anchor="end" fill="#6b6472">10</text><line x1="62" y1="201.7" x2="766" y2="201.7" stroke="#ecdde5" stroke-width="1"/><text x="55" y="205.2" text-anchor="end" fill="#6b6472">10^2</text><line x1="62" y1="164.6" x2="766" y2="164.6" stroke="#ecdde5" stroke-width="1"/><text x="55" y="168.1" text-anchor="end" fill="#6b6472">1,000</text><line x1="62" y1="127.4" x2="766" y2="127.4" stroke="#ecdde5" stroke-width="1"/><text x="55" y="130.9" text-anchor="end" fill="#6b6472">10,000</text><line x1="62" y1="90.3" x2="766" y2="90.3" stroke="#ecdde5" stroke-width="1"/><text x="55" y="93.8" text-anchor="end" fill="#6b6472">100,000</text><line x1="62" y1="53.1" x2="766" y2="53.1" stroke="#ecdde5" stroke-width="1"/><text x="55" y="56.6" text-anchor="end" fill="#6b6472">1,000,000</text><line x1="62" y1="16.0" x2="766" y2="16.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="19.5" text-anchor="end" fill="#6b6472">10,000,000</text><line x1="62.0" y1="16" x2="62.0" y2="276" stroke="#ecdde5"/><text x="62.0" y="291" text-anchor="middle" fill="#6b6472">1</text><line x1="166.9" y1="16" x2="166.9" y2="276" stroke="#ecdde5"/><text x="166.9" y="291" text-anchor="middle" fill="#6b6472">8</text><line x1="286.7" y1="16" x2="286.7" y2="276" stroke="#ecdde5"/><text x="286.7" y="291" text-anchor="middle" fill="#6b6472">16</text><line x1="406.5" y1="16" x2="406.5" y2="276" stroke="#ecdde5"/><text x="406.5" y="291" text-anchor="middle" fill="#6b6472">24</text><line x1="526.3" y1="16" x2="526.3" y2="276" stroke="#ecdde5"/><text x="526.3" y="291" text-anchor="middle" fill="#6b6472">32</text><line x1="646.2" y1="16" x2="646.2" y2="276" stroke="#ecdde5"/><text x="646.2" y="291" text-anchor="middle" fill="#6b6472">40</text><line x1="766.0" y1="16" x2="766.0" y2="276" stroke="#ecdde5"/><text x="766.0" y="291" text-anchor="middle" fill="#6b6472">48</text><line x1="62" y1="16" x2="62" y2="276" stroke="#c9bcd0"/><line x1="62" y1="276" x2="766" y2="276" stroke="#c9bcd0"/><text x="414" y="314" text-anchor="middle" fill="#6b6472" font-size="11.5">장비 등급 (1 ~ 48)</text><text x="12" y="146" text-anchor="middle" fill="#6b6472" font-size="11.5" transform="rotate(-90 12 146)">main 스탯 값 (로그)</text><path d="M62.0,201.7 L77.0,199.5 L92.0,197.2 L106.9,195.0 L121.9,192.7 L136.9,190.5 L151.9,188.2 L166.9,185.9 L181.8,183.7 L196.8,181.4 L211.8,179.2 L226.8,176.9 L241.7,174.6 L256.7,172.4 L271.7,170.1 L286.7,167.9 L301.7,165.6 L316.6,163.4 L331.6,161.1 L346.6,158.9 L361.6,156.6 L376.6,154.4 L391.5,152.1 L406.5,149.9 L421.5,147.6 L436.5,145.4 L451.4,143.1 L466.4,140.9 L481.4,138.6 L496.4,136.4 L511.4,134.1 L526.3,131.8 L541.3,129.6 L556.3,127.3 L571.3,125.1 L586.3,122.8 L601.2,120.6 L616.2,118.3 L631.2,116.1 L646.2,113.8 L661.1,111.6 L676.1,109.3 L691.1,107.0 L706.1,104.8 L721.1,102.5 L736.0,100.3 L751.0,98.0 L766.0,95.8" fill="none" stroke="#D05090" stroke-width="2.4"/><path d="M62.0,153.4 L77.0,151.1 L92.0,148.7 L106.9,146.4 L121.9,144.1 L136.9,141.8 L151.9,139.4 L166.9,137.1 L181.8,134.8 L196.8,132.5 L211.8,130.1 L226.8,127.8 L241.7,125.5 L256.7,123.2 L271.7,120.8 L286.7,118.5 L301.7,116.2 L316.6,113.9 L331.6,111.5 L346.6,109.2 L361.6,106.9 L376.6,104.6 L391.5,102.3 L406.5,99.9 L421.5,97.6 L436.5,95.3 L451.4,93.0 L466.4,90.6 L481.4,88.3 L496.4,86.0 L511.4,83.7 L526.3,81.3 L541.3,79.0 L556.3,76.7 L571.3,74.4 L586.3,72.0 L601.2,69.7 L616.2,67.4 L631.2,65.1 L646.2,62.7 L661.1,60.4 L676.1,58.1 L691.1,55.8 L706.1,53.4 L721.1,51.1 L736.0,48.8 L751.0,46.5 L766.0,44.1" fill="none" stroke="#102050" stroke-width="2.4"/><path d="M62.0,238.9 L77.0,227.7 L92.0,221.1 L106.9,216.5 L121.9,212.9 L136.9,210.0 L151.9,207.5 L166.9,205.3 L181.8,203.4 L196.8,201.7 L211.8,200.2 L226.8,198.8 L241.7,197.5 L256.7,196.3 L271.7,195.2 L286.7,194.1 L301.7,193.2 L316.6,192.2 L331.6,191.4 L346.6,190.5 L361.6,189.7 L376.6,189.0 L391.5,188.3 L406.5,187.6 L421.5,186.9 L436.5,186.3 L451.4,185.7 L466.4,185.1 L481.4,184.5 L496.4,184.0 L511.4,183.5 L526.3,183.0 L541.3,182.5 L556.3,182.0 L571.3,181.5 L586.3,181.1 L601.2,180.6 L616.2,180.2 L631.2,179.8 L646.2,179.4 L661.1,179.0 L676.1,178.6 L691.1,178.2 L706.1,177.8 L721.1,177.5 L736.0,177.1 L751.0,176.8 L766.0,176.4" fill="none" stroke="#F5A524" stroke-width="2.4"/><path d="M62.0,250.0 L77.0,238.9 L92.0,232.3 L106.9,227.7 L121.9,224.1 L136.9,221.1 L151.9,218.6 L166.9,216.5 L181.8,214.6 L196.8,212.9 L211.8,211.4 L226.8,210.0 L241.7,208.7 L256.7,207.5 L271.7,206.4 L286.7,205.3 L301.7,204.3 L316.6,203.4 L331.6,202.5 L346.6,201.7 L361.6,200.9 L376.6,200.2 L391.5,199.5 L406.5,198.8 L421.5,198.1 L436.5,197.5 L451.4,196.9 L466.4,196.3 L481.4,195.7 L496.4,195.2 L511.4,194.6 L526.3,194.1 L541.3,193.6 L556.3,193.2 L571.3,192.7 L586.3,192.2 L601.2,191.8 L616.2,191.4 L631.2,190.9 L646.2,190.5 L661.1,190.1 L676.1,189.7 L691.1,189.4 L706.1,189.0 L721.1,188.6 L736.0,188.3 L751.0,187.9" fill="none" stroke="#2f7a2f" stroke-width="2.4"/><rect x="72" y="22" width="13" height="4" rx="2" fill="#D05090"/><text x="90" y="26" fill="#3a3340" font-size="11.5" font-weight="700">공격력 % (type2 · 등비 1.15)</text><rect x="347" y="22" width="13" height="4" rx="2" fill="#102050"/><text x="365" y="26" fill="#3a3340" font-size="11.5" font-weight="700">치명타 피해 % (type3 · 등비 1.155)</text><rect x="666" y="22" width="13" height="4" rx="2" fill="#F5A524"/><text x="684" y="26" fill="#3a3340" font-size="11.5" font-weight="700">보스 피해 % (type4 · 선형 +10)</text><rect x="952" y="22" width="13" height="4" rx="2" fill="#2f7a2f"/><text x="970" y="26" fill="#3a3340" font-size="11.5" font-weight="700">체력 % (type7 · 선형 +5)</text></svg></div><p class="src" style="margin:6px 2px 0">세로축은 로그 스케일이다. 등비 2종만 직선으로 치솟고, 선형 2종은 바닥에 눕는다 — 48등급에서 격차가 3~4자릿수로 벌어진다.</p>
+
+<h3>type 7(체력) 데이터 이상 — 단일 셀</h3>
+<p>기존 분석은 type 7을 "선형도 등비도 아닌 불규칙"으로 판정했으나, 실제로는 <b>1~47등급이 완벽한 선형(+5)</b>이고
+<b>48등급 한 칸만</b> 어긋난다. <span class="chip fact">확정</span></p>
+<div class="tblwrap"><table style="min-width:0">
+<tr><th>등급</th><th>44</th><th>45</th><th>46</th><th>47</th><th>48</th></tr>
+<tr><td>실제 mainValue</td><td>220</td><td>225</td><td>230</td><td>235</td>
+<td style="background:#fdeaf0"><b style="color:#b3325f">96</b></td></tr>
+<tr><td>선형 유지 시 기대값</td><td>220</td><td>225</td><td>230</td><td>235</td>
+<td><b>240</b></td></tr>
+</table></div>
+<div class="callout warn">최고 등급 체력이 <b>직전 등급(235)보다 낮은 96</b>로 들어가 있다.
+단조성 위반이며, 규칙과 무관한 값이 한 칸에만 들어간 점에서 🔶 수동 입력 오류로 보인다.
+<b>"버그"로 단정하지 않고 「의도된 설계인지 확인이 필요한 항목」으로 기재</b>한다. <span class="chip op">검토 제안</span></div>
+
+<h3>강화 공식 — 432행 예외 없음</h3>
+<div class="fx"><div class="t"><span class="chip fact">확정</span> 전 432행 검증</div>
+<code>강화 후 main 스탯 = mainValue × (1 + 0.2 × 강화레벨)</code>
+<div style="font-size:13px;color:var(--muted);margin-top:6px">
+<code>mainUpValue / mainValue</code> 비율을 432행 전부에서 계산한 결과 <b>집합이 정확히 {0.2} 하나</b>다.
+부가 스탯(<code>upValue/value</code>)도 설계값 0.2이나 소수 반올림 탓에 0.143~0.25로 흩어져 기록돼 있다.</div></div>
+
+<div class="tblwrap"><table>
+<tr><th>무기 등급</th><th style="text-align:right">기본 공격력%</th><th style="text-align:right">강화 1회당</th>
+<th style="text-align:right">40강 최종</th><th style="text-align:right">배수</th></tr>
+<tr><td><b>1</b></td><td style='text-align:right'>100</td><td style='text-align:right'>20</td><td style='text-align:right'><b>900</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>7</b></td><td style='text-align:right'>231</td><td style='text-align:right'>46.20</td><td style='text-align:right'><b>2,079</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>13</b></td><td style='text-align:right'>536</td><td style='text-align:right'>107.20</td><td style='text-align:right'><b>4,824</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>19</b></td><td style='text-align:right'>1,237</td><td style='text-align:right'>247.40</td><td style='text-align:right'><b>11,133</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>25</b></td><td style='text-align:right'>2,860</td><td style='text-align:right'>572</td><td style='text-align:right'><b>25,740</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>31</b></td><td style='text-align:right'>6,614</td><td style='text-align:right'>1,322.80</td><td style='text-align:right'><b>59,526</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>37</b></td><td style='text-align:right'>15,298</td><td style='text-align:right'>3,059.60</td><td style='text-align:right'><b>137,682</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>43</b></td><td style='text-align:right'>35,387</td><td style='text-align:right'>7,077.40</td><td style='text-align:right'><b>318,483</b></td><td style='text-align:right'>9.0×</td></tr><tr><td><b>48</b></td><td style='text-align:right'>71,176</td><td style='text-align:right'>14,235.20</td><td style='text-align:right'><b>640,584</b></td><td style='text-align:right'>9.0×</td></tr></table></div>
+<div class="svgwrap"><svg viewBox="0 0 780 320" width="780" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,Arial" font-size="11"><line x1="62" y1="276.0" x2="766" y2="276.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="279.5" text-anchor="end" fill="#6b6472">10^2</text><line x1="62" y1="211.0" x2="766" y2="211.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="214.5" text-anchor="end" fill="#6b6472">1,000</text><line x1="62" y1="146.0" x2="766" y2="146.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="149.5" text-anchor="end" fill="#6b6472">10,000</text><line x1="62" y1="81.0" x2="766" y2="81.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="84.5" text-anchor="end" fill="#6b6472">100,000</text><line x1="62" y1="16.0" x2="766" y2="16.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="19.5" text-anchor="end" fill="#6b6472">1,000,000</text><line x1="62.0" y1="16" x2="62.0" y2="276" stroke="#ecdde5"/><text x="62.0" y="291" text-anchor="middle" fill="#6b6472">1</text><line x1="166.9" y1="16" x2="166.9" y2="276" stroke="#ecdde5"/><text x="166.9" y="291" text-anchor="middle" fill="#6b6472">8</text><line x1="286.7" y1="16" x2="286.7" y2="276" stroke="#ecdde5"/><text x="286.7" y="291" text-anchor="middle" fill="#6b6472">16</text><line x1="406.5" y1="16" x2="406.5" y2="276" stroke="#ecdde5"/><text x="406.5" y="291" text-anchor="middle" fill="#6b6472">24</text><line x1="526.3" y1="16" x2="526.3" y2="276" stroke="#ecdde5"/><text x="526.3" y="291" text-anchor="middle" fill="#6b6472">32</text><line x1="646.2" y1="16" x2="646.2" y2="276" stroke="#ecdde5"/><text x="646.2" y="291" text-anchor="middle" fill="#6b6472">40</text><line x1="766.0" y1="16" x2="766.0" y2="276" stroke="#ecdde5"/><text x="766.0" y="291" text-anchor="middle" fill="#6b6472">48</text><line x1="62" y1="16" x2="62" y2="276" stroke="#c9bcd0"/><line x1="62" y1="276" x2="766" y2="276" stroke="#c9bcd0"/><text x="414" y="314" text-anchor="middle" fill="#6b6472" font-size="11.5">장비 등급 (1 ~ 48)</text><text x="12" y="146" text-anchor="middle" fill="#6b6472" font-size="11.5" transform="rotate(-90 12 146)">공격력 % (로그)</text><path d="M62.0,276.0 L77.0,272.1 L92.0,268.2 L106.9,264.2 L121.9,260.2 L136.9,256.3 L151.9,252.4 L166.9,248.4 L181.8,244.4 L196.8,240.5 L211.8,236.5 L226.8,232.6 L241.7,228.6 L256.7,224.7 L271.7,220.7 L286.7,216.8 L301.7,212.9 L316.6,208.9 L331.6,205.0 L346.6,201.0 L361.6,197.1 L376.6,193.2 L391.5,189.2 L406.5,185.3 L421.5,181.3 L436.5,177.4 L451.4,173.4 L466.4,169.5 L481.4,165.6 L496.4,161.6 L511.4,157.7 L526.3,153.7 L541.3,149.8 L556.3,145.8 L571.3,141.9 L586.3,137.9 L601.2,134.0 L616.2,130.1 L631.2,126.1 L646.2,122.2 L661.1,118.2 L676.1,114.3 L691.1,110.3 L706.1,106.4 L721.1,102.4 L736.0,98.5 L751.0,94.5 L766.0,90.6" fill="none" stroke="#D05090" stroke-width="2.4"/><path d="M62.0,214.0 L77.0,210.0 L92.0,206.1 L106.9,202.2 L121.9,198.2 L136.9,194.3 L151.9,190.3 L166.9,186.4 L181.8,182.4 L196.8,178.4 L211.8,174.5 L226.8,170.5 L241.7,166.6 L256.7,162.7 L271.7,158.7 L286.7,154.8 L301.7,150.8 L316.6,146.9 L331.6,143.0 L346.6,139.0 L361.6,135.1 L376.6,131.1 L391.5,127.2 L406.5,123.3 L421.5,119.3 L436.5,115.4 L451.4,111.4 L466.4,107.5 L481.4,103.5 L496.4,99.6 L511.4,95.6 L526.3,91.7 L541.3,87.8 L556.3,83.8 L571.3,79.9 L586.3,75.9 L601.2,72.0 L616.2,68.0 L631.2,64.1 L646.2,60.1 L661.1,56.2 L676.1,52.2 L691.1,48.3 L706.1,44.4 L721.1,40.4 L736.0,36.5 L751.0,32.5 L766.0,28.6" fill="none" stroke="#102050" stroke-width="2.4" stroke-dasharray="6 4"/><rect x="72" y="22" width="13" height="4" rx="2" fill="#D05090"/><text x="90" y="26" fill="#3a3340" font-size="11.5" font-weight="700">미강화</text><rect x="127" y="22" width="13" height="4" rx="2" fill="#102050"/><text x="145" y="26" fill="#3a3340" font-size="11.5" font-weight="700">40강 (×9.0)</text></svg></div><p class="src" style="margin:6px 2px 0">40강은 곡선을 위로 평행이동시킬 뿐 기울기를 바꾸지 않는다 — 배수가 등급과 무관하게 정확히 9.0배로 고정이기 때문이다. 로그축에서 두 선이 완전한 평행선으로 나타나는 것이 그 시각적 증명이다.</p>
+
+<h3>패치 1.0.39 "자동강화 40" 추적</h3>
+<div class="grid g2">
+<div class="card"><h3><span class="chip warn">미확인</span> 테이블·코드에 40은 없다</h3>
+<ul class="clean" style="font-size:13.5px">
+<li><code>dump.cs</code> Assembly-CSharp 전 범위에서 강화 관련 <code>const</code>/<code>static readonly</code> <b>0건</b>. 최대레벨·최대강화·비용배수·확률표 상수가 <b>하나도 코드에 없다.</b></li>
+<li>한글 문자열 리터럴은 전체 241개뿐이며 전부 디버그 로그. <code>강화</code>/<code>자동강화</code> 리터럴 <b>0건</b>.</li>
+<li>코드 내 유일한 40은 <code>"구버전 40개 테이블 통합 마이그레이션"</code> — 저장 테이블 수를 뜻하며 강화와 무관.</li>
+<li><code>AutoUpgradePopupUI</code>는 <b>필드 0개, Set() 하나뿐인 빈 껍데기</b>다.</li>
+</ul></div>
+<div class="card" style="background:#fdeef5"><h3><span class="chip inf">추정</span> 정황은 매우 강하다</h3>
+<p style="margin:0 0 8px;font-size:13.5px">전 432행에서 <code>mainUpValue = mainValue × 0.2</code>이므로:</p>
+<div class="fx" style="margin:0;background:#fff"><code>강화레벨 40 → 1 + 0.2 × 40 = <b style="color:#b3325f">정확히 9.0배</b></code></div>
+<p style="margin:8px 0 0;font-size:13.5px">40이라는 상한은 <b>"기본값의 정확히 9배"</b>라는 깔끔한 설계 목표와 일치한다.
+30이면 7.0배, 50이면 11.0배로 역시 정수지만, 9.0배(=3²)는 등급 간 등비 1.15와 맞물려 <b>약 15등급분 점프</b>에 해당한다(1.15^15 ≈ 8.14).
+즉 <b>"40강 = 15등급 상위 장비 1개값"</b>이라는 설계 의도로 읽힌다.</p></div>
+</div>
+
+<h2>축② 동료 (db_pet · 40행) — 전투력의 실질 단일 축</h2>
+<div class="tblwrap"><table>
+<tr><th>index</th><th>tier</th><th>이름</th><th style="text-align:right">dmg</th><th style="text-align:right">cost</th>
+<th style="text-align:right">전 등급 대비</th><th style="text-align:right">cost당 dmg</th></tr>
+<tr><td><b>1</b></td><td>1</td><td>팬 1호</td><td style='text-align:right'>130</td><td style='text-align:right'>2</td><td style='text-align:right'>—</td><td style='text-align:right'>65</td></tr><tr><td><b>5</b></td><td>1</td><td>코러스 1호</td><td style='text-align:right'>607</td><td style='text-align:right'>10</td><td style='text-align:right'>1.470</td><td style='text-align:right'>60.70</td></tr><tr><td><b>10</b></td><td>2</td><td>코러스 2호</td><td style='text-align:right'>4,165</td><td style='text-align:right'>20</td><td style='text-align:right'>1.470</td><td style='text-align:right'>208.25</td></tr><tr><td><b>15</b></td><td>3</td><td>코러스 3호</td><td style='text-align:right'>28,592</td><td style='text-align:right'>30</td><td style='text-align:right'>1.470</td><td style='text-align:right'>953.07</td></tr><tr><td><b>20</b></td><td>4</td><td>코러스 4호</td><td style='text-align:right'>196,257</td><td style='text-align:right'>40</td><td style='text-align:right'>1.470</td><td style='text-align:right'>4,906.43</td></tr><tr><td><b>25</b></td><td>5</td><td>코러스 5호</td><td style='text-align:right'>1,347,137</td><td style='text-align:right'>50</td><td style='text-align:right'>1.470</td><td style='text-align:right'>26,942.74</td></tr><tr><td><b>30</b></td><td>6</td><td>코러스 6호</td><td style='text-align:right'>9,246,947</td><td style='text-align:right'>60</td><td style='text-align:right'>1.470</td><td style='text-align:right'>154,115.78</td></tr><tr style="background:#fdeef5"><td><b>31</b> ~ 40</td><td>7</td><td>치얼 외 9종</td><td style='text-align:right'>29,373,140</td><td style='text-align:right'>100</td><td style='text-align:right'><b style='color:#b3325f'>3.177</b></td><td style='text-align:right'>293,731.40</td></tr></table></div>
+<div class="svgwrap"><svg viewBox="0 0 780 320" width="780" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,Arial" font-size="11"><line x1="62" y1="276.0" x2="766" y2="276.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="279.5" text-anchor="end" fill="#6b6472">10^2</text><line x1="62" y1="232.7" x2="766" y2="232.7" stroke="#ecdde5" stroke-width="1"/><text x="55" y="236.2" text-anchor="end" fill="#6b6472">1,000</text><line x1="62" y1="189.3" x2="766" y2="189.3" stroke="#ecdde5" stroke-width="1"/><text x="55" y="192.8" text-anchor="end" fill="#6b6472">10,000</text><line x1="62" y1="146.0" x2="766" y2="146.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="149.5" text-anchor="end" fill="#6b6472">100,000</text><line x1="62" y1="102.7" x2="766" y2="102.7" stroke="#ecdde5" stroke-width="1"/><text x="55" y="106.2" text-anchor="end" fill="#6b6472">1,000,000</text><line x1="62" y1="59.3" x2="766" y2="59.3" stroke="#ecdde5" stroke-width="1"/><text x="55" y="62.8" text-anchor="end" fill="#6b6472">10,000,000</text><line x1="62" y1="16.0" x2="766" y2="16.0" stroke="#ecdde5" stroke-width="1"/><text x="55" y="19.5" text-anchor="end" fill="#6b6472">100,000,000</text><line x1="62.0" y1="16" x2="62.0" y2="276" stroke="#ecdde5"/><text x="62.0" y="291" text-anchor="middle" fill="#6b6472">1</text><line x1="134.2" y1="16" x2="134.2" y2="276" stroke="#ecdde5"/><text x="134.2" y="291" text-anchor="middle" fill="#6b6472">5</text><line x1="224.5" y1="16" x2="224.5" y2="276" stroke="#ecdde5"/><text x="224.5" y="291" text-anchor="middle" fill="#6b6472">10</text><line x1="314.7" y1="16" x2="314.7" y2="276" stroke="#ecdde5"/><text x="314.7" y="291" text-anchor="middle" fill="#6b6472">15</text><line x1="405.0" y1="16" x2="405.0" y2="276" stroke="#ecdde5"/><text x="405.0" y="291" text-anchor="middle" fill="#6b6472">20</text><line x1="495.2" y1="16" x2="495.2" y2="276" stroke="#ecdde5"/><text x="495.2" y="291" text-anchor="middle" fill="#6b6472">25</text><line x1="585.5" y1="16" x2="585.5" y2="276" stroke="#ecdde5"/><text x="585.5" y="291" text-anchor="middle" fill="#6b6472">30</text><line x1="675.7" y1="16" x2="675.7" y2="276" stroke="#ecdde5"/><text x="675.7" y="291" text-anchor="middle" fill="#6b6472">35</text><line x1="766.0" y1="16" x2="766.0" y2="276" stroke="#ecdde5"/><text x="766.0" y="291" text-anchor="middle" fill="#6b6472">40</text><line x1="62" y1="16" x2="62" y2="276" stroke="#c9bcd0"/><line x1="62" y1="276" x2="766" y2="276" stroke="#c9bcd0"/><text x="414" y="314" text-anchor="middle" fill="#6b6472" font-size="11.5">동료 index (1 ~ 40)</text><text x="12" y="146" text-anchor="middle" fill="#6b6472" font-size="11.5" transform="rotate(-90 12 146)">dmg (로그)</text><path d="M62.0,271.1 L80.1,263.8 L98.1,256.6 L116.2,249.3 L134.2,242.1 L152.3,234.8 L170.3,227.6 L188.4,220.3 L206.4,213.1 L224.5,205.8 L242.5,198.6 L260.6,191.3 L278.6,184.1 L296.7,176.8 L314.7,169.6 L332.8,162.3 L350.8,155.1 L368.9,147.8 L386.9,140.6 L405.0,133.3 L423.0,126.1 L441.1,118.8 L459.1,111.6 L477.2,104.3 L495.2,97.1 L513.3,89.8 L531.3,82.6 L549.4,75.3 L567.4,68.1 L585.5,60.8" fill="none" stroke="#D05090" stroke-width="2.4"/><path d="M603.5,39.1 L621.6,39.1 L639.6,39.1 L657.7,39.1 L675.7,39.1 L693.8,39.1 L711.8,39.1 L729.9,39.1 L747.9,39.1 L766.0,39.1" fill="none" stroke="#102050" stroke-width="2.4"/><circle cx="603.5" cy="39.1" r="4" fill="#102050" stroke="#fff" stroke-width="1.6"/><circle cx="766.0" cy="39.1" r="4" fill="#102050" stroke="#fff" stroke-width="1.6"/><rect x="72" y="22" width="13" height="4" rx="2" fill="#D05090"/><text x="90" y="26" fill="#3a3340" font-size="11.5" font-weight="700">동료 dmg (index 1~30 · 등비 1.47)</text><rect x="413" y="22" width="13" height="4" rx="2" fill="#102050"/><text x="431" y="26" fill="#3a3340" font-size="11.5" font-weight="700">tier 7 (index 31~40 · 전부 동일)</text></svg></div><p class="src" style="margin:6px 2px 0">1~30은 로그축에서 완벽한 직선 = 순수 등비수열. 31~40은 완전한 수평선 — 10마리가 전부 같은 값이라 곡선이 아니라 선분이다.</p>
+
+<div class="callout">🔎 <b>비용은 산술, 전력은 지수</b> <span class="chip fact">확정</span> —
+dmg는 130 → 29,373,140로 <b>225,947배</b> 오르는 동안 cost는 2 → 100으로 <b>50배</b>만 오른다.
+cost당 dmg는 65 → 293,731.40로 <b>4,519배</b> 벌어진다.
+방치형의 과금 압력을 보여주는 단일 최고 지표다.</div>
+
+<div class="callout warn">⚠️ <b>tier 6 → tier 7 절벽</b> <span class="chip inf">추정</span> —
+점프 배율이 <b>3.1765배</b>로 등비 1.47을 깨고 튄다. 유료/뽑기 프리미엄 티어로 의도된 절벽으로 보인다.
+그런데 그 프리미엄 10마리는 <b>서로 완전히 같은 스탯</b>이다(아래 §미완성 참조).</div>
+
+<h2>축③ 마스터리 (db_mastery · 65행)</h2>
+<p>완전 선형이고 <code>before[]</code>가 테크트리를 구성한다.
+<b>65노드 중 64개가 선행조건을 가진다</b> = 사실상 단일 사슬이며, 상위 노드를 찍으려면 하위 노드 투자가 강제된다. <span class="chip fact">확정</span></p>
+
+<h3>등급별 포인트 효율</h3>
+<div class="tblwrap"><table>
+<tr><th>등급</th><th style="text-align:right">노드 수</th><th style="text-align:right">총 포인트</th>
+<th style="text-align:right">총 상승치</th><th style="text-align:right">포인트당</th><th>효율</th></tr>
+<tr><td><b>grade 1</b></td><td style='text-align:right'>1</td><td style='text-align:right'>20</td><td style='text-align:right'>140</td><td style='text-align:right'><b>7.000</b></td><td style='min-width:110px'><div class='bar'><i style='width:100.0%'></i></div></td></tr><tr><td><b>grade 2</b></td><td style='text-align:right'>5</td><td style='text-align:right'>140</td><td style='text-align:right'>724</td><td style='text-align:right'><b>5.171</b></td><td style='min-width:110px'><div class='bar'><i style='width:73.9%'></i></div></td></tr><tr><td><b>grade 3</b></td><td style='text-align:right'>12</td><td style='text-align:right'>700</td><td style='text-align:right'>2,665.50</td><td style='text-align:right'><b>3.808</b></td><td style='min-width:110px'><div class='bar'><i style='width:54.4%'></i></div></td></tr><tr><td><b>grade 4</b></td><td style='text-align:right'>12</td><td style='text-align:right'>870</td><td style='text-align:right'>4,967</td><td style='text-align:right'><b>5.709</b> <span class='chip warn'>역전</span></td><td style='min-width:110px'><div class='bar'><i style='width:81.6%'></i></div></td></tr><tr><td><b>grade 5</b></td><td style='text-align:right'>18</td><td style='text-align:right'>2,000</td><td style='text-align:right'>7,928.50</td><td style='text-align:right'><b>3.964</b></td><td style='min-width:110px'><div class='bar'><i style='width:56.6%'></i></div></td></tr><tr><td><b>grade 6</b></td><td style='text-align:right'>13</td><td style='text-align:right'>2,350</td><td style='text-align:right'>7,430</td><td style='text-align:right'><b>3.162</b></td><td style='min-width:110px'><div class='bar'><i style='width:45.2%'></i></div></td></tr><tr><td><b>grade 7</b></td><td style='text-align:right'>4</td><td style='text-align:right'>1,200</td><td style='text-align:right'>2,100</td><td style='text-align:right'><b>1.750</b></td><td style='min-width:110px'><div class='bar'><i style='width:25.0%'></i></div></td></tr></table></div>
+<div class="callout warn">⚠️ <b>단조성 위반</b> <span class="chip op">검토 제안</span> — 포인트당 효율이 grade 3 → grade 4에서 <b>역전</b>된다(상위 등급이 더 효율적).
+나머지 구간은 단조 하락이며 grade 7에서 최저를 찍는다.
+후반 등급 효율이 <b>최고 대비 75% 하락</b>하는 것은 엔드 콘텐츠 투자 유인 부족으로 이어질 수 있다.
+<b>「의도된 설계인지 확인이 필요한 항목」</b>으로 기재한다.</div>
+
+<h3>공격력 flat 노드 6개 (ability 32)</h3>
+<div class="tblwrap"><table>
+<tr><th>idx</th><th>grade</th><th>max</th><th style="text-align:right">value</th><th style="text-align:right">upValue</th>
+<th style="text-align:right">만렙 총합</th><th style="text-align:right">총비용</th><th style="text-align:right">포인트당</th></tr>
+<tr><td>9</td><td>2</td><td>10</td><td style='text-align:right'>50</td><td style='text-align:right'>10</td><td style='text-align:right'><b>140</b></td><td style='text-align:right'>20</td><td style='text-align:right'>7.00</td></tr><tr><td>10</td><td>4</td><td>10</td><td style='text-align:right'>100</td><td style='text-align:right'>20</td><td style='text-align:right'><b>280</b></td><td style='text-align:right'>70</td><td style='text-align:right'>4.00</td></tr><tr><td>19</td><td>5</td><td>10</td><td style='text-align:right'>150</td><td style='text-align:right'>30</td><td style='text-align:right'><b>420</b></td><td style='text-align:right'>100</td><td style='text-align:right'>4.20</td></tr><tr><td>25</td><td>6</td><td>10</td><td style='text-align:right'>200</td><td style='text-align:right'>40</td><td style='text-align:right'><b>560</b></td><td style='text-align:right'>150</td><td style='text-align:right'>3.73</td></tr><tr><td>13</td><td>7</td><td>10</td><td style='text-align:right'>350</td><td style='text-align:right'>70</td><td style='text-align:right'><b>980</b></td><td style='text-align:right'>200</td><td style='text-align:right'>4.90</td></tr><tr><td>14</td><td>7</td><td>10</td><td style='text-align:right'>350</td><td style='text-align:right'>70</td><td style='text-align:right'><b>980</b></td><td style='text-align:right'>200</td><td style='text-align:right'>4.90</td></tr>
+<tr style="background:var(--lite)"><td colspan="5"><b>합계</b></td>
+<td style="text-align:right"><b>3,360</b></td><td style="text-align:right"><b>740</b></td>
+<td style="text-align:right"><b>4.54</b></td></tr>
+</table></div>
+<p class="src">포인트당 효율이 등급이 올라가도 개선되지 않는다(오히려 grade 2가 최고).
+마스터리는 "효율 투자처"가 아니라 <b>단순 해금 소모품</b>이다. 전 65노드 만렙 총비용은 7,280 포인트.</p>
+
+<h2>축④ 스킬 (db_skill · 97행)</h2>
+<div class="grid g3">
+<div class="stat"><div class="n">32</div><div class="l">액티브 (index 1~32)</div></div>
+<div class="stat"><div class="n navy">30</div><div class="l">패시브 (1001~1030)</div></div>
+<div class="stat"><div class="n">35</div><div class="l">껍데기 / 몬스터용</div></div>
+</div>
+<div class="tblwrap"><table>
+<tr><th>grade</th><th style="text-align:right">개수</th><th style="text-align:right">cost</th><th style="text-align:right">sell</th><th style="text-align:right">cost당 dmg</th></tr>
+<tr><td>1</td><td style="text-align:right">5</td><td style="text-align:right">2</td><td style="text-align:right">1</td><td style="text-align:right">0.630</td></tr>
+<tr><td>2</td><td style="text-align:right">5</td><td style="text-align:right">7</td><td style="text-align:right">5</td><td style="text-align:right">0.391</td></tr>
+<tr><td>3</td><td style="text-align:right">5</td><td style="text-align:right">15</td><td style="text-align:right">10</td><td style="text-align:right">0.619</td></tr>
+<tr><td>4</td><td style="text-align:right">17</td><td style="text-align:right">100</td><td style="text-align:right">50</td><td style="text-align:right">0.577</td></tr>
+</table></div>
+<p class="src">cost당 dmg가 0.39~0.63으로 <b>거의 평탄</b>하다. 즉 스킬 등급 간 효율 격차는 사실상 없고,
+상위 등급은 "효율"이 아니라 <b>절대 수치 상한</b>을 사기 위한 것이다. 등급 4가 17종으로 몰려 있는 것도 같은 맥락.</p>
+
+<h2>미완성 콘텐츠 탐지 ⭐</h2>
+<p>기계 대조로 잡아낸 <b>"틀만 깔아둔" 상태</b>의 테이블이다. 전부 원본 행 재집계로 확인했다.</p>
+<div class="tblwrap"><table>
+<tr><th>테이블</th><th>발견</th><th>근거</th><th>등급</th></tr><tr><td><code>db_ability</code></td><td>201행 중 <b>128행(64%)</b>이 빈 껍데기</td><td class='src'>type=2(동료 능력) 블록은 type=1의 미러 구조인데 <b>87%가 비어 있다</b>. 동료 능력은 13종만 구현되고 87칸은 예약만 해둔 상태.</td><td><span class="chip fact">확정</span></td></tr><tr><td><code>db_siege</code></td><td>50행이 <b>5종의 10회 복붙</b></td><td class='src'>boss·map·ability·abilityValue·reward 전 컬럼이 5주기로 완전 동일. abilityValue 공비 중앙값 = 1.0000 → <b>난이도 상승이 0</b>. 보상도 50단계 내내 동일.</td><td><span class="chip fact">확정</span></td></tr><tr><td><code>db_map</code></td><td>20종 맵의 몬스터 편성이 <b>2세트 재탕</b></td><td class='src'>20개 맵 전부가 두 세트 중 하나만 참조한다. 반면 db_worldTour는 맵별로 제대로 분화된 세트를 참조 → db_map이 구버전/미갱신 테이블.</td><td><span class="chip fact">확정</span></td></tr><tr><td><code>db_skill</code></td><td>97행 중 <b>35행이 껍데기/몬스터용</b>, 그 중 30행은 이름조차 없음</td><td class='src'>grade=0 &amp; cost=0 &amp; sell=0 이고 lang_SkillName 조회가 전부 실패. dmg도 0 또는 1. <b>순수 예약 슬롯</b>.</td><td><span class="chip fact">확정</span></td></tr><tr><td><code>db_pet</code></td><td><b>index 31~40 · 10마리 기본 스탯 완전 동일</b></td><td class='src'>치얼·버스커·로사·잭슨·비트·위시·붐·씽·엣지·루브르 10종이 dmg 29,373,140 · cost 100 · tier 7 · criChance · criDmg까지 전부 같다. 차별화는 have[] 능력 조합 4종뿐. grade가 전부 31, tierNum이 전부 3으로 고정된 것도 1~30행 규칙과 어긋난다 — 복붙 후 미수정.</td><td><span class="chip fact">확정</span></td></tr><tr><td><code>db_monster</code></td><td>97종 hp 10~2,200 / dmg 2~20 — <b>실전 수치가 아님</b></td><td class='src'>동료 1마리 dmg가 최대 2,900만인데 몬스터 hp는 최대 2,200이다. hp 공비 중앙값 = 1.0000(등급 진행 없음) → 기본값 템플릿일 뿐이고 실제 난이도는 코드의 DungeonBalance 상수로 런타임 스케일링된다.</td><td><span class="chip fact">확정</span></td></tr></table></div>
+
+<div class="callout warn">⚠️ <b>가장 큰 건: 펫 31~40번 10마리 기본 스탯 완전 동일</b> <span class="chip fact">확정</span> —
+프리미엄 tier 7 10종(치얼 · 버스커 · 로사 · 잭슨 · 비트 · 위시 · 붐 · 씽 · 엣지 · 루브르)이
+<code>dmg 29,373,140</code> · <code>cost 100</code> · <code>tier 7</code> · <code>criChance</code> · <code>criDmg</code>까지 전부 같다.
+<b>최상위 수집 대상이 성능상 완전히 동일</b>하다는 뜻이며, 수집형 게임에서 최상위 티어의 차별화가 <code>have[]</code> 능력 조합 4종에만 걸려 있는 상태다.</div>
+
+<h3>기타 죽은 컬럼 / 미사용 슬롯</h3>
+<div class="tblwrap"><table><tr><th>테이블</th><th>이상</th></tr><tr><td><code>db_jewel</code></td><td class='src'>type·hp 컬럼 전 행 0 (죽은 컬럼). 9종 전부 ability 풀이 16개로 동일</td></tr><tr><td><code>db_resources</code></td><td class='src'>back 컬럼 전 행 0 / 64종 중 use 값이 있는 건 뽑기코인·마블코인 2종뿐</td></tr><tr><td><code>db_mission</code></td><td class='src'>image 컬럼 전 행 0, 전체 0값 비율 43%</td></tr><tr><td><code>db_inapppord</code></td><td class='src'>빈값 42%, img·p5~p8 등 9개 컬럼 전부 0 (결제 슬롯 8개 중 4개만 사용)</td></tr><tr><td><code>db_worldTour</code></td><td class='src'>key 컬럼 전 행 0</td></tr><tr><td><code>db_cutscene</code></td><td class='src'>1행뿐</td></tr><tr><td><code>db_dungeon</code></td><td class='src'>4행뿐 (열쇠 6종이 존재하는데 던전은 4개)</td></tr><tr><td><code>db_item</code></td><td class='src'>type=7 48등급 단일 셀 이상 (아래 §2 참조)</td></tr></table></div>
+
+<h2>확인하지 못한 것 — 이 페이지의 한계</h2>
+<div class="callout navy">📌 <b>원리적 한계 선언</b> —
+이 게임은 밸런스 수치를 <b>런타임에 Google Sheets에서 로드</b>한다(<code>ITable</code> + <code>spreadSheetID</code>/<code>sheetID</code>).
+따라서 우리가 뜯은 테이블은 <b>빌드 시점의 캐시본</b>이며, 현재 라이브 수치와 다를 수 있다.
+실시간 밸런스 추적은 APK 정적 분석으로는 도달할 수 없는 영역이다. <span class="chip fact">확정</span></div>
+
+<div class="tblwrap"><table>
+<tr><th>항목</th><th>상태</th><th>이유</th></tr>
+<tr><td><b>전투력(AP) 최종 합산식</b></td><td><span class="chip warn">미확인</span> 불가</td>
+<td><code>Stats.SetAp()</code> 본문이 IL2CPP 덤프에 없다(시그니처만, RVA <code>0x31AA044</code>).
+개별 스탯은 전부 계산되지만 이들을 하나의 전투력 숫자로 접는 <b>가중치를 모른다</b>.
+→ 17장 시뮬레이터가 <b>AP를 만들어내지 않는 이유</b>가 이것이다.</td></tr>
+<tr><td>강화 비용 곡선</td><td><span class="chip warn">미확인</span> 불가</td>
+<td><code>db_item</code>에 비용 컬럼 자체가 없다. 강화석/골드 소모량 불명.</td></tr>
+<tr><td>잠재력 롤 확률</td><td><span class="chip warn">미확인</span> 불가</td>
+<td><code>potentialMin</code>(등급별 하한)은 있으나 상한·등급별 확률표가 없다.</td></tr>
+<tr><td>동료 dmg가 캐릭터 공격력에 합산되는지</td><td><span class="chip inf">추정</span> 별도 추정</td>
+<td><code>Stats.GetPeerDmg()</code>/<code>SetPeer()</code>가 별도로 존재 → 별도 딜 소스일 가능성이 높다. 확정 불가.</td></tr>
+<tr><td>스킬 <code>upValue</code>의 단위</td><td><span class="chip warn">미확인</span> 미확인</td>
+<td>레벨업 시 가산인지 배율인지 구분할 근거가 테이블에 없다.</td></tr>
+<tr><td>1.0.39의 "40"이 저장된 실제 위치</td><td><span class="chip inf">추정</span> 추정 3순위</td>
+<td>① <code>Stats.Upgrade()</code> 인자 ② 프리팹 직렬화 필드 ③ 원격 스프레드시트. 프리팹 직렬화 값은 <b>코드 상수 변경 없이 패치 가능</b>해 패치노트 정황과 일치한다.</td></tr>
+</table></div>
+
+<p class="src">출처: <code>tables/db_item.csv</code>(432) · <code>db_pet.csv</code>(40) · <code>db_mastery.csv</code>(65) · <code>db_skill.csv</code>(97) ·
+<code>db_ability.csv</code>(201) · <code>db_siege.csv</code>(50) · <code>db_map.csv</code>(20) · <code>lang_Ability.csv</code> +
+<code>_work/dump/dump.cs</code> · 계수 산출물 <code>_work/growth_data.json</code> · 상세 <code>reports/11_growth_deep.md</code></p>
+
+<div class="foot-note">케이팝히어로즈 (com.beeorbit.kpopheros v1.0.40) 정적 분석 리포트 · 생성 2026-07-20 ·
+게임 저작권은 BeeOrbit에 있으며 본 문서는 내부 분석용입니다.</div></main></div>
+<footer class="prog"><div class="ptrack"><img class="mascot" src="img/mascot.png" alt="">
+<span class="plabel">16 / 18</span>
+<div class="dots"><div class="dline"></div><div class="dfill"></div></div></div></footer>
+<script>
+(function(){var h=document.querySelector('.hamb'),n=document.querySelector('nav.main');
+if(h)h.addEventListener('click',function(){n.classList.toggle('open')});
+var secs=[].slice.call(document.querySelectorAll('main h2')),dots=document.querySelector('.dots');
+if(dots&&secs.length){secs.forEach(function(s,i){s.id=s.id||('sec'+i);
+ var d=document.createElement('div');d.className='dot';
+ d.style.left=(secs.length>1?(i/(secs.length-1))*100:0)+'%%';d.title=s.textContent;
+ d.onclick=function(){s.scrollIntoView({behavior:'smooth',block:'start'})};dots.appendChild(d)});
+ var fill=document.querySelector('.dfill');
+ function upd(){var y=window.scrollY+120,idx=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)idx=i});
+  [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i<=idx)});
+  if(fill)fill.style.width=(secs.length>1?(idx/(secs.length-1))*100:100)+'%%'}
+ window.addEventListener('scroll',upd);upd();}})();
+</script><script id="gb-js">
+(function(){
+  var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
+  function set(o){document.body.classList.toggle('gb-open',o);}
+  if(b) b.addEventListener('click',function(){set(!document.body.classList.contains('gb-open'));});
+  if(d) d.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>900)set(false);});
+  // 현재 항목이 사이드바 밖이면 보이도록 스크롤
+  var on=document.querySelector('.gb-nav a.on');
+  if(on){var s=document.querySelector('.gb-side');
+    if(s && on.offsetTop > s.clientHeight-80) s.scrollTop = on.offsetTop - s.clientHeight/2;}
+})();
+</script>
+</body></html>

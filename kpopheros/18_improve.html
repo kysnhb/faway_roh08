@@ -1,0 +1,873 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>개선 제안 · 케이팝히어로즈 분석</title><style>
+@font-face{font-family:'Pretendard';src:url('fonts/Pretendard-Regular.woff2') format('woff2');
+ font-weight:400 700;font-display:swap}
+:root{--primary:#D05090;--deep:#C83680;--lite:#F1DCE6;--bg:#FDF7FA;--ink:#102050;--navy:#102050;
+ --card:#fff;--line:#ecdde5;--muted:#6b6472;
+ --c0:#D05090;--c1:#102050;--c2:#F5A524;--c3:#3EC1D3;--c4:#8E5BF0;--c5:#FF6B6B}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:'Pretendard',-apple-system,'Malgun Gothic',sans-serif;color:var(--ink);
+ background:var(--bg);line-height:1.62;-webkit-text-size-adjust:100%}
+a{color:var(--deep);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;
+ box-shadow:0 2px 12px rgba(16,32,80,.25)}
+.topbar{display:flex;align-items:center;gap:14px;padding:11px 18px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;white-space:nowrap}
+.brand img{width:30px;height:30px;border-radius:9px;display:block}
+.brand .g{color:var(--primary)}
+nav.main{margin-left:auto;display:flex;flex-wrap:wrap;gap:2px}
+nav.main a{color:#d6cfe0;font-size:12.5px;padding:5px 9px;border-radius:7px;white-space:nowrap}
+nav.main a:hover{background:rgba(255,255,255,.10);text-decoration:none}
+nav.main a.active{background:var(--primary);color:#fff}
+.hamb{display:none;margin-left:auto;background:rgba(255,255,255,.14);border:0;color:#fff;
+ font-size:20px;width:40px;height:36px;border-radius:8px;cursor:pointer}
+@media(max-width:820px){.hamb{display:block}
+ nav.main{flex-basis:100%;flex-direction:column;max-height:0;overflow:hidden;
+  transition:max-height .28s ease;margin-left:0}
+ nav.main.open{max-height:760px}
+ nav.main a{padding:9px 8px;border-bottom:1px solid rgba(255,255,255,.07)}}
+h1{font-size:30px;line-height:1.22;margin:0 0 8px;letter-spacing:-.4px}
+h2{font-size:21px;margin:34px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--lite)}
+h3{font-size:16px;margin:20px 0 8px}
+main{padding:26px 0 92px}
+.lead{font-size:16px;color:var(--muted);margin:0 0 18px}
+.grid{display:grid;gap:14px}.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:720px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card h3{margin-top:0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;text-align:center}
+.stat .n{font-size:26px;font-weight:800;color:var(--deep);line-height:1.12}
+.stat .n.navy{color:var(--navy)}
+.stat .l{font-size:12px;color:var(--muted);margin-top:5px}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px}
+.chip.fact{background:#e6f4e6;color:#2f7a2f}.chip.inf{background:#fdf0dc;color:#a56312}
+.chip.op{background:#ece6f7;color:#5b40a8}.chip.warn{background:#fce4ec;color:#b3325f}
+.tag{display:inline-block;background:var(--lite);color:var(--deep);font-size:12px;
+ padding:3px 10px;border-radius:20px;margin:3px 3px 0 0;font-weight:600}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:12px 0;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--lite);color:var(--deep);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.callout{border-left:4px solid var(--primary);background:#fdeef5;padding:12px 15px;
+ border-radius:0 10px 10px 0;margin:14px 0;font-size:14px}
+.callout.warn{border-color:#e0567f;background:#fdeaf0}
+.callout.navy{border-color:var(--navy);background:#eef1f9}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(max-width:720px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal img{width:100%;height:110px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.gal figure{margin:0}.gal figcaption{font-size:11px;color:var(--muted);text-align:center;margin-top:3px}
+.montage{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
+.svgwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff;padding:10px}
+ul.clean{padding-left:19px;margin:8px 0}ul.clean li{margin:4px 0}
+.src{font-size:12px;color:var(--muted)}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.kv:last-child{border-bottom:0}.kv .k{color:var(--muted)}.kv .v{font-weight:700;text-align:right}
+.bar{height:9px;background:var(--lite);border-radius:6px;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--primary)}
+footer.prog{position:fixed;left:0;right:0;bottom:0;background:rgba(16,32,80,.96);z-index:40;padding:9px 0}
+.ptrack{max-width:1080px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:12px}
+.dots{position:relative;flex:1;height:22px}
+.dline{position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,.18);
+ transform:translateY(-50%);border-radius:3px}
+.dfill{position:absolute;top:50%;left:0;height:3px;background:var(--primary);
+ transform:translateY(-50%);border-radius:3px;width:0;transition:width .2s}
+.dot{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:#5b5f7a;
+ transform:translate(-50%,-50%);border:2px solid var(--navy);cursor:pointer}
+.dot.on{background:var(--primary)}
+.mascot{width:34px;height:34px;border-radius:9px;flex-shrink:0;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.plabel{color:#d6cfe0;font-size:12px;white-space:nowrap;flex-shrink:0}
+.foot-note{max-width:1080px;margin:22px auto 0;padding:14px 18px;color:var(--muted);font-size:12.5px;
+ border-top:1px solid var(--line)}
+</style><style id="gb-css">
+:root{--gb-w:266px}
+.gb-side{
+  position:fixed;left:0;top:0;bottom:0;width:var(--gb-w);z-index:300;
+  background:#11141c;border-right:1px solid #262d3b;overflow-y:auto;
+  padding:16px 12px 28px;
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.gb-side::-webkit-scrollbar{width:8px}
+.gb-side::-webkit-scrollbar-thumb{background:#2b3346;border-radius:4px}
+.gb-home{
+  display:flex;align-items:center;gap:7px;color:#aab4c6;text-decoration:none;
+  font-size:12.5px;padding:9px 11px;border-radius:9px;border:1px solid #262d3b;
+  background:#171b25;transition:.18s;margin-bottom:14px
+}
+.gb-home:hover{background:#1e2431;color:#fff;border-color:var(--gb-ac);text-decoration:none}
+.gb-title{
+  color:#fff;font-size:15px;font-weight:800;padding:0 11px 10px;margin-bottom:8px;
+  border-bottom:1px solid #262d3b;letter-spacing:-.01em;line-height:1.4
+}
+.gb-title small{display:block;color:#6f7a8f;font-size:11px;font-weight:500;margin-top:3px;letter-spacing:.06em}
+.gb-nav{display:flex;flex-direction:column;gap:1px}
+.gb-nav a{
+  display:flex;align-items:center;gap:9px;color:#aab4c6;text-decoration:none;
+  font-size:13px;padding:8px 11px;border-radius:8px;transition:.15s;line-height:1.45
+}
+.gb-nav a .num{
+  font-family:'Consolas',monospace;font-size:10.5px;color:#5d6779;min-width:18px;flex-shrink:0
+}
+.gb-nav a:hover{background:#1b2130;color:#fff;text-decoration:none}
+.gb-nav a.on{background:var(--gb-ac);color:#0e1016;font-weight:700}
+.gb-nav a.on .num{color:rgba(0,0,0,.5)}
+body{padding-left:var(--gb-w)}
+.gb-burger,.gb-dim{display:none}
+@media(max-width:900px){
+  body{padding-left:0}
+  .gb-side{transform:translateX(-100%);transition:transform .26s cubic-bezier(.4,0,.2,1);box-shadow:6px 0 30px rgba(0,0,0,.4)}
+  body.gb-open .gb-side{transform:none}
+  .gb-burger{
+    display:flex;align-items:center;justify-content:center;position:fixed;
+    left:12px;bottom:14px;z-index:320;width:48px;height:48px;border-radius:50%;
+    background:var(--gb-ac);color:#0e1016;border:none;font-size:19px;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  .gb-dim{
+    display:block;position:fixed;inset:0;z-index:290;background:rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .22s
+  }
+  body.gb-open .gb-dim{opacity:1;pointer-events:auto}
+  body.gb-open{overflow:hidden}
+}
+@media print{.gb-side,.gb-burger,.gb-dim{display:none}body{padding-left:0}}
+  .gb-side{--gb-ac:#c83680}
+  :root{--gb-ac:#c83680}
+
+/* kpopheros override */
+header.top nav.main{display:none!important}
+header.top .hamb{display:none!important}
+footer.prog{left:var(--gb-w)!important}
+@media(max-width:900px){ footer.prog{left:0!important} }
+
+</style>
+<!--gb-injected--></head><body>
+<button class="gb-burger" aria-label="목차 열기">☰</button>
+<div class="gb-dim"></div>
+<aside class="gb-side">
+  <a class="gb-home" href="../index.html">← 게임 분석 아카이브</a>
+  <div class="gb-title">케이팝히어로즈<small>ANALYSIS REPORT</small></div>
+  <nav class="gb-nav">
+        <a class="" href="index.html"><span class="num">—</span><span>표지</span></a>
+    <a class="" href="01_overview.html"><span class="num">01</span><span>게임 개요</span></a>
+    <a class="" href="02_content.html"><span class="num">02</span><span>콘텐츠 구성</span></a>
+    <a class="" href="03_content_flow.html"><span class="num">03</span><span>콘텐츠 흐름</span></a>
+    <a class="" href="04_currency.html"><span class="num">04</span><span>재화</span></a>
+    <a class="" href="05_currency_flow.html"><span class="num">05</span><span>재화 흐름</span></a>
+    <a class="" href="06_growth.html"><span class="num">06</span><span>성장</span></a>
+    <a class="" href="07_battle.html"><span class="num">07</span><span>전투·적</span></a>
+    <a class="" href="08_events.html"><span class="num">08</span><span>이벤트·리텐션</span></a>
+    <a class="" href="09_bm.html"><span class="num">09</span><span>수익화(BM)</span></a>
+    <a class="" href="10_market.html"><span class="num">10</span><span>시장</span></a>
+    <a class="" href="11_assets.html"><span class="num">11</span><span>에셋</span></a>
+    <a class="" href="12_tech.html"><span class="num">12</span><span>기술·보안</span></a>
+    <a class="" href="13_tables.html"><span class="num">13</span><span>데이터</span></a>
+    <a class="" href="14_method.html"><span class="num">14</span><span>방법론·한계</span></a>
+    <a class="" href="15_unlock.html"><span class="num">15</span><span>콘텐츠 해금</span></a>
+    <a class="" href="16_growth_deep.html"><span class="num">16</span><span>성장 심층</span></a>
+    <a class="" href="17_simulator.html"><span class="num">17</span><span>성장 시뮬레이터</span></a>
+    <a class="on" href="18_improve.html"><span class="num">18</span><span>개선 제안</span></a>
+  </nav>
+</aside>
+<header class="top"><div class="topbar">
+<span class="brand"><img src="img/app/icon.png" alt="">케이팝<span class="g">히어로즈</span></span>
+<button class="hamb" aria-label="menu">☰</button><nav class="main"><a href="index.html">표지</a><a href="01_overview.html">게임 개요</a><a href="02_content.html">콘텐츠 구성</a><a href="03_content_flow.html">콘텐츠 흐름</a><a href="04_currency.html">재화</a><a href="05_currency_flow.html">재화 흐름</a><a href="06_growth.html">성장</a><a href="07_battle.html">전투·적</a><a href="08_events.html">이벤트·리텐션</a><a href="09_bm.html">수익화(BM)</a><a href="10_market.html">시장</a><a href="11_assets.html">에셋</a><a href="12_tech.html">기술·보안</a><a href="13_tables.html">데이터</a><a href="14_method.html">방법론·한계</a><a href="15_unlock.html">콘텐츠 해금</a><a href="16_growth_deep.html">성장 심층</a><a href="17_simulator.html">성장 시뮬레이터</a><a href="18_improve.html" class="active">개선 제안</a></nav>
+</div></header><div class="wrap"><main>
+<style>
+.p18-hero{background:linear-gradient(135deg,#102050 0%,#2a2f6b 55%,#7a2a58 100%);
+ color:#fff;border-radius:18px;padding:24px 22px;margin:6px 0 18px}
+.p18-hero h2{border:0;margin:0 0 8px;font-size:20px;color:#fff}
+.p18-hero p{margin:0;color:#dcd6ea;font-size:14.5px}
+.p18-hero b{color:#ffcfe6}
+.issue{border:1px solid var(--line);border-radius:16px;background:#fff;margin:18px 0;overflow:hidden}
+.issue>.hd{background:var(--navy);color:#fff;padding:14px 18px}
+.issue>.hd .no{display:inline-block;background:var(--primary);color:#fff;font-weight:800;
+ border-radius:8px;padding:1px 10px;margin-right:9px;font-size:13px}
+.issue>.hd .q{display:block;color:#cfd6ee;font-size:13.5px;margin-top:6px;font-style:italic}
+.issue>.bd{padding:16px 18px}
+.step{border-left:3px solid var(--lite);padding:2px 0 2px 14px;margin:16px 0}
+.step>h4{margin:0 0 7px;font-size:14.5px;color:var(--deep);letter-spacing:-.2px}
+.step.s4{border-left-color:var(--primary)}
+.step.s5{border-left-color:var(--navy)}
+.mockup{border:1px solid var(--line);border-radius:14px;background:#fbf8fb;padding:12px;margin:10px 0}
+.mockup .cap{font-size:12px;color:var(--muted);margin:8px 2px 0}
+.mockup .cap b{color:var(--ink)}
+.mockup svg{display:block;width:100%;height:auto}
+.mockscroll{overflow-x:auto}
+.mockscroll>svg{min-width:560px}
+.fixlist{list-style:none;padding:0;margin:8px 0}
+.fixlist li{position:relative;padding:8px 0 8px 26px;border-bottom:1px dashed var(--line);font-size:14px}
+.fixlist li:last-child{border-bottom:0}
+.fixlist li:before{content:"→";position:absolute;left:2px;top:8px;color:var(--primary);font-weight:800}
+.fixlist code{background:var(--lite);color:var(--deep);padding:1px 5px;border-radius:5px;font-size:12.5px}
+.slotgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.slotgrid>*{min-width:0}
+@media(max-width:720px){.slotgrid{grid-template-columns:repeat(2,1fr)}}
+.slot{border-radius:12px;padding:11px 12px;font-size:12.5px;line-height:1.45}
+.slot .t{font-weight:800;font-size:13.5px;display:block;margin-bottom:3px}
+.slot.have{background:#eef4ee;border:1px solid #cfe0cf;color:#2f5a2f}
+.slot.thin{background:#fdf4e4;border:1px solid #f0dcb4;color:#8a5a10}
+.slot.none{background:#fbf1f4;border:1.5px dashed #e2a8bd;color:#9c3a5e}
+.pri{border:1px solid var(--line);border-radius:14px;background:#fff;padding:13px 15px;margin:9px 0}
+.pri .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:5px}
+.pri .rk{background:var(--primary);color:#fff;font-weight:800;font-size:12px;border-radius:7px;padding:1px 9px}
+.pri .nm{font-weight:800;font-size:14.5px}
+.pri .mt{margin-left:auto;font-size:12px;color:var(--muted)}
+.pri p{margin:0;font-size:13.5px;color:#4a4553}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+</style>
+
+<h1>개선 제안</h1>
+<p class="lead">사장 지적 4건을 <b>①문제 → ②데이터 근거 → ③레퍼런스 → ④개선안 → ⑤목업</b>
+5단으로 정리했다. 모든 수치는 테이블·에셋·코드 상수 실측이며,
+근거가 약한 마케팅 수치는 의도적으로 배제했다.</p>
+
+<div class="p18-hero">
+<h2>한 문장 진단</h2>
+<p>이 게임은 <b>전투력의 최강 축인 동료</b>(장비 9부위를 전부 갖춰도 <b>1.79배</b> 우위)를 미션 38번에 열고,
+<b>가장 비싼 상품군</b>(₩25,000~50,000 캐릭터 패키지)이면서,
+<b>미획득 상세 정보를 보여주지 않고</b>,
+<b>동료 능력 데이터의 87%를 비워둔 채</b> 출시했다.
+지적 4건은 서로 다른 문제가 아니라 <b>이 한 줄의 네 얼굴</b>이다.</p>
+</div>
+
+<div class="grid g4">
+<div class="stat"><div class="n">38번</div><div class="l">동료 해금 미션 순번</div></div><div class="stat"><div class="n navy">1.79배</div><div class="l">동료 tier7 ÷ 장비 9부위 총합</div></div><div class="stat"><div class="n">87%</div><div class="l">동료 능력 블록 공백</div></div><div class="stat"><div class="n navy">17.5%</div><div class="l">순수 전투 화면 점유</div></div>
+</div>
+
+<h2>우선순위 매트릭스</h2>
+<p>세로축 = 임팩트, 가로축 = 구현 비용. <b>좌상단(저비용·고효과)부터 착수</b>한다.
+특히 <code>orthographicSize</code>는 게임 코드에서 한 번도 호출되지 않는 <b>유휴 레버</b>이고,
+스토어 언어와 BGM 압축은 <b>게임 코드를 건드리지 않는다.</b></p>
+
+<div class="mockup"><div class="mockscroll">
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg"
+ font-family="Pretendard,sans-serif" role="img" aria-label="개선안 우선순위 매트릭스">
+<rect width="900" height="500" fill="#fff" rx="12"/>
+<rect x="90" y="40" width="380" height="200" fill="#eef7f1"/>
+<text x="100" y="60" font-size="11.5" font-weight="800" fill="#2E7D5B">즉시 착수 — 저비용 · 고효과</text>
+<rect x="470" y="40" width="380" height="200" fill="#fdf4e4"/>
+<text x="840" y="60" font-size="11.5" font-weight="800" fill="#8a5a10" text-anchor="end">전략 투자 — 고비용 · 고효과</text>
+<rect x="90" y="240" width="380" height="200" fill="#f7f5f9"/>
+<rect x="470" y="240" width="380" height="200" fill="#faf1f4"/>
+<text x="840" y="432" font-size="11.5" font-weight="800" fill="#b3325f" text-anchor="end">후순위 — 고비용 · 저효과</text>
+<line x1="90" y1="440" x2="850" y2="440" stroke="#c9bfd0" stroke-width="1.5"/>
+<line x1="90" y1="40" x2="90" y2="440" stroke="#c9bfd0" stroke-width="1.5"/>
+<text x="470" y="468" font-size="12" fill="#6b6472" text-anchor="middle">구현 비용 →</text>
+<text x="24" y="240" font-size="12" fill="#6b6472" transform="rotate(-90 24 240)" text-anchor="middle">임팩트 →</text>
+
+<circle cx="150" cy="200" r="9" fill="#2E7D5B"/><text x="164" y="204" font-size="11" fill="#25303f">스토어 지원 언어 2→9개</text>
+<circle cx="150" cy="150" r="9" fill="#2E7D5B"/><text x="164" y="154" font-size="11" fill="#25303f">BGM WAV→Vorbis (119MB↓)</text>
+<circle cx="196" cy="105" r="10" fill="#D05090"/><text x="212" y="109" font-size="11.5" font-weight="700" fill="#25303f">전투 동적 줌 (orthographicSize 유휴 레버)</text>
+<circle cx="234" cy="168" r="9" fill="#2E7D5B"/><text x="248" y="172" font-size="11" fill="#25303f">잠금 콘텐츠 예고 노출</text>
+<circle cx="256" cy="132" r="9" fill="#2E7D5B"/><text x="270" y="136" font-size="11" fill="#25303f">미션 레드닷 3단 점등 + 완료 연출</text>
+<circle cx="300" cy="196" r="9" fill="#2E7D5B"/><text x="314" y="200" font-size="11" fill="#25303f">히트스톱 3~5프레임</text>
+<circle cx="352" cy="88" r="10" fill="#D05090"/><text x="368" y="92" font-size="11.5" font-weight="700" fill="#25303f">하단 시트 접기 + 비율 앵커 전환</text>
+<circle cx="392" cy="140" r="9" fill="#2E7D5B"/><text x="406" y="144" font-size="11" fill="#25303f">미획득 동료 상세 열람</text>
+<circle cx="470" cy="72" r="10" fill="#D05090"/><text x="486" y="76" font-size="11.5" font-weight="700" fill="#25303f">온보딩 재배치 (스킬 28→5 · 동료 38→12)</text>
+<circle cx="540" cy="164" r="9" fill="#E29A3A"/><text x="554" y="168" font-size="11" fill="#25303f">db_ability 동료 87칸 채우기</text>
+<circle cx="596" cy="212" r="9" fill="#E29A3A"/><text x="610" y="216" font-size="11" fill="#25303f">전투 배경 300→624px 재제작</text>
+<circle cx="640" cy="118" r="9" fill="#E29A3A"/><text x="654" y="122" font-size="11" fill="#25303f">환생/프레스티지 축 신설</text>
+<circle cx="712" cy="176" r="9" fill="#E29A3A"/><text x="726" y="180" font-size="11" fill="#25303f">무한의 탑 (드림 티켓 해제)</text>
+<circle cx="784" cy="146" r="9" fill="#E29A3A"/><text x="798" y="150" font-size="11" fill="#25303f">길드전 / 길드 레이드</text>
+<circle cx="660" cy="330" r="9" fill="#B08FC0"/><text x="674" y="334" font-size="11" fill="#6b6472">db_siege 50행 재설계 (중복 90%)</text>
+<circle cx="560" cy="372" r="9" fill="#B08FC0"/><text x="574" y="376" font-size="11" fill="#6b6472">맵 11~19 "우주" 개명·아트 분리</text>
+</svg></div>
+<div class="cap">좌표는 상대 배치이며 정밀 척도가 아니다. <b>분홍 = 최우선 3건</b> ·
+초록 = 즉시 착수 · 주황 = 전략 투자 · 보라 = 후순위.</div>
+</div>
+
+<div class="grid g3">
+<div class="card"><h3>1순위 · 온보딩 재배치</h3>
+<p style="font-size:13.5px;margin:0">전투력의 전부인 동료를 38번에서 <b>12번으로</b>,
+스킬을 28번에서 <b>5번으로</b>. 뽑기는 스킬 뒤로 미룬다.</p></div>
+<div class="card"><h3>2순위 · 하단 시트 해방</h3>
+<p style="font-size:13.5px;margin:0">1250px 고정 시트를 접기 가능 + 비율 앵커로.
+16:9의 <b>3.9% 붕괴</b>가 사라진다.</p></div>
+<div class="card"><h3>3순위 · 동료 정보 개방</h3>
+<p style="font-size:13.5px;margin:0">미획득 상세 열람 + <code>db_ability</code> 87칸.
+Play 리뷰에서 유일하게 공감받은 지적이다.</p></div>
+</div>
+
+<h2>지적 ① 콘텐츠 오픈이 너무 늦다</h2>
+
+<div class="issue">
+<div class="hd"><span class="no">①</span>초반에 할 게 없다
+<span class="q">"보통 게임은 진입 직후 성장·장착·스킬 장착을 시키는데,
+이 게임은 접속하면 전투만 하고 아무것도 안 한다"</span></div>
+<div class="bd">
+
+<div class="step"><h4>① 문제</h4>
+<p>해금이 <b>레벨이 아니라 미션 순번</b> 기준이라, 플레이어는 미션을 밀지 않으면
+어떤 시스템도 만질 수 없다. 그런데 <b>미션 1~2번이 순수 전투</b>다.
+사장이 체감한 "전투만 하는" 구간은 데이터상 실재한다.</p></div>
+
+<div class="step"><h4>② 데이터 근거</h4>
+<p><span class="chip fact">확정</span> 세이브 구조체 <code>SVData.InfoData</code>에 진행 미션이 <code>int mission</code> 하나뿐이다
+— 분기 없는 완전 순차. 별도 해금조건 테이블은 프로젝트 어디에도 없다.</p>
+<div class="tblwrap"><table>
+<tr><th>미션</th><th>해금</th><th>레벨 하한</th><th>비고</th></tr>
+<tr><td>3 / 5 / 7</td><td>성장 · 마스터리 · 가방</td><td>Lv 2</td><td>여기까지는 빠르다</td></tr>
+<tr><td><b>27</b></td><td><b>뽑기</b></td><td>Lv 4</td><td>과금 창구가 스킬보다 먼저</td></tr>
+<tr><td><b>28</b></td><td><b>스킬</b></td><td>Lv 4</td><td>코어 조작이 27번 뒤에 온다</td></tr>
+<tr><td>31</td><td>던전</td><td>Lv 4</td><td></td></tr>
+<tr><td><b>38</b></td><td><b>동료</b></td><td>Lv 5</td><td><b>전투력 최대 기여 축</b></td></tr>
+<tr><td>52 / 54</td><td>특성 · 각인</td><td>Lv 6</td><td></td></tr>
+<tr><td>57 / 58 / 63</td><td>월드투어 · 잠재력 · 보석</td><td>Lv 8</td><td>Lv 3~9에 9종 집중</td></tr>
+<tr><td>79 / 85</td><td>침공 · 특수장비</td><td>Lv 10+</td><td>74번 이후 레벨 관문 없음</td></tr>
+</table></div>
+<h4 style="margin:14px 0 6px;font-size:14px">성장 축별 공격력 최대 기여 <span class="chip fact">확정</span></h4>
+<div class="tblwrap"><table>
+<tr><th>축</th><th>공격력 최대 기여</th><th>비교</th></tr>
+<tr><td>마스터리 (flat 6노드 만렙)</td><td>3,360</td><td>기준</td></tr>
+<tr><td><b>장비 9부위 40강 합계</b></td><td><b>16,385,409</b></td><td>마스터리의 <b>약 4,876배</b></td></tr>
+<tr><td><b>동료 tier 7</b></td><td><b>29,373,140</b></td>
+<td>장비 전체의 <b>1.79배</b> · 마스터리의 <b>약 8,742배</b></td></tr>
+</table></div>
+<div class="callout warn"><b>결정적 연결고리.</b>
+전 부위를 실제로 장착한다는 전제에서 가장 공정한 비교는
+<b>동료 tier7 ÷ 장비 9부위 총합 = 1.79배</b>다. <span class="chip fact">확정</span>
+장비를 전부 갖춰도 <b>동료 하나가 그것을 넘어선다</b>
+— 즉 <b>전투력의 최강 축은 여전히 동료</b>인데, 그것이 <b>미션 38번</b>에 열린다.
+게다가 동료는 <b>₩25,000~50,000 캐릭터 패키지</b>(최고가 상품군)이고,
+Play 리뷰에서 유일하게 "도움됨"을 받은 지적이
+<b>"미획득 캐릭터 상세 정보를 볼 수 없다"</b>이며,
+<code>db_ability</code>의 <b>동료 능력 블록 87%가 공백</b>이다.
+<b>가장 비싼 상품이자 전투력의 최강 축을, 늦게 열고, 정보도 안 보여주고, 데이터도 안 채웠다.</b></div>
+
+<div class="callout navy"><b>재계산에서 새로 드러난 것 — 장비도 사실상 단일 부위다.</b> <span class="chip fact">확정</span>
+<code>db_item.csv</code> 432행을 부위(<code>type</code> 1~9, 각 48행)별로 분해하면
+40강 최대 기여가 부위마다 전혀 다르다.
+<b><code>type 3</code> 하나가 15,727,554로 장비 총합 16,385,409의 96%</b>를 차지하고,
+나머지 8부위는 <code>type 2</code> 640,584 · <code>type 4/6/8</code> 4,320 ·
+<code>type 7</code> 2,115 · <code>type 1</code> 1,296 · <code>type 5/9</code> 450으로
+<b>사실상 장식에 가깝다.</b>
+즉 이 게임의 전투력은 <b>동료 + 장비 type3</b> 두 칸으로 수렴한다.</div>
+
+<div class="callout"><b>마스터리는 두 축 모두에 대해 수천 배 열세다.</b>
+장비 전체 ÷ 마스터리 <b>약 4,876배</b> · 동료 ÷ 마스터리 <b>약 8,742배</b>. <span class="chip fact">확정</span>
+그런데 <b>마스터리는 미션 5번</b>에 열리는 초반 시스템이다 —
+<b>가장 먼저 가르치는 성장 축이 가장 의미 없는 축</b>이라는 뜻이고,
+이것이 "성장시켜도 세지는 느낌이 안 난다"는 체감의 데이터적 원인이다.</div>
+<p style="font-size:13.5px"><span class="chip fact">확정</span> 미션 91~153은 21블록 × 3사이클 반복이며 해금·튜토리얼이 0건이다.
+<b>신규 콘텐츠 노출은 90번에서 완전히 종료된다.</b></p></div>
+
+<div class="step"><h4>③ 레퍼런스</h4>
+<div class="tblwrap"><table>
+<tr><th>사례</th><th>개방 시점</th><th>열리는 것</th></tr>
+<tr><td>AFK 아레나</td><td>튜토리얼 12스테이지</td><td>영웅 2명 + 장비 + 성장재화 지급</td></tr>
+<tr><td>AFK 아레나</td><td><b>스테이지 1-12</b></td><td>소환 · 승급 · 상점이 <b>1챕터 안에 전부</b></td></tr>
+<tr><td>AFK 아레나</td><td>2-20 / 2-28</td><td>길드 / 아레나(PvP) — 소셜·경쟁은 2챕터 이후</td></tr>
+<tr><td>명일방주</td><td><b>1-1 클리어 즉시</b></td><td>기지 시스템 전체</td></tr>
+</table></div>
+<p style="font-size:13.5px">GameAnalytics 2025(표본 11,600개 게임 · 합산 MAU 14.8억):
+D1 상위25% <b>26.5~27.7%</b> / 하위25% 10~11.5%, D7 중앙값 3.4~3.9%,
+<b>세션 길이 중앙값 5~6분</b>.
+→ 세션이 5~6분이면 <b>첫 세션 안에 못 연 기능은 그 유저가 영영 못 본다.</b></p>
+<p class="src">출처: afk.guide Function Unlocks · 나무위키 명일방주/기반시설 ·
+GameAnalytics 2025 Mobile Gaming Benchmarks. 상세는 <code>reports/14_ux_references.md</code>.</p></div>
+
+<div class="step s4"><h4>④ 개선안 — 구체안</h4>
+<ul class="fixlist">
+<li><b>미션 28(스킬 장착)을 미션 5로 앞당기고, 미션 7의 가방과 통합</b>해
+<code>shortcut</code> 한 번으로 <b>제작 → 장착 → 스킬 장착</b>을 1개 화면 흐름에서 끝내게 한다.
+현재 8~26번이 가방 안에서만 도는 19개 미션이므로, 그 안에 스킬을 끼워 넣어도 총량은 늘지 않는다.</li>
+<li><b>미션 38(동료 장착)을 미션 12로 이동.</b> 첫 세션(5~10분) 안에 동료 1명을 반드시 손에 쥐게 한다.
+장비 9부위를 전부 갖춰도 못 넘는 최강 축을 첫 세션에서 만지지 못하면
+이 게임의 재미가 전달되지 않는다.</li>
+<li><b>미션 1을 "아이돌 3명 중 1명 고르기"로 교체.</b> 현재 1~2번은 순수 전투다.
+강제 지급 대신 선택으로 바꾸면 K-POP 컨셉과 정확히 맞는
+<i>first meaningful choice</i>가 되고, 닉네임 설정(현재 89번)을 여기로 끌어올린다.</li>
+<li><b>미션 27(뽑기)을 미션 18 이후로 미루되 스킬(5)·동료(12) 뒤에 둔다.</b>
+현재는 뽑기 27 → 스킬 28로 <b>과금 창구가 콘텐츠 이해보다 먼저</b> 열린다. 순서만 뒤집으면 된다.</li>
+<li><b>Lv 3~9 구간의 9종 집중을 분산.</b> 특성(52)·각인(54)은 그대로 두고,
+월드투어·잠재력·보석(57/58/63)을 <b>44 / 44 / 58</b>로 재배치해 한 레벨 구간에 2종 이상 겹치지 않게 한다.</li>
+<li><b>미획득 동료·스킬 상세 열람 화면 추가.</b> 리뷰의 유일한 공감 지적이자
+캐릭터 패키지(최고가 상품군)의 구매 동기 그 자체다.</li>
+<li><b><code>db_ability</code> type=2(동료) 블록 87칸을 채운다.</b>
+현재 13종만 구현되어 있어, 동료를 앞당겨도 <b>고를 이유가 부족</b>하다.</li>
+<li><b>미션 91~153 반복 구간에 신규 노출 1건 이상 배치.</b>
+현재 90번 이후 신규 콘텐츠 노출이 0이라 "다 봤다"는 인식이 90번에서 굳는다.</li>
+</ul>
+<p style="font-size:13px;color:#6b6472">
+※ 해금 순서 변경은 <code>db_mission.csv</code>의 행 순서·<code>open</code>·<code>shortcut</code> 재배치로 처리 가능하며,
+<code>open</code>이 실제 잠금 해제 트리거인지 팝업 문구용인지는 <code>SetLockPopup(int)</code> 본문 부재로 <span class="chip warn">미확인</span> 상태다.
+적용 전 이 1건만 코드 확인이 필요하다.</p></div>
+
+<div class="step s5"><h4>⑤ 목업 — 온보딩 타임라인 비교</h4>
+<div class="mockup"><div class="mockscroll"><svg viewBox="0 0 940 390" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,sans-serif" role="img" aria-label="온보딩 개방 타임라인 비교"><rect width="940" height="390" fill="#fff" rx="12"/><text x="18" y="30" font-size="15" font-weight="800" fill="#102050">온보딩 개방 타임라인 — 미션 순번(0~90) 기준</text><text x="18" y="50" font-size="11.5" fill="#6b6472">AFK 아레나는 스테이지 진행을 같은 축(0~90)으로 정규화한 참고선</text><line x1="138.0" y1="72" x2="138.0" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="138.0" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">0</text><line x1="224.7" y1="72" x2="224.7" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="224.7" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">10</text><line x1="311.3" y1="72" x2="311.3" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="311.3" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">20</text><line x1="398.0" y1="72" x2="398.0" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="398.0" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">30</text><line x1="484.7" y1="72" x2="484.7" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="484.7" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">40</text><line x1="571.3" y1="72" x2="571.3" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="571.3" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">50</text><line x1="658.0" y1="72" x2="658.0" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="658.0" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">60</text><line x1="744.7" y1="72" x2="744.7" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="744.7" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">70</text><line x1="831.3" y1="72" x2="831.3" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="831.3" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">80</text><line x1="918.0" y1="72" x2="918.0" y2="352" stroke="#f0e6ec" stroke-width="1"/><text x="918.0" y="66" font-size="10.5" fill="#a89ba6" text-anchor="middle">90</text><rect x="138.0" y="72" width="112.7" height="280" fill="#D05090" opacity="0.07"/><text x="194.3" y="372" font-size="10.5" fill="#b3325f" text-anchor="middle">↑ 첫 세션(세션 길이 중앙값 5~6분)에 도달 가능한 구간</text><text x="18" y="114" font-size="13" font-weight="800" fill="#102050">현재</text><text x="18" y="130" font-size="10.5" fill="#6b6472">스킬 28 · 동료 38 · 1~2번은 순수 전투</text><line x1="138.0" y1="118" x2="918.0" y2="118" stroke="#e3d7de" stroke-width="3" stroke-linecap="round"/><circle cx="164.0" cy="118" r="6" fill="#C0466F"/><text x="164.0" y="105" font-size="10.5" fill="#3c3644" text-anchor="middle">성장</text><circle cx="181.3" cy="118" r="6" fill="#C0466F"/><text x="181.3" y="143" font-size="10.5" fill="#3c3644" text-anchor="middle">마스터리</text><circle cx="198.7" cy="118" r="6" fill="#C0466F"/><text x="198.7" y="105" font-size="10.5" fill="#3c3644" text-anchor="middle">가방</text><circle cx="372.0" cy="118" r="6" fill="#C0466F"/><text x="372.0" y="143" font-size="10.5" fill="#3c3644" text-anchor="middle">뽑기</text><circle cx="380.7" cy="118" r="6" fill="#C0466F"/><text x="380.7" y="105" font-size="10.5" fill="#3c3644" text-anchor="middle">스킬</text><circle cx="406.7" cy="118" r="6" fill="#C0466F"/><text x="406.7" y="143" font-size="10.5" fill="#3c3644" text-anchor="middle">던전</text><circle cx="467.3" cy="118" r="6" fill="#C0466F"/><text x="467.3" y="105" font-size="10.5" fill="#3c3644" text-anchor="middle">동료</text><circle cx="588.7" cy="118" r="6" fill="#C0466F"/><text x="588.7" y="143" font-size="10.5" fill="#3c3644" text-anchor="middle">특성</text><circle cx="606.0" cy="118" r="6" fill="#C0466F"/><text x="606.0" y="105" font-size="10.5" fill="#3c3644" text-anchor="middle">각인</text><circle cx="632.0" cy="118" r="6" fill="#C0466F"/><text x="632.0" y="143" font-size="10.5" fill="#3c3644" text-anchor="middle">월드투어</text><circle cx="640.7" cy="118" r="6" fill="#C0466F"/><text x="640.7" y="105" font-size="10.5" fill="#3c3644" text-anchor="middle">잠재력</text><circle cx="684.0" cy="118" r="6" fill="#C0466F"/><text x="684.0" y="143" font-size="10.5" fill="#3c3644" text-anchor="middle">보석</text><circle cx="822.7" cy="118" r="6" fill="#C0466F"/><text x="822.7" y="105" font-size="10.5" fill="#3c3644" text-anchor="middle">침공</text><circle cx="874.7" cy="118" r="6" fill="#C0466F"/><text x="874.7" y="143" font-size="10.5" fill="#3c3644" text-anchor="middle">특수장비</text><text x="18" y="210" font-size="13" font-weight="800" fill="#102050">개선안</text><text x="18" y="226" font-size="10.5" fill="#6b6472">스킬 5 · 동료 12 · 뽑기는 스킬 뒤로</text><line x1="138.0" y1="214" x2="918.0" y2="214" stroke="#e3d7de" stroke-width="3" stroke-linecap="round"/><circle cx="155.3" cy="214" r="6" fill="#2E7D5B"/><text x="155.3" y="201" font-size="10.5" fill="#3c3644" text-anchor="middle">성장</text><circle cx="164.0" cy="214" r="6" fill="#2E7D5B"/><text x="164.0" y="239" font-size="10.5" fill="#3c3644" text-anchor="middle">마스터리</text><circle cx="172.7" cy="214" r="6" fill="#2E7D5B"/><text x="172.7" y="201" font-size="10.5" fill="#3c3644" text-anchor="middle">가방+제작</text><circle cx="181.3" cy="214" r="6" fill="#2E7D5B"/><text x="181.3" y="239" font-size="10.5" fill="#3c3644" text-anchor="middle">스킬</text><circle cx="207.3" cy="214" r="6" fill="#2E7D5B"/><text x="207.3" y="201" font-size="10.5" fill="#3c3644" text-anchor="middle">던전</text><circle cx="242.0" cy="214" r="6" fill="#2E7D5B"/><text x="242.0" y="239" font-size="10.5" fill="#3c3644" text-anchor="middle">동료</text><circle cx="294.0" cy="214" r="6" fill="#2E7D5B"/><text x="294.0" y="201" font-size="10.5" fill="#3c3644" text-anchor="middle">뽑기</text><circle cx="398.0" cy="214" r="6" fill="#2E7D5B"/><text x="398.0" y="239" font-size="10.5" fill="#3c3644" text-anchor="middle">특성·각인</text><circle cx="519.3" cy="214" r="6" fill="#2E7D5B"/><text x="519.3" y="201" font-size="10.5" fill="#3c3644" text-anchor="middle">월드투어·잠재력</text><circle cx="640.7" cy="214" r="6" fill="#2E7D5B"/><text x="640.7" y="239" font-size="10.5" fill="#3c3644" text-anchor="middle">보석</text><circle cx="744.7" cy="214" r="6" fill="#2E7D5B"/><text x="744.7" y="201" font-size="10.5" fill="#3c3644" text-anchor="middle">침공</text><circle cx="874.7" cy="214" r="6" fill="#2E7D5B"/><text x="874.7" y="239" font-size="10.5" fill="#3c3644" text-anchor="middle">특수장비</text><text x="18" y="306" font-size="13" font-weight="800" fill="#102050">AFK 아레나</text><text x="18" y="322" font-size="10.5" fill="#6b6472">1챕터 안에 성장·수집 전부</text><line x1="138.0" y1="310" x2="918.0" y2="310" stroke="#e3d7de" stroke-width="3" stroke-linecap="round"/><circle cx="190.0" cy="310" r="6" fill="#3F5AA6"/><text x="190.0" y="297" font-size="10.5" fill="#3c3644" text-anchor="middle">영웅2+장비</text><circle cx="250.7" cy="310" r="6" fill="#3F5AA6"/><text x="250.7" y="335" font-size="10.5" fill="#3c3644" text-anchor="middle">소환·승급·상점</text><circle cx="380.7" cy="310" r="6" fill="#3F5AA6"/><text x="380.7" y="297" font-size="10.5" fill="#3c3644" text-anchor="middle">라비린스</text><circle cx="450.0" cy="310" r="6" fill="#3F5AA6"/><text x="450.0" y="335" font-size="10.5" fill="#3c3644" text-anchor="middle">킹스타워</text><circle cx="519.3" cy="310" r="6" fill="#3F5AA6"/><text x="519.3" y="297" font-size="10.5" fill="#3c3644" text-anchor="middle">길드</text><circle cx="588.7" cy="310" r="6" fill="#3F5AA6"/><text x="588.7" y="335" font-size="10.5" fill="#3c3644" text-anchor="middle">아레나</text><circle cx="900.7" cy="310" r="6" fill="#3F5AA6"/><text x="900.7" y="297" font-size="10.5" fill="#3c3644" text-anchor="middle">×2배속</text><path d="M 380.7 124 Q 276.7 168 181.3 208" fill="none" stroke="#D05090" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M 467.3 124 Q 354.7 168 242.0 208" fill="none" stroke="#D05090" stroke-width="1.6" stroke-dasharray="4 3"/></svg></div>
+<div class="cap"><b>점선 화살표</b> = 이번 제안의 이동(스킬 28→5 · 동료 38→12).
+분홍 밴드는 세션 길이 중앙값 5~6분으로 도달 가능한 구간의 <b>추정</b> 범위다.</div></div>
+</div>
+
+</div></div>
+
+<h2>지적 ② 미션 완료 표시가 너무 약하다</h2>
+
+<div class="issue">
+<div class="hd"><span class="no">②</span>완료를 알아채지 못한다
+<span class="q">"미션을 깼는지 아닌지, 다음에 뭘 해야 하는지가 눈에 안 들어온다"</span></div>
+<div class="bd">
+
+<div class="callout navy">지적 ①과 ②는 <b>한 묶음</b>이다.
+①이 "무엇을 언제 열어줄 것인가"라면 ②는 "열린 것을 어떻게 알려줄 것인가"다.
+미션이 <b>순차 단일 포인터</b>인 이 게임에서, 미션 UI는 <b>플레이어의 유일한 길잡이</b>다.
+그 신호가 약하면 온보딩 재배치를 해도 전달되지 않는다.</div>
+
+<div class="step"><h4>① 문제</h4>
+<p>진행 미션이 <code>int mission</code> 하나뿐이라 "다음에 뭘 해야 하는지"를 알려주는 장치가
+미션 UI 하나로 수렴한다. 그런데 완료 순간의 피드백이 <b>텍스트 교체</b> 수준이다.</p></div>
+
+<div class="step"><h4>② 데이터 근거</h4>
+<ul class="clean">
+<li><span class="chip fact">확정</span> 튜토리얼(대사 + 손가락 유도)이 붙은 미션은 <b>33개</b>이고 <b>전부 1~89번</b>에 있다.
+마지막 튜토리얼은 89번, <b>90번 이후 0건</b>.</li>
+<li><span class="chip fact">확정</span> <code>db_mission.csv</code>에 <b><code>finger</code> / <code>fingerPos</code></b> 컬럼이 이미 존재한다
+— 손가락 유도 시퀀스 장치가 <b>이미 만들어져 있다.</b> 확장에 신규 데이터 구조가 필요 없다.</li>
+<li><span class="chip fact">확정</span> 반면 <code>image</code> 컬럼은 <b>153행 전부 비어 있다</b>(미사용).
+완료 연출에 쓸 수 있는 슬롯이 하나 통째로 놀고 있다.</li>
+<li><span class="chip fact">확정</span> <code>db_mission.csv</code> 153행 중 고유 112행(중복률 26.8%), 129~153은 같은
+<code>goalType</code> 패턴 반복 — 후반부는 시각적으로 구분되지 않는다.</li>
+</ul></div>
+
+<div class="step"><h4>③ 레퍼런스</h4>
+<div class="tblwrap"><table>
+<tr><th>원칙</th><th>내용</th></tr>
+<tr><td><b>레드닷 = 고객과의 약속</b></td><td>따라갔을 때 <b>반드시 이득</b>이 있어야 한다.
+보상 없는 곳(이벤트 홍보·상점 방문 유도)에 쓰면 신뢰가 붕괴된다.</td></tr>
+<tr><td>Red Dot Blindness</td><td>배너 블라인드니스와 동형 — "항상 떠 있으면 없는 것과 같다"</td></tr>
+<tr><td>3단계 중요도 분류</td><td>High(경고·확인) / Medium(주의·성공) / Low(정보·배지) — 채널을 등급에 맞춘다</td></tr>
+<tr><td>다감각 정렬</td><td>눈·귀·손(햅틱) 신호가 정렬될 때 상호작용이 물리적으로 느껴진다</td></tr>
+<tr><td>기대 구간</td><td>즉시 지급보다 <b>짧은 리빌 연출</b>이 심리적으로 강하다</td></tr>
+</table></div>
+<p class="src">출처: Thinking Machine「빨간점은 어디에 사용해야 할까」· Braze「Red Dot Blindness」·
+Blood Moon Interactive「Juice in Game Design」.
+※ "완료 연출로 만족도 30% 증가", "일일 퀘스트로 참여 40% 증가" 류 수치는
+원 데이터가 공개되지 않아 <b>본 리포트에서 의도적으로 배제</b>했다.</p></div>
+
+<div class="step s4"><h4>④ 개선안 — 구체안</h4>
+<ul class="fixlist">
+<li><b>레드닷 3단 점등을 "보상 수령 가능" 상태에만 건다.</b>
+하단 탭바 미션 아이콘 → 미션 목록 → 해당 행까지 경로 전체를 켜고,
+수령하는 즉시 <b>3단 전부 소등</b>한다. 진행 중(미완료)에는 절대 켜지 않는다.</li>
+<li><b>완료 순간에 3채널 동시 발화</b> — ①상단 토스트("미션 완료 + 다음 미션 미리보기")
+②사운드 ③햅틱. 텍스트 교체만으로 끝내지 않는다.</li>
+<li><b>수령 시 0.3~0.6초 리빌 연출.</b> 보상 아이콘 3칸을 순차 공개한다.
+전면 연출은 <b>첫 완료·해금 미션 14개·챕터 마디</b>에만 한정해 남용을 막는다.</li>
+<li><b>기존 <code>finger</code> / <code>fingerPos</code>를 해금 미션 14개 전부에 확장 적용.</b>
+현재 튜토리얼 33개에만 붙어 있고 <b>90번 이후 0건</b>이다.
+해금 직후 "어디를 눌러야 하는지"를 손가락으로 끌어준다. <b>신규 컬럼 불필요.</b></li>
+<li><b>비어 있는 <code>image</code> 컬럼(153행 전부 0)을 미션 아이콘 슬롯으로 살린다.</b>
+129~153의 반복 미션이 시각적으로 구분되어 "같은 것만 반복" 인상이 줄어든다.</li>
+<li><b>완료 직후 다음 미션의 <code>shortcut</code> 버튼을 토스트에 함께 노출.</b>
+"다음에 뭘 해야 하는가"를 <b>탭 1회</b>로 잇는다.</li>
+</ul></div>
+
+<div class="step s5"><h4>⑤ 목업 — 완료 피드백 비교</h4>
+<div class="mockup"><div class="mockscroll"><svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,sans-serif" role="img" aria-label="미션 완료 피드백 목업 비교"><rect width="900" height="400" fill="#fff" rx="12"/><text x="40" y="30" font-size="14" font-weight="800" fill="#b3325f">현재 — 완료를 알아채기 어렵다</text><text x="40" y="48" font-size="11" fill="#6b6472">미션 텍스트만 다음 줄로 조용히 교체</text><rect x="40" y="62" width="380" height="310" rx="16" fill="#20233a" stroke="#cfc4d2" stroke-width="2"/><rect x="58" y="80" width="344" height="34" rx="8" fill="#2c3050"/><text x="72" y="102" font-size="11.5" fill="#c9cde6">미션  몬스터 30회 처치</text><rect x="58" y="120" width="344" height="7" rx="4" fill="#3a3f63"/><rect x="58" y="120" width="344" height="7" rx="4" fill="#6d78ab"/><text x="58" y="150" font-size="10.5" fill="#8a90b5">(완료 순간 — 소리·진동·연출 없음. 텍스트만 다음 미션으로 바뀐다)</text><rect x="58" y="300" width="344" height="56" rx="10" fill="#2c3050"/><rect x="68" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="134" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="200" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="266" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="332" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><text x="226" y="333" font-size="9.5" fill="#8a90b5" text-anchor="middle">미션</text><text x="58" y="286" font-size="10.5" fill="#e2879f">탭바에 레드닷 없음 → 보상이 있는지 알 수 없다</text><text x="480" y="30" font-size="14" font-weight="800" fill="#2E7D5B">개선안 — 3단 점등 + 리빌 + 햅틱</text><text x="480" y="48" font-size="11" fill="#6b6472">레드닷은 실제 수령 가능할 때만 켠다</text><rect x="480" y="62" width="380" height="310" rx="16" fill="#20233a" stroke="#cfc4d2" stroke-width="2"/><rect x="498" y="80" width="344" height="42" rx="10" fill="#2E7D5B"/><text x="512" y="100" font-size="12" font-weight="800" fill="#fff">✓ 미션 완료 — 몬스터 30회 처치</text><text x="512" y="115" font-size="10" fill="#cdeadd">보상 수령 가능 · 사운드 + 햅틱 동시</text><rect x="498" y="134" width="344" height="96" rx="12" fill="#2c3050" stroke="#E9C96A" stroke-width="2"/><text x="512" y="158" font-size="10.5" fill="#E9C96A">0.3~0.6초 기대 구간 리빌</text><rect x="512" y="168" width="48" height="48" rx="9" fill="#3a3f63" stroke="#E9C96A" stroke-width="1.2"/><rect x="570" y="168" width="48" height="48" rx="9" fill="#3a3f63" stroke="#E9C96A" stroke-width="1.2"/><rect x="628" y="168" width="48" height="48" rx="9" fill="#3a3f63" stroke="#E9C96A" stroke-width="1.2"/><text x="694" y="198" font-size="10.5" fill="#c9cde6">→ 다음: 스킬 장착 1회 (스킬 화면)</text><circle cx="532" cy="258" r="17" fill="none" stroke="#E9C96A" stroke-width="2"/><circle cx="532" cy="258" r="26" fill="none" stroke="#E9C96A" stroke-width="1" opacity="0.45"/><text x="568" y="263" font-size="11" fill="#c9cde6">finger / fingerPos 컬럼을 그대로 재활용 — 신규 데이터 0</text><rect x="498" y="300" width="344" height="56" rx="10" fill="#2c3050"/><rect x="508" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="574" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="640" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="706" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><rect x="772" y="312" width="52" height="32" rx="7" fill="#3a3f63"/><text x="666" y="333" font-size="9.5" fill="#c9cde6" text-anchor="middle">미션</text><circle cx="692" cy="312" r="8" fill="#D02040"/><text x="692" y="316" font-size="9" fill="#fff" text-anchor="middle" font-weight="800">1</text><text x="498" y="286" font-size="10.5" fill="#8fd6b4">탭 → 목록 → 해당 행까지 3단 점등, 수령하면 즉시 소등</text></svg></div>
+<div class="cap">오른쪽 개선안은 <b>신규 데이터 구조 없이</b> 기존
+<code>finger</code>/<code>fingerPos</code>/<code>image</code> 컬럼과 <code>shortcut</code> 값만으로 구성된다.</div></div>
+</div>
+
+</div></div>
+
+<h2>지적 ③ 전투 화면이 너무 작다</h2>
+
+<div class="issue">
+<div class="hd"><span class="no">③</span>보는 재미가 약하다
+<span class="q">"전투 화면이 너무 작아서 보는 재미가 약하다"</span></div>
+<div class="bd">
+
+<div class="step"><h4>① 문제</h4>
+<p>배경 아트가 카메라를 <b>절반도 못 채우고</b>, 그 절반을 다시 <b>1250px 고정 하단 시트</b>가 덮는다.
+유닛이 작은 게 아니라 <b>담을 그릇이 좁다</b>.</p></div>
+
+<div class="step"><h4>② 데이터 근거 — 자사 실측</h4>
+<div class="tblwrap"><table>
+<tr><th>항목</th><th>값</th><th>의미</th></tr>
+<tr><td>CanvasScaler refRes / match</td><td><b>1080×1920 / match=0</b></td>
+<td>폭 기준 스케일 → <b>HUD는 전부 고정 px</b>, 화면이 짧아져도 안 줄어든다</td></tr>
+<tr><td>Main Camera ortho</td><td><b>6.24</b> (세로 시야 12.48 unit)</td><td>—</td></tr>
+<tr><td>전투 배경 <code>bg</code></td><td>640×300 @PPU50 = <b>12.8×6.0 unit</b></td>
+<td><b>카메라 세로의 48.1%뿐</b> — 위아래 절반은 원래 전투 아트가 없는 영역</td></tr>
+<tr><td>하단 메뉴시트</td><td><b>1250px 고정</b> (탭바 160 + 메뉴패널 1090)</td>
+<td>메뉴 9종 중 정확히 1개만 <code>active</code>로 직렬화 = <b>상시 열림</b></td></tr>
+<tr><td>유닛(최빈)</td><td>60×40 @PPU50 → ×3.75 = <b>225×150px</b></td>
+<td><b>작지 않다.</b> 화면 폭의 21%</td></tr>
+</table></div>
+<div class="tblwrap"><table>
+<tr><th>단말</th><th>순수 전투 가시영역</th><th>하단 UI 점유</th><th>밴드에 유닛 몇 겹</th></tr>
+<tr><td><b>19.5:9 (주력)</b></td><td><b>17.5%</b> (410px)</td><td>53.4%</td><td>2.74겹</td></tr>
+<tr><td>20:9</td><td>19.1%</td><td>52.1%</td><td>2.98겹</td></tr>
+<tr><td><b>16:9</b></td><td><b>3.9%</b> (76px)</td><td><b>65.1%</b></td><td><b>0.62겹 — 한 마리도 안 들어간다</b></td></tr>
+</table></div>
+<div class="callout"><b>연출 자산 점검</b> <span class="chip fact">확정</span> —
+카메라 셰이크 <b>O</b> · 데미지 폰트 <b>O</b> /
+히트스톱 <b>X</b> · 스킬 컷인 <b>X</b> · 동적 줌 <b>X</b>.
+특히 <code>orthographicSize</code> 세터는 <b>게임 코드에서 한 번도 호출되지 않는다</b>
+— 이미 있는데 안 쓰는 <b>유휴 레버</b>이고, 그래서 개선 비용이 가장 낮다.</div>
+<div class="callout warn"><b>정직하게 명시한다.</b>
+"방치형 전투 영역 화면 점유율의 업계 표준 수치는 존재하지 않는다"가 이번 조사의 결론이다. <span class="chip warn">미확인</span>
+따라서 위 비율은 전부 <b>자사 실측값</b>으로만 제시하며, <b>관행 대비 좁다/넓다는 판정을 하지 않는다.</b>
+검증하려면 <b>경쟁작 스크린샷 실측 비교표</b>(세븐나이츠 키우기·레전드 오브 슬라임 등 5종 캡처 →
+전투 영역 세로 비율 픽셀 측정)를 만드는 것이 유일한 방법이며, <b>후속 과제</b>로 남긴다.</div></div>
+
+<div class="step"><h4>③ 레퍼런스</h4>
+<ul class="clean">
+<li><b>픽셀아트 확대는 정수배(2x/3x/4x) + nearest-neighbor 필수.</b>
+1.5x나 "컨테이너에 맞춤"은 픽셀을 뭉갠다.</li>
+<li><b>확대는 캔버스를 키우는 게 아니라 내부 렌더 해상도를 낮추는 방식.</b>
+같은 스프라이트라도 내부 해상도가 낮을수록 크게 보이고 프레이밍이 타이트해진다.</li>
+<li><b>히트스톱은 3~5프레임.</b> 뇌가 임팩트를 인지할 시간을 준다.</li>
+<li>썸존 = 화면 하단 30~40% / 하단 내비 항목 3~5개 권장.</li>
+</ul>
+<p class="src">출처: Notkey Studio「Choosing the Right Rendering Resolution」·
+Pixel-Perfect Scaling: Nearest Neighbor · Blood Moon Interactive「Juice」· Parachute Design「Thumb Zone」.</p></div>
+
+<div class="step s4"><h4>④ 개선안 — 구체안</h4>
+<ul class="fixlist">
+<li><b>하단 메뉴시트에 접기(collapse)를 도입하고 기본값을 "접힘"으로 둔다.</b>
+현재 9종 중 1개가 항상 <code>active</code>인 직렬화라 <b>"아무 메뉴도 안 열린 상태"가 존재하지 않는다.</b>
+접힌 상태를 하나 추가하는 것만으로 전투 밴드가 <b>배경 띠 전체(48.1%)</b>까지 회복된다.</li>
+<li><b>시트 높이를 1250px 고정 → 앵커 stretch(비율)로 전환.</b>
+16:9에서 하단 UI 65.1% / 전투 3.9%로 무너지는 원인이 <b>고정 px × match=0</b> 조합이다.
+비율 앵커로 바꾸면 짧은 단말의 붕괴가 사라진다.</li>
+<li><b>전투 배경을 640×300 → 640×624px로 재제작</b>(카메라 시야 12.48 unit = 624px @PPU50).
+띠 점유가 48.1% → 100%가 되어 화면 위아래의 빈 영역이 없어진다.
+스테이지 8종(<code>bg_stage/forest/beach/street/rose/hell/wonder/peng</code>)이 대상이다.</li>
+<li><b><code>orthographicSize</code> 동적 제어 도입 — 보스 등장 6.24→5.2, 처치 연출 6.24→4.8.</b>
+프로퍼티는 이미 있고 호출만 없다. <b>아트 재작업 없이 즉시 적용 가능한 유일한 항목</b>이다.</li>
+<li><b>히트스톱 3~5프레임 추가.</b> 셰이크(<code>CamShake</code>)와 데미지 폰트는 이미 있으므로
+<b>정지 프레임 하나만 얹으면</b> 타격감 3종 세트가 완성된다.</li>
+<li><b>스킬 컷인 도입.</b> <code>db_cutscene.csv</code>가 <b>1행뿐</b>이고
+<code>StageTypeIndex</code>에 <code>CutScene</code> 타입은 살아 있다 — <b>배관은 있고 콘텐츠만 없다.</b>
+K-POP 아이돌 컨셉과 궁합이 가장 좋은 연출이다.</li>
+<li><b>확대는 반드시 정수배 + nearest-neighbor로.</b> 현재 ×3.75(19.5:9)는 비정수배다.
+내부 렌더 해상도를 고정하고 ×3 또는 ×4로 스냅해야 픽셀이 뭉개지지 않는다.</li>
+<li><b>상단 HUD 상시 정보 축소.</b> 19.5:9에서 16.6%, 16:9에서 20.3%를 차지한다.
+재화 표시를 축약하면 전투 밴드로 직접 환원된다.</li>
+</ul></div>
+
+<div class="step s5"><h4>⑤ 목업 — 전투 화면 레이아웃</h4>
+<div class="mockup"><div class="mockscroll"><svg viewBox="0 0 876 470" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard,sans-serif" role="img" aria-label="전투 화면 레이아웃 비율 비교"><rect width="876" height="470" fill="#fff" rx="12"/><text x="20" y="30" font-size="15" font-weight="800" fill="#102050">전투 화면 세로 점유 — 자사 실측값</text><text x="20" y="49" font-size="11.5" fill="#6b6472">CanvasScaler 1080×1920 / match=0 · 카메라 ortho 6.24 · 배경 640×300@PPU50 기준 계산</text><rect x="40" y="66" width="212" height="372" rx="18" fill="#f6f3f7" stroke="#cfc4d2" stroke-width="2"/><rect x="46" y="74.00" width="200" height="59.10" fill="#3d4560"/><text x="146" y="107.15" font-size="10.5" fill="#fff" text-anchor="middle">상단 HUD 16.6%</text><rect x="46" y="133.10" width="200" height="13.17" fill="#eceaf2"/><rect x="46" y="146.27" width="200" height="62.30" fill="#2E7D5B"/><text x="146" y="181.02" font-size="10.5" fill="#fff" text-anchor="middle">전투 17.5%</text><rect x="46" y="208.57" width="200" height="31.33" fill="#8f9ab8"/><text x="146" y="227.83" font-size="10.5" fill="#fff" text-anchor="middle">오버레이 8.8%</text><rect x="46" y="239.90" width="200" height="190.10" fill="#C0466F"/><text x="146" y="338.55" font-size="10.5" fill="#fff" text-anchor="middle">하단 UI 53.4%</text><text x="146" y="464" font-size="12.5" font-weight="800" fill="#102050" text-anchor="middle">현재 · 19.5:9</text><text x="146" y="480" font-size="10.5" fill="#6b6472" text-anchor="middle">1080×2340 (주력 단말)</text><text x="146" y="506" font-size="19" font-weight="800" fill="#8a5a10" text-anchor="middle">17.5%</text><rect x="332" y="66" width="212" height="372" rx="18" fill="#f6f3f7" stroke="#cfc4d2" stroke-width="2"/><rect x="338" y="74.00" width="200" height="72.27" fill="#3d4560"/><text x="438" y="113.73" font-size="10.5" fill="#fff" text-anchor="middle">상단 HUD 20.3%</text><rect x="338" y="146.27" width="200" height="13.88" fill="#2E7D5B"/><text x="548" y="156.61" font-size="10" fill="#b3325f" text-anchor="start" font-weight="800">전투 3.9%</text><line x1="538" y1="153.21" x2="546" y2="153.21" stroke="#b3325f" stroke-width="1"/><rect x="338" y="160.15" width="200" height="38.09" fill="#8f9ab8"/><text x="438" y="182.80" font-size="10.5" fill="#fff" text-anchor="middle">오버레이 10.7%</text><rect x="338" y="198.24" width="200" height="231.76" fill="#C0466F"/><text x="438" y="317.72" font-size="10.5" fill="#fff" text-anchor="middle">하단 UI 65.1%</text><text x="438" y="464" font-size="12.5" font-weight="800" fill="#102050" text-anchor="middle">현재 · 16:9</text><text x="438" y="480" font-size="10.5" fill="#6b6472" text-anchor="middle">1080×1920 (짧은 단말)</text><text x="438" y="506" font-size="19" font-weight="800" fill="#b3325f" text-anchor="middle">3.9%</text><rect x="624" y="66" width="212" height="372" rx="18" fill="#f6f3f7" stroke="#cfc4d2" stroke-width="2"/><rect x="630" y="74.00" width="200" height="42.72" fill="#3d4560"/><text x="730" y="98.96" font-size="10.5" fill="#fff" text-anchor="middle">상단 HUD 12%</text><rect x="630" y="116.72" width="200" height="213.60" fill="#2E7D5B"/><text x="730" y="227.12" font-size="10.5" fill="#fff" text-anchor="middle">전투 60%</text><rect x="630" y="330.32" width="200" height="35.60" fill="#8f9ab8"/><text x="730" y="351.72" font-size="10.5" fill="#fff" text-anchor="middle">스킬바 10%</text><rect x="630" y="365.92" width="200" height="64.08" fill="#C0466F"/><text x="730" y="401.56" font-size="10.5" fill="#fff" text-anchor="middle">탭바 + 접힌 시트 18%</text><text x="730" y="464" font-size="12.5" font-weight="800" fill="#102050" text-anchor="middle">개선안</text><text x="730" y="480" font-size="10.5" fill="#6b6472" text-anchor="middle">배경 확장 + 시트 비율화</text><text x="730" y="506" font-size="19" font-weight="800" fill="#2E7D5B" text-anchor="middle">60%</text></svg></div>
+<div class="cap">각 밴드 높이는 <b>실측 비율 그대로</b> 그렸다.
+가운데 16:9의 <b>3.9%</b>가 이 문제의 실체다 — 전투가 사실상 보이지 않는 상태.
+개선안 수치는 접기 도입 + 배경 확장 + 비율 앵커 적용 시의 <b>목표값</b>이다. <span class="chip op">제안</span></div></div>
+</div>
+
+</div></div>
+
+<h2>지적 ④ 엔드 콘텐츠가 무엇인가</h2>
+
+<div class="issue">
+<div class="hd"><span class="no">④</span>끝에 무엇이 남는가
+<span class="q">"이 게임의 엔드 콘텐츠가 무엇인가?"</span></div>
+<div class="bd">
+
+<div class="callout warn" style="font-size:15px">
+<b>답: 드림(꿈동산) 하나뿐이고, 그마저 <code>dreamTicket</code>으로 일일 소모가 묶인 소모형이다.</b>
+나머지는 전부 상한 상수가 박힌 유한 콘텐츠다.</div>
+
+<div class="step"><h4>① 문제</h4>
+<p><span class="chip fact">확정</span> <code>StageTypeIndex</code> = <code>CutScene / Stage / Dungeon / Siege / Tour / Dream</code>
+— 이 6개가 <b>전투 콘텐츠의 전부</b>다. 그중 CutScene은 1행짜리 빈 껍데기이고,
+<b>무한 반복이 가능한 것은 Dream 하나뿐</b>이다.</p></div>
+
+<div class="step"><h4>② 데이터 근거</h4>
+<div class="tblwrap"><table>
+<tr><th>콘텐츠</th><th>총 분량</th><th>일일 게이트</th><th>소진 하한</th></tr>
+<tr><td>본편 스테이지</td><td>20맵 × 50 = <b>1,000</b> (<code>STAGE_EQ_MAX=1000</code>과 일치)</td>
+<td>없음</td><td>성장 벽이 유일한 브레이크</td></tr>
+<tr><td>던전</td><td>4종 × 100층 = <b>400</b></td><td>티켓 5개/일 × 4</td><td><b>최소 20일</b></td></tr>
+<tr><td>침공</td><td><b>150</b></td><td><code>dailySiegeCount</code></td><td>—</td></tr>
+<tr><td>월드투어</td><td>10 × 14 = <b>140</b></td><td>티켓 5개/일</td><td><b>최소 28일</b></td></tr>
+<tr><td><b>드림(꿈동산)</b></td><td><b>테이블 없음 · 상한 상수 없음 = 무한</b></td>
+<td><b><code>dreamTicket</code></b></td><td>—</td></tr>
+</table></div>
+<p style="font-size:13.5px"><span class="chip fact">확정</span> <b>순수 콘텐츠 총량 1,690 스테이지.</b>
+티켓 제한만으로도 던전 20일 · 투어 28일이 하한이고, 그 이후에는
+<b>본편 수치 밀기와 드림밖에 남지 않는다.</b></p>
+
+<h4 style="margin:14px 0 6px;font-size:14px">없는 것 — 미구현이 아니라 <b>미설계</b></h4>
+<div class="slotgrid">
+<div class="slot none"><span class="t">PvP / 아레나</span><code>Arena</code> 0건 · UI 리터럴 293개 중 0개</div>
+<div class="slot none"><span class="t">시즌 / 패스</span><code>Season</code> 0건</div>
+<div class="slot none"><span class="t">환생 / 프레스티지</span><code>Rebirth</code> <code>Prestige</code> <code>Reincarn</code> 각 0건</div>
+<div class="slot none"><span class="t">무한의 탑 / 엔드리스</span><code>Tower</code> <code>Endless</code> 각 0건</div>
+<div class="slot none"><span class="t">레이드 / 클랜전</span><code>Raid</code> <code>Clan</code> 각 0건</div>
+<div class="slot thin"><span class="t">길드 ⚠ 껍데기</span>뒤끝 SDK만 존재.
+<b>길드 전용 플레이 0건</b> — 현 시점 <b>최대의 빈 슬롯</b></div>
+<div class="slot have"><span class="t">드림 ✔</span>전용 재화·상점·특성·장비셋. 유일한 무한, 단 티켓제</div>
+<div class="slot have"><span class="t">랭킹 ✔</span>뒤끝 리더보드. 비동기 순위표, 전투 아님</div>
+</div>
+
+<h4 style="margin:16px 0 6px;font-size:14px">껍데기 — 있는 것도 속이 비어 있다</h4>
+<div class="tblwrap"><table>
+<tr><th>테이블</th><th>증상</th></tr>
+<tr><td><code>db_siege.csv</code></td><td>50행 중 <b>실데이터 5행</b> — 5행 블록을 10번 복붙. <b>중복률 90%</b></td></tr>
+<tr><td><code>lang_Map.csv</code></td><td><b>11~19가 전부 "우주"</b>(9개 동일명) ·
+<b>map20(꿈동산) prefab이 19를 재사용</b> = 신규 배경 아트 없음</td></tr>
+<tr><td><code>db_map.csv</code></td><td>20맵 전체가 몬스터 풀을 <b>2종</b>만 사용</td></tr>
+<tr><td><code>db_monster.csv</code></td><td>97종이 <b>고유 스탯행 10개</b>를 공유 ·
+도감 목표치(<code>bookGoal</code>) <b>97종 전부 동일값</b></td></tr>
+<tr><td><code>db_ability.csv</code></td><td>201행 중 고유 97행 · <b>동료 블록 87% 공백</b></td></tr>
+</table></div></div>
+
+<div class="step"><h4>③ 레퍼런스</h4>
+<div class="tblwrap"><table>
+<tr><th>유형</th><th>사례</th></tr>
+<tr><td>무한의 탑</td><td>세븐나이츠 키우기 무한의 탑 · AFK 아레나 King's Tower(2-12 개방)</td></tr>
+<tr><td>길드 / 길드전</td><td>AFK 아레나 길드 2-20 개방 · 길드 레이드(영웅 조합 전략 필요)</td></tr>
+<tr><td>PvP / 랭킹</td><td>AFK 아레나 Arena of Heroes(2-28) · 비동기 PvP</td></tr>
+<tr><td>시즌 / 패스</td><td>주간 PvP 시즌 + 로테이션 챌린지 허브 + 한정 모드 조합</td></tr>
+<tr><td><b>환생 / 프레스티지</b></td><td>오늘도 환생 · 환생 용병단 등 국내 방치형의 대표 축.
+<b>프레스티지가 없으면 방치형은 하드 리미트에 부딪혀 진행이 느리고 반복적이며 보상 없는 상태가 된다</b></td></tr>
+</table></div>
+<p style="font-size:13.5px"><b>데일리 루틴 총량은 45분 이하로.</b>
+(Rockbite 사례 — 개발사 인터뷰 기준이며 업계 표준은 아니다) <span class="chip inf">추정</span>
+현재도 던전 20회 + 투어 5회 + 침공 N + 쿠지·마블·출석이 쌓여 있으므로,
+엔드 콘텐츠를 추가할 때 <b>기존 일일 과제를 먼저 정리</b>해야 한다.</p>
+<p class="src">출처: afk.guide Function Unlocks · 게임인사이트 세븐나이츠 키우기 리뷰 ·
+PocketGamer.biz「Rockbite: idle game → idle RPG」·「2026 live ops trends」·
+Wikipedia Incremental game · 나무위키 방치형 게임.</p></div>
+
+<div class="step s4"><h4>④ 개선안 — 구체안</h4>
+<ul class="fixlist">
+<li><b>1순위: 길드 전용 플레이 신설.</b> 뒤끝 Guild · GuildRank · <code>ContributeGuildGoods</code>가
+<b>이미 붙어 있다</b>. 서버 배관이 끝난 상태에서 플레이만 없는 것이므로
+<b>길드 레이드(주간 보스 1종, 누적 데미지 랭킹)</b>가 가장 저비용 고효과다.
+기존 <code>db_siege</code> 보스 구조를 재활용할 수 있다.</li>
+<li><b>2순위: 환생/프레스티지 축 신설.</b> 현재 성장 상한이 <b>닫혀 있다</b>
+(등급10 · 티어4 · 스킬7 · 마스터리 720pt). 상한을 채우면 갈 곳이 없다.
+프레스티지는 이 하드 리미트를 푸는 <b>유일한 구조적 해법</b>이다.</li>
+<li><b>3순위: 드림의 티켓 게이트를 완화해 실질 무한 탑으로 승격.</b>
+드림은 이미 전용 재화(<code>dreamSoul</code>) · 전용 상점 · 전용 특성 · 전용 장비/보석 세트를 가진
+<b>독립 빌드 모드</b>다. <b>엔드 콘텐츠의 형태가 이미 완성되어 있는데 티켓으로 막아둔 상태</b>다.
+일일 티켓을 유지하되 <b>티켓 없이 도전 가능한 무제한 층</b>을 병설한다.</li>
+<li><b>잠금 콘텐츠를 초반부터 "잠긴 채로" 노출한다.</b> 벤치마크의 공통 패턴이며 비용이 거의 없다.
+"엔드 콘텐츠가 무엇인지 모르겠다"는 지적의 절반은 <b>없어서가 아니라 예고되지 않아서</b>다.
+잠금 탭에 <b>해금 조건 + 진행도 게이지</b>를 함께 표시한다.</li>
+<li><b><code>db_siege.csv</code> 재설계.</b> 50행 중 5행만 실데이터(중복률 90%)라
+침공 150 스테이지가 사실상 5개 패턴의 반복이다.</li>
+<li><b>맵 11~19 "우주" 9개에 고유명·고유 배경을 부여</b>하고,
+<b>map20(꿈동산)에 전용 prefab</b>을 만든다. 현재 19번 아트를 재사용한다 —
+<b>엔드 콘텐츠 도달 지점의 아트가 직전 맵과 동일</b>하다는 뜻이다.</li>
+<li><b><code>db_monster.csv</code>의 <code>bookGoal</code> 97종 동일값을 종별로 차등화.</b>
+도감이 수집 목표로 기능하지 못하고 있다.</li>
+</ul></div>
+
+<div class="step s5"><h4>⑤ 목업 — 엔드 콘텐츠 로드맵</h4>
+<div class="mockup"><div class="mockscroll">
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg"
+ font-family="Pretendard,sans-serif" role="img" aria-label="엔드 콘텐츠 보유 현황과 빈 슬롯">
+<rect width="900" height="420" fill="#fff" rx="12"/>
+<text x="20" y="30" font-size="15" font-weight="800" fill="#102050">엔드 콘텐츠 슬롯 — 채워진 것과 비어 있는 것</text>
+<text x="20" y="49" font-size="11.5" fill="#6b6472">가로축 = 콘텐츠 수명(왼쪽 유한 → 오른쪽 무한)</text>
+
+<rect x="30" y="70" width="400" height="150" rx="12" fill="#eef4ee" stroke="#cfe0cf"/>
+<text x="46" y="94" font-size="12.5" font-weight="800" fill="#2f5a2f">보유 — 전부 유한</text>
+<rect x="46" y="106" width="86" height="46" rx="8" fill="#fff" stroke="#cfe0cf"/>
+<text x="89" y="126" font-size="10.5" fill="#2f5a2f" text-anchor="middle">본편</text>
+<text x="89" y="140" font-size="12" font-weight="800" fill="#2f5a2f" text-anchor="middle">1,000</text>
+<rect x="140" y="106" width="86" height="46" rx="8" fill="#fff" stroke="#cfe0cf"/>
+<text x="183" y="126" font-size="10.5" fill="#2f5a2f" text-anchor="middle">던전</text>
+<text x="183" y="140" font-size="12" font-weight="800" fill="#2f5a2f" text-anchor="middle">400</text>
+<rect x="234" y="106" width="86" height="46" rx="8" fill="#fff" stroke="#cfe0cf"/>
+<text x="277" y="126" font-size="10.5" fill="#2f5a2f" text-anchor="middle">침공</text>
+<text x="277" y="140" font-size="12" font-weight="800" fill="#2f5a2f" text-anchor="middle">150</text>
+<rect x="328" y="106" width="86" height="46" rx="8" fill="#fff" stroke="#cfe0cf"/>
+<text x="371" y="126" font-size="10.5" fill="#2f5a2f" text-anchor="middle">월드투어</text>
+<text x="371" y="140" font-size="12" font-weight="800" fill="#2f5a2f" text-anchor="middle">140</text>
+<text x="46" y="176" font-size="11.5" fill="#2f5a2f">합계 <tspan font-weight="800">1,690 스테이지</tspan> · 던전 최소 20일 · 투어 최소 28일이 하한</text>
+<text x="46" y="196" font-size="11" fill="#7a8a7a">소진 후 남는 것: 우주 맵(11~19) 450 스테이지 수치 밀기</text>
+<text x="46" y="212" font-size="11" fill="#7a8a7a">— 콘텐츠가 아니라 HP 곡선 밀기</text>
+
+<rect x="450" y="70" width="200" height="150" rx="12" fill="#fdf4e4" stroke="#f0dcb4"/>
+<text x="466" y="94" font-size="12.5" font-weight="800" fill="#8a5a10">유일한 무한</text>
+<rect x="466" y="106" width="168" height="60" rx="8" fill="#fff" stroke="#f0dcb4"/>
+<text x="550" y="128" font-size="13" font-weight="800" fill="#8a5a10" text-anchor="middle">드림 (꿈동산)</text>
+<text x="550" y="146" font-size="10.5" fill="#8a5a10" text-anchor="middle">테이블 없음 · 상한 상수 없음</text>
+<rect x="466" y="176" width="168" height="26" rx="7" fill="#f5d9a0"/>
+<text x="550" y="193" font-size="11" font-weight="800" fill="#7a4c08" text-anchor="middle">🔒 dreamTicket 게이트</text>
+
+<rect x="670" y="70" width="200" height="150" rx="12" fill="#f2f0f7" stroke="#d6cfe6"/>
+<text x="686" y="94" font-size="12.5" font-weight="800" fill="#5b40a8">랭킹</text>
+<text x="686" y="118" font-size="11" fill="#5b40a8">뒤끝 리더보드</text>
+<text x="686" y="136" font-size="11" fill="#5b40a8">기간 · 보상 존재</text>
+<text x="686" y="160" font-size="10.5" fill="#8a7fb0">비동기 순위표</text>
+<text x="686" y="176" font-size="10.5" fill="#8a7fb0">— 전투 콘텐츠 아님</text>
+
+<text x="20" y="256" font-size="13.5" font-weight="800" fill="#9c3a5e">빈 슬롯 — 테이블에도, 코드에도, 293개 UI 리터럴에도 흔적 0</text>
+<rect x="30" y="270" width="164" height="66" rx="10" fill="#fbf1f4" stroke="#e2a8bd" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="112" y="296" font-size="12.5" font-weight="800" fill="#9c3a5e" text-anchor="middle">PvP / 아레나</text>
+<text x="112" y="315" font-size="10.5" fill="#b3708a" text-anchor="middle">Arena 0건</text>
+<rect x="206" y="270" width="164" height="66" rx="10" fill="#fbf1f4" stroke="#e2a8bd" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="288" y="296" font-size="12.5" font-weight="800" fill="#9c3a5e" text-anchor="middle">시즌 / 패스</text>
+<text x="288" y="315" font-size="10.5" fill="#b3708a" text-anchor="middle">Season 0건</text>
+<rect x="382" y="270" width="164" height="66" rx="10" fill="#fbf1f4" stroke="#e2a8bd" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="464" y="296" font-size="12.5" font-weight="800" fill="#9c3a5e" text-anchor="middle">환생 / 프레스티지</text>
+<text x="464" y="315" font-size="10.5" fill="#b3708a" text-anchor="middle">Rebirth · Prestige 0건</text>
+<rect x="558" y="270" width="164" height="66" rx="10" fill="#fbf1f4" stroke="#e2a8bd" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="640" y="296" font-size="12.5" font-weight="800" fill="#9c3a5e" text-anchor="middle">무한의 탑</text>
+<text x="640" y="315" font-size="10.5" fill="#b3708a" text-anchor="middle">Tower · Endless 0건</text>
+
+<rect x="734" y="270" width="136" height="66" rx="10" fill="#fdf4e4" stroke="#E29A3A" stroke-width="2"/>
+<text x="802" y="292" font-size="12.5" font-weight="800" fill="#8a5a10" text-anchor="middle">길드</text>
+<text x="802" y="308" font-size="10" fill="#8a5a10" text-anchor="middle">뒤끝 SDK 연결됨</text>
+<text x="802" y="322" font-size="10" font-weight="800" fill="#b3325f" text-anchor="middle">플레이 0건</text>
+
+<rect x="30" y="352" width="840" height="46" rx="10" fill="#102050"/>
+<text x="50" y="372" font-size="12" font-weight="800" fill="#fff">길드는 서버 배관이 이미 끝나 있는데 플레이만 비어 있다 — 현 시점 최대의 빈 슬롯이자 최단 경로</text>
+<text x="50" y="389" font-size="10.5" fill="#c9cde6">뒤끝 Guild + GuildLeaderboard + ContributeGuildGoods 존재 / 길드 전용 전투 테이블·클래스·UI 리터럴 전무</text>
+</svg></div>
+<div class="cap">실선 = 존재 · <b>점선 = 슬롯 자체가 없음</b> · 주황 테두리 = 배관만 있고 콘텐츠 없음.</div></div>
+</div>
+
+</div></div>
+
+<h2>즉시 개선 2건 — 게임 코드를 건드리지 않는다</h2>
+
+<div class="grid g2">
+<div class="card"><h3>① 스토어 지원 언어 2개 → 9개</h3>
+<p style="font-size:13.5px"><span class="chip fact">확정</span> <code>lang_*.csv</code> 17개 파일 × 8개 외국어 =
+<b>평균 99.9% 번역 완비</b>(유일 예외 <code>lang_Skill</code> 98%).
+그런데 App Store 지원 언어 표기는 <b>EN / KO 2개뿐</b>이다.</p>
+<p style="font-size:13.5px"><b>번역비는 이미 지불했는데 스토어 노출을 못 받고 있다.</b>
+스토어 콘솔 메타데이터 설정만 바꾸면 되며, 빌드도 코드도 건드리지 않는다.
+이번 리포트에서 <b>가장 비용이 낮은 개선</b>이다.</p>
+<div class="kv"><span class="k">작업 범위</span><span class="v">스토어 콘솔 메타데이터</span></div>
+<div class="kv"><span class="k">클라이언트 변경</span><span class="v">없음</span></div>
+</div>
+
+<div class="card"><h3>② BGM 무압축 WAV 119MB 압축</h3>
+<p style="font-size:13.5px"><span class="chip fact">확정</span> 오디오 128.9MB 중 <b>119.0MB가 무압축 WAV 7개 파일</b>
+(<code>0.wav</code> 20.42MB · <code>4.wav</code> 20.38 · <code>1.wav</code> 18.52 ·
+<code>intro.wav</code> 16.29 · <code>5.wav</code> 15.19 · <code>3.wav</code> 14.37 · <code>2.wav</code> 13.81).
+iOS 앱 용량 480MB의 <b>약 25%</b>가 BGM 7개다.</p>
+<p style="font-size:13.5px">Vorbis 등으로 변환하면 <b>용량이 대폭 줄고 설치 이탈이 개선</b>된다.
+BGM은 스트리밍 로드 대상이라 품질 손실 체감도 낮다.
+<b>다운로드 500+</b>인 현 상황에서 설치 문턱을 낮추는 직접적 수단이다.</p>
+<div class="kv"><span class="k">작업 범위</span><span class="v">임포트 설정 + 리빌드</span></div>
+<div class="kv"><span class="k">게임 로직 변경</span><span class="v">없음</span></div>
+</div>
+</div>
+
+<h2>실행 순서</h2>
+
+<div class="pri"><div class="top"><span class="rk">1</span>
+<span class="nm">스토어 언어 확대 · BGM 압축</span><span class="mt">코드 변경 0 · 즉시</span></div>
+<p>게임을 건드리지 않는 두 건을 먼저 처리해 노출과 설치 문턱을 정리한다.</p></div>
+
+<div class="pri"><div class="top"><span class="rk">2</span>
+<span class="nm">전투 체감 저비용 3종</span><span class="mt">유휴 레버 활용</span></div>
+<p><code>orthographicSize</code> 동적 줌 + 히트스톱 3~5프레임 + 하단 시트 접기.
+셰이크·데미지 폰트는 이미 있으므로 <b>추가 아트 없이</b> 타격감과 시야가 동시에 개선된다.</p></div>
+
+<div class="pri"><div class="top"><span class="rk">3</span>
+<span class="nm">온보딩 재배치 + 미션 피드백</span><span class="mt">지적 ①②를 한 묶음으로</span></div>
+<p>스킬 28→5 · 동료 38→12 · 뽑기를 뒤로. 동시에 레드닷 3단 점등과 완료 연출을 넣어
+<b>재배치가 실제로 전달되게</b> 한다. <code>db_mission.csv</code> 재배치 + 기존 <code>finger</code> 컬럼 활용.</p></div>
+
+<div class="pri"><div class="top"><span class="rk">4</span>
+<span class="nm">동료 정보 개방 + <code>db_ability</code> 87칸</span><span class="mt">BM 직결</span></div>
+<p>미획득 상세 열람은 리뷰의 유일한 공감 지적이고, 87칸 공백은
+동료를 앞당겨도 <b>고를 이유가 없게</b> 만드는 원인이다. 최고가 상품군의 구매 동기 그 자체다.</p></div>
+
+<div class="pri"><div class="top"><span class="rk">5</span>
+<span class="nm">전투 배경 624px 재제작 · 시트 비율 앵커</span><span class="mt">아트 + 레이아웃</span></div>
+<p>스테이지 8종 배경 재작업. 16:9의 3.9% 붕괴가 여기서 완전히 해소된다.</p></div>
+
+<div class="pri"><div class="top"><span class="rk">6</span>
+<span class="nm">엔드 콘텐츠 — 길드 레이드 → 프레스티지</span><span class="mt">전략 투자</span></div>
+<p>서버 배관이 끝난 길드부터, 그다음 하드 리미트를 푸는 환생 축.
+착수 전에 <b>잠금 콘텐츠 예고 노출</b>(저비용)을 먼저 넣어 "끝이 뭔지 모르겠다"를 즉시 완화한다.</p></div>
+
+<h2>맥락 — 과장하지 않기 위한 전제</h2>
+
+<div class="callout navy">
+<b>리뷰를 통계로 다루지 않는다.</b>
+Play 실지표는 <b>다운로드 500+ · 평점 3.8 · 평가 8개</b>이고,
+<b>텍스트 리뷰는 총 3건이 전부이며 전원 부정</b>(1★ 2건, 3★ 1건)이다.
+App Store는 15개국 전수조회 결과 <b>텍스트 리뷰 0건</b>.
+표본이 3건이므로 본 리포트는 리뷰를 <b>정성 신호</b>로만 취급한다.</div>
+
+<div class="grid g2">
+<div class="card"><h3>개발사</h3>
+<p style="font-size:13.5px">(주)퍼니이브는 <b>설립 2006년 · 업력 20년</b>이며 계속 운영 중이다.
+이 건을 "신생 스타트업의 첫 실패"로 읽어서는 안 된다.
+브랜드(Beeorbit)와 법인 표기가 스토어마다 뒤섞여 있는 점은 별도 정리 대상이다.</p></div>
+<div class="card"><h3>업데이트 상태</h3>
+<p style="font-size:13.5px">iOS는 <b>1.0.39(4/24)에 멈춰</b> 있고,
+Android는 <b>5/16 이후 2개월 무업데이트</b>다.
+커뮤니티·뉴스 언급 0건 — 마케팅 미집행 정황. <span class="chip inf">추정</span></p></div>
+</div>
+
+<h2>이 제안의 한계</h2>
+<ul class="clean">
+<li><span class="chip warn">미확인</span> <b>Il2CppDumper 덤프에 메서드 본문이 없다.</b> 상수·필드·시그니처만 판독 가능하므로
+실 DPS·클리어 시간·드림 해금 조건·<code>dailySiegeCount</code> 값은 확정할 수 없다.</li>
+<li><span class="chip warn">미확인</span> <b>하단 시트 접기 UI의 런타임 존재 여부는 미확정.</b>
+직렬화 상태로는 상시 열림이 확정이나, 접기 버튼에 해당하는 문자열이 293개 UI 리터럴에 없을 뿐
+런타임 토글 가능성을 배제하지는 못한다. 접힌다면 전투 가시영역은 48.1%까지 회복된다.</li>
+<li><span class="chip warn">미확인</span> <b>전투 영역 점유율의 업계 표준 수치는 존재하지 않는다.</b>
+본 페이지의 비율은 전부 자사 실측값이며, 관행 대비 판정을 하지 않았다.
+<b>후속 과제 — 경쟁작 5종 스크린샷 픽셀 실측 비교표</b> 작성이 유일한 검증 방법이다.</li>
+<li><span class="chip warn">미확인</span> <code>open</code> 컬럼이 실제 잠금 해제 트리거인지 해금 팝업 문구용인지
+<code>SetLockPopup(int)</code> 본문 부재로 구분되지 않는다. 온보딩 재배치 적용 전 코드 확인 1건이 필요하다.</li>
+<li>근거가 공개되지 않은 마케팅 수치("만족도 30% 증가", "참여 40% 증가",
+"첫 5분이 리텐션의 80%를 결정")는 <b>의도적으로 전부 배제</b>했다.</li>
+<li><b>방법론 정정 이력.</b> 초안에서 "동료 = 장비의 46배"라는 수치를 썼으나,
+<code>db_item.csv</code> 432행 재계산 결과 <b>잘못된 비교</b>였다 —
+장비 <code>type 2</code>(640,584) 한 부위만을 장비 대표값으로 잡은 값이었다.
+서로 다른 분석 단계가 "장비 최대치"를 각각 다른 부위로 잡아 5배 이상 차이 나는 수치가 나왔다.
+<b>장비 수치는 반드시 부위(<code>type</code> 1~9)별로 분해하고 비교 기준을 명시</b>해야 재현 가능하다.
+본 페이지는 전 부위 장착 전제의 <b>9부위 총합 16,385,409</b>를 기준으로 통일했다.</li>
+</ul>
+
+<p class="src">근거 문서: <code>reports/10_mission_unlock.md</code> ·
+<code>11_growth_deep.md</code> · <code>12_store_reviews.md</code> · <code>13_gap_analysis.md</code> ·
+<code>14_ux_references.md</code> · <code>15_endgame_viewport.md</code> ·
+기계판독본 <code>_work/unlock_chain.json</code> · <code>growth_data.json</code> ·
+<code>endgame_data.json</code> · <code>store_data.json</code></p>
+
+<div class="foot-note">케이팝히어로즈 (com.beeorbit.kpopheros v1.0.40) 정적 분석 리포트 · 생성 2026-07-20 ·
+게임 저작권은 BeeOrbit에 있으며 본 문서는 내부 분석용입니다.</div></main></div>
+<footer class="prog"><div class="ptrack"><img class="mascot" src="img/mascot.png" alt="">
+<span class="plabel">18 / 18</span>
+<div class="dots"><div class="dline"></div><div class="dfill"></div></div></div></footer>
+<script>
+(function(){var h=document.querySelector('.hamb'),n=document.querySelector('nav.main');
+if(h)h.addEventListener('click',function(){n.classList.toggle('open')});
+var secs=[].slice.call(document.querySelectorAll('main h2')),dots=document.querySelector('.dots');
+if(dots&&secs.length){secs.forEach(function(s,i){s.id=s.id||('sec'+i);
+ var d=document.createElement('div');d.className='dot';
+ d.style.left=(secs.length>1?(i/(secs.length-1))*100:0)+'%%';d.title=s.textContent;
+ d.onclick=function(){s.scrollIntoView({behavior:'smooth',block:'start'})};dots.appendChild(d)});
+ var fill=document.querySelector('.dfill');
+ function upd(){var y=window.scrollY+120,idx=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)idx=i});
+  [].forEach.call(dots.children,function(d,i){d.classList.toggle('on',i<=idx)});
+  if(fill)fill.style.width=(secs.length>1?(idx/(secs.length-1))*100:100)+'%%'}
+ window.addEventListener('scroll',upd);upd();}})();
+</script><script id="gb-js">
+(function(){
+  var b=document.querySelector('.gb-burger'), d=document.querySelector('.gb-dim');
+  function set(o){document.body.classList.toggle('gb-open',o);}
+  if(b) b.addEventListener('click',function(){set(!document.body.classList.contains('gb-open'));});
+  if(d) d.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>900)set(false);});
+  // 현재 항목이 사이드바 밖이면 보이도록 스크롤
+  var on=document.querySelector('.gb-nav a.on');
+  if(on){var s=document.querySelector('.gb-side');
+    if(s && on.offsetTop > s.clientHeight-80) s.scrollTop = on.offsetTop - s.clientHeight/2;}
+})();
+</script>
+</body></html>

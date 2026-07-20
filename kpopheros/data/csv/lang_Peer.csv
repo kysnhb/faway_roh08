@@ -1,0 +1,42 @@
+﻿index,kor,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,string,string,string,string,string,string,string,string,string
+1,팬 1호,Fan No. 1,ファン1番,1号粉丝,1號粉絲,Вентилятор № 1,Ventilateur n° 1,Fan número 1,Người hâm mộ số 1
+2,연습생 1호,Trainee No. 1,研修生1号,实习生1号,實習生1號,Стажер № 1,Stagiaire n° 1,Aprendiz n.° 1,Thực tập sinh số 1
+3,댄서 1호,Dancer No. 1,ダンサー1番,舞者1号,舞者1號,Танцовщица № 1,Danseuse n° 1,Bailarina nº 1,Vũ công số 1
+4,춤꾼 1호,Dancer No. 1,ダンサー1番,舞者1号,舞者1號,Танцовщица № 1,Danseuse n° 1,Bailarina nº 1,Vũ công số 1
+5,코러스 1호,Chorus No. 1,コーラス第1番,合唱曲第一号,合唱曲第一號,Хор № 1,Refrain n° 1,Coro nº 1,Điệp khúc số 1
+6,팬 2호,Fan No. 2,ファン2番,2号粉丝,2號粉絲,Вентилятор № 2,Ventilateur n° 2,Fan número 2,Người hâm mộ số 2
+7,연습생 2호,Trainee No. 2,研修生2号,实习生2号,實習生2號,Стажер № 2,Stagiaire n° 2,Aprendiz n.° 2,Thực tập sinh số 2
+8,댄서 2호,Dancer No. 2,ダンサー2番,舞者2号,舞者2號,Танцовщица № 2,Danseuse n° 2,Bailarina nº 2,Vũ công số 2
+9,춤꾼 2호,Dancer No. 2,ダンサー2番,舞者2号,舞者2號,Танцовщица № 2,Danseuse n° 2,Bailarina nº 2,Vũ công số 2
+10,코러스 2호,Chorus No. 2,コーラス第2番,合唱曲第二首,合唱曲第二首,Хор № 2,Refrain n° 2,Coro nº 2,Điệp khúc số 2
+11,팬 3호,Fan No. 3,ファン3番,3号粉丝,3號粉絲,Вентилятор № 3,Ventilateur n° 3,Fan número 3,Quạt số 3
+12,연습생 3호,Trainee No. 3,研修生3号,实习生3号,實習生3號,Стажер № 3,Stagiaire n° 3,Aprendiz n.° 3,Thực tập sinh số 3
+13,댄서 3호,Dancer No. 3,ダンサー3番,舞者3号,舞者3號,Танцовщица № 3,Danseuse n° 3,Bailarina nº 3,Vũ công số 3
+14,춤꾼 3호,Dancer No. 3,ダンサー3番,舞者3号,舞者3號,Танцовщица № 3,Danseuse n° 3,Bailarina nº 3,Vũ công số 3
+15,코러스 3호,Chorus No. 3,コーラス第3番,合唱曲第3号,合唱曲第3號,Припев № 3,Refrain n° 3,Coro nº 3,Điệp khúc số 3
+16,팬 4호,Fan No. 4,ファン4番,4号粉丝,4號粉絲,Вентилятор № 4,Ventilateur n° 4,Fan número 4,Quạt số 4
+17,연습생 4호,Trainee No. 4,研修生4番,实习生4号,實習生4號,Стажер № 4,Stagiaire n° 4,Aprendiz n.° 4,Thực tập sinh số 4
+18,댄서 4호,Dancer No. 4,ダンサー4番,舞者4号,舞者4號,Танцовщица № 4,Danseuse n° 4,Bailarina nº 4,Vũ công số 4
+19,춤꾼 4호,Dancer No. 4,ダンサー4番,舞者4号,舞者4號,Танцовщица № 4,Danseuse n° 4,Bailarina nº 4,Vũ công số 4
+20,코러스 4호,Chorus No. 4,コーラス第4番,合唱曲第4号,合唱曲第4號,Хор № 4,Refrain n° 4,Coro nº 4,Điệp khúc số 4
+21,팬 5호,Fan No. 5,ファン5番,5号粉丝,5號粉絲,Вентилятор № 5,Ventilateur n° 5,Fan número 5,Quạt số 5
+22,연습생 5호,Trainee No. 5,研修生5番,实习生5号,實習生5號,Стажер № 5,Stagiaire n° 5,Aprendiz n.° 5,Thực tập sinh số 5
+23,댄서 5호,Dancer No. 5,ダンサー5番,舞者5号,舞者5號,Танцовщица № 5,Danseuse n° 5,Bailarina nº 5,Vũ công số 5
+24,춤꾼 5호,Dancer No. 5,ダンサー5番,舞者5号,舞者5號,Танцовщица № 5,Danseuse n° 5,Bailarina nº 5,Vũ công số 5
+25,코러스 5호,Chorus No. 5,コーラス第5番,合唱曲第5号,合唱曲第5號,Хор № 5,Refrain n° 5,Coro nº 5,Điệp khúc số 5
+26,팬 6호,Fan No. 6,ファン6番,6号粉丝,6號粉絲,Вентилятор № 6,Ventilateur n° 6,Fan No. 6,Quạt số 6
+27,연습생 6호,Trainee No. 6,研修生6番,实习生6号,實習生6號,Стажер № 6,Stagiaire n° 6,Aprendiz n.° 6,Thực tập sinh số 6
+28,댄서 6호,Dancer No. 6,ダンサー6番,舞者6号,舞者6號,Танцовщица № 6,Danseuse n° 6,Bailarina nº 6,Vũ công số 6
+29,춤꾼 6호,Dancer No. 6,ダンサー6番,舞者6号,舞者6號,Танцовщица № 6,Danseuse n° 6,Bailarina nº 6,Vũ công số 6
+30,코러스 6호,Chorus No. 6,コーラス第6番,合唱曲第6号,合唱曲第6號,Хор № 6,Chœur n° 6,Coro nº 6,Điệp khúc số 6
+31,치얼,Cheers,乾杯,干杯,乾杯,Ваше здоровье,Acclamations,Salud,Chúc mừng!
+32,버스커,Busker,大道芸人,街头艺人,街頭藝人,Уличный музыкант,Musicien ambulant,Músico ambulante,nghệ sĩ đường phố
+33,로사,Rosa,ローザ,罗莎,羅莎,Роза,Rosa,Rosa,Rosa
+34,잭슨,Jackson,ジャクソン,杰克逊,傑克森,Джексон,Jackson,Jackson,Jackson
+35,비트,bit,少し,少量,位元,кусочек,peu,poco,chút
+36,위시,Wish,願い,希望,希望,Желание,Souhait,Desear,Ước
+37,붐,Boom,ブーム,繁荣,繁榮,Бум,Boom,Auge,Bùm
+38,씽,Sing,歌う,唱歌,唱歌,Петь,Chanter,Cantar,Hát
+39,엣지,Edge,角,边缘,邊緣,Край,Bord,Borde,Bờ rìa
+40,루브르,Louvre,ルーバー,卢浮宫,羅浮宮,Лувр,Persienne,Lumbrera,Bảo tàng Louvre

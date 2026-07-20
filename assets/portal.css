@@ -4,7 +4,7 @@
 :root{
   --bg:#0e1016; --bg2:#161a24; --card:#1b2030; --line:#2a3142;
   --tx:#eef1f7; --tx2:#aab4c6; --tx3:#6f7a8f;
-  --vulcan:#e9c96a; --pig:#f86b9d; --anger:#3aa0e0;
+  --vulcan:#e9c96a; --pig:#f86b9d; --anger:#3aa0e0; --kpop:#c83680;
   --mono:'DungGeunMo','Orbitron','Consolas',monospace;
 }
 *{box-sizing:border-box}
@@ -102,6 +102,7 @@ main{padding:24px 0 90px}
 .g-vulcan{--ac:var(--vulcan);--acbg:rgba(233,201,106,.16);--acglow:rgba(233,201,106,.4);--acdot:rgba(233,201,106,.25)}
 .g-pig{--ac:var(--pig);--acbg:rgba(248,107,157,.16);--acglow:rgba(248,107,157,.4);--acdot:rgba(248,107,157,.25)}
 .g-anger{--ac:var(--anger);--acbg:rgba(58,160,224,.16);--acglow:rgba(58,160,224,.4);--acdot:rgba(58,160,224,.25)}
+.g-kpop{--ac:var(--kpop);--acbg:rgba(200,54,128,.16);--acglow:rgba(200,54,128,.4);--acdot:rgba(200,54,128,.25)}
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx3);font-size:13px;text-align:center}

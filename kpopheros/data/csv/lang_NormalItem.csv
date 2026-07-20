@@ -1,0 +1,434 @@
+﻿index,kor,English,Japanese,ChineseSimplified,ChineseTraditional,Russian,French,Spanish,Vietnamese
+int,string,string,string,string,string,string,string,string,string
+1,연습 모자,Practice cap,練習用キャップ,练习帽,練習帽,Тренировочная шапка,Casquette d'entraînement,gorra de práctica,Mũ tập luyện
+2,데뷔 캡,Debut Cap,デビューキャップ,首发帽,先發帽,Дебютная кепка,Casquette de début,Gorra de debut,Mũ ra mắt
+3,새싹 캡,Sprout Cap,芽キャベツ,豆芽盖,豆芽蓋,Крышка ростка,Coiffe germée,Tapa de brote,Mũ mầm
+4,주니어 캡,Junior Cap,ジュニアキャップ,青年帽,青年帽,Младшая кепка,Casquette Junior,Gorra Junior,Mũ trẻ em
+5,루키 캡,Rookie Cap,ルーキーキャップ,新秀帽,新秀帽,Кепка новичка,Casquette de recrue,Límite de novato,Mũ tân binh
+6,인기 배레,Popular Barret,人気のバレット,热门巴雷特,熱門巴雷特,Популярный Баррет,Barret populaire,Barret popular,Barrett nổi tiếng
+7,스팟 배레,Spot Barret,スポット・バレット,Spot Barret,Spot Barret,Пятнистый баррет,Spot Barrett,Spot Barret,Spot Barret
+8,댄서 캡,Dancer Cap,ダンサーキャップ,舞者帽,舞者帽,Танцевальная шапка,Casquette de danseuse,Gorro de bailarina,Mũ vũ công
+9,메인 모자,Main hat,メインハット,主帽,主帽,Главная шляпа,Chapeau principal,Sombrero principal,Mũ chính
+10,비주얼 띠,Visual band,視覚バンド,视觉带,視覺帶,Визуальная полоса,Bande visuelle,banda visual,Dải thị giác
+11,구름 모자,cloud hat,クラウドハット,云帽,雲帽,шляпа-облако,chapeau nuage,sombrero de nube,mũ mây
+12,투어 모자,Tour hat,ツアーハット,旅游帽,觀光帽,Турнирная шляпа,Tour chapeau,Sombrero de gira,Mũ du lịch
+13,골든 캡,Golden Cap,ゴールデンキャップ,金帽,金帽,Золотая шапка,Bonnet d'or,Gorro dorado,Mũ vàng
+14,스카이 탭,Sky Tab,スカイタブ,天空标签,天空標籤,Sky Tab,Sky Tab,Sky Tab,Máy tính bảng Sky
+15,핑키 캡,Pinky Cap,ピンキーキャップ,粉红帽,粉紅帽,Кепка на мизинце,Bonnet rose,Gorro de meñique,Mũ hồng
+16,퓨어 띠,Pure Tti,ピュアTti,纯Tti,純Tti,Чистый Тти,Pure Tti,Tti puro,Pure Tti
+17,스타 배레,Star Barre,スターバール,星巴雷,星巴雷,Стар Барре,Barre d'étoiles,Barra de estrellas,Star Barre
+18,플라워 캡,Flower Cap,フラワーキャップ,花帽,花帽,Цветочная шапка,Chapeau de fleur,Gorro de flor,Mũ hoa
+19,토끼 띠,Year of the Rabbit,卯年,兔年,兔年,Год Кролика,Année du Lapin,Año del Conejo,Năm con Thỏ
+20,마법 모자,Magic Hat,魔法の帽子,魔法帽,魔法帽,Волшебная шляпа,Chapeau magique,Sombrero mágico,Chiếc mũ ma thuật
+21,스타 캡,Star Cap,スターキャップ,星帽,星帽,Звездная шапка,Chapeau d'étoile,Gorra de estrella,Mũ ngôi sao
+22,새벽 캡,Dawn Cap,夜明けの帽子,黎明帽,黎明帽,Рассветная шапка,Bonnet d'aube,Gorra del amanecer,Mũ bình minh
+23,하늘 배레,Sky Beret,スカイベレー,天空贝雷帽,天空貝雷帽,Небесный Берет,Béret céleste,Boina del cielo,Mũ nồi trời
+24,앵콜 캡,Encore Cap,アンコールキャップ,安可帽,安可帽,Encore Cap,Encore Cap,Encore Cap,Mũ Encore
+25,밀리 캡,Milli Cap,ミリキャップ,百万资本,百萬資本,Милли Кап,Milli Cap,Milli Cap,Milli Cap
+26,튠 캡,Tune Cap,チューンキャップ,调谐帽,調諧帽,Колпачок для настройки,Tune Cap,Tapa de ajuste,Nắp điều chỉnh
+27,파워 캡,Power Cap,電源キャップ,功率上限,功率上限,Крышка мощности,Power Cap,Capuchón de potencia,Mũ năng lượng
+28,앙콜 배레,Encore Beret,アンコールベレー,安可贝雷帽,安可貝雷帽,Берет на бис,Béret Encore,Boina Encore,Mũ nồi Encore
+29,퐁크 배레,Ponck Barret,ポンク・バレット,庞克·巴雷特,龐克·巴雷特,Понк Баррет,Ponck Barret,Ponck Barret,Ponck Barret
+30,크라운 캡,Crown cap,クラウンキャップ,皇冠帽,皇冠帽,Колпак короны,Capuchon de couronne,tapa de corona,Mũ vương miện
+31,이터널 캡,Eternal Cap,エターナルキャップ,永恒之帽,永恆之帽,Вечная Шапка,Casquette éternelle,Gorra eterna,Mũ vĩnh cửu
+32,토끼 띠,Year of the Rabbit,卯年,兔年,兔年,Год Кролика,Année du Lapin,Año del Conejo,Năm con Thỏ
+33,퀸 캡,Queen Cap,クイーンキャップ,女王帽,女王帽,Королевская шапка,Chapeau de la reine,Gorro de reina,Mũ Nữ hoàng
+34,인디언 띠,Indian stripes,インディアンストライプ,印度条纹,印度條紋,Индийские полосы,rayures indiennes,rayas indias,Sọc Ấn Độ
+35,유성 캡,Permanent Cap,パーマネントキャップ,永久帽,永久帽,Постоянная шапка,Capuchon permanent,Gorra permanente,Mũ vĩnh viễn
+36,우주 모자,Space hat,宇宙帽,太空帽,太空帽,Космическая шляпа,Chapeau spatial,Sombrero espacial,Mũ không gian
+37,은하 띠,Galaxy belt,銀河ベルト,银河带,銀河帶,Пояс Галактики,Ceinture galactique,Cinturón galáctico,Vành đai thiên hà
+38,하트 캡,Heart cap,ハートキャップ,心帽,心帽,Шапочка в форме сердца,Bonnet en forme de cœur,gorro con forma de corazón,Mũ hình trái tim
+39,냥이 띠,Year of the Kitty,猫の年,猫年,貓年,Год Кошки,Année du Chat,Año del gatito,Năm của mèo con
+40,제왕 캡,Emperor Cap,エンペラーキャップ,皇帝帽,皇帝帽,Императорская шапка,Chapeau d'empereur,Gorra de emperador,Mũ Hoàng đế
+41,-,-,-,-,-,-,-,-,-
+42,-,-,-,-,-,-,-,-,-
+43,-,-,-,-,-,-,-,-,-
+44,-,-,-,-,-,-,-,-,-
+45,-,-,-,-,-,-,-,-,-
+46,-,-,-,-,-,-,-,-,-
+47,-,-,-,-,-,-,-,-,-
+48,-,-,-,-,-,-,-,-,-
+49,훈련검,Training test,トレーニングテスト,训练测试,訓練測試,Тренировочный тест,Test d'entraînement,Prueba de entrenamiento,Bài kiểm tra huấn luyện
+50,셉터,Scepter,笏,权杖,權杖,Скипетр,Sceptre,Cetro,Quyền trượng
+51,파워해머,Power Hammer,パワーハンマー,动力锤,動力錘,Силовой молоток,Marteau électrique,Martillo pilón,Búa điện
+52,응원봉,cheering stick,応援棒,加油棒,加油棒,палочка для болельщиц,bâton d'encouragement,palo de ánimo,gậy cổ vũ
+53,주목검,Noteworthy sword,注目すべき剣,值得注意的剑,值得注意的劍,Замечательный меч,Épée remarquable,Espada notable,Thanh kiếm đáng chú ý
+54,열정검,Passion Check,情熱チェック,热情检验,熱情檢驗,Проверка страсти,Passion Check,Control de pasión,Kiểm tra đam mê
+55,매료슬래시,Fascination Slash,魅惑の斬撃,迷恋斜线,迷戀斜線,Очарование Слэш,Fascination Slash,Fascinación Slash,Sự mê hoặc Slash
+56,타이탄해머,Titanhammer,タイタンハンマー,泰坦之锤,泰坦之鎚,Титанхаммер,Titanhammer,Titanhammer,Búa Titan
+57,플래타소드,Plata Sword,プラタソード,普拉塔剑,普拉塔劍,Меч Плата,Épée de Plata,Espada de Plata,Thanh kiếm Plata
+58,제왕소드,Emperor Sword,皇帝の剣,帝皇之剑,帝皇之劍,Императорский Меч,Épée de l'Empereur,Espada del Emperador,Kiếm Hoàng Đế
+59,스카이해머,Skyhammer,スカイハンマー,天锤,天錘,Скайхаммер,Marteau céleste,Skyhammer,Skyhammer
+60,그믐슬래시,New Moon Slash,ニュー・ムーン・スラッシュ,新月斩,新月斬,Новолунный Слэш,Nouvelle Lune Slash,Nueva Luna Slash,Trăng non Slash
+61,골드해머,Goldhammer,ゴールドハンマー,金锤,金槌,Гольдхаммер,Goldhammer,Martillo de oro,Goldhammer
+62,퓨어소드,Pure Sword,ピュアソード,纯剑,純劍,Чистый Меч,Épée pure,Espada pura,Kiếm Thuần Khiết
+63,하트셉터,Heartscepter,ハートセプター,心之权杖,心之權杖,Сердечный скипетр,sceptre du cœur,Cetro del corazón,Quyền trượng trái tim
+64,빅하트셉터,Big Heart Scepter,ビッグハートセプター,大心权杖,大心權杖,Большой Сердце Скипетр,Sceptre du Grand Cœur,Cetro del Gran Corazón,Quyền trượng Trái Tim Lớn
+65,팬소드,Fansword,ファンソード,扇剑,扇劍,Фансвер,Fansword,Fansword,Fansword
+66,라이징소드,Rising Sword,ライジングソード,升龙之剑,昇龍之劍,Восходящий Меч,L'Épée Ascendante,Espada ascendente,Thanh kiếm trỗi dậy
+67,스피릿해머,Spirit Hammer,スピリットハンマー,灵锤,靈錘,Духовный Молот,Marteau spirituel,Martillo espiritual,Búa Linh Hồn
+68,뽀죡소드,Pointed Sword,尖った剣,尖剑,尖劍,Острый меч,Épée pointue,Espada puntiaguda,Thanh kiếm nhọn
+69,파워소드,Power Sword,パワーソード,力量之剑,力量之劍,Силовой Меч,Épée de puissance,Espada de Poder,Thanh kiếm sức mạnh
+70,레드슬래시,Red Slash,レッドスラッシュ,红色斜线,紅色斜線,Красный удар,Éclat rouge,Barra roja,Red Slash
+71,타임해머,Time Hammer,タイムハンマー,时间之锤,時間之錘,Молот времени,Marteau temporel,Martillo del tiempo,Búa Thời Gian
+72,파워해머,Power Hammer,パワーハンマー,动力锤,動力錘,Силовой молоток,Marteau électrique,Martillo pilón,Búa điện
+73,시크릿소드,Secret Sword,秘密の剣,秘密之剑,秘密之劍,Тайный Меч,Épée secrète,Espada secreta,Thanh kiếm bí mật
+74,스타셉터,Starceptor,スターセプター,星形接收器,星形接收器,Старсептор,Starceptor,Starceptor,Starceptor
+75,사이드,Side,側,边,邊,Сторона,Côté,Lado,Bên
+76,윙사이드,Wingside,ウイングサイド,翼侧,翼側,Вингсайд,Côté aile,Lado del ala,Cánh
+77,레인슬래시,Rainslash,レインスラッシュ,雨刃,雨刃,Рейнслэш,Rainslash,Lluvia,Rainslash
+78,데스틴소드,Destin Sword,デスティンソード,命运之剑,命運之劍,Меч Дестина,Épée de Destin,Espada de Destin,Thanh kiếm Destin
+79,미스틱소드,Mystic Sword,ミスティックソード,神秘之剑,神秘之劍,Мистический меч,Épée mystique,Espada mística,Thanh kiếm thần bí
+80,컬러사이드,Colorside,カラーサイド,色彩侧,色彩側,Цветовая сторона,Côté couleur,Colorside,Mặt màu
+81,레드소드,Red Sword,赤い剣,红剑,紅劍,Красный Меч,Épée rouge,Espada Roja,Thanh kiếm đỏ
+82,빅사이드,Big Side,大きな側面,大边,大邊,Большая сторона,Grand côté,Lado grande,Mặt lớn
+83,플라워사이드,Flowerside,フラワーサイド,花边,花邊,Флауэрсайд,Flowerside,Junto a las flores,Flowerside
+84,무지소드,Mujisod,ムジソッド,穆吉索德,穆吉索德,Муджисод,Mujisod,Mujisod,Mujisod
+85,다이아사이드,Diaside,ディアサイド,迪亚赛德,迪亞賽德,Диасайд,Diaside,Diaside,Diaside
+86,미러셉터,Mirrorceptor,ミラーセプター,镜像感受器,鏡像感受器,Зеркальный цепной ретранслятор,Mirrorcepteur,Receptor de espejos,Mirrorceptor
+87,은하사이드,Galaxy Side,ギャラクシーサイド,银河边,銀河邊,Сторона Галактики,Côté Galactique,Galaxy Side,Mặt Thiên hà
+88,슈퍼소드,Super Sword,スーパーソード,超级剑,超級劍,Супер Меч,Super épée,Súper Espada,Siêu Kiếm
+89,-,-,-,-,-,-,-,-,-
+90,-,-,-,-,-,-,-,-,-
+91,-,-,-,-,-,-,-,-,-
+92,-,-,-,-,-,-,-,-,-
+93,-,-,-,-,-,-,-,-,-
+94,-,-,-,-,-,-,-,-,-
+95,-,-,-,-,-,-,-,-,-
+96,-,-,-,-,-,-,-,-,-
+97,연습복,Practice clothes,練習着,练习服,訓練服,тренировочная одежда,vêtements d'entraînement,Ropa de entrenamiento,quần áo tập luyện
+98,데뷔의상,debut outfit,デビュー衣装,首套服装,首套服裝,дебютный наряд,tenue de début,atuendo de debut,trang phục ra mắt
+99,스쿨룩,School look,スクールスタイル,校园风,校園風,Школьный образ,Style scolaire,Aspecto escolar,Trang phục đi học
+100,주니어복,Junior wear,ジュニアウェア,青少年服装,青少年服裝,Детская одежда,Vêtements pour juniors,Ropa juvenil,Trang phục thiếu niên
+101,루키스타일,Rookie Style,ルーキースタイル,新手风格,新手風格,Стиль новичка,Style de recrue,Estilo principiante,Phong cách tân binh
+102,팬서비스룩,Fan service look,ファンサービスルック,粉丝福利造型,粉絲福利造型,Фансервисный взгляд,look de fan service,Aspecto de servicio al fan,Diện mạo phục vụ người hâm mộ
+103,방송의상,Broadcast costumes,放送用衣装,广播服装,廣播服裝,Костюмы для трансляции,costumes de diffusion,Vestuario de transmisión,Trang phục phát sóng
+104,백댄서복,backup dancer costume,バックダンサーの衣装,伴舞服装,伴舞服裝,костюм танцовщицы на подтанцовке,costume de danseuse de soutien,disfraz de bailarina de apoyo,trang phục vũ công phụ họa
+105,메인무대복,Main stage costume,メインステージ衣装,主舞台服装,主舞台服裝,Главный сценический костюм,Costume de scène principale,Vestuario del escenario principal,Trang phục sân khấu chính
+106,센터룩,Center look,中央のルック,中心视角,中心視角,Центральный взгляд,Centre de vue,Vista central,Hình ảnh trung tâm
+107,댄스배틀복,dance battle outfit,ダンスバトル衣装,舞蹈比赛服装,舞蹈比賽服裝,костюм для танцевального баттла,tenue de battle de danse,atuendo para batalla de baile,trang phục đấu nhảy
+108,유닛의상,Unit costumes,ユニットコスチューム,单位服装,單位服裝,Костюмы подразделения,costumes d'unité,Trajes de unidad,Trang phục đơn vị
+109,청순의상,innocent outfit,無邪気な服装,无辜的装束,無辜的裝束,невинный наряд,tenue innocente,atuendo inocente,trang phục ngây thơ
+110,시크의상,Chic outfit,シックな服装,时尚装扮,時尚裝扮,Стильный наряд,Tenue chic,Conjunto elegante,Trang phục sành điệu
+111,힙합스타일,Hip-hop style,ヒップホップスタイル,嘻哈风格,嘻哈風格,Стиль хип-хопа,Style hip-hop,Estilo hip-hop,Phong cách hip-hop
+112,큐티의상,Cute outfit,かわいい服,可爱的装扮,可愛的裝扮,Милый наряд,tenue mignonne,Lindo conjunto,Bộ trang phục dễ thương
+113,화려한옷,fancy clothes,おしゃれな服,华丽的服装,華麗的服裝,нарядная одежда,vêtements de luxe,ropa elegante,quần áo sang trọng
+114,개인의상,Personal costumes,個人用衣装,个人服装,個人服裝,Личные костюмы,costumes personnels,disfraces personales,Trang phục cá nhân
+115,아이템룩,Item look,アイテムの外観,物品外观,物品外觀,Внешний вид предмета,Article,Aspecto del artículo,Hình thức sản phẩm
+116,유니크복,Unique outfit,個性的な衣装,独特的服装,獨特的服裝,Уникальный наряд,tenue unique,Atuendo único,Trang phục độc đáo
+117,심야무대복,late-night stage costumes,深夜の舞台衣装,深夜舞台服装,深夜舞台服裝,ночные сценические костюмы,costumes de scène de fin de soirée,vestuario de espectáculos nocturnos,trang phục sân khấu đêm khuya
+118,블랙의상,black outfit,黒い服,黑色服装,黑色服裝,черный наряд,tenue noire,atuendo negro,trang phục đen
+119,레드카펫,Red carpet,レッドカーペット,红毯,紅毯,Красная дорожка,Tapis rouge,Alfombra roja,Thảm đỏ
+120,시상식복,Awards ceremony dress,授賞式用ドレス,颁奖典礼礼服,頒獎典禮禮服,дресс-код для церемонии награждения,robe de cérémonie de remise de prix,vestido para la ceremonia de entrega de premios,váy dự lễ trao giải
+121,솔로무대복,Solo stage costume,ソロステージ衣装,独奏舞台服装,獨奏舞台服裝,Костюм для сольного выступления на сцене,costume de scène solo,Traje de escenario individual,Trang phục biểu diễn solo
+122,월드복,World Clothing,世界の衣料品,世界服装,世界服裝,Мировая одежда,Vêtements du monde,Ropa del mundo,Trang phục Thế giới
+123,슈퍼스타복,Superstar outfit,スーパースターの衣装,超级巨星服装,超級巨星服裝,Наряд суперзвезды,tenue de superstar,atuendo de superestrella,Trang phục siêu sao
+124,트리플복,Triple box,トリプルボックス,三重盒子,三重盒,Тройной ящик,Boîte triple,Caja triple,Hộp ba
+125,플래티넘,Platinum,白金,铂,鉑,Платина,Platine,Platino,Bạch kim
+126,골드셀러,Gold seller,金販売業者,黄金卖家,黃金賣家,Продавец золота,vendeur d'or,vendedor de oro,Người bán vàng
+127,레전드룩,Legendary look,伝説的なルックス,传奇般的造型,傳奇般的造型,Легендарный вид,Un look légendaire,Aspecto legendario,Vẻ ngoài huyền thoại
+128,불멸의복,Immortal Garb,不死の装束,不朽的服饰,不朽的服飾,Бессмертное одеяние,Vêtements immortels,Atuendo inmortal,Trang phục bất tử
+129,타이탄복,Titan suit,タイタンスーツ,泰坦套装,泰坦套裝,Костюм Титана,Combinaison Titan,Traje de Titán,Bộ đồ Titan
+130,파워드레스,Power dress,パワードレス,强势连衣裙,強勢連身裙,Деловой наряд,Robe de pouvoir,Vestido poderoso,Trang phục quyền lực
+131,은하계복,Galaxy Suit,ギャラクシースーツ,银河套装,銀河套裝,Галактический костюм,Combinaison Galaxie,Traje galáctico,Bộ đồ thiên hà
+132,절대자의복,The Absolute One's Robe,絶対者のローブ,绝对者的长袍,絕對者的長袍,Мантия Абсолюта,La robe de l'Absolu,La túnica del Absoluto,Áo choàng của Đấng Tuyệt Đối
+133,운명드레스,Destiny Dress,デスティニードレス,命运礼服,命運禮服,Платье Судьбы,Robe Destinée,Vestido del destino,Váy Định Mệnh
+134,심판자의복,Judge's Garments,裁判官の衣装,法官服装,法官服裝,Судейская форма,Vêtements du juge,Vestimenta del juez,Trang phục thẩm phán
+135,천상의복,Heavenly Garments,天上の衣,天上的衣裳,天上的衣裳,Небесные Одеяния,Vêtements célestes,Vestiduras celestiales,Trang phục Thiên đường
+136,제왕의복,Royal garments,王室の衣装,皇家服饰,皇家服飾,Королевские одеяния,vêtements royaux,prendas reales,Trang phục hoàng gia
+137,-,-,-,-,-,-,-,-,-
+138,-,-,-,-,-,-,-,-,-
+139,-,-,-,-,-,-,-,-,-
+140,-,-,-,-,-,-,-,-,-
+141,-,-,-,-,-,-,-,-,-
+142,-,-,-,-,-,-,-,-,-
+143,-,-,-,-,-,-,-,-,-
+144,-,-,-,-,-,-,-,-,-
+145,연습용마이크,Practice microphone,練習用マイク,练习麦克风,練習麥克風,Учебный микрофон,Microphone d'entraînement,Micrófono de práctica,micro tập luyện
+146,데뷔마이크,Debut Mic,デビューマイク,首秀麦克风,首秀麥克風,Дебютный микрофон,Premier micro,Micrófono de debut,Mic ra mắt
+147,버스킹마이크,Busking mic,路上パフォーマンス用マイク,街头卖艺麦克风,街頭賣藝麥克風,Микрофон для уличных выступлений,Micro de rue,Micrófono para músicos callejeros,Mic hát đường phố
+148,보조마이크,auxiliary microphone,補助マイク,辅助麦克风,輔助麥克風,вспомогательный микрофон,Microphone auxiliaire,micrófono auxiliar,micro phụ
+149,루키마이크,Rookie Mike,ルーキー・マイク,新秀迈克,新秀麥克,Новичок Майк,Mike le débutant,Novato Mike,Mike tân binh
+150,방송마이크,Broadcast microphone,放送用マイク,广播麦克风,廣播麥克風,вещательный микрофон,Microphone de diffusion,Micrófono de transmisión,micro phát thanh
+151,스포트마이크,Spot microphone,スポットマイク,点麦克风,點麥克風,Точечный микрофон,Microphone d'appoint,Micrófono puntual,Micrô điểm
+152,핸드마이크,hand microphone,ハンドマイク,手持麦克风,手持麥克風,ручной микрофон,microphone à main,micrófono de mano,micro cầm tay
+153,메인마이크,Main microphone,メインマイク,主麦克风,主麥克風,Основной микрофон,Microphone principal,Micrófono principal,Micrô chính
+154,센터마이크,Center microphone,センターマイク,中央麦克风,中央麥克風,Центральный микрофон,Microphone central,Micrófono central,Micrô trung tâm
+155,고성능마이크,high-performance microphone,高性能マイク,高性能麦克风,高性能麥克風,высокопроизводительный микрофон,microphone haute performance,micrófono de alto rendimiento,micro hiệu suất cao
+156,유닛마이크,Unit Microphone,ユニットマイク,单元麦克风,單元麥克風,Микрофон блока,Microphone intégré,Micrófono de unidad,Micro tích hợp
+157,골드마이크,Gold Mike,ゴールドマイク,黄金麦克,黃金麥克,Золотой Майк,Mike l'Or,Gold Mike,Mike Vàng
+158,열정마이크,Passion Microphone,パッションマイク,激情麦克风,激情麥克風,Passion Microphone,Microphone Passion,Micrófono de la pasión,Micro đam mê
+159,시크마이크,Chic Mike,シック・マイク,奇克·迈克,奇克·麥克,Чик Майк,Chic Mike,Chic Mike,Mike sành điệu
+160,순수마이크,Pure Microphone,ピュアマイクロフォン,纯麦克风,純麥克風,Чистый микрофон,Microphone pur,Micrófono puro,Micro thuần túy
+161,라이브마이크,Live Mic,ライブマイク,现场麦克风,現場麥克風,Live Mic,Micro en direct,Micrófono en vivo,Mic trực tiếp
+162,미스틱마이크,Mystic Microphone,ミスティックマイクロフォン,神秘麦克风,神秘麥克風,Мистический микрофон,Microphone mystique,Micrófono místico,Micro huyền bí
+163,특수마이크,Special microphone,特殊マイク,专用麦克风,專用麥克風,Специальный микрофон,Microphone spécial,Micrófono especial,Micrô đặc biệt
+164,유니크마이므,Unique My,ユニークマイ,独一无二的我,獨一無二的我,Уникальный Мой,Unique Mon,Único Mi,Độc đáo của tôi
+165,카리마이크,Karimike,カリミケ,卡里米克,卡里米克,Каримике,Karimike,Karimike,Karimike
+166,블랙마이크,Black Mike,ブラック・マイク,黑迈克,黑麥克,Черный Майк,Black Mike,Mike negro,Mike Đen
+167,레드마이크,Red Mike,レッド・マイク,红麦克,紅麥克,Красный Майк,Mike Rouge,Red Mike,Mike Đỏ
+168,올마이크,All Mike,オールマイク,迈克,麥克,Все Майк,Tout Mike,Todo Mike,Tất cả Mike
+169,솔로마이크,Solo Mic,ソロマイク,独奏麦克风,獨奏麥克風,Solo Mic,Micro solo,Micrófono solista,Mic solo
+170,월드마이크,World Microphone,ワールドマイクロフォン,世界麦克风,世界麥克風,Всемирный микрофон,Microphone mondial,Micrófono mundial,Micro Thế giới
+171,슈퍼마이크,Super Mike,スーパーマイク,超级迈克,超級麥克,Супер Майк,Super Mike,Super Mike,Siêu Mike
+172,트리플마이크,Triple Microphone,トリプルマイク,三麦克风,三麥克風,Тройной микрофон,Triple microphone,Micrófono triple,Ba micro
+173,플래마이크,Flamic,炎,弗拉米克,弗拉米克,Фламиновый,Flamic,Inflamado,Lửa
+174,밀리언마이크,Million Mike,ミリオンマイク,百万迈克,百萬麥克,Миллион Майк,Million Mike,Millones de Mike,Triệu Mike
+175,레전드마이크,Legend Mike,レジェンドマイク,传奇人物迈克,傳奇人物麥克,Легенда Майк,Légende Mike,Leyenda Mike,Huyền thoại Mike
+176,불멸마이크,Immortal Microphone,不滅のマイクロフォン,不朽麦克风,不朽麥克風,Бессмертный Микрофон,Microphone immortel,Micrófono inmortal,Micro bất tử
+177,타이탄마이크,Titan Mike,タイタンマイク,泰坦迈克,泰坦麥克,Титан Майк,Titan Mike,Titán Mike,Titan Mike
+178,파워마이크,Power Microphone,パワーマイク,功率麦克风,功率麥克風,Силовой микрофон,Microphone alimenté,Micrófono de potencia,Micro công suất
+179,은하계마이크,Galaxy Microphone,ギャラクシーマイク,银河麦克风,銀河麥克風,Микрофон Galaxy,Microphone Galaxy,Micrófono Galaxy,Micro Galaxy
+180,절대마이크,Absolute Microphone,アブソリュートマイクロフォン,绝对麦克风,絕對麥克風,Абсолютный Микрофон,Microphone absolu,Micrófono Absolute,Microphone tuyệt đối
+181,운명마이크,Destiny Microphone,デスティニーマイクロフォン,Destiny麦克风,Destiny麥克風,Destiny Microphone,Microphone Destiny,Micrófono Destiny,Micro Destiny
+182,보이스마이크,Voice microphone,音声マイク,语音麦克风,語音麥克風,Голосовой микрофон,Microphone vocal,Micrófono de voz,Micrô giọng nói
+183,태초마이크,First Microphone,ファーストマイク,第一麦克风,第一麥克風,Первый микрофон,Premier microphone,Primer micrófono,Chiếc micro đầu tiên
+184,제왕마이크,Emperor Mike,エンペラーマイク,皇帝迈克,皇帝麥克,Император Майк,Empereur Mike,Emperador Mike,Hoàng đế Mike
+185,-,-,-,-,-,-,-,-,-
+186,-,-,-,-,-,-,-,-,-
+187,-,-,-,-,-,-,-,-,-
+188,-,-,-,-,-,-,-,-,-
+189,-,-,-,-,-,-,-,-,-
+190,-,-,-,-,-,-,-,-,-
+191,-,-,-,-,-,-,-,-,-
+192,-,-,-,-,-,-,-,-,-
+193,훈련용링,training rings,トレーニングリング,训练环,訓練環,тренировочные кольца,anneaux d'entraînement,anillos de entrenamiento,vòng tập luyện
+194,데뷔기념링,Debut commemorative ring,デビュー記念リング,首发纪念戒指,首發紀念戒指,Памятное кольцо дебюта,Bague commémorative de début,Anillo conmemorativo del debut,Nhẫn kỷ niệm ra mắt
+195,우정링,friendship ring,友情の指輪,友谊戒指,友誼戒指,кольцо дружбы,bague d'amitié,anillo de amistad,nhẫn tình bạn
+196,초심링,Beginner's Ring,初心者用リング,初学者戒指,初學者戒指,Кольцо для начинающих,Anneau de débutant,Anillo para principiantes,Nhẫn dành cho người mới bắt đầu
+197,루키링,Rookiering,新人採用,新秀,新秀,Ройкиринг,Rookie,Novato,tân binh
+198,인기투표링,Popularity Vote Ring,人気投票リング,人气投票环,人氣投票環,Кольцо народного голосования,Anneau de vote de popularité,Anillo de votación de popularidad,Vòng bình chọn phổ biến
+199,스포트링,Sporting,スポーツ,体育,體育,Спортинг,Sportif,Deportivo,Thể thao
+200,팬클럽링,Fan club ring,ファンクラブリング,粉丝俱乐部戒指,粉絲俱樂部戒指,Кольцо фан-клуба,bague de fan club,Anillo del club de fans,Nhẫn câu lạc bộ người hâm mộ
+201,메인포인트,Main Point,要点,要点,重點,Главный пункт,Point principal,Punto principal,Điểm chính
+202,센터링,centering,センタリング,定心,定心,центрирование,centrage,centrado,căn giữa
+203,베스트링,Besting,#ERROR!,#ERROR!,#ERROR!,#ERROR!,#ERROR!,#ERROR!,#ERROR!
+204,글로벌링,Globaling,グローバル化,全球化,全球化,Глобализация,Mondialisation,Globalización,Toàn cầu hóa
+205,골드보석,Gold jewelry,ゴールドジュエリー,黄金首饰,黃金首飾,Золотые украшения,bijoux en or,Joyas de oro,Trang sức vàng
+206,열정링,Passion Ring,パッションリング,激情戒指,激情戒指,Кольцо страсти,Bague Passion,Anillo de la Pasión,Nhẫn đam mê
+207,시크릿링,Secret Ring,シークレットリング,秘密戒指,秘密戒指,Секретное кольцо,Anneau secret,Anillo secreto,Chiếc nhẫn bí mật
+208,순수매력링,Pure Charm Ring,ピュアチャームリング,纯洁魅力戒指,純潔魅力戒指,Кольцо с чистым шармом,Bague Pure Charm,Anillo de encanto puro,Nhẫn quyến rũ thuần khiết
+209,퍼펙트링,Perfect Ring,完璧な指輪,完美戒指,完美戒指,Идеальное кольцо,Bague parfaite,Anillo perfecto,Chiếc nhẫn hoàn hảo
+210,나이트링,Nighting,ナイティング,夜莺,夜鶯,Ночной сон,Rossignol,Noche,Chim họa mi
+211,특수보석,Special gemstones,特別な宝石,特殊宝石,特殊寶石,Особые драгоценные камни,Pierres précieuses spéciales,Piedras preciosas especiales,Đá quý đặc biệt
+212,유니크링,Unique Ring,ユニークな指輪,独特的戒指,獨特的戒指,Уникальное кольцо,Bague unique,Anillo único,Chiếc nhẫn độc đáo
+213,카리스마링,Charisma Ring,カリスマリング,魅力戒指,魅力戒指,Кольцо Харизмы,Bague Charisme,Anillo de carisma,Nhẫn Sức Mạnh
+214,블랙링,Black Ring,ブラックリング,黑环,黑環,Черное кольцо,Anneau noir,Anillo negro,Vòng đen
+215,레드스타링,Red Starring,赤い星,红星,紅星,Красные звезды,Étoile rouge,Estrella Roja,Red Starring
+216,올라운드링,All-rounding,オールラウンド,全能型,全能型,Всесторонний,Polyvalent,Todoterreno,Toàn diện
+217,솔로스톤,Solostone,ソロストーン,索洛斯通,索洛斯通,Солостоун,Solostone,Piedra Solitaria,Solostone
+218,월드링,World Ring,ワールドリング,世界环,世界環,Мировое кольцо,Anneau du monde,Anillo Mundial,Vòng tròn thế giới
+219,슈퍼링,Super Ring,スーパーリング,超级环,超環,Суперкольцо,Super Ring,Súper Anillo,Siêu nhẫn
+220,트리플링,Triple ring,トリプルリング,三环,三環,Тройное кольцо,Triple anneau,Anillo triple,Vòng ba
+221,플래티넘,Platinum,白金,铂,鉑,Платина,Platine,Platino,Bạch kim
+222,골드셀러링,Gold Selling,金販売,黄金销售,黃金銷售,Продажа золота,Vente d'or,Venta de oro,Bán vàng
+223,레전드링,Legend Ring,レジェンドリング,传奇戒指,傳奇戒指,Кольцо Легенды,Anneau de légende,Anillo de leyenda,Chiếc nhẫn huyền thoại
+224,불멸의링,Immortal Ring,不滅の指輪,不朽之戒,不朽之戒,Кольцо Бессмертия,Anneau immortel,Anillo inmortal,Nhẫn Bất Tử
+225,타이탄링,Titan Ring,タイタンリング,泰坦戒指,泰坦戒指,Кольцо Титана,Anneau de Titan,Anillo de Titán,Nhẫn Titan
+226,파워젬,Power Gem,パワージェム,力量宝石,力量寶石,Силовой Камень,Gemme de puissance,Gema de poder,Viên ngọc sức mạnh
+227,은하계링,Galaxy ring,銀河リング,星系环,星系環,Кольцо Галактики,Anneau galactique,Anillo galáctico,Vòng thiên hà
+228,절대매력,Absolute charm,絶対的な魅力,绝对的魅力,絕對的魅力,Абсолютное очарование,Un charme absolu,Encanto absoluto,Tuyệt đối quyến rũ
+229,운명의링,Ring of Destiny,運命の指輪,命运之环,命運之環,Кольцо Судьбы,Anneau du Destin,Anillo del Destino,Chiếc Nhẫn Định Mệnh
+230,심판보석,Judgment bail,判決保釈,判决保释,判決保釋,Залог по решению суда,cautionnement par jugement,Fianza judicial,Bảo lãnh theo phán quyết
+231,태초의링,The Ring of the Beginning,始まりの指輪,起始之环,起始之環,Кольцо Начала,L'Anneau du Commencement,El Anillo del Comienzo,Chiếc Nhẫn Khởi Nguyên
+232,제왕링,Emperor Ring,皇帝の指輪,皇帝戒指,皇帝戒指,Кольцо Императора,Anneau de l'Empereur,Anillo del Emperador,Nhẫn Hoàng đế
+233,-,-,-,-,-,-,-,-,-
+234,-,-,-,-,-,-,-,-,-
+235,-,-,-,-,-,-,-,-,-
+236,-,-,-,-,-,-,-,-,-
+237,-,-,-,-,-,-,-,-,-
+238,-,-,-,-,-,-,-,-,-
+239,-,-,-,-,-,-,-,-,-
+240,-,-,-,-,-,-,-,-,-
+241,훈련용치마,training skirt,トレーニングスカート,训练裙,訓練裙,тренировочная юбка,jupe d'entraînement,falda de entrenamiento,váy tập luyện
+242,데뷔스커트,Debut skirt,デビュースカート,首秀裙,首秀裙,дебютная юбка,jupe de début,Falda de debut,Váy ra mắt
+243,체크치마,plaid skirt,チェック柄スカート,格子裙,格子裙,клетчатая юбка,jupe à carreaux,falda a cuadros,váy kẻ caro
+244,주니어치마,junior skirt,ジュニアスカート,少女裙,少女裙,юбка для младшей,jupe junior,falda juvenil,váy thiếu niên
+245,루키스커트,Rookie skirt,ルーキースカート,新手裙,新手裙,Юбка новичка,jupe de recrue,Falda de principiante,Váy tân binh
+246,인기치마,popular skirt,人気のスカート,流行裙,流行裙,популярная юбка,jupe populaire,falda popular,váy phổ biến
+247,스포트치마,Sport skirt,スポーツスカート,运动裙,運動裙,Спортивная юбка,jupe de sport,Falda deportiva,Váy thể thao
+248,백업치마,backup skirt,バックスカート,备用裙,備用裙,запасная юбка,jupe de secours,falda de respaldo,váy dự phòng
+249,메인치마,Main skirt,メインスカート,主裙,主裙,Основная юбка,Jupe principale,Falda principal,Váy chính
+250,센터치마,center skirt,センタースカート,中裙,中裙,центральная юбка,jupe centrale,falda central,váy giữa
+251,베스트치마,Best skirt,最高のスカート,最佳裙装,最佳裙裝,Лучшая юбка,Meilleure jupe,La mejor falda,Chiếc váy đẹp nhất
+252,유닛치마,Unit skirt,ユニットスカート,单元裙,單元裙,Юбка-блок,Jupe unitaire,Falda de unidad,Váy liền thân
+253,청순치마,innocent skirt,イノセントスカート,无辜的裙子,無辜的裙子,невинная юбка,jupe innocente,falda inocente,váy ngây thơ
+254,시크스커트,Chic skirt,シックなスカート,时尚半身裙,時尚半身裙,Шикарная юбка,Jupe chic,Falda elegante,Váy thanh lịch
+255,힙합스커트,hip-hop skirt,ヒップホップスカート,嘻哈裙,嘻哈裙,юбка в стиле хип-хоп,jupe hip-hop,falda hip hop,váy hip-hop
+256,큐티치마,Cutie skirt,キュートなスカート,可爱裙子,可愛裙子,Милая юбка,Jupe mignonne,Falda monísima,Váy dễ thương
+257,레이어드치,Layered,重ね合わせ,分层,分層,Многослойный,Couché,En capas,Nhiều lớp
+258,미스틱스커,Mysticker,マイステッカー,我的贴纸,我的貼紙,Мой стикер,Mon autocollant,Mi pegatina,Nhãn dán của tôi
+259,특수치마,special skirt,特別なスカート,特殊裙子,特殊裙子,особая юбка,jupe spéciale,falda especial,váy đặc biệt
+260,유니크치마,Unique skirt,ユニークなスカート,独特的裙子,獨特的裙子,Уникальная юбка,Jupe unique,Falda única,Váy độc đáo
+261,카리스마치마,Charisma skirt,カリスマスカート,魅力裙,魅力裙,юбка Харизма,Jupe Charisma,Falda carismática,Váy quyến rũ
+262,블랙스커트,black skirt,黒いスカート,黑色裙子,黑色裙子,черная юбка,jupe noire,falda negra,váy đen
+263,레드스커트,red skirt,赤いスカート,红色裙子,紅色裙子,красная юбка,jupe rouge,falda roja,váy đỏ
+264,라운드치마,round skirt,ラウンドスカート,圆裙,圓裙,круглая юбка,jupe ronde,falda redonda,váy tròn
+265,솔로스커트,Solo skirt,ソロスカート,单人裙,單人裙,Юбка Solo,Jupe Solo,Falda sola,Váy đơn
+266,월드스커트,World Skirt,ワールドスカート,世界裙,世界裙,Мировая юбка,Jupe du monde,Falda del mundo,Váy Thế Giới
+267,슈퍼스커트,Superskirt,スーパースカート,超短裙,超短裙,Суперюбка,Superjupe,Superfalda,Váy siêu ngắn
+268,트리플치마,Triple skirt,トリプルスカート,三层裙,三層裙,Тройная юбка,Jupe triple,Falda triple,Váy ba lớp
+269,플래치마,Fletchima,フレッチマ,弗莱奇玛,弗萊奇瑪,Флетчима,Fletchima,Fletchima,Fletchima
+270,밀리언치마,Million Skirt,ミリオンスカート,百万裙,百萬裙,Миллион юбок,Million de jupes,Falda de un millón,Váy triệu
+271,레전드치마,Legend skirt,伝説のスカート,传奇裙,傳奇裙,Легендарная юбка,Jupe Légende,Falda legendaria,Váy huyền thoại
+272,불멸치마,Immortal Skirt,不滅のスカート,不朽裙摆,不朽裙擺,Бессмертная юбка,Jupe immortelle,Falda inmortal,Váy Bất Tử
+273,타이탄치마,Titan skirt,タイタンスカート,泰坦裙,泰坦裙,юбка Титана,jupe Titan,Falda Titán,Váy Titan
+274,파워치마,Power skirt,パワースカート,强力裙,強力裙,юбка силы,jupe fourre-tout,Falda de poder,Váy quyền lực
+275,은하계치마,Galaxy skirt,ギャラクシースカート,星空裙,星空裙,юбка «Галактика»,Jupe galaxie,Falda galaxia,váy thiên hà
+276,절대치마,absolute skirt,絶対スカート,绝对裙,絕對裙,абсолютная юбка,jupe absolue,falda absoluta,váy tuyệt đối
+277,운명의치마,Skirt of Fate,運命のスカート,命运之裙,命運之裙,Юбка Судьбы,Jupe du destin,Falda del destino,Váy của Số phận
+278,심판치마,referee skirt,審判のスカート,裁判裙,裁判裙,юбка судьи,jupe d'arbitre,falda de árbitro,váy trọng tài
+279,태초치마,Primordial skirt,原始的なスカート,原始裙摆,原始裙擺,Первобытная юбка,Jupe primordiale,falda primordial,váy nguyên thủy
+280,제왕치마,Emperor's skirt,皇帝のスカート,皇帝的裙子,皇帝的裙子,юбка императора,jupe de l'empereur,Falda del emperador,Váy của Hoàng đế
+281,-,-,-,-,-,-,-,-,-
+282,-,-,-,-,-,-,-,-,-
+283,-,-,-,-,-,-,-,-,-
+284,-,-,-,-,-,-,-,-,-
+285,-,-,-,-,-,-,-,-,-
+286,-,-,-,-,-,-,-,-,-
+287,-,-,-,-,-,-,-,-,-
+288,-,-,-,-,-,-,-,-,-
+289,연습용장갑,Practice gloves,練習用グローブ,练习手套,練習手套,тренировочные перчатки,Gants d'entraînement,guantes de práctica,găng tay tập luyện
+290,데뷔장갑,Debut gloves,デビューグローブ,首秀手套,首秀手套,Перчатки дебюта,Gants de début,Guantes de debut,Găng tay ra mắt
+291,안무장갑,Choreography gloves,振り付け用手袋,舞蹈手套,舞蹈手套,перчатки для хореографии,Gants de chorégraphie,Guantes de coreografía,Găng tay biểu diễn
+292,보조장갑,auxiliary gloves,補助手袋,辅助手套,輔助手套,вспомогательные перчатки,gants auxiliaires,guantes auxiliares,găng tay phụ
+293,루키장갑,Rookie Gloves,ルーキーグローブ,新秀手套,新秀手套,Перчатки новичка,Gants de recrue,Guantes de novato,Găng tay tân binh
+294,액션장갑,Action gloves,アクショングローブ,动作手套,動作手套,Перчатки для боевых действий,Gants d'action,Guantes de acción,Găng tay hành động
+295,스포트장갑,sports gloves,スポーツグローブ,运动手套,運動手套,спортивные перчатки,gants de sport,guantes deportivos,găng tay thể thao
+296,핸드사인,Hand sign,手信号,手势,手勢,жест рукой,signe de la main,señal de mano,Dấu hiệu bằng tay
+297,메인댄스장,Main dance hall,メインダンスホール,主舞厅,主舞廳,Главный танцевальный зал,Salle de bal principale,Salón de baile principal,Sảnh khiêu vũ chính
+298,센터장갑,Center gloves,センターグローブ,中心手套,中心手套,Центральные перчатки,Gants centraux,Guantes centrales,Găng tay trung tâm
+299,베스트장갑,Best gloves,最高のグローブ,最好的手套,最好的手套,Лучшие перчатки,Les meilleurs gants,Los mejores guantes,Găng tay tốt nhất
+300,유닛장갑,Unit Armor,ユニット装甲,单位护甲,單位護甲,Броня подразделения,Armure d'unité,Armadura de unidad,Bộ giáp đơn vị
+301,골드장갑,Gold Gloves,ゴールドグローブ,金手套奖,金手套獎,Золотые перчатки,Gants d'or,Guantes de oro,Găng tay vàng
+302,열정장갑,Passion Gloves,パッショングローブ,激情手套,激情手套,Перчатки страсти,Gants Passion,Guantes de pasión,Găng tay đam mê
+303,시크장갑,Chic gloves,シックな手袋,时尚手套,時尚手套,Стильные перчатки,Gants chics,Guantes elegantes,Găng tay thời trang
+304,순수매력장갑,Pure Charm Gloves,ピュアチャームグローブ,纯魅力手套,純魅力手套,Перчатки «Чистое очарование»,Gants Pure Charm,Guantes de encanto puro,Găng tay quyến rũ thuần khiết
+305,칼군무장갑,Swordsmanship gloves,剣術用グローブ,剑术手套,劍術手套,Перчатки для фехтования,Gants d'escrime,Guantes de esgrima,Găng tay đấu kiếm
+306,미스틱장갑,Mystic Gloves,ミスティックグローブ,神秘手套,神秘手套,Мистические перчатки,Gants mystiques,Guantes místicos,Găng tay thần bí
+307,특수안무장갑,Special choreography gloves,特別な振り付け用手袋,特制舞蹈手套,特製舞蹈手套,Специальные хореографические перчатки,Gants de chorégraphie spéciaux,Guantes especiales para coreografía,Găng tay biểu diễn đặc biệt
+308,유니크장갑,Unique Gloves,ユニークな手袋,独特的手套,獨特的手套,Уникальные перчатки,Gants uniques,Guantes únicos,Găng tay độc đáo
+309,카리스마장갑,Charisma Gloves,カリスマグローブ,魅力手套,魅力手套,Перчатки Харизмы,Gants Charisma,Guantes de carisma,Găng tay Charisma
+310,블랙장갑,Black gloves,黒い手袋,黑手套,黑手套,Черные перчатки,Gants noirs,Guantes negros,Găng tay đen
+311,레드포인트,Redpoint,レッドポイント,红点,紅點,Редпоинт,Redpoint,Redpoint,Điểm đỏ
+312,올라운드장갑,All-around gloves,オールラウンドグローブ,全方位手套,全方位手套,Универсальные перчатки,Gants polyvalents,Guantes multiusos,Găng tay đa năng
+313,솔로장갑,Solo gloves,ソログローブ,Solo手套,Solo手套,Перчатки Соло,Gants Solo,Guantes Solo,Găng tay đơn
+314,월드장갑,World Gloves,ワールドグローブ,世界手套,世界手套,Мировые перчатки,Gants mondiaux,Guantes del mundo,Găng tay thế giới
+315,슈퍼장갑,Super Gloves,スーパーグローブ,超级手套,超級手套,Суперперчатки,Super gants,Súper guantes,Găng tay siêu cấp
+316,트리플장갑,Triple Gloves,トリプルグローブ,三重手套,三重手套,Тройные перчатки,Gants triples,Guantes triples,Găng tay ba lớp
+317,플래티넘장갑,Platinum Gloves,プラチナグローブ,白金手套,白金手套,Платиновые перчатки,Gants de platine,Guantes de platino,Găng tay bạch kim
+318,밀리언장갑,Million Gloves,百万個の手袋,百万只手套,百萬隻手套,Миллион перчаток,Million de gants,Millones de guantes,Hàng triệu chiếc găng tay
+319,레전드장갑,Legend Gloves,レジェンドグローブ,传奇手套,傳奇手套,Перчатки «Легенда»,Gants Légende,Guantes de leyenda,Găng tay huyền thoại
+320,불멸의장갑,Immortal Gloves,不滅の手袋,不朽之手套,不朽之手套,Бессмертные Перчатки,Gants immortels,Guantes inmortales,Găng tay bất tử
+321,타이탄장갑,Titan armor,タイタンアーマー,泰坦装甲,泰坦裝甲,Броня Титана,Armure de Titan,Armadura de Titán,áo giáp Titan
+322,파워안무,Power choreography,力強い振り付け,力量编舞,力量編舞,Силовая хореография,Chorégraphie puissante,Coreografía de poder,Vũ đạo mạnh mẽ
+323,은하계장갑,Galaxy Armor,ギャラクシーアーマー,银河装甲,銀河裝甲,Галактическая броня,Armure Galactique,Armadura galáctica,Áo giáp thiên hà
+324,절대댄스,Absolute Dance,絶対的なダンス,绝对舞蹈,絕對舞蹈,Абсолютный танец,Danse absolue,Danza absoluta,Vũ điệu tuyệt đối
+325,운명의장갑,Gloves of Destiny,運命の手袋,命运之手套,命運之手套,Перчатки Судьбы,Gants du Destin,Guantes del Destino,Găng tay định mệnh
+326,심판장갑,referee gloves,審判用グローブ,裁判手套,裁判手套,судейские перчатки,gants d'arbitre,guantes de árbitro,găng tay trọng tài
+327,태초의장갑,The Gloves of the Beginning,始まりの手袋,最初的手套,最初的手套,Перчатки начала,Les gants du commencement,Los guantes del principio,Những chiếc găng tay của sự khởi đầu
+328,제왕장갑,Emperor's Gloves,皇帝の手袋,皇帝的手套,皇帝的手套,Перчатки императора,Gants de l'empereur,Guantes del Emperador,Găng tay Hoàng đế
+329,-,-,-,-,-,-,-,-,-
+330,-,-,-,-,-,-,-,-,-
+331,-,-,-,-,-,-,-,-,-
+332,-,-,-,-,-,-,-,-,-
+333,-,-,-,-,-,-,-,-,-
+334,-,-,-,-,-,-,-,-,-
+335,-,-,-,-,-,-,-,-,-
+336,-,-,-,-,-,-,-,-,-
+337,헤어밴드,hairband,ヘアバンド,发带,髮帶,резинка для волос,bandeau,diadema,băng đô cài tóc
+338,데뷔리본,Debut Ribbon,デビューリボン,首秀缎带,首秀緞帶,Дебютная лента,Ruban de début,Cinta de debut,Ruy băng ra mắt
+339,머리끈,hair tie,ヘアゴム,发圈,髮圈,резинка для волос,élastique à cheveux,goma para el pelo,dây buộc tóc
+340,주니어리본,Junior Ribbon,ジュニアリボン,初级丝带,初級絲帶,Младшая лента,Ruban Junior,Cinta Junior,Ruy băng Thiếu niên
+341,루키리본,Rookie Ribbon,ルーキーリボン,新秀勋章,新秀勳章,Лента новичка,Ruban de recrue,Cinta de novato,Ruy băng tân binh
+342,포인트리본,Point ribbon,ポイントリボン,尖带,尖帶,Угловая лента,Ruban à pointe,Cinta de punto,Ruy băng nhọn
+343,화려한리본,fancy ribbon,ファンシーリボン,花式丝带,花式絲帶,нарядная лента,ruban fantaisie,cinta elegante,ruy băng trang trí
+344,백업리본,Backup Ribbon,バックアップリボン,备份功能区,備份功能區,Резервная лента,Ruban de sauvegarde,Cinta de respaldo,Ruy băng dự phòng
+345,메인리본,Main ribbon,メインリボン,主丝带,主絲帶,Главная лента,Ruban principal,Cinta principal,Dải ruy băng chính
+346,센터장식,Center decoration,中央の装飾,中心装饰,中心裝飾,Центральное украшение,Décoration centrale,Decoración central,Trang trí trung tâm
+347,베스트리본,Best Ribbon,ベストリボン,最佳丝带,最佳絲帶,Лучшая лента,Meilleur ruban,Mejor cinta,Ruy băng đẹp nhất
+348,글로벌리,Globally,世界的に,全球,全球,В глобальном масштабе,À l'échelle mondiale,A nivel mundial,Trên toàn cầu
+349,골드장식,Gold decoration,金色の装飾,金色装饰,金色裝飾,Золотое украшение,décoration dorée,Decoración dorada,Trang trí bằng vàng
+350,열정리본,Passion Ribbon,パッションリボン,热情丝带,熱情絲帶,Лента страсти,Ruban de la passion,Cinta de la pasión,Dải ruy băng đam mê
+351,시크리본,Chic Ribbon,シックなリボン,时尚丝带,時尚絲帶,Шикарная лента,Ruban chic,Cinta elegante,Ruy băng thời trang
+352,순수코디,Pure Coordi,ピュアコーディ,纯协调,純協調,Чистые координаты,Pure Coordi,Pure Coordi,Phối đồ thuần khiết
+353,퍼펙트리본,Perfect Ribbon,パーフェクトリボン,完美丝带,完美絲帶,Идеальная лента,Ruban parfait,Cinta perfecta,Ruy băng hoàn hảo
+354,미스틱리본,Mystic Ribbon,ミスティックリボン,神秘丝带,神秘絲帶,Мистическая лента,Ruban mystique,Cinta mística,Dải ruy băng huyền bí
+355,특수장식,Special decoration,特別な装飾,特殊装饰,特殊裝飾,Особое украшение,Décoration spéciale,Decoración especial,Trang trí đặc biệt
+356,유니크리본,Unique Ribbon,ユニークなリボン,独特的丝带,獨特的絲帶,Уникальная лента,Ruban unique,Cinta única,Ruy băng độc đáo
+357,카리스마리본,Charisma Maribon,カリスマ・マリボン,魅力马里邦,魅力馬裡邦,Харизма Марибон,Charisme Maribon,Carisma Maribon,Charisma Maribon
+358,블랙리본,Black ribbon,黒いリボン,黑丝带,黑色絲帶,Черная лента,Ruban noir,Cinta negra,Ruy băng đen
+359,레드포인트,Redpoint,レッドポイント,红点,紅點,Редпоинт,Redpoint,Redpoint,Điểm đỏ
+360,올라운드리,All-round,オールラウンド,全能,全能,Всесторонне развитый,Polyvalent,Todoterreno,Đa năng
+361,솔로리본,Solo Ribbon,ソロリボン,独奏丝带,獨奏絲帶,Индивидуальная лента,Ruban solo,Cinta solitaria,Ruy băng đơn
+362,월드리본,World Ribbon,ワールドリボン,世界丝带,世界絲帶,Всемирная лента,Ruban mondial,Cinta Mundial,Ruy băng Thế giới
+363,슈퍼리본,Super Ribbon,スーパーリボン,超级丝带,超絲帶,Суперлента,Super ruban,Súper Cinta,Ruy băng siêu cấp
+364,트리플리본,Triple Ribbon,トリプルリボン,三重丝带,三重絲帶,Тройная лента,Ruban triple,Cinta triple,Ruy băng ba lần
+365,플래티넘,Platinum,白金,铂,鉑,Платина,Platine,Platino,Bạch kim
+366,밀리언리본,Million Ribbon,ミリオンリボン,百万丝带,百萬絲帶,Миллионная лента,Million Ribbon,Cinta de un millón,Triệu Ruy Băng
+367,레전드리본,Legendary Reborn,伝説の復活,传奇重生,傳奇重生,Легендарное Возрождение,Légendaire renaît,Legendario renacido,Huyền Thoại Tái Sinh
+368,불멸의리,Immortal Loyalty,不滅の忠誠,永恒的忠诚,不朽的忠誠,Бессмертная Преданность,Loyauté immortelle,Lealtad inmortal,Lòng trung thành bất diệt
+369,타이탄리본,Titan Ribbon,タイタンリボン,泰坦丝带,泰坦絲帶,Лента Титана,Ruban Titan,Cinta Titán,Dải ruy băng Titan
+370,파워장식,Power decoration,パワーデコレーション,权力装饰,權力裝飾,Силовое украшение,Décoration électrique,Decoración poderosa,Trang trí năng lượng
+371,은하계리본,Galaxy Ribbon,ギャラクシーリボン,银河丝带,銀河絲帶,Галаксиальная лента,Ruban Galaxie,Cinta galáctica,Dải ruy băng thiên hà
+372,절대장식,Absolute ornament,絶対的な装飾,绝对装饰,絕對裝飾,Абсолютное украшение,Ornement absolu,Adorno absoluto,Tuyệt phẩm trang trí
+373,운명의리,The loyalty of fate,運命の忠誠心,命运的忠诚,命運的忠誠,Верность судьбы,La loyauté du destin,La lealtad del destino,Lòng trung thành của số phận
+374,심판리본,referee ribbon,審判リボン,裁判丝带,裁判絲帶,судейская лента,ruban d'arbitre,cinta de árbitro,ruy băng trọng tài
+375,태초의리,Primordial Loyalty,根源的な忠誠心,原始忠诚,原始忠誠,Первобытная Верность,Loyauté primordiale,Lealtad primordial,Lòng trung thành nguyên thủy
+376,제왕리본,Imperial Ribbon,帝国リボン,帝国绶带,帝國瑤帶,Имперская лента,Ruban impérial,Cinta Imperial,Ruy băng Hoàng gia
+377,-,-,-,-,-,-,-,-,-
+378,-,-,-,-,-,-,-,-,-
+379,-,-,-,-,-,-,-,-,-
+380,-,-,-,-,-,-,-,-,-
+381,-,-,-,-,-,-,-,-,-
+382,-,-,-,-,-,-,-,-,-
+383,-,-,-,-,-,-,-,-,-
+384,-,-,-,-,-,-,-,-,-
+385,연습화,practice shoes,練習用シューズ,训练鞋,訓練鞋,тренировочная обувь,chaussures d'entraînement,zapatos de entrenamiento,giày tập luyện
+386,데뷔슈즈,Debut shoes,デビューシューズ,首发鞋,先發鞋,Дебютные туфли,Chaussures de début,Zapatos de debut,Giày ra mắt
+387,스니커즈,Sneakers,スニーカー,运动鞋,運動鞋,Кроссовки,Baskets,Zapatillas,Giày thể thao
+388,주니어화,Junior shoes,ジュニアシューズ,儿童鞋,兒童鞋,Детская обувь,Chaussures junior,Zapatos para niños,Giày trẻ em
+389,루키운동화,Rookie sneakers,ルーキースニーカー,新秀运动鞋,新秀運動鞋,Кроссовки новичка,Baskets de recrue,Zapatillas de novato,Giày thể thao tân binh
+390,편한신발,Comfortable shoes,履き心地の良い靴,舒适的鞋子,舒適的鞋子,Удобная обувь,Chaussures confortables,Zapatos cómodos,Giày thoải mái
+391,스포트힐,Sporthill,スポーツヒル,斯波特希尔,斯波特希爾,Спортхилл,Sporthill,Sporthill,Sporthill
+392,백업부츠,backup boots,バックアップブート,备份启动,備份啟動,резервные загрузки,bottes de secours,arranques de respaldo,khởi động dự phòng
+393,메인슈즈,Main shoes,メインシューズ,主鞋,主鞋,Основная обувь,Chaussures principales,Zapatos principales,Giày chính
+394,센터힐,Center Hill,センターヒル,中心山,中心山,Центр Хилл,Colline du Centre,Colina central,Đồi Trung Tâm
+395,베스트슈즈,Best shoes,最高の靴,最好的鞋子,最好的鞋子,Лучшая обувь,Meilleures chaussures,Los mejores zapatos,Giày tốt nhất
+396,글로벌슈즈,Global Shoes,グローバルシューズ,全球鞋业,全球鞋業,Глобальная обувь,Chaussures mondiales,Zapatos globales,Giày toàn cầu
+397,골드부츠,Gold boots,ゴールドブーツ,金靴,金靴,Золотые сапоги,Bottes dorées,Botas doradas,Giày bốt vàng
+398,열정슈즈,Passion Shoes,パッションシューズ,激情鞋,激情鞋,Обувь Passion,Chaussures Passion,Zapatos de pasión,Giày Passion
+399,시크부츠,Chic boots,シックなブーツ,时尚靴子,時尚靴子,Стильные сапоги,Bottes chics,Botas elegantes,Những đôi bốt sành điệu
+400,순수슈즈,Pure Shoes,ピュアシューズ,纯鞋,純鞋,Чистая обувь,Chaussures Pure,Zapatos puros,Giày Pure
+401,퍼펙트화,Perfection,完璧,完美,完美,Совершенство,Perfection,Perfección,Sự hoàn hảo
+402,미스틱부츠,Mystic Boots,ミスティックブーツ,神秘之靴,神秘之靴,Мистические ботинки,Bottes mystiques,Botas místicas,Giày thần bí
+403,특수슈즈,Special shoes,特別な靴,特制鞋,特製鞋,Особая обувь,Chaussures spéciales,Zapatos especiales,Giày đặc biệt
+404,유니크화,Unique,個性的,独特的,獨特的,Уникальный,Unique,Único,Độc nhất
+405,카리스마슈,Charisma Shu,カリスマシュウ,魅力舒,魅力舒,Харизма Шу,Charisme Shu,carisma shu,Shu thu hút
+406,블랙힐,Black Hill,ブラックヒル,黑山,蒙特內哥羅,Блэк-Хилл,Colline Noire,Colina Negra,Đồi Đen
+407,레드슈즈,Red Shoes,赤い靴,红鞋,紅鞋,Красные туфли,Chaussures rouges,Zapatos rojos,Giày đỏ
+408,올라운드화,All-around shoes,万能シューズ,全方位鞋,全方位鞋,Универсальная обувь,Chaussures polyvalentes,Zapatos versátiles,Giày đa năng
+409,솔로힐,Solo Hill,ソロヒル,索罗山,索羅山,Соло Хилл,Colline solitaire,Colina Solitaria,Đồi Solo
+410,월드슈즈,World Shoes,ワールドシューズ,世界鞋业,世界鞋業,Мировая обувь,Chaussures du monde,Zapatos del mundo,Giày Thế giới
+411,슈퍼스피드,Super Speed,超高速,超速,超速,Сверхскорость,Super vitesse,Súper velocidad,Siêu tốc độ
+412,트리플슈즈,Triple Shoes,トリプルシューズ,三重鞋,三重鞋,Тройные ботинки,Chaussures triples,Zapatos triples,Giày ba tầng
+413,플래티넘슈즈,Platinum Shoes,プラチナシューズ,铂金鞋,白金鞋,Платиновые туфли,Chaussures en platine,Zapatos de platino,Giày bạch kim
+414,밀리언슈즈,Million Shoes,ミリオンシューズ,百万双鞋,百萬雙鞋,Миллион туфель,Million de chaussures,Un millón de zapatos,Triệu đôi giày
+415,레전드슈즈,Legend Shoes,レジェンドシューズ,传奇鞋,傳奇鞋,Легендарные кроссовки,Chaussures Légende,Zapatos Legend,Giày huyền thoại
+416,불멸의화,Immortal Flower,不滅の花,不朽之花,不朽之花,Бессмертный Цветок,Fleur immortelle,Flor inmortal,Hoa Bất Tử
+417,타이탄슈즈,Titan Shoes,タイタンシューズ,泰坦鞋业,泰坦鞋業,Обувь Титана,Chaussures Titan,Zapatos Titan,Giày Titan
+418,파워점프,Power jump,パワージャンプ,爆发力跳跃,爆發力跳躍,Прыжок с ускорением,Saut en puissance,Salto de potencia,Nhảy mạnh
+419,은하계화,Galaxy,銀河,星系,星系,Галактика,Galaxie,Galaxia,Thiên hà
+420,절대스피드,Absolute Speed,絶対速度,绝对速度,絕對速度,Абсолютная скорость,Vitesse absolue,Velocidad absoluta,Tốc độ tuyệt đối
+421,운명의슈즈,Shoes of Destiny,運命の靴,命运之鞋,命運之鞋,Обувь Судьбы,Chaussures du destin,Zapatos del destino,Đôi giày định mệnh
+422,심판힐슈즈,referee heel shoes,レフェリーヒールシューズ,裁判鞋跟,裁判鞋跟,туфли на каблуках для судей,chaussures à talons d'arbitre,zapatos de tacón de árbitro,giày trọng tài cao gót
+423,태초의화,The primordial flower,原始の花,原始之花,原始之花,Первобытный цветок,La fleur primordiale,La flor primordial,Bông hoa nguyên thủy
+424,제왕슈즈,Emperor Shoes,皇帝の靴,皇帝鞋,皇帝鞋,Императорские туфли,Chaussures de l'Empereur,Zapatos de emperador,Giày Hoàng Đế
+425,-,-,-,-,-,-,-,-,-
+426,-,-,-,-,-,-,-,-,-
+427,-,-,-,-,-,-,-,-,-
+428,-,-,-,-,-,-,-,-,-
+429,-,-,-,-,-,-,-,-,-
+430,-,-,-,-,-,-,-,-,-
+431,-,-,-,-,-,-,-,-,-
+432,-,-,-,-,-,-,-,-,-
